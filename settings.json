@@ -1,0 +1,17 @@
+{
+	"db_type":"SQLite",
+	"db_location":"P:\DEP\Promto\DB\Promto.sqlite",
+
+	"tab_color":"000000",
+	"tab_text_size":"10",
+	"small_font":"8",
+	"medium_font":"10",
+	"large_font":"15",
+	"button_size":"small",
+	"global_color":"ffffff",
+	"banner_color":"blue",
+	"banner_text_color":"ffffffff",
+	"banner_text_size":"20",
+	"banner_size":"medium",
+	"font":"Segoe UI"
+}

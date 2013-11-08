@@ -1,0 +1,54 @@
+PROMTOLIB DOC 
+
+getreferencetable : retorna a tabela de referencia a partir do tipo e da tabela1 
+>>>>carregandologo : chama a janela com a animacao do logo promto  MELHORAR ESSAS FUNCOES NO GERAL 
+
+>>>getcolors : retorna o valor rgb das corres a partir dos nomes das propias ESSA FUNCAO PODE SER SUBSTITUIDA POR UM HASH GLOBAL DE CORES
+>>>carregandoaction : rotina que faz a animacao do logo 
+>>>loadintowindow : atualiza a janela de carregando 
+>>>destroycarregandologo : destroe a janela de carregamento 
+
+>>>showimageandcode : cria uma foto "simpleplot.png" que contem o codigo a foto e uma breve descricao ; MUDAR O LOCAL ONDE A FOTO E SALVA E DE ONDE ELA E CARREGADA 
+>>>plotptcode : cria uma foto "testeplot.png" com todas as variacoes de codigos e com a foto ;MUDAR O LOCAL ONDE ESSA FOTO E SALVA PARA TEMP
+>>>promtologo : desenha  o logo com as determinadas cores,com ou sem o nome tambem criando um novo gdi.
+
+banner : desenha um banner a partir de um controle de foto em uma gui
+addbutton : adiona um botao que segue varios padroes de posicionamento (bargs)
+GetSelectedItems : retorna um array simples de items selecionados em uma listview
+GetSelected : retorna o valor do item selecionado
+Flip : Muda a ordem da string ex: asd para dsa
+reversearray : organiza o array ao contrario do que atualmente ele e.
+GetSelectedRow : retorna um array com a linha selecionada
+UpdateScrollBars : funcao que atualiza a barra de scroll 
+
+>>>>banner1 : igual a banner ****** retirar esta funcao 
+
+CreateTreeView : cria uma treeview a partir de uma string
+
+>>loadtv: usada para carregar a createtreeview 
+
+getchild : pega as subitems de uma determinada estrutura e coloca em uma nova string
+haschild : retorna true se o item tem subitem ou false se nao contem. 
+createtag : cria as plaquetas 
+drawdottedline : desenha a linha pontilhada usada na createtag 
+GetCheckedRows2 : pega a linha com o codigo result["code",index] e a descricao result["desc",index]
+GetCheckedRows : pega as linhas marcadas com quantas colunas tiver e bota no formato result[rows,columns]
+updateprogress : atualiza a janela de progresso 
+progress : cria a janela de progresso 
+pesquisalv : pesquisa valores dentro de uma lista com 2 colunas 
+pesquisalv3 : pesquisa valores dentro de uma lista com 3 colunas
+pesquisalv4 : pesquisa valores dentro de uma lista com 4 colunas
+getvaluesLV : extrai todos os valores de uma listview e retorna um array no formato values[rows,columns]
+objHasValue : verifica se um objeto tem determinado valor 
+deletefromarray : deleta determinado item de determinado array 
+savetofile : pega a imagem desenhada atualmente no pBitmap e salva para um arquivo opcionalmente mostrando o resultado
+newgdi : criar um pBitmap,graficos para serem usados como base para um novo desenha
+
+>>changepic : muda uma determinada foto 
+
+panel : funcao usada para desenhas paineis a partir de pBitmaps e Graficos ja carregados obs: esse funcao nao mostra o que foi desenho
+MatHasValue : verifica se um hash bidimensional tem determinado valor 
+
+
+
+

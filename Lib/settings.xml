@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<fonts>
+		<font background="0" bold="1" color="16777215" font="Tahoma" size="10" style="5"></font>
+		<font background="16711680" style="33"></font>
+		<font code="2069" color="16777215"></font>
+		<font color="11184810" style="1"></font>
+		<font color="65280" style="2"></font>
+		<font color="16711680" style="3"></font>
+		<font color="16744448" style="4"></font>
+		<font color="65535" style="7"></font>
+		<font color="8388736" style="9"></font>
+		<font color="8421568" style="10"></font>
+		<font color="255" style="11"></font>
+		<font color="16744576" style="12"></font>
+	</fonts>
+	<options>
+		<Auto_Indent>1</Auto_Indent>
+	</options>
+	<open>
+		<file>C:\Documents and Settings\marcell\Desktop\Dropbox\AutoHotkey\Promto\projects\Untitled(1).ahk</file>
+	</open>
+	<hotkeys>
+		<Theme>^M</Theme>
+		<Settings>F8</Settings>
+		<Undo>^Z</Undo>
+		<Copy>^C</Copy>
+		<Cut>^X</Cut>
+		<Paste>^V</Paste>
+		<Find>^F</Find>
+		<Quick_Find>!Q</Quick_Find>
+		<Insert_Function>!U</Insert_Function>
+		<Fix_Indent>!X</Fix_Indent>
+		<Move_Selected_Lines_Down>+^Down</Move_Selected_Lines_Down>
+		<Move_Selected_Lines_Up>+^Up</Move_Selected_Lines_Up>
+		<Duplicate_Line>F3</Duplicate_Line>
+		<Jump_to_Segment>!J</Jump_to_Segment>
+		<Jump_to_Script>!S</Jump_to_Script>
+		<Scintilla_Code_Lookup>F6</Scintilla_Code_Lookup>
+		<Show_Scintilla_Code_in_Line>F5</Show_Scintilla_Code_in_Line>
+		<Toggle_Comment_Line>^J</Toggle_Comment_Line>
+		<Create_Comment_Block>+F1</Create_Comment_Block>
+		<Character_Count>!+C</Character_Count>
+		<Edit_Replacements>!^I</Edit_Replacements>
+		<Remove_Spaces_From_Selected>!^R</Remove_Spaces_From_Selected>
+		<Google_Search_Selected>!G</Google_Search_Selected>
+		<New_Project>^N</New_Project>
+		<New_Segment>^G</New_Segment>
+		<Compile>!M</Compile>
+		<Upload>!^U</Upload>
+		<Check_For_New_Version>!^V</Check_For_New_Version>
+		<Open>^O</Open>
+		<Open_In_New_Window>!^O</Open_In_New_Window>
+		<Close>!^C</Close>
+		<Save>^S</Save>
+		<Open_Folder>^D</Open_Folder>
+		<Run>^R</Run>
+		<Full_Backup>^F1</Full_Backup>
+		<Clean_Position_Data>!P</Clean_Position_Data>
+		<Publish>!^P</Publish>
+		<Exit>!^X</Exit>
+		<Auto_Indent>^+A</Auto_Indent>
+		<Variables_Window>F4</Variables_Window>
+	</hotkeys>
+	<position max="0" number="">x-337 y189 w1580 h950</position>
+</settings>

@@ -1,4 +1,4 @@
-PromtoSQL{
+class PromtoSQL{
 	/*
 		Empresa
 	*/
@@ -6,17 +6,17 @@ PromtoSQL{
 		/*
 		 Adiciona a empresa 
 		*/
-		sql:=
-		(JOIN
-			"DELETE FROM " aba_table " WHERE Abas ='" aba_name
-			"' AND Mascara = '" aba_mascara "'"
-		) 
-		db.remove(table,)
-		db.remove(aba_table,
-		(JOIN
-			"Abas ='" aba_name
-			"' AND Mascara = '" aba_mascara "'" 
-		))
+		;sql:=
+		;(JOIN
+		;	"DELETE FROM " aba_table " WHERE Abas ='" aba_name
+		;	"' AND Mascara = '" aba_mascara "'"
+		;) 
+		;db.remove(table,)
+		;db.remove(aba_table,
+		;(JOIN
+		;	"Abas ='" aba_name
+		;	"' AND Mascara = '" aba_mascara "'" 
+		;))
 	}
 
 	remove_empresa(empresa_name, empresa_mascara){

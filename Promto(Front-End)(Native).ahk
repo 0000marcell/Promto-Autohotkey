@@ -3790,7 +3790,10 @@ LV_MoveRowfam(wname,lvname,moveup = true) {
    }
 }
 
+#include, lib\promto_sql.ahk
+#include, models\remover_item_ETF.ahk
 #include <promtolib>
 #include,lib\json_parser.ahk
 #include,<SQL_new>
 #include, views/inserir_ETF_view.ahk
+

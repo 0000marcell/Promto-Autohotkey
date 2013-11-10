@@ -1,32 +1,30 @@
-class View{
-	view1(){
-		Gui, Add,Listview,w400 h400,
-		Gui, Add, Button,xp y+5,Salvar 
-		Gui, Add, Button,x+5,Cancelar
-	}
+#include <DBA>
+#include lib\promto_sql_mariaDB.ahk
 
-	view2(){
-		Gui, Add,Listview,w400 h400,
-		Gui, Add, Button,xp y+5,Salvar 
-		Gui, Add, Button,x+5,Cancelar
-	}
-}
+db := new PromtoSQL(
+	(JOIN 
+		"MySQL",
+		"Server=localhost;Port=3306;Database=test;Uid=root;Pwd=Recovergun;"
+	))
 
-v := new View("salvar","cancelar","window1")
+db.Empresa.excluir("Maccomevap", "M")
 
-Gui,main:New
-Gui, Add, Button,xm gnew_tab,nova aba
-Gui, Add, tab2,x+5 vtab_control,
-Gui,Show,w800 h500,
-return 
 
-new_tab:
-guicontrol,,tab_control,Nova Aba 
-count +=1
-if(count = 1){
-	Gui,tab,1
-	v.view2()	
-}else{
-	Gui,tab,2
-	v.view1()
-}
+
+	;MsgBox, % "empresa_name: " empresa_name " empresa_mascara: " empresa_mascara
+	;	mariaDB.BeginTransaction()
+	;	{
+	;		MsgBox, % "begin transation"
+	;		sql := 
+	;		(JOIN 
+	;			" INSERT INTO empresas (Empresas,Mascara) " 
+	;			" VALUES ('" empresa_name "','" empresa_mascara "');"
+	;		)
+	;		MsgBox, % "gonna query `n" sql 
+	;		if(!mariaDB.Query(sql)){
+	;			MsgBox, % "erro na query"
+	;			Msg := "ErrorLevel: " . ErrorLevel . "`n" . SQLite_LastError() "`n`n" sQry
+	;		  FileAppend, %Msg%, sqliteTestQuery.log
+	;		  throw Exception("Query failed: " Msg)
+	;		}
+	;	}mariaDB.EndTransaction()

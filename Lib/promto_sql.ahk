@@ -36,10 +36,36 @@ class PromtoSQL{
 
 	}
 
-	remove_aba(tabela, aba_name, aba_mascara){
+	remove_aba(table, aba_name, aba_mascara){
 		/*
 			Remove o aba
 		*/
+
+		/*
+			Antes de remover e preciso ver se 
+			o valor na tabela existe.
+		*/
+		this.currentDB(
+			(JOIN 
+				" DELETE FROM " table 
+				" (Abas, Mascara) "
+				" SELECT ('" aba_name "','" aba_mascara "')"
+				" WHERE EXIST (SELECT 1 FROM" 
+			))
+		;if(this.currentDB.exist(
+		;	(JOIN 
+		;		"Abas,Mascara",
+		;		"Abas = '" aba_name,
+		;		table)){
+		;	MsgBox, % a tabela existia
+		;}
+		;"create table if not exists " tablename "(Campos,PRIMARY KEY(Campos ASC))"
+		;this.currentDB.Query(
+		;	(JOIN 
+		;		"DELETE FROM " table 
+		;		"IF EXISTS WHERE Abas = '" aba_name "'"
+		;		" Mascara = '" aba_mascara "'"
+		;	))
 	}
 
 	/*

@@ -1,6 +1,6 @@
 {
 	"db_type":"SQLite",
-	"db_location":"P:\DEP\Promto\DB\Promto.sqlite",
+	"db_location":"..\..\DB\Promto.sqlite",
 
 	"tab_color":"000000",
 	"tab_text_size":"10",

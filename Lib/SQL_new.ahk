@@ -26,7 +26,7 @@
 
 */
 
-class SQL extends PromtoSQL
+class SQL
 {
 	__New(databaseType,connectionString)
 	{
@@ -228,7 +228,6 @@ class SQL extends PromtoSQL
 
 	exist(field,values,table)
 	{
-		
 		table := this.currentDB.Query("SELECT " . field . " FROM " . table . " WHERE " . values)
 		columnCount := table.Columns.Count()
 		value:=""

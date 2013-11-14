@@ -7,9 +7,10 @@ db := new PromtoSQL(
 		"Server=localhost;Port=3306;Database=test;Uid=root;Pwd=Recovergun;"
 	))
 
-db.Empresa.excluir("Maccomevap", "M")
-
-
+;db.Tipo.incluir("Materia prima", "MP", "T")
+;db.Modelo.incluir("TL.L.EXE.010", "010", "TMPCH")
+db.Modelo.excluir("TL.L.EXE.010", "010", "TMPCH")
+;db.Familia.excluir("Chapa", "CH", "TMP")
 
 	;MsgBox, % "empresa_name: " empresa_name " empresa_mascara: " empresa_mascara
 	;	mariaDB.BeginTransaction()

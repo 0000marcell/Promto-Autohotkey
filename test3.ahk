@@ -1,15 +1,4 @@
-class Test{
-    class Test2{
-        name(){
-            MsgBox, % "name in test 2"
-        }
-    }
-
-    class Test3{
-        name(){
-            MsgBox, % "name in test 3"
-        }
-    }
+tables := ["Campos", "oc", "odr", "odc", "odi", "Codigo"]
+for,each, value in tables{
+    MsgBox, % value
 }
-
-

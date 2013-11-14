@@ -55,7 +55,7 @@ GLOBAL_TVSTRING := ""
 ETF_TVSTRING := ""
 
 hashmask:={},field:=["Aba","Familia","Modelo"]
-;gettable("empresa",0,"","")
+gettable("empresa",0,"","")
 _reload_gettable := True
 bannerargs := {}
 bannerargs["color1"] := GLOBAL_C1,bannerargs["color2"] := GLOBAL_C2,bannerargs["color3"] := GLOBAL_C3,bannerargs["color4"] := GLOBAL_C4 
@@ -380,10 +380,10 @@ return
 	Listpesqcod:=[]
 	table:=db.query("SELECT Codigos,DC,DR,DI FROM " codtable ";")
 	while(!table.EOF){  
-        Listpesqcod[A_Index,1]:=table["Codigos"] 
-        Listpesqcod[A_Index,2]:=table["DC"]
-        Listpesqcod[A_Index,3]:=table["DR"]
-        Listpesqcod[A_Index,4]:=table["DI"]
+        Listpesqcod[A_Index,1] := table["Codigos"] 
+        Listpesqcod[A_Index,2] := table["DC"]
+        Listpesqcod[A_Index,3] := table["DR"]
+        Listpesqcod[A_Index,4] := table["DI"]
         table.MoveNext()
 	}
 	table.close()
@@ -487,9 +487,6 @@ return
 			}
 			MsgBox, % itemscount " item(s) foram alterados!"
 			Return
-
-
-
 	}
 
 		excluiritemestrut:

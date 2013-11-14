@@ -2,14 +2,14 @@ class Campo{
 	/*
 		Incluir um novo campo
 	*/
-	incluir_campo(){
+	incluir(){
 
 	}
 
 	/*
 		Excluir campo
 	*/
-	excluir_campo(){
+	excluir(){
 
 	}
 }

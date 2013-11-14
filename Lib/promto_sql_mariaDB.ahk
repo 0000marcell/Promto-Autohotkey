@@ -52,7 +52,7 @@ class PromtoSQL{
 					"	CREATE TABLE IF NOT EXISTS reltable "
 					" (tipo VARCHAR(250), "
 					" tabela1 VARCHAR(250), "
-					" tabela2 VARCHAR(250)) "
+					" tabela2 VARCHAR(250)) "				
 				))
 		}catch e
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela reltable `n" ExceptionDetail(e)

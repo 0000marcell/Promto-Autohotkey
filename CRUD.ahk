@@ -34,3 +34,16 @@ try
 		; // we ignore the duplicate key exception.
 	}
 
+	/*
+		Read from table
+	*/
+
+	table := db.Query("Select * from Test")
+
+	columnCount := table.Columns.Count()
+	for each, row in table.Rows
+	{
+		Loop, % columnCount
+			msgbox % row[A_index]
+	}
+

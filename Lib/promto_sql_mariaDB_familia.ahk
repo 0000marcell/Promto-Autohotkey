@@ -2,30 +2,55 @@ class Familia{
 	/*
 		Incluir familia
 	*/
-	incluir(familia_nome = "", familia_mascara = "", prefixo = ""){
+	incluir(familia_nome = "", familia_mascara = "", prefixo = "", tipo_nome = ""){
 		Global mariaDB
 
+		MsgBox, % "familia_nome: " familia_nome " `n familia_mascara: " familia_mascara " `n prefixo: " prefixo " `n tipo_nome: " tipo_nome 
 		/*	
 			Verifica se o prefixo a inserir o item 
 			esta em branco
 		*/
 		if(prefixo = ""){
 			MsgBox, % "O prefixo nao pode estar em branco nas familias!"
-			return
+			return 0
 		}
 
+		/*
+			Verifica se o nome ou a mascara da empresa esta em branco
+		*/
 		if(familia_nome = "" || familia_mascara = ""){
 			MsgBox, % "o nome e a mascara da familia nao podem estar em brancos!"
-			return			
+			return 0			
 		}
 
+		/*
+			Verifica se o nome da empresa esta em branco 
+		*/
+		if(tipo_nome = ""){
+			MsgBox, % "O nome do tipo nao pode estar em branco!"
+			return 0
+		}
+
+		/*
+			Pega a mascara da empresa
+		*/
+		StringLeft, empresa_mascara, prefixo, 1
+
+
+		/*
+			Pega a referencia da tabela de items 
+			linkados
+		*/
+		familia_table := this.get_parent_reference(empresa_mascara, tipo_nome)
+
+		MsgBox, % "familia_table: " familia_table
 		/*
 			Verifica se a mascara a ser inserida 
 			ja existe
 		*/
-		if(this.exists(familia_nome, familia_mascara, prefixo)){
+		if(this.exists(familia_nome, familia_mascara, familia_table)){
 			MsgBox,16,Erro, % " A mascara a ser inserida ja existe!" 
-			return 
+			return 0
 		}
 
 		/*
@@ -34,16 +59,13 @@ class Familia{
 		record := {}
 		record.Familias := familia_nome
 		record.Mascara := familia_mascara
-		mariaDB.Insert(record, prefixo "Familia")
+		mariaDB.Insert(record, familia_table)
 
 		/*
 			Cria a tabela de Familias e insere a
 			referencia na reltable
 		*/
 		
-		/*
-		 Pega o prefixo das tabelas da empresa
-		*/
 
 		try{
 			mariaDB.Query(
@@ -62,6 +84,7 @@ class Familia{
 		record.tabela2 := prefixo familia_mascara "Modelo"
 		mariaDB.Insert(record, "reltable")
 		MsgBox, % "A Familia foi inserida!"
+		return 1
 	}
 
 	/*
@@ -142,12 +165,12 @@ class Familia{
 		Verifica se determinado 
 		Familia ja existe na tabela
 	*/
-	exists(familia_nome, familia_mascara, prefixo){
+	exists(familia_nome, familia_mascara, table){
 		Global mariaDB
 
 		table := mariaDB.Query(
 			(JOIN 
-				" SELECT Familias FROM " prefixo "Familia"
+				" SELECT Familias FROM " table
 				" WHERE Mascara LIKE '" familia_mascara "'"
 				" AND Familias LIKE '" familia_nome "'"
 			))
@@ -156,6 +179,24 @@ class Familia{
 		}else{
 			return False
 		}
+	}
+
+	/*
+	 Pega a referencia da tabela onde 
+	 as familias estao sendo incluidas
+	*/
+	get_parent_reference(empresa_mascara, tipo_nome){
+		global mariaDB
+
+		rs := mariaDB.OpenRecordSet(
+			(JOIN 
+				" SELECT tabela2 FROM reltable "
+				" WHERE tipo like 'Familia' "
+				" AND tabela1 like '" empresa_mascara tipo_nome "'"
+			))
+		reference_table := rs.tabela2
+		rs.close()
+		return reference_table
 	}
 
 	/*

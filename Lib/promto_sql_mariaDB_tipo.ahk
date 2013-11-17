@@ -2,7 +2,7 @@ class Tipo{
 	/*
 		Incluir um novo tipo
 	*/
-	incluir(tipo_nome = "", tipo_mascara = "", prefixo = ""){
+	incluir(tipo_nome = "", tipo_mascara = "", prefixo = "", empresa_nome = ""){
 		Global mariaDB
 
 		/*
@@ -10,7 +10,7 @@ class Tipo{
 		*/
 		if(tipo_nome = ""){
 			MsgBox, % "O nome do tipo nao pode estar em branco"
-			return
+			return 0
 		}
 
 		/*
@@ -19,7 +19,15 @@ class Tipo{
 		*/
 		if(prefixo = ""){
 			MsgBox, % "Os prefixos que determinam o parente deste item nao podem estar em branco!"
-			return
+			return 0
+		}
+
+		/*
+			Verifica se o nome da empresa esta em branco
+		*/
+		if(empresa_nome = ""){
+			MsgBox, % "O nome da empresa nao pode estar em branco!"
+			return 0
 		}
 
 		/*
@@ -30,16 +38,23 @@ class Tipo{
 			MsgBox, 4,, % "Nao e recomendavel deixar a mascara em branco! `n deixar assim mesmo?"
 			IfMsgBox No
 			{
-				return
+				return 0
 			}
 		}
+
+		/*
+			Pega a referencia da tabela de items 
+			linkados
+		*/
+		tipo_table := this.get_parent_reference(empresa_nome)
+
 		/*
 			Verifica se a mascara a ser inserida 
 			ja existe
 		*/
-		if(this.exists(tipo_mascara, prefixo)){
+		if(this.exists(tipo_nome, tipo_mascara, tipo_table)){
 			MsgBox,16,Erro, % " A mascara a ser inserida ja existe!" 
-			return 
+			return 0
 		}
 
 		/*
@@ -48,7 +63,7 @@ class Tipo{
 		record := {}
 		record.Abas := tipo_nome
 		record.Mascara := tipo_mascara
-		mariaDB.Insert(record, prefixo "Aba")
+		mariaDB.Insert(record, tipo_table)
 
 		/*
 			Cria a tabela de Familias e insere a
@@ -75,7 +90,8 @@ class Tipo{
 		record.tabela1 := prefixo tipo_nome
 		record.tabela2 := prefixo tipo_mascara "Familia"
 		mariaDB.Insert(record, "reltable")
-		MsgBox, % "O tipo foi inserido!"
+		MsgBox,64,Sucesso!, % "O tipo foi inserido!"
+		Return 1
 	}
 
 	/*
@@ -156,12 +172,13 @@ class Tipo{
 		Verifica se determinado 
 		tipo ja existe na tabela
 	*/
-	exists(tipo_nome, tipo_mascara, prefixo){
+	exists(tipo_nome, tipo_mascara, table){
 		Global mariaDB
 
+		MsgBox, % "exists tipo_nome: " tipo_nome "`n tipo_mascara: " tipo_mascara " prefixo: " prefixo
 		table := mariaDB.Query(
 			(JOIN 
-				" SELECT Abas FROM " prefixo "Aba"
+				" SELECT Abas FROM " table
 				" WHERE Mascara LIKE '" tipo_mascara "'"
 				" AND Abas LIKE '" tipo_nome "'"
 			))
@@ -172,10 +189,30 @@ class Tipo{
 		}
 	}
 
+	/*
+		Pega a tabela de referencia do pai 
+		ao qual o item atual sera inserido
+	*/
+	get_parent_reference(empresa_nome){
+		global mariaDB
+
+		rs := mariaDB.OpenRecordSet(
+			(JOIN 
+				" SELECT tabela2 FROM reltable "
+				" WHERE tipo like 'Aba' "
+				" AND tabela1 like '" empresa_nome "'"
+			))
+		reference_table := rs.tabela2
+		rs.close()
+		return reference_table
+	}
+
+	/*
+		Pega a tabela de referencia da familia
+	*/
 	get_reference(prefixo, tipo_nome){
 		Global mariaDB
 
-		MsgBox, % "prefixo: " prefixo " tipo_nome: " tipo_nome
 		rs := mariaDB.OpenRecordSet(
 			(JOIN 
 				" SELECT tabela2 FROM reltable "

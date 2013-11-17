@@ -1,10 +1,9 @@
-inserir_ETF_view(window, treeview, table, current_id, columns){
+inserir_ETF_view(window, treeview, current_id, columns){
 	Global db, edit_name_ETF, edit_mask_ETF, SMALL_FONT, GLOBAL_COLOR, ETF_hashmask
-	Static s_window, s_treeview, s_table, s_current_id, s_type
+	Static s_window, s_treeview, s_current_id, s_type
 
 	s_window := window
 	s_treeview := treeview
-	s_table := table
 	s_current_id := current_id
 	s_type := columns
 
@@ -42,66 +41,81 @@ inserir_ETF_view(window, treeview, table, current_id, columns){
 	record := {}
 
 	/*
+		Se for insercao de empresa
+	*/
+	if(s_type = "Empresas"){
+		/*
+			Verifica se existe correspondencia da mascara 
+			para o determinado nome
+			caso exista substitui pelo que ja existe
+		*/
+		edit_mask_ETF := check_if_ETF_exist(edit_name_ETF, edit_mask_ETF)
+		if(db.Empresa.incluir(edit_name_ETF, edit_mask_ETF)){
+			ETF_hashmask[edit_name_ETF] := edit_mask_ETF
+		}else{
+			MsgBox,16,Erro, % " Algo deu errado ao tentar inserir a empresa!" 
+			return
+		}
+	}
+
+	/*
 		Se for insercao de Aba
 	*/
 	if(s_type = "Abas"){
-		record.Abas := edit_name_ETF 
-		record.Mascara := edit_mask_ETF
-		db.insert(record, s_table)
-		ETF_hashmask[edit_name_ETF] := edit_mask_ETF
-		
 		/*
-			cria a tabela do item que acabou de ser 
-			inserido e insere a referencia no reltable
+			Pega o nome e a mascara 
+			da empresa que detem esse tipo
 		*/
 		Gui, %s_window%:Default
 		Gui, Treeview, %s_treeview%
-		TV_GetText(parent_name, s_current_id)  
-		empresa_mascara := ETF_hashmask[parent_name]
-		db.query("create table if not exists " empresa_mascara edit_mask_ETF "Familia (Familias, Mascara,PRIMARY KEY(Mascara ASC))")
-		record_rel := {}	
-		record_rel.tipo := "Familia"
-		record_rel.tabela1 := empresa_mascara edit_name_ETF
-		record_rel.tabela2 := empresa_mascara edit_mask_ETF "Familia"
-		db.insert(record_rel, "reltable")
+		TV_GetText(empresa_nome, s_current_id)  
+		/*
+			Verifica se existe correspondencia da mascara 
+			para o determinado nome
+			caso exista substitui pelo que ja existe
+		*/
+		edit_mask_ETF := check_if_ETF_exist(edit_name_ETF, edit_mask_ETF)
+		if(db.Tipo.incluir(edit_name_ETF, edit_mask_ETF, ETF_hashmask[empresa_nome], empresa_nome)){
+			ETF_hashmask[edit_name_ETF] := edit_mask_ETF
+		}else{
+			MsgBox,16,Erro, % " Algo deu errado ao tentar inserir a aba!" 
+			return
+		}
+		
 	}
 
 	/*
 		Se for insercao de Familia
 	*/
 	if(s_type = "Familias"){
-		record.Familias := edit_name_ETF 
-		record.Mascara := edit_mask_ETF
-		return_insert_value := db.insert(record, s_table)
-		ETF_hashmask[edit_name_ETF] := edit_mask_ETF
-		
 		/*
-			cria a tabela do item que acabou de ser 
-			inserido e insere a referencia no reltable
+			Para inserir uma familia e preciso
+			alem do nome e da mascara e preciso
+			do prefixo e do nome do tipo
+		*/
+		/*
+			Pega o nome do tipo 
+			a mascara do tipo e a mascara da empresa 
 		*/
 		Gui, %s_window%:Default
 		Gui, Treeview, %s_treeview%
-		
+		TV_GetText(tipo_nome, s_current_id)
+		parent_id := TV_GetParent(s_current_id)
+		TV_GetText(empresa_nome, parent_id)
+		fam_prefix := ETF_hashmask[empresa_nome] ETF_hashmask[tipo_nome]
 		/*
-			pega a mascara da aba 
+			Verifica se existe correspondencia da mascara 
+			para o determinado nome
+			caso exista substitui pelo que ja existe
 		*/
-		TV_GetText(aba_name, s_current_id)
-		aba_mascara := ETF_hashmask[aba_name]
-		
-		/*
-			pega a mascara da empresa
-		*/
-		empresa_id := TV_GetParent(s_current_id)
-		TV_GetText(empresa_name, empresa_id)
-		empresa_mascara := ETF_hashmask[empresa_name] 
-
-		db.query("create table if not exists " empresa_mascara aba_mascara edit_mask_ETF "Modelo (Modelos, Mascara,PRIMARY KEY(Mascara ASC))")
-		record_rel := {}
-		record_rel.tipo := "Modelo"
-		record_rel.tabela1 := empresa_mascara aba_mascara edit_name_ETF
-		record_rel.tabela2 := empresa_mascara aba_mascara edit_mask_ETF "Modelo"
-		return_insert_value := db.insert(record_rel, "reltable")
-		
+		edit_mask_ETF := check_if_ETF_exist(edit_name_ETF, edit_mask_ETF) 
+	
+		if(db.Familia.incluir(edit_name_ETF, edit_mask_ETF, fam_prefix, tipo_nome)){
+			ETF_hashmask[edit_name_ETF] := edit_mask_ETF
+		}else{
+			MsgBox,16,Erro, % " Algo deu errado ao tentar inserir a Familia!" 
+			return
+		}
 	}
 	Gui, %s_window%:Default
 	Gui, Treeview, %s_treeview% 

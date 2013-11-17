@@ -3,7 +3,6 @@ class PromtoSQL{
 		Conecta no DB
 	*/
 	__New(databaseType,connectionString){
-
 		/*
 		 Tenta Conectar
 		*/
@@ -83,6 +82,77 @@ class PromtoSQL{
 		}catch e
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela connections `n" ExceptionDetail(e)
 
+	}
+
+	/*
+		Funcao que carrega a string da
+		treeview da janela principal
+	*/
+	get_treeview(table,x,nivel,masc){
+		Global mariaDB,ETF_TVSTRING, field, ETF_hashmask
+
+		x+=1, nivel.="`t"
+		For each, value in list := this.get_values("*", table){
+			if(field[x] = ""){
+				Break
+			}
+			ETF_TVSTRING .= "`n" . nivel . list[A_Index, 1]		
+			ETF_hashmask[list[A_Index, 1]] := list[A_Index, 2] 	
+			new_table := this.get_reference(field[x], masc . list[A_Index,1])
+			if(new_table)
+				this.get_treeview(new_table, x, nivel, masc . list[A_Index, 2])
+		}
+		return
+	}
+
+	/*
+	 Funcao que retorna um array de valores 
+	 da query no formato value[r,c]
+	*/
+	get_values(field,table){
+		Global mariaDB
+
+		SQL:="SELECT " . field . " FROM " . table
+		try {
+			mariaDB.resultSet := mariaDB.OpenRecordSet(SQL)	
+		} catch e
+			MsgBox,16, Error, % "Erro ao ler a tabela " table ".`n`n" ExceptionDetail(e) ;state := "!# " e.What " " e.Message
+		
+		columns := mariaDB.resultSet.getColumnNames()
+		columnCount := columns.Count()
+		r := 1
+		c := 1
+		values := object()
+		while(!mariaDB.resultSet.EOF){	
+			Loop, % columnCount{
+				if(mariaDB.resultSet[A_Index] != ""){
+					values[r,c] := mariaDB.resultSet[A_Index]	
+					c += 1
+				}
+			}
+			r += 1
+			c := 1
+			mariaDB.resultSet.MoveNext()
+		}
+		mariaDB.resultSet.close()
+		return values 
+	}
+
+	/*
+		Get reference global
+	*/
+	get_reference(tipo, tabela1){
+		Global mariaDB
+
+		rs := mariaDB.OpenRecordSet(
+			(JOIN 
+				" SELECT tabela2 FROM reltable "
+				" WHERE tipo like '" tipo "' "
+				" AND tabela1 like '" tabela1 "'"
+			))
+		reference_table := rs.tabela2
+		rs.close()
+		return reference_table
 	}
 	#include lib\promto_sql_mariadb_empresa.ahk
 	#include lib\promto_sql_mariadb_tipo.ahk

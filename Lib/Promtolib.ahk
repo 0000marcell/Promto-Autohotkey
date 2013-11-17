@@ -409,6 +409,19 @@ getreferencetable(tipo,table){
 }
 
 /*
+	Verifica se ja existe conexao de um 
+	determinado nome com uma mascara
+*/
+check_if_ETF_exist(nome, mascara_antiga){
+	mascara := ETF_hashmask[nome]
+	if(mascara != ""){
+		return mascara
+	}else{
+		return mascara_antiga
+	}
+}
+
+/*
 	funcao que busca o nivel da tv 
 */
 get_tv_level(window, tv){
@@ -1479,10 +1492,14 @@ getmascara(name,table,field){
 	Carrega a string do tv 
 	principal
 */
-load_ETF(){
+load_ETF(db){
 		Global 
 		ETF_hashmask := {}
-		get_tree("empresa",0,"","")
+		/*
+			Essa funcao ira carregar
+			a string ETF_TVSTRING
+		*/
+		db.get_treeview("empresas",0,"","")
 }
 
 /*

@@ -52,6 +52,7 @@ class Empresa{
 		record.tabela2 := empresa_mascara "Aba"
 		mariaDB.Insert(record, "reltable")
 		MsgBox,64,Empresa Criada,% " valor inserido"
+		return 1
 	}
 
 	/*

@@ -15,8 +15,6 @@
 /*
 	Parametros de configuracao 
 */
-
-
 $$ := JSON_load(A_WorkingDir "\settings.json")
 jsonString := JSON_to($$)
 settings := JSON_from(jsonString)
@@ -33,32 +31,38 @@ if(BUTTON_SIZE = "small")
 GLOBAL_COLOR := settings.global_color
 BANNER_COLOR := settings.banner_color
 TextOptions := "x0p y10 s" settings.banner_text_size " Center c" settings.banner_text_color " r4 Bold"
-
 if(settings.banner_size = "small")
 	banner_h := 20
 if(settings.banner_size = "medium")
 	banner_h := 50
 if(settings.banner_size = "large")
 	banner_h := 100 
-
 Font := settings.font
-
+/*
+	Iniciando GDI
+*/
 If !pToken := Gdip_Startup()
 {
     MsgBox, 48, gdiplus error!, Gdiplus failed to start. Please ensure you have gdiplus on your system
     ExitApp
 }
-
-db := new SQL(db_type,db_location)
-
+/*
+	Conectando no banco
+*/
+db := new PromtoSQL(
+	(JOIN 
+		db_type,
+		db_location
+	))
+/*
+	Resetando as 
+	duas strings que quardao as 
+	treeviews.
+*/
 GLOBAL_TVSTRING := ""
 ETF_TVSTRING := ""
-
 hashmask:={},field:=["Aba","Familia","Modelo"]
-gettable("empresa",0,"","")
 _reload_gettable := True
-bannerargs := {}
-bannerargs["color1"] := GLOBAL_C1,bannerargs["color2"] := GLOBAL_C2,bannerargs["color3"] := GLOBAL_C3,bannerargs["color4"] := GLOBAL_C4 
 
 E:
 /*
@@ -95,7 +99,7 @@ Return
 	Gui, Add, Progress, xm y+5 vprogress  -Smooth 0x8 w300 h18
 	Gui, Show, AutoSize, Carregando...
   SetTimer, undetermine_progress_action,45
-  load_ETF()
+  load_ETF(db)
   Gui, initialize:destroy
   Gosub, M
 	Return 
@@ -141,22 +145,28 @@ Gui, Color, %GLOBAL_COLOR%
 /*
 	Familias
 */
-Gui, Add, Groupbox, xm w200 h40,Pesquisa
-Gui, Add, Edit, xp+5 yp+15 w190,
+Gui, Add, Groupbox, xm w230 h40,Pesquisa
+Gui, Add, Edit, xp+5 yp+15 w220,
 
 /*
 	Empresas/Tipos/Familias
 */
-Gui, Add, Groupbox, xm y+10 w200 h530,Empresas/Tipos/Familias
-Gui, Add, TreeView, xp+5 yp+15 w190 h500 vmain_tv gmain_tv
+Gui, Add, Groupbox, xm y+10 w230 h530,Empresas/Tipos/Familias
+Gui, Add, TreeView, xp+5 yp+15 w220 h500 vmain_tv gmain_tv
 load_main_tv()
+
+/*
+	Opcoes
+*/
+Gui, Add, Groupbox, xm y+20 w230 h60, Opcoes
+Gui, Add, Button, xp+60 yp+15 w100 h30 ginsert_empresa, Criar Empresa 
 
 /*
 	Modelos 
 */
-Gui, Add, Groupbox, xm+210 ym w220 h290, Modelos 
+Gui, Add, Groupbox, xm+240 ym w220 h290, Modelos 
 Gui, Add, Listview, xp+5 yp+15 w200 h270 section  vMODlv gMODlv altsubmit,
-Gui, Add, Groupbox, xm+210 y+10 w220 h60, Numero de items:
+Gui, Add, Groupbox, xm+240 y+10 w220 h60, Numero de items:
 Gui, Font, s15
 Gui, Add,	Text, xp+75 yp+15 w100 vnumberofitems cblue,
 Gui, Font, s8
@@ -164,7 +174,7 @@ Gui, Font, s8
 /*
 	Opcoes
 */
-Gui, Add, Groupbox, xm+210 y+20 w220 h300, Opcoes 
+Gui, Add, Groupbox, xm+240 y+20 w220 h300, Opcoes 
 Gui, Add, Button, xp+5 yp+15 w100 h30 gMAM, Modelos
 glabels:=["MAB","MAC","ordemprefix","MAOC","MAODC","MAODR","MAODI"]
 for,each,value in ["Bloqueados","Campos","Ordem Prefix","Ordem Codigo","Ordem Desc Completa","Ordem Desc Resumida","Ordem Desc Ingles"]{
@@ -181,16 +191,16 @@ for,each,value in ["Gerar Estruturas","Linkar","Add db Externo","Estrutura","Lis
 /*
 	Pesquisa
 */
-Gui, Add, Groupbox, x450 ym w860 h50,Pesquisa
+Gui, Add, Groupbox, x480 ym w815 h50,Pesquisa
 Gui, Font,s7
-Gui, Add, Combobox, xp+5 yp+15 w715 vcombocodes gcombocodes,
+Gui, Add, Combobox, xp+5 yp+15 w695 vcombocodes gcombocodes,
 Gui, Font, s8
 Gui, Add, Button, x+5 gfotoindividual w100, Foto
 
 /*
 	Informacao 
 */
-Gui, Add, Groupbox, x450 y+20 w860 h300, Informacao:
+Gui, Add, Groupbox, x480 y+20 w815 h300, Informacao:
 Gui, Add, Picture, xp+5 yp+15 vptcode,
 _loading := 1
 Gui, Show,W1300 h700 , %FamiliaName%
@@ -199,6 +209,10 @@ LV_ModifyCol(2,300)
 LV_Modify(2, "+Select")
 _loading := 0
 return	
+
+insert_empresa:
+inserir_ETF_view("M", "main_tv", "", "Empresas")
+return
 
 MGuiContextMenu:
 if A_GuiControl = main_tv
@@ -210,12 +224,11 @@ if A_GuiControl = main_tv
 	*/
 	tv_level_menu := get_tv_level("M", "main_tv") 
 	
-	if(tv_level_menu = 3){
-		Menu, main_tv_menu, Add, Remover, remover_item	
-	}Else{
-		Menu, main_tv_menu, Add, Adicionar, adicionar_item
-		Menu, main_tv_menu, Add, Remover, remover_item	
-	}
+	Menu, main_tv_menu, Add, Adicionar, adicionar_item
+	Menu, main_tv_menu, Add, Remover, remover_item	
+
+	Menu, remover_menu, Add, Remover, remover_item
+
 
 	/* 
 		Pega a tabela onde serao inseridos 
@@ -230,7 +243,6 @@ if A_GuiControl = main_tv
 	*/
 	if(tv_level_menu = 1){
 		current_columns := "Abas"
-		table_ETF := getreferencetable("Aba", current_selected_name)
 	}
 
 	/*
@@ -239,17 +251,26 @@ if A_GuiControl = main_tv
 	*/
 	if(tv_level_menu = 2){
 		current_columns := "Familias"
-		parent_id := TV_GetParent(A_EventInfo)
-		TV_GetText(parent_name, parent_id)
-		empresa_mascara := ETF_hashmask[parent_name]
-		table_ETF := getreferencetable("Familia", empresa_mascara current_selected_name)
+		;parent_id := TV_GetParent(A_EventInfo)
+		;TV_GetText(parent_name, parent_id)
+		;empresa_mascara := ETF_hashmask[parent_name]
+		;table_ETF := getreferencetable("Familia", empresa_mascara current_selected_name)
 	}
-	Menu, main_tv_menu, Show, x%A_GuiX% y%A_GuiY%
+
+	/*
+		Case esteja no nivel das familias nao existe opcao de incluir
+	*/
+	if(tv_level_menu = 3){
+		Menu, remover_menu, Show, x%A_GuiX% y%A_GuiY%	
+	}Else{
+		Menu, main_tv_menu, Show, x%A_GuiX% y%A_GuiY%	
+	}
+	
 }
 return
 
 	adicionar_item:
-	inserir_ETF_view("M", "main_tv", table_ETF, current_id, current_columns)
+	inserir_ETF_view("M", "main_tv", current_id, current_columns)
 	return 
 
 	remover_item:
@@ -264,6 +285,18 @@ return
   */
   tv_level := get_tv_level("M", "main_tv")
   if(tv_level = 3){
+  	/*
+  		Se estiver no nivel das 
+  		familias ira buscar a tabela de modelos
+  		e carrega-la na listview ao lado. 
+  	*/
+
+  	tipo: Modelo | tabela1: me mt nf | me mt mf Modelo
+  	/*
+  		Pega a tabela de modelos
+  	*/
+  	prefixo := empresa_mascara tipo_mascara
+  	model_table := get_model_table(prefixo, mascara_familia)
   	mask := get_promto_mask()
   	id := TV_GetSelection()
   	TV_GetText(family, id)	
@@ -3787,7 +3820,7 @@ LV_MoveRowfam(wname,lvname,moveup = true) {
    }
 }
 
-#include, lib\promto_sql.ahk
+#include, lib\promto_sql_mariaDB.ahk
 #include, models\remover_item_ETF.ahk
 #include <promtolib>
 #include,lib\json_parser.ahk

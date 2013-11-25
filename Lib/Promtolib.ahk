@@ -173,6 +173,7 @@ get_tree(table,x,nivel,masc){
 	}
 	return
 }
+
 /*
 	funcao que pega o prefix da 
 	tabela
@@ -201,8 +202,73 @@ get_promto_mask(){
 		if(A_Index < newarray.maxindex())
 			mask .= value
 	} 
-		
 	return mask
+}
+
+/*
+	Funcao que pega valores 
+	referentes a treeview da janela principal
+*/
+get_tv_info(type){
+	Global ETF_hashmask
+	tv_level := get_tv_level("M", "main_tv")
+	if(tv_level = ""){
+		MsgBox,16,Erro, % "Nao existia nenhum item selecionado na treeview"
+	}
+	if(type = "Familia" && tv_level != 3){
+		MsgBox,16,Erro, % "a selecao nao esta em nivel suficiente para retornar valores de familia"
+	}
+	if(type = "Tipo" && tv_level < 2){
+		MsgBox,16,Erro, % "a selecao nao esta em nivel suficiente para retornar valores de tipo"
+	}
+
+	return_values := []
+	Gui, M:Default
+	Gui, Treeview, main_tv
+	id := TV_GetSelection()
+	if(type = "Familia"){
+		TV_GetText(nome, id)
+		return_values.nome := nome
+		return_values.mascara := ETF_hashmask[nome]
+	}
+
+	if(type = "Tipo"){
+		if(tv_level = 3){
+			parent_id := TV_GetParent(id)
+			TV_GetText(nome, parent_id)
+			return_values.nome := nome
+			return_values.mascara := ETF_hashmask[nome]
+		}
+		if(tv_level = 2){
+			TV_GetText(nome, id)
+			return_values.nome := nome
+			return_values.mascara := ETF_hashmask[nome]	
+		}
+	}
+
+	if(type = "Empresa"){
+		if(tv_level = 3){
+			parent_id := TV_GetParent(id)
+			super_parent_id := TV_GetParent(parent_id)
+			TV_GetText(nome, super_parent_id)
+			return_values.nome := nome
+			return_values.mascara := ETF_hashmask[nome]	
+		}
+
+		if(tv_level = 2){
+			parent_id := TV_GetParent(id)
+			TV_GetText(nome, super_parent_id)
+			return_values.nome := nome
+			return_values.mascara := ETF_hashmask[nome]
+		}
+
+		if(tv_level = 1){
+			TV_GetText(nome, id)
+			return_values.nome := nome
+			return_values.mascara := ETF_hashmask[nome]
+		}
+	}
+	return return_values
 }
 	
 /*

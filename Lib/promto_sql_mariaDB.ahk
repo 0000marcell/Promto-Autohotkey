@@ -8,7 +8,7 @@ class PromtoSQL{
 		*/
 		try {
 			Global mariaDB := DBA.DataBaseFactory.OpenDataBase(databaseType, connectionString)
-			MsgBox, % " a conexao foi estabelecida!"
+			;MsgBox, % " a conexao foi estabelecida!"
 		} catch e {
 			MsgBox,16, Error, % "A conexao nao foi estabelecida. Verifique os parametros da conexao!`n`n" ExceptionDetail(e)
 		}
@@ -136,6 +136,41 @@ class PromtoSQL{
 		}
 		mariaDB.resultSet.close()
 		return values 
+	}
+
+	/*
+		Carrega a lista de modelos em determinada 
+		Listview 
+	*/
+	load_lv(window_name, lv_name, table){
+		Global mariaDB
+
+		if(window_name = "" || lv_name = ""){
+			MsgBox, % "O handle da janela e o nome do listview sao obrigatorios!!!"
+			return  
+		}
+		rs := mariaDB.OpenRecordSet("SELECT * FROM " table)
+		Gui,%window_name%:default 
+		Gui,listview,%lv_name%
+		LV_Delete()
+		GuiControl,-ReDraw,%lv_name%
+		Loop, % LV_GetCount("Column")
+	   		;LV_DeleteCol(1)
+		columns := rs.getColumnNames()
+		columnCount := columns.Count()
+		for each, value in columns{
+			;LV_InsertCol(A_Index, "", value)
+		}
+		while(!rs.EOF){	
+			rowNum := LV_Add("","")
+			Loop, % columnCount{
+				LV_Modify(rowNum, "Col" . A_index, rs[A_index])
+			}
+			rs.MoveNext()
+		}
+		;LV_ModifyCol(1),LV_ModifyCol(2),LV_ModifyCol(3),LV_ModifyCol(4),LV_ModifyCol(5)
+		GuiControl,+ReDraw,%lv_name%
+		rs.close() 
 	}
 
 	/*

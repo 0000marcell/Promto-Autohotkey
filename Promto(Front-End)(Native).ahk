@@ -38,6 +38,7 @@ if(settings.banner_size = "medium")
 if(settings.banner_size = "large")
 	banner_h := 100 
 Font := settings.font
+
 /*
 	Iniciando GDI
 */
@@ -46,6 +47,7 @@ If !pToken := Gdip_Startup()
     MsgBox, 48, gdiplus error!, Gdiplus failed to start. Please ensure you have gdiplus on your system
     ExitApp
 }
+
 /*
 	Conectando no banco
 */
@@ -132,16 +134,6 @@ Gui, M:New
 Gui, Font, s%SMALL_FONT%, %FONT%
 Gui, Color, %GLOBAL_COLOR%
 
-;if(!_refresh)
-;	FamiliaName := A_GuiControl
-;Else
-;	_refresh := false
-;_refresh := false
-;FamiliaMascara := getmascara(FamiliaName,famtable,"Familias")
-;modtable := getreferencetable("Modelo",EmpresaMascara AbaMascara FamiliaName)
-;if(!modtable)
-;	modtable := EmpresaMascara AbaMascara FamiliaMascara "Modelo"
-
 /*
 	Familias
 */
@@ -165,7 +157,7 @@ Gui, Add, Button, xp+60 yp+15 w100 h30 ginsert_empresa, Criar Empresa
 	Modelos 
 */
 Gui, Add, Groupbox, xm+240 ym w220 h290, Modelos 
-Gui, Add, Listview, xp+5 yp+15 w200 h270 section  vMODlv gMODlv altsubmit,
+Gui, Add, Listview, xp+5 yp+15 w200 h270 section  vMODlv gMODlv altsubmit,Modelo|Mascara
 Gui, Add, Groupbox, xm+240 y+10 w220 h60, Numero de items:
 Gui, Font, s15
 Gui, Add,	Text, xp+75 yp+15 w100 vnumberofitems cblue,
@@ -265,7 +257,6 @@ if A_GuiControl = main_tv
 	}Else{
 		Menu, main_tv_menu, Show, x%A_GuiX% y%A_GuiY%	
 	}
-	
 }
 return
 
@@ -290,18 +281,26 @@ return
   		familias ira buscar a tabela de modelos
   		e carrega-la na listview ao lado. 
   	*/
-
-  	tipo: Modelo | tabela1: me mt nf | me mt mf Modelo
+  	
   	/*
   		Pega a tabela de modelos
-  	*/
-  	prefixo := empresa_mascara tipo_mascara
-  	model_table := get_model_table(prefixo, mascara_familia)
-  	mask := get_promto_mask()
-  	id := TV_GetSelection()
-  	TV_GetText(family, id)	
-  	reference_table := getreferencetable("Modelo", mask family)
-  	db.loadlv("M", "MODlv", reference_table, "Modelos, Mascara", 1)	
+  	*/	
+		familia := get_tv_info("Familia")
+		tipo := get_tv_info("Tipo")
+		empresa := get_tv_info("Empresa")
+
+		/*
+			Metodo que peca a tabela de modelos 
+			linkada
+		*/
+		model_table := db.get_reference("Modelo",empresa.mascara tipo.mascara familia.nome)
+		
+		/*
+			Metodo que carrega a lista de modelos
+			em determinada listview
+		*/
+		db.load_lv("M", "MODlv", model_table)
+		LV_ModifyCol(1)	
   }
 	return 
 
@@ -314,13 +313,13 @@ return
 	Gui,submit,nohide
 	StringReplace,combocodes,combocodes,% ">>",|, All
 	StringSplit,combocodes,combocodes,|
-	result:=db.query("SELECT tabela2 FROM reltable WHERE tipo='image' AND tabela1='" combocodes1 "'")
-	comboimagepath:=""
-	if(result["tabela2"]!=""){
+	result := db.query("SELECT tabela2 FROM reltable WHERE tipo='image' AND tabela1='" combocodes1 "'")
+	comboimagepath := ""
+	if(result["tabela2"] != ""){
 		db.loadimage("","",result["tabela2"])
-		comboimagepath:="image.png"
+		comboimagepath := "image.png"
 	}else{
-		comboimagepath:="noimage.png"
+		comboimagepath := "noimage.png"
 	}
 	result.close()
 	showimageandcode(comboimagepath, 10, 10, EmpresaMascara AbaMascara FamiliaMascara,ModeloMascara, combocodes1 "`n" combocodes2 ,20)
@@ -1010,9 +1009,10 @@ return
 				MsgBox, % "Nao existe conxao para esse nome tente adicionar outra conexao."
 				return 
 			}
-			ddDatabaseConnection:=connectionvalue["connection"]
-			ddDatabaseType:=connectionvalue["type"]
+			ddDatabaseConnection:= connectionvalue["connection"]
+			ddDatabaseType:= connectionvalue["type"]
 			;MsgBox, % "ddDatabaseConnection " ddDatabaseConnection "`n ddDatabaseType " ddDatabaseType  
+			FileAppend, ddDatabaseConnection ";" ddDatabaseType,conection.csv
 			try {
 				sigaconnection:= DBA.DataBaseFactory.OpenDataBase(ddDatabaseType,ddDatabaseConnection)
 			} catch e {
@@ -2206,7 +2206,7 @@ loaditem(){
 	oditable:=result["tabela2"]
 	result.close()
 	if(!oditable)
-		oditable:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . "odi"
+		oditable := EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . "odi"
 	Gui,listview,CODlv
 	Gui,M:default
 	RowNumber:=0
@@ -2225,11 +2225,27 @@ loaditem(){
 }
 
 		MAM:
-		args:={}
-		args["table"]:=modtable,args["field"]:="Modelos,Mascara",args["closefunc"]:="reloadmodelo"
-		args["field1"]:="Modelos",args["field2"]:="Mascara",args["primarykey"]:="Modelos ASC,Mascara ASC"
-		args["tipo"]:="Modelo",args["mascaraant"]:=EmpresaMascara . AbaMascara . FamiliaMascara,args["relcondition"]:=false
-		inserir1(args)
+		/*
+  		Pega a tabela de modelos
+  	*/	
+		familia := get_tv_info("Familia")
+		tipo := get_tv_info("Tipo")
+		empresa := get_tv_info("Empresa")
+
+		/*
+			Metodo que pega a tabela de modelos 
+			linkada
+		*/
+		model_table := db.get_reference("Modelo",empresa.mascara tipo.mascara familia.nome)
+		MsgBox, % "model_table " model_table " empresa_mascara: " empresa.mascara "`n tipo_mascara: " tipo.mascara " familia_mascara: " familia.mascara 
+		inserir_modelo_view(model_table, empresa, tipo, familia)
+
+		;inserir_modelo_view(model_table, empresa, tipo, familia)
+		;args := {}
+		;args["table"] := modtable,args["field"] := "Modelos,Mascara",args["closefunc"] := "reloadmodelo"
+		;args["field1"] := "Modelos",args["field2"] := "Mascara",args["primarykey"] := "Modelos ASC,Mascara ASC"
+		;args["tipo"] := "Modelo",args["mascaraant"] := EmpresaMascara . AbaMascara . FamiliaMascara,args["relcondition"] := false
+		;inserir1(args)
 		return
 		
 		reloadmodelo(){

@@ -150,8 +150,8 @@ class PromtoSQL{
 			return  
 		}
 		rs := mariaDB.OpenRecordSet("SELECT * FROM " table)
-		Gui,%window_name%:default 
-		Gui,listview,%lv_name%
+		Gui, %window_name%:default 
+		Gui, listview, %lv_name%
 		LV_Delete()
 		GuiControl,-ReDraw,%lv_name%
 		Loop, % LV_GetCount("Column")
@@ -194,4 +194,5 @@ class PromtoSQL{
 	#include lib\promto_sql_mariadb_familia.ahk
 	#include lib\promto_sql_mariadb_modelo.ahk
 	#include lib\promto_sql_mariadb_campo.ahk
+	#include lib\promto_sql_mariadb_imagem.ahk
 }

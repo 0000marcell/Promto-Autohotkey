@@ -1,5 +1,6 @@
 #SingleInstance,force
 #NoTrayIcon
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ;##################################################
 ;#												  											#
 ;#			PROMTO(FRONT-END)(NATIVE)			  					#
@@ -125,7 +126,7 @@ Return
 
 
 
-;#MODELOS
+
 M:
 /*
 	Gui init	
@@ -193,7 +194,7 @@ Gui, Add, Button, x+5 gfotoindividual w100, Foto
 	Informacao 
 */
 Gui, Add, Groupbox, x480 y+20 w815 h300, Informacao:
-Gui, Add, Picture, xp+5 yp+15 vptcode,
+Gui, Add, Picture, xp+5 yp+15 w800 vptcode ,
 _loading := 1
 Gui, Show,W1300 h700 , %FamiliaName%
 Gui, Listview, MODlv
@@ -218,7 +219,6 @@ if A_GuiControl = main_tv
 	
 	Menu, main_tv_menu, Add, Adicionar, adicionar_item
 	Menu, main_tv_menu, Add, Remover, remover_item	
-
 	Menu, remover_menu, Add, Remover, remover_item
 
 
@@ -322,7 +322,7 @@ return
 		comboimagepath := "noimage.png"
 	}
 	result.close()
-	showimageandcode(comboimagepath, 10, 10, EmpresaMascara AbaMascara FamiliaMascara,ModeloMascara, combocodes1 "`n" combocodes2 ,20)
+	;showimageandcode(comboimagepath, 10, 10, EmpresaMascara AbaMascara FamiliaMascara,ModeloMascara, combocodes1 "`n" combocodes2 ,20)
 	Guicontrol,,ptcode,simpleplot.png
 	return 
 
@@ -1147,8 +1147,8 @@ loadlvdbex(){
 		Gui,listview,lviv2
 		Listiv:=[]
 		for,each,value in NCM{
-			Listiv[A_Index,1]:=each
-			Listiv[A_Index,2]:=value
+			Listiv[A_Index,1] := each
+			Listiv[A_Index,2] := value
 			LV_Add("",each,value)
 		}
 		Gui,listview,lviv
@@ -1919,7 +1919,7 @@ if(args["mascaraant2"]=""){
 	MsgBox, % "Defina a ordem do prefixo antes de continuar!!!"
 	return 
 }
-args["selecteditem"]:=selectmodel
+args["selecteditem"] := selectmodel
 tables:=["oc","odc","odr","odi"]
 tables2:=["octable","odctable","odrtable","oditable"]
 fields:=["Codigo","DC","DR","DI"]
@@ -1995,7 +1995,7 @@ if(!db.exist("tipo,tabela1","tipo='Codigo' AND tabela1='" . relmodel . "'","relt
 		db.insert("reltable","(tipo,tabela1,tabela2)","('Codigo','" . relmodel . "','" . codtable . "')")
 }
 loaditem()
-if(_error=0)
+if(_error = 0)
 	MsgBox,64,, % "codigos gerados!!"
 else
 	MsgBox,16,, % "Os codigos NAO foram gerados!!"
@@ -2023,11 +2023,11 @@ organizecode(code){
 		cleancode.=field2
 		x+=1
 	}
-	returndesc:={}
-	returndesc.oc:=codepiece1 cleancode
-	returndesc.dc:=getdesc(campo,"odc")
-	returndesc.dr:=getdesc(campo,"odr")
-	returndesc.di:=getdesc(campo,"odi")	
+	returndesc := {}
+	returndesc.oc := codepiece1 cleancode
+	returndesc.dc := getdesc(campo,"odc")
+	returndesc.dr := getdesc(campo,"odr")
+	returndesc.di := getdesc(campo,"odi")	
 	return returndesc
 }
 
@@ -2139,15 +2139,11 @@ MODlv:
 if A_GuiEvent = i
 {
 	Gui,submit,nohide
-	if(_loading = 1) 
-		return 
-	selecteditem := GetSelected("M","MODlv")
-	currentvalue := GetSelectedRow("M","MODlv")
-	selectmodel := selecteditem
-	result := db.query("SELECT Mascara FROM " . modtable . " WHERE Modelos='" . selecteditem . "'")
-	ModeloMascara := result["Mascara"]
-	result.close()
-	loaditem()
+
+	info := get_item_info("M", "MODlv")
+	;MsgBox, % "info empresa : " info.empresa[1] " `n empresa mascara " info.empresa[2] " `n tipo nome: " info.tipo[1] "`n tipo mascara: " info.tipo[2] "`n familia nome " info.familia[1] "`n familia mascara " info.familia[2] " `n modelo nome " info.modelo[1] "`n modelo mascara " info.modelo[2] 
+	if(info.modelo[1] != "Modelo")
+		load_image_in_main_window()	
 }
 return 
 
@@ -2165,7 +2161,7 @@ loaditem(){
 	{
 		db.load_image_to_file("","",result["tabela2"])
 	}
-	showimageandcode(A_WorkingDir "\img\" result["tabela2"] ".png",10,10,EmpresaMascara AbaMascara FamiliaMascara,ModeloMascara)
+	;showimageandcode(A_WorkingDir "\img\" result["tabela2"] ".png",10,10,EmpresaMascara AbaMascara FamiliaMascara,ModeloMascara)
 	result.close()
 	Gui, M:default
 	Guicontrol,, ptcode, simpleplot.png
@@ -2225,6 +2221,11 @@ loaditem(){
 }
 
 		MAM:
+		if(get_tv_level("M", "main_tv") != 3){
+			MsgBox,16,Erro, % " Selecione uma familia antes, para alterar modelos!"
+			return 
+		}
+
 		/*
   		Pega a tabela de modelos
   	*/	
@@ -2237,15 +2238,7 @@ loaditem(){
 			linkada
 		*/
 		model_table := db.get_reference("Modelo",empresa.mascara tipo.mascara familia.nome)
-		MsgBox, % "model_table " model_table " empresa_mascara: " empresa.mascara "`n tipo_mascara: " tipo.mascara " familia_mascara: " familia.mascara 
-		inserir_modelo_view(model_table, empresa, tipo, familia)
-
-		;inserir_modelo_view(model_table, empresa, tipo, familia)
-		;args := {}
-		;args["table"] := modtable,args["field"] := "Modelos,Mascara",args["closefunc"] := "reloadmodelo"
-		;args["field1"] := "Modelos",args["field2"] := "Mascara",args["primarykey"] := "Modelos ASC,Mascara ASC"
-		;args["tipo"] := "Modelo",args["mascaraant"] := EmpresaMascara . AbaMascara . FamiliaMascara,args["relcondition"] := false
-		;inserir1(args)
+		inserir_modelo_view(model_table)
 		return
 		
 		reloadmodelo(){
@@ -3841,5 +3834,12 @@ LV_MoveRowfam(wname,lvname,moveup = true) {
 #include <promtolib>
 #include,lib\json_parser.ahk
 #include,<SQL_new>
-#include, views/inserir_ETF_view.ahk
 
+/*
+	Views
+*/
+#include, views/inserir_ETF_view.ahk
+#include, views/inserir_modelo_view.ahk
+#include, views/shared/inserir_dialogo_2_fields.ahk
+#include, views/shared/inserir_imagem_view.ahk
+#include, views/shared/inserir_imagem_db_view.ahk

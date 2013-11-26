@@ -28,8 +28,6 @@ class Modelo{
 			return 
 		}
 
-		MsgBox, % "o modelo nao exista na tabela de modelos"
-
 		/*
 			Insere o valor na tabela
 		*/
@@ -37,8 +35,6 @@ class Modelo{
 		record.Modelos := modelo_nome
 		record.Mascara := modelo_mascara
 		mariaDB.Insert(record, prefixo "Modelo")
-
-		MsgBox, % "o valor foi inserido na tabela"
 
 		/*
 			Cria a tabela de campos
@@ -56,6 +52,15 @@ class Modelo{
 			}catch e
 				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Campos `n" ExceptionDetail(e)
 
+		try{
+				mariaDB.Query(
+					(JOIN 
+						"	CREATE TABLE IF NOT EXISTS " prefixo modelo_mascara "Desc"
+						" (descricao VARCHAR(250))"
+					))
+			}catch e
+				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de descricao geral `n" ExceptionDetail(e)
+			
 			/*
 				Verifica se a relacao ja nao existe 
 				na tabela de relacionamento antes de inserir
@@ -68,6 +73,7 @@ class Modelo{
 				mariaDB.Insert(record, "reltable")
 			}
 		}
+		MsgBox,64,Sucesso, % " O valor foi inserido!" 
 	}
 
 	/*
@@ -80,6 +86,7 @@ class Modelo{
 		 Excluir a entrada do modelo
 		 na tabela de modelos
 		*/
+
 		if(!this.exists(modelo_nome, modelo_mascara, prefixo)){
 			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela"
 			return 
@@ -103,7 +110,7 @@ class Modelo{
 		tables := ["Campo", "oc", "odr", "odc", "odi", "Codigo"]
 		for,each, tipo in tables{
    	 	linked_table := this.get_reference(prefixo, modelo_nome, modelo_mascara, tipo)
-			MsgBox, % "tabela linkada: " linked_table 
+			;MsgBox, % "tabela linkada: " linked_table 
 
 			if(linked_table = ""){
 				error_msg :=
@@ -137,8 +144,79 @@ class Modelo{
 			*/
 			this.delete_if_no_related(linked_table, tipo)
 		}
-
+		/*
+			Deleta a tabela que contem a descricao 
+			geral do determinado item
+		*/
+		try{
+			mariaDB.Query(
+			(JOIN 
+				" DROP TABLE " prefixo modelo_mascara "Desc" 
+			))	
+		}catch e 
+			MsgBox,16,Erro,% " Erro ao tentar excluir a tabela de descricao geral! " ExceptionDetail(e)
+		
+		/*
+			Apaga a referencia da imagem
+		*/
+		try{
+				mariaDB.Query(
+				(JOIN 
+					" DELETE FROM reltable "
+					" WHERE tipo like 'image'"
+					" AND tabela1 like '" prefixo modelo_mascara modelo_nome "'"
+				))	
+			}catch e 
+				MsgBox,16,Erro,% " Erro ao tentar apagar a relacao da imagem " ExceptionDetail(e)
+			
 		MsgBox,64,Sucesso,% "O modelo foi deletado!"
+	}
+
+	/*
+		Altera a descricao geral de determinado modelo
+	*/
+	descricao_geral(descricao){
+		Global mariaDB, empresa, tipo, familia, modelo
+
+		if(modelo.mascara = ""){
+			MsgBox,16,Erro, % "Selecione um modelo antes de continuar!" 
+			return
+		}
+		
+
+		record := {}
+		record.descricao := descricao
+		table := empresa.mascara tipo.mascara familia.mascara modelo.mascara "Desc"
+		
+		/*
+			Deleta a descricao anterior
+		*/
+		mariaDB.Query(
+		(JOIN 
+			" DELETE FROM " table " LIMIT 1"	
+		))	
+
+		/*
+			Insere a nova descricao
+		*/
+		mariaDB.Insert( record, table)
+		MsgBox,64,Sucesso, % "A descricao geral foi alterada!" 
+	}
+
+	/*
+		Pega a descricao geral
+	*/
+
+	get_desc(info){
+		Global mariaDB
+
+		rs := mariaDB.OpenRecordSet(
+			(JOIN 
+				" SELECT descricao FROM " info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "desc"
+			))
+		value := rs.descricao
+		rs.close()
+		return value
 	}
 
 	/*
@@ -147,9 +225,6 @@ class Modelo{
 	*/
 	get_reference(prefixo, modelo_nome, modelo_mascara, tipo){
 		Global mariaDB
-
-		MsgBox, % "prefixo: " prefixo " modelo_nome: " modelo_nome " tipo: " tipo
-		MsgBox, % "modelo_mascara " modelo_mascara
 		
 		rs := mariaDB.OpenRecordSet(
 			(JOIN 

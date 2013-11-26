@@ -1,11 +1,11 @@
-inserir_dialogo_2_view(action, owner){
+inserir_dialogo_2_view(action, owner_name){
 	Global db, input_name, input_mascara, SMALL_FONT, GLOBAL_COLOR
 
 	/*
 		Gui init
 	*/
 	Gui, insert_dialogo_2:New
-	Gui, insert_dialogo_2:+%owner%
+	Gui, insert_dialogo_2:+owner%owner_name%
 	Gui, Font, s%SMALL_FONT%, %FONT%
 	Gui, Color, %GLOBAL_COLOR%
 

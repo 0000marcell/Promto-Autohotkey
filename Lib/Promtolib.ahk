@@ -486,6 +486,78 @@ check_if_ETF_exist(nome, mascara_antiga){
 		return mascara_antiga
 	}
 }
+/*
+	Pega todas as informacoes sobre determinado item
+	baseado no valor de uma listview
+*/
+get_item_info(window, lv){
+	Global empresa, tipo, familia, modelo
+
+	empresa := get_tv_info("Empresa")
+	tipo := get_tv_info("Tipo")
+	familia := get_tv_info("Familia")
+	
+	/*
+		Pega o modelo selecionado na listview
+	*/
+	model := GetSelectedRow(window, lv)
+	modelo := []
+	modelo.nome := model [1]
+	modelo.mascara := model[2]
+
+	/*
+		Coloca todas as informacoes em 
+		um unico hash 
+	*/
+	info := {}
+	info.empresa[1] := empresa.nome
+	info.empresa[2] := empresa.mascara
+	info.tipo[1] := tipo.nome
+	info.tipo[2] := tipo.mascara
+	info.familia[1] := familia.nome
+	info.familia[2] := familia.mascara
+	info.modelo[1] := modelo.nome
+	info.modelo[2] := modelo.mascara
+
+	return info 	
+}
+	
+/*
+	Carrega a imagem na janela principal
+*/
+load_image_in_main_window(){
+	Global empresa, tipo, familia, info,db
+	
+	/*
+		Pega a foto linkada com o determinado modelo
+	*/
+	tabela2_value := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+	
+	;MsgBox, % "imagem selecionada " tabela2_value
+	image_name_value := db.Imagem.get_image_path(tabela2_value)
+	if(image_name_value = ""){
+		image_name_value := "sem_foto" 
+	}
+	image_source := A_WorkingDir "\img\" image_name_value ".jpg"
+	show_image_and_code(image_source)
+}
+	
+
+/*
+	Pega o modelo selecionado em certa list_view
+*/
+
+get_selected_model(window, lv){
+	model := GetSelectedRow(window, lv)
+	if(model[1] = "Modelos" || model[1] = "")
+		return 
+	modelo := []
+	modelo.nome := model[1]
+	modelo.mascara := model[2]
+
+	return modelo
+}
+		
 
 /*
 	funcao que busca o nivel da tv 
@@ -655,24 +727,33 @@ destroycarregandologo(){
 	return
 }
 ;##########################Showimageandcode################################################
-showimageandcode(image,x,y,prefixpt,modelpt,text="",textsize=40){
-	Global 
+show_image_and_code(image){
+	Global
 	
 	newgdi({w:850,h:280})
 	image := Gdip_CreateBitmapFromFile(image)
-	w:=Gdip_GetImageWidth(image), h:=Gdip_GetImageHeight(image)
+	w := Gdip_GetImageWidth(image), h := Gdip_GetImageHeight(image)
 	Gdip_DrawImage(G,image,10,10,250,250,0,0,w,h)
-	if(text=""){
-		table:=db.query("SELECT descricao FROM " prefixpt modelpt "Desc;")
-		panel({x:265 ,y:10,w:550,h:250,text2:table["descricao"],text2size:textsize,color: "lightgrey",boardsize: 0})
-		table.close()
+	if(text = ""){
+
+		/*
+			Pega a descricao 
+		*/
+		descricao_model := db.Modelo.get_desc(info)
+		MsgBox, % "descricao modelo: " descricao_model
+		/*
+			Printa a descricao
+		*/
+		panel({x:265 ,y:10,w:550,h:250,text2:descricao_model,text2size:textsize,color: "coolblue",boardsize: 0})
 	}else{
-		panel({x:265 ,y:10,w:550,h:250,text2:text,text2size:textsize,color: "lightgrey",boardsize: 0})
+		panel({x:265 ,y:10,w:550,h:250,text2:text,text2size:textsize,color: "coolblue",boardsize: 0})
 	}
-	FileDelete,simpleplot.png  
-	Gdip_SaveBitmapToFile(pBitmap,"simpleplot.png")
+	FileDelete, "img/simpleplot.png"  
+	Gdip_SaveBitmapToFile(pBitmap,"img/simpleplot.png")
 	Gdip_DisposeImage(pBitmap)
 	Gdip_DisposeImage(image)	
+	Gui, M:default 
+	Guicontrol,,ptcode,img/simpleplot.png
 }
 
 ;#########################PLOTPTCODE#########################################################
@@ -1559,13 +1640,13 @@ getmascara(name,table,field){
 	principal
 */
 load_ETF(db){
-		Global 
-		ETF_hashmask := {}
-		/*
-			Essa funcao ira carregar
-			a string ETF_TVSTRING
-		*/
-		db.get_treeview("empresas",0,"","")
+	Global 
+	ETF_hashmask := {}
+	/*
+		Essa funcao ira carregar
+		a string ETF_TVSTRING
+	*/
+	db.get_treeview("empresas",0,"","")
 }
 
 /*

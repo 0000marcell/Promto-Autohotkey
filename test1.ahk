@@ -31,5 +31,5 @@ db := new PromtoSQL(
 ;db.Empresa.incluir("Totallight", "T")
 ;db.Tipo.incluir("Materia prima", "MP", "T", "Totallight")
 db.Modelo.incluir("TL.L.EXE.010", "010", "TMPCH")
-;db.Modelo.excluir("TL.L.EXE.010", "010", "TMPCH")
+db.Modelo.excluir("TL.L.EXE.010", "010", "TMPCH")
 db.Familia.excluir("Chapa", "CH", "TMP")

@@ -1,4 +1,5 @@
 class Empresa{
+
 	/*
 		Inclui uma nova empresa
 	*/
@@ -68,6 +69,15 @@ class Empresa{
 			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela"
 			return 
 		}
+
+		/*
+			Funcao recursiva que exclui todas os
+			tipos familias e modelos dessa 
+			empresa
+		*/
+
+		this.remove_subitems(empresa.nome, empresa.mascara)
+
 		try{
 			mariaDB.Query(
 			(JOIN 
@@ -127,6 +137,12 @@ class Empresa{
 		}
 		MsgBox, % " A empresa foi deletada!"
 	}	
+
+	/*
+		Funcao que exclui todos os 
+		subitems dessa empresa
+	*/
+	
 
 	/*
 		Verifica se determinado valor

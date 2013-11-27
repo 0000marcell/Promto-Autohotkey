@@ -740,7 +740,7 @@ show_image_and_code(image){
 			Pega a descricao 
 		*/
 		descricao_model := db.Modelo.get_desc(info)
-		MsgBox, % "descricao modelo: " descricao_model
+		
 		/*
 			Printa a descricao
 		*/

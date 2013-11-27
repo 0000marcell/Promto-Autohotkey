@@ -265,7 +265,8 @@ return
 	return 
 
 	remover_item:
-	remover_item_ETF()
+	MsgBox, % "empresa nome " empresa.nome " empresa mascara " empresa.mascara
+	;remover_item_ETF("M")
 	return
 
 	main_tv:
@@ -2127,10 +2128,11 @@ if(!selecteditem){
 	MsgBox,64,, % "Selecione um item para continuar!"
 	return 
 }
-args:={}
-args["selecteditem"]:=selecteditem
-args["window"]:="M",args["lv"]:="MODlv",args["mascaraant"]:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara
-args["tipo"]:="Campo",args["selecteditem"]:=selectmodel,args["owner"]:="M"
+
+args := {}
+args["selecteditem"] := selecteditem
+args["window"] := "M",args["lv"] := "MODlv",args["mascaraant"] := EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara
+args["tipo"] := "Campo",args["selecteditem"] := selectmodel,args["owner"]:="M"
 args["tipoquery"] := "SELECT tipo,tabela1,tabela2 FROM reltable WHERE tipo='Campo'"
 linkar2(args)
 return 
@@ -2140,8 +2142,7 @@ if A_GuiEvent = i
 {
 	Gui,submit,nohide
 
-	info := get_item_info("M", "MODlv")
-	;MsgBox, % "info empresa : " info.empresa[1] " `n empresa mascara " info.empresa[2] " `n tipo nome: " info.tipo[1] "`n tipo mascara: " info.tipo[2] "`n familia nome " info.familia[1] "`n familia mascara " info.familia[2] " `n modelo nome " info.modelo[1] "`n modelo mascara " info.modelo[2] 
+	info := get_item_info("M", "MODlv") 
 	if(info.modelo[1] != "Modelo")
 		load_image_in_main_window()	
 }

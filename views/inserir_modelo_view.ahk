@@ -32,7 +32,7 @@ inserir_modelo_view(model_table){
 		Foto
 	*/
 	Gui, Add, Groupbox, x+70 ym w200 h200 , Fotos
-	Gui, Add, Picture, xp+5 yp+15 w150 h150  vmodelos_foto_control, 
+	Gui, Add, Picture, xp+5 yp+15 w180 h180  vmodelos_foto_control,
 
 	/*
 		Fonte da Imagem
@@ -78,6 +78,7 @@ inserir_modelo_view(model_table){
 		image_source := "img\" image_name_value ".jpg"
 		Gui, inserir_modelo_view:default 
 		GuiControl,, modelos_foto_control,%image_source%
+		
 		/*
 			Pega a descricao garal do modelo
 		*/
@@ -107,10 +108,16 @@ inserir_modelo_view(model_table){
 		}
 		inserir_imagem_view("inserir_modelo_view", "modelos_foto_control")
 	}else if (fonte_imagem_radio = 2){
+		
 		/*
 			Ira carregar uma outra view onde sera possivel escolher a 
 			imagem do banco de dados
 		*/
+		info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
+		if(info.modelo[1] = "Modelos" || info.modelo[1] = ""){
+			MsgBox,16,Erro, % "Selecione um modelo antes de continuar!"
+			Return
+		}
 		inserir_imagem_db_view("inserir_modelo_view", "modelos_foto_control")
 	}
 	return

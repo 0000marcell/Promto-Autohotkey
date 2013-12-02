@@ -1,5 +1,5 @@
 class Tipo{
-	/*
+		/*
 		Incluir um novo tipo
 	*/
 	incluir(tipo_nome = "", tipo_mascara = "", prefixo = "", empresa_nome = ""){
@@ -90,24 +90,43 @@ class Tipo{
 		record.tabela1 := prefixo tipo_nome
 		record.tabela2 := prefixo tipo_mascara "Familia"
 		mariaDB.Insert(record, "reltable")
-		MsgBox,64,Sucesso!, % "O tipo foi inserido!"
+		MsgBox, 64,Sucesso!, % "O tipo foi inserido!"
 		Return 1
 	}
 
 	/*
 		Excluir tipo
 	*/
-	excluir(tipo_nome, tipo_mascara, prefixo){
+	excluir(tipo_nome, tipo_mascara, info, recursiva = 1){
 		Global mariaDB
 
 		/*
 		 Excluir a entrada do tipo 
 		 na tabela de tipos 
 		*/
-		if(!this.exists(tipo_nome, tipo_mascara, prefixo)){
+
+		
+		prefixo := info.empresa[2]
+
+		;MsgBox, % "ira a apagar o tipo: " tipo_nome "`n tipo_mascara: " tipo_mascara " `n prefixo: " prefixo
+
+		tipo_table := this.get_parent_reference(info.empresa[1])
+		if(!this.exists(tipo_nome, tipo_mascara, tipo_table)){
 			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela"
 			return 
 		}
+		
+		;MsgBox, % "voltou da verificacao de existencia!"
+		/*
+			Funcao recursiva que exclui todas os
+			tipos familias e modelos dessa 
+			empresa
+		*/
+		if(recursiva = 1){
+			this.remove_subitems(tipo_nome, tipo_mascara, info)
+			return
+		}
+		;MsgBox, % "voltou da recursividade!"
 		try{
 			mariaDB.Query(
 			(JOIN 
@@ -116,19 +135,18 @@ class Tipo{
 			))	
 		}catch e 
 			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de Tipos `n " ExceptionDetail(e)
+		
 		/*
 			Exclui a tabela de familias 
 			relacionada com esse tipo 
 			caso ela nao esteja mais relacionada com nada
 		*/
-			linked_table := this.get_reference(prefixo, tipo_nome)
-			MsgBox, % "tabela linkada: " linked_table 
+		linked_table := this.get_reference(prefixo tipo_nome, "Familia") 
 
 		/*
 		 Deleta a entrada do tipo na 
 		 tabela de relacionamento.  
 		*/
-
 		try{
 			mariaDB.Query(
 			(JOIN 
@@ -144,18 +162,23 @@ class Tipo{
 		 nao estava linkada com mais nenhuma outra tabela
 		 antes de deleta-la
 		*/
+
 		table := mariaDB.Query(
 			(JOIN 
 				" SELECT tipo,tabela1,tabela2 FROM reltable "
 				" WHERE tipo LIKE 'Familia' "
 				" AND tabela2 LIKE '" linked_table "'"
 			))
+		
 		linked .= ""
+		
 		columnCount := table.Columns.Count()
+		
 		for each, row in table.Rows{
 			Loop, % columnCount
 				linked .= row[A_index] "`n"
 		} 
+		
 		/*
 			Se nao existir mais nenhuma tabela linkada.
 		*/
@@ -165,7 +188,6 @@ class Tipo{
 			}catch e 
 				MsgBox,16,Erro,% " Erro ao tentar deletar a tabela de tipos " linked_table "`n" ExceptionDetail(e)
 		}
-		MsgBox, % " O tipo foi deletado!"
 	}
 
 	/*
@@ -175,7 +197,6 @@ class Tipo{
 	exists(tipo_nome, tipo_mascara, table){
 		Global mariaDB
 
-		MsgBox, % "exists tipo_nome: " tipo_nome "`n tipo_mascara: " tipo_mascara " prefixo: " prefixo
 		table := mariaDB.Query(
 			(JOIN 
 				" SELECT Abas FROM " table
@@ -208,19 +229,163 @@ class Tipo{
 	}
 
 	/*
-		Pega a tabela de referencia da familia
+		Pega as tabelas de referencia.
 	*/
-	get_reference(prefixo, tipo_nome){
+	get_reference(tabela1, tipo){
 		Global mariaDB
-
-		rs := mariaDB.OpenRecordSet(
+		try {
+			rs := mariaDB.OpenRecordSet(
 			(JOIN 
 				" SELECT tabela2 FROM reltable "
-				" WHERE tipo like 'Familia' "
-				" AND tabela1 like '" prefixo tipo_nome "'"
+				" WHERE tipo like '" tipo "' "
+				" AND tabela1 like '" tabela1 "'"
 			))
+		} catch e {
+				MsgBox,16, Error, % "OpenRecordSet Failed.`n`n" ExceptionDetail(e) ;state := "!# " e.What " " e.Message
+		}
 		reference_table := rs.tabela2
 		rs.close()
 		return reference_table
+	}
+
+	remove_subitems(nome, mascara, info = "", nivel_tipo = "", i = 0){
+		Global mariaDB, db
+
+		i++
+		if(nivel_tipo = ""){
+			nivel_tipo := {1: ["tipo", "Familia"], 2: ["familia", "Modelo"], 3: ["Modelo", "break"]}
+		}
+
+		nivel := nivel_tipo[i,1]
+		tipo := nivel_tipo[i,2]
+
+		;MsgBox, % "nome> " nome "`n mascara> " mascara "`n nivel> " nivel "`n tipo> " tipo "`n i> " i
+		
+		/*
+			Pega a tabela de referencia que 
+			contem o subitem do item atual
+			se o item nao tiver uma tabela 
+			de referencia, excluir o item atual e 
+			retorna para a iteracao anterior
+		*/
+
+		/*
+			Se o tipo for break esta 
+			no nivel dos modelos e apagara o modelo
+			atual.
+		*/
+		if(tipo = "break"){
+			;prefix := info.empresa
+			;db.Modelo.incluir( nome, mascara, info.empresa)
+			this.delete_subitem(nome, mascara, info, nivel)
+			return
+		}	
+
+		/*
+			Retorna a tabela do proximo nivel
+		*/
+		;MsgBox, % "ira busacar a tabela tipo: " tipo " tabela1: " tabela1
+		
+		if(nivel = "tipo"){
+			tabela1 := info.empresa[2] nome
+		}else if(nivel = "familia"){
+			tabela1 := info.empresa[2] info.tipo[2] nome
+		}
+
+
+		table := db.get_reference(tipo, tabela1)
+		;MsgBox, % "tabela retornada " table
+		if(table = ""){
+			this.delete_subitem(nome, mascara, info, nivel)
+			return 
+		}
+		;MsgBox, % "tabela retornada " table
+		;db.get_reference("Modelo",empresa.mascara tipo.mascara familia.nome)
+		;get_reference(tipo, tabela1)
+
+		/*
+			Itera pelos items da tabela 
+			pegando seu nome e mascara e 
+			chando a funcao outra vez 
+		*/
+		table_items := this.load_table_in_array(table)
+		loop, % table_items.maxindex(){
+			nome_item := table_items[A_Index,1]
+			mascara_item := table_items[A_Index,2]
+			
+			;MsgBox, % " item da tabela " nome_item " mascara item " mascara_item 
+			if(nivel = "empresa"){
+				info.empresa[1] := nome , info.empresa[2] := mascara  
+			}else if(nivel = "tipo"){
+				info.tipo[1] := nome , info.tipo[2] :=  mascara
+			}else if(nivel = "familia"){
+				info.familia[1] := nome , info.familia[2] :=  mascara
+			}else if(nivel = "modelo"){
+				info.modelo[1] := nome , info.modelo[2] :=  mascara
+			}else{
+				MsgBox, 16, Erro, % "O valor de nivel passado nao existe : " nivel
+			}
+			this.remove_subitems( nome_item, mascara_item, info, nivel_tipo, i)
+		}
+		/*
+			Quando voltar da iteracao de todos os subitems
+			excluir o item pai (este item)
+		*/
+		this.delete_subitem(nome, mascara, info, nivel)
+	}
+
+	/*
+		Funcao que deleta os subitems
+	*/
+	delete_subitem(nome, mascara, info, nivel){
+		Global db
+		if(nivel = "empresa"){
+			;MsgBox, % " deletar empresa " nome "mascara " mascara
+			db.Empresa.excluir(nome, mascara, 0)
+			;FileAppend, % " `n ira deletar a empresa " nome, % "debug.txt"
+		}else if(nivel = "tipo"){
+			;MsgBox, % "ira deletar o tipo " nome " mascara " mascara
+			db.Tipo.excluir(nome, mascara, info, 0)
+			;FileAppend, % " `n ira deletar o tipo " nome, % "debug.txt"
+		}else if(nivel = "familia"){
+			;MsgBox, % "ira deletar a familia " nome " familia " mascara
+			db.Familia.excluir(nome, mascara, info, 0)
+			;FileAppend, % " `n ira deletar a familia " nome, % "debug.txt"
+		}else if(nivel = "modelo"){
+			prefixo := info.empresa[2] info.tipo[2] info.familia[2]
+			;MsgBox, % "ira deletar o modelo " nome " mascara " mascara
+			db.Modelo.excluir(nome, mascara, info, 0)
+			;FileAppend, % " `n ira deletar o modelo " nome, % "debug.txt"
+		}
+	}
+
+	/*
+		Retorna determinada 
+		tabela em um array
+	*/
+	load_table_in_array(table){
+		Global mariaDB
+
+		if(table = ""){
+			MsgBox, % "Passe o nome de uma tabela antes de continuar!"
+			return  
+		}
+
+		rs := mariaDB.OpenRecordSet("SELECT * FROM " table)
+		columns := rs.getColumnNames()
+		columnCount := columns.Count()
+
+		table_array := []
+		table_array.column_count := columnCount
+		while(!rs.EOF){	
+			line := A_Index
+			Loop, % columnCount{
+				table_array[line, A_Index] := rs[A_index]
+			}
+			rs.MoveNext()
+		}
+		rs.close()
+
+		return table_array 
 	}
 }

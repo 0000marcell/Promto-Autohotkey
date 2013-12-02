@@ -1,4 +1,5 @@
 class PromtoSQL{
+	
 	/*
 		Conecta no DB
 	*/
@@ -6,6 +7,7 @@ class PromtoSQL{
 		/*
 		 Tenta Conectar
 		*/
+		
 		try {
 			Global mariaDB := DBA.DataBaseFactory.OpenDataBase(databaseType, connectionString)
 			;MsgBox, % " a conexao foi estabelecida!"

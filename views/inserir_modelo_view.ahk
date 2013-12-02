@@ -150,9 +150,11 @@ inserir_modelo_view(model_table){
 	Gui, inserir_modelo_view:default
 	Gui, Listview, inserir_modelo_lv
 	LV_Add("", input_name, input_mascara)
+	LV_ModifyCol(), LV_ModifyCol(2, 100) 
 	Gui, M:default
 	Gui, Listview, MODlv
 	LV_Add("", input_name, input_mascara)
+	LV_ModifyCol(), LV_ModifyCol(2, 100)
 	return
 
 	excluir_modelo_button:

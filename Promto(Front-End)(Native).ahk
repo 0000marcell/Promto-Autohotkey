@@ -57,6 +57,7 @@ db := new PromtoSQL(
 		db_type,
 		db_location
 	))
+
 /*
 	Resetando as 
 	duas strings que quardao as 
@@ -265,8 +266,68 @@ return
 	return 
 
 	remover_item:
-	MsgBox, % "empresa nome " empresa.nome " empresa mascara " empresa.mascara
-	;remover_item_ETF("M")
+	TV_GetText(selected_name, current_id)
+	MsgBox, 4,,Deseja apagar o item %selected_name% e todos os seus subitems? 
+	IfMsgBox No
+	{
+		return
+	}
+
+	if(tv_level_menu = 1){
+		/*
+			Apaga a empresa selecionada e todos 
+			os seus subitems
+		*/
+		;FileDelete, % "debug.txt"
+		
+		empresa := get_tv_info("Empresa")
+		
+		db.Empresa.excluir(empresa.nome, empresa.mascara)
+		
+		TV_Delete(current_id)
+		
+		/*
+			Limpa a listview da janela principal
+		*/
+		Gui,M:default
+		Gui,Listview, MODlv
+		LV_Delete()
+	}else if(tv_level_menu = 2){
+		/*
+			Apaga o tipo selecionada e todos
+			os seus subitems
+		*/
+		info := get_item_info("M", "MODlv")
+		;MsgBox, % "info empresa: " info.empresa[1] " mascara " info.empresa[2]
+		db.Tipo.excluir(tipo.nome, tipo.mascara, info)
+		MsgBox,64, Sucesso, % "O tipo e todos os subitems foram apagados." 
+		TV_Delete(current_id)
+		/*
+			Limpa a listview da janela principal
+		*/
+		Gui,M:default
+		Gui,Listview, MODlv
+		LV_Delete()
+	}else if(tv_level_menu = 3){
+		
+		/*
+			Apaga a familia selecionada e todos 
+			os seus subitems
+		*/
+		info := get_item_info("M", "MODlv")
+		db.Familia.excluir(familia.nome, familia.mascara, info)
+		MsgBox, 64, Sucesso, % "A familia e todos os subitems foram apagados." 
+		TV_Delete(current_id)
+		
+		/*
+			Limpa a listview da janela principal
+		*/
+		Gui,M:default
+		Gui,Listview, MODlv
+		LV_Delete()
+	} 
+
+	;remover_item_ETF("M", "main_tv", current_id, current_columns)
 	return
 
 	main_tv:

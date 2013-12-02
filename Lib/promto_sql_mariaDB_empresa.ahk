@@ -34,7 +34,7 @@ class Empresa{
 			MsgBox, % "Ja existe uma tabela de tipos relacionada com essa empresa"
 			return
 		}
-		MsgBox, % " create tabela de tipos " empresa_mascara "Aba"
+		
 		sql :=
 		(JOIN
 			"	CREATE TABLE IF NOT EXISTS " empresa_mascara "Aba "
@@ -59,7 +59,7 @@ class Empresa{
 	/*
 		Exclui uma empresa
 	*/
-	excluir(empresa_nome, empresa_mascara){
+	excluir(empresa_nome, empresa_mascara, recursiva = 1){
 		Global mariaDB
 
 		/*
@@ -75,8 +75,11 @@ class Empresa{
 			tipos familias e modelos dessa 
 			empresa
 		*/
-
-		this.remove_subitems(empresa.nome, empresa.mascara)
+		if(recursiva = 1){
+			FileDelete, % "debug.txt"
+			this.remove_subitems(empresa_nome, empresa_mascara)
+			return
+		}
 
 		try{
 			mariaDB.Query(
@@ -97,7 +100,8 @@ class Empresa{
 		/*
 			Pega o nome da tabela de referencia de abas
 		*/
-		linked_table := this.get_reference(empresa_nome)
+		linked_table := this.get_reference(empresa_nome, "Aba")
+
 
 		try{
 			mariaDB.Query(
@@ -126,6 +130,7 @@ class Empresa{
 			Loop, % columnCount
 				linked .= row[A_index] "`n"
 		} 
+		
 		/*
 			Se nao existir mais nenhuma tabela linkada.
 		*/
@@ -142,7 +147,118 @@ class Empresa{
 		Funcao que exclui todos os 
 		subitems dessa empresa
 	*/
-	
+
+	remove_subitems(nome, mascara, info = "", nivel_tipo = "", i = 0){
+		Global mariaDB, db
+
+		i++
+		if(nivel_tipo = ""){
+			info := []
+			nivel_tipo := {1: ["empresa", "Aba"], 2: ["tipo", "Familia"], 3: ["familia", "Modelo"], 4: ["Modelo", "break"]}
+		}
+
+		nivel := nivel_tipo[i,1]
+		tipo := nivel_tipo[i,2]
+		;MsgBox, % "nome> " nome "`n mascara> " mascara "`n nivel> " nivel "`n tipo> " tipo "`n i> " i
+		
+		/*
+			Pega a tabela de referencias que 
+			contems os subitems do item atual
+			se o item nao tiver uma tabela 
+			de referencia, excluir o item atual e 
+			retorna para a iteracao anterior
+		*/
+
+		/*
+			Se o tipo for break esta 
+			no nivel dos modelos e apagara o modelo
+			atual.
+		*/
+		if(tipo = "break"){
+			;prefix := info.empresa
+			;db.Modelo.incluir( nome, mascara, info.empresa)
+			FileAppend, % "#DELETE do break nome: " nome " mascara: " mascara "`n", % "debug.txt"
+			this.delete_subitem(nome, mascara, info, nivel)
+			return
+		}	
+
+		/*
+			Retorna a tabela do proximo nivel
+		*/
+		if(nivel = "empresa"){
+			tabela1 := nome
+		}else if(nivel = "tipo"){
+			tabela1 := info.empresa[2] nome
+		}else if(nivel = "familia"){
+			tabela1 := info.empresa[2] info.tipo[2] nome
+		}
+		
+		;FileAppend, % "%BUSCAR tabela " tabela1  " nivel: " nivel_tipo "`n", % "debug.txt"
+		table := db.get_reference(tipo, tabela1)
+		;FileAppend, % "%RETORNO table " table "`n", % "debug.txt"
+		if(table = ""){
+			;FileAppend, % "#DELETE nao tinha tabela nome: " nome " mascara: " mascara "`n", % "debug.txt"
+			this.delete_subitem(nome, mascara, info, nivel)
+			return 
+		}
+		;MsgBox, % "tabela retornada " table
+		;db.get_reference("Modelo",empresa.mascara tipo.mascara familia.nome)
+		;get_reference(tipo, tabela1)
+
+		/*
+			Itera pelos items da tabela 
+			pegando seu nome e mascara e 
+			chando a funcao outra vez 
+		*/
+		table_items := this.load_table_in_array(table)
+		loop, % table_items.maxindex(){
+			nome_item := table_items[A_Index,1]
+			mascara_item := table_items[A_Index,2]
+			
+			;MsgBox, % " item da tabela " nome_item " mascara item " mascara_item 
+			if(nivel = "empresa"){
+				info.empresa[1] := nome , info.empresa[2] := mascara  
+			}else if(nivel = "tipo"){
+				info.tipo[1] := nome , info.tipo[2] :=  mascara
+			}else if(nivel = "familia"){
+				info.familia[1] := nome , info.familia[2] :=  mascara
+			}else if(nivel = "modelo"){
+				info.modelo[1] := nome , info.modelo[2] :=  mascara
+			}else{
+				MsgBox, 16, Erro, % "O valor de nivel passado nao existe : " nivel
+			}
+			;FileAppend, % "@PROXIMO nome: " nome_item " mascara: " mascara_item "`n", % "debug.txt"
+			this.remove_subitems( nome_item, mascara_item, info, nivel_tipo, i)
+		}
+		/*
+			Quando voltar da iteracao de todos os subitems
+			excluir o item pai (este item)
+		*/
+		;FileAppend, % "#DELETE fim do loop nome: " nome " mascara: " mascara "`n", % "debug.txt"
+		this.delete_subitem(nome, mascara, info, nivel)
+	}
+
+	/*
+		Funcao que deleta os subitems
+	*/
+	delete_subitem(nome, mascara, info, nivel){
+		Global db
+		if(nivel = "empresa"){
+			;MsgBox, % " deletar empresa"
+			db.Empresa.excluir(nome, mascara, 0)
+			;FileAppend, % " `n ira deletar a empresa " nome, % "debug.txt"
+		}else if(nivel = "tipo"){
+			db.Tipo.excluir(nome, mascara, info, 0)
+			;FileAppend, % " `n ira deletar o tipo " nome, % "debug.txt"
+		}else if(nivel = "familia"){
+			db.Familia.excluir(nome, mascara, info, 0)
+			;FileAppend, % " `n ira deletar a familia " nome, % "debug.txt"
+		}else if(nivel = "modelo"){
+			prefixo := info.empresa[2] info.tipo[2] info.familia[2]
+			db.Modelo.excluir(nome, mascara, info, 0)
+			;FileAppend, % " `n ira deletar o modelo " nome, % "debug.txt"
+		}
+	}
 
 	/*
 		Verifica se determinado valor
@@ -156,6 +272,7 @@ class Empresa{
 				" SELECT Mascara FROM empresas "
 				" WHERE Mascara like '" empresa_mascara "'"
 			))
+
 		if(table.Rows.maxindex()){
 			return True 
 		}else{
@@ -171,6 +288,7 @@ class Empresa{
 				" SELECT tabela1 FROM reltable "
 				" WHERE tabela1 like '" empresa_nome "'"
 			))
+
 		if(table.Rows.maxindex()){
 			return True 
 		}else{
@@ -178,17 +296,50 @@ class Empresa{
 		}
 	}
 
-	get_reference(empresa_nome){
+	get_reference(tabela1, tipo){
 		Global mariaDB
-
-		rs := mariaDB.OpenRecordSet(
+		try {
+			rs := mariaDB.OpenRecordSet(
 			(JOIN 
 				" SELECT tabela2 FROM reltable "
-				" WHERE tipo like 'Aba' "
-				" AND tabela1 like '" empresa_nome "'"
+				" WHERE tipo like '" tipo "' "
+				" AND tabela1 like '" tabela1 "'"
 			))
+		} catch e {
+				MsgBox,16, Error, % "OpenRecordSet Failed.`n`n" ExceptionDetail(e) ;state := "!# " e.What " " e.Message
+		}
 		reference_table := rs.tabela2
 		rs.close()
 		return reference_table
+	}
+
+	/*
+		Retorna determinada 
+		tabela em um array
+	*/
+	load_table_in_array(table){
+		Global mariaDB
+
+		if(table = ""){
+			MsgBox, % "Passe o nome de uma tabela antes de continuar!"
+			return  
+		}
+
+		rs := mariaDB.OpenRecordSet("SELECT * FROM " table)
+		columns := rs.getColumnNames()
+		columnCount := columns.Count()
+
+		table_array := []
+		table_array.column_count := columnCount
+		while(!rs.EOF){	
+			line := A_Index
+			Loop, % columnCount{
+				table_array[line, A_Index] := rs[A_index]
+			}
+			rs.MoveNext()
+		}
+		rs.close()
+
+		return table_array 
 	}
 }

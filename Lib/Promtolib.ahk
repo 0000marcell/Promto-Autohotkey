@@ -209,17 +209,20 @@ get_promto_mask(){
 	Funcao que pega valores 
 	referentes a treeview da janela principal
 */
-get_tv_info(type){
+get_tv_info(type, ignore_error = 0){
 	Global ETF_hashmask
+
 	tv_level := get_tv_level("M", "main_tv")
 	if(tv_level = ""){
 		MsgBox,16,Erro, % "Nao existia nenhum item selecionado na treeview"
 	}
 	if(type = "Familia" && tv_level != 3){
-		MsgBox,16,Erro, % "a selecao nao esta em nivel suficiente para retornar valores de familia"
+		if(ignore_error = 0)
+			MsgBox,16,Erro, % "a selecao nao esta em nivel suficiente para retornar valores de familia"
 	}
 	if(type = "Tipo" && tv_level < 2){
-		MsgBox,16,Erro, % "a selecao nao esta em nivel suficiente para retornar valores de tipo"
+		if(ignore_error = 0)
+			MsgBox,16,Erro, % "a selecao nao esta em nivel suficiente para retornar valores de tipo"
 	}
 
 	return_values := []
@@ -252,12 +255,12 @@ get_tv_info(type){
 			super_parent_id := TV_GetParent(parent_id)
 			TV_GetText(nome, super_parent_id)
 			return_values.nome := nome
-			return_values.mascara := ETF_hashmask[nome]	
+			return_values.mascara := ETF_hashmask[nome]
 		}
 
 		if(tv_level = 2){
 			parent_id := TV_GetParent(id)
-			TV_GetText(nome, super_parent_id)
+			TV_GetText(nome, parent_id)
 			return_values.nome := nome
 			return_values.mascara := ETF_hashmask[nome]
 		}
@@ -494,8 +497,8 @@ get_item_info(window, lv){
 	Global empresa, tipo, familia, modelo
 
 	empresa := get_tv_info("Empresa")
-	tipo := get_tv_info("Tipo")
-	familia := get_tv_info("Familia")
+	tipo := get_tv_info("Tipo", 1)
+	familia := get_tv_info("Familia", 1)
 	
 	/*
 		Pega o modelo selecionado na listview
@@ -1403,28 +1406,27 @@ updateprogress(text,increase){
 }
 
 
-progress(maxrange,stop_progress_func_local="",undetermined=0,toolwindow=0){
-    Global progress,plabel,stop_progress_func
-    
-    ;declara a funcao a ser rodada quando o botao parar e acionado.
-    stop_progress_func := stop_progress_func_local
+progress(maxrange, stop_progress_func_local="", undetermined=0, toolwindow=0){
+  Global progress,plabel,stop_progress_func
+  
+  ;declara a funcao a ser rodada quando o botao parar e acionado.
+  stop_progress_func := stop_progress_func_local
 
-    Gui,progress:New 
-    Gui,color,ffffff
-    if(toolwindow=1)
-    	Gui,progress:-caption +toolwindow
-    Gui,add,picture,w285 h199,%A_WorkingDir%\logotipos\logo.png
-    if(undetermined=0){
-    	Gui, Add, Progress, w300 h20 c2661dd Range0-%maxrange% vprogress
-    }
-    Else{
-    	Gui, Add, Progress, vprogress  -Smooth 0x8 w300 h18
-    	SetTimer,undeterminedprogressaction,45
-    }
-    Gui,font,s8
-    Gui,Add,text,w300 y+5 vplabel
-    ;Gui, Add, Button, xm y+5 w100 gparar_processo, Parar
-    Gui,Show,,progresso
+  Gui,progress:New 
+  Gui,color,ffffff
+  if(toolwindow=1)
+  	Gui,progress:-caption +toolwindow
+  Gui,add,picture,w285 h199,%A_WorkingDir%\logotipos\logo.png
+  if(undetermined=0){
+  	Gui, Add, Progress, w300 h20 c2661dd Range0-%maxrange% vprogress
+  }
+  Else{
+  	Gui, Add, Progress, vprogress  -Smooth 0x8 w300 h18
+  	SetTimer,undeterminedprogressaction,45
+  }
+  Gui,font,s8
+  Gui,Add,text,w300 y+5 vplabel
+  Gui,Show,,progresso
 } 
 
 ;parar_processo:

@@ -40,9 +40,12 @@ class Modelo{
 			Cria a tabela de campos
 			e insere na tabela de referencias.
 		*/
-		tables := ["Campo", "oc", "odr", "odc", "odi", "Codigo"]
+
+		tables := ["Campo", "oc", "odr", "odc", "odi", "Codigo", "Desc"]
+
 		for,each, tipo in tables{
-			try{
+			if(tipo != "Desc"){
+				try{
 				mariaDB.Query(
 					(JOIN 
 						"	CREATE TABLE IF NOT EXISTS " prefixo modelo_mascara tipo
@@ -50,17 +53,19 @@ class Modelo{
 						" PRIMARY KEY (Campos)) "
 					))
 			}catch e
-				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Campos `n" ExceptionDetail(e)
-
-		try{
+				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Campos `n" ExceptionDetail(e)	
+			}
+		if(tipo = "Desc"){
+			try{
 				mariaDB.Query(
 					(JOIN 
 						"	CREATE TABLE IF NOT EXISTS " prefixo modelo_mascara "Desc"
 						" (descricao VARCHAR(250))"
 					))
 			}catch e
-				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de descricao geral `n" ExceptionDetail(e)
-			
+				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de descricao geral `n" ExceptionDetail(e)	
+		}	
+		
 			/*
 				Verifica se a relacao ja nao existe 
 				na tabela de relacionamento antes de inserir
@@ -79,14 +84,14 @@ class Modelo{
 	/*
 		Excluir modelo
 	*/
-	excluir(modelo_nome = "", modelo_mascara = "", prefixo = ""){
+	excluir(modelo_nome = "", modelo_mascara = "", info = "", recursiva = 1){
 		Global mariaDB
 
 		/*
 		 Excluir a entrada do modelo
 		 na tabela de modelos
 		*/
-
+		prefixo := info.empresa[2] info.tipo[2] info.familia[2] 
 		if(!this.exists(modelo_nome, modelo_mascara, prefixo)){
 			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela"
 			return 
@@ -107,12 +112,12 @@ class Modelo{
 			caso ela nao esteja mais relacionada com mais nada
 			e exclui a referencia
 		*/
-		tables := ["Campo", "oc", "odr", "odc", "odi", "Codigo"]
-		for,each, tipo in tables{
-   	 	linked_table := this.get_reference(prefixo, modelo_nome, modelo_mascara, tipo)
-			;MsgBox, % "tabela linkada: " linked_table 
+		tables := ["Campo", "oc", "odr", "odc", "odi", "Codigo", "Desc"]
 
-			if(linked_table = ""){
+		for,each, tipo in tables{  
+   	 	linked_table := this.get_reference(prefixo, modelo_nome, modelo_mascara, tipo)
+			 
+			if(linked_table = ""){ 
 				error_msg :=
 				(JOIN
 					"Nenhuma tabela de " tipo " foi" 
@@ -144,17 +149,6 @@ class Modelo{
 			*/
 			this.delete_if_no_related(linked_table, tipo)
 		}
-		/*
-			Deleta a tabela que contem a descricao 
-			geral do determinado item
-		*/
-		try{
-			mariaDB.Query(
-			(JOIN 
-				" DROP TABLE " prefixo modelo_mascara "Desc" 
-			))	
-		}catch e 
-			MsgBox,16,Erro,% " Erro ao tentar excluir a tabela de descricao geral! " ExceptionDetail(e)
 		
 		/*
 			Apaga a referencia da imagem
@@ -167,9 +161,7 @@ class Modelo{
 					" AND tabela1 like '" prefixo modelo_mascara modelo_nome "'"
 				))	
 			}catch e 
-				MsgBox,16,Erro,% " Erro ao tentar apagar a relacao da imagem " ExceptionDetail(e)
-			
-		MsgBox,64,Sucesso,% "O modelo foi deletado!"
+				MsgBox, 16, Erro, % " Erro ao tentar apagar a relacao da imagem " ExceptionDetail(e)
 	}
 
 	/*

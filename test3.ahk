@@ -1,9 +1,5 @@
-;x := 1
-;x--
-;MsgBox, % x
-x := 1
-nivel_tipo := {1: ["valor1", "valor2"], 2: ["test1", "test2"]}
-MsgBox, % nivel_tipo[x,2] nivel_tipo[2,1] 
+control := {window: "janela", combobox: "combobox"}
+MsgBox, % control.combobox
 
 ;tipo = "empresa"
 ;x := (tipo = "empresa") ? "TOTALLIGHT" : ""

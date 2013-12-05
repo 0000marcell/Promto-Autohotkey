@@ -87,6 +87,60 @@ class PromtoSQL{
 	}
 
 	/*
+		Carrega uma determinada tabela 
+		em um determinado combobox ou dropdownlist
+	*/
+	load_combobox(control , tabela){
+		Global mariaDB
+
+		window := control.window
+		cbcontrol := control.combobox
+		list := ""
+		Gui, %window%:default 
+		GuiControl,, %cbcontrol%,|
+		table_items := this.load_table_in_array(tabela)
+		loop, % table_items.maxindex(){
+			item := table_items[A_Index,1]
+			if(A_Index = 1){
+				list.= item
+			}else{
+				list.= "|" item
+			}
+		}
+		GuiControl,, %cbcontrol%, %list%
+	}
+
+	/*
+		Retorna determinada 
+		tabela em um array
+	*/
+	load_table_in_array(table){
+		Global mariaDB
+
+		if(table = ""){
+			MsgBox, % "Passe o nome de uma tabela antes de continuar!"
+			return  
+		}
+
+		rs := mariaDB.OpenRecordSet("SELECT * FROM " table)
+		columns := rs.getColumnNames()
+		columnCount := columns.Count()
+
+		table_array := []
+		table_array.column_count := columnCount
+		while(!rs.EOF){	
+			line := A_Index
+			Loop, % columnCount{
+				table_array[line, A_Index] := rs[A_index]
+			}
+			rs.MoveNext()
+		}
+		rs.close()
+
+		return table_array 
+	}
+
+	/*
 		Funcao que carrega a string da
 		treeview da janela principal
 	*/

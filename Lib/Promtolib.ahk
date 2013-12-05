@@ -174,6 +174,15 @@ get_tree(table,x,nivel,masc){
 	return
 }
 
+get_tabela_campo_esp(campo, info){
+	Global db
+
+	tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+	StringReplace,s_campo_sem_espaco, campo,%A_Space%,,All
+	tabela_campos_especificos := db.Modelo.get_tabela_campo_esp(s_campo_sem_espaco, tabela1)
+	return tabela_campos_especificos
+}
+
 /*
 	funcao que pega o prefix da 
 	tabela
@@ -505,8 +514,10 @@ get_item_info(window, lv){
 	*/
 	model := GetSelectedRow(window, lv)
 	modelo := []
-	modelo.nome := model [1]
+	modelo.nome := model[1]
 	modelo.mascara := model[2]
+
+	;MsgBox, % "## modelo " model[1] " mascara " model[2]
 
 	/*
 		Coloca todas as informacoes em 

@@ -211,6 +211,7 @@ return
 MGuiContextMenu:
 if A_GuiControl = main_tv
 {
+
 	/*
 		verifica em que nivel a selecao esta
 		caso esteja no nivel tres somente
@@ -298,6 +299,7 @@ return
 			os seus subitems
 		*/
 		info := get_item_info("M", "MODlv")
+
 		;MsgBox, % "info empresa: " info.empresa[1] " mascara " info.empresa[2]
 		db.Tipo.excluir(tipo.nome, tipo.mascara, info)
 		MsgBox,64, Sucesso, % "O tipo e todos os subitems foram apagados." 
@@ -2486,47 +2488,21 @@ refreshm(){
 
 
 ;##################################################
-;#												  #
-;#					Campos						  #
-;#										          #
+;#												  
+;#					Campos						  
+;#										          
 ;##################################################
 
 
 ; O modelo antigo esta no teste7			
 MAC:
-Gui,MAC:New
-Gui,font,s%SMALL_FONT%,%FONT%
-Gui,MAC:+ownerM
-Gui,color,%GLOBAL_COLOR%
-Gui, Add, ListView, xm section w390 h90 vMACcamp gMACcamp altsubmit,
-Gui, Add, ListView, x+5 w390 h90 vMACcod gMACcod altsubmit, 
-Gui, Add, Button, xm y+5 w100 h20 vMACRC gMACREN ,Renomear Codigo
-Gui, Add, Button, x+5  w60 h20 gMACEXCLUIRC, Excluir
-Gui, Font, underline
-Gui, Add, Text, x+5 vlink0 cblue w150 gdeslink2 ,% "@"
-Gui, Font,
-Gui, Add, Button, x+60 w100 h20 gMACREN vMACRCO,Renomear Campos  ;MACcamp
-Gui, Add, Button, x+5  w60 h20 gMACEEXCLUIRV,Excluir
-Gui, Add, Button, x+5  w120 h20 gaddreferencia,Add Referencia
-Gui, Add, ListView, xm y+5 w820 h140 vMACdc, 
-Gui, Add, Button, xm y+5 w100 h20 vMACRDC gMACREN,Renomear DC 
-Gui, Add, ListView, xm y+5 w820 h120 vMACdr, 
-Gui, Add, Button, xm y+5 w100 h20 vMACRDR gMACREN,Renomear DR
-Gui, Add, ListView,xm y+5 w820 h120 vMACdi, 
-Gui, Add, Button, xm y+5 w100 h20 vMACRDI gMACREN,Renomear DI
-Gui, Font, underline 
-Gui, Add,text, xm y+5 w200 h30 cblue vlink gdeslink,% "@" . camptable
-Gui, Font,
-Gui, Add, Button, x+100  w100 h30 gMACI, &Incluir
-Gui, Add, Button, x+5  w100 h30 gMACC, &Copiar
-Gui, Add, Button, x+5 w100 h30 gMACL, &Linkar
-Gui, Add, Button, x+5 w100 h30 gdesc.geral, &Descricao Geral
-Gui, Show,,Modelos-Alterar-Campos
-db.loadlv("MAC","MACcamp",camptable,"campos")
-result:=db.query("SELECT Campos FROM " camptable ";")
-campEtable:=getreferencetable(result["Campos"],EmpresaMascara AbaMascara FamiliaMascara ModeloMascara selectmodel)
-result.close()
-loadcampetables(campEtable)
+info := get_item_info("M", "MODlv")
+if(info.modelo[2] = "" || info.modelo[1] = "Modelo" ){
+	MsgBox,16,Erro, % "Selecione um modelo antes de continuar!" 
+	return
+}
+	
+inserir_campos_view(info)
 return
 
 				loadcampetables(relreference){
@@ -3736,7 +3712,6 @@ inserir2(args)
 
 inserir3(table,field,primarykey,tipo,mascaraant="")
 {
-
 	Global db,GLOBAL_COLOR
 	Static lv3
 	Global table1,field1,primaryk1,tipo1,field3,mascaraant1
@@ -3900,8 +3875,11 @@ LV_MoveRowfam(wname,lvname,moveup = true) {
 /*
 	Views
 */
+#include, views/inserir_campos_view.ahk
 #include, views/inserir_ETF_view.ahk
 #include, views/inserir_modelo_view.ahk
 #include, views/shared/inserir_dialogo_2_fields.ahk
 #include, views/shared/inserir_imagem_view.ahk
 #include, views/shared/inserir_imagem_db_view.ahk
+#include, views/inserir_campo_esp_view.ahk
+#include, views/alterar_valores_campo_view.ahk

@@ -14,6 +14,7 @@ class Modelo{
 			return
 		}
 
+
 		if(modelo_nome = "" || modelo_mascara = ""){
 			MsgBox, % "o nome e a mascara do modelo nao podem estar em brancos!"
 			return			
@@ -165,6 +166,197 @@ class Modelo{
 	}
 
 	/*
+		Insere um nome de campo
+	*/
+	incluir_campo(campo_nome, info){
+		Global mariaDB
+
+		/*
+			Pega a tabela de campos relacionada 
+			com o modelo
+		*/
+		;MsgBox, % "modelo nome: " info.modelo[1] "`n modelo mascara: " info.modelo[2]
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1] 
+		tabela_campo := this.get_tabela_campo_referencia(tabela1)
+
+		;MsgBox, % "tabela1 " tabela1 "`n tabela_campo " tabela_campo
+
+		if(this.campo_existe(campo_nome, tabela_campo)){
+			MsgBox,16, Erro, % "O campo a ser inserido ja existia!" 
+			return
+		}
+
+		/*
+			-Insere o nome do novo campo na tabela de 
+			campos
+			
+			-Cria a tabela de campos especifica
+			
+			-Insere o link na tabela de relacionamento 
+			entre o modelo e a tabela de campo especifica
+		*/
+		record := {}
+		record.Campos := campo_nome
+		mariaDB.Insert(record, tabela_campo)
+
+
+		StringReplace,campo_nome_sem_espaco,campo_nome,%A_Space%,,All
+
+		tabela_campo_especifica := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] campo_nome_sem_espaco
+			
+		try{
+				mariaDB.Query(
+					(JOIN 
+						"	CREATE TABLE IF NOT EXISTS " tabela_campo_especifica 
+						" (Codigo VARCHAR(250), DC VARCHAR(250), DR VARCHAR(250), DI VARCHAR(250), "
+						" PRIMARY KEY (Codigo)) "
+					))
+			}catch e
+				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Campos especificos `n" ExceptionDetail(e)
+		
+		record := {}
+		record.tipo := campo_nome_sem_espaco me mt mf mm nm
+		record.tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1] 
+		record.tabela2 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] campo_nome_sem_espaco
+		mariaDB.Insert(record, "reltable")	
+	}
+
+	/*
+		Insere um valor de campo especifico
+	*/
+	incluir_campo_esp(nome_campo, valores, info){
+		Global mariaDB
+		
+		;MsgBox, % "nome_campo: " nome_campo " `n codigo " valores.codigo "`n dr " valores.dr "`n dc " valores.dc "`n di " valores.di 
+		tabela_campos_especificos := get_tabela_campo_esp(nome_campo, info)
+		if(this.valor_campo_existe(tabela_campos_especificos, valores.codigo)){
+			MsgBox,16, Erro, % "O codigo a ser inserido ja existe na lista!"
+			return
+		}
+
+		record := {}
+		record.Codigo := valores.codigo
+		record.DR := valores.dr
+		record.DC := valores.dc
+		record.DI := valores.di
+		mariaDB.Insert(record, tabela_campos_especificos)
+	}
+
+	excluir_campo_esp(codigo, tabela){
+		Global mariaDB
+
+		if(codigo = "" || tabela = ""){
+			MsgBox,16, Erro, % "O codigo selecionado ou a tabela estavam vaziios!" 
+			return
+		}
+		;MsgBox, % "ira excluir o codigo " codigo " da tabela " tabela
+		try{
+				mariaDB.Query(
+				(JOIN 
+					" DELETE FROM " tabela 
+					" WHERE Codigo like '" codigo "'"
+				))	
+			}catch e 
+				MsgBox, 16, Erro, % " Erro ao tentar apagar o campo especifico " ExceptionDetail(e)
+	}
+
+	alterar_valores_campo(campo, valores, info, old_cod){
+		Global mariaDB
+
+		tabela := get_tabela_campo_esp(campo, info)
+		sql :=
+		(JOIN 
+			" UPDATE " tabela 
+			" SET Codigo='" valores.codigo "', DC='" valores.DC "', DR='" valores.DC "', DI='" valores.DI "'"
+			" WHERE Codigo='" old_cod "'"
+		)	 
+		;MsgBox, % sql
+		try{
+				mariaDB.Query(sql)
+			}catch e 
+				MsgBox, 16, Erro, % " Erro ao tentar alterar os valores " ExceptionDetail(e)
+	}
+
+	excluir_campo(campo_nome, info){
+		Global mariaDB
+
+		/*
+			-Deleta a entrada da tabela relacionada 
+			 na tabela de relacionamento e armazena o seu valor.
+
+			-verifica se nao existe mais nenhuma outra relacao com essa 
+			tabela, caso nao exista, exclui a tabela.
+		*/
+		tabela_campo_esp := get_tabela_campo_esp(campo_nome, info)
+		tabela_campo := this.get_tabela_campo_referencia(tabela1) 
+		
+		/*
+			Deleta a entrada na tabela de campo
+		*/
+		try{
+				mariaDB.Query(
+				(JOIN 
+					" DELETE FROM " tabela_campo 
+					" WHERE Campos like '" campo_nome "'"
+				))	
+			}catch e 
+				MsgBox, 16, Erro, % " Erro ao tentar apagar o campo " ExceptionDetail(e)
+
+		/*
+			Deleta a entrada na tabela de relacao
+		*/
+		try{
+				mariaDB.Query(
+				(JOIN 
+					" DELETE FROM reltable "
+					" WHERE tipo like '" campo_nome_sem_espaco "'"
+					" AND tabela1 like '" tabela1 "'"
+				))	
+			}catch e 
+				MsgBox, 16, Erro, % " Erro ao tentar apagar a entrada do campo na tabela de relacionamento " ExceptionDetail(e)
+
+		/*
+			Deleta a tabela especifica caso nao exista nenhuma outra 
+			tabela relacionada com ela. 
+		*/
+		this.delete_if_no_related(tabela_campo_esp, tipo)
+	}
+
+	/*
+		Pega tabela de campo 
+	*/
+	get_tabela_campo_referencia(tabela1){
+		Global mariaDB
+
+		rs := mariaDB.OpenRecordSet(
+			(JOIN 
+				" SELECT tabela2 FROM reltable "
+				" WHERE tipo like 'Campo' "
+				" AND tabela1 like '" tabela1 "'"
+			))
+		reference_table := rs.tabela2
+		rs.close()
+		return reference_table
+	}
+
+	/*
+		Pega a tabela de campo especifico
+	*/
+	get_tabela_campo_esp(tipo, tabela1){
+		Global mariaDB
+
+		rs := mariaDB.OpenRecordSet(
+			(JOIN 
+				" SELECT tabela2 FROM reltable "
+				" WHERE tipo like '" tipo "' "
+				" AND tabela1 like '" tabela1 "'"
+			))
+		reference_table := rs.tabela2
+		rs.close()
+		return reference_table
+	}
+
+	/*
 		Altera a descricao geral de determinado modelo
 	*/
 	descricao_geral(descricao){
@@ -212,6 +404,10 @@ class Modelo{
 	}
 
 	/*
+		Get tabela 
+	/*
+
+	/*
 		Pega a referencia da tabela de modelos
 		linkada com determinada familia
 	*/
@@ -249,6 +445,41 @@ class Modelo{
 		}
 	}
 
+	/*
+		Verifica se um campo existe antes de inserir
+	*/
+	campo_existe(nome_campo, tabela){
+		Global mariaDB
+
+		table := mariaDB.Query(
+			(JOIN 
+				" SELECT  Campos FROM " tabela
+				" WHERE Campos LIKE '" nome_campo "'"
+			))
+		if(table.Rows.maxindex()){
+			return True 
+		}else{
+			return False
+		}	
+	}
+
+	/*
+		Confere se o valor do campo existe
+	*/
+	valor_campo_existe(tabela, valor){
+		Global mariaDB
+
+		table := mariaDB.Query(
+			(JOIN 
+				" SELECT  Codigo FROM " tabela
+				" WHERE Codigo LIKE '" valor "'"
+			))
+		if(table.Rows.maxindex()){
+			return True 
+		}else{
+			return False
+		}		
+	}
 	/*
 		deleta uma determinada tabela
 		se nao existir mais nenhuma 

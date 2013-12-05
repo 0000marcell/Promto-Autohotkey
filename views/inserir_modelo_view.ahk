@@ -8,7 +8,6 @@ inserir_modelo_view(model_table){
 	Gui, inserir_modelo_view:+ownerM
 	Gui, Font, s%SMALL_FONT%, %FONT%
 	Gui, Color, %GLOBAL_COLOR%
-	Gui, Color, white
 	
 	/*
 		Listview

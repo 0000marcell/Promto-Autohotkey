@@ -1,4 +1,4 @@
-inserir_dialogo_2_view(action, owner_name){
+inserir_dialogo_2_view(action, owner_name, numero_de_campos = 2){
 	Global db, input_name, input_mascara, SMALL_FONT, GLOBAL_COLOR
 
 	/*
@@ -12,12 +12,18 @@ inserir_dialogo_2_view(action, owner_name){
 	/*
 		Campos
 	*/
-	Gui, Add, Groupbox, w230 h130, Campos
+	if(numero_de_campos = 2){
+		groupbox_height := "130"
+	}else{
+		groupbox_height := "70"
+	}
+	Gui, Add, Groupbox, w230 h%groupbox_height%, Campos
 	Gui, Add, Text,xp+10 yp+15, Item:
 	Gui, Add, Edit, y+10 w200 vinput_name uppercase,
-	Gui, Add, Text, y+10, Mascara:
-	Gui, Add, Edit, y+10 w200 vinput_mascara uppercase,
-
+	if(numero_de_campos = 2){
+		Gui, Add, Text, y+10, Mascara:
+		Gui, Add, Edit, y+10 w200 vinput_mascara uppercase,	
+	}
 	/*
 		Opcoes
 	*/

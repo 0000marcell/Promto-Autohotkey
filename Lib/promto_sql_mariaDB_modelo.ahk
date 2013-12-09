@@ -222,6 +222,23 @@ class Modelo{
 	}
 
 	/*
+		Cria a tabela de prefixo
+	*/
+	create_tabela_prefixo(tabela_prefixo){
+		Global mariaDB
+
+		try{
+				mariaDB.Query(
+					(JOIN 
+						"	CREATE TABLE IF NOT EXISTS " tabela_prefixo
+						" (Campos VARCHAR(250), "
+						" PRIMARY KEY (Campos)) "
+					))
+			}catch e
+				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de prefixos `n" ExceptionDetail(e)
+	}
+
+	/*
 		Insere um valor de campo especifico
 	*/
 	incluir_campo_esp(nome_campo, valores, info){

@@ -393,7 +393,7 @@ return
 	MAODI:
 	args:={}
 	args["camptable"] := camptable, args["table"] := oditable, args["field"] := "Campos", args["comparar"] := true, args["owner"] := "M"
-	alterarordem(args)
+	;alterarordem(args)
 	return 
 
 	plotcode:
@@ -899,14 +899,14 @@ return
 			count:=0
 			for,each,value in checkedremmassa["code"]{
 				count++
-				table:=db.iquery("SELECT item,componente FROM ESTRUTURAS WHERE item LIKE '" checkedremmassa["code",A_Index] "%' AND componente LIKE '" remedit "%';")
+				table := db.iquery("SELECT item,componente FROM ESTRUTURAS WHERE item LIKE '" checkedremmassa["code",A_Index] "%' AND componente LIKE '" remedit "%';")
 				if(table.Rows.Count()=0){
 					MsgBox, % "O item a ser deletado nao existia na estrutura: " checkedremmassa["code",A_Index] 
-					count-=1
+					count -= 1
 				}
 				db.query(db.query("DELETE FROM ESTRUTURAS WHERE item like '" checkedremmassa["code",A_Index] "%' AND componente like '" remedit "%';"))
 			}
-			if(count=0){
+			if(count = 0){
 				MsgBox, % "Nenhum item foi removido"
 			}else{
 				MsgBox,64,, % "o item " remedit " foi removido de " count " estruturas!!!"
@@ -914,15 +914,18 @@ return
 			return
 
 	ordemprefix:
-	args:={}
-	tablename:=EmpresaMascara AbaMascara FamiliaMascara ModeloMascara "prefixo"
-	args["table"]:=tablename,args["field"]:="Campos",args["comparar"]:=false ,args["owner"]:="M"
-	db.query("create table if not exists " tablename "(Campos,PRIMARY KEY(Campos ASC))")
-	For,each,value in [EmpresaMascara,AbaMascara,FamiliaMascara,ModeloMascara]{
-		if(!db.exist("Campos","Campos='" value "'",tablename))&&(value!="")
-			db.insert(tablename,"(Campos)","('" value "')")
-	}
-	alterarordem(args)
+	info := get_item_info("M", "MODlv")
+	ordem_view("prefixo", info)
+	
+	;args:={}
+	;tablename:=EmpresaMascara AbaMascara FamiliaMascara ModeloMascara "prefixo"
+	;args["table"]:=tablename,args["field"]:="Campos",args["comparar"]:=false ,args["owner"]:="M"
+	;db.query("create table if not exists " tablename "(Campos,PRIMARY KEY(Campos ASC))")
+	;For,each,value in [EmpresaMascara,AbaMascara,FamiliaMascara,ModeloMascara]{
+	;	if(!db.exist("Campos","Campos='" value "'",tablename))&&(value!="")
+	;		db.insert(tablename,"(Campos)","('" value "')")
+	;}
+	;alterarordem(args)
 	return 
 
 	dbex:
@@ -1693,8 +1696,8 @@ if(_reload_gettable = True ){    ; Variavel utilizada para saber se a tabela de 
 }
 db.createtable("ESTRUTURAS","(item,componente)") 
 args := {},hashmask := {},subitem := {}
-args["table"]:="empresa",args["loadfunc"]:="gettable",args["mascaraant"]:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara,args["savetvfunc"]:="savetvfunc1"
-field:=["Aba","Familia","Modelo"],args["owner"]:="M"
+args["table"] := "empresa", args["loadfunc"] := "gettable", args["mascaraant"] := EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara,args["savetvfunc"] := "savetvfunc1"
+field := ["Aba","Familia","Modelo"], args["owner"] := "M"
 tvstring := ""
 tvwindow(args)
 return 
@@ -1939,7 +1942,7 @@ gerarestruturas(codigo1,prox){
 
 tvest:
 TV_GetText(selectedsubitem,A_EventInfo)
-subitem[selectedsubitem]:=A_EventInfo
+subitem[selectedsubitem] := A_EventInfo
 return 
 
 gettable(table,x,nivel,masc){
@@ -2317,6 +2320,8 @@ refreshm(){
 }		
 		
 		MAB:
+		/*
+
 		Gui,MAB:New
 		Gui,font,s%SMALL_FONT%,%FONT%
 		Gui,MAB:+owner%owner%
@@ -2337,13 +2342,14 @@ refreshm(){
 		Listbloq:=[]
 		table:=db.query("SELECT Codigos FROM " bloqtable ";")
 		while(!table.EOF){  
-		        value1:=table["Codigos"],value2:=table["DC"]
-		        Listbloq[A_Index,1]:=value1 
-		        Listbloq[A_Index,2]:=value2
+		        value1 := table["Codigos"],value2 := table["DC"]
+		        Listbloq[A_Index,1] := value1 
+		        Listbloq[A_Index,2] := value2
 		        table.MoveNext()
 		}
 		table.close()
 		db.loadlv("MAB","MABlv",bloqtable,"Codigos")
+		*/
 		return 
 
 
@@ -2940,19 +2946,19 @@ return
 			args:={}
 			args["camptable"]:=camptable,args["table"]:=octable,args["field"]:="Campos",args["comparar"]:=true,args["owner"]:="M"
 			;MsgBox, % "octable " octable
-			alterarordem(args)
+			;alterarordem(args)
 			return 
 			
 			MAODC:
 			args:={}
 			args["camptable"]:=camptable,args["table"]:=odctable,args["field"]:="Campos",args["comparar"]:=true,args["owner"]:="M"
-			alterarordem(args)
+			;alterarordem(args)
 			return 
 
 			MAODR:
 			args:={}
 			args["camptable"]:=camptable,args["table"]:=odrtable,args["field"]:="Campos",args["comparar"]:=true,args["owner"]:="M" 
-			alterarordem(args)
+			;alterarordem(args)
 			return 
 			
 ;inserir1(table,field,primarykey,tipo,mascaraant="",relcondition=true,args)
@@ -3265,53 +3271,7 @@ inserirfoto(iprefix1="",selecteditem1="",arrayofitems1="",owner=""){ ;arrayofite
 		return 
 }
 
-alterarordem(args)
-{
-	Global db,args1,upwindow,uplv,updownv,altlv,args1,GLOBAL_COLOR,_show_alterar_ordem
-	args1:=args,upwindow:="alterar",uplv:="altlv"
-	gui,alterar:New
-	;Gui,alterar:+toolwindow
-	owner:=args["owner"] 
-	if(owner!="")
-		Gui,alterar:+owner%owner%
-	Gui,color,%GLOBAL_COLOR% 
-	Gui, Add,text, +0x7 +0x4 center cGreen w350 h30,Alterar Ordem
-	Gui, Add, ListView,y+5 w320 h290 valtlv , 
-	Gui, Add, UpDown, y20 x+5  w60 h140 vupdownv gupdown range0-1, UpDown
-	Gui, Add, Button,x10  y+5 w120 h30 gsalvarordem ,Salvar Ordem
-	if(_show_alterar_ordem != false)
-		Gui, Show,,Modelos-Alterar-Ordem-Descricao-Completa
-	db.query("create table if not exists " args1["table"] "(Campos, PRIMARY KEY(Campos))")
-	if(args["comparar"])
-		compararcamp(args1["camptable"],args1["table"])
-	if(_show_alterar_ordem != false)
-		db.loadlv("alterar","altlv",args1["table"])
-	return 
 
-		
-		salvarordem:
-		db.deletevalues(args1["table"],args1["field"])
-		values := getvaluesLV("alterar","altlv")
-		for,k,v in values 
-		{
-		  istring:="('" . values[A_Index,1] . "')"
-			db.insert(args1["table"],"(" . args1["field"] . ")",istring)
-		}
-		MsgBox,64,, % "A ordem foi salva com sucesso!!!"
-		return
-
-		updown:
-		gui,submit,nohide
-		if(updownv>0){
-		 	condition:=1
-		 	updownv:=0
-		 }else{
-		 	updownv:=0
-		 	condition:=0
-		 }
-		LV_MoveRowfam(upwindow,uplv,condition)
-		return   
-}
 
 ;linkar(Tipo)
 
@@ -3836,35 +3796,6 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 		return 
 }
 
-LV_MoveRowfam(wname,lvname,moveup = true) {
-	gui,%wname%:Default
-    gui,listview,%lvname%
-   ; Original by diebagger (Guest) from:
-   ; http://de.autohotkey.com/forum/viewtopic.php?p=58526#58526
-   ; Slightly Modifyed by Obi-Wahn
-   If moveup not in 1,0
-      Return   ; If direction not up or down (true or false)
-   while x := LV_GetNext(x)   ; Get selected lines
-      i := A_Index, i%i% := x
-   If (!i) || ((i1 < 2) && moveup) || ((i%i% = LV_GetCount()) && !moveup)
-      Return   ; Break Function if: nothing selected, (first selected < 2 AND moveup = true) [header bug]
-            ; OR (last selected = LV_GetCount() AND moveup = false) [delete bug]
-   cc := LV_GetCount("Col"), fr := LV_GetNext(0, "Focused"), d := moveup ? -1 : 1
-   ; Count Columns, Query Line Number of next selected, set direction math.
-   Loop, %i% {   ; Loop selected lines
-      r := moveup ? A_Index : i - A_Index + 1, ro := i%r%, rn := ro + d
-      ; Calculate row up or down, ro (current row), rn (target row)
-      Loop, %cc% {   ; Loop through header count
-         LV_GetText(to, ro, A_Index), LV_GetText(tn, rn, A_Index)
-         ; Query Text from Current and Targetrow
-         LV_Modify(rn, "Col" A_Index, to), LV_Modify(ro, "Col" A_Index, tn)
-         ; Modify Rows (switch text)
-      }
-      LV_Modify(ro, "-select -focus"), LV_Modify(rn, "select vis")
-      If (ro = fr)
-         LV_Modify(rn, "Focus")
-   }
-}
 
 #include, lib\promto_sql_mariaDB.ahk
 #include, models\remover_item_ETF.ahk
@@ -3883,3 +3814,4 @@ LV_MoveRowfam(wname,lvname,moveup = true) {
 #include, views/shared/inserir_imagem_db_view.ahk
 #include, views/inserir_campo_esp_view.ahk
 #include, views/alterar_valores_campo_view.ahk
+#include, views/ordem_view.ahk

@@ -160,6 +160,22 @@ class PromtoSQL{
 		}
 		return
 	}
+	
+	/*
+		Verifica se uma determinada tabela ja existe
+	*/
+	table_exists(tabela){
+		Global mariaDB
+
+		try{
+			mariaDB.Query(
+				(JOIN
+					"	SELECT * FROM " tabela
+				))
+			return 1
+		}catch e 
+			return 0
+	}
 
 	/*
 	 Funcao que retorna um array de valores 
@@ -199,7 +215,7 @@ class PromtoSQL{
 		Listview 
 	*/
 	load_lv(window_name, lv_name, table){
-		Global mariaDB
+		Global mariaDB, db
 
 		if(window_name = "" || lv_name = ""){
 			MsgBox, % "O handle da janela e o nome do listview sao obrigatorios!!!"
@@ -230,11 +246,89 @@ class PromtoSQL{
 	}
 
 	/*
+		Insere os novos campos na tabela de prefixo
+	*/
+	correct_tabela_ordem(tipo, info){
+		Global mariaDB,db
+
+		;MsgBox, % "correct tabela prefixo"
+		tabela_prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] tipo
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+		tabela_campos := this.get_reference("Campo", tabela1) 
+		MsgBox, % "tabela_prefixo " tabela_prefixo " tabela_campos " tabela_campos
+		
+		/*
+			Cria a tabela caso ela nao exista!
+		*/
+		if(!this.table_exits(tabela_prefixo)){
+			MsgBox, % " A tabela de prefixos nao existia e sera criada."
+			db.Modelo.create_tabela_prefixo(tabela_prefixo)
+		}
+
+		prefixos := this.load_table_in_array(tabela_prefixo)
+		campos := 	this.load_table_in_array(tabela_campos)
+
+		MsgBox, % "max index prefixos " prefixos.maxindex()
+		MsgBox, % "max index campos " campos.maxindex()
+		
+		/*
+			Transforma os arrays de multipla para 
+			uma so dimensao
+		*/
+		prefixos := []
+		prefixos := singledim_array(prefixos)
+		campos := singledim_array(campos)
+
+		/*
+			-Quando um item da tabela de campos nao existir 
+			na tabela de modelos esse item sera inserido
+		*/ 
+		
+		
+		/*
+			Primeiro faz um loop inserindo tudo o que
+			nao tem em um array no outro
+		*/
+		for each,campo in campos{
+			if(!objHasValue(prefixos, campo)){
+				prefixos.insert(campo)
+			}
+		}
+
+		/*
+			Depois retira os item do array de prefixos 
+			que nao existem no array de campos
+		*/
+		for each,prefixo in prefixos{
+			if(!objHasValue(campos,prefixo)){
+				deletefromarray(prefixo, prefixos)
+			}
+		}
+
+
+		try{
+			mariaDB.Query(
+				(JOIN
+					"TRUNCATE TABLE " tabela_prefixo
+				))
+		}catch e 
+			MsgBox,16,Erro, % "Ocorreu um erro ao apagar todos os items da tabela de ordem `n" ExceptionDetail(e)
+		
+		MsgBox, % "max index final " prefixos.maxindex()
+		
+		for each,prefixo in prefixos{
+			record := {}
+			record.Campos := prefixo	
+			mariaDB.Insert(record, tabela_prefixo)
+		}
+	}	
+
+	/*
 		Get reference global
 	*/
 	get_reference(tipo, tabela1){
 		Global mariaDB
-
+		;MsgBox, % "get reference"
 		rs := mariaDB.OpenRecordSet(
 			(JOIN 
 				" SELECT tabela2 FROM reltable "

@@ -151,6 +151,36 @@ Class OTTK
 		return duplicatedValues
 	}
 }
+
+LV_MoveRowfam(wname,lvname,moveup = true) {
+	gui,%wname%:Default
+    gui,listview,%lvname%
+   ; Original by diebagger (Guest) from:
+   ; http://de.autohotkey.com/forum/viewtopic.php?p=58526#58526
+   ; Slightly Modifyed by Obi-Wahn
+   If moveup not in 1,0
+      Return   ; If direction not up or down (true or false)
+   while x := LV_GetNext(x)   ; Get selected lines
+      i := A_Index, i%i% := x
+   If (!i) || ((i1 < 2) && moveup) || ((i%i% = LV_GetCount()) && !moveup)
+      Return   ; Break Function if: nothing selected, (first selected < 2 AND moveup = true) [header bug]
+            ; OR (last selected = LV_GetCount() AND moveup = false) [delete bug]
+   cc := LV_GetCount("Col"), fr := LV_GetNext(0, "Focused"), d := moveup ? -1 : 1
+   ; Count Columns, Query Line Number of next selected, set direction math.
+   Loop, %i% {   ; Loop selected lines
+      r := moveup ? A_Index : i - A_Index + 1, ro := i%r%, rn := ro + d
+      ; Calculate row up or down, ro (current row), rn (target row)
+      Loop, %cc% {   ; Loop through header count
+         LV_GetText(to, ro, A_Index), LV_GetText(tn, rn, A_Index)
+         ; Query Text from Current and Targetrow
+         LV_Modify(rn, "Col" A_Index, to), LV_Modify(ro, "Col" A_Index, tn)
+         ; Modify Rows (switch text)
+      }
+      LV_Modify(ro, "-select -focus"), LV_Modify(rn, "select vis")
+      If (ro = fr)
+         LV_Modify(rn, "Focus")
+   }
+}
 /*
 	Funcao que forma a arvore de items ate 
 	a familia 
@@ -181,6 +211,28 @@ get_tabela_campo_esp(campo, info){
 	StringReplace,s_campo_sem_espaco, campo,%A_Space%,,All
 	tabela_campos_especificos := db.Modelo.get_tabela_campo_esp(s_campo_sem_espaco, tabela1)
 	return tabela_campos_especificos
+}
+
+
+get_tabela_ordem(tipo, info){
+	Global db
+	MsgBox, % "get tabela ordem"
+	if(tipo = "prefixo"){
+		tabela_ordem := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "prefixo"
+	}else if(tipo = "oc"){
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1] "oc"
+	 	tabela_ordem := db.get_reference(tipo, tabela1)
+	}else if(tipo = "odr"){
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1] "odr"
+	 	tabela_ordem := db.get_reference(tipo, tabela1)
+	}else if(tipo = "odi"){
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1] "odi"
+	 	tabela_ordem := db.get_reference(tipo, tabela1)
+	}else if(tipo = "odc"){
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1] "odc"
+	 	tabela_ordem := db.get_reference(tipo, tabela1)
+	}
+	return tabela_ordem 
 }
 
 /*
@@ -1879,4 +1931,16 @@ MatHasValue(matrix,value){
 			}
 		}
 		return returnValue
+}
+
+/*
+	Transforma os arrays de multi
+	para uma so dimensao
+*/
+singledim_array(array){
+	return_array := []
+	loop, % array.maxindex(){
+		return_array.insert(array[A_Index,1])
+	}
+	Return return_array
 }

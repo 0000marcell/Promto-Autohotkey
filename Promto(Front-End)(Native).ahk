@@ -170,7 +170,7 @@ Gui, Font, s8
 */
 Gui, Add, Groupbox, xm+240 y+20 w220 h300, Opcoes 
 Gui, Add, Button, xp+5 yp+15 w100 h30 gMAM, Modelos
-glabels:=["MAB","MAC","ordemprefix","MAOC","MAODC","MAODR","MAODI"]
+glabels := ["MAB","MAC","ordemprefix","MAOC","MAODC","MAODR","MAODI"]
 for,each,value in ["Bloqueados","Campos","Ordem Prefix","Ordem Codigo","Ordem Desc Completa","Ordem Desc Resumida","Ordem Desc Ingles"]{
 	glabel := glabels[A_Index]
 	Gui, Add, Button, wp hp g%glabel%,% "&" value
@@ -388,13 +388,7 @@ return
 	result.close()
 	;showimageandcode(comboimagepath, 10, 10, EmpresaMascara AbaMascara FamiliaMascara,ModeloMascara, combocodes1 "`n" combocodes2 ,20)
 	Guicontrol,,ptcode,simpleplot.png
-	return 
-
-	MAODI:
-	args:={}
-	args["camptable"] := camptable, args["table"] := oditable, args["field"] := "Campos", args["comparar"] := true, args["owner"] := "M"
-	;alterarordem(args)
-	return 
+	return  
 
 	plotcode:
 	Gui,escolha_plotcode:New
@@ -463,59 +457,9 @@ GuiSize:
 return
 
 	codetable:
-	Gui,codetable:New
-	Gui,font,s%SMALL_FONT%,%FONT%
-	Gui,codetable:+ownerM
-	Gui,Add, Picture,w1000 h%banner_h% 0xE vbannercodetable
-	banner(BANNER_COLOR,bannercodetable,"Lista de Codigos",TextOptions) 
-	Gui,add,edit,vpesquisarcod gpesquisarcod w1000 r1 uppercase
-	Gui,add,Listview,w1000 h500 xm y+5 vlvcodetable glvcodetable,
-	Gui,add,button,y+5 w100 h30 gcarregartabela,Salvar em Arquivo
-	Gui,add,button,x+5 w100 h30 ggerarplaquetas,Gerar Plaquetas
-	Gui,Show,,Lista de Codigos
-	Listpesqcod:=[]
-	table:=db.query("SELECT Codigos,DC,DR,DI FROM " codtable ";")
-	while(!table.EOF){  
-        Listpesqcod[A_Index,1] := table["Codigos"] 
-        Listpesqcod[A_Index,2] := table["DC"]
-        Listpesqcod[A_Index,3] := table["DR"]
-        Listpesqcod[A_Index,4] := table["DI"]
-        table.MoveNext()
-	}
-	table.close()
-	db.query("ALTER TABLE " codtable " ADD COLUMN DI TEXT;")
-	db.loadlv("codetable","lvcodetable",codtable,"Codigos,DC,DR,DI",1)
+	info := get_item_info("M", "MODlv")
+	lista_de_codigos(info)
 	return  
-
-		pesquisarcod:
-		Gui,submit,nohide 
-		for,each,value in PesqList{
-			Break
-		}
-		pesquisalv4("codetable","lvcodetable",pesquisarcod,Listpesqcod)
-		return  
-
-		lvcodetable:
-		if A_GuiEvent=DoubleClick
-		{
-			currentvalue:=GetSelectedRow("codetable","lvcodetable")
-			tvstring:="",selecteditemtoloadestrut:=currentvalue[1] ">>" currentvalue[3]
-			loadestrutura(selecteditemtoloadestrut,"",,0)
-			tvwindow2(args)		
-		}
-		return 
-
-		gerarplaquetas:
-		createtag(EmpresaMascara AbaMascara FamiliaMascara,prefixpt2,ModeloMascara,selectmodel,EmpresaMascara AbaMascara FamiliaMascara ModeloMascara "Codigo")
-		return 
-
-		carregartabela:
-		FileDelete,temp.csv 
-		for,each,value in list:=db.getvalues("Codigos,DC",codtable){ 
-   			 FileAppend, % list[A_Index,1] ";" list[A_Index,2] "`n",temp.csv
-		}
-		Run,temp.csv		
-		return 
 
 	massaestrut:
 	if(_reload_gettable = True ){    ; Variavel utilizada para saber se a tabela de formacao de estrutura precisa ser recaregada
@@ -782,14 +726,14 @@ return
 		Gui,add,button,x+300  w100 h30 gaddmassaestrut,Adicionar a estrutura!!
 		GUi,add,button,x+5 wp hp gremovelist,Remover da Lista!!
 		subitem := {}
-		TvDefinition=
+		TvDefinition =
 		(
 			%GLOBAL_TVSTRING%
 		)
 		gui,treeview,tvaddmass
 		TV_Delete()
 		CreateTreeView(TvDefinition)
-		Gui,Show,,Adicionar em massa!!!
+		Gui,Show,,Adicionar em massa!
 		return 
 
 			addmassaestrut:
@@ -839,7 +783,7 @@ return
 
 			tvaddmass:
 			maska := []
-			gui,treeview,tvaddmass
+			gui, treeview, tvaddmass
 			id := TV_GetSelection()
 			MsgBox, % "ira iniciar o loop"
 			Loop
@@ -1948,245 +1892,17 @@ return
 gettable(table,x,nivel,masc){
 	Global db,GLOBAL_TVSTRING,field,hashmask
 	x+=1,nivel.="`t"
-	For each in list:=db.getvalues("*",table){
-		GLOBAL_TVSTRING.="`n" . nivel . list[A_Index,1]
+	For each in list := db.getvalues("*",table){
+		GLOBAL_TVSTRING .= "`n" . nivel . list[A_Index,1] 
 		hashmask[list[A_Index,1]] := list[A_Index,2]
 		;MsgBox, % "valor do hashmask " hashmask[list[A_Index,1]] "`n para o valor " list[A_Index,1] 
 		result:=db.query("SELECT tabela2 FROM reltable WHERE tipo='" . field[x] . "' AND tabela1='" . masc . list[A_Index,1] . "'")
-		newtable:=result["tabela2"]
+		newtable := result["tabela2"]
 		result.close()
 		if(newtable)
 			gettable(newtable,x,nivel,masc . list[A_Index,2])
 	}
 	return 
-}
-
-
-gerarcodigos:
-_reload_gettable := True
-if(!camptable)||(!octable)||(!odctable)||(!odrtable)||(!codtable){
-	MsgBox,64,, % "Uma ou mais campos, das tabelas necessarias para gerar os codigos esta em branco!"
-}
-args:={}
-args["codtable"]:=codtable
-args["octable"]:=octable 
-args["odctable"]:=odctable
-args["odrtable"]:=odrtable
-args["oditable"]:=oditable
-args["camptable"]:=camptable
-args["empmasc"]:=EmpresaMascara
-args["abamasc"]:=AbaMascara
-args["fammasc"]:=FamiliaMascara
-args["modmasc"]:=ModeloMascara
-args["mascaraant"]:=EmpresaMascara AbaMascara FamiliaMascara ModeloMascara
-for,each,value in list:=db.getvalues("Campos",EmpresaMascara AbaMascara FamiliaMascara ModeloMascara "prefixo"){
-	args["mascaraant2"].=list[A_Index,1]	
-} 
-if(args["mascaraant2"]=""){
-	MsgBox, % "Defina a ordem do prefixo antes de continuar!!!"
-	return 
-}
-args["selecteditem"] := selectmodel
-tables:=["oc","odc","odr","odi"]
-tables2:=["octable","odctable","odrtable","oditable"]
-fields:=["Codigo","DC","DR","DI"]
-relational:={}    ;tabela usada para relacionar os valores do codigo com as descricoes no formato relational[campo,desc,value]:=valor do codigo
-for,each,value in tables2
-	args["ordemtable"]:=args[value],args["field"]:=fields[A_Index],args["type"]:=tables[A_Index],loadtables(args)	
-finalcod:=[]
-for,each,value in tables {
-	codlist:=[]
-	;_firsttime:=1
-	args["table"]:=value,prefix:=args["mascaraant2"],global_prefix:=prefix,x:=1,gerarcodigos(args,prefix,x)
-	for,each2,value2 in codlist {
-		finalcod[value,A_Index]:=value2 
-	}
-	;args["mascaraant"]:=""
-}
-MsgBox,64,, % " Aguarde.... (numero total de codigos:" finalcod["oc"].maxindex() ")"
-db.deletevalues(codtable,"Codigos")
-db.createtable(codtable,"(Codigos,DC,DR,PRIMARY KEY(Codigos ASC))")
-codes:={}
-currentvalue:=GetSelectedRow("M","MODlv")
-table:=db.query("SELECT descricao FROM " EmpresaMascara AbaMascara FamiliaMascara currentvalue[2] "Desc;")
-descgeral:=table["descricao"]
-table.close()
-table2:=db.query("SELECT descricao FROM " EmpresaMascara AbaMascara FamiliaMascara currentvalue[2] "DescIngles;")
-descgeralingles:=table2["descricao"]
-table2.close()
-db.query("ALTER TABLE " codtable " ADD COLUMN DI TEXT;")
-progress(finalcod["oc"].maxindex(),parar_gerar_codigo)
-_error:=0
-for,each,value in finalcod["oc"]{
-		;code:=""
-		finalresult:=organizecode(finalcod["oc",each]) ;Funcao que organiza os codigos com as descricao correspondentes.
-		updateprogress("Inserindo Codigos " finalresult.oc,1)
-		code_initial_prefix := finalresult.oc
-		;MsgBox, % "codigo antes " code_initial_prefix
-		Stringleft,code_initial_prefix,code_initial_prefix,3
-		;MsgBox, % "codigo depois " code_initial_prefix
-		if(code_initial_prefix != "MPT" ){
-			if(StrLen(finalresult.oc)>15){
-				MsgBox,16,,% "O codigo " finalresult.oc " tem mais de 15 caracteres a insercao de codigo ira parar "
-				_error:=1
-				Break
-			}	
-		}else{
-			if(StrLen(finalresult.oc)>16){
-				MsgBox,16,,% "O codigo " finalresult.oc " tem mais de 15 caracteres a insercao de codigo ira parar "
-				_error:=1
-				Break
-			}	
-		}
-		
-		if(StrLen(descgeral " " finalresult.dc)>255){
-			MsgBox,16,,% "A descricao completa do codigo " finalresult.oc " tem mais de 255 caracteres a insercao de codigo ira parar "
-			_error:=1
-			Break 
-		}
-		if(StrLen(descgeral " " finalresult.dr)>155){
-			MsgBox,16,,% "A descricao resumida do codigo " finalresult.oc " tem mais de 155 caracteres a insercao de codigo ira parar "
-			_error:=1
-			Break 
-		}
-		if(StrLen(descgeralingles " " finalresult.di)>155){
-			MsgBox,16,,% "A descricao em ingles do codigo " finalresult.oc " tem mais de 155 caracteres a insercao de codigo ira parar "
-			_error:=1
-			Break 
-		}
-		db.insert(codtable,"(Codigos,DC,DR,DI)","('" . finalresult.oc . "','" descgeral " " finalresult.dc . "','" descgeral " " finalresult.dr "','" descgeralingles " " finalresult.di "')")
-}
-Gui,progress:destroy
-relmodel:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel
-if(!db.exist("tipo,tabela1","tipo='Codigo' AND tabela1='" . relmodel . "'","reltable")){
-		db.insert("reltable","(tipo,tabela1,tabela2)","('Codigo','" . relmodel . "','" . codtable . "')")
-}
-loaditem()
-if(_error = 0)
-	MsgBox,64,, % "codigos gerados!!"
-else
-	MsgBox,16,, % "Os codigos NAO foram gerados!!"
-Gosub,codetable
-return 
-
-parar_gerar_codigo(){
-	MsgBox, % "parar gerar codigo!"
-}
-
-organizecode(code){
-	Global
-	campo:={}
-	StringSplit,codepiece,code,|
-	x:=1
-	cleancode:=""
-	field2:=""
-	Loop,% codepiece0 {
-		if(A_Index=1){
-			x+=1
-			Continue
-		}
-		StringSplit,field,codepiece%x%,>
-		campo[field1]:=field2
-		cleancode.=field2
-		x+=1
-	}
-	returndesc := {}
-	returndesc.oc := codepiece1 cleancode
-	returndesc.dc := getdesc(campo,"odc")
-	returndesc.dr := getdesc(campo,"odr")
-	returndesc.di := getdesc(campo,"odi")	
-	return returndesc
-}
-
-getdesc(campo,typedesc){
-	Global
-	for,each,value in finalcod[typedesc]{
-		value:=finalcod[typedesc,each]
-		StringSplit,code,value,|
-		fieldnames:=object()
-		campo2:={}
-		campo2withspaces:={}
-		x:=1
-		Loop,% code0{
-			if(A_Index=1){
-				x+=1
-				Continue
-			}
-			StringSplit,field,code%x%,>
-			campo2withspaces[field1]:=field2
-			StringReplace,field2,field2,%A_Space%,,All
-			campo2[field1]:=field2
-			fieldnames.insert(field1)
-			x+=1
-		}
-		match:=0
-		desc:=""
-		for,each,value in fieldnames{
-			if(campo[value]=relational[value,typedesc,campo2[value]]){
-				match:=1
-				desc.=campo2withspaces[value] " " 
-			}else{
-				match:=0
-				Break
-			}
-		}
-		if(match=1)
-			Break
-	} 
-	return desc
-}
-
-loadtables(args)
-{
-	Global db,oc,odc,odr,odi,relational
-	type:=args["type"],%type%:=[]
-	For each in list:=db.getvalues("Campos",args["ordemtable"]){
-		read:=list[A_Index,1]
-		StringReplace,value,read,%A_Space%,,All
-		k:=[]
-		result:=db.query("SELECT tabela2 FROM reltable WHERE tipo='" . value . "' AND tabela1='" . args["mascaraant"] . args["selecteditem"] . "'")
-		field:=args["field"]
-		For each in list2:=db.getvalues(field,result["tabela2"])
-			k.insert("|" value ">" list2[A_Index,1])
-		For each in list3:=db.getvalues("Codigo,DC,DR",result["tabela2"]){  ;Loop que cria a relational table !!!
-			dc1:=list3[A_Index,2],dr1:=list3[A_Index,3],di1:=list3[A_Index,4]
-			StringReplace,dc1,dc1,%A_Space%,,All
-			StringReplace,dr1,dr1,%A_Space%,,All
-			StringReplace,di1,di1,%A_Space%,,All
-			relational[value,"odc",dc1]:=list3[A_Index,1]
-			relational[value,"odr",dr1]:=list3[A_Index,1]
-			relational[value,"odi",di1]:=list3[A_Index,1]
-		}
-		result.close()
-		if(k[1]!="")
-			%type%.insert(k)
-	}
-}
-
-gerarcodigos(args,prefix,x)
-{
-	Global db,oc,odc,odr,odi,codlist,_firsttime,global_prefix
-
-	table:=args["table"]
-	for,each,value in list:=%table%[x]{
-		if(table="oc")
-			cod:=prefix value
-		if(table="odc")
-			cod:=prefix " " value
-		if(table="odr")
-			cod:=prefix " " value
-		if(table="odi")
-			cod:=prefix " " value
-		x+=1
-		gerarcodigos(args,cod,x)
-		x-=1		
-	}
-	if(!%table%[x]){
-		if(table!="oc")
-			StringReplace,prefix,prefix,% global_prefix,,All
-		codlist.insert(prefix)
-		return
-	}
 }
 
 linkarm:
@@ -2943,23 +2659,41 @@ return
 
 
 			MAOC:
-			args:={}
-			args["camptable"]:=camptable,args["table"]:=octable,args["field"]:="Campos",args["comparar"]:=true,args["owner"]:="M"
+			info := get_item_info("M", "MODlv")
+			ordem_view("oc", info)
+			
+			;args:={}
+			;args["camptable"]:=camptable,args["table"]:=octable,args["field"]:="Campos",args["comparar"]:=true,args["owner"]:="M"
 			;MsgBox, % "octable " octable
 			;alterarordem(args)
 			return 
 			
 			MAODC:
-			args:={}
-			args["camptable"]:=camptable,args["table"]:=odctable,args["field"]:="Campos",args["comparar"]:=true,args["owner"]:="M"
+			info := get_item_info("M", "MODlv")
+			ordem_view("odc", info)
+			
+			;args:={}
+			;args["camptable"]:=camptable,args["table"]:=odctable,args["field"]:="Campos",args["comparar"]:=true,args["owner"]:="M"
 			;alterarordem(args)
 			return 
 
 			MAODR:
-			args:={}
-			args["camptable"]:=camptable,args["table"]:=odrtable,args["field"]:="Campos",args["comparar"]:=true,args["owner"]:="M" 
+			info := get_item_info("M", "MODlv")
+			ordem_view("odr", info)
+
+			;args:={}
+			;args["camptable"]:=camptable,args["table"]:=odrtable,args["field"]:="Campos",args["comparar"]:=true,args["owner"]:="M" 
 			;alterarordem(args)
 			return 
+
+			MAODI:
+			info := get_item_info("M", "MODlv")
+			ordem_view("odi", info)
+			
+			;args:={}
+			;args["camptable"] := camptable, args["table"] := oditable, args["field"] := "Campos", args["comparar"] := true, args["owner"] := "M"
+			;alterarordem(args)
+			return
 			
 ;inserir1(table,field,primarykey,tipo,mascaraant="",relcondition=true,args)
 
@@ -3802,6 +3536,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include <promtolib>
 #include,lib\json_parser.ahk
 #include,<SQL_new>
+#include, lib\gerar_codigos.ahk
 
 /*
 	Views
@@ -3815,3 +3550,4 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, views/inserir_campo_esp_view.ahk
 #include, views/alterar_valores_campo_view.ahk
 #include, views/ordem_view.ahk
+#include, views/lista_de_codigos_view.ahk

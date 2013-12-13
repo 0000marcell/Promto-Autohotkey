@@ -1,6 +1,22 @@
-control := {window: "janela", combobox: "combobox"}
-MsgBox, % control.combobox
+x := "y estava vazio"
+y := ""
+x := ((y != "") ? (y) : ())
+MsgBox, % x
 
+
+;control := {window: "janela", combobox: "combobox"}
+;MsgBox, % control.combobox
+
+;prop_table := [
+;(JOIN 
+;	"value1", "value2", "value3", "value4", "value5", "value6", 
+;	"value7", "value8", "value9", "value10", "value11"
+;)]
+;MsgBox, % prop_table[8]
+
+;for each, value in prop_table{
+;	MsgBox, % value
+;}
 ;tipo = "empresa"
 ;x := (tipo = "empresa") ? "TOTALLIGHT" : ""
 ;y := (tipo = "empresa") ? "T" : ""

@@ -100,7 +100,7 @@ class PromtoSQL{
 		GuiControl,, %cbcontrol%,|
 		table_items := this.load_table_in_array(tabela)
 		loop, % table_items.maxindex(){
-			item := table_items[A_Index,1]
+			item := table_items[A_Index,2]
 			if(A_Index = 1){
 				list.= item
 			}else{
@@ -108,6 +108,42 @@ class PromtoSQL{
 			}
 		}
 		GuiControl,, %cbcontrol%, %list%
+	}
+
+	load_codigos_combobox(tabela){
+		Global mariaDB
+
+		window := "M"
+		cbcontrol := "combocodes"
+		list := ""
+		Gui, %window%:default 
+		GuiControl,, %cbcontrol%,|
+		table_items := this.load_table_in_array(tabela)
+		loop, % table_items.maxindex(){
+			codigo := table_items[A_Index,1]
+			dr := table_items[A_Index,3]
+			if(A_Index = 1){
+				list.= codigo " >> " dr
+			}else{
+				list.= "|" codigo " >> " dr
+			}
+		}
+		GuiControl,, %cbcontrol%, %list%
+	}
+
+	/*
+		Deleta todos os items da tabela
+	*/
+	clean_table(tabela){
+		Global mariaDB
+
+		try{
+			mariaDB.Query(
+				(JOIN
+					"TRUNCATE TABLE " tabela
+				))
+		}catch e 
+			MsgBox,16,Erro, % "Ocorreu um erro ao apagar todos os items da tabela " tabela " `n" ExceptionDetail(e)		
 	}
 
 	/*
@@ -118,7 +154,7 @@ class PromtoSQL{
 		Global mariaDB
 
 		if(table = ""){
-			MsgBox, % "Passe o nome de uma tabela antes de continuar!"
+			MsgBox, % "Passe o nome de uma tabela para carregar em um array!"
 			return  
 		}
 
@@ -255,29 +291,47 @@ class PromtoSQL{
 		tabela_prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] tipo
 		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
 		tabela_campos := this.get_reference("Campo", tabela1) 
-		MsgBox, % "tabela_prefixo " tabela_prefixo " tabela_campos " tabela_campos
+		;MsgBox, % "tabela_prefixo " tabela_prefixo " tabela_campos " tabela_campos
 		
 		/*
 			Cria a tabela caso ela nao exista!
-		*/
-		if(!this.table_exits(tabela_prefixo)){
-			MsgBox, % " A tabela de prefixos nao existia e sera criada."
+		*/	
+		;MsgBox, % "ira testar se a tabela existe " tabela_prefixo 
+		if(!this.table_exists(tabela_prefixo)){
+			;MsgBox, % " A tabela de prefixos nao existia e sera criada."
 			db.Modelo.create_tabela_prefixo(tabela_prefixo)
+			
+			/*
+				Se o tipo for igual ao prefixo insere os valores de 
+				prefixo
+			*/
+			if(tipo = "prefixo"){
+				db.Modelo.inserir_valores_prefixo(tabela_prefixo, info)
+				return
+			}
 		}
 
+		if(tipo = "prefixo")
+			return
+		
+
+		prefixos := []
 		prefixos := this.load_table_in_array(tabela_prefixo)
 		campos := 	this.load_table_in_array(tabela_campos)
 
-		MsgBox, % "max index prefixos " prefixos.maxindex()
-		MsgBox, % "max index campos " campos.maxindex()
+		;MsgBox, % "max index prefixos " prefixos.maxindex()
+		;MsgBox, % "max index campos " campos.maxindex()
 		
 		/*
 			Transforma os arrays de multipla para 
 			uma so dimensao
 		*/
-		prefixos := []
-		prefixos := singledim_array(prefixos)
-		campos := singledim_array(campos)
+		prefixos := singledim_array(prefixos, 2)
+		campos := singledim_array(campos, 2)
+
+		;for each, value in prefixos{
+		;	MsgBox, % "Lista de prefixos antes" value
+		;}
 
 		/*
 			-Quando um item da tabela de campos nao existir 
@@ -314,13 +368,16 @@ class PromtoSQL{
 		}catch e 
 			MsgBox,16,Erro, % "Ocorreu um erro ao apagar todos os items da tabela de ordem `n" ExceptionDetail(e)
 		
-		MsgBox, % "max index final " prefixos.maxindex()
+		;MsgBox, % "max index final " prefixos.maxindex()
 		
 		for each,prefixo in prefixos{
+			;MsgBox, % "Lista de prefixos depois " prefixo
 			record := {}
 			record.Campos := prefixo	
 			mariaDB.Insert(record, tabela_prefixo)
 		}
+
+		;MsgBox, % "terminou o correct table!"
 	}	
 
 	/*
@@ -328,7 +385,7 @@ class PromtoSQL{
 	*/
 	get_reference(tipo, tabela1){
 		Global mariaDB
-		;MsgBox, % "get reference"
+		;MsgBox, % "get reference tipo " tipo " tabela1 " tabela1
 		rs := mariaDB.OpenRecordSet(
 			(JOIN 
 				" SELECT tabela2 FROM reltable "

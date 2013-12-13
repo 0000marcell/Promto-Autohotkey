@@ -367,7 +367,7 @@ class Tipo{
 		Global mariaDB
 
 		if(table = ""){
-			MsgBox, % "Passe o nome de uma tabela antes de continuar!"
+			MsgBox, % "Passe o nome de uma tabela antes de continuar tipo!"
 			return  
 		}
 

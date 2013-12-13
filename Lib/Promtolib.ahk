@@ -152,6 +152,7 @@ Class OTTK
 	}
 }
 
+
 LV_MoveRowfam(wname,lvname,moveup = true) {
 	gui,%wname%:Default
     gui,listview,%lvname%
@@ -216,20 +217,20 @@ get_tabela_campo_esp(campo, info){
 
 get_tabela_ordem(tipo, info){
 	Global db
-	MsgBox, % "get tabela ordem"
+	;MsgBox, % "get tabela ordem"
 	if(tipo = "prefixo"){
 		tabela_ordem := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "prefixo"
 	}else if(tipo = "oc"){
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1] "oc"
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
 	 	tabela_ordem := db.get_reference(tipo, tabela1)
 	}else if(tipo = "odr"){
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1] "odr"
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
 	 	tabela_ordem := db.get_reference(tipo, tabela1)
 	}else if(tipo = "odi"){
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1] "odi"
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
 	 	tabela_ordem := db.get_reference(tipo, tabela1)
 	}else if(tipo = "odc"){
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1] "odc"
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
 	 	tabela_ordem := db.get_reference(tipo, tabela1)
 	}
 	return tabela_ordem 
@@ -550,6 +551,7 @@ check_if_ETF_exist(nome, mascara_antiga){
 		return mascara_antiga
 	}
 }
+
 /*
 	Pega todas as informacoes sobre determinado item
 	baseado no valor de uma listview
@@ -594,6 +596,9 @@ get_item_info(window, lv){
 load_image_in_main_window(){
 	Global empresa, tipo, familia, info,db
 	
+	codtable := info.empresa[2] info.tipo[2]
+	db.load_codigos_combobox(codtable)
+	;MsgBox, % "load image in main window"
 	/*
 		Pega a foto linkada com o determinado modelo
 	*/
@@ -601,6 +606,7 @@ load_image_in_main_window(){
 	
 	;MsgBox, % "imagem selecionada " tabela2_value
 	image_name_value := db.Imagem.get_image_path(tabela2_value)
+	;MsgBox, % "image name value " image_name_value
 	if(image_name_value = ""){
 		image_name_value := "sem_foto" 
 	}
@@ -612,7 +618,6 @@ load_image_in_main_window(){
 /*
 	Pega o modelo selecionado em certa list_view
 */
-
 get_selected_model(window, lv){
 	model := GetSelectedRow(window, lv)
 	if(model[1] = "Modelos" || model[1] = "")
@@ -796,6 +801,7 @@ destroycarregandologo(){
 show_image_and_code(image){
 	Global
 	
+	;MsgBox, % "show image and code"
 	newgdi({w:850,h:280})
 	image := Gdip_CreateBitmapFromFile(image)
 	w := Gdip_GetImageWidth(image), h := Gdip_GetImageHeight(image)
@@ -805,8 +811,9 @@ show_image_and_code(image){
 		/*
 			Pega a descricao 
 		*/
+		;MsgBox, % "vai pegar a descricao"
 		descricao_model := db.Modelo.get_desc(info)
-		
+		;MsgBox, % "retorno descricao " descricao_model
 		/*
 			Printa a descricao
 		*/
@@ -1937,10 +1944,10 @@ MatHasValue(matrix,value){
 	Transforma os arrays de multi
 	para uma so dimensao
 */
-singledim_array(array){
+singledim_array(array, col = 1){
 	return_array := []
 	loop, % array.maxindex(){
-		return_array.insert(array[A_Index,1])
+		return_array.insert(array[A_Index, col])
 	}
 	Return return_array
 }

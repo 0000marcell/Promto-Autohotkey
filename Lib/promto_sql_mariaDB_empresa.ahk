@@ -5,6 +5,7 @@ class Empresa{
 	*/
 	incluir(empresa_nome, empresa_mascara){
 		Global mariaDB
+		
 		/*
 			Verifica se a mascara a ser inserida 
 			ja existe
@@ -321,7 +322,7 @@ class Empresa{
 		Global mariaDB
 
 		if(table = ""){
-			MsgBox, % "Passe o nome de uma tabela antes de continuar!"
+			MsgBox, % "Passe o nome de uma tabela antes de carregar em um array (empresa)!"
 			return  
 		}
 

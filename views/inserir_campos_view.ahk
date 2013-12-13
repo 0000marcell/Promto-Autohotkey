@@ -95,6 +95,9 @@ inserir_campos_view(info){
 	control := {window: "inserir_campos_view", combobox: "campos_combobox"}
 	db.load_combobox(control, tabela)
 	MsgBox, 64, Sucesso, % "O campo foi excluido com sucesso!"
+	Gui, inserir_campos_view:default
+	Gui, listview, valores_de_campo_lv
+	LV_Delete()
 	return
 
 	inserir_valores_campo_button:

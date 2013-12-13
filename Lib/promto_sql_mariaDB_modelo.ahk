@@ -14,7 +14,6 @@ class Modelo{
 			return
 		}
 
-
 		if(modelo_nome = "" || modelo_mascara = ""){
 			MsgBox, % "o nome e a mascara do modelo nao podem estar em brancos!"
 			return			
@@ -45,27 +44,45 @@ class Modelo{
 		tables := ["Campo", "oc", "odr", "odc", "odi", "Codigo", "Desc"]
 
 		for,each, tipo in tables{
-			if(tipo != "Desc"){
+			if(tipo = "Codigo"){
+				try{
+					mariaDB.Query(
+					(JOIN 
+						"	CREATE TABLE IF NOT EXISTS " prefixo modelo_mascara tipo
+						" (Codigos VARCHAR(250),"
+						" DR VARCHAR(300), "
+						" DC VARCHAR(600), "
+						" DI VARCHAR(300)) "
+					))
+				}catch e
+					MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Codigos `n" ExceptionDetail(e)
+
+			}
+
+			if(tipo != "Desc" && tipo != "Codigo"){
 				try{
 				mariaDB.Query(
 					(JOIN 
 						"	CREATE TABLE IF NOT EXISTS " prefixo modelo_mascara tipo
-						" (Campos VARCHAR(250), "
-						" PRIMARY KEY (Campos)) "
+						" (id MEDIUMINT NOT NULL AUTO_INCREMENT,"
+						" Campos VARCHAR(250), "
+						" PRIMARY KEY (id)) "
 					))
-			}catch e
+				}catch e
 				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Campos `n" ExceptionDetail(e)	
 			}
-		if(tipo = "Desc"){
-			try{
-				mariaDB.Query(
-					(JOIN 
-						"	CREATE TABLE IF NOT EXISTS " prefixo modelo_mascara "Desc"
-						" (descricao VARCHAR(250))"
-					))
-			}catch e
-				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de descricao geral `n" ExceptionDetail(e)	
-		}	
+			
+			if(tipo = "Desc"){
+				MsgBox, % "ira criar tabela de descriaco!"
+				try{
+					mariaDB.Query(
+						(JOIN 
+							"	CREATE TABLE IF NOT EXISTS " prefixo modelo_mascara "Desc"
+							" (descricao VARCHAR(250))"
+						))
+				}catch e
+					MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de descricao geral `n" ExceptionDetail(e)	
+			}	
 		
 			/*
 				Verifica se a relacao ja nao existe 
@@ -166,6 +183,30 @@ class Modelo{
 	}
 
 	/*
+		Incluir ordem
+	*/
+	incluir_ordem(items, tabela_ordem){
+		Global mariaDB
+
+		;MsgBox, % "truncate " tabela_ordem
+
+		try{
+			mariaDB.Query(
+				(JOIN
+					"TRUNCATE TABLE " tabela_ordem
+				))
+		}catch e 
+			MsgBox,16,Erro, % "Ocorreu um erro ao apagar todos os items da tabela de ordem `n" ExceptionDetail(e)
+		
+		for each, item in items{
+			;MsgBox, % "items: " item
+			record := {}
+			record.Campos := item
+			mariaDB.Insert(record, tabela_ordem)
+		}
+	}
+
+	/*
 		Insere um nome de campo
 	*/
 	incluir_campo(campo_nome, info){
@@ -195,10 +236,14 @@ class Modelo{
 			-Insere o link na tabela de relacionamento 
 			entre o modelo e a tabela de campo especifica
 		*/
-		record := {}
-		record.Campos := campo_nome
-		mariaDB.Insert(record, tabela_campo)
-
+		try{
+			mariaDB.Query(
+				(JOIN
+					"INSERT INTO " tabela_campo 
+					" (Campos) VALUES ('" campo_nome "')"  				
+				))
+		}catch e
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar o valor de campo na tabela `n" ExceptionDetail(e)
 
 		StringReplace,campo_nome_sem_espaco,campo_nome,%A_Space%,,All
 
@@ -222,6 +267,26 @@ class Modelo{
 	}
 
 	/*
+		Insere os codigos na tabela de codigos
+	*/
+	inserir_codigo(tabela, valores){
+		Global mariaDB
+		if(tabela = "" || valores[1] = ""){
+			MsgBox,16, Erro, % "A tabela de codigos ou os valores estavam em branco `n tabela de codigos: " tabela "`n valores " valores[1] 
+			return
+		}
+
+		FileAppend, % "codigo " valores[1] "`n", % "lista_codigos.txt"
+		
+		record := {}
+		record.Codigos := valores[1]
+		record.DR := valores[2]
+		record.DC := valores[3]
+		record.DI := valores[4]
+		mariaDB.Insert(record, tabela)
+	}
+
+	/*
 		Cria a tabela de prefixo
 	*/
 	create_tabela_prefixo(tabela_prefixo){
@@ -231,8 +296,9 @@ class Modelo{
 				mariaDB.Query(
 					(JOIN 
 						"	CREATE TABLE IF NOT EXISTS " tabela_prefixo
-						" (Campos VARCHAR(250), "
-						" PRIMARY KEY (Campos)) "
+						" (id MEDIUMINT NOT NULL AUTO_INCREMENT,"
+						" Campos VARCHAR(250), "
+						" PRIMARY KEY (id)) "
 					))
 			}catch e
 				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de prefixos `n" ExceptionDetail(e)
@@ -297,6 +363,7 @@ class Modelo{
 	excluir_campo(campo_nome, info){
 		Global mariaDB
 
+		;MsgBox, % "campo nome " campo_nome " info empresa " info.empresa[1]
 		/*
 			-Deleta a entrada da tabela relacionada 
 			 na tabela de relacionamento e armazena o seu valor.
@@ -304,9 +371,14 @@ class Modelo{
 			-verifica se nao existe mais nenhuma outra relacao com essa 
 			tabela, caso nao exista, exclui a tabela.
 		*/
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+		;MsgBox, % "tabela1 " tabela1
 		tabela_campo_esp := get_tabela_campo_esp(campo_nome, info)
 		tabela_campo := this.get_tabela_campo_referencia(tabela1) 
 		
+		;MsgBox, % "tabela campo esp " tabela_campo_esp
+		;MsgBox, % "tabela campo " tabela_campo
+
 		/*
 			Deleta a entrada na tabela de campo
 		*/
@@ -322,6 +394,7 @@ class Modelo{
 		/*
 			Deleta a entrada na tabela de relacao
 		*/
+		StringReplace, campo_nome_sem_espaco, campo_nome,%A_Space%,,All
 		try{
 				mariaDB.Query(
 				(JOIN 
@@ -405,17 +478,38 @@ class Modelo{
 	}
 
 	/*
+		Insere os valores de prefixo
+	*/
+	inserir_valores_prefixo(tabela_prefixo, info){
+		Global mariaDB
+
+		values_tbi := [info.empresa[2], info.tipo[2], info.familia[2], info.modelo[2]]
+		for each, value in values_tbi{
+			if(value = "")
+				continue
+			record := {}
+			record.Campos := value
+			mariaDB.Insert(record, tabela_prefixo)
+		}
+
+
+	}
+	/*
 		Pega a descricao geral
 	*/
 
 	get_desc(info){
 		Global mariaDB
-
-		rs := mariaDB.OpenRecordSet(
+		MsgBox, % "SELECT descricao FROM " info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Desc"
+		try{
+			rs := mariaDB.OpenRecordSet(
 			(JOIN 
-				" SELECT descricao FROM " info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "desc"
+				"SELECT descricao FROM " info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Desc"
 			))
+		}catch e 
+
 		value := rs.descricao
+		MsgBox, % "descricao retornada " value
 		rs.close()
 		return value
 	}
@@ -528,5 +622,17 @@ class Modelo{
 				MsgBox,16,Erro,% " Erro ao tentar deletar a tabela de " tipo " " linked_table "`n" ExceptionDetail(e)
 		}
 
+	}
+
+	load_tables(info){
+		Global mariaDB, db, camptable, octable, odctable, odrtable, oditable, codtable
+
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+		camptable := db.get_reference("Campo", tabela1)
+		octable := db.get_reference("oc", tabela1)
+		odctable := db.get_reference("odc", tabela1)
+		odrtable := db.get_reference("odr", tabela1)
+		oditable := db.get_reference("odi", tabela1)
+		codtable := db.get_reference("Codigo", tabela1)
 	}
 }

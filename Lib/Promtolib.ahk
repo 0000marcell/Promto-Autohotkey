@@ -596,21 +596,22 @@ get_item_info(window, lv){
 load_image_in_main_window(){
 	Global empresa, tipo, familia, info,db
 	
-	codtable := info.empresa[2] info.tipo[2]
+	codtable := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+	;FileAppend, % "ira carregar os codigos da tabela : " codtable "`n", % "debug.txt"
 	db.load_codigos_combobox(codtable)
-	;MsgBox, % "load image in main window"
+
 	/*
 		Pega a foto linkada com o determinado modelo
 	*/
 	tabela2_value := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
 	
-	;MsgBox, % "imagem selecionada " tabela2_value
+	;FileAppend, % "ira buscar a imagem tabela2_value " tabela2_value "`n", % "debug.txt"  
 	image_name_value := db.Imagem.get_image_path(tabela2_value)
-	;MsgBox, % "image name value " image_name_value
 	if(image_name_value = ""){
 		image_name_value := "sem_foto" 
 	}
 	image_source := A_WorkingDir "\img\" image_name_value ".jpg"
+	;FileAppend, % "imagem source " image_source "`n" , % "debug.txt"
 	show_image_and_code(image_source)
 }
 	
@@ -811,9 +812,11 @@ show_image_and_code(image){
 		/*
 			Pega a descricao 
 		*/
-		;MsgBox, % "vai pegar a descricao"
-		descricao_model := db.Modelo.get_desc(info)
-		;MsgBox, % "retorno descricao " descricao_model
+		;FileAppend, % "vai pegar a descricao `n", % "debug.txt"
+		desc_ := db.Modelo.get_desc(info)
+		StringSplit, desc_, desc_ ,|,
+		descricao_model := desc_1
+		;FileAppend, % "descricao retornada " descricao_model "`n", % "debug.txt"
 		/*
 			Printa a descricao
 		*/
@@ -878,6 +881,26 @@ plotptcode(prefixpt,prefixpt2,modelpt,_showcode=0,iwidth=820,iheight=1076){
 	if(_showcode=1)
 		run,% A_WorkingDir "\temp\" prefixpt2 modelpt "grupo.png"
 	return 
+}
+
+/*
+	Funcao especifica usada na insercao do modelo 
+*/
+change_info(v_info){
+	Global
+
+	e_info := []
+	e_info.empresa[2] := empresa.mascara
+	e_info.tipo[2] := tipo.mascara
+	e_info.familia[2] := familia.mascara
+	e_info.modelo[2] := v_info.modelo[2]
+
+	e_info.empresa[1] :=  empresa.nome
+	e_info.tipo[1] := tipo.nome
+	e_info.familia[1] := familia.nome
+	e_info.modelo[1] := v_info.nome 
+
+	return e_info
 }
 
 existindb(connection,sql){  ;connection fora da classe sql 

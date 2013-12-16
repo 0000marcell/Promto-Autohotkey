@@ -1,8 +1,6 @@
 gerarcodigos:
-FileDelete, % "gc_debug.txt"
-FileDelete, % "ld_debug.txt"
 _reload_gettable := True
-
+db.correct_todas_ordems(info)
 /*
 	Funcao que pega todas as tabelas necessarias para
 	a formacao dos codigos 
@@ -51,28 +49,26 @@ for,each,value in tables2
 	args["ordemtable"] := args[value], args["field"] := fields[A_Index], args["type"] := tables[A_Index], loadtables(args)	
 
 finalcod := []
-FileDelete, "gc_debug.txt "
 for,each,value in tables {
 	codlist := []
 	args["table"] := value, prefix := args["mascaraant2"], global_prefix := prefix, x := 1,gerarcodigos(args,prefix,x)
 	for,each2,value2 in codlist {
-		FileAppend, % "valor final para " value " > " value2 "`n", % "gc_debug.txt"
+		;FileAppend, % "valor final para " value " > " value2 "`n", % "gc_debug.txt"
 		finalcod[value, A_Index] := value2 
 	}
 }
 MsgBox,64,, % " Aguarde.... (numero total de codigos:" finalcod["oc"].maxindex() ")"
-MsgBox, % "ira deletar a tabela de codigos " codtable
 db.clean_table(codtable)
 
 codes := {}
 
 descgeral_array := db.load_table_in_array(info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Desc")
-
-descgeral := descgeral_array[A_Index, 1]
-
+desc_ := db.Modelo.get_desc(info)
+StringSplit, desc_, desc_ ,|,
+descgeral := desc_1
+descgeralingles := desc_2
 progress(finalcod["oc"].maxindex(), parar_gerar_codigo)
 _error := 0
-FileDelete, % "lista_codigos.txt"
 for,each,value in finalcod["oc"]{
 		finalresult := organizecode(finalcod["oc",each]) ;Funcao que organiza os codigos com as descricao correspondentes.
 		updateprogress("Inserindo Codigos " finalresult.oc,1)
@@ -190,23 +186,23 @@ loadtables(args)
 
 	type := args["type"], %type% := []
 	
-	FileAppend, % "type : " type "`n", % "ld_debug.txt"
+	;FileAppend, % "type : " type "`n", % "ld_debug.txt"
 
 	ordem_table_values := db.load_table_in_array(args["ordemtable"])
 	
-	FileAppend, % "ordem_table_values max index : " ordem_table_values  "`n" , % "ld_debug.txt"
+	;FileAppend, % "ordem_table_values max index : " ordem_table_values  "`n" , % "ld_debug.txt"
 	For each in ordem_table_values{
 		if(ordem_table_values[A_Index,2] = "")
 			Break
 		read := ordem_table_values[A_Index,2]
 		StringReplace, value, read, %A_Space%,,All
-		FileAppend, % "value : " value "`n", % "ld_debug.txt"
+		;FileAppend, % "value : " value "`n", % "ld_debug.txt"
 		k:=[]
 		;MsgBox, % "ira buscar a tabela de referencia `n value: " value " `n tabela1: " args["mascaraant"] . args["selecteditem"] 
 		result := db.get_reference(value, args["mascaraant"] . args["selecteditem"])
 		;MsgBox, % "tabela retornada: " result
 		;result := db.query("SELECT tabela2 FROM reltable WHERE tipo='" . value . "' AND tabela1='" . args["mascaraant"] . args["selecteditem"] . "'")
-		FileAppend, % "tabela retornada " result "`n", % "ld_debug.txt"
+		;FileAppend, % "tabela retornada " result "`n", % "ld_debug.txt"
 		
 		field := args["field"]
 		
@@ -214,7 +210,7 @@ loadtables(args)
 		
 		ordem_esp_table := db.load_table_in_array(result)
 
-		FileAppend, % "ordem esp table " ordem_esp_table[1,1] "`n", % "ld_debug.txt"
+		;FileAppend, % "ordem esp table " ordem_esp_table[1,1] "`n", % "ld_debug.txt"
 		For each in ordem_esp_table{
 			if(type = "oc"){
 				if(ordem_esp_table[A_Index,1] != ""){
@@ -235,12 +231,12 @@ loadtables(args)
 			}
 		}
 
-		FileAppend, % "ordem esp table item " ordem_esp_table[A_Index,1] "`n", % "ld_debug.txt"
+		;FileAppend, % "ordem esp table item " ordem_esp_table[A_Index,1] "`n", % "ld_debug.txt"
 
 		;MsgBox, % "5"
 		ordem_esp_table2 := db.load_table_in_array(result)
 		
-		FileAppend, % "ordem esp table 2 " ordem_esp_table2[1,1] "`n", % "ld_debug.txt"
+		;FileAppend, % "ordem esp table 2 " ordem_esp_table2[1,1] "`n", % "ld_debug.txt"
 
 		For each in ordem_esp_table2{  ;Loop que cria a relational table !!!
 			dc1 := ordem_esp_table2[A_Index,2]
@@ -251,7 +247,7 @@ loadtables(args)
 			StringReplace,di1,di1,%A_Space%,, All
 
 			;MsgBox, % "value: " value "`n dc1: " dc1
-			FileAppend, % "value " value " dc1 " dc1 "`n", % "ld_debug.txt"
+			;FileAppend, % "value " value " dc1 " dc1 "`n", % "ld_debug.txt"
 
 			relational[value,"odc",dc1] := ordem_esp_table2[A_Index,1]
 			relational[value,"odr",dr1] := ordem_esp_table2[A_Index,1]
@@ -259,7 +255,7 @@ loadtables(args)
 		}
 
 		if(k[1] != ""){
-			FileAppend, % "valor inserido no tipo " type " valor k: " k[1] "`n ########################################################### `n ######################################### `n ", % "ld_debug.txt"
+			;FileAppend, % "valor inserido no tipo " type " valor k: " k[1] "`n ########################################################### `n ######################################### `n ", % "ld_debug.txt"
 			%type%.insert(k)
 		}
 	}
@@ -271,9 +267,9 @@ gerarcodigos(args,prefix,x)
 
 	table := args["table"]
 	
-	FileAppend, % "table " table "`n", % "gc_debug.txt"
+	;FileAppend, % "table " table "`n", % "gc_debug.txt"
 	maxindex := %table%[x].maxindex()
-	FileAppend, % "next table max index > " maxindex "`n", % "gc_debug.txt" 
+	;FileAppend, % "next table max index > " maxindex "`n", % "gc_debug.txt" 
 	for,each,value in list:=%table%[x]{
 		if(table = "oc")
 			cod := prefix value
@@ -284,14 +280,14 @@ gerarcodigos(args,prefix,x)
 		if(table = "odi")
 			cod := prefix " " value
 		x+=1
-		FileAppend, % "cod " cod "`n", % "gc_debug.txt"
+		;FileAppend, % "cod " cod "`n", % "gc_debug.txt"
 		gerarcodigos(args,cod,x)
 		x-=1		
 	}
 	if(!%table%[x]){
 		if(table!="oc")
 			StringReplace,prefix,prefix,% global_prefix,,All
-		FileAppend, % "prefix " prefix "`n ########################### `n ########################## `n ############################## `n", % "gc_debug.txt"
+		;FileAppend, % "prefix " prefix "`n ########################### `n ########################## `n ############################## `n", % "gc_debug.txt"
 		codlist.insert(prefix)
 		return
 	}

@@ -30,10 +30,13 @@ lista_de_codigos(info){
 	Gui, Add, Groupbox, xm y+10 w800, Opcoes
 	Gui, Add, Button, xp+10 yp+15 w100 h30 gcarregartabela, Salvar em Arquivo
 	Gui, Add, Button, x+5 w100 h30 ggerarplaquetas, Gerar Plaquetas
+
 	code_table := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Codigo"
 	;MsgBox, % "code_table " code_table
 	Listpesqcod := db.load_table_in_array(code_table)
+	;MsgBox, % "ira carregar a lista"
 	db.load_lv("lista_de_codigos_view", "lvcodetable", code_table)
+	LV_ModifyCol(1, 100), LV_ModifyCol(2, 300), LV_ModifyCol(3, 300), LV_ModifyCol(4, 300) 
 	Gui, Show,, Lista de Codigos
 	return
 

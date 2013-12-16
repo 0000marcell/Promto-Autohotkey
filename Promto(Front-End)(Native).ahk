@@ -153,7 +153,9 @@ load_main_tv()
 	Opcoes
 */
 Gui, Add, Groupbox, xm y+20 w230 h60, Opcoes
-Gui, Add, Button, xp+60 yp+15 w100 h30 ginsert_empresa, Criar Empresa 
+Gui, Add, Button, xp+45 yp+15 w100 h30 ginsert_empresa, Criar Empresa 
+Gui, Add, Button, x+5 w40 h30 hwndhBtn grecarregar_main_tv
+ILButton(hBtn, "promtoshell.dll:" 5, 32, 32, 0)
 
 /*
 	Modelos 
@@ -206,6 +208,13 @@ return
 
 insert_empresa:
 inserir_ETF_view("M", "main_tv", "", "Empresas")
+return
+
+recarregar_main_tv:
+Gui, M:default
+Gui, Treeview, main_tv
+TV_Delete() 
+load_main_tv()
 return
 
 MGuiContextMenu:
@@ -860,16 +869,6 @@ return
 	ordemprefix:
 	info := get_item_info("M", "MODlv")
 	ordem_view("prefixo", info)
-	
-	;args:={}
-	;tablename:=EmpresaMascara AbaMascara FamiliaMascara ModeloMascara "prefixo"
-	;args["table"]:=tablename,args["field"]:="Campos",args["comparar"]:=false ,args["owner"]:="M"
-	;db.query("create table if not exists " tablename "(Campos,PRIMARY KEY(Campos ASC))")
-	;For,each,value in [EmpresaMascara,AbaMascara,FamiliaMascara,ModeloMascara]{
-	;	if(!db.exist("Campos","Campos='" value "'",tablename))&&(value!="")
-	;		db.insert(tablename,"(Campos)","('" value "')")
-	;}
-	;alterarordem(args)
 	return 
 
 	dbex:
@@ -1923,7 +1922,7 @@ MODlv:
 if A_GuiEvent = i
 {
 	Gui,submit,nohide
-
+	FileDelete, % "debug.txt"
 	info := get_item_info("M", "MODlv") 
 	if(info.modelo[1] != "Modelo")
 		load_image_in_main_window()	

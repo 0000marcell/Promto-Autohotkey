@@ -1,5 +1,6 @@
 inserir_modelo_view(model_table){
-	Global db, SMALL_FONT, GLOBAL_COLOR, descricao_geral_edit,inserir_modelo_view, fonte_imagem_radio, empresa, tipo, familia, input_name, input_mascara,importar_button, inserir_modelo_lv, exportar_button,more_options_button,opcoes_groupbox, modelos_foto_control, modelo 
+	Global
+	;Global db, desc_, SMALL_FONT, descricao_geral_ingles_edit, GLOBAL_COLOR, descricao_geral_edit,inserir_modelo_view, fonte_imagem_radio, empresa, tipo, familia, input_name, input_mascara,importar_button, inserir_modelo_lv, exportar_button,more_options_button,opcoes_groupbox, modelos_foto_control, modelo 
  
 	/*
 		Gui init
@@ -36,7 +37,7 @@ inserir_modelo_view(model_table){
 	/*
 		Fonte da Imagem
 	*/
-	Gui, Add, Groupbox, xp-5 y+35 w200 h90 , Fonte da Imagem
+	Gui, Add, Groupbox, xp-5 y+10 w200 h90 , Fonte da Imagem
 	Gui, Add, Radio, xp+5 yp+15 vfonte_imagem_radio Checked, Arquivo no computador
 	Gui, Add, Radio, y+10, Banco de dados
 	Gui, Add, Button, y+10 w100 h20 ginserir_modelo_imagem_button,Inserir/Alterar
@@ -44,8 +45,11 @@ inserir_modelo_view(model_table){
 	/*
 		Descricao Geral
 	*/
-	Gui, Add, Groupbox,xp-5 y+15 w200 h100, Descricao
-	Gui, Add, Edit, xp+5 yp+15 w180 h50 vdescricao_geral_edit,
+	Gui, Add, Groupbox,xp-5 y+10 w200 h180, Descricao
+	Gui, Add, Text, xp+10 yp+15 w100, Portugues
+	Gui, Add, Edit, y+5 w180 h40 vdescricao_geral_edit,
+	Gui, Add, Text, y+5 w100 ,Ingles
+	Gui, Add, Edit, y+5 w180 h40 vdescricao_geral_ingles_edit,
 	Gui, Add, Button, y+5 w100 h20 gsalvar_descricao_geral_button, Salvar 
 
 	Gui, Show, Autosize, Inserir Modelo
@@ -55,34 +59,35 @@ inserir_modelo_view(model_table){
 
 	salvar_descricao_geral_button:
 	Gui, Submit, Nohide
-	db.Modelo.descricao_geral(descricao_geral_edit)
+	db.Modelo.descricao_geral(descricao_geral_edit, descricao_geral_ingles_edit)
 	return
 
 	inserir_modelo_lv:
 	if A_GuiEvent = i
 	{
-		info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
-		if(info.modelo[1] = "Modelos")
+		v_info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
+		if(v_info.modelo[1] = "Modelos" || v_info.modelo[1] = "")
 			Return
-		;MsgBox, % "info empresa : " info.empresa[1] " `n empresa mascara " info.empresa[2] " `n tipo nome: " info.tipo[1] "`n tipo mascara: " info.tipo[2] "`n familia nome " info.familia[1] "`n familia mascara " info.familia[2] " `n modelo nome " info.modelo[1] "`n modelo mascara " info.modelo[2] 
-
-		/*
-			Pega a foto linkada com o determinado modelo
-		*/
 		tabela2_value := empresa.mascara tipo.mascara familia.mascara modelo.mascara modelo.nome
 		image_name_value := db.Imagem.get_image_path(tabela2_value)
 		if(image_name_value = ""){
 			image_name_value := "sem_foto" 
 		}
-		image_source := "img\" image_name_value ".jpg"
+		image_source := A_WorkingDir "\img\" image_name_value ".jpg"
+		;MsgBox, % "image source " image_source
 		Gui, inserir_modelo_view:default 
-		GuiControl,, modelos_foto_control,%image_source%
+		GuiControl,,modelos_foto_control,%image_source%
 		
 		/*
 			Pega a descricao garal do modelo
 		*/
-		descricao_model := db.Modelo.get_desc(info)
-		GuiControl,, descricao_geral_edit,%descricao_model% 
+		s_info := change_info(v_info)
+		desc_ := db.Modelo.get_desc(s_info) 
+		StringSplit, desc_, desc_ ,|,
+		descgeral := desc_1
+		descgeralingles := desc_2
+		GuiControl,, descricao_geral_edit,%descgeral%
+		GuiControl,, descricao_geral_ingles_edit,%descgeralingles% 
 	}
 	return 
 

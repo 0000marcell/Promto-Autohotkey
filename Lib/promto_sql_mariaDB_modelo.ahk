@@ -449,7 +449,7 @@ class Modelo{
 	/*
 		Altera a descricao geral de determinado modelo
 	*/
-	descricao_geral(descricao){
+	descricao_geral(descricao, descricao_ingles){
 		Global mariaDB, empresa, tipo, familia, modelo
 
 		if(modelo.mascara = ""){
@@ -459,7 +459,7 @@ class Modelo{
 		
 
 		record := {}
-		record.descricao := descricao
+		record.descricao := descricao "|" descricao_ingles
 		table := empresa.mascara tipo.mascara familia.mascara modelo.mascara "Desc"
 		
 		/*
@@ -500,16 +500,15 @@ class Modelo{
 
 	get_desc(info){
 		Global mariaDB
-		MsgBox, % "SELECT descricao FROM " info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Desc"
+		;MsgBox, % "select descricao from " info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Desc order by descricao asc limit 1;"
 		try{
-			rs := mariaDB.OpenRecordSet(
-			(JOIN 
-				"SELECT descricao FROM " info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Desc"
-			))
-		}catch e 
-
+			rs := mariaDB.OpenRecordSet("select descricao from " info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Desc order by descricao asc limit 1;")
+		}catch e{
+			MsgBox,16, Erro, % "Ocorreu um erro ao tentar buscar a descricao!"
+			return
+		} 
 		value := rs.descricao
-		MsgBox, % "descricao retornada " value
+		;MsgBox, % "descricao retornada: " value
 		rs.close()
 		return value
 	}

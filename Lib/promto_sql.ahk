@@ -1,4 +1,4 @@
-class PromtoSQL{
+gclass PromtoSQL{
 	/*
 		Empresa
 	*/

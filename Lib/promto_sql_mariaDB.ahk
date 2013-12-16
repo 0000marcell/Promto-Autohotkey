@@ -157,7 +157,9 @@ class PromtoSQL{
 			MsgBox, % "Passe o nome de uma tabela para carregar em um array!"
 			return  
 		}
-
+		if(!this.table_exists(table)){
+			return
+		}
 		rs := mariaDB.OpenRecordSet("SELECT * FROM " table)
 		columns := rs.getColumnNames()
 		columnCount := columns.Count()
@@ -257,7 +259,14 @@ class PromtoSQL{
 			MsgBox, % "O handle da janela e o nome do listview sao obrigatorios!!!"
 			return  
 		}
-		rs := mariaDB.OpenRecordSet("SELECT * FROM " table)
+
+		try{
+			rs := mariaDB.OpenRecordSet("SELECT * FROM " table)	
+		}catch e{
+			MsgBox,16,Erro, % "Ainda nao existe tabela de codigos para o modelo selecionado!"
+			return 
+		} 
+		
 		Gui, %window_name%:default 
 		Gui, listview, %lv_name%
 		LV_Delete()
@@ -279,6 +288,19 @@ class PromtoSQL{
 		;LV_ModifyCol(1),LV_ModifyCol(2),LV_ModifyCol(3),LV_ModifyCol(4),LV_ModifyCol(5)
 		GuiControl,+ReDraw,%lv_name%
 		rs.close() 
+	}
+
+	/*
+		Conserta todas as ordems
+	*/
+	correct_todas_ordems(info){
+		Global mariaDB,db
+
+		for, each, tipo in ["prefixo", "oc", "odc", "odr", "odi"]{
+			tabela_ordem := get_tabela_ordem(tipo, info)
+			;MsgBox, % "tabela de ordem retornada " tabela_ordem " tipo: " tipo 
+			db.correct_tabela_ordem(tipo, info)
+		}
 	}
 
 	/*

@@ -45,7 +45,7 @@ inserir_imagem_db_view(owner_name, picture_control){
 	info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
 	db.Imagem.link_up(info, valor_selecionado)
 	Gui, %s_owner_name%:default
-	GuiControl,, s_picture_control, img\%valor_selecionado%.jpg 
+	GuiControl,, s_picture_control,%global_image_path%%valor_selecionado%.jpg 
 	return
 
 	excluir_imagem_db_button:
@@ -60,7 +60,9 @@ inserir_imagem_db_view(owner_name, picture_control){
 	if A_GuiEvent = i
 	{
 		valor_selecionado := GetSelected("inserir_imagem_db_view", "inserir_imagem_db_lv")
-		GuiControl,, inserir_imagem_db_picture,img\%valor_selecionado%.jpg
+		MsgBox, % "ira carregar a imagem " global_image_path valor_selecionado
+		Gui, inserir_imagem_db_view:default 
+		GuiControl,, inserir_imagem_db_picture,%global_image_path%%valor_selecionado%.jpg
 	}
 	return 
 

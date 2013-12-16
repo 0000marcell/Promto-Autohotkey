@@ -16,6 +16,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 /*
 	Parametros de configuracao 
 */
+run pull.bat
 $$ := JSON_load(A_WorkingDir "\settings.json")
 jsonString := JSON_to($$)
 settings := JSON_from(jsonString)
@@ -27,6 +28,8 @@ SMALL_FONT := settings.small_font
 MEDIUM_FONT := settings.medium_font 
 LARGE_FONT := settings.large_font 
 BUTTON_SIZE := settings.button_size 
+global_image_path := settings.image_folder_path
+StringReplace, global_image_path, global_image_path, /,\, All
 if(BUTTON_SIZE = "small")
 	button_h := 15
 GLOBAL_COLOR := settings.global_color

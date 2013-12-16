@@ -594,7 +594,7 @@ get_item_info(window, lv){
 	Carrega a imagem na janela principal
 */
 load_image_in_main_window(){
-	Global empresa, tipo, familia, info,db
+	Global empresa, tipo, familia, info,db, global_image_path
 	
 	codtable := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
 	;FileAppend, % "ira carregar os codigos da tabela : " codtable "`n", % "debug.txt"
@@ -610,7 +610,7 @@ load_image_in_main_window(){
 	if(image_name_value = ""){
 		image_name_value := "sem_foto" 
 	}
-	image_source := A_WorkingDir "\img\" image_name_value ".jpg"
+	image_source := global_image_path image_name_value ".jpg"
 	;FileAppend, % "imagem source " image_source "`n" , % "debug.txt"
 	show_image_and_code(image_source)
 }

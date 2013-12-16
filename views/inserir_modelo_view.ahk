@@ -73,7 +73,7 @@ inserir_modelo_view(model_table){
 		if(image_name_value = ""){
 			image_name_value := "sem_foto" 
 		}
-		image_source := A_WorkingDir "\img\" image_name_value ".jpg"
+		image_source := global_image_path image_name_value ".jpg"
 		;MsgBox, % "image source " image_source
 		Gui, inserir_modelo_view:default 
 		GuiControl,,modelos_foto_control,%image_source%

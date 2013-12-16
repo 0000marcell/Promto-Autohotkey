@@ -5,7 +5,7 @@ class Imagem{
 		para a pasta de imagems do programa
 	*/
 	incluir(source = "", nome_imagem = ""){
-		Global mariaDB, empresa, tipo, familia, modelo
+		Global mariaDB, empresa, tipo, familia, modelo, global_image_path
 
 		if(empresa.mascara = "" || familia.mascara = "" | modelo.mascara = ""){
 			MsgBox, % "empresa mascara: " empresa.mascara " tipo mascara: " tipo.mascara " familia mascara : " familia.mascara " modelo.mascara " modelo.mascara
@@ -35,7 +35,8 @@ class Imagem{
 			Move a imagem inserida para a 
 			pasta de imagens do programa
 		*/
-		FileCopy, %source%,img\%nome_imagem%.jpg, 1
+		MsgBox, % "fonte " source "`n " global_image_path nome_imagem
+		FileCopy, %source%,%global_image_path%%nome_imagem%.jpg, 1
 		if(ErrorLevel){
 			MsgBox,16,Erro, % "A imagem nao pode ser copiada!"
 			return 

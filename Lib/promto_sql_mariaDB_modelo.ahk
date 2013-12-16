@@ -73,7 +73,7 @@ class Modelo{
 			}
 			
 			if(tipo = "Desc"){
-				MsgBox, % "ira criar tabela de descriaco!"
+				;MsgBox, % "ira criar tabela de descriaco!"
 				try{
 					mariaDB.Query(
 						(JOIN 

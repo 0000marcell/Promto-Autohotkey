@@ -23,7 +23,7 @@ inserir_modelo_view(model_table){
 	Gui, Add, Button, xp+30 yp+15 w100 h30 ginserir_modelo_button,Inserir
 	Gui, Add, Button, x+5 w100 h30 gexcluir_modelo_button,Excluir
 	Gui, Add, Button, x+5 w30 h30 ginserir_modelo_more_options vmore_options_button,+
-	Gui, Add, Button, x40 y+5 w100 h30 vimportar_button,Importar
+	Gui, Add, Button, x40 y+5 w100 h30 vimportar_button gimportar_button,Importar
 	Gui, Add, Button, x+5 w100 h30 vexportar_button, Exportar
 	GuiControl, Hide, importar_button
 	GuiControl, Hide, exportar_button 
@@ -170,6 +170,37 @@ inserir_modelo_view(model_table){
 	{
 		db.Modelo.excluir(info.modelo[1], info.modelo[2], info.empresa[2] info.tipo[2] info.familia[2])	
 	}
+	return
+
+	importar_button: 
+	tabela1 := info.empresa[2] info.tipo[2] info.familia[1]
+	MsgBox, % "tabela1 " tabela1
+	table_model := db.get_reference("Modelo", tabela1)
+	MsgBox, % "tabela retornada " table_model
+	FileSelectFile,source,""
+	Stringright,_iscsv,source,3
+  if(_iscsv!="csv"){
+  	MsgBox, % "o arquivo selecionado tem que ser .csv!!!!"
+  	return 
+  }
+  MsgBox, 4,, Deseja apagar os items atuais?
+  IfMsgBox Yes
+  {
+  	db.clean_table(table_model)
+  }
+  x:= new OTTK(source)
+  prefixo := info.empresa[2] info.tipo[2] info.familia[2]
+  for,each,value in x{
+    nome := x[A_Index, 1]
+    codigo := x[A_Index, 2]
+    
+    MsgBox, % "nome " nome " codigo " codigo
+
+    db.Modelo.incluir(nome, codigo, prefixo)
+    ;codigo :+ x[A_Index, 2]
+    StringReplace,valuetochange,valuetochange,.,,All
+  }
+  MsgBox,64,,% "valores importados!"
 	return
 
 

@@ -1180,7 +1180,7 @@ loadlvdbex(){
 	        if(selectedvaluecol=""){
 				MsgBox, % "selecione uma coluna antes de continuar!!"
 				return 
-			}
+					}
 	        db.query("CREATE TABLE " selectedvaluecol "(valor,descricao);")
 	        db.query("DELETE FROM " selectedvaluecol ";")
 	        x:= new OTTK(source)
@@ -1226,14 +1226,14 @@ loadlvdbex(){
 			currentvalue:=GetSelectedRow("inserirval","lviv2")
 			MsgBox, % "valor " currentvalue[1] " descricao " currentvalue[2]  "  selectcolum " selectedvaluecol 
 			MsgBox, 4,,Deseja apagar a Campo %currentvalue%?
-		    IfMsgBox Yes
-		    {
-		        db.query("DELETE FROM " selectedvaluecol " WHERE valor='"  currentvalue[1] "' AND descricao='" currentvalue[2] "';")
-		        loadvaltables()
-		        loadlv(selectedvaluecol)
-		    }else{
-		        return 
-		    }
+	    IfMsgBox Yes
+	    {
+	        db.query("DELETE FROM " selectedvaluecol " WHERE valor='"  currentvalue[1] "' AND descricao='" currentvalue[2] "';")
+	        loadvaltables()
+	        loadlv(selectedvaluecol)
+	    }else{
+	        return 
+	    }
 			return
 
 			inserirvalcamp:

@@ -96,7 +96,7 @@ class Modelo{
 				mariaDB.Insert(record, "reltable")
 			}
 		}
-		MsgBox,64,Sucesso, % " O valor foi inserido!" 
+		;MsgBox,64,Sucesso, % " O valor foi inserido!" 
 	}
 
 	/*
@@ -350,7 +350,7 @@ class Modelo{
 		sql :=
 		(JOIN 
 			" UPDATE " tabela 
-			" SET Codigo='" valores.codigo "', DC='" valores.DC "', DR='" valores.DC "', DI='" valores.DI "'"
+			" SET Codigo='" valores.codigo "', DC='" valores.DC "', DR='" valores.DR "', DI='" valores.DI "'"
 			" WHERE Codigo='" old_cod "'"
 		)	 
 		;MsgBox, % sql

@@ -37,7 +37,7 @@ inserir_campos_view(info){
 		Valores de campo
 	*/
 	Gui, Add, Groupbox, xm y+10 w700 h300, Valores de campo
-	Gui, Add, Listview, xp+5 yp+15 w680 h280 vvalores_de_campo_lv gvalores_de_campo_action,Codigo|Descricao Resumida|Descricao Completa|Descricao Ingles
+	Gui, Add, Listview, xp+5 yp+15 w680 h280 vvalores_de_campo_lv gvalores_de_campo_action,Codigo|Descricao Completa|Descricao Resumida|Descricao Ingles
 
 	/*
 		Opcoes
@@ -46,6 +46,12 @@ inserir_campos_view(info){
 	Gui, Add, Button, xp+15 yp+15 w100 h30 ginserir_valores_campo_button Default,Inserir 
 	Gui, Add, Button, x+5 w100 h30 galterar_valores_campo_button ,Alterar
 	Gui, Add, Button, x+5 w100 h30 gexcluir_valores_campo_button, Excluir
+
+	/*
+		Importar
+	*/
+	Gui, Add, Groupbox, x+180 yp-15 w180 h60, Importacao
+	Gui, Add, Button, xp+10 yp+15 w100 h30 gimportar_valores_camp_esp, Importar
 	Gui, Show, Autosize, Inserir campos e valores
 	
 	/*
@@ -55,6 +61,49 @@ inserir_campos_view(info){
 	tabela := db.Modelo.get_tabela_campo_referencia(tabela1)
 	control := {window: "inserir_campos_view", combobox: "campos_combobox"}
 	db.load_combobox(control, tabela)
+	return
+
+	importar_valores_camp_esp:
+	Gui, Submit, Nohide
+	if(campos_combobox = "" || s_info.empresa[1] = ""){
+		MsgBox,16, % "Um dos valores necessarios para a insercao estava em branco"
+		return
+	}
+	tabela1 := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.modelo[2] s_info.modelo[1]
+	tabela_tbi := db.Modelo.get_tabela_campo_esp( campos_combobox, tabela1)
+
+	;MsgBox, % "tabela especifica " tabela_tbi
+
+	FileSelectFile, source, ""
+	Stringright,_iscsv,source,3
+  if(_iscsv!="csv"){
+  	MsgBox, % "o arquivo selecionado tem que ser .csv!!!!"
+  	return 
+  }
+
+  MsgBox, 4,, Deseja apagar os items atuais?
+  IfMsgBox Yes
+  {
+  	;MsgBox, % "apagar tabela " tabela_tbi
+  	db.clean_table(tabela_tbi)
+  }
+  x:= new OTTK(source)
+  prefixo := s_info.empresa[2] s_info.tipo[2] s_info.familia[2]
+  progress(x.maxindex())
+  for,each,value in x{
+  	updateprogress("Inserindo Items da Lista: " x[A_Index, 1],1)
+    codigo_value := x[A_Index, 1]
+    dr_value := x[A_Index, 2]
+    dc_value := x[A_Index, 3]
+    di_value := x[A_Index, 4]
+    if(codigo_value = "" || dr_value = "" || dc_value = ""){
+    	continue
+    }
+    valores := {codigo: codigo_value, dr: dr_value, dc: dc_value, di: di_value}
+    db.Modelo.incluir_campo_esp(campos_combobox ,valores, s_info)
+  }
+  Gui,progress:destroy
+  MsgBox,64,,% "valores importados!"
 	return
 
 	alterar_valores_campo_button:

@@ -174,9 +174,7 @@ inserir_modelo_view(model_table){
 
 	importar_button: 
 	tabela1 := info.empresa[2] info.tipo[2] info.familia[1]
-	MsgBox, % "tabela1 " tabela1
 	table_model := db.get_reference("Modelo", tabela1)
-	MsgBox, % "tabela retornada " table_model
 	FileSelectFile,source,""
 	Stringright,_iscsv,source,3
   if(_iscsv!="csv"){
@@ -190,16 +188,14 @@ inserir_modelo_view(model_table){
   }
   x:= new OTTK(source)
   prefixo := info.empresa[2] info.tipo[2] info.familia[2]
+  progress(x.maxindex())
   for,each,value in x{
+  	updateprogress("Inserindo Items da Lista: " x[A_Index, 1],1)
     nome := x[A_Index, 1]
     codigo := x[A_Index, 2]
-    
-    MsgBox, % "nome " nome " codigo " codigo
-
     db.Modelo.incluir(nome, codigo, prefixo)
-    ;codigo :+ x[A_Index, 2]
-    StringReplace,valuetochange,valuetochange,.,,All
   }
+  Gui,progress:destroy
   MsgBox,64,,% "valores importados!"
 	return
 

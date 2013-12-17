@@ -20,10 +20,10 @@ alterar_valores_campo_view(currentvalue, campo, info){
 	Gui, Add, Groupbox, w300 h230, Campos
 	Gui, Add, Text, xp+10 yp+15, Codigo
 	Gui, Add, Edit, y+5 w250 valt_codigo_field_esp UPPERCASE, % currentvalue[1]
-	Gui, Add, Text, y+15, Descricao Resumida
-	Gui, Add, Edit, y+5 w250 valt_dr_field_esp UPPERCASE, % currentvalue[2]
-	Gui, Add, Text, y+15, Descricao completa
-	Gui, Add, Edit, y+5 w250 valt_dc_field_esp UPPERCASE, % currentvalue[3]
+	Gui, Add, Text, y+15, Descricao Completa
+	Gui, Add, Edit, y+5 w250 valt_dc_field_esp UPPERCASE, % currentvalue[2]
+	Gui, Add, Text, y+15, Descricao Resumida 
+	Gui, Add, Edit, y+5 w250 valt_dr_field_esp UPPERCASE, % currentvalue[3]
 	Gui, Add, Text, y+15, Descricao Ingles
 	Gui, Add, Edit, y+5 w250 valt_di_field_esp UPPERCASE,  % currentvalue[4]
 
@@ -40,6 +40,7 @@ alterar_valores_campo_view(currentvalue, campo, info){
 	if(alt_codigo_field_esp = "" || alt_dr_field_esp = ""){
 		MsgBox,16, True, % "O valor do codigo e a descricao resumida nao podem estar em branco!" 
 	}
+	;MsgBox, % "codigo : " alt_codigo_field_esp " dr " alt_dr_field_esp " dc " alt_dc_field_esp " di " alt_di_field_esp 
 	valores := {codigo: alt_codigo_field_esp, dr: alt_dr_field_esp, dc: alt_dc_field_esp, di: alt_di_field_esp}
 	db.Modelo.alterar_valores_campo(s_campo, valores, s_info, s_old_cod)
 	tabela_campos_especificos := get_tabela_campo_esp(s_campo, s_info)

@@ -418,6 +418,7 @@ class PromtoSQL{
 		rs.close()
 		return reference_table
 	}
+	
 	#include lib\promto_sql_mariadb_empresa.ahk
 	#include lib\promto_sql_mariadb_tipo.ahk
 	#include lib\promto_sql_mariadb_familia.ahk

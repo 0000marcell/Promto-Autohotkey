@@ -42,6 +42,7 @@ inserir_imagem_view(owner_name, picture_control = ""){
 		return 
 	}
 	Gui, insert_dialogo_2:destroy
+	
 	/* 
 		Incluir a foto 
 	*/

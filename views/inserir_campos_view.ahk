@@ -126,7 +126,7 @@ inserir_campos_view(info){
 		FileAppend, % values_tbe[A_Index, 1] ";" values_tbe[A_Index, 2] ";" values_tbe[A_Index, 3] ";" values_tbe[A_Index, 4] "`n", % "temp\temp_export.csv"
 	}
 	run, % "temp\temp_export.csv"
-	MsgBox,64, ^_^, % "Os valores foram exportados!" 
+	MsgBox,64, Sucesso, % "Os valores foram exportados!" 
 	return
 
 	alterar_valores_campo_button:

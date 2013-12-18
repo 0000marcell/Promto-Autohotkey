@@ -2038,6 +2038,16 @@ refreshm(){
 }		
 		
 		MAB:
+		info := get_item_info("M", "MODlv")
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1] 
+		bloq_table := db.get_reference("Bloqueio", tabela1)
+		
+		/*
+			Cria a tabela de bloqueios caso ela nao exista
+		*/
+		db.Modelo.create_tabela_bloqueio(bloq_table)
+		
+		inserir_bloqueio_view()
 		/*
 
 		Gui,MAB:New
@@ -3553,3 +3563,4 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, views/alterar_valores_campo_view.ahk
 #include, views/ordem_view.ahk
 #include, views/lista_de_codigos_view.ahk
+#include, views/inserir_bloqueio_view.ahk

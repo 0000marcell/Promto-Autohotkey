@@ -41,7 +41,7 @@ class Modelo{
 			e insere na tabela de referencias.
 		*/
 
-		tables := ["Campo", "oc", "odr", "odc", "odi", "Codigo", "Desc"]
+		tables := ["Campo", "oc", "odr", "odc", "odi", "Codigo", "Desc", "Bloqueio"]
 
 		for,each, tipo in tables{
 			if(tipo = "Codigo"){
@@ -59,7 +59,18 @@ class Modelo{
 
 			}
 
-			if(tipo != "Desc" && tipo != "Codigo"){
+			if(tipo = "Bloqueio"){
+				try{
+				mariaDB.Query(
+					(JOIN 
+						"	CREATE TABLE IF NOT EXISTS " prefixo modelo_mascara tipo
+						" (Codigos VARCHAR(250) "
+					))
+				}catch e
+				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Bloqueios `n" ExceptionDetail(e)
+			}
+
+			if(tipo != "Desc" && tipo != "Codigo" && tipo != "Bloqueio"){
 				try{
 				mariaDB.Query(
 					(JOIN 
@@ -284,6 +295,22 @@ class Modelo{
 		record.DC := valores[3]
 		record.DI := valores[4]
 		mariaDB.Insert(record, tabela)
+	}
+
+	/*
+	 Cria a tabela de bloqueios
+	*/
+	create_tabela_bloqueio(tabela){
+		Global mariaDB
+
+		try{
+			mariaDB.Query(
+			(JOIN 
+				"	CREATE TABLE IF NOT EXISTS " tabela
+				" (Codigos VARCHAR(250) "
+			))
+		}catch e
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Bloqueios `n" ExceptionDetail(e)
 	}
 
 	/*

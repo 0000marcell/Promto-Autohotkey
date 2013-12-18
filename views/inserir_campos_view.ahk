@@ -96,8 +96,8 @@ inserir_campos_view(info){
   for,each,value in x{
   	updateprogress("Inserindo Items da Lista: " x[A_Index, 1],1)
     codigo_value := x[A_Index, 1]
-    dr_value := x[A_Index, 2]
-    dc_value := x[A_Index, 3]
+    dc_value := x[A_Index, 2]
+    dr_value := x[A_Index, 3]
     di_value := x[A_Index, 4]
     if(codigo_value = "" || dr_value = "" || dc_value = ""){
     	continue

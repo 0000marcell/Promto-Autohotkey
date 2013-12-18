@@ -51,7 +51,10 @@ inserir_campos_view(info){
 		Importar
 	*/
 	Gui, Add, Groupbox, x+180 yp-15 w180 h60, Importacao
-	Gui, Add, Button, xp+10 yp+15 w100 h30 gimportar_valores_camp_esp, Importar
+	Gui, Add, Button, xp+10 yp+15 w60 h30 gimportar_valores_camp_esp, Importar 
+	Gui, Add, Button, x+5 w60 h30 gexportar_valores_camp_esp, Exportar
+	;ILButton(impbutton, "promtoshell.dll:" 10, 32, 32, 0)
+	;ILButton(expbutton, "promtoshell.dll:" 20, 32, 32, 0)
 	Gui, Show, Autosize, Inserir campos e valores
 	
 	/*
@@ -104,6 +107,26 @@ inserir_campos_view(info){
   }
   Gui,progress:destroy
   MsgBox,64,,% "valores importados!"
+	return
+
+	exportar_valores_camp_esp:
+	Gui, Submit, Nohide
+	if(campos_combobox = "" || s_info.empresa[1] = ""){
+		MsgBox,16, % "Um dos valores necessarios para a insercao estava em branco"
+		return
+	}
+	tabela1 := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.modelo[2] s_info.modelo[1]
+	StringReplace,campos_combobox,campos_combobox,%A_Space%,,All
+	tabela_tbe := db.Modelo.get_tabela_campo_esp(campos_combobox, tabela1)
+	values_tbe := db.load_table_in_array(tabela_tbe)
+	FileDelete, % "temp\temp_export.csv"
+	for, each, value in values_tbe{
+		if(values_tbe[A_Index, 1] = "")
+			Continue
+		FileAppend, % values_tbe[A_Index, 1] ";" values_tbe[A_Index, 2] ";" values_tbe[A_Index, 3] ";" values_tbe[A_Index, 4] "`n", % "temp\temp_export.csv"
+	}
+	run, % "temp\temp_export.csv"
+	MsgBox,64, ^_^, % "Os valores foram exportados!" 
 	return
 
 	alterar_valores_campo_button:

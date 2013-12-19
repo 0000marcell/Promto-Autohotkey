@@ -297,20 +297,73 @@ class Modelo{
 		mariaDB.Insert(record, tabela)
 	}
 
+	remover_codigo(valor, tabela){
+		Global mariaDB
+		if(tabela = "" || valor = "")
+			return
+
+		try{
+				mariaDB.Query(
+				(JOIN 
+					" DELETE FROM " tabela 
+					" WHERE Codigos like '" valor "'"
+				))	
+			}catch e{ 
+				MsgBox, 16, Erro, % " Erro ao tentar apagar o campo especifico " ExceptionDetail(e)
+				return
+		}
+	}
+
+	/*
+		Incluir bloqueio
+	*/
+	incluir_bloqueio(value, bloq_table){
+		Global mariaDB
+
+		if(value = ""){
+			MsgBox,16, Erro, % "O valor a ser inserido nao pode estar em branco !"
+			return 
+		}
+
+		if(bloq_table = ""){
+			MsgBox,16, Erro, % "O a table de bloqueios estava em branco!"
+			return
+		}
+
+		;MsgBox, % "tabela de items bloqueados " bloq_table
+		record := {}
+		record.Codigos := value
+		mariaDB.Insert(record, bloq_table)
+	}
+
 	/*
 	 Cria a tabela de bloqueios
 	*/
-	create_tabela_bloqueio(tabela){
+	create_tabela_bloqueio(tabela, info){
 		Global mariaDB
 
+		if(tabela = "" || info.empresa[2] = ""){
+			MsgBox,16, Erro, % "Alguns items necessarios para criar a tabela de bloqueio estavam em branco!" 
+			return
+		} 
+
 		try{
-			mariaDB.Query(
-			(JOIN 
-				"	CREATE TABLE IF NOT EXISTS " tabela
-				" (Codigos VARCHAR(250) "
-			))
-		}catch e
-			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Bloqueios `n" ExceptionDetail(e)
+				mariaDB.Query(
+					(JOIN 
+						"	CREATE TABLE IF NOT EXISTS " tabela
+						" (Codigos VARCHAR(250)) "
+					))
+				}catch e{
+					MsgBox,16, Erro, % "Ocorreu um erro ao tentar criar a tabela de bloqueios!" 
+				}
+		
+		if(!this.get_reference(prefixo, modelo_nome, modelo_mascara, tipo)){
+			record := {}
+			record.tipo := "Bloqueio"
+			record.tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+			record.tabela2 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Bloqueio"
+			mariaDB.Insert(record, "reltable")
+		}
 	}
 
 	/*
@@ -359,7 +412,7 @@ class Modelo{
 			MsgBox,16, Erro, % "O codigo selecionado ou a tabela estavam vaziios!" 
 			return
 		}
-		;MsgBox, % "ira excluir o codigo " codigo " da tabela " tabela
+		
 		try{
 				mariaDB.Query(
 				(JOIN 
@@ -380,7 +433,7 @@ class Modelo{
 			" SET Codigo='" valores.codigo "', DC='" valores.DC "', DR='" valores.DR "', DI='" valores.DI "'"
 			" WHERE Codigo='" old_cod "'"
 		)	 
-		;MsgBox, % sql
+		
 		try{
 				mariaDB.Query(sql)
 			}catch e 

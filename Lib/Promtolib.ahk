@@ -1,3 +1,11 @@
+
+
+/*
+	get_lv_in_array(window_name, lv_name, number_of_columns = 1)
+	pega todos os items de uma determinada listview em
+	um array 
+*/
+
 Class OTTK
 {
 	__New(filePath){
@@ -181,6 +189,25 @@ LV_MoveRowfam(wname,lvname,moveup = true) {
       If (ro = fr)
          LV_Modify(rn, "Focus")
    }
+}
+
+/*
+	Pega os items de determinada listview em um 
+	array 
+*/
+get_lv_in_array(window_name, lv_name, number_of_columns = 1){
+	Gui, %window_name%:default
+	GUi, listview, %lv_name%
+	returned_array := []
+	Loop, % LV_GetCount()
+	{
+    row := A_Index
+    loop, % number_of_columns{
+    	LV_GetText(Text, row, A_Index)
+    	returned_array[row, A_Index] := Text	
+    }
+	}
+	return returned_array
 }
 /*
 	Funcao que forma a arvore de items ate 

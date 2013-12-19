@@ -66,6 +66,5 @@ inserir_imagem_db_view(owner_name, picture_control){
 	}
 	return 
 
-
 }
 	

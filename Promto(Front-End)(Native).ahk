@@ -115,21 +115,6 @@ Return
 		Gui, initialize:default
 		GuiControl,, progress, 1
 		Return
-	
-;	EA:
-;	args := {}
-;	args["closefunc"] := "refreshemp", args["table"] := "empresa",args["field"] := "Empresas,Mascara", args["owner"] := "E"
-;	args["field1"] := "Empresas", args["field2"] := "Mascara", args["primarykey"] := "Empresas ASC,Mascara ASC"
-;	args["tipo"] := "Aba", args["relcondition"] := true
-;	inserir1(args)
-;	return
-
-;refreshemp(){
-;	Gosub, E
-;}
-
-
-
 
 M:
 /*
@@ -174,7 +159,7 @@ Gui, Font, s8
 	Opcoes
 */
 Gui, Add, Groupbox, xm+240 y+20 w220 h300, Opcoes 
-Gui, Add, Button, xp+5 yp+15 w100 h30 gMAM, Modelos
+Gui, Add, Button, hwndhMod xp+5 yp+15 w100 h30 gMAM, Modelos
 glabels := ["MAB","MAC","ordemprefix","MAOC","MAODC","MAODR","MAODI"]
 for,each,value in ["Bloqueados","Campos","Ordem Prefix","Ordem Codigo","Ordem Desc Completa","Ordem Desc Resumida","Ordem Desc Ingles"]{
 	glabel := glabels[A_Index]
@@ -878,8 +863,6 @@ return
 	Gui,dbex:new
 	Gui,font,s%SMALL_FONT%,%FONT%
 	Gui, color, %GLOBAL_COLOR%
-	Gui, Add, Picture, w900 h50 0xE vbanner 
-	banner(BANNER_COLOR, banner, "DB externo")
 	Gui, dbex:+ownerM
 	Gui, add, edit, w900 r1  vpesquisadbex gpesquisadbex uppercase,
 	Gui, add, listview, w900 h400 y+5 checked vlvdbex,
@@ -1855,6 +1838,7 @@ getreferencefield(nomecamp,selectcode,selectmodel){
 
 gerarestruturas(codigo1,prox){
 	Global relacionados,i,campo,finalreturn,_ended 
+
 	if(campo[i])
 		prox:=[]
 	camp00:=campo[i]
@@ -2039,33 +2023,41 @@ refreshm(){
 		
 		MAB:
 		info := get_item_info("M", "MODlv")
+		
+		if(info.modelo[2] = ""){
+			MsgBox, 16, Erro, % "Selecione um modelo antes de continuar!"
+			return 
+		}
+		
 		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1] 
 		bloq_table := db.get_reference("Bloqueio", tabela1)
+		if(bloq_table = "")
+			bloq_table := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Bloqueio"
 		
 		/*
 			Cria a tabela de bloqueios caso ela nao exista
-		*/
-		db.Modelo.create_tabela_bloqueio(bloq_table)
-		
+		*/ 
+		db.Modelo.create_tabela_bloqueio(bloq_table, info)
 		inserir_bloqueio_view()
+		
 		/*
 
-		Gui,MAB:New
-		Gui,font,s%SMALL_FONT%,%FONT%
-		Gui,MAB:+owner%owner%
-		;Gui,MAB:+toolwindow
-		Gui,color,%GLOBAL_COLOR%
-		Gui,Add, Picture,w310 h50 0xE vbanner 
+		Gui, MAB:New
+		Gui, font,s%SMALL_FONT%,%FONT%
+		Gui, MAB:+owner%owner%
+		;Gui, MAB:+toolwindow
+		Gui, color,%GLOBAL_COLOR%
+		Gui, Add, Picture,w310 h50 0xE vbanner 
 		banner(BANNER_COLOR,banner,"Bloqueados")
-		Gui,add,edit,w300 y+5 r1 gpesquisabloq vpesquisamam uppercase,
-		Gui,add,listview,w300 h400 y+5 vMABlv  checked,
-		Gui,add,button,w100 h30 y+5 ginserirwindow,Inserir Bloqueios
-		Gui,add,button,w100 h30 x+5 gretirarbloq,Retirar do bloqueio
-		Gui,add,button,w100 h30 x+5 gfiltrarcod,Filtrar Codigos!!
-		Gui,add,button,w100 h30 y+5 xm gmarctodosmab,Marc.Todos
-		Gui,add,button,w100 h30 x+5 gdestodosmab,Des.Todos
-		Gui,add,button,w100  h30 x+5 gexportarbloqueio,Exportar
-		Gui,add,button,w100 h30 xm y+5 gimportarbloqueio,Importar
+		Gui, add, edit,w300 y+5 r1 gpesquisabloq vpesquisamam uppercase,
+		Gui, add, listview,w300 h400 y+5 vMABlv  checked,
+		Gui, add, button,w100 h30 y+5 ginserirwindow,Inserir Bloqueios
+		Gui, add, button,w100 h30 x+5 gretirarbloq,Retirar do bloqueio
+		Gui, add, button,w100 h30 x+5 gfiltrarcod,Filtrar Codigos!!
+		Gui, add, button,w100 h30 y+5 xm gmarctodosmab,Marc.Todos
+		Gui, add, button,w100 h30 x+5 gdestodosmab,Des.Todos
+		Gui, add, button,w100  h30 x+5 gexportarbloqueio,Exportar
+		Gui, add, button,w100 h30 xm y+5 gimportarbloqueio,Importar
 		Gui,Show,,Modelos-Bloqueados!!
 		Listbloq:=[]
 		table:=db.query("SELECT Codigos FROM " bloqtable ";")

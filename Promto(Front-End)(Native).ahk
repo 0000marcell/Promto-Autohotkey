@@ -598,18 +598,12 @@ return
 		MsgBox, % "As estruturas foram exportadas"
 		return 
 
-		exportarparabanco:
-		gosub,configdbex
-		Gui,exportarparadb:New
-		Gui,font,s%SMALL_FONT%,%FONT%
-		Gui,add,button,w100 gexportarparadb,Exportar para db
-		Gui,Show,,Exportar Para DB
-		return 
+		
 
 		exportarparadb:
 		checkeditems:=GetCheckedRows2("massaestrut","estrutlv")
 		rs:=sigaconnection.OpenRecordSet("SELECT TOP 1 G1_COD,G1_COMP,R_E_C_N_O_ FROM SG1010 ORDER BY R_E_C_N_O_ DESC")
-		R_E_C_N_O_TBI:=rs["R_E_C_N_O_"]
+		R_E_C_N_O_TBI := rs["R_E_C_N_O_"]
 		rs.close() 
 		progress(checkeditems["code"].maxindex())
 		prefixbloq:=""
@@ -3117,3 +3111,5 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, views/ordem_view.ahk
 #include, views/lista_de_codigos_view.ahk
 #include, views/inserir_bloqueio_view.ahk
+#include, views/db_ex_view.ahk
+

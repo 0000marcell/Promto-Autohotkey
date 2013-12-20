@@ -192,6 +192,82 @@ LV_MoveRowfam(wname,lvname,moveup = true) {
 }
 
 /*
+	carregar lv db ex
+*/
+loadlvdbex(){
+	Global 
+	Gui,dbex:default
+	Gui,listview,lvdbex
+	for,each,value in Listdbex{
+		codname:=Listdbex[A_Index,1]
+		LV_Modify(A_Index,"",codname,Listdbex[A_Index,2],Listdbex[A_Index,3],%codname%["NCM"],%codname%["UM"],%codname%["ORIGEM"],%codname%["TCONTA"],%codname%["TIPO"],%codname%["GRUPO"],%codname%["IPI"],%codname%["LOCPAD"])
+	}	
+	pesquisalvmod("dbex","lvdbex",pesquisadbex,Listdbex)
+}
+
+loadvaltables(){
+	Global
+	NCM:={},UM:={},ORIGEM:={},TCONTA:={},TIPO:={},GRUPO:={},IPI:={},LOCPAD:={}
+	for,each,value in ["NCM","UM","ORIGEM","TCONTA","TIPO","GRUPO","IPI","LOCPAD"]{
+	    table:=db.query("SELECT valor,descricao FROM " value ";")
+	    while(!table.EOF){
+	        %value%["valor",A_Index]:=table["valor"]
+	        %value%["descricao",A_Index]:=table["descricao"]
+	        table.MoveNext()
+	    }
+	    table.close
+	}
+}
+
+loadlv(hash){
+	Global Listiv
+	Gui,inserirval:default
+	Gui,listview,lviv2
+	LV_Delete()
+	Listiv:=[]
+	for,each,value in %hash%["valor"]{
+		Listiv[A_Index,1]:=%hash%["valor",A_Index]
+		Listiv[A_Index,2]:=%hash%["descricao",A_Index]
+		LV_Add("",%hash%["valor",A_Index],%hash%["descricao",A_Index])
+	}
+	lv_modifycol(1,200)
+}
+
+pesquisalvmod(wname,lvname,string,List){    ;funcao de pesquisa na listview modificada!!!!
+	Global 
+
+	Gui,%wname%:default
+  Gui,listview,%lvname%
+  GuiControl, -Redraw,%lvname%
+  Gui, Submit, NoHide
+  resultsearch:=[] 
+  If (string=""){ 
+      LV_Delete()
+	for,each,value in List{
+      	codname:=List[A_Index,1]
+          LV_Add("",List[A_Index,1],List[A_Index,2],List[A_Index,3],%codname%["NCM"],%codname%["UM"],%codname%["ORIGEM"],%codname%["TCONTA"],%codname%["TIPO"],%codname%["GRUPO"],%codname%["IPI"],%codname%["LOCPAD"])
+      }    
+  }Else{
+      for,each,value in List{
+          i++
+          string2:=List[A_Index,1] List[A_Index,2]
+          IfInString,string2,%string%
+          {
+              resultsearch.insert(i)
+          }
+      }
+      i:=0
+      LV_Delete()
+      for,each,value in resultsearch{
+      	codname:=List[value,1]
+          LV_Add("",List[value,1],List[value,2],List[A_Index,3],%codname%["NCM"],%codname%["UM"],%codname%["ORIGEM"],%codname%["TCONTA"],%codname%["TIPO"],%codname%["GRUPO"],%codname%["IPI"])
+      }
+  }
+  GuiControl, +Redraw,%lvname%
+  LV_Modify(1, "+Select")
+}
+
+/*
 	Pega os items de determinada listview em um 
 	array 
 */

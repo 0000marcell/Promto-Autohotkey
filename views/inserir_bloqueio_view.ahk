@@ -153,12 +153,6 @@ inserir_bloqueio_view(){
 	return
 
 	salvar_bloqueio:
-
-	/*
-		Compara os items da tabela de 
-		bloqueados com a tabela de desbloqueados
-		e retira os items bloqueados da tabela de desbloqueados
-	*/
 	current_bloq := get_lv_in_array("MAB", "codigos_bloqueados")
 	current_desbloq := get_lv_in_array("MAB", "codigos_livres")
 	result_table := []

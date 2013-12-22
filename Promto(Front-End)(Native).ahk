@@ -77,7 +77,7 @@ E:
 Gui, initialize:New
 Gui, Font, s%SMALL_FONT%, %FONT%
 Gui, Color, %GLOBAL_COLOR%
-Gui, Add, Picture, xm ym w300 h150,logotipos\logo.png
+Gui, Add, Picture, xm ym w300 h150,img\promtologo.png
 
 /*
 	Localizacao
@@ -124,16 +124,21 @@ Gui, Font, s%SMALL_FONT%, %FONT%
 Gui, Color, %GLOBAL_COLOR%
 
 /*
+	Logo tipo
+*/
+Gui, Add, Picture, xm ym w230 h150,img\promtologo.png
+
+/*
 	Familias
 */
-Gui, Add, Groupbox, xm w230 h40,Pesquisa
+Gui, Add, Groupbox, xm y+10 w230 h40,Pesquisa
 Gui, Add, Edit, xp+5 yp+15 w220,
 
 /*
 	Empresas/Tipos/Familias
 */
-Gui, Add, Groupbox, xm y+10 w230 h530,Empresas/Tipos/Familias
-Gui, Add, TreeView, xp+5 yp+15 w220 h500 vmain_tv gmain_tv
+Gui, Add, Groupbox, xm y+10 w230 h370,Empresas/Tipos/Familias
+Gui, Add, TreeView, xp+5 yp+15 w220 h360 vmain_tv gmain_tv
 load_main_tv()
 
 /*
@@ -840,6 +845,7 @@ return
 				}
 				db.query(db.query("DELETE FROM ESTRUTURAS WHERE item like '" checkedremmassa["code",A_Index] "%' AND componente like '" remedit "%';"))
 			}
+
 			if(count = 0){
 				MsgBox, % "Nenhum item foi removido"
 			}else{
@@ -1468,6 +1474,9 @@ if A_GuiEvent = i
 	info := get_item_info("M", "MODlv") 
 	if(info.modelo[1] != "Modelo")
 		load_image_in_main_window()	
+
+	codigos_a := db.load_table_in_array(info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Codigo")
+	GuiControl,, numberofitems, % codigos_a.maxindex() 
 }
 return 
 
@@ -3112,4 +3121,16 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, views/lista_de_codigos_view.ahk
 #include, views/inserir_bloqueio_view.ahk
 #include, views/db_ex_view.ahk
+#include, views/config_db_ex_view.ahk
+#include, views/inserir_db_ex_view.ahk
+#include, views/inserir_todos_view.ahk
+#include, views/inserir_valores_view.ahk
+#include, views/nova_conexao_view.ahk
+#include, views/inserir_val_view.ahk
+
+/*
+	Controllers
+*/
+#include, controllers/db_ex_controller.ahk
+#include, controllers/inserir_valores_controller.ahk
 

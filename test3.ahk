@@ -1,3 +1,4 @@
-x := "descricao portugues|descricao ingles"
-StringSplit, desc_, x,|,
-MsgBox, % desc_2
+value := {}
+text := "name"
+value[text] := "marcell"
+MsgBox, % value.name

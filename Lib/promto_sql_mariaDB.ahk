@@ -20,6 +20,51 @@ class PromtoSQL{
 		*/
 		this.schema()
 	}
+	
+	/*
+		Insere um nova conexao
+	*/
+	inserir_conexao(name, string, type){
+		Global
+
+		if(name = "" || string = "" || type = ""){
+			MsgBox,16, Erro, % "Um dos valores necessarios para inserir `n uma nova conexao estava em branco" 
+			return
+		}
+
+		record := {}
+		record.name := name	
+		record.connection := string 
+		record.type := type
+		mariaDB.Insert(record, "connections")
+	}
+
+	/*
+		Abre um record set e retorna os valores
+		de determinada tabela em um hash com o nome do 
+		campo e o valor value.name := name
+	*/
+	query_table(table, field_value, columns){
+		Global mariaDB 
+
+		try{
+				MsgBox, % "SELECT * FROM " table " WHERE " field_value[1] " LIKE '" field_value[2] "'"
+				rs := mariaDB.OpenRecordSet("SELECT * FROM " table " WHERE " field_value[1] " LIKE '" field_value[2] "'")		
+			}catch e{
+				MsgBox, % "Ocorreu um erro ao buscar o valor do campo!"
+				return
+		}
+		
+		return_value := []
+		
+		for, each, value in columns{
+			MsgBox, % "nome da coluna : " value
+			MsgBox, % "valor do record set " rs[value]
+			return_value[value] := rs[value]
+		}
+		rs.close()
+		return return_value 
+	}
 
 	schema(){
 		Global mariaDB
@@ -401,6 +446,52 @@ class PromtoSQL{
 
 		;MsgBox, % "terminou o correct table!"
 	}	
+
+	/*
+		Cria uma tabela de valores
+		utilizada na insercao do dbex
+	*/
+	create_val_table(table){
+		Global mariaDB
+
+		try{
+			mariaDB.Query(
+				(JOIN
+					"	CREATE TABLE IF NOT EXISTS " table 
+					" (valor VARCHAR(250), "
+					" descricao VARCHAR(250))"
+				))
+		}catch e 
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela valores dbex `n" ExceptionDetail(e)
+		
+	}
+
+	/*
+		Insere um valor na tabela de valores 
+		do db ex
+	*/
+	insert_val(valor, descricao, tabela){
+		Global mariaDB
+
+		if(valor = ""){
+			MsgBox, 16, Erro, % "O valor a ser inserido nao pode estar em branco!" 
+			return
+		} 
+
+		if(descricao = ""){
+			MsgBox, 16, Erro, % "A descricao a ser inserida nao pode estar em branco!" 
+			return
+		}
+
+		try{
+			record := {}
+			record.valor := valor	
+			record.descricao := descricao 
+			mariaDB.Insert(record, tabela)
+		}catch e{
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar inserir um valor na tabela de db ex `n" ExceptionDetail(e)
+		}
+	}
 
 	/*
 		Get reference global

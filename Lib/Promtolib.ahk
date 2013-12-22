@@ -191,33 +191,9 @@ LV_MoveRowfam(wname,lvname,moveup = true) {
    }
 }
 
-/*
-	carregar lv db ex
-*/
-loadlvdbex(){
-	Global 
-	Gui,dbex:default
-	Gui,listview,lvdbex
-	for,each,value in Listdbex{
-		codname:=Listdbex[A_Index,1]
-		LV_Modify(A_Index,"",codname,Listdbex[A_Index,2],Listdbex[A_Index,3],%codname%["NCM"],%codname%["UM"],%codname%["ORIGEM"],%codname%["TCONTA"],%codname%["TIPO"],%codname%["GRUPO"],%codname%["IPI"],%codname%["LOCPAD"])
-	}	
-	pesquisalvmod("dbex","lvdbex",pesquisadbex,Listdbex)
-}
 
-loadvaltables(){
-	Global
-	NCM:={},UM:={},ORIGEM:={},TCONTA:={},TIPO:={},GRUPO:={},IPI:={},LOCPAD:={}
-	for,each,value in ["NCM","UM","ORIGEM","TCONTA","TIPO","GRUPO","IPI","LOCPAD"]{
-	    table:=db.query("SELECT valor,descricao FROM " value ";")
-	    while(!table.EOF){
-	        %value%["valor",A_Index]:=table["valor"]
-	        %value%["descricao",A_Index]:=table["descricao"]
-	        table.MoveNext()
-	    }
-	    table.close
-	}
-}
+
+
 
 loadlv(hash){
 	Global Listiv
@@ -245,6 +221,8 @@ pesquisalvmod(wname,lvname,string,List){    ;funcao de pesquisa na listview modi
       LV_Delete()
 	for,each,value in List{
       	codname:=List[A_Index,1]
+      	if(codname = "")
+      		continue
           LV_Add("",List[A_Index,1],List[A_Index,2],List[A_Index,3],%codname%["NCM"],%codname%["UM"],%codname%["ORIGEM"],%codname%["TCONTA"],%codname%["TIPO"],%codname%["GRUPO"],%codname%["IPI"],%codname%["LOCPAD"])
       }    
   }Else{
@@ -260,6 +238,8 @@ pesquisalvmod(wname,lvname,string,List){    ;funcao de pesquisa na listview modi
       LV_Delete()
       for,each,value in resultsearch{
       	codname:=List[value,1]
+    	  if(codname = "")
+    		 continue
           LV_Add("",List[value,1],List[value,2],List[A_Index,3],%codname%["NCM"],%codname%["UM"],%codname%["ORIGEM"],%codname%["TCONTA"],%codname%["TIPO"],%codname%["GRUPO"],%codname%["IPI"])
       }
   }

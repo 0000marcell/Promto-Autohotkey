@@ -1,5 +1,5 @@
 inserir_campos_view(info){
-	Global db, input_name, SMALL_FONT,GLOBAL_COLOR, campos_combobox, valores_de_campo_lv,empresa, tipo, familia, input_name, input_mascara,importar_button, inserir_modelo_lv, exportar_button,more_options_button,opcoes_groupbox, modelos_foto_control, modelo 
+	Global db, input_name, numero_items, SMALL_FONT,GLOBAL_COLOR, campos_combobox, valores_de_campo_lv,empresa, tipo, familia, input_name, input_mascara,importar_button, inserir_modelo_lv, exportar_button,more_options_button,opcoes_groupbox, modelos_foto_control, modelo 
  	Static s_info
 	
 	s_info := info
@@ -34,9 +34,15 @@ inserir_campos_view(info){
 	Gui, Add, Button, x+5  w100 h20 gexcluir_campo_button, Excluir
 
 	/*
+		Quantidade de items
+	*/
+	Gui, Add, Groupbox, x+20 yp-15 w150 h45, Quantidade de items
+	Gui, Add, Text, xp+50 yp+15 w100 vnumero_items cblue, 0
+
+	/*
 		Valores de campo
 	*/
-	Gui, Add, Groupbox, xm y+10 w700 h300, Valores de campo
+	Gui, Add, Groupbox, xm y+20 w700 h300, Valores de campo
 	Gui, Add, Listview, xp+5 yp+15 w680 h280 vvalores_de_campo_lv gvalores_de_campo_action,Codigo|Descricao Completa|Descricao Resumida|Descricao Ingles
 
 	/*
@@ -201,6 +207,8 @@ inserir_campos_view(info){
 		return
 	} 
 	tabela_campos_especificos := get_tabela_campo_esp(campos_combobox, s_info)
+	values_in_table := db.load_table_in_array(tabela_campos_especificos)
+	GuiControl,, numero_items, % values_in_table.maxindex()
 	db.load_lv("inserir_campos_view", "valores_de_campo_lv", tabela_campos_especificos)
 	LV_ModifyCol(1, 150), LV_ModifyCol(2, 150), LV_ModifyCol(3, 150), LV_ModifyCol(4, 150)	
 	return

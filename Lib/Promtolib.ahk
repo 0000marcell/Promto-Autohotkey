@@ -160,6 +160,18 @@ Class OTTK
 	}
 }
 
+/*
+	Funcao que conta o numero de codigos de determinado modelo 
+	e insere a quantidade na janela principal
+*/
+number_of_items(){
+ 	Global
+	
+	Gui, M:default
+	codigos_a := db.load_table_in_array(info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Codigo")
+	GuiControl,, numberofitems, % codigos_a.maxindex()
+}
+
 
 LV_MoveRowfam(wname,lvname,moveup = true) {
 	gui,%wname%:Default

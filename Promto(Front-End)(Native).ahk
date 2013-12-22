@@ -1475,8 +1475,7 @@ if A_GuiEvent = i
 	if(info.modelo[1] != "Modelo")
 		load_image_in_main_window()	
 
-	codigos_a := db.load_table_in_array(info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Codigo")
-	GuiControl,, numberofitems, % codigos_a.maxindex() 
+	number_of_items()
 }
 return 
 
@@ -3133,4 +3132,4 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 */
 #include, controllers/db_ex_controller.ahk
 #include, controllers/inserir_valores_controller.ahk
-
+#include, controllers/inserir_bloqueio_controller.ahk

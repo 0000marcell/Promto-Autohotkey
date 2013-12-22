@@ -111,6 +111,7 @@ if(_error = 0)
 else
 	MsgBox,16,, % "Os codigos NAO foram gerados!!"
 db.load_codigos_combobox(codtable)
+number_of_items()
 return 
 
 parar_gerar_codigo(){

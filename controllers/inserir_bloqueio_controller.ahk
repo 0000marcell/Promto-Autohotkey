@@ -1,38 +1,59 @@
 bloquear_codigo(){
 	Global
 
-	selected_item := GetSelected("MAB","codigos_livres")
-	selected_number := GetSelected("MAB","codigos_livres", "number")
-	if(selected_item = "Codigos" || selected_item = ""){
-		MsgBox,16, Erro, % "Selecione um item antes de continuar!"
-		return
-	}
-	Gui, Listview, codigos_livres
-	LV_Delete(selected_number)
+	LV_Modify(0, "-Select")
+	selected_items := ""
+	selected_numbers := ""
+	selected_items := getselecteditems("MAB", "codigos_livres")
+	selected_numbers := getselecteditems("MAB", "codigos_livres", "number")
+	
+	for, each, value in selected_items{
+		selected_item := selected_items[A_Index]
+		selected_number := selected_numbers[A_Index]
 
-	Gui, Listview, codigos_bloqueados
-	item_inserted := LV_Add("", selected_item)
-	LV_Modify(item_inserted, "Select")
-	LV_Modify(item_inserted, "Focus")
+		if(selected_item = "Codigos" || selected_item = ""){
+			Continue
+		}
+
+		Gui, Listview, codigos_livres
+		LV_Delete(selected_number)
+
+		Gui, Listview, codigos_bloqueados
+		item_inserted := LV_Add("", selected_item)
+		LV_Modify(item_inserted, "Select")
+		LV_Modify(item_inserted, "Focus")	
+	}
 }
 
 desbloquear_codigo(){
 	Global
 
 	algum_codigo_foi_desbloqueado := true
-	selected_item := GetSelected("MAB","codigos_bloqueados")
-	selected_number := GetSelected("MAB","codigos_bloqueados", "number")
-	if(selected_item = "Codigos" || selected_item = ""){
-		MsgBox,16, Erro, % "Selecione um item antes de continuar!"
-		return
-	}
-	Gui, Listview, codigos_bloqueados
-	LV_Delete(selected_number)
 
 	Gui, Listview, codigos_livres
-	item_inserted := LV_Add("", selected_item)
-	LV_Modify(item_inserted, "Select")
-	LV_Modify(item_inserted, "Focus")
+	LV_Modify(0, "-Select")
+	selected_items := ""
+	selected_numbers := ""
+	selected_items := getselecteditems("MAB","codigos_bloqueados")
+	selected_numbers := getselecteditems("MAB","codigos_bloqueados", "number")
+	
+	for, each, value in selected_items{
+		selected_item := selected_items[A_Index]
+		selected_number := selected_numbers[A_Index]
+
+		if(selected_item = "Codigos" || selected_item = ""){
+			Continue
+		}
+
+		Gui, Listview, codigos_bloqueados
+		LV_Delete(selected_number)
+
+		Gui, Listview, codigos_livres
+		item_inserted := LV_Add("", selected_item)
+		LV_Modify(item_inserted, "Select")
+		LV_Modify(item_inserted, "Focus")	
+	} 
+	
 }
 
 

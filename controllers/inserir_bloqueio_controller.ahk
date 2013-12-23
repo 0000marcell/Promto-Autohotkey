@@ -71,17 +71,18 @@ importar_lista_bloqueio(){
   MsgBox, 4,, Deseja apagar os items atuais?
   IfMsgBox Yes
   {
-  	;MsgBox, % "apagar tabela " tabela_tbi
   	db.clean_table(bloq_table)
   }
   x:= new OTTK(source)
   prefixo := s_info.empresa[2] s_info.tipo[2] s_info.familia[2]
   progress(x.maxindex())
   for,each,value in x{
-  	if(value = "")
+  	if(x[A_Index, 1] = "")
   		Continue
-  	updateprogress("Inserindo Items da Lista: " x[A_Index, 1],1)
-  	db.Modelo.incluir_bloqueio(value, bloq_table)
+  	updateprogress("Inserindo Items da Lista: " x[A_Index, 1],1) 
+  	LV_Add("", x[A_Index, 1]) 
+  	db.Modelo.incluir_bloqueio(x[A_Index, 1], bloq_table)
+
   }
   Gui,progress:destroy
   MsgBox,64,,% "valores importados!"

@@ -64,7 +64,7 @@ class Modelo{
 				mariaDB.Query(
 					(JOIN 
 						"	CREATE TABLE IF NOT EXISTS " prefixo modelo_mascara tipo
-						" (Codigos VARCHAR(250) "
+						" (Codigos VARCHAR(250)) "
 					))
 				}catch e
 				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Bloqueios `n" ExceptionDetail(e)

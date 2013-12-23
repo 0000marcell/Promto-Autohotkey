@@ -5,6 +5,7 @@ inserir_modelo_view(model_table){
 	/*
 		Gui init
 	*/
+	Gui, M:+disabled
 	Gui, inserir_modelo_view:New
 	Gui, inserir_modelo_view:+ownerM
 	Gui, Font, s%SMALL_FONT%, %FONT%
@@ -61,6 +62,11 @@ inserir_modelo_view(model_table){
 	Gui, Submit, Nohide
 	db.Modelo.descricao_geral(descricao_geral_edit, descricao_geral_ingles_edit)
 	return
+
+	inserir_modelo_viewguiclose:
+	Gui, M:-disabled
+	Gui, inserir_modelo_view:destroy
+	return 
 
 	inserir_modelo_lv:
 	if A_GuiEvent = i
@@ -167,7 +173,13 @@ inserir_modelo_view(model_table){
 	MsgBox, 4,, % "Deseja apagar o modelo " info_inserir_modelo.modelo[1] "e todas as suas dependencias?"
 	IfMsgBox Yes
 	{
+		select_number := GetSelected("inserir_modelo_view","inserir_modelo_lv","number")
 		db.Modelo.excluir(info_inserir_modelo.modelo[1], info_inserir_modelo.modelo[2], info)	
+		LV_Delete(select_number) 
+		select_number_main := GetSelected("M","MODlv","number")
+		Gui, M:default
+		Gui, listview, MODlv 
+		LV_Delete(select_number_main)
 	}
 	return
 

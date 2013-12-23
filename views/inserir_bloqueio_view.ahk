@@ -2,16 +2,17 @@ inserir_bloqueio_view(){
 	Global
 
 	algum_codigo_foi_desbloqueado := false
-	if(bloq_table = ""){
+	if(bloq_table = "" || info.modelo[2] = ""){
 		MsgBox,64, Erro, % "A tabela de bloqueio estava em branco!"
 		return 
 	}
+	
 	/*
 		Gui init
 	*/
 	Gui,MAB:New
 	;Gui,font,s%SMALL_FONT%,%FONT%
-	;Gui,MAB:+ownerM
+	Gui,MAB:+ownerM
 	Gui, color, white
 
 	/*

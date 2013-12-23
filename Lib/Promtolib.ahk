@@ -1197,24 +1197,56 @@ GetSelectedItems(wName = "", lvName = "", type = "text"){
 	if(lvName != ""){
 		Gui, listview, %lvName%
 	}
-	returnValue := {}
+	returnValue := []
 	if(type = "text"){
 		rownumber := 0
-		Loop % LV_GetCount()
+		Loop 
 		{
-			LV_GetText(text,LV_GetNext(rownumber))
+			rownumber := LV_GetNext(rownumber)  ; Resume the search at the row after that found by the previous iteration.
+    	if not rownumber  ; The above returned zero, so there are no more selected rows.
+        break
+			LV_GetText(text,rownumber)
 			returnValue[A_Index] := text
-			rownumber++
+			;MsgBox, % "valor pego " text
 		}
 	}
 	if(type = "number"){
 		rownumber := 0
-		Loop % LV_GetCount(){
-			returnValue[A_Index] := LV_GetNext(rownumber)
-			rownumber++
+		Loop
+		{
+			rownumber := LV_GetNext(rownumber)
+			if not rownumber  ; The above returned zero, so there are no more selected rows.
+        break
+			;MsgBox, % "numero retornado : " rownumber
+			returnValue[A_Index] := rownumber
 		}
 	}
 	return returnValue
+}
+
+/*
+ Remove os items selecionados na determinada 
+ listview
+*/
+remove_selected_in_lv(window_name, lv_name){
+	rownumber := 0
+	Gui, %window_name%:default 
+	Gui, Listview, %lv_name%
+	GuiControl, -Redraw, %lv_name% 
+	selected_rows := []
+	Loop
+	{
+		rownumber := LV_GetNext(rownumber)
+		if not rownumber  ; The above returned zero, so there are no more selected rows.
+      break
+    selected_rows[A_Index] := rownumber 
+	}
+
+	for, each, value in selected_rows{
+		LV_Delete(selected_rows[1])
+		;MsgBox, % "linha selecionada " selected_rows[A_Index]
+	}
+	GuiControl, +Redraw, %lv_name%
 }
 
 

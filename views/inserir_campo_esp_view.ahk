@@ -36,8 +36,9 @@ inserir_campo_esp_view(campo, info){
 
 	salvar_campo_esp:
 	Gui, Submit, Nohide
-	if(codigo_field_esp = "" || dr_field_esp = ""){
+	if(codigo_field_esp = "" || dr_field_esp = "" || dc_field_esp = "" || di_field_esp = ""){
 		MsgBox,16, Erro, % "O valor do codigo e a descricao resumida nao podem estar em branco!" 
+		return
 	}
 	valores := {codigo: codigo_field_esp, dr: dr_field_esp, dc: dc_field_esp, di: di_field_esp}
 	db.Modelo.incluir_campo_esp(s_campo ,valores, s_info)

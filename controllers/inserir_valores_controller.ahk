@@ -2,7 +2,7 @@ inserir_val_camp(){
 	Global
 
 	gui,submit,nohide
-	checkedval:=GetSelected("inserirval","lviv2")
+	checkedval := GetSelected("inserirval","lviv2")
 	if(checkedval=""){
 		MsgBox, % "Selecione um valor antes de continuar!"
 	}
@@ -29,13 +29,13 @@ importar_val(){
 		MsgBox, % "selecione uma coluna antes de continuar!!"
 		return 
 	}
-  db.query("CREATE TABLE " selectedvaluecol "(valor,descricao);")
-  db.query("DELETE FROM " selectedvaluecol ";")
+  db.create_val_table(selectedvaluecol)  
+  db.clean_table(selectedvaluecol)
   x := new OTTK(source)
   for,each,value in x{
-      valuetochange:=x[A_Index,1]
+      valuetochange := x[A_Index,1]
       StringReplace,valuetochange,valuetochange,.,,All
-      db.query("INSERT INTO " selectedvaluecol "(valor,descricao) VALUES ('" valuetochange "','" x[A_Index,2] "');")
+      db.insert_val(valuetochange, x[A_Index,2], selectedvaluecol)
   }
   MsgBox,64,,% "valores importados!!!!"
 }

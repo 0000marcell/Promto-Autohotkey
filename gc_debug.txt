@@ -1,0 +1,28 @@
+table oc
+next table max index > 
+prefix TL010
+ ########################### 
+ ########################## 
+ ############################## 
+valor final para oc > TL010
+table odc
+next table max index > 
+prefix 
+ ########################### 
+ ########################## 
+ ############################## 
+valor final para odc > 
+table odr
+next table max index > 
+prefix 
+ ########################### 
+ ########################## 
+ ############################## 
+valor final para odr > 
+table odi
+next table max index > 
+prefix 
+ ########################### 
+ ########################## 
+ ############################## 
+valor final para odi > 

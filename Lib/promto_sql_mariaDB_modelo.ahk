@@ -121,11 +121,13 @@ class Modelo{
 		 na tabela de modelos
 		*/
 		prefixo := info.empresa[2] info.tipo[2] info.familia[2] 
+		MsgBox, % "modelo nome " modelo_nome " modelo mascara : " modelo_mascara " prefixo " prefixo 
 		if(!this.exists(modelo_nome, modelo_mascara, prefixo)){
 			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela"
 			return 
 		}
 
+		MsgBox, % "ira deletar a entrada da tabela de modelo"
 		try{
 			mariaDB.Query(
 			(JOIN 

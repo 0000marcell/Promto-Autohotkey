@@ -28,11 +28,19 @@ check_if_exist_in_external_db(){
 
 conectar(){
 	Global
-
+	
 	selecteditem := getselecteditems("configdbex","choosedb")
-	MsgBox, % "selecteditem " selecteditem[1]
+	selected_item_name :=  selecteditem[1]
+	StringLeft, base_test_name, selected_item_name, 10
+	base_value := ""
+	;MsgBox, % "base test name " base_test_name
+	if(base_test_name = "TOTALLIGHT"){
+		base_value := "SB1060" 
+	}else{
+		base_value := "SB1010"
+	}
 	connectionvalue := db.query_table("connections",["name", selecteditem[1]], ["name", "connection", "type"])
-	MsgBox, % "connection " connectionvalue["connection"]
+	;MsgBox, % "connection " connectionvalue["connection"]
 	if(connectionvalue["connection"] = ""){
 		MsgBox, % "Nao existe conxao para esse nome tente adicionar outra conexao."
 		return 

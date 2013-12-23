@@ -162,13 +162,12 @@ inserir_modelo_view(model_table){
 	return
 
 	excluir_modelo_button:
-	info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
-	;MsgBox, % "ira deletar o modelo"
-	;MsgBox, % "info empresa : " info.empresa[1] " `n empresa mascara " info.empresa[2] " `n tipo nome: " info.tipo[1] "`n tipo mascara: " info.tipo[2] "`n familia nome " info.familia[1] "`n familia mascara " info.familia[2] " `n modelo nome " info.modelo[1] "`n modelo mascara " info.modelo[2]
-	MsgBox, 4,, % "Deseja apagar o modelo " info.modelo[1] "e todas as suas dependencias?"
+	info_inserir_modelo := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
+	info := get_item_info("M", "MODlv")
+	MsgBox, 4,, % "Deseja apagar o modelo " info_inserir_modelo.modelo[1] "e todas as suas dependencias?"
 	IfMsgBox Yes
 	{
-		db.Modelo.excluir(info.modelo[1], info.modelo[2], info.empresa[2] info.tipo[2] info.familia[2])	
+		db.Modelo.excluir(info_inserir_modelo.modelo[1], info_inserir_modelo.modelo[2], info)	
 	}
 	return
 

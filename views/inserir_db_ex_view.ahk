@@ -17,7 +17,6 @@ inserir_db_ex_view(){
 	bloquear_outros_items:
 	bloquear_outros_items := True
 	Gui, bloquear_outros:destroy
-	MsgBox, % "codigo : " values[1,1] " locpad : " values[1, 11]
 	inserirdbexterno(values)
 	return 
 

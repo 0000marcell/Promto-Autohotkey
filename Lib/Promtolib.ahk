@@ -430,6 +430,18 @@ get_tv_info(type, ignore_error = 0){
 	}
 	return return_values
 }
+
+get_prefixbloq(info){
+	Global db 
+
+	table := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "prefixo"
+	ordem_a := db.load_table_in_array(table)
+	return_value := ""
+	for, each, value in ordem_a{
+		return_value .= ordem_a[A_Index, 2]
+	}
+	return return_value
+}
 	
 /*
 	recebe um hash com os valores que serao 
@@ -443,9 +455,7 @@ inserirdbexterno(values){
 	Pega o prefixo do codigo
 	*/
 	prefixbloq := ""
-	for,each,value in list:=db.getvalues("Campos", EmpresaMascara AbaMascara FamiliaMascara ModeloMascara "prefixo"){
-		prefixbloq .= list[A_Index,1]	
-	} 
+	prefixbloq := get_prefixbloq(info) 
 
 	/*
 	testa a conecao
@@ -455,6 +465,7 @@ inserirdbexterno(values){
 	}else{
 	    MsgBox,64,,% "A conexao falhou!! confira os parametros!!"
 	}
+
 	/*
 	pega o numero do ultimo registro
 	*/
@@ -490,6 +501,8 @@ inserirdbexterno(values){
 	Inicia o loop que ira inserir todos 
 	os novos items no dbex
 	*/
+	
+	MsgBox, % "numero de items : " values.maxindex()
 
 	for,each,value in values{
 		itemvalue:=values[A_Index,1]

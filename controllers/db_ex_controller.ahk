@@ -68,7 +68,7 @@ salvar_config(){
 	Global
 
 	Gui,submit,nohide 
-	MsgBox, % "Ira testar a conexao antes de inserir o valor!"
+	;MsgBox, % "Ira testar a conexao antes de inserir o valor!"
 	;MsgBox, % "valores configedit2 " configedit2 " configedit " configedit
 	;try {
 	;	sigaconnection:= DBA.DataBaseFactory.OpenDataBase(configedit2,configedit)
@@ -84,7 +84,7 @@ salvar_config(){
 	;}
 	;MsgBox, % "connectionname " connectionname " configedit " configedit " configedit2 " configedit2 
 	db.inserir_conexao(connectionname, configedit, configedit2)
-	MsgBox,64,,% "Os valores da nova conexao foram salvos!" 
+	;MsgBox,64,,% "Os valores da nova conexao foram salvos!" 
 	Gui, configdbex:default
 	Gui, Listview, choosedb 
 	LV_Add("", connectionname)
@@ -109,9 +109,9 @@ salvar_val(){
 	Gui,submit,nohide
   if(editinserirval1="")||(editinserirval2="")
       MsgBox, % "Nenhum dos campos pode estar em branco!!!"
-  MsgBox, % "selectedvaluecol " selectedvaluecol
+  ;MsgBox, % "selectedvaluecol " selectedvaluecol
   db.create_val_table(selectedvaluecol)
-  MsgBox, % " editar val 1 " editinserirval1 " editar val 2 " editinserirval2
+  ;MsgBox, % " editar val 1 " editinserirval1 " editar val 2 " editinserirval2
   db.insert_val(editinserirval1, editinserirval2, selectedvaluecol)
   loadvaltables()
   db.load_lv("inserirval", "lviv2", selectedvaluecol)

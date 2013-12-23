@@ -1470,11 +1470,9 @@ MODlv:
 if A_GuiEvent = i
 {
 	Gui,submit,nohide
-	FileDelete, % "debug.txt"
 	info := get_item_info("M", "MODlv") 
 	if(info.modelo[1] != "Modelo")
 		load_image_in_main_window()	
-
 	number_of_items()
 }
 return 

@@ -201,7 +201,7 @@ inserir_modelo_view(model_table){
   prefixo := info.empresa[2] info.tipo[2] info.familia[2]
   progress(x.maxindex())
   for,each,value in x{
-  	updateprogress("Inserindo Items da Lista: " x[A_Index, 1],1)
+  	updateprogress("Inserindo Items da Lista: " x[A_Index, 1] " codigo " x[A_Index, 2] " prefixo: " prefixo,1)
     nome := x[A_Index, 1]
     codigo := x[A_Index, 2]
     db.Modelo.incluir(nome, codigo, prefixo)

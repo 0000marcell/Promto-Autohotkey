@@ -48,7 +48,7 @@ class PromtoSQL{
 		Global mariaDB 
 
 		try{
-				MsgBox, % "SELECT * FROM " table " WHERE " field_value[1] " LIKE '" field_value[2] "'"
+				;MsgBox, % "SELECT * FROM " table " WHERE " field_value[1] " LIKE '" field_value[2] "'"
 				rs := mariaDB.OpenRecordSet("SELECT * FROM " table " WHERE " field_value[1] " LIKE '" field_value[2] "'")		
 			}catch e{
 				MsgBox, % "Ocorreu um erro ao buscar o valor do campo!"
@@ -58,8 +58,8 @@ class PromtoSQL{
 		return_value := []
 		
 		for, each, value in columns{
-			MsgBox, % "nome da coluna : " value
-			MsgBox, % "valor do record set " rs[value]
+			;MsgBox, % "nome da coluna : " value
+			;MsgBox, % "valor do record set " rs[value]
 			return_value[value] := rs[value]
 		}
 		rs.close()

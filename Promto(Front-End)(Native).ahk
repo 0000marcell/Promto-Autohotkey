@@ -365,7 +365,14 @@ return
 			em determinada listview
 		*/
 		db.load_lv("M", "MODlv", model_table)
-		LV_ModifyCol(1)	
+		LV_ModifyCol(1)
+		load_logo_in_main()	
+  }else{
+  	/*
+  		Funcao que substui a imagem que foi gerada
+  		no load_image... pelo logo do programa
+  	*/
+  	load_logo_in_main()
   }
 	return 
 

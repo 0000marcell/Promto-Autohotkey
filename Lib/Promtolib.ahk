@@ -724,6 +724,15 @@ load_image_in_main_window(){
 	;FileAppend, % "imagem source " image_source "`n" , % "debug.txt"
 	show_image_and_code(image_source)
 }
+
+
+/*
+	Carrega o logo na janela principal
+*/
+load_logo_in_main(){
+	image_source := "img\promtologo.png"
+	show_image_and_code(image_source, 0)
+}
 	
 
 /*
@@ -909,7 +918,7 @@ destroycarregandologo(){
 	return
 }
 ;##########################Showimageandcode################################################
-show_image_and_code(image){
+show_image_and_code(image, with_desc = 1){
 	Global
 	
 	;MsgBox, % "show image and code"
@@ -923,9 +932,17 @@ show_image_and_code(image){
 			Pega a descricao 
 		*/
 		;FileAppend, % "vai pegar a descricao `n", % "debug.txt"
-		desc_ := db.Modelo.get_desc(info)
-		StringSplit, desc_, desc_ ,|,
-		descricao_model := desc_1
+		if(with_desc){
+			desc_ := db.Modelo.get_desc(info)
+			StringSplit, desc_, desc_ ,|,
+			descricao_model := desc_1
+			already_logo := false
+		}else{
+			if(already_logo)
+				return
+			descricao_model := ""
+			already_logo := true
+		}
 		;FileAppend, % "descricao retornada " descricao_model "`n", % "debug.txt"
 		/*
 			Printa a descricao

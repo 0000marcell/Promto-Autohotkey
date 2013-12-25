@@ -431,6 +431,10 @@ get_tv_info(type, ignore_error = 0){
 	return return_values
 }
 
+/*
+	Retorna o prefixo do determinado
+	modelo na ordem devida
+*/
 get_prefixbloq(info){
 	Global db 
 
@@ -725,6 +729,92 @@ load_image_in_main_window(){
 	show_image_and_code(image_source)
 }
 
+/*
+	Carrega a formacao do codigo na janela principal
+*/
+load_formation_in_main_window(info){
+	Global db
+	
+	/*
+		Inicia o gdi
+	*/
+	newgdi({w:710,h:350})
+
+	/*
+	 Cria os blocos com os nomes dos prefixos
+	*/
+	panel_color := "coolblue" 
+	text_panel_color := "00ff00"
+	bloq_w := 65
+	bloq_h := 50
+	prefix_table := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "prefixo"
+	prefix_values := db.load_table_in_array(prefix_table)
+	x := 10
+	y := 10
+	;MsgBox, % prefix_values.maxindex() 
+	if(prefix_values.maxindex() = 3){
+		fields := ["Empresa", "Familia" , "Modelo"]
+	}else{
+		fields := ["Tipo", "Empresa", "Familia" , "Modelo"]
+	}
+
+	for, each, value in fields{
+		if(value = "")
+			Continue
+		panel({x:x, y:y, w: bloq_w, h: bloq_h, color: panel_color, text: value, textsize: 12, boardsize: 0})
+		x += bloq_w + 5
+	}
+
+	/*
+		Cria os blocos com os nomes dos campos
+	*/
+	tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+	oc_table := db.get_reference("oc", tabela1)
+	;MsgBox, % "oc table " oc_table
+	oc_values := db.load_table_in_array(oc_table)
+	campos_sem_espaco := []
+	for, each, value in oc_values{
+		oc_name := oc_values[A_Index, 2]
+		if(oc_name = "")
+			Continue
+		panel({x:x, y:y, w: bloq_w, h: bloq_h, color: panel_color, text: oc_name, textsize: 8, boardsize: 0})
+		StringReplace, oc_name, oc_name, %A_Space%,, All
+		campos_sem_espaco.insert(oc_name)
+		x += bloq_w + 5
+	} 
+ 	
+	/*
+		Cria os blocos com os valores dos prefixos
+	*/
+	x := 10
+	y += 80
+	for, each, value in prefix_values{
+		current_prefix := prefix_values[A_Index, 2]
+		if(current_prefix = "")
+			Continue
+		panel({x:x,y:y, w: bloq_w, h: bloq_h,color: panel_color,text: current_prefix, textsize: 20, boardsize: 0})
+		x += bloq_w + 5
+	} 
+
+	/*
+		Cria os blocos com os valores dos campos
+	*/
+	for, each, value in campos_sem_espaco{
+		;MsgBox, % "valor ser espaco " value
+		campo_table := db.get_reference(value, tabela1)
+		;MsgBox, % "campo table " campo_table
+		if(campo_table = "")
+			Continue
+		campo_values := db.load_table_in_array(campo_table)
+		if(campo_values[1, 1] = "")
+			Continue
+		panel({x:x, y:y, w: bloq_w, h: bloq_h, color: panel_color, text: 	campo_values[1, 1], textsize: 20, boardsize: 0})
+		x += bloq_w + 5
+	}	
+	savetofile("img\formation.png")
+	Gui, M:Default
+	GuiControl,, fmcode, % "img\formation.png" 
+}
 
 /*
 	Carrega o logo na janela principal

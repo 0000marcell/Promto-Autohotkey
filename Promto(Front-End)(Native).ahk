@@ -189,9 +189,16 @@ Gui, Add, Button, x+5 gfotoindividual w100, Foto
 	Informacao 
 */
 Gui, Add, Groupbox, x480 y+20 w815 h300, Informacao:
-Gui, Add, Picture, xp+5 yp+15 w800 vptcode ,
+Gui, Add, Picture, xp+5 yp+15 w780 h270 vptcode ,
 _loading := 1
-Gui, Show,W1300 h700 , %FamiliaName%
+
+/*
+	Formacao codigo
+*/
+Gui, Add, Groupbox, x480 y+20 w815 h290, Formacao do codigo:
+Gui, Add, Picture, xp+5 yp+50 w790 h270 vfmcode,
+
+Gui, Show,W1300 h720 , %FamiliaName%
 Gui, Listview, MODlv
 LV_ModifyCol(2,300) 
 LV_Modify(2, "+Select")
@@ -1478,8 +1485,10 @@ if A_GuiEvent = i
 {
 	Gui,submit,nohide
 	info := get_item_info("M", "MODlv") 
-	if(info.modelo[1] != "Modelo")
+	if(info.modelo[1] != "Modelo"){
 		load_image_in_main_window()	
+		load_formation_in_main_window(info)
+	}
 	number_of_items()
 }
 return 

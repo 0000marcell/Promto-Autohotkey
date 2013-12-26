@@ -25,7 +25,7 @@ inserir_modelo_view(model_table){
 	Gui, Add, Button, x+5 w100 h30 gexcluir_modelo_button,Excluir
 	Gui, Add, Button, x+5 w30 h30 ginserir_modelo_more_options vmore_options_button,+
 	Gui, Add, Button, x40 y+5 w100 h30 vimportar_button gimportar_button,Importar
-	Gui, Add, Button, x+5 w100 h30 vexportar_button, Exportar
+	Gui, Add, Button, x+5 w100 h30 vexportar_button gexportar_button, Exportar
 	GuiControl, Hide, importar_button
 	GuiControl, Hide, exportar_button 
 
@@ -209,6 +209,19 @@ inserir_modelo_view(model_table){
   Gui,progress:destroy
   MsgBox,64,,% "valores importados!"
 	return
+
+	exportar_button:
+	export_value := get_lv_in_array("inserir_modelo_view", "inserir_modelo_lv", 2)
+	if(export_value.max_index() != 0 || export_value.max_index() != "")
+		FileDelete, % "temp\export_model.csv"
+	for, each, value in export_value{
+		if(export_value[A_Index, 1] = "")
+			Continue
+		FileAppend, % export_value[A_Index, 1] ";" export_value[A_Index, 2] "`n", % "temp\export_model.csv"
+	}
+	MsgBox, 64, Sucesso, % "Os valores foram exportados com sucesso!" 
+	run, % "temp\export_model.csv" 
+	return 
 
 
 	inserir_modelo_more_options:

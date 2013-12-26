@@ -591,7 +591,7 @@ class Modelo{
 		} 
 		value := rs.descricao
 		if(value = ""){
-			value := "SEM DESCRICAO|NO DESCRIPTION"
+			value := info.familia[1] " " info.modelo[1] "|" info.familia[1] " " info.modelo[1]
 		}
 		;MsgBox, % "descricao retornada: " value
 		rs.close()

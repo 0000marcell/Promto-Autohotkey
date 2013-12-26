@@ -109,12 +109,16 @@ importar_lista_bloqueio(){
 	Gui, Submit, Nohide
 	Gui, Listview, codigos_bloqueados
 	export_bloqueados := get_lv_in_array("MAB", "codigos_bloqueados")
+	if(export_bloqueados.maxindex() != 0 && export_bloqueados.maxindex() != "" )
+		FileDelete, % "temp\bloq_export.csv"
+		 
 	for, each, value in export_bloqueados{
 		if(export_bloqueados[A_Index, 1] = "")
 			Continue
 		FileAppend, % export_bloqueados[A_Index, 1] "`n", % "temp\bloq_export.csv"
 	}
-	run, % "temp\temp_export.csv"
+	run, % "temp\bloq_export.csv"
 	MsgBox,64, Sucesso, % "Os valores foram exportados!"
+	return
 }
 

@@ -184,6 +184,8 @@ inserir_modelo_view(model_table){
 	return
 
 	importar_button: 
+	info_inserir_modelo := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
+  info := get_item_info("M", "MODlv")
 	tabela1 := info.empresa[2] info.tipo[2] info.familia[1]
 	table_model := db.get_reference("Modelo", tabela1)
 	FileSelectFile,source,""
@@ -197,14 +199,19 @@ inserir_modelo_view(model_table){
   {
   	db.clean_table(table_model)
   }
-  x:= new OTTK(source)
-  prefixo := info.empresa[2] info.tipo[2] info.familia[2]
+  x := new OTTK(source)
+  prefixo_local := info.empresa[2] info.tipo[2] info.familia[2]
+  ;MsgBox, % "prefixo " prefixo_local
   progress(x.maxindex())
+  FileDelete, % "temp\debug.csv"
   for,each,value in x{
-  	updateprogress("Inserindo Items da Lista: " x[A_Index, 1] " codigo " x[A_Index, 2] " prefixo: " prefixo,1)
+  	updateprogress("Inserindo Items da Lista: " x[A_Index, 1] " codigo " x[A_Index, 2] " prefixo_local: " prefixo_local,1)
     nome := x[A_Index, 1]
     codigo := x[A_Index, 2]
-    db.Modelo.incluir(nome, codigo, prefixo)
+    if(nome = "")
+    	continue
+    FileAppend, % "nome: " nome "; codigo: " codigo "; prefixo : " prefixo_local "`n", % "temp\debug.csv"
+    db.Modelo.incluir(nome, codigo, prefixo_local)
   }
   Gui,progress:destroy
   MsgBox,64,,% "valores importados!"

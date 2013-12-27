@@ -373,7 +373,11 @@ get_tv_info(type, ignore_error = 0){
 	if(tv_level = ""){
 		MsgBox,16,Erro, % "Nao existia nenhum item selecionado na treeview"
 	}
-	if(type = "Familia" && tv_level != 3){
+	if(type = "Subfamilia" && tv_level != 4){
+		if(ignore_error = 0)
+			MsgBox,16,Erro, % "a selecao nao esta em nivel suficiente para retornar valores de familia"
+	}
+	if(type = "Familia" && tv_level != 3 && tv_level != 4){
 		if(ignore_error = 0)
 			MsgBox,16,Erro, % "a selecao nao esta em nivel suficiente para retornar valores de familia"
 	}
@@ -386,19 +390,45 @@ get_tv_info(type, ignore_error = 0){
 	Gui, M:Default
 	Gui, Treeview, main_tv
 	id := TV_GetSelection()
-	if(type = "Familia"){
+
+	if(type = "Subfamilia"){
 		TV_GetText(nome, id)
 		return_values.nome := nome
 		return_values.mascara := ETF_hashmask[nome]
 	}
 
+	if(type = "Familia"){
+
+		if(tv_level = 4){
+			parent_id := TV_GetParent(id)
+			TV_GetText(nome, parent_id)
+			return_values.nome := nome
+			return_values.mascara := ETF_hashmask[nome]
+		}
+		if(tv_level = 3){
+			TV_GetText(nome, id)
+			return_values.nome := nome
+			return_values.mascara := ETF_hashmask[nome]	
+		}
+	}
+
 	if(type = "Tipo"){
+		
+		if(tv_level = 4){
+			super_id := TV_GetParent(id)
+			parent_id := TV_GetParent(super_id)
+			TV_GetText(nome, parent_id)
+			return_values.nome := nome
+			return_values.mascara := ETF_hashmask[nome]
+		}
+
 		if(tv_level = 3){
 			parent_id := TV_GetParent(id)
 			TV_GetText(nome, parent_id)
 			return_values.nome := nome
 			return_values.mascara := ETF_hashmask[nome]
 		}
+
 		if(tv_level = 2){
 			TV_GetText(nome, id)
 			return_values.nome := nome
@@ -407,6 +437,15 @@ get_tv_info(type, ignore_error = 0){
 	}
 
 	if(type = "Empresa"){
+		
+		if(tv_level = 4){
+			ultra_id := TV_GetParent(id)
+			parent_id := TV_GetParent(ultra_id)
+			TV_GetText(nome, parent_id)
+			return_values.nome := nome
+			return_values.mascara := ETF_hashmask[nome]
+		}
+
 		if(tv_level = 3){
 			parent_id := TV_GetParent(id)
 			super_parent_id := TV_GetParent(parent_id)
@@ -676,7 +715,8 @@ get_item_info(window, lv){
 	empresa := get_tv_info("Empresa")
 	tipo := get_tv_info("Tipo", 1)
 	familia := get_tv_info("Familia", 1)
-	
+	subfamilia := get_tv_info("Subfamilia", 1)
+
 	/*
 		Pega o modelo selecionado na listview
 	*/
@@ -698,6 +738,8 @@ get_item_info(window, lv){
 	info.tipo[2] := tipo.mascara
 	info.familia[1] := familia.nome
 	info.familia[2] := familia.mascara
+	info.subfamilia[1] := subfamilia.nome
+	info.subfamilia[2] := subfamilia.mascara
 	info.modelo[1] := modelo.nome
 	info.modelo[2] := modelo.mascara
 
@@ -1986,6 +2028,7 @@ getmascara(name,table,field){
 load_ETF(db){
 	Global 
 	ETF_hashmask := {}
+	
 	/*
 		Essa funcao ira carregar
 		a string ETF_TVSTRING

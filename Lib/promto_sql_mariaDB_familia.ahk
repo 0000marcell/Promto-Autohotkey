@@ -44,6 +44,7 @@ class Familia{
 		familia_table := this.get_parent_reference(empresa_mascara, tipo_nome)
 
 		;MsgBox, % "familia_table: " familia_table
+		
 		/*
 			Verifica se a mascara a ser inserida 
 			ja existe
@@ -52,6 +53,25 @@ class Familia{
 			MsgBox,16,Erro, % " A mascara a ser inserida ja existe!" 
 			return 0
 		}
+		
+		/*
+			Cria a tabela de subfamilias e insere 1 no campo subfamilia
+		*/
+		MsgBox, 4,,Esta familia tera subfamilias? 
+		IfMsgBox Yes
+		{
+			this.inserir_com_subfamilias(familia_nome, familia_mascara, prefixo)
+		}else{
+			this.inserir_com_modelo(familia_nome, familia_mascara, prefixo)
+		}
+		return 1
+	}
+
+	/*
+		Insere a familia com modelo (sem subfamilias)
+	*/
+	inserir_com_modelo(familia_nome, familia_mascara, prefixo){
+		Global mariaDB
 
 		/*
 			Insere o valor na tabela
@@ -59,14 +79,13 @@ class Familia{
 		record := {}
 		record.Familias := familia_nome
 		record.Mascara := familia_mascara
+		record.Subfamilia := 0
 		mariaDB.Insert(record, familia_table)
 
 		/*
 			Cria a tabela de Familias e insere a
 			referencia na reltable
 		*/
-		
-
 		try{
 			mariaDB.Query(
 				(JOIN 
@@ -84,7 +103,35 @@ class Familia{
 		record.tabela2 := prefixo familia_mascara "Modelo"
 		mariaDB.Insert(record, "reltable")
 		MsgBox, % "A Familia foi inserida!"
-		return 1
+
+	}
+
+	inserir_com_subfamilias(familia_nome, familia_mascara, prefixo){
+		Global mariaDB
+
+		record := {}
+		record.Familias := familia_nome
+		record.Mascara := familia_mascara
+		record.Subfamilia := 1
+		mariaDB.Insert(record, familia_table)
+
+		try{
+			mariaDB.Query(
+				(JOIN 
+					"	CREATE TABLE IF NOT EXISTS " prefixo familia_mascara "Subfamilia "
+					" (Subfamilias VARCHAR(250), "
+					" Mascara VARCHAR(250), "
+					" PRIMARY KEY (Mascara)) "
+				))
+		}catch e
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Subfamilia `n" ExceptionDetail(e)
+
+		record := {}
+		record.tipo := "Subfamilia"
+		record.tabela1 := prefixo familia_nome
+		record.tabela2 := prefixo familia_mascara "Subfamilia"
+		mariaDB.Insert(record, "reltable")
+		MsgBox, % "A Familia foi inserida!"
 	}
 
 	/*
@@ -96,12 +143,10 @@ class Familia{
 		/*
 		 Excluir a entrada da familia
 		 na tabela de familias 
-		*/
-		;MsgBox, % "ira excluir a familia nome: " familia_nome " familia mascara: " familia_mascara "`n" 
+		*/ 
 		prefixo := info.empresa[2] info.tipo[2]
 		
 		familia_table := this.get_parent_reference(info.empresa[2], info.tipo[1])
-		;MsgBox, % "tabela retornada @@" familia_table
 
 		if(!this.exists(familia_nome, familia_mascara, familia_table)){
 			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela"
@@ -112,8 +157,7 @@ class Familia{
 			this.remove_subitems(familia_nome, familia_mascara, info)
 			return
 		}
-		;MsgBox, % " ira pegar a tabela " prefixo "Familia" 
-
+ 
 		try{
 			mariaDB.Query(
 			(JOIN 
@@ -122,13 +166,13 @@ class Familia{
 			))	
 		}catch e 
 			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de Familias `n " ExceptionDetail(e)
+		
 		/*
 			Exclui a tabela de modelos
 			relacionada com essa familia
 			caso ela nao esteja mais relacionada com nada
 		*/
-		linked_table := this.get_reference(prefixo familia_nome, "Modelo")
-		;MsgBox, % "tabela linkada: " linked_table 
+		linked_table := this.get_reference(prefixo familia_nome, "Modelo") 
 
 		/*
 		 Deleta a entrada do tipo na 
@@ -161,6 +205,7 @@ class Familia{
 			Loop, % columnCount
 				linked .= row[A_index] "`n"
 		} 
+
 		/*
 			Se nao existir mais nenhuma tabela linkada.
 		*/
@@ -236,13 +281,23 @@ class Familia{
 
 		i++
 		if(nivel_tipo = ""){
-			nivel_tipo := {1: ["familia", "Modelo"], 2: ["Modelo", "break"]}
+			nivel_tipo := {1: ["familia", "Modelo"], 2: ["subfamilia", "Modelo"], 3: ["Modelo", "break"]}
 		}
 
 		nivel := nivel_tipo[i,1]
-		tipo := nivel_tipo[i,2]
 
-		;MsgBox, % "nome> " nome "`n mascara> " mascara "`n nivel> " nivel "`n tipo> " tipo "`n i> " i
+		/*
+			Funcao que verifica no nivel de familias 
+			se a proxima tabela e de subfamilias ou de modelos
+		*/
+		if(nivel = "familia"){
+			tabela1 := info.empresa[2] info.tipo[2] info.familia[1]
+			if(db.have_subfamilia(tabela1)){
+				tipo := "Subfamilia"
+			}else{
+				tipo := nivel_tipo[i,2]		
+			}
+		}
 		
 		/*
 			Pega a tabela de referencia que 
@@ -258,8 +313,6 @@ class Familia{
 			atual.
 		*/
 		if(tipo = "break"){
-			;prefix := info.empresa
-			;db.Modelo.incluir( nome, mascara, info.empresa)
 			this.delete_subitem(nome, mascara, info, nivel)
 			return
 		}	
@@ -267,17 +320,18 @@ class Familia{
 		/*
 			Retorna a tabela do proximo nivel
 		*/
-		tabela1 := info.empresa[2] info.tipo[2] nome
-		;MsgBox, % "ira busacar a tabela tipo: " tipo " tabela1: " tabela1
+		if(nivel = "familia"){
+			tabela1 := info.empresa[2] info.tipo[2] nome	
+		}else if(nivel = "subfamilia"){
+			tabela1 := info.empresa[2] info.tipo[2] info.familia[2] nome
+		}
+
 		table := db.get_reference(tipo, tabela1)
-		;MsgBox, % "tabela retornada " table
+
 		if(table = ""){
 			this.delete_subitem(nome, mascara, info, nivel)
 			return 
 		}
-		;MsgBox, % "tabela retornada " table
-		;db.get_reference("Modelo",empresa.mascara tipo.mascara familia.nome)
-		;get_reference(tipo, tabela1)
 
 		/*
 			Itera pelos items da tabela 
@@ -286,16 +340,18 @@ class Familia{
 		*/
 		table_items := this.load_table_in_array(table)
 		loop, % table_items.maxindex(){
+			
 			nome_item := table_items[A_Index,1]
 			mascara_item := table_items[A_Index,2]
 			
-			;MsgBox, % " item da tabela " nome_item " mascara item " mascara_item 
 			if(nivel = "empresa"){
 				info.empresa[1] := nome , info.empresa[2] := mascara  
 			}else if(nivel = "tipo"){
 				info.tipo[1] := nome , info.tipo[2] :=  mascara
 			}else if(nivel = "familia"){
 				info.familia[1] := nome , info.familia[2] :=  mascara
+			}else if(nivel = "subfamilia"){
+				info.subfamilia[1] := nome , info.subfamilia[2] := mascara
 			}else if(nivel = "modelo"){
 				info.modelo[1] := nome , info.modelo[2] :=  mascara
 			}else{
@@ -303,6 +359,7 @@ class Familia{
 			}
 			this.remove_subitems( nome_item, mascara_item, info, nivel_tipo, i)
 		}
+
 		/*
 			Quando voltar da iteracao de todos os subitems
 			excluir o item pai (este item)
@@ -316,22 +373,16 @@ class Familia{
 	delete_subitem(nome, mascara, info, nivel){
 		Global db
 		if(nivel = "empresa"){
-			;MsgBox, % " deletar empresa " nome "mascara " mascara
 			db.Empresa.excluir(nome, mascara, 0)
-			;FileAppend, % " `n ira deletar a empresa " nome, % "debug.txt"
 		}else if(nivel = "tipo"){
-			;MsgBox, % "ira deletar o tipo " nome " mascara " mascara
 			db.Tipo.excluir(nome, mascara, info, 0)
-			;FileAppend, % " `n ira deletar o tipo " nome, % "debug.txt"
+		}else if(nivel = "subfamilia"){
+			db.Subfamilia.excluir(nome, mascara, info, 0)
 		}else if(nivel = "familia"){
-			;MsgBox, % "ira deletar a familia " nome " familia " mascara
 			db.Familia.excluir(nome, mascara, info, 0)
-			;FileAppend, % " `n ira deletar a familia " nome, % "debug.txt"
 		}else if(nivel = "modelo"){
-			prefixo := info.empresa[2] info.tipo[2] info.familia[2]
-			;MsgBox, % "ira deletar o modelo " nome " mascara " mascara
+			prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2]
 			db.Modelo.excluir(nome, mascara, info, 0)
-			;FileAppend, % " `n ira deletar o modelo " nome, % "debug.txt"
 		}
 	}
 

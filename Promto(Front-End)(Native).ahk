@@ -253,17 +253,24 @@ if A_GuiControl = main_tv
 	*/
 	if(tv_level_menu = 2){
 		current_columns := "Familias"
-		;parent_id := TV_GetParent(A_EventInfo)
-		;TV_GetText(parent_name, parent_id)
-		;empresa_mascara := ETF_hashmask[parent_name]
-		;table_ETF := getreferencetable("Familia", empresa_mascara current_selected_name)
+	}
+
+	if(tv_level_menu = 3){
+		current_columns := "Subfamilias"
 	}
 
 	/*
-		Case esteja no nivel das familias nao existe opcao de incluir
+		Caso esteja no nivel das familias e a familia nao tenha subfamilia nao existe opcao de incluir
 	*/
+
+
 	if(tv_level_menu = 3){
-		Menu, remover_menu, Show, x%A_GuiX% y%A_GuiY%	
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[1]
+		if(db.have_subfamilia(tabela1)){
+			Menu, main_tv_menu, Show, x%A_GuiX% y%A_GuiY%		
+		}else{
+			Menu, remover_menu, Show, x%A_GuiX% y%A_GuiY%
+		}	
 	}Else{
 		Menu, main_tv_menu, Show, x%A_GuiX% y%A_GuiY%	
 	}
@@ -347,26 +354,41 @@ return
   	que a selecao esta
   */
   tv_level := get_tv_level("M", "main_tv")
-  if(tv_level = 3){
+  
+  if(tv_level = 3 || tv_level = 4){
   	/*
   		Se estiver no nivel das 
   		familias ira buscar a tabela de modelos
   		e carrega-la na listview ao lado. 
   	*/
-  	
+  		
   	/*
-  		Pega a tabela de modelos
-  	*/	
-		familia := get_tv_info("Familia")
-		tipo := get_tv_info("Tipo")
-		empresa := get_tv_info("Empresa")
+  		Verifica se o nival atual tem um subnivel
+  		se tiver retorna sem carregar tabela de modelo
+  	*/
+  	if(tv_level = 3){
+  		tabela1 := info.empresa[2] info.tipo[2] info.familia[1]
+			if(db.have_subfamilia(tabela1)){
+				return
+			}else{
+				/*
+  			Pega a tabela de modelos
+  			*/	 
+				familia := get_tv_info("Familia")
+				tipo := get_tv_info("Tipo")
+				empresa := get_tv_info("Empresa")
 
-		/*
-			Metodo que peca a tabela de modelos 
-			linkada
-		*/
-		model_table := db.get_reference("Modelo",empresa.mascara tipo.mascara familia.nome)
-		
+				model_table := db.get_reference("Modelo", empresa.mascara tipo.mascara familia.nome)
+			}
+  	}
+  	
+  	if(tv_level = 4){
+  		subfamilia := get_tv_info("Subfamilia")
+  		familia := get_tv_info("Familia")
+			tipo := get_tv_info("Tipo")
+			empresa := get_tv_info("Empresa")
+			model_table := db.get_reference("Modelo", empresa.mascara tipo.mascara familia.mascara subfamilia.nome)
+  	}
 		/*
 			Metodo que carrega a lista de modelos
 			em determinada listview
@@ -375,6 +397,7 @@ return
 		LV_ModifyCol(1)
 		load_logo_in_main()	
   }else{
+  	
   	/*
   		Funcao que substui a imagem que foi gerada
   		no load_image... pelo logo do programa
@@ -1201,7 +1224,7 @@ if(_reload_gettable = True ){    ; Variavel utilizada para saber se a tabela de 
 db.createtable("ESTRUTURAS","(item,componente)") 
 args := {},hashmask := {},subitem := {}
 args["table"] := "empresa", args["loadfunc"] := "gettable", args["mascaraant"] := EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara,args["savetvfunc"] := "savetvfunc1"
-field := ["Aba","Familia","Modelo"], args["owner"] := "M"
+field := ["Aba","Familia", "Subfamilia", "Modelo"], args["owner"] := "M"
 tvstring := ""
 tvwindow(args)
 return 

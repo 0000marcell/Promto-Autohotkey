@@ -79,7 +79,7 @@ class Tipo{
 				(JOIN 
 					"	CREATE TABLE IF NOT EXISTS " prefixo tipo_mascara "Familia "
 					" (Familias VARCHAR(250), "
-					" Mascara VARCHAR(250), "
+					" Mascara VARCHAR(250), Subfamilia VARCHAR(250), "
 					" PRIMARY KEY (Mascara)) "
 				))
 		}catch e
@@ -104,8 +104,6 @@ class Tipo{
 		 Excluir a entrada do tipo 
 		 na tabela de tipos 
 		*/
-
-		
 		prefixo := info.empresa[2]
 
 		;MsgBox, % "ira a apagar o tipo: " tipo_nome "`n tipo_mascara: " tipo_mascara " `n prefixo: " prefixo
@@ -253,11 +251,23 @@ class Tipo{
 
 		i++
 		if(nivel_tipo = ""){
-			nivel_tipo := {1: ["tipo", "Familia"], 2: ["familia", "Modelo"], 3: ["Modelo", "break"]}
+			nivel_tipo := {1: ["tipo", "Familia"], 2: ["familia", "Modelo"], 3: ["subfamilia", "Modelo"], 4: ["Modelo", "break"]}
 		}
 
 		nivel := nivel_tipo[i,1]
-		tipo := nivel_tipo[i,2]
+
+		/*
+			Funcao que verifica no nivel de familias 
+			se a proxima tabela e de subfamilias ou de modelos
+		*/
+		if(nivel = "familia"){
+			tabela1 := info.empresa[2] info.tipo[2] info.familia[1]
+			if(db.have_subfamilia(tabela1)){
+				tipo := "Subfamilia"
+			}else{
+				tipo := nivel_tipo[i,2]		
+			}
+		}
 
 		;MsgBox, % "nome> " nome "`n mascara> " mascara "`n nivel> " nivel "`n tipo> " tipo "`n i> " i
 		
@@ -275,8 +285,6 @@ class Tipo{
 			atual.
 		*/
 		if(tipo = "break"){
-			;prefix := info.empresa
-			;db.Modelo.incluir( nome, mascara, info.empresa)
 			this.delete_subitem(nome, mascara, info, nivel)
 			return
 		}	
@@ -284,25 +292,21 @@ class Tipo{
 		/*
 			Retorna a tabela do proximo nivel
 		*/
-		;MsgBox, % "ira busacar a tabela tipo: " tipo " tabela1: " tabela1
-		
+
 		if(nivel = "tipo"){
 			tabela1 := info.empresa[2] nome
 		}else if(nivel = "familia"){
 			tabela1 := info.empresa[2] info.tipo[2] nome
+		}else if(nivel = "subfamilia"){
+			tabela1 := info.empresa[2] info.tipo[2] info.familia[2] nome
 		}
 
-
 		table := db.get_reference(tipo, tabela1)
-		;MsgBox, % "tabela retornada " table
 		if(table = ""){
 			this.delete_subitem(nome, mascara, info, nivel)
 			return 
 		}
-		;MsgBox, % "tabela retornada " table
-		;db.get_reference("Modelo",empresa.mascara tipo.mascara familia.nome)
-		;get_reference(tipo, tabela1)
-
+		
 		/*
 			Itera pelos items da tabela 
 			pegando seu nome e mascara e 
@@ -313,13 +317,14 @@ class Tipo{
 			nome_item := table_items[A_Index,1]
 			mascara_item := table_items[A_Index,2]
 			
-			;MsgBox, % " item da tabela " nome_item " mascara item " mascara_item 
 			if(nivel = "empresa"){
 				info.empresa[1] := nome , info.empresa[2] := mascara  
 			}else if(nivel = "tipo"){
 				info.tipo[1] := nome , info.tipo[2] :=  mascara
 			}else if(nivel = "familia"){
 				info.familia[1] := nome , info.familia[2] :=  mascara
+			}else if(nivel = "subfamilia"){
+				info.subfamilia[1] := nome , info.subfamilia[2] := mascara
 			}else if(nivel = "modelo"){
 				info.modelo[1] := nome , info.modelo[2] :=  mascara
 			}else{
@@ -340,22 +345,16 @@ class Tipo{
 	delete_subitem(nome, mascara, info, nivel){
 		Global db
 		if(nivel = "empresa"){
-			;MsgBox, % " deletar empresa " nome "mascara " mascara
 			db.Empresa.excluir(nome, mascara, 0)
-			;FileAppend, % " `n ira deletar a empresa " nome, % "debug.txt"
 		}else if(nivel = "tipo"){
-			;MsgBox, % "ira deletar o tipo " nome " mascara " mascara
 			db.Tipo.excluir(nome, mascara, info, 0)
-			;FileAppend, % " `n ira deletar o tipo " nome, % "debug.txt"
+		}else if(nivel = "subfamilia"){
+			db.Subfamilia.excluir(nome, mascara, info, 0)
 		}else if(nivel = "familia"){
-			;MsgBox, % "ira deletar a familia " nome " familia " mascara
 			db.Familia.excluir(nome, mascara, info, 0)
-			;FileAppend, % " `n ira deletar a familia " nome, % "debug.txt"
 		}else if(nivel = "modelo"){
-			prefixo := info.empresa[2] info.tipo[2] info.familia[2]
-			;MsgBox, % "ira deletar o modelo " nome " mascara " mascara
+			prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2]
 			db.Modelo.excluir(nome, mascara, info, 0)
-			;FileAppend, % " `n ira deletar o modelo " nome, % "debug.txt"
 		}
 	}
 

@@ -10,7 +10,6 @@ class PromtoSQL{
 		
 		try {
 			Global mariaDB := DBA.DataBaseFactory.OpenDataBase(databaseType, connectionString)
-			;MsgBox, % " a conexao foi estabelecida!"
 		} catch e {
 			MsgBox,16, Error, % "A conexao nao foi estabelecida. Verifique os parametros da conexao!`n`n" ExceptionDetail(e)
 		}
@@ -227,17 +226,19 @@ class PromtoSQL{
 		Funcao que carrega a string da
 		treeview da janela principal
 	*/
-	get_treeview(table,x,nivel,masc){
+	get_treeview(table, x, nivel, masc){
 		Global mariaDB,ETF_TVSTRING, field, ETF_hashmask
 
 		x+=1, nivel.="`t"
 		For each, value in list := this.get_values("*", table){
+			
 			if(field[x] = ""){
 				Break
 			}
+			
 			ETF_TVSTRING .= "`n" . nivel . list[A_Index, 1]		
 			ETF_hashmask[list[A_Index, 1]] := list[A_Index, 2] 	
-			new_table := this.get_reference(field[x], masc . list[A_Index,1])
+			new_table := this.get_reference(field[x], masc . list[A_Index, 1])
 			if(new_table)
 				this.get_treeview(new_table, x, nivel, masc . list[A_Index, 2])
 		}
@@ -494,6 +495,30 @@ class PromtoSQL{
 	}
 
 	/*
+		Verifica se determinada familia 
+		tem subfamilia
+	*/
+	have_subfamilia(tabela1){
+		Global mariaDB
+
+		rs := mariaDB.OpenRecordSet(
+			(JOIN 
+				" SELECT tabela2 FROM reltable "
+				" WHERE tipo like 'Subfamilia' "
+				" AND tabela1 like '" tabela1 "'"
+			))
+		
+		reference_table := rs.tabela2
+
+		rs.close()
+		if(reference_table != ""){
+			return 1
+		}else{
+			return 0
+		}
+	}
+
+	/*
 		Get reference global
 	*/
 	get_reference(tipo, tabela1){
@@ -513,6 +538,7 @@ class PromtoSQL{
 	#include lib\promto_sql_mariadb_empresa.ahk
 	#include lib\promto_sql_mariadb_tipo.ahk
 	#include lib\promto_sql_mariadb_familia.ahk
+	#include lib\promto_sql_mariadb_subfamilia.ahk
 	#include lib\promto_sql_mariadb_modelo.ahk
 	#include lib\promto_sql_mariadb_campo.ahk
 	#include lib\promto_sql_mariadb_imagem.ahk

@@ -43,11 +43,13 @@ class Empresa{
 			" Mascara VARCHAR(250), "
 			" PRIMARY KEY (Mascara)) "
 		)
+
 		try{
 			mariaDB.Query(sql)
 		}catch e
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de tipos `n" ExceptionDetail(e)
 
+		
 		record := {}
 		record.tipo := "Aba"
 		record.tabela1 := empresa_nome
@@ -73,11 +75,10 @@ class Empresa{
 
 		/*
 			Funcao recursiva que exclui todas os
-			tipos familias e modelos dessa 
+			tipos familias subfamilias e modelos dessa 
 			empresa
 		*/
 		if(recursiva = 1){
-			FileDelete, % "debug.txt"
 			this.remove_subitems(empresa_nome, empresa_mascara)
 			return
 		}
@@ -155,11 +156,25 @@ class Empresa{
 		i++
 		if(nivel_tipo = ""){
 			info := []
-			nivel_tipo := {1: ["empresa", "Aba"], 2: ["tipo", "Familia"], 3: ["familia", "Modelo"], 4: ["Modelo", "break"]}
+			nivel_tipo := {1: ["empresa", "Aba"], 2: ["tipo", "Familia"], 3: ["familia", "Modelo"], 4: ["subfamilia", "Modelo"], 5: ["Modelo", "break"]}
 		}
 
 		nivel := nivel_tipo[i,1]
-		tipo := nivel_tipo[i,2]
+
+		/*
+			Funcao que verifica no nivel de familias 
+			se a proxima tabela e de subfamilias ou de modelos
+		*/
+		if(nivel = "familia"){
+			tabela1 := info.empresa[2] info.tipo[2] info.familia[1]
+			if(db.have_subfamilia()){
+				tipo := "Subfamilia"
+			}else{
+				tipo := nivel_tipo[i,2]		
+			}
+		}
+
+		
 		;MsgBox, % "nome> " nome "`n mascara> " mascara "`n nivel> " nivel "`n tipo> " tipo "`n i> " i
 		
 		/*
@@ -176,9 +191,6 @@ class Empresa{
 			atual.
 		*/
 		if(tipo = "break"){
-			;prefix := info.empresa
-			;db.Modelo.incluir( nome, mascara, info.empresa)
-			FileAppend, % "#DELETE do break nome: " nome " mascara: " mascara "`n", % "debug.txt"
 			this.delete_subitem(nome, mascara, info, nivel)
 			return
 		}	
@@ -192,13 +204,13 @@ class Empresa{
 			tabela1 := info.empresa[2] nome
 		}else if(nivel = "familia"){
 			tabela1 := info.empresa[2] info.tipo[2] nome
+		}else if(nivel = "subfamilia"){
+			tabela1 := info.empresa[2] info.tipo[2] info.familia[2] nome
 		}
 		
-		;FileAppend, % "%BUSCAR tabela " tabela1  " nivel: " nivel_tipo "`n", % "debug.txt"
 		table := db.get_reference(tipo, tabela1)
-		;FileAppend, % "%RETORNO table " table "`n", % "debug.txt"
+
 		if(table = ""){
-			;FileAppend, % "#DELETE nao tinha tabela nome: " nome " mascara: " mascara "`n", % "debug.txt"
 			this.delete_subitem(nome, mascara, info, nivel)
 			return 
 		}
@@ -216,19 +228,19 @@ class Empresa{
 			nome_item := table_items[A_Index,1]
 			mascara_item := table_items[A_Index,2]
 			
-			;MsgBox, % " item da tabela " nome_item " mascara item " mascara_item 
 			if(nivel = "empresa"){
 				info.empresa[1] := nome , info.empresa[2] := mascara  
 			}else if(nivel = "tipo"){
 				info.tipo[1] := nome , info.tipo[2] :=  mascara
 			}else if(nivel = "familia"){
 				info.familia[1] := nome , info.familia[2] :=  mascara
+			}else if(nivel = "subfamilia"){
+				info.subfamilia[1] := nome , info.subfamilia[2] := mascara
 			}else if(nivel = "modelo"){
 				info.modelo[1] := nome , info.modelo[2] :=  mascara
 			}else{
 				MsgBox, 16, Erro, % "O valor de nivel passado nao existe : " nivel
 			}
-			;FileAppend, % "@PROXIMO nome: " nome_item " mascara: " mascara_item "`n", % "debug.txt"
 			this.remove_subitems( nome_item, mascara_item, info, nivel_tipo, i)
 		}
 		/*
@@ -245,19 +257,16 @@ class Empresa{
 	delete_subitem(nome, mascara, info, nivel){
 		Global db
 		if(nivel = "empresa"){
-			;MsgBox, % " deletar empresa"
 			db.Empresa.excluir(nome, mascara, 0)
-			;FileAppend, % " `n ira deletar a empresa " nome, % "debug.txt"
 		}else if(nivel = "tipo"){
 			db.Tipo.excluir(nome, mascara, info, 0)
-			;FileAppend, % " `n ira deletar o tipo " nome, % "debug.txt"
 		}else if(nivel = "familia"){
 			db.Familia.excluir(nome, mascara, info, 0)
-			;FileAppend, % " `n ira deletar a familia " nome, % "debug.txt"
+		}else if(nivel = "subfamilia"){
+			db.Subfamilia.excluir(nome, mascara, info, 0)
 		}else if(nivel = "modelo"){
-			prefixo := info.empresa[2] info.tipo[2] info.familia[2]
+			prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2]
 			db.Modelo.excluir(nome, mascara, info, 0)
-			;FileAppend, % " `n ira deletar o modelo " nome, % "debug.txt"
 		}
 	}
 

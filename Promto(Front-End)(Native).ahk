@@ -47,8 +47,8 @@ Font := settings.font
 */
 If !pToken := Gdip_Startup()
 {
-    MsgBox, 48, gdiplus error!, Gdiplus failed to start. Please ensure you have gdiplus on your system
-    ExitApp
+  MsgBox, 48, gdiplus error!, Gdiplus failed to start. Please ensure you have gdiplus on your system
+  ExitApp
 }
 
 /*
@@ -67,7 +67,7 @@ db := new PromtoSQL(
 */
 GLOBAL_TVSTRING := ""
 ETF_TVSTRING := ""
-hashmask:={},field:=["Aba","Familia","Modelo"]
+hashmask:={},field:=["Aba", "Familia", "Subfamilia", "Modelo"]
 _reload_gettable := True
 
 E:
@@ -89,7 +89,7 @@ Gui, Add, Edit, xp+25 yp+25 w250 vdb_location_to_save , %db_location%
 	Opcoes
 */
 Gui, Add, Groupbox, xm y+25 w300 h60, Opcoes
-Gui, Add, Button, xp+45 yp+20 w100 h30 gloading_main vloading_main Default,Iniciar
+Gui, Add, Button, xp+45 yp+20 w100 h30 gloading_main vloading_main Default, Iniciar
 Gui, Add, Button, x+5 w100 h30 gedit_config_file vedit_config_file, Editar Configuracao
 Gui, Show,,	Inicializacao 
 Return
@@ -164,18 +164,17 @@ Gui, Font, s8
 */
 Gui, Add, Groupbox, xm+240 y+20 w220 h300, Opcoes 
 Gui, Add, Button, hwndhMod xp+5 yp+15 w100 h30 gMAM, Modelos
-glabels := ["MAB","MAC","ordemprefix","MAOC","MAODC","MAODR","MAODI"]
-for,each,value in ["Bloqueados","Campos","Ordem Prefix","Ordem Codigo","Ordem Desc Completa","Ordem Desc Resumida","Ordem Desc Ingles"]{
+glabels := ["MAB", "MAC", "ordemprefix", "MAOC", "MAODC", "MAODR", "MAODI"]
+for,each,value in ["Bloqueados", "Campos", "Ordem Prefixo", "Ordem Codigo", "Ordem Desc Completa", "Ordem Desc Resumida", "Ordem Desc Ingles"]{
 	glabel := glabels[A_Index]
 	Gui, Add, Button, wp hp g%glabel%,% "&" value
 }
-Gui, Add, Button, x+5 y380 wp hp ggerarcodigos,Gerar Codigos
-glabels := ["gerarestruturas","linkarm","dbex","massaestrut","codetable","plotcode"]
-for,each,value in ["Gerar Estruturas","Linkar","Add db Externo","Estrutura","Lista de Codigos","Imprimir"]{
+Gui, Add, Button, x+5 y380 wp hp ggerarcodigos, Gerar Codigos
+glabels := ["gerarestruturas","linkarm","dbex", "massaestrut", "codetable", "plotcode"]
+for,each,value in ["Gerar Estruturas", "Linkar", "Add db Externo", "Estrutura", "Lista de Codigos", "Imprimir"]{
 	glabel := glabels[A_Index]
 	Gui, Add, Button, wp hp g%glabel%,% "&" value
 }
-
 /*
 	Pesquisa
 */
@@ -219,12 +218,13 @@ return
 MGuiContextMenu:
 if A_GuiControl = main_tv
 {
-
 	/*
 		verifica em que nivel a selecao esta
 		caso esteja no nivel tres somente
-		a opcao de remover aparecera
+		a opcao de remover aparecera, a menos que a familia 
+		selecionada tenha uma subfamilia.
 	*/
+
 	tv_level_menu := get_tv_level("M", "main_tv") 
 	
 	Menu, main_tv_menu, Add, Adicionar, adicionar_item
@@ -262,9 +262,8 @@ if A_GuiControl = main_tv
 	/*
 		Caso esteja no nivel das familias e a familia nao tenha subfamilia nao existe opcao de incluir
 	*/
-
-
 	if(tv_level_menu = 3){
+		info := get_item_info("M", "MODlv")
 		tabela1 := info.empresa[2] info.tipo[2] info.familia[1]
 		if(db.have_subfamilia(tabela1)){
 			Menu, main_tv_menu, Show, x%A_GuiX% y%A_GuiY%		
@@ -367,6 +366,7 @@ return
   		se tiver retorna sem carregar tabela de modelo
   	*/
   	if(tv_level = 3){
+  		info := get_item_info("M", "MODlv")
   		tabela1 := info.empresa[2] info.tipo[2] info.familia[1]
 			if(db.have_subfamilia(tabela1)){
 				return
@@ -1590,7 +1590,8 @@ loaditem(){
 }
 
 		MAM:
-		if(get_tv_level("M", "main_tv") != 3){
+		info := get_item_info("M", "MODlv")
+		if(get_tv_level("M", "main_tv") != 3 && get_tv_level("M", "main_tv") != 4){
 			MsgBox,16,Erro, % " Selecione uma familia antes, para alterar modelos!"
 			return 
 		}
@@ -1603,10 +1604,13 @@ loaditem(){
 		empresa := get_tv_info("Empresa")
 
 		/*
-			Metodo que pega a tabela de modelos 
-			linkada
+			Verifica se a familia e uma subfamilia ou nao
 		*/
-		model_table := db.get_reference("Modelo",empresa.mascara tipo.mascara familia.nome)
+		if(info.subfamilia[2] != ""){
+			model_table := db.get_reference("Modelo",info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[1])	
+		}else{
+			model_table := db.get_reference("Modelo",empresa.mascara tipo.mascara familia.nome)
+		}
 		inserir_modelo_view(model_table)
 		return
 		

@@ -2,8 +2,6 @@ ordem_view(tipo, info){
 	Global db, SMALL_FONT, GLOBAL_COLOR, updownv, ordem_lv
 	Static tabela_ordem
 
-	;MsgBox, % "ordem view"
-
 	/*
 		Gui init
 	*/
@@ -21,23 +19,19 @@ ordem_view(tipo, info){
 	/*
 		Handle
 	*/
-	 ;Gui, Add, Groupbox, x+15 ym w100 h150,
 	 Gui, Add, UpDown,  x+5 w60 h140 vupdownv gupdown range0-1
 
 	 /*
 	 	Opcoes
 	 */
 	 Gui, Add, Groupbox, xm y+5 w250 h60, Opcoes
-	 Gui, Add, Button, xp+10 yp+15 w100 h30 gsalvar_ordem_prefixo_button, Salvar
-	 ;MsgBox, % "tipo : " tipo 
+	 Gui, Add, Button, xp+10 yp+15 w100 h30 gsalvar_ordem_prefixo_button, Salvar 
 	 tabela_ordem := get_tabela_ordem(tipo, info)
-	 ;MsgBox, % "tabela ordem retornada " tabela_ordem
-	 
+	 MsgBox, % "tabela ordem retornada " tabela_ordem
 	 /*
 	 	Insere os novos campos na tabela de prefixo
 	 */
-	 db.correct_tabela_ordem(tipo, info)
-	 ;MsgBox, % "ira carregar a tabela " tabela_ordem 
+	 db.correct_tabela_ordem(tipo, info) 
 	 db.load_lv("ordem_view", "ordem_lv", tabela_ordem)
 	 Gui, Show,, Alterar Ordem
 	 return

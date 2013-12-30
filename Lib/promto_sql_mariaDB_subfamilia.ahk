@@ -14,14 +14,16 @@ class Subfamilia{
 		/*
 			Pega a mascara da empresa
 		*/
-		StringLeft, empresa_mascara, prefixo, 1
-
+		MsgBox, % "prefixo " prefixo
+		StringLeft, sub_prefixo, prefixo, 2
+		MsgBox, % "sub_prefixo " sub_prefixo 
 
 		/*
 			Pega a referencia da tabela de items 
 			linkados
 		*/
-		subfam_table := this.get_parent_reference(empresa_mascara, familia_nome)
+		MsgBox, % "ira buscar a subfamilia empresa mascara " sub_prefixo " familia nome " familia_nome
+		subfam_table := this.get_parent_reference(sub_prefixo, familia_nome)
 		if(subfam_table = ""){
 			MsgBox, 16, Erro, % "A familia selecionada nao tem subfamilia!"
 			return
@@ -55,6 +57,7 @@ class Subfamilia{
 		record.tabela2 := prefixo subfam_mascara "Modelo"
 		mariaDB.Insert(record, "reltable")
 		MsgBox, % "A Subfamilia foi inserida!"
+		return 1
 	}
 
 	/*
@@ -239,17 +242,20 @@ class Subfamilia{
 		}
 	}
 
-	get_parent_reference(empresa_mascara, tipo_nome){
+	get_parent_reference(prefixo, familia_nome){
 		global mariaDB
 
+		MsgBox, % "get parent reference empresa mascara " prefixo " tipo nome " tipo_nome
+		MsgBox, % "tabela1: " prefixo familia_nome
 		rs := mariaDB.OpenRecordSet(
 			(JOIN 
 				" SELECT tabela2 FROM reltable "
 				" WHERE tipo like 'Subfamilia' "
-				" AND tabela1 like '" empresa_mascara tipo_nome "'"
+				" AND tabela1 like '" prefixo familia_nome "'"
 			))
 		reference_table := rs.tabela2
 		rs.close()
+		MsgBox, % "tabela retornada " reference_table
 		return reference_table
 	}
 }

@@ -532,7 +532,7 @@ class Modelo{
 		Altera a descricao geral de determinado modelo
 	*/
 	descricao_geral(descricao, descricao_ingles){
-		Global mariaDB, empresa, tipo, familia, modelo
+		Global mariaDB, empresa, tipo, familia, subfamilia, modelo
 
 		if(modelo.mascara = ""){
 			MsgBox,16,Erro, % "Selecione um modelo antes de continuar!" 
@@ -542,8 +542,8 @@ class Modelo{
 
 		record := {}
 		record.descricao := descricao "|" descricao_ingles
-		table := empresa.mascara tipo.mascara familia.mascara modelo.mascara "Desc"
-		
+		table := empresa.mascara tipo.mascara familia.mascara subfamilia.mascara modelo.mascara "Desc"
+		MsgBox, % "tabela de descricao " table
 		/*
 			Deleta a descricao anterior
 		*/
@@ -565,7 +565,7 @@ class Modelo{
 	inserir_valores_prefixo(tabela_prefixo, info){
 		Global mariaDB
 
-		values_tbi := [info.empresa[2], info.tipo[2], info.familia[2], info.modelo[2]]
+		values_tbi := [info.empresa[2], info.tipo[2], info.familia[2], info.subfamilia[2], info.modelo[2]]
 		for each, value in values_tbi{
 			if(value = "")
 				continue
@@ -573,8 +573,6 @@ class Modelo{
 			record.Campos := value
 			mariaDB.Insert(record, tabela_prefixo)
 		}
-
-
 	}
 	/*
 		Pega a descricao geral
@@ -582,9 +580,15 @@ class Modelo{
 
 	get_desc(info){
 		Global mariaDB
-		;MsgBox, % "select descricao from " info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Desc order by descricao asc limit 1;"
+
+		if(info.subfamilia[2] != ""){
+			prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] 
+		}else{
+			prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2]
+		}
+		MsgBox, % "ira buscar a descricao prefixo " prefixo
 		try{
-			rs := mariaDB.OpenRecordSet("select descricao from " info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Desc order by descricao asc limit 1;")
+			rs := mariaDB.OpenRecordSet("select descricao from " prefixo "Desc order by descricao asc limit 1;")
 		}catch e{
 			MsgBox,16, Erro, % "Ocorreu um erro ao tentar buscar a descricao!"
 			return
@@ -593,7 +597,7 @@ class Modelo{
 		if(value = ""){
 			value := info.familia[1] " " info.modelo[1] "|" info.familia[1] " " info.modelo[1]
 		}
-		;MsgBox, % "descricao retornada: " value
+
 		rs.close()
 		return value
 	}
@@ -705,13 +709,12 @@ class Modelo{
 			}catch e 
 				MsgBox,16,Erro,% " Erro ao tentar deletar a tabela de " tipo " " linked_table "`n" ExceptionDetail(e)
 		}
-
 	}
 
 	load_tables(info){
 		Global mariaDB, db, camptable, octable, odctable, odrtable, oditable, codtable
 
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
 		camptable := db.get_reference("Campo", tabela1)
 		octable := db.get_reference("oc", tabela1)
 		odctable := db.get_reference("odc", tabela1)

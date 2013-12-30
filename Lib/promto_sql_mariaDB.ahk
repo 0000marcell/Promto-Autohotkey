@@ -227,15 +227,13 @@ class PromtoSQL{
 		treeview da janela principal
 	*/
 	get_treeview(table, x, nivel, masc){
-		Global mariaDB,ETF_TVSTRING, field, ETF_hashmask
+		Global mariaDB,ETF_TVSTRING, field, ETF_hashmask  
 
-		x+=1, nivel.="`t"
+		x += 1, nivel .= "`t"
 		For each, value in list := this.get_values("*", table){
-			
 			if(field[x] = ""){
 				Break
 			}
-			
 			ETF_TVSTRING .= "`n" . nivel . list[A_Index, 1]		
 			ETF_hashmask[list[A_Index, 1]] := list[A_Index, 2] 	
 			new_table := this.get_reference(field[x], masc . list[A_Index, 1])
@@ -343,8 +341,7 @@ class PromtoSQL{
 		Global mariaDB,db
 
 		for, each, tipo in ["prefixo", "oc", "odc", "odr", "odi"]{
-			tabela_ordem := get_tabela_ordem(tipo, info)
-			;MsgBox, % "tabela de ordem retornada " tabela_ordem " tipo: " tipo 
+			tabela_ordem := get_tabela_ordem(tipo, info) 
 			db.correct_tabela_ordem(tipo, info)
 		}
 	}
@@ -355,11 +352,11 @@ class PromtoSQL{
 	correct_tabela_ordem(tipo, info){
 		Global mariaDB,db
 
-		;MsgBox, % "correct tabela prefixo"
-		tabela_prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] tipo
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+		tabela_prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] tipo
+
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
+		
 		tabela_campos := this.get_reference("Campo", tabela1) 
-		;MsgBox, % "tabela_prefixo " tabela_prefixo " tabela_campos " tabela_campos
 		
 		/*
 			Cria a tabela caso ela nao exista!

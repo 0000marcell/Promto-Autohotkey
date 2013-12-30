@@ -60,9 +60,10 @@ class Familia{
 		MsgBox, 4,,Esta familia tera subfamilias? 
 		IfMsgBox Yes
 		{
-			this.inserir_com_subfamilias(familia_nome, familia_mascara, prefixo)
+			MsgBox, % "ira inserir a familia com uma subfamilia `n tabela de familia " familia_table 
+			this.inserir_com_subfamilias(familia_nome, familia_mascara, prefixo, familia_table)
 		}else{
-			this.inserir_com_modelo(familia_nome, familia_mascara, prefixo)
+			this.inserir_com_modelo(familia_nome, familia_mascara, prefixo, familia_table)
 		}
 		return 1
 	}
@@ -70,7 +71,7 @@ class Familia{
 	/*
 		Insere a familia com modelo (sem subfamilias)
 	*/
-	inserir_com_modelo(familia_nome, familia_mascara, prefixo){
+	inserir_com_modelo(familia_nome, familia_mascara, prefixo, familia_table){
 		Global mariaDB
 
 		/*
@@ -86,6 +87,7 @@ class Familia{
 			Cria a tabela de Familias e insere a
 			referencia na reltable
 		*/
+
 		try{
 			mariaDB.Query(
 				(JOIN 
@@ -106,15 +108,40 @@ class Familia{
 
 	}
 
-	inserir_com_subfamilias(familia_nome, familia_mascara, prefixo){
+	inserir_com_subfamilias(familia_nome, familia_mascara, prefixo, familia_table){
 		Global mariaDB
 
+		check_if_blank({
+			(JOIN
+				"nome da familia": familia_nome, 
+				"mascara da familia": familia_mascara,
+				"prefixo": prefixo,
+				"tabela de familia": familia_table
+			)})
+
+		MsgBox, % "nome familia " familia_nome " `n mascara da familia " familia_mascara "`n prefixo " prefixo " `n tabela de familia " familia_table
+		
+		/*
+			Insere o campo subfamilia na tabela de familias
+		*/
+		MsgBox, % "alterar table familia_table: " familia_table
+		try{
+			mariaDB.Query(
+				(JOIN
+					"ALTER TABLE " familia_table " ADD Subfamilia VARCHAR(60);"
+				))
+			}catch e{
+				MsgBox,16, Erro, % "Um erro ocorreu ao tentar inserir o valor de campo Subfamilia!"
+				return 
+			}
+		
 		record := {}
 		record.Familias := familia_nome
 		record.Mascara := familia_mascara
 		record.Subfamilia := 1
 		mariaDB.Insert(record, familia_table)
 
+		MsgBox, % "ira criar a tabela de subfamilias `n prefixo: " prefixo " `n familia mascara: " familia_mascara
 		try{
 			mariaDB.Query(
 				(JOIN 
@@ -123,8 +150,10 @@ class Familia{
 					" Mascara VARCHAR(250), "
 					" PRIMARY KEY (Mascara)) "
 				))
-		}catch e
+		}catch e{
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Subfamilia `n" ExceptionDetail(e)
+			return
+		}
 
 		record := {}
 		record.tipo := "Subfamilia"
@@ -261,6 +290,7 @@ class Familia{
 	*/
 	get_reference(tabela1, tipo){
 		Global mariaDB
+
 		try {
 			rs := mariaDB.OpenRecordSet(
 			(JOIN 

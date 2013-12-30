@@ -31,7 +31,7 @@ lista_de_codigos(info){
 	Gui, Add, Button, xp+10 yp+15 w100 h30 gcarregartabela, Salvar em Arquivo
 	Gui, Add, Button, x+5 w100 h30 ggerarplaquetas, Gerar Plaquetas
 
-	code_table := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Codigo"
+	code_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "Codigo"
 	;MsgBox, % "code_table " code_table
 	Listpesqcod := db.load_table_in_array(code_table)
 	;MsgBox, % "ira carregar a lista"

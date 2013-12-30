@@ -66,7 +66,7 @@ inserir_campos_view(info){
 	/*
 		Carrega o combobox
 	*/
-	tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+	tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
 	tabela := db.Modelo.get_tabela_campo_referencia(tabela1)
 	control := {window: "inserir_campos_view", combobox: "campos_combobox"}
 	db.load_combobox(control, tabela)
@@ -78,7 +78,7 @@ inserir_campos_view(info){
 		MsgBox,16, % "Um dos valores necessarios para a insercao estava em branco"
 		return
 	}
-	tabela1 := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.modelo[2] s_info.modelo[1]
+	tabela1 := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2] s_info.modelo[2] s_info.modelo[1]
 	tabela_tbi := db.Modelo.get_tabela_campo_esp( campos_combobox, tabela1)
 
 	;MsgBox, % "tabela especifica " tabela_tbi
@@ -97,7 +97,7 @@ inserir_campos_view(info){
   	db.clean_table(tabela_tbi)
   }
   x:= new OTTK(source)
-  prefixo := s_info.empresa[2] s_info.tipo[2] s_info.familia[2]
+  prefixo := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2]
   progress(x.maxindex())
   for,each,value in x{
   	updateprogress("Inserindo Items da Lista: " x[A_Index, 1],1)
@@ -121,7 +121,7 @@ inserir_campos_view(info){
 		MsgBox,16, % "Um dos valores necessarios para a insercao estava em branco"
 		return
 	}
-	tabela1 := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.modelo[2] s_info.modelo[1]
+	tabela1 := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2] s_info.modelo[2] s_info.modelo[1]
 	StringReplace,campos_combobox,campos_combobox,%A_Space%,,All
 	tabela_tbe := db.Modelo.get_tabela_campo_esp(campos_combobox, tabela1)
 	values_tbe := db.load_table_in_array(tabela_tbe)
@@ -152,9 +152,9 @@ inserir_campos_view(info){
 		MsgBox,16, Erro, % "O nome do campo estava em branco!"
 		return
 	}
-	tabela1 := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.modelo[2] s_info.modelo[1]
+	tabela1 := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2] s_info.modelo[2] s_info.modelo[1]
 	db.Modelo.incluir_campo(input_name, s_info)
-	tabela1 := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.modelo[2] s_info.modelo[1]
+	tabela1 := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2] s_info.modelo[2] s_info.modelo[1]
 	tabela := db.Modelo.get_tabela_campo_referencia(tabela1)
 	control := {window: "inserir_campos_view", combobox: "campos_combobox"}
 	db.load_combobox(control, tabela)
@@ -168,7 +168,7 @@ inserir_campos_view(info){
 		return
 	}
 	db.Modelo.excluir_campo(campos_combobox, s_info)
-	tabela1 := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.modelo[2] s_info.modelo[1]
+	tabela1 := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2] s_info.modelo[2] s_info.modelo[1]
 	tabela := db.Modelo.get_tabela_campo_referencia(tabela1)
 	control := {window: "inserir_campos_view", combobox: "campos_combobox"}
 	db.load_combobox(control, tabela)

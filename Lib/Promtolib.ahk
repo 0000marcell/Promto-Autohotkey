@@ -168,7 +168,12 @@ number_of_items(){
  	Global
 	
 	Gui, M:default
-	codigos_a := db.load_table_in_array(info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Codigo")
+	if(info.subfamilia[2] != ""){
+		noi_prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2]
+	}else{
+		noi_prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2]
+	}
+	codigos_a := db.load_table_in_array(noi_prefixo "Codigo")
 	GuiControl,, numberofitems, % codigos_a.maxindex()
 }
 
@@ -303,7 +308,7 @@ get_tree(table,x,nivel,masc){
 get_tabela_campo_esp(campo, info){
 	Global db
 
-	tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+	tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
 	StringReplace,s_campo_sem_espaco, campo,%A_Space%,,All
 	tabela_campos_especificos := db.Modelo.get_tabela_campo_esp(s_campo_sem_espaco, tabela1)
 	return tabela_campos_especificos
@@ -314,18 +319,18 @@ get_tabela_ordem(tipo, info){
 	Global db
 	;MsgBox, % "get tabela ordem"
 	if(tipo = "prefixo"){
-		tabela_ordem := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "prefixo"
+		tabela_ordem := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "prefixo"
 	}else if(tipo = "oc"){
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
 	 	tabela_ordem := db.get_reference(tipo, tabela1)
 	}else if(tipo = "odr"){
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
 	 	tabela_ordem := db.get_reference(tipo, tabela1)
 	}else if(tipo = "odi"){
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
 	 	tabela_ordem := db.get_reference(tipo, tabela1)
 	}else if(tipo = "odc"){
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
 	 	tabela_ordem := db.get_reference(tipo, tabela1)
 	}
 	return tabela_ordem 
@@ -440,7 +445,8 @@ get_tv_info(type, ignore_error = 0){
 		
 		if(tv_level = 4){
 			ultra_id := TV_GetParent(id)
-			parent_id := TV_GetParent(ultra_id)
+			super_id := TV_GetParent(ultra_id)
+			parent_id := TV_GetParent(super_id)
 			TV_GetText(nome, parent_id)
 			return_values.nome := nome
 			return_values.mascara := ETF_hashmask[nome]
@@ -477,7 +483,7 @@ get_tv_info(type, ignore_error = 0){
 get_prefixbloq(info){
 	Global db 
 
-	table := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "prefixo"
+	table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "prefixo"
 	ordem_a := db.load_table_in_array(table)
 	return_value := ""
 	for, each, value in ordem_a{
@@ -738,12 +744,27 @@ get_item_info(window, lv){
 	info.tipo[2] := tipo.mascara
 	info.familia[1] := familia.nome
 	info.familia[2] := familia.mascara
+	info.subfamilia[1] := ""
+	info.subfamilia[2] := ""
 	info.subfamilia[1] := subfamilia.nome
 	info.subfamilia[2] := subfamilia.mascara
 	info.modelo[1] := modelo.nome
 	info.modelo[2] := modelo.mascara
 
 	return info 	
+}
+
+/*
+	Funcao que verifica se existe algum valor em branco em um
+	hash de valores
+*/
+check_if_blank(hash){
+	for, each, value in hash{
+		if(value = ""){
+			MsgBox, 16, Erro, % "O valor " each " estava em branco!"
+			return	
+		}
+	}
 }
 	
 /*
@@ -752,14 +773,16 @@ get_item_info(window, lv){
 load_image_in_main_window(){
 	Global empresa, tipo, familia, info,db, global_image_path
 	
-	codtable := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+	codtable := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
+	
 	;FileAppend, % "ira carregar os codigos da tabela : " codtable "`n", % "debug.txt"
+	
 	db.load_codigos_combobox(codtable)
 
 	/*
 		Pega a foto linkada com o determinado modelo
 	*/
-	tabela2_value := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+	tabela2_value := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
 	
 	;FileAppend, % "ira buscar a imagem tabela2_value " tabela2_value "`n", % "debug.txt"  
 	image_name_value := db.Imagem.get_image_path(tabela2_value)
@@ -789,11 +812,10 @@ load_formation_in_main_window(info){
 	text_panel_color := "00ff00"
 	bloq_w := 65
 	bloq_h := 50
-	prefix_table := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "prefixo"
+	prefix_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "prefixo"
 	prefix_values := db.load_table_in_array(prefix_table)
 	x := 10
-	y := 10
-	;MsgBox, % prefix_values.maxindex() 
+	y := 10 
 	if(prefix_values.maxindex() = 3){
 		fields := ["Empresa", "Familia" , "Modelo"]
 	}else{
@@ -810,7 +832,7 @@ load_formation_in_main_window(info){
 	/*
 		Cria os blocos com os nomes dos campos
 	*/
-	tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+	tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
 	oc_table := db.get_reference("oc", tabela1)
 	;MsgBox, % "oc table " oc_table
 	oc_values := db.load_table_in_array(oc_table)
@@ -1152,11 +1174,13 @@ change_info(v_info){
 	e_info.empresa[2] := empresa.mascara
 	e_info.tipo[2] := tipo.mascara
 	e_info.familia[2] := familia.mascara
+	e_info.subfamilia[2] := subfamilia.mascara
 	e_info.modelo[2] := v_info.modelo[2]
 
 	e_info.empresa[1] :=  empresa.nome
 	e_info.tipo[1] := tipo.nome
 	e_info.familia[1] := familia.nome
+	e_info.subfamilia[1] := subfamilia.nome
 	e_info.modelo[1] := v_info.nome 
 
 	return e_info
@@ -2033,6 +2057,7 @@ load_ETF(db){
 		Essa funcao ira carregar
 		a string ETF_TVSTRING
 	*/
+	FileDelete, % "load_tv_debug.csv"
 	db.get_treeview("empresas",0,"","")
 }
 

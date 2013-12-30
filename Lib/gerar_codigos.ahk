@@ -11,7 +11,7 @@ if(!camptable)||(!octable)||(!odctable)||(!odrtable)||(!codtable){
 	MsgBox,64,, % "Uma ou mais campos, das tabelas necessarias para gerar os codigos esta em branco!"
 }
 
-args:={}
+args := {}
 args["codtable"] := codtable
 args["octable"] := octable 
 args["odctable"] := odctable
@@ -21,13 +21,14 @@ args["camptable"] := camptable
 args["empmasc"] := info.empresa[2]
 args["abamasc"] := info.tipo[2]
 args["fammasc"] := info.familia[2]
+args["subfammasc"] := info.subfamilia[2]
 args["modmasc"] := info.modelo[2]
-args["mascaraant"] := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2]
+args["mascaraant"] := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2]
 
 /*
 	Carrega a tabela de campos
 */
-table_values := db.load_table_in_array(info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "prefixo")
+table_values := db.load_table_in_array(info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "prefixo")
 
 for,each,value in table_values{
 	if(table_values[A_Index,2] = "")
@@ -62,7 +63,7 @@ db.clean_table(codtable)
 
 codes := {}
 
-descgeral_array := db.load_table_in_array(info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Desc")
+descgeral_array := db.load_table_in_array(info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "Desc")
 desc_ := db.Modelo.get_desc(info)
 StringSplit, desc_, desc_ ,|,
 descgeral := desc_1

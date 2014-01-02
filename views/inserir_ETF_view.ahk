@@ -145,9 +145,7 @@ inserir_ETF_view(window, treeview, current_id, columns){
 		TV_GetText(tipo_nome, tipo_id)
 		empresa_id := TV_GetParent(tipo_id)
 		TV_GetText(empresa_nome, empresa_id)
-		MsgBox, % "ira buscar o prefixo da subfam `n empresa nome " empresa_nome "`n tipo_nome " tipo_nome "`n familia_nome " familia_nome
 		subfam_prefix := ETF_hashmask[empresa_nome] ETF_hashmask[tipo_nome] ETF_hashmask[familia_nome]
-		MsgBox, % "subfam retornada " subfam_prefix
 		/*
 			Verifica se existe correspondencia da mascara 
 			para o determinado nome

@@ -347,7 +347,6 @@ return
 	return
 
 	main_tv:
-	
   /*
   	funcao que busca o nivel 
   	que a selecao esta
@@ -369,6 +368,7 @@ return
   		info := get_item_info("M", "MODlv")
   		tabela1 := info.empresa[2] info.tipo[2] info.familia[1]
 			if(db.have_subfamilia(tabela1)){
+				load_logo_in_main()
 				return
 			}else{
 				/*
@@ -379,6 +379,7 @@ return
 				empresa := get_tv_info("Empresa")
 
 				model_table := db.get_reference("Modelo", empresa.mascara tipo.mascara familia.nome)
+
 			}
   	}
   	
@@ -393,6 +394,7 @@ return
 			Metodo que carrega a lista de modelos
 			em determinada listview
 		*/
+		;MsgBox, % "ira carregar a tabela de modelo " model_table
 		db.load_lv("M", "MODlv", model_table)
 		LV_ModifyCol(1)
 		load_logo_in_main()	
@@ -1606,10 +1608,12 @@ loaditem(){
 		/*
 			Verifica se a familia e uma subfamilia ou nao
 		*/
+		;MsgBox, % "info subfamilia " info.subfamilia[2]
 		if(info.subfamilia[2] != ""){
 			model_table := db.get_reference("Modelo",info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[1])	
 		}else{
-			model_table := db.get_reference("Modelo",empresa.mascara tipo.mascara familia.nome)
+			;MsgBox, % "ira buscar a tabela de modelos sem subfamilia " info.empresa[2] info.tipo[2] info.familia[1]
+			model_table := db.get_reference("Modelo", info.empresa[2] info.tipo[2] info.familia[1])
 		}
 		inserir_modelo_view(model_table)
 		return
@@ -1621,7 +1625,7 @@ loaditem(){
 
 refreshm(){
 	Global _refresh 
-	_refresh:=true
+	_refresh := true
 	gosub,M
 }		
 		
@@ -1633,10 +1637,10 @@ refreshm(){
 			return 
 		}
 		
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1] 
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1] 
 		bloq_table := db.get_reference("Bloqueio", tabela1)
 		if(bloq_table = "")
-			bloq_table := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Bloqueio"
+			bloq_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "Bloqueio"
 		
 		/*
 			Cria a tabela de bloqueios caso ela nao exista

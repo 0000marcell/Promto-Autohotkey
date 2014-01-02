@@ -28,6 +28,8 @@ class Modelo{
 			return 
 		}
 
+		;MsgBox, % "modelo nome: " modelo_nome "`n modelo mascara " modelo_mascara "`n prefixo " prefixo
+
 		/*
 			Insere o valor na tabela
 		*/
@@ -230,7 +232,10 @@ class Modelo{
 			com o modelo
 		*/
 		;MsgBox, % "modelo nome: " info.modelo[1] "`n modelo mascara: " info.modelo[2]
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1] 
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1] 
+		
+		MsgBox, % "tabela " tabela1
+
 		tabela_campo := this.get_tabela_campo_referencia(tabela1)
 
 		;MsgBox, % "tabela1 " tabela1 "`n tabela_campo " tabela_campo
@@ -260,7 +265,7 @@ class Modelo{
 
 		StringReplace,campo_nome_sem_espaco,campo_nome,%A_Space%,,All
 
-		tabela_campo_especifica := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] campo_nome_sem_espaco
+		tabela_campo_especifica := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] campo_nome_sem_espaco
 			
 		try{
 				mariaDB.Query(
@@ -274,8 +279,8 @@ class Modelo{
 		
 		record := {}
 		record.tipo := campo_nome_sem_espaco me mt mf mm nm
-		record.tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1] 
-		record.tabela2 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] campo_nome_sem_espaco
+		record.tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1] 
+		record.tabela2 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] campo_nome_sem_espaco
 		mariaDB.Insert(record, "reltable")	
 	}
 
@@ -362,8 +367,8 @@ class Modelo{
 		if(!this.get_reference(prefixo, modelo_nome, modelo_mascara, tipo)){
 			record := {}
 			record.tipo := "Bloqueio"
-			record.tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
-			record.tabela2 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Bloqueio"
+			record.tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
+			record.tabela2 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "Bloqueio"
 			mariaDB.Insert(record, "reltable")
 		}
 	}
@@ -394,6 +399,7 @@ class Modelo{
 		
 		;MsgBox, % "nome_campo: " nome_campo " `n codigo " valores.codigo "`n dr " valores.dr "`n dc " valores.dc "`n di " valores.di 
 		tabela_campos_especificos := get_tabela_campo_esp(nome_campo, info)
+		MsgBox, % "tabela de campo especifico retornada " tabela_campos_especificos
 		if(this.valor_campo_existe(tabela_campos_especificos, valores.codigo)){
 			MsgBox,16, Erro, % "O codigo a ser inserido ja existe na lista!"
 			return
@@ -446,6 +452,7 @@ class Modelo{
 		Global mariaDB
 
 		;MsgBox, % "campo nome " campo_nome " info empresa " info.empresa[1]
+		
 		/*
 			-Deleta a entrada da tabela relacionada 
 			 na tabela de relacionamento e armazena o seu valor.
@@ -453,8 +460,8 @@ class Modelo{
 			-verifica se nao existe mais nenhuma outra relacao com essa 
 			tabela, caso nao exista, exclui a tabela.
 		*/
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
-		;MsgBox, % "tabela1 " tabela1
+
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
 		tabela_campo_esp := get_tabela_campo_esp(campo_nome, info)
 		tabela_campo := this.get_tabela_campo_referencia(tabela1) 
 		
@@ -586,7 +593,6 @@ class Modelo{
 		}else{
 			prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2]
 		}
-		MsgBox, % "ira buscar a descricao prefixo " prefixo
 		try{
 			rs := mariaDB.OpenRecordSet("select descricao from " prefixo "Desc order by descricao asc limit 1;")
 		}catch e{

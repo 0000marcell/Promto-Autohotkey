@@ -27,7 +27,6 @@ ordem_view(tipo, info){
 	 Gui, Add, Groupbox, xm y+5 w250 h60, Opcoes
 	 Gui, Add, Button, xp+10 yp+15 w100 h30 gsalvar_ordem_prefixo_button, Salvar 
 	 tabela_ordem := get_tabela_ordem(tipo, info)
-	 MsgBox, % "tabela ordem retornada " tabela_ordem
 	 /*
 	 	Insere os novos campos na tabela de prefixo
 	 */
@@ -41,7 +40,7 @@ ordem_view(tipo, info){
 	 Loop % LV_GetCount(){
     	LV_GetText(RetrievedText, A_Index, 2)
     	nova_ordem.insert(RetrievedText)
-		}
+	 }
 	 db.Modelo.incluir_ordem( nova_ordem, tabela_ordem)
 	 MsgBox,64, Sucesso, % "Todos os items foram inseridos com sucesso!"
 	 Gui, ordem_view:destroy 

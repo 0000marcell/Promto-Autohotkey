@@ -397,9 +397,11 @@ get_tv_info(type, ignore_error = 0){
 	id := TV_GetSelection()
 
 	if(type = "Subfamilia"){
-		TV_GetText(nome, id)
-		return_values.nome := nome
-		return_values.mascara := ETF_hashmask[nome]
+		if(tv_level = 4){
+			TV_GetText(nome, id)
+			return_values.nome := nome
+			return_values.mascara := ETF_hashmask[nome]	
+		}
 	}
 
 	if(type = "Familia"){

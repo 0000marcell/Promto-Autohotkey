@@ -91,7 +91,7 @@ importar_lista_bloqueio(){
   	db.clean_table(bloq_table)
   }
   x:= new OTTK(source)
-  prefixo := s_info.empresa[2] s_info.tipo[2] s_info.familia[2]
+  prefixo := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2]
   progress(x.maxindex())
   for,each,value in x{
   	if(x[A_Index, 1] = "")

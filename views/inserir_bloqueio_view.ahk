@@ -60,7 +60,7 @@ inserir_bloqueio_view(){
 	Gui, Add, Button, xp+10 yp+15 w100 h30 gsalvar_bloqueio, Salvar
 	Gui, Add, Button, x+5 w100 h30 gimportar_lista_bloqueio, Importar
 	Gui, Add, Button, x+5 w100 h30 gexportar_lista_bloqueio, Exportar
-	cod_table := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Codigo"
+	cod_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "Codigo"
 	desbloqueados_a := db.load_table_in_array(cod_table) 
 	bloqueados_a := db.load_table_in_array(bloq_table)
 	db.load_lv("MAB", "codigos_livres", cod_table)

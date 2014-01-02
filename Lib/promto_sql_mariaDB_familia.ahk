@@ -60,7 +60,6 @@ class Familia{
 		MsgBox, 4,,Esta familia tera subfamilias? 
 		IfMsgBox Yes
 		{
-			MsgBox, % "ira inserir a familia com uma subfamilia `n tabela de familia " familia_table 
 			this.inserir_com_subfamilias(familia_nome, familia_mascara, prefixo, familia_table)
 		}else{
 			this.inserir_com_modelo(familia_nome, familia_mascara, prefixo, familia_table)
@@ -119,20 +118,18 @@ class Familia{
 				"tabela de familia": familia_table
 			)})
 
-		MsgBox, % "nome familia " familia_nome " `n mascara da familia " familia_mascara "`n prefixo " prefixo " `n tabela de familia " familia_table
 		
 		/*
 			Insere o campo subfamilia na tabela de familias
 		*/
-		MsgBox, % "alterar table familia_table: " familia_table
 		try{
 			mariaDB.Query(
 				(JOIN
 					"ALTER TABLE " familia_table " ADD Subfamilia VARCHAR(60);"
 				))
 			}catch e{
-				MsgBox,16, Erro, % "Um erro ocorreu ao tentar inserir o valor de campo Subfamilia!"
-				return 
+				;MsgBox,16, Erro, % "Um erro ocorreu ao tentar inserir o valor de campo Subfamilia!"
+				;return 
 			}
 		
 		record := {}
@@ -141,7 +138,6 @@ class Familia{
 		record.Subfamilia := 1
 		mariaDB.Insert(record, familia_table)
 
-		MsgBox, % "ira criar a tabela de subfamilias `n prefixo: " prefixo " `n familia mascara: " familia_mascara
 		try{
 			mariaDB.Query(
 				(JOIN 
@@ -216,6 +212,21 @@ class Familia{
 			))	
 		}catch e 
 			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de referencia " ExceptionDetail(e)
+		
+		/*
+			Deleta a entrada de subfamilia na tabela de 
+			relacionamento
+		*/
+		;MsgBox, % "ira deletar a entrada da tabela de relacionamento tabela1 " prefixo familia_nome 
+		try{
+			mariaDB.Query(
+			(JOIN 
+				" DELETE FROM reltable "
+				" WHERE tipo like 'Subfamilia'"
+				" AND tabela1 like '" prefixo familia_nome "'"
+			))	
+		}catch e 
+			;MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de referencia " ExceptionDetail(e)
 		
 		/*
 		 Verifica se a tabela de modelos 

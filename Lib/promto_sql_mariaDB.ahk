@@ -307,7 +307,7 @@ class PromtoSQL{
 		try{
 			rs := mariaDB.OpenRecordSet("SELECT * FROM " table)	
 		}catch e{
-			MsgBox,16,Erro, % "Ainda nao existe tabela de codigos para o modelo selecionado!"
+			;MsgBox,16,Erro, % "Ainda nao existe tabela de codigos para o modelo selecionado!"
 			return 
 		} 
 		
@@ -506,9 +506,11 @@ class PromtoSQL{
 			))
 		
 		reference_table := rs.tabela2
-
+		
+		;MsgBox, % "tabela de referencia " reference_table
 		rs.close()
 		if(reference_table != ""){
+			;MsgBox, % "tem subfamilia"
 			return 1
 		}else{
 			return 0

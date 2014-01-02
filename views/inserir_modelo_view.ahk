@@ -138,7 +138,8 @@ inserir_modelo_view(model_table){
 	salvar_modelo_button:
 	Gui, Submit, Nohide
 	Gui, insert_dialogo_2:destroy
-	prefixo := empresa.mascara tipo.mascara familia.mascara
+	prefixo := empresa.mascara tipo.mascara familia.mascara subfamilia.mascara
+	;MsgBox, % "prefixo antes de inserir: " prefixo "`n nome " input_name "`n mascara " input_mascara
 
 	/*
 		Verifica se algum dos valores necessarios esta em branco
@@ -152,6 +153,7 @@ inserir_modelo_view(model_table){
 	/*
 		Insere os valores na tabela 
 	*/
+	;MsgBox, % "ira chamar a funcao de insercao do modelo "
 	db.Modelo.incluir(input_name, input_mascara, prefixo)
 
 	/*
@@ -200,7 +202,7 @@ inserir_modelo_view(model_table){
   	db.clean_table(table_model)
   }
   x := new OTTK(source)
-  prefixo_local := info.empresa[2] info.tipo[2] info.familia[2]
+  prefixo_local := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2]
   ;MsgBox, % "prefixo " prefixo_local
   progress(x.maxindex())
   FileDelete, % "temp\debug.csv"

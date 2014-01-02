@@ -2,7 +2,7 @@ db_ex_view(){
 	Global
 
 	info := get_item_info("M", "MODlv")
-	cod_table := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] "Codigo"
+	cod_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "Codigo"
 	Gui,dbex:new
 	Gui,font,s%SMALL_FONT%,%FONT%
 	Gui, color, %GLOBAL_COLOR%
@@ -43,8 +43,7 @@ db_ex_view(){
 
 	export_code_list_to_file:	
 	info := get_item_info("M", "MODlv")
-	MsgBox, % "codelist " getvaluesLV("dbex","lvdbex") " `n familia mascara " info.familia[2] " `n select model " selectmodel
-	export_code_list_to_file(getvaluesLV("dbex","lvdbex"), info.familia[2], selectmodel)
+	export_code_list_to_file(getvaluesLV("dbex","lvdbex"), info.familia[2] info.subfamilia[2], selectmodel)
 	return 
 
 	inserirtodos:

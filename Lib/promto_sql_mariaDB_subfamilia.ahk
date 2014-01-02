@@ -14,15 +14,12 @@ class Subfamilia{
 		/*
 			Pega a mascara da empresa
 		*/
-		MsgBox, % "prefixo " prefixo
 		StringLeft, sub_prefixo, prefixo, 2
-		MsgBox, % "sub_prefixo " sub_prefixo 
 
 		/*
 			Pega a referencia da tabela de items 
 			linkados
 		*/
-		MsgBox, % "ira buscar a subfamilia empresa mascara " sub_prefixo " familia nome " familia_nome
 		subfam_table := this.get_parent_reference(sub_prefixo, familia_nome)
 		if(subfam_table = ""){
 			MsgBox, 16, Erro, % "A familia selecionada nao tem subfamilia!"
@@ -43,7 +40,7 @@ class Subfamilia{
 		try{
 			mariaDB.Query(
 				(JOIN 
-					"	CREATE TABLE IF NOT EXISTS " prefixo subfam_mascara "Modelos"
+					"	CREATE TABLE IF NOT EXISTS " prefixo subfam_mascara "Modelo"
 					" (Modelos VARCHAR(250), "
 					" Mascara VARCHAR(250), "
 					" PRIMARY KEY (Mascara)) "
@@ -245,8 +242,8 @@ class Subfamilia{
 	get_parent_reference(prefixo, familia_nome){
 		global mariaDB
 
-		MsgBox, % "get parent reference empresa mascara " prefixo " tipo nome " tipo_nome
-		MsgBox, % "tabela1: " prefixo familia_nome
+		;MsgBox, % "get parent reference empresa mascara " prefixo " tipo nome " tipo_nome
+		;MsgBox, % "tabela1: " prefixo familia_nome
 		rs := mariaDB.OpenRecordSet(
 			(JOIN 
 				" SELECT tabela2 FROM reltable "
@@ -255,7 +252,7 @@ class Subfamilia{
 			))
 		reference_table := rs.tabela2
 		rs.close()
-		MsgBox, % "tabela retornada " reference_table
+		;MsgBox, % "tabela retornada " reference_table
 		return reference_table
 	}
 }

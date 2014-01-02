@@ -128,7 +128,7 @@ class Imagem{
 			Retira a entrada de referencia antiga 
 			caso exista
 		*/
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
 		MsgBox, % "gonna relationate : " tabela1
 		this.remove_old_relation(tabela1)
 

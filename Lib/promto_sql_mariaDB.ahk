@@ -296,7 +296,7 @@ class PromtoSQL{
 		Carrega a lista de modelos em determinada 
 		Listview 
 	*/
-	load_lv(window_name, lv_name, table){
+	load_lv(window_name, lv_name, table, modifycol = 0){
 		Global mariaDB, db
 
 		if(window_name = "" || lv_name = ""){
@@ -329,7 +329,9 @@ class PromtoSQL{
 			}
 			rs.MoveNext()
 		}
-		;LV_ModifyCol(1),LV_ModifyCol(2),LV_ModifyCol(3),LV_ModifyCol(4),LV_ModifyCol(5)
+		if(modifycol = 1){
+			LV_ModifyCol(1), LV_ModifyCol(2), LV_ModifyCol(3), LV_ModifyCol(4), LV_ModifyCol(5)		
+		}
 		GuiControl,+ReDraw,%lv_name%
 		rs.close() 
 	}

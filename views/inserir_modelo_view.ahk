@@ -1,5 +1,7 @@
 inserir_modelo_view(model_table){
 	Global
+
+	tabela_de_modelo := model_table 
 	;Global db, desc_, SMALL_FONT, descricao_geral_ingles_edit, GLOBAL_COLOR, descricao_geral_edit,inserir_modelo_view, fonte_imagem_radio, empresa, tipo, familia, input_name, input_mascara,importar_button, inserir_modelo_lv, exportar_button,more_options_button,opcoes_groupbox, modelos_foto_control, modelo 
  
 	/*
@@ -80,9 +82,8 @@ inserir_modelo_view(model_table){
 			image_name_value := "sem_foto" 
 		}
 		image_source := global_image_path image_name_value ".jpg"
-		;MsgBox, % "image source " image_source
 		Gui, inserir_modelo_view:default 
-		GuiControl,,modelos_foto_control,%image_source%
+		GuiControl,, modelos_foto_control,%image_source%
 		
 		/*
 			Pega a descricao garal do modelo
@@ -139,7 +140,6 @@ inserir_modelo_view(model_table){
 	Gui, Submit, Nohide
 	Gui, insert_dialogo_2:destroy
 	prefixo := empresa.mascara tipo.mascara familia.mascara subfamilia.mascara
-	;MsgBox, % "prefixo antes de inserir: " prefixo "`n nome " input_name "`n mascara " input_mascara
 
 	/*
 		Verifica se algum dos valores necessarios esta em branco
@@ -203,18 +203,20 @@ inserir_modelo_view(model_table){
   }
   x := new OTTK(source)
   prefixo_local := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2]
-  ;MsgBox, % "prefixo " prefixo_local
   progress(x.maxindex())
   FileDelete, % "temp\debug.csv"
+  items_inseridos := {}
   for,each,value in x{
   	updateprogress("Inserindo Items da Lista: " x[A_Index, 1] " codigo " x[A_Index, 2] " prefixo_local: " prefixo_local,1)
     nome := x[A_Index, 1]
     codigo := x[A_Index, 2]
     if(nome = "")
     	continue
-    FileAppend, % "nome: " nome "; codigo: " codigo "; prefixo : " prefixo_local "`n", % "temp\debug.csv"
+    items_inseridos[nome] := codigo
     db.Modelo.incluir(nome, codigo, prefixo_local)
   }
+  db.load_lv("inserir_modelo_view", "inserir_modelo_lv", tabela_de_modelo, 1)
+  db.load_lv("M", "MODlv", tabela_de_modelo, 1)
   Gui,progress:destroy
   MsgBox,64,,% "valores importados!"
 	return

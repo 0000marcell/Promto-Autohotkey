@@ -35,7 +35,6 @@ class Imagem{
 			Move a imagem inserida para a 
 			pasta de imagens do programa
 		*/
-		MsgBox, % "fonte " source "`n " global_image_path nome_imagem
 		FileCopy, %source%,%global_image_path%%nome_imagem%.jpg, 1
 		if(ErrorLevel){
 			MsgBox,16,Erro, % "A imagem nao pode ser copiada!"
@@ -129,7 +128,6 @@ class Imagem{
 			caso exista
 		*/
 		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
-		MsgBox, % "gonna relationate : " tabela1
 		this.remove_old_relation(tabela1)
 
 		/*

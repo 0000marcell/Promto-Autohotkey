@@ -137,7 +137,7 @@ Gui, Add, Edit, xp+5 yp+15 w220,
 /*
 	Empresas/Tipos/Familias
 */
-Gui, Add, Groupbox, xm y+10 w230 h370,Empresas/Tipos/Familias
+Gui, Add, Groupbox, xp-5 y+10 w230 h370,Empresas/Tipos/Familias
 Gui, Add, TreeView, xp+5 yp+15 w220 h360 vmain_tv gmain_tv
 load_main_tv()
 
@@ -175,6 +175,7 @@ for,each,value in ["Gerar Estruturas", "Linkar", "Add db Externo", "Estrutura", 
 	glabel := glabels[A_Index]
 	Gui, Add, Button, wp hp g%glabel%,% "&" value
 }
+
 /*
 	Pesquisa
 */

@@ -16,7 +16,9 @@ inserir_imagem_db_view(owner_name, picture_control){
 	/*
 		Imagens
 	*/
-	Gui, Add, Groupbox, w250 h300, Imagens
+	Gui, Add, Groupbox, xm  w250 h45, Pesquisa
+	Gui, Add, Edit, xp+5 yp+15 w230 gpesquisa_inserir_imagem_db_view vpesquisa_inserir_imagem_db_view,
+	Gui, Add, Groupbox, xp-5 y+5 w250 h300, Imagens
 	Gui, Add, Listview, xp+5 yp+15 w230 h280 ginserir_imagem_db_lv vinserir_imagem_db_lv altsubmit,Imagens
 
 	/*
@@ -31,12 +33,17 @@ inserir_imagem_db_view(owner_name, picture_control){
 	*/
 	Gui, Add, Groupbox, x+45 ym w250 h250, Foto
 	Gui, Add, Picture, xp+5 yp+15 w200 h200 vinserir_imagem_db_picture,
-	Gui, Show,,Inserir Imagem do DB
+	Gui, Show,, Inserir Imagem do DB
+	Lista_de_pesquisa := db.get_values("*", "imagetable")
 	db.load_lv("inserir_imagem_db_view", "inserir_imagem_db_lv", "imagetable")
 	return
 
+	pesquisa_inserir_imagem_db_view:
+	Gui,submit,nohide
+	any_word_search("inserir_imagem_db_view", "inserir_imagem_db_lv", pesquisa_inserir_imagem_db_view, Lista_de_pesquisa)
+	return
+
 	salvar_imagem_db_button:
-	
 	/*
 		relaciona o caminho da imagem selecionada no 
 		momento com o modelo selecionado

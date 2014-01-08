@@ -1,1 +1,3 @@
-Main-Class: ConvertImageFile
+Main-Class: ConvertImage
+
+

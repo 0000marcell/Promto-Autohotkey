@@ -35,7 +35,19 @@ class Imagem{
 			Move a imagem inserida para a 
 			pasta de imagens do programa
 		*/
-		FileCopy, %source%,%global_image_path%%nome_imagem%.jpg, 1
+		FileCopy, %source%,temp\%nome_imagem%.jpg, 1
+
+		final_image_path = %global_image_path%%nome_imagem%.jpg
+		/*
+			Converte a imagem para o formato necessario
+		*/
+		this.convert_image("temp\" nome_imagem ".jpg")
+		
+		/*
+			Move a imagem para a pasta externa
+		*/ 
+		FileCopy, temp\%nome_imagem%.jpg, %global_image_path%%nome_imagem%.jpg, 1
+		
 		if(ErrorLevel){
 			MsgBox,16,Erro, % "A imagem nao pode ser copiada!"
 			return 
@@ -64,7 +76,7 @@ class Imagem{
 		record.tabela2 := nome_imagem
 		mariaDB.Insert(record, "reltable")
 
-		MsgBox,64,Sucesso, % "A imagem foi inserida!"		
+		;MsgBox,64,Sucesso, % "A imagem foi inserida!"		
 	}
 
 	/*
@@ -116,12 +128,29 @@ class Imagem{
 		banco com um modelo 
 	*/
 	link_up(info, image_name){
-		Global mariaDB
+		Global mariaDB, global_image_path
 
 		if(info.empresa[2] = "" || image_name = ""){
 			MsgBox,16,Erro, % "As informacoes sobre o modelo ou o caminho da imagem esta em branco!" 
 			return
 		}
+
+		
+
+		/*
+			Move a imagem para a pasta do programa para ser convertida
+		*/
+		FileCopy, %global_image_path%%image_name%.jpg, temp\%image_name%.jpg, 1
+		
+		/*
+			Converte a imagem para o formato neccessario 
+		*/
+		this.convert_image("temp\" image_name ".jpg")
+
+		/*
+			Copia a imagem de volta para a pasta externa
+		*/
+		FileCopy, temp\%image_name%.jpg, %global_image_path%%image_name%.jpg, 1
 
 		/*
 			Retira a entrada de referencia antiga 
@@ -139,7 +168,7 @@ class Imagem{
 		record.tabela2 := image_name
 		mariaDB.Insert(record, "reltable")
 
-		MsgBox,64,Sucesso, % "A imagem foi inserida!"
+		;MsgBox,64,Sucesso, % "A imagem foi inserida!"
 	}
 
 	/*
@@ -194,5 +223,17 @@ class Imagem{
 				))
 		}catch e
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar remover a entrada da tabela antiga `n" ExceptionDetail(e) 
+	}
+	
+	/*
+		Convert image determinada imagem para jpg e coloca a imagem no mesmo lugar
+	*/
+	convert_image(image_path){
+		FileDelete, % "temp\image_info.txt"
+		;MsgBox, % "caminho da imagem antes da conversao " image_path
+	  StringReplace, image_path, image_path, \, /,All
+	  ;MsgBox, % "caminho da imagem apos a conversao " image_path
+		FileAppend, % image_path, % "temp\image_info.txt"
+		run % "Lib\ConvertImage.jar" 
 	}
 }

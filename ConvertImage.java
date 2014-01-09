@@ -32,7 +32,7 @@ public class ConvertImage{
 	  	// write to jpeg file
 	  	ImageIO.write(newBufferedImage, "jpg", new File(imagePath));
 	  	System.out.println("Done");
-	  	JOptionPane.showMessageDialog(null, "A imagem foi verificada e nao contem problemas ", "Informacao", 
+	  	JOptionPane.showMessageDialog(null, "A imagem foi convertida e inserida! ", "Informacao", 
 	  		JOptionPane.INFORMATION_MESSAGE);
 		} catch (IOException e) {
  			JOptionPane.showMessageDialog(null, e.toString(), "Erro", JOptionPane.ERROR_MESSAGE);

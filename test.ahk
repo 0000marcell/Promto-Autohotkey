@@ -1,2 +1,2 @@
-﻿run % "Lib\ConvertImage.jar"
+﻿RunWait, % "Lib\ConvertImage.jar"
 

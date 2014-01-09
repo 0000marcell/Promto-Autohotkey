@@ -1,0 +1,7 @@
+item TL010222956ACE
+item no get strut TL010222956ACE
+SELECT * FROM estruturas WHERE item like 'TL010222956ACE'
+numero de colunas 3
+valores de subitem retornado item TL010222956ACE componente STL010222956ACE
+item STL010222956ACE
+valores de subitem retornado item  componente 

@@ -371,10 +371,10 @@ get_promto_mask(){
 	Funcao que pega valores 
 	referentes a treeview da janela principal
 */
-get_tv_info(type, ignore_error = 0){
+get_tv_info(type, ignore_error = 0, window = "M", treeview = "main_tv", starting_id = ""){
 	Global ETF_hashmask
-
-	tv_level := get_tv_level("M", "main_tv")
+	;MsgBox, % "window " window "  treeview " treeview
+	tv_level := get_tv_level(window, treeview)
 	if(tv_level = ""){
 		MsgBox,16,Erro, % "Nao existia nenhum item selecionado na treeview"
 	}
@@ -392,9 +392,14 @@ get_tv_info(type, ignore_error = 0){
 	}
 
 	return_values := []
-	Gui, M:Default
-	Gui, Treeview, main_tv
-	id := TV_GetSelection()
+	Gui, %window%:Default
+	Gui, Treeview, %treeview%
+
+	if(starting_id = ""){
+		id := TV_GetSelection()
+	}else{
+		id := starting_id 
+	}
 
 	if(type = "Subfamilia"){
 		if(tv_level = 4){
@@ -477,6 +482,7 @@ get_tv_info(type, ignore_error = 0){
 	}
 	return return_values
 }
+
 
 /*
 	Retorna o prefixo do determinado
@@ -689,6 +695,13 @@ inserirdbexterno(values){
 	MsgBox,64,,% "Os valores foram inseridos no db externo!!" 
 }
 
+get_tv_id(window, treeview){
+	Gui, %window%:Default
+	Gui, Treeview, %treeview%
+	id := TV_GetSelection()
+	return id
+}
+
 ;#############GETREFERENCE################################################
 getreferencetable(tipo,table){
 	Global db
@@ -717,13 +730,13 @@ check_if_ETF_exist(nome, mascara_antiga){
 	Pega todas as informacoes sobre determinado item
 	baseado no valor de uma listview
 */
-get_item_info(window, lv){
+get_item_info(window, lv, treeview = "", starting_id = ""){
 	Global empresa, tipo, familia, modelo
 
-	empresa := get_tv_info("Empresa")
-	tipo := get_tv_info("Tipo", 1)
-	familia := get_tv_info("Familia", 1)
-	subfamilia := get_tv_info("Subfamilia", 1)
+	empresa := get_tv_info("Empresa", 0, window, treeview, starting_id)
+	tipo := get_tv_info("Tipo", 1, window, treeview, starting_id)
+	familia := get_tv_info("Familia", 1, window, treeview, starting_id)
+	subfamilia := get_tv_info("Subfamilia", 1, window, treeview, starting_id)
 
 	/*
 		Pega o modelo selecionado na listview

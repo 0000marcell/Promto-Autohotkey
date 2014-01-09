@@ -39,6 +39,35 @@ class PromtoSQL{
 	}
 
 	/*
+		retorna uma lista com todos os valores de determinada query
+		where_statement item like 'codigo'
+	*/
+	find_items_where(where_statement, table){
+		Global mariaDB  
+		try{
+				;MsgBox, % "SELECT * FROM " table " WHERE " field_value[1] " LIKE '" field_value[2] "'"
+				FileAppend, % "SELECT * FROM " table " WHERE " where_statement "`n", % "debug.txt"
+				rs := mariaDB.OpenRecordSet("SELECT * FROM " table " WHERE " where_statement)		
+			}catch e{
+				MsgBox, % "Ocorreu um erro ao buscar os valores!"
+				return
+		}
+		columns := rs.getColumnNames()
+		columnCount := columns.Count()
+		FileAppend, % "numero de colunas " columnCount "`n", % "debug.txt"
+		return_value := []
+		while(!rs.EOF){	
+			r := A_Index
+			Loop, % columnCount{
+				return_value[r, A_Index] := rs[A_Index]
+			}
+			rs.MoveNext()
+		}
+		rs.close()
+		return return_value
+	}
+
+	/*
 		Abre um record set e retorna os valores
 		de determinada tabela em um hash com o nome do 
 		campo e o valor value.name := name
@@ -47,7 +76,6 @@ class PromtoSQL{
 		Global mariaDB 
 
 		try{
-				;MsgBox, % "SELECT * FROM " table " WHERE " field_value[1] " LIKE '" field_value[2] "'"
 				rs := mariaDB.OpenRecordSet("SELECT * FROM " table " WHERE " field_value[1] " LIKE '" field_value[2] "'")		
 			}catch e{
 				MsgBox, % "Ocorreu um erro ao buscar o valor do campo!"
@@ -57,8 +85,6 @@ class PromtoSQL{
 		return_value := []
 		
 		for, each, value in columns{
-			;MsgBox, % "nome da coluna : " value
-			;MsgBox, % "valor do record set " rs[value]
 			return_value[value] := rs[value]
 		}
 		rs.close()
@@ -87,7 +113,20 @@ class PromtoSQL{
 		}catch e 
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela empresas `n" ExceptionDetail(e)
 		
-
+		/*
+			estruturas
+		*/
+		try{
+			mariaDB.Query(
+				(JOIN
+					"	CREATE TABLE IF NOT EXISTS estruturas "
+					" (item VARCHAR(250), "
+					" componente VARCHAR(250), "
+					" quantidade VARCHAR(250)) "
+				))
+		}catch e 
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de estruturas `n" ExceptionDetail(e)
+		
 		/*
 			reltable
 		*/
@@ -519,6 +558,10 @@ class PromtoSQL{
 		}
 	}
 
+	test(){
+		MsgBox, % "test!!!!!"
+	}
+
 	/*
 		Get reference global
 	*/
@@ -535,6 +578,147 @@ class PromtoSQL{
 		rs.close()
 		return reference_table
 	}
+
+	/*
+		carrega uma lista de subitems em determinado item
+		de uma treeview
+	*/
+	load_subitems_tv(id, table){
+		Global S_ETF_hashmask
+
+		S_ETF_hashmask := {}
+
+		if(TV_GetChild(id))
+			return 	
+
+		valores := this.load_table_in_array(table)
+
+		for each, value in valores{
+			if(valores[A_Index, 1] = "")
+				continue
+			TV_Add(valores[A_Index, 1], id)	
+			S_ETF_hashmask[valores[A_Index, 1]] := valores[A_Index, 2] 
+		} 
+	}
+
+	/*
+		Carrega uma estrutura em determinada treeview
+	*/
+	load_estrut(window, treeview, codigo){
+		Global already_load_table
+		MsgBox, % "no load estrut "
+		tvstring := ""
+		already_load_table := 0
+		this.get_tv_string(codigo, "")
+	
+		FileAppend, % "tvretornada " tvstring "`n", % "debug.txt"
+
+		TvDefinition =
+			(
+				%tvstring%
+			)
+		Gui, %window%:default
+		Gui, Treeview, %treeview%
+		TV_Delete()
+		CreateTreeView(TvDefinition)
+	}
+
+	/*
+		Carrega a string com a estrutura do 
+		determinado item
+	*/
+	get_tv_string(item, nivel, ownercode = "", semUN = 1, quantidade = ""){
+		Global already_load_table
+
+		MsgBox, % "get tv string !!!! item " item 
+
+		if item =
+			return
+		FileAppend, % "item " item "`n", % "debug.txt"
+		nivel .= "`t"
+		;pega a tabela de item e componentes
+		if(already_load_table = 0){
+			table := this.get_estrut_items(item)
+			already_load_table := 1
+		}
+		
+		FileAppend, % "valores de subitem retornado item " table[1, 1] " componente " table[1, 2] "`n", % "debug.txt"
+		;Se o item atual NAO tiver componente
+		if(table[1, 2] = ""){
+			if(ownercode != ""){
+				;Se ele tiver um owner
+				this.add_item_strut_with_owner(item)
+			}else{
+				;Se ele nao tiver um owner
+				this.add_item_strut(item)
+			}
+		}
+		;continua o loop pelos componentes
+		for each, value in table{
+			table_item := table[A_Index, 1]
+			table_componente := table[A_Index, 2]
+			table_quantidade := table[A_Index, 3]
+			if(table_item = "")
+				Continue
+			if(ownercode != ""){
+				;Se ele tiver um owner
+				this.add_item_strut_with_owner(table_componente)
+			}else{
+				;se nao tiver um owner
+				this.add_item_strut(table_componente)
+			}
+			this.get_tv_string(table_componente, nivel, table_item, semUN, table_quantidade)
+		}
+	}
+
+	/*
+		Retorna a lista de subitems imediatos do item passado
+	*/
+	get_estrut_items(item){
+		Global mariaDB
+
+		MsgBox, % "get_estrut_items "
+		FileAppend, % "item no get strut " item "`n", % "debug.txt"  
+		return_value := []
+		return_value := this.find_items_where("item like '" item "'", "estruturas")
+		return return_value
+	}
+
+	add_item_strut_with_owner(item, semUN = 1){
+		Global 
+
+		;Funcao que busca a descricao do item
+		descricao_item := this.get_desc_from_item(item)
+		IfNotInString,%ownercode%,%item%
+	 	{
+	 		%ownercode% .= "`n" item . descricao_item 
+	 		if(semUN = 1)
+	 			tvstring .= "`n" . nivel . descricao_item
+	 		else 
+	 			tvstring .= "`n" . nivel . descricao_item . "|UN:" quantidade
+	 	}
+	}
+
+	add_item_strut(item, semUN = 1){
+		Global 
+		;Funcao que busca a descricao do item
+		descricao_item := this.get_desc_from_item(item)
+		IfNotInString, maincodes, %item%
+	 	{
+			maincodes .= "`n" item
+			if(semUN=1)
+				tvstring .= "`n" . nivel . item
+			else 
+				tvstring .= "`n" . nivel . item . "|UN:" quantidade
+	 	}
+	}
+
+	get_desc_from_item(item){
+		/*
+			Fazer todas as tabelas de codigos do reltable
+		*/
+	}
+	
 	
 	#include lib\promto_sql_mariadb_empresa.ahk
 	#include lib\promto_sql_mariadb_tipo.ahk

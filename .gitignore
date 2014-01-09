@@ -1,7 +1,6 @@
-
 settings.json
-img/
-tmp/
+img/*
+tmp/*
 
 #################
 ## Eclipse

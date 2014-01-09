@@ -148,7 +148,7 @@ inserir_campos_view(info){
 		return
 	}
 	tabela1 := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2] s_info.modelo[2] s_info.modelo[1]
-	MsgBox, % "ira incluir campo tabela1 " tabela1
+	;MsgBox, % "ira incluir campo tabela1 " tabela1
 	db.Modelo.incluir_campo(input_name, s_info)
 	tabela1 := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2] s_info.modelo[2] s_info.modelo[1]
 	tabela := db.Modelo.get_tabela_campo_referencia(tabela1)

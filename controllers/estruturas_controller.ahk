@@ -24,6 +24,7 @@ addquantidademassa(items){
 	}
 	MsgBox, % itemscount " item(s) foram alterados!"
 	Return
+	
 }
 
 imprimir_estrutruas(){
@@ -173,3 +174,83 @@ descmarc_todos(){
 		LV_Modify("","-check")
 	}
 }
+
+tv_add_mass(){
+	Global
+
+	maska := []
+	Gui, Treeview, tvaddmass
+	id := TV_GetSelection()
+	MsgBox, % "ira iniciar o loop"
+	Loop
+	{
+		TV_GetText(text,id)
+		MsgBox, % "text" text
+		if(A_Index = 1)
+			selected2 := text
+		if hashmask[text]!=""
+			maska.insert(hashmask[text])
+		MsgBox, % "hashmask" hashmask[text]
+		id:=TV_GetParent(id)
+		if !id 
+			Break
+	}
+	newarray:=reversearray(maska)
+	mask=
+	for,each,value in newarray 
+		mask.=value
+	;MsgBox, % "valor " mask
+	Listaddmass:=[]
+	table:=db.query("SELECT Codigos,DR FROM  " mask "Codigo;")
+	while(!table.EOF){  
+        value1:=table["Codigos"],value2:=table["DR"]
+        Listaddmass[A_Index,1]:=value1 
+        Listaddmass[A_Index,2]:=value2
+        table.MoveNext()
+	}
+	;MsgBox, % mask "Codigo"
+	db.loadlv("addmassa","lvaddmass",mask "Codigo","Codigos, Descricao Completa, Descricao Resumida, Descricao ingles", 1)
+	return 
+}
+
+tv_strut(){
+	Global
+	Local id, super_id, tv_level
+
+	tv_level := get_tv_level("massaestrut", "tv1")
+	info := get_item_info("massaestrut", "", "tv1")
+	tabela1 := info.empresa[2] info.tipo[2] info.subfamilia[2] info.familia[1]
+	;MsgBox, % " tabela1 " tabela1
+	if(tv_level = 3 || tv_level = 4){
+		if(db.have_subfamilia(tabela1))
+			return
+		model_table := db.get_reference("Modelo", tabela1)
+		db.load_subitems_tv(get_tv_id("massaestrut", "lv1"), model_table)
+	}	
+
+	if(tv_level = 4 || tv_level = 5){
+		if(db.have_subfamilia(tabela1))
+			return
+		Gui, massaestrut:default
+		Gui, Treeview, tv1
+		id := TV_GetSelection()
+		TV_GetText(selected_model, id)
+		super_id := TV_GetParent(id)
+		info := get_item_info("massaestrut", "", "tv1", super_id)
+		code_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] S_ETF_hashmask[selected_model] "Codigo"
+		db.load_lv("massaestrut", "lv1", code_table)
+	}
+}
+
+estrut_lv(){
+	Global db
+	if A_GuiEvent = DoubleClick
+	{
+		codigo := GetSelected("massaestrut","lv1")
+		MsgBox, % "codigo retornado " codigo
+		FileDelete, % "debug.txt"
+		db.load_estrut("massaestrut", "tv2", codigo)
+	}
+}
+
+			

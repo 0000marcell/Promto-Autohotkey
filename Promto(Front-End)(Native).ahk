@@ -380,7 +380,6 @@ return
 				empresa := get_tv_info("Empresa")
 
 				model_table := db.get_reference("Modelo", empresa.mascara tipo.mascara familia.nome)
-
 			}
   	}
   	
@@ -540,62 +539,7 @@ return
 		Gui,progress:destroy
 		MsgBox, % "As estruturas foram exportadas"
 		return  
-
-		estrutlv:
-		if A_GuiEvent=DoubleClick
-		{
-			LV_GetText(selected,A_EventInfo)
-			currentvalue:=GetSelectedRow("massaestrut","estrutlv")
-			tvstring:="",selected:=currentvalue[1] ">>" currentvalue[2]
-			loadestrutura(selected,"")
-			TvDefinition=
-			(
-				%tvstring%
-			)
-			Gui,treeview,tv2
-			TV_Delete()
-			CreateTreeView(TvDefinition)
-		}
-		return 
-
-		tvstrut:
-		;O hashmask e formado no gettable.
-		maska := []
-		gui,treeview,tv1
-		id := TV_GetSelection()
-		TV_GetText(selected_in_tv,id)  
-		Loop
-		{
-			TV_GetText(text,id)
-			if(A_Index=1)
-				selected2 := text
-			if hashmask[text] != ""
-				maska.insert(hashmask[text])
-				
-			id:=TV_GetParent(id)
-			if !id 
-				Break
-		}
-		newarray := reversearray(maska)
-		mask =
-		for,each,value in newarray 
-			mask .= value
-		Listestrut := []
-		table := db.query("SELECT Codigos,DR FROM  " mask "Codigo;")
-		while(!table.EOF){  
-      value1 := table["Codigos"],value2:=table["DR"]
-      Listestrut[A_Index,1] := value1 
-      Listestrut[A_Index,2] := value2
-      table.MoveNext()
-		}
-		table.close()
-		db.loadlv("massaestrut","lv1",mask "Codigo","Codigos,DR",1)
-		return 
-
-		pesquisarlv:
-		Gui,submit,nohide
-		any_word_search("massaestrut","lv1",pesquisarlv,Listestrut)
-		return 
+ 
 
 			addmassaestrut:
 			checkeditems := GetCheckedRows2("massaestrut","estrutlv")
@@ -639,43 +583,7 @@ return
 			return 
 
 
-			lvaddmass:
-			return 
-
-			tvaddmass:
-			maska := []
-			gui, treeview, tvaddmass
-			id := TV_GetSelection()
-			MsgBox, % "ira iniciar o loop"
-			Loop
-			{
-				TV_GetText(text,id)
-				MsgBox, % "text" text
-				if(A_Index = 1)
-					selected2 := text
-				if hashmask[text]!=""
-					maska.insert(hashmask[text])
-				MsgBox, % "hashmask" hashmask[text]
-				id:=TV_GetParent(id)
-				if !id 
-					Break
-			}
-			newarray:=reversearray(maska)
-			mask=
-			for,each,value in newarray 
-				mask.=value
-			;MsgBox, % "valor " mask
-			Listaddmass:=[]
-			table:=db.query("SELECT Codigos,DR FROM  " mask "Codigo;")
-			while(!table.EOF){  
-		        value1:=table["Codigos"],value2:=table["DR"]
-		        Listaddmass[A_Index,1]:=value1 
-		        Listaddmass[A_Index,2]:=value2
-		        table.MoveNext()
-			}
-			;MsgBox, % mask "Codigo"
-			db.loadlv("addmassa","lvaddmass",mask "Codigo","Codigos,DR", 1)
-			return 
+			
 
 			pesquisaraddmass:
 			Gui,submit,nohide
@@ -717,8 +625,8 @@ CODlv:
 if A_GuiEvent=DoubleClick
 {
 	LV_GetText(selected,A_EventInfo)
-	tvstring:=""
-	loadestrutura(selected,"")
+	tvstring := ""
+	loadestrutura(selected, "")
 	tvwindow2(args)
 }
 return 
@@ -847,9 +755,9 @@ loadestrutura(item,nivel,ownercode="",semUN=1,quantidade=""){
 		 	{
 				maincodes.="`n" item
 				if(semUN=1)
-					tvstring.="`n" . nivel . item
+					tvstring .= "`n" . nivel . item
 				else 
-					tvstring.="`n" . nivel . item . "|UN:" quantidade
+					tvstring .= "`n" . nivel . item . "|UN:" quantidade
 		 	}
 		}
 	 }
@@ -858,20 +766,20 @@ loadestrutura(item,nivel,ownercode="",semUN=1,quantidade=""){
 		if(ownercode!=""){
 			IfNotInString,%ownercode%,%tableitem%
 			{
-				%ownercode%.="`n" table["item"]
+				%ownercode% .= "`n" table["item"]
 				if(semUN=1)
-					tvstring.="`n" . nivel . table["item"]
+					tvstring .= "`n" . nivel . table["item"]
 				else 
-				 	tvstring.="`n" . nivel . table["item"] . "|UN:" quantidade
+				 	tvstring .= "`n" . nivel . table["item"] . "|UN:" quantidade
 			}
 		}else{
 			IfNotInString,maincodes,%tableitem%
 		 	{
-				maincodes.="`n" tableitem
+				maincodes .= "`n" tableitem
 				if(semUN=1)
-					tvstring.="`n" . nivel . table["item"]
+					tvstring .= "`n" . nivel . table["item"]
 				Else
-					tvstring.="`n" . nivel . table["item"] . "|UN:1" 
+					tvstring .= "`n" . nivel . table["item"] . "|UN:1" 
 		 	}
 		}
 		StringReplace,parseditem,tableitem,>>,|,All
@@ -2241,16 +2149,16 @@ massainsertphoto(codtable){
 	Static lv,banner
 
 	Gui,massaphoto:New 
-	Gui,Add, Picture,w900 h50 0xE vbanner 
+	Gui, Add, Picture,w900 h50 0xE vbanner 
 	banner(BANNER_COLOR,banner,"Inserir Fotos")
-	Gui,color,%GLOBAL_COLOR%
-	Gui,add,Listview,w500 h300 xm section checked vlv altsubmit gmassalv,Codigos
-	Gui,add,picture,x+5 w300 h300 vpicture,%A_WorkingDir%\noimage.png
-	Gui,add,button,xm y+5 w100 gmarcartodos,Marcar todos
-	Gui,add,button,x+5 w100 gdesmarcartodos,Desmarcar todos
-	Gui,add,button,x+260  w100 ginserirfotoemmassa ,Inserir
+	Gui, Color,%GLOBAL_COLOR%
+	Gui, Add, Listview,w500 h300 xm section checked vlv altsubmit gmassalv,Codigos
+	Gui, Add, Picture,x+5 w300 h300 vpicture,%A_WorkingDir%\noimage.png
+	Gui, Add, Button,xm y+5 w100 gmarcartodos,Marcar todos
+	Gui, Add, button,x+5 w100 gdesmarcartodos,Desmarcar todos
+	Gui, Add, button,x+260  w100 ginserirfotoemmassa ,Inserir
 	;Gui,add,button,x+5 w100 gexcluir,Excluir dos marcados
-	Gui,Show 
+	Gui, Show 
 	db.loadlv("massaphoto","lv",codtable)
 	return 
 
@@ -2990,3 +2898,4 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, controllers/db_ex_controller.ahk
 #include, controllers/inserir_valores_controller.ahk
 #include, controllers/inserir_bloqueio_controller.ahk
+#include, controllers/estruturas_controller.ahk

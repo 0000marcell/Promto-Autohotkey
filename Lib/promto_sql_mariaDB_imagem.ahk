@@ -234,6 +234,6 @@ class Imagem{
 	  StringReplace, image_path, image_path, \, /,All
 	  ;MsgBox, % "caminho da imagem apos a conversao " image_path
 		FileAppend, % image_path, % "temp\image_info.txt"
-		run % "Lib\ConvertImage.jar" 
+		RunWait, % "Lib\ConvertImage.jar"
 	}
 }

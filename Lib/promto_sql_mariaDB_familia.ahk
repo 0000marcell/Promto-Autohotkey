@@ -49,6 +49,7 @@ class Familia{
 			Verifica se a mascara a ser inserida 
 			ja existe
 		*/
+		;MsgBox, % "ira verificar se a mascara ja existe `n familia nome : " familia_nome " familia mascara : " familia_mascara " familia table " familia_table
 		if(this.exists(familia_nome, familia_mascara, familia_table)){
 			MsgBox,16,Erro, % " A mascara a ser inserida ja existe!" 
 			return 0
@@ -268,7 +269,6 @@ class Familia{
 			(JOIN 
 				" SELECT Familias FROM " table
 				" WHERE Mascara LIKE '" familia_mascara "'"
-				" AND Familias LIKE '" familia_nome "'"
 			))
 		if(table.Rows.maxindex()){
 			return True 

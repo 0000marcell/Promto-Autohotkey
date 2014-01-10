@@ -76,12 +76,16 @@ inserir_modelo_view(model_table){
 		v_info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
 		if(v_info.modelo[1] = "Modelos" || v_info.modelo[1] = "")
 			Return
-		tabela2_value := empresa.mascara tipo.mascara familia.mascara modelo.mascara modelo.nome
-		image_name_value := db.Imagem.get_image_path(tabela2_value)
+		tabela1 := v_info.empresa[2] v_info.tipo[2] v_info.familia[2] v_info.subfamilia[2] v_info.modelo[2] v_info.modelo[1]
+		;MsgBox, % "tabela1 " tabela1
+		tabela2_value := db.get_reference("image", tabela1)
+		image_name_value := tabela2_value
+		;MsgBox, % "nome da imagem " image_name_value
 		if(image_name_value = ""){
 			image_name_value := "sem_foto" 
 		}
 		image_source := global_image_path image_name_value ".jpg"
+		;MsgBox, % "caminho total da image " image_source
 		Gui, inserir_modelo_view:default 
 		GuiControl,, modelos_foto_control,%image_source%
 		

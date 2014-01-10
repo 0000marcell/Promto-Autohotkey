@@ -246,6 +246,9 @@ if A_GuiControl = main_tv
 	*/
 	if(tv_level_menu = 1){
 		current_columns := "Abas"
+		info := get_item_info("M", "MODlv")
+		tabela1 := info.empresa[1] 
+		Menu, main_tv_menu, Show, x%A_GuiX% y%A_GuiY%
 	}
 
 	/*
@@ -254,6 +257,9 @@ if A_GuiControl = main_tv
 	*/
 	if(tv_level_menu = 2){
 		current_columns := "Familias"
+		info := get_item_info("M", "MODlv")
+		tabela1 := info.empresa[2] info.tipo[1]
+		Menu, main_tv_menu, Show, x%A_GuiX% y%A_GuiY%
 	}
 
 	if(tv_level_menu = 3){
@@ -271,8 +277,12 @@ if A_GuiControl = main_tv
 		}else{
 			Menu, remover_menu, Show, x%A_GuiX% y%A_GuiY%
 		}	
-	}Else{
-		Menu, main_tv_menu, Show, x%A_GuiX% y%A_GuiY%	
+	}
+	
+	if(tv_level_menu = 4){
+		info := get_item_info("M", "MODlv")
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[1] info.subfamilia[1]
+		Menu, remover_menu, Show, x%A_GuiX% y%A_GuiY%
 	}
 }
 return
@@ -342,7 +352,23 @@ return
 		Gui,M:default
 		Gui,Listview, MODlv
 		LV_Delete()
-	} 
+	}else if(tv_level = 4){
+		/*
+			Apaga a familia selecionada e todos 
+			os seus subitems
+		*/
+		info := get_item_info("M", "MODlv")
+		MsgBox, % "ira deletar a subfamilia " subfamilia.nome " mascara " subfamilia.mascara
+		db.Subfamilia.excluir(subfamilia.nome, subfamilia.mascara, info)
+		MsgBox, 64, Sucesso, % "A Subfamilia e todos os subitems foram apagados." 
+		TV_Delete(current_id)
+		/*
+			Limpa a listview da janela principal
+		*/
+		Gui,M:default
+		Gui,Listview, MODlv
+		LV_Delete()
+	}
 
 	;remover_item_ETF("M", "main_tv", current_id, current_columns)
 	return
@@ -353,7 +379,6 @@ return
   	que a selecao esta
   */
   tv_level := get_tv_level("M", "main_tv")
-  
   if(tv_level = 3 || tv_level = 4){
   	/*
   		Se estiver no nivel das 

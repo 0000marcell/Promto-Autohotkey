@@ -199,7 +199,6 @@ class Tipo{
 			(JOIN 
 				" SELECT Abas FROM " table
 				" WHERE Mascara LIKE '" tipo_mascara "'"
-				" AND Abas LIKE '" tipo_nome "'"
 			))
 		if(table.Rows.maxindex()){
 			return True 

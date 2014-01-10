@@ -123,13 +123,13 @@ class Modelo{
 		 na tabela de modelos
 		*/
 		prefixo := info.empresa[2] info.tipo[2] info.familia[2] 
-		MsgBox, % "modelo nome " modelo_nome " modelo mascara : " modelo_mascara " prefixo " prefixo 
+
 		if(!this.exists(modelo_nome, modelo_mascara, prefixo)){
 			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela"
 			return 
 		}
 
-		MsgBox, % "ira deletar a entrada da tabela de modelo"
+		
 		try{
 			mariaDB.Query(
 			(JOIN 
@@ -234,7 +234,6 @@ class Modelo{
 		;MsgBox, % "modelo nome: " info.modelo[1] "`n modelo mascara: " info.modelo[2]
 		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1] 
 		
-		MsgBox, % "tabela " tabela1
 
 		tabela_campo := this.get_tabela_campo_referencia(tabela1)
 
@@ -399,7 +398,6 @@ class Modelo{
 		
 		;MsgBox, % "nome_campo: " nome_campo " `n codigo " valores.codigo "`n dr " valores.dr "`n dc " valores.dc "`n di " valores.di 
 		tabela_campos_especificos := get_tabela_campo_esp(nome_campo, info)
-		MsgBox, % "tabela de campo especifico retornada " tabela_campos_especificos
 		if(this.valor_campo_existe(tabela_campos_especificos, valores.codigo)){
 			MsgBox,16, Erro, % "O codigo a ser inserido ja existe na lista!"
 			return
@@ -550,7 +548,7 @@ class Modelo{
 		record := {}
 		record.descricao := descricao "|" descricao_ingles
 		table := empresa.mascara tipo.mascara familia.mascara subfamilia.mascara modelo.mascara "Desc"
-		MsgBox, % "tabela de descricao " table
+		
 		/*
 			Deleta a descricao anterior
 		*/

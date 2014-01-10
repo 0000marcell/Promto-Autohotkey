@@ -14,7 +14,6 @@ estruturas_view(){
 	;Gui, Font,s%SMALL_FONT%, %FONT%
 	;Gui,massaestrut:+ownerM
 	;Gui, Color, %GLOBAL_COLOR%	
-
 	Gui, Add, Edit, x415 gpesquisarlv w400 r1 vpesquisarlv uppercase ,Pesquisar!!!
 	Gui, Add, Treeview, xm y+5 w400 h300 vtv1 gtvstrut,
 	Gui, Add, Listview, x+5 w400 h300 vlv1 checked gestrutlv,Codigos| Descricao Completa| Descricao Resumida | Descricao Ingles

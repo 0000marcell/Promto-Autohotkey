@@ -371,7 +371,7 @@ get_promto_mask(){
 	Funcao que pega valores 
 	referentes a treeview da janela principal
 */
-get_tv_info(type, ignore_error = 0, window = "M", treeview = "main_tv", starting_id = ""){
+get_tv_info(type, ignore_error = 0, window = "M", treeview = "main_tv", starting_id = "", same_window = ""){
 	Global ETF_hashmask
 	;MsgBox, % "window " window "  treeview " treeview
 	tv_level := get_tv_level(window, treeview)
@@ -392,9 +392,13 @@ get_tv_info(type, ignore_error = 0, window = "M", treeview = "main_tv", starting
 	}
 
 	return_values := []
-	Gui, %window%:Default
+	if(same_window = ""){
+		Gui, %window%:Default
+	}else{
+		Gui, %same_window%:Default
+	}
+	
 	Gui, Treeview, %treeview%
-
 	if(starting_id = ""){
 		id := TV_GetSelection()
 	}else{
@@ -730,13 +734,13 @@ check_if_ETF_exist(nome, mascara_antiga){
 	Pega todas as informacoes sobre determinado item
 	baseado no valor de uma listview
 */
-get_item_info(window, lv, treeview = "", starting_id = ""){
+get_item_info(window, lv, treeview = "main_tv", starting_id = "", same_window = ""){
 	Global empresa, tipo, familia, modelo
 
-	empresa := get_tv_info("Empresa", 0, window, treeview, starting_id)
-	tipo := get_tv_info("Tipo", 1, window, treeview, starting_id)
-	familia := get_tv_info("Familia", 1, window, treeview, starting_id)
-	subfamilia := get_tv_info("Subfamilia", 1, window, treeview, starting_id)
+	empresa := get_tv_info("Empresa", 0, "M", treeview, starting_id, same_window)
+	tipo := get_tv_info("Tipo", 1, "M", treeview, starting_id, same_window)
+	familia := get_tv_info("Familia", 1, "M", treeview, starting_id, same_window)
+	subfamilia := get_tv_info("Subfamilia", 1, "M", treeview, starting_id, same_window)
 
 	/*
 		Pega o modelo selecionado na listview

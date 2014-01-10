@@ -218,10 +218,15 @@ tv_strut(){
 	Local id, super_id, tv_level
 
 	tv_level := get_tv_level("massaestrut", "tv1")
-	info := get_item_info("massaestrut", "", "tv1")
+	info := get_item_info("massaestrut", "", "tv1", "", "massaestrut")
 	tabela1 := info.empresa[2] info.tipo[2] info.subfamilia[2] info.familia[1]
+	MsgBox, % "tv level " tv_level
 	;MsgBox, % " tabela1 " tabela1
+
 	if(tv_level = 3 || tv_level = 4){
+		
+		MsgBox, % "ira verificar se o item tem subitem tabela1 " tabela1
+
 		if(db.have_subfamilia(tabela1))
 			return
 		model_table := db.get_reference("Modelo", tabela1)
@@ -236,7 +241,7 @@ tv_strut(){
 		id := TV_GetSelection()
 		TV_GetText(selected_model, id)
 		super_id := TV_GetParent(id)
-		info := get_item_info("massaestrut", "", "tv1", super_id)
+		info := get_item_info("massaestrut", "", "tv1", super_id, same_window)
 		code_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] S_ETF_hashmask[selected_model] "Codigo"
 		db.load_lv("massaestrut", "lv1", code_table)
 	}

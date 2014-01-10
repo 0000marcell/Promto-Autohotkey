@@ -54,7 +54,6 @@ class PromtoSQL{
 		}
 		columns := rs.getColumnNames()
 		columnCount := columns.Count()
-		FileAppend, % "numero de colunas " columnCount "`n", % "debug.txt"
 		return_value := []
 		while(!rs.EOF){	
 			r := A_Index
@@ -605,9 +604,9 @@ class PromtoSQL{
 		Carrega uma estrutura em determinada treeview
 	*/
 	load_estrut(window, treeview, codigo){
-		Global already_load_table
+		Global already_load_table, tvstring
 		MsgBox, % "no load estrut "
-		tvstring := ""
+		tvstring := codigo
 		already_load_table := 0
 		this.get_tv_string(codigo, "")
 	
@@ -627,30 +626,34 @@ class PromtoSQL{
 		Carrega a string com a estrutura do 
 		determinado item
 	*/
-	get_tv_string(item, nivel, ownercode = "", semUN = 1, quantidade = ""){
-		Global already_load_table
+	get_tv_string(item, nivel, ownercode = "", semUN = 1, quantidade = "", prev_inserted = ""){
+		Global already_load_table, tvstring
 
-		MsgBox, % "get tv string !!!! item " item 
+		FileAppend, % "tvstring: " tvstring "`n", % "debug.txt" 
 
 		if item =
 			return
 		FileAppend, % "item " item "`n", % "debug.txt"
 		nivel .= "`t"
+
 		;pega a tabela de item e componentes
-		if(already_load_table = 0){
-			table := this.get_estrut_items(item)
-			already_load_table := 1
-		}
+		table := this.get_estrut_items(item)
 		
 		FileAppend, % "valores de subitem retornado item " table[1, 1] " componente " table[1, 2] "`n", % "debug.txt"
 		;Se o item atual NAO tiver componente
+		
 		if(table[1, 2] = ""){
+			FileAppend, % "o componente estava em branco ira inserir o item " item "`n", % "debug.txt"
 			if(ownercode != ""){
+				FileAppend, % "o componente tinha owner `n", % "debug.txt"
 				;Se ele tiver um owner
-				this.add_item_strut_with_owner(item)
+				FileAppend, % " item " item " prev_inserted " prev_inserted "`n", % "debug.txt"
+				if(item != prev_inserted)
+					ownercode := this.add_item_strut_with_owner(item, nivel, ownercode)
 			}else{
+				FileAppend, % "o componente nao tinha owner `n", % "debug.txt"
 				;Se ele nao tiver um owner
-				this.add_item_strut(item)
+				this.add_item_strut(item, nivel)
 			}
 		}
 		;continua o loop pelos componentes
@@ -658,16 +661,19 @@ class PromtoSQL{
 			table_item := table[A_Index, 1]
 			table_componente := table[A_Index, 2]
 			table_quantidade := table[A_Index, 3]
+			FileAppend, % "table_item: " table_item " table_componente: " table_componente " table_quantidade: " table_quantidade "`n", % "debug.txt"
 			if(table_item = "")
 				Continue
 			if(ownercode != ""){
 				;Se ele tiver um owner
-				this.add_item_strut_with_owner(table_componente)
+				FileAppend, % "o item tinha owner " item "`n", % "debug.txt"
+				ownercode := this.add_item_strut_with_owner(table_componente, nivel, ownercode)
 			}else{
 				;se nao tiver um owner
-				this.add_item_strut(table_componente)
+				FileAppend, % "o item nao tinha owner `n", % "debug.txt"
+				this.add_item_strut(table_componente, nivel)
 			}
-			this.get_tv_string(table_componente, nivel, table_item, semUN, table_quantidade)
+			this.get_tv_string(table_componente, nivel, table_item, semUN, table_quantidade, table_componente)
 		}
 	}
 
@@ -676,32 +682,44 @@ class PromtoSQL{
 	*/
 	get_estrut_items(item){
 		Global mariaDB
-
-		MsgBox, % "get_estrut_items "
-		FileAppend, % "item no get strut " item "`n", % "debug.txt"  
+  
 		return_value := []
 		return_value := this.find_items_where("item like '" item "'", "estruturas")
 		return return_value
 	}
 
-	add_item_strut_with_owner(item, semUN = 1){
+	add_item_strut_with_owner(item, nivel, ownercode, semUN = 1){
 		Global 
 
+		FileAppend, % "owner " ownercode " item " item "`n", % "debug.txt"
+		if(ownercode = item)
+			return
 		;Funcao que busca a descricao do item
+		owner_to_return := ""
 		descricao_item := this.get_desc_from_item(item)
+		FileAppend, % "o item " item "sera inserido `n", % "debug.txt"
 		IfNotInString,%ownercode%,%item%
 	 	{
 	 		%ownercode% .= "`n" item . descricao_item 
-	 		if(semUN = 1)
-	 			tvstring .= "`n" . nivel . descricao_item
-	 		else 
-	 			tvstring .= "`n" . nivel . descricao_item . "|UN:" quantidade
+	 		if(semUN = 1){
+	 			FileAppend, % "o item sera inserido sem un " item "`n", % "debug.txt"
+	 			tvstring .= "`n" . nivel . item . descricao_item
+	 		}else{
+	 			FileAppend, % "o item sera inserido com un " item "`n", % "debug.txt"
+	 			tvstring .= "`n" . nivel . item . descricao_item . "|UN:" quantidade
+	 		} 
+	 			
+	 		owner_to_return := ownercode
+	 	}
+	 	if(owner_to_return != ""){
+	 		return owner_to_return
 	 	}
 	}
 
-	add_item_strut(item, semUN = 1){
+	add_item_strut(item, nivel,  semUN = 1){
 		Global 
 		;Funcao que busca a descricao do item
+		FileAppend, % "adicionando item sem owner item : " item "`n", % "debug.txt"
 		descricao_item := this.get_desc_from_item(item)
 		IfNotInString, maincodes, %item%
 	 	{

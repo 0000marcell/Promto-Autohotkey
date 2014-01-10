@@ -46,7 +46,6 @@ lista_de_codigos(info){
 	return  
 
 	lvcodetable:
-	MsgBox, % "a visualizacao da estrutura ainda nao foi feita! :( "
 	;if A_GuiEvent=DoubleClick
 	;{
 	;	currentvalue:=GetSelectedRow("codetable","lvcodetable")

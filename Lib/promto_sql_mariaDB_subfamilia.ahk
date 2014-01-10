@@ -27,6 +27,15 @@ class Subfamilia{
 		}
 
 		/*
+			Verifica se a mascara a ser inserida ja existe
+		*/
+		;MsgBox, % "ira verificar se a mascara a ser inserida ja existe `n subfam nome: " subfam_nome " `n subfam_mascara: " subfam_mascara " `n sufam_table: " subfam_table 
+		if(this.exists(subfam_nome, subfam_mascara, subfam_table)){
+			MsgBox,16,Erro, % " A mascara a ser inserida ja existe!" 
+			return 0
+		}
+
+		/*
 			Insere esta subfamilia na tabela de subfamilias
 		*/
 		record := {}
@@ -61,7 +70,7 @@ class Subfamilia{
 		Exclui determinada subfamilia
 	*/
 	excluir(subfam_nome, subfam_mascara, info, recursiva = 1){
-		Global mariaDB
+		Global mariaDB, db
 
 		/*
 		 Excluir a entrada da familia
@@ -69,19 +78,12 @@ class Subfamilia{
 		*/
  
 		prefixo := info.empresa[2] info.tipo[2]
-		
-		subfam_table := this.get_parent_reference(info.empresa[2], info.familia[1])
-
+		subfam_table := this.get_parent_reference(prefixo, info.familia[1])
 		if(!this.exists(subfam_nome, subfam_mascara, subfam_table)){
 			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela"
 			return 
 		}
-
-		if(recursiva = 1){
-			this.remove_subitems(subfam_nome, subfam_mascara, info)
-			return
-		}
- 
+		prefixo := info.empresa[2] info.tipo[2] info.familia[2]
 		try{
 			mariaDB.Query(
 			(JOIN 
@@ -96,7 +98,7 @@ class Subfamilia{
 			relacionada com essa familia
 			caso ela nao esteja mais relacionada com nada
 		*/
-		linked_table := this.get_reference(prefixo subfam_nome, "Modelo") 
+		linked_table := db.get_reference("Modelo", prefixo subfam_nome) 
 
 		/*
 		 Deleta a entrada do tipo na 
@@ -255,4 +257,24 @@ class Subfamilia{
 		;MsgBox, % "tabela retornada " reference_table
 		return reference_table
 	}
+
+	/*
+		Verifica se determinado 
+		tipo ja existe na tabela
+	*/
+	exists(subfam_nome, subfam_mascara, table){
+		Global mariaDB
+
+		table := mariaDB.Query(
+			(JOIN 
+				" SELECT Subfamilias FROM " table
+				" WHERE Mascara LIKE '" subfam_mascara "'"
+			))
+		if(table.Rows.maxindex()){
+			return True 
+		}else{
+			return False
+		}
+	}
+
 }

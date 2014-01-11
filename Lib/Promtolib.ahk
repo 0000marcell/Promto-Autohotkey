@@ -373,8 +373,16 @@ get_promto_mask(){
 */
 get_tv_info(type, ignore_error = 0, window = "M", treeview = "main_tv", starting_id = "", same_window = ""){
 	Global ETF_hashmask
-	;MsgBox, % "window " window "  treeview " treeview
-	tv_level := get_tv_level(window, treeview)
+
+
+	if(same_window != ""){
+		tv_level := get_tv_level(same_window, treeview)	
+	}else{
+		tv_level := get_tv_level(window, treeview)	
+	}
+	
+	FileAppend, % "tv level no tv info " tv_level "`n", % "debug.txt"
+
 	if(tv_level = ""){
 		MsgBox,16,Erro, % "Nao existia nenhum item selecionado na treeview"
 	}
@@ -399,11 +407,16 @@ get_tv_info(type, ignore_error = 0, window = "M", treeview = "main_tv", starting
 	}
 	
 	Gui, Treeview, %treeview%
+
 	if(starting_id = ""){
 		id := TV_GetSelection()
 	}else{
+		FileAppend, % " o starting id nao estava em branco `n", % "debug.txt"
 		id := starting_id 
+		tv_level--
 	}
+	
+	FileAppend, % "valor do id " id "valor do tv level atual " tv_level "tipo : " type "`n", % "debug.txt"
 
 	if(type = "Subfamilia"){
 		if(tv_level = 4){
@@ -453,12 +466,12 @@ get_tv_info(type, ignore_error = 0, window = "M", treeview = "main_tv", starting
 	}
 
 	if(type = "Empresa"){
-		
 		if(tv_level = 4){
 			ultra_id := TV_GetParent(id)
 			super_id := TV_GetParent(ultra_id)
 			parent_id := TV_GetParent(super_id)
 			TV_GetText(nome, parent_id)
+			;FileAppend, % "nome retornado " nome "mascara retornada" ETF_hashmask[nome] "`n", % "debug.txt"
 			return_values.nome := nome
 			return_values.mascara := ETF_hashmask[nome]
 		}
@@ -734,22 +747,28 @@ check_if_ETF_exist(nome, mascara_antiga){
 	Pega todas as informacoes sobre determinado item
 	baseado no valor de uma listview
 */
+
 get_item_info(window, lv, treeview = "main_tv", starting_id = "", same_window = ""){
 	Global empresa, tipo, familia, modelo
+	
+	FileAppend, % "starting_id " starting_id " `nsame_window " same_window "`n treeview: " treeview "`n", % "debug.txt"
 
 	empresa := get_tv_info("Empresa", 0, "M", treeview, starting_id, same_window)
 	tipo := get_tv_info("Tipo", 1, "M", treeview, starting_id, same_window)
 	familia := get_tv_info("Familia", 1, "M", treeview, starting_id, same_window)
 	subfamilia := get_tv_info("Subfamilia", 1, "M", treeview, starting_id, same_window)
 
+
 	/*
 		Pega o modelo selecionado na listview
 	*/
+
 	model := GetSelectedRow(window, lv)
 	modelo := []
 	modelo.nome := model[1]
 	modelo.mascara := model[2]
 
+	FileAppend, % "empresa : " empresa.nome "`n tipo: " tipo.nome "`n familia : " familia.nome "`n subfamilia : " subfamilia.nome "`n", % "debug.txt"
 	;MsgBox, % "## modelo " model[1] " mascara " model[2]
 
 	/*

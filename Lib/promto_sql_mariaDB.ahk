@@ -537,7 +537,9 @@ class PromtoSQL{
 	*/
 	have_subfamilia(tabela1){
 		Global mariaDB
-
+		
+		FileAppend, % "tabela1 " tabela1 "`n", % "debug.txt"
+		
 		rs := mariaDB.OpenRecordSet(
 			(JOIN 
 				" SELECT tabela2 FROM reltable "
@@ -546,13 +548,12 @@ class PromtoSQL{
 			))
 		
 		reference_table := rs.tabela2
-		
-		;MsgBox, % "tabela de referencia " reference_table
 		rs.close()
 		if(reference_table != ""){
-			;MsgBox, % "tem subfamilia"
+			FileAppend, % "ira retornar verdadeiro `n", % "debug.txt"
 			return 1
 		}else{
+			FileAppend, % "ira retornar falso `n", % "debug.txt"
 			return 0
 		}
 	}
@@ -585,8 +586,6 @@ class PromtoSQL{
 	load_subitems_tv(id, table){
 		Global S_ETF_hashmask
 
-		S_ETF_hashmask := {}
-
 		if(TV_GetChild(id))
 			return 	
 
@@ -595,6 +594,7 @@ class PromtoSQL{
 		for each, value in valores{
 			if(valores[A_Index, 1] = "")
 				continue
+			FileAppend, % valores[A_Index, 1] "`n", % "debug2.txt"
 			TV_Add(valores[A_Index, 1], id)	
 			S_ETF_hashmask[valores[A_Index, 1]] := valores[A_Index, 2] 
 		} 

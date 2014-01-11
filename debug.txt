@@ -1,106 +1,129 @@
-tvstring: TL010222956ACE
-item TL010222956ACE
-SELECT * FROM estruturas WHERE item like 'TL010222956ACE'
-valores de subitem retornado item TL010222956ACE componente STL010222956ACE
-table_item: TL010222956ACE table_componente: STL010222956ACE table_quantidade: 1
-o item nao tinha owner 
-adicionando item sem owner item : STL010222956ACE
-tvstring: TL010222956ACE
-	STL010222956ACE
-item STL010222956ACE
-SELECT * FROM estruturas WHERE item like 'STL010222956ACE'
-valores de subitem retornado item STL010222956ACE componente ITL010REF
-table_item: STL010222956ACE table_componente: ITL010REF table_quantidade: 1
-o item tinha owner STL010222956ACE
-owner TL010222956ACE item ITL010REF
-o item ITL010REFsera inserido 
-o item sera inserido sem un ITL010REF
-tvstring: TL010222956ACE
-	STL010222956ACE
-		ITL010REF
-item ITL010REF
-SELECT * FROM estruturas WHERE item like 'ITL010REF'
-valores de subitem retornado item  componente 
-o componente estava em branco ira inserir o item ITL010REF
-o componente tinha owner 
- item ITL010REF prev_inserted ITL010REF
-table_item: TL010222956ACE table_componente: ITL010DIV table_quantidade: 1
-o item nao tinha owner 
-adicionando item sem owner item : ITL010DIV
-tvstring: TL010222956ACE
-	STL010222956ACE
-		ITL010REF
-	ITL010DIV
-item ITL010DIV
-SELECT * FROM estruturas WHERE item like 'ITL010DIV'
-valores de subitem retornado item ITL010DIV componente ITL010DIV1
-table_item: ITL010DIV table_componente: ITL010DIV1 table_quantidade: 1
-o item tinha owner ITL010DIV
-owner TL010222956ACE item ITL010DIV1
-o item ITL010DIV1sera inserido 
-o item sera inserido sem un ITL010DIV1
-tvstring: TL010222956ACE
-	STL010222956ACE
-		ITL010REF
-	ITL010DIV
-		ITL010DIV1
-item ITL010DIV1
-SELECT * FROM estruturas WHERE item like 'ITL010DIV1'
-valores de subitem retornado item ITL010DIV1 componente ITL010DIV2
-table_item: ITL010DIV1 table_componente: ITL010DIV2 table_quantidade: 1
-o item tinha owner ITL010DIV1
-owner ITL010DIV item ITL010DIV2
-o item ITL010DIV2sera inserido 
-o item sera inserido sem un ITL010DIV2
-tvstring: TL010222956ACE
-	STL010222956ACE
-		ITL010REF
-	ITL010DIV
-		ITL010DIV1
-			ITL010DIV2
-item ITL010DIV2
-SELECT * FROM estruturas WHERE item like 'ITL010DIV2'
-valores de subitem retornado item ITL010DIV2 componente ITL010DIV3
-table_item: ITL010DIV2 table_componente: ITL010DIV3 table_quantidade: 1
-o item tinha owner ITL010DIV2
-owner ITL010DIV1 item ITL010DIV3
-o item ITL010DIV3sera inserido 
-o item sera inserido sem un ITL010DIV3
-tvstring: TL010222956ACE
-	STL010222956ACE
-		ITL010REF
-	ITL010DIV
-		ITL010DIV1
-			ITL010DIV2
-				ITL010DIV3
-item ITL010DIV3
-SELECT * FROM estruturas WHERE item like 'ITL010DIV3'
-valores de subitem retornado item  componente 
-o componente estava em branco ira inserir o item ITL010DIV3
-o componente tinha owner 
- item ITL010DIV3 prev_inserted ITL010DIV3
-table_item: TL010222956ACE table_componente: ITL010REF table_quantidade: 1
-o item nao tinha owner 
-adicionando item sem owner item : ITL010REF
-tvstring: TL010222956ACE
-	STL010222956ACE
-		ITL010REF
-	ITL010DIV
-		ITL010DIV1
-			ITL010DIV2
-				ITL010DIV3
-	ITL010REF
-item ITL010REF
-SELECT * FROM estruturas WHERE item like 'ITL010REF'
-valores de subitem retornado item  componente 
-o componente estava em branco ira inserir o item ITL010REF
-o componente tinha owner 
- item ITL010REF prev_inserted ITL010REF
-tvretornada TL010222956ACE
-	STL010222956ACE
-		ITL010REF
-	ITL010DIV
-		ITL010DIV1
-			ITL010DIV2
-				ITL010DIV3
-	ITL010REF
+starting_id  
+same_window massaestrut
+ treeview: tv1
+tv level no tv info 1
+valor do id 1353200valor do tv level atual 1tipo : Empresa
+tv level no tv info 1
+valor do id 1353200valor do tv level atual 1tipo : Tipo
+tv level no tv info 1
+valor do id 1353200valor do tv level atual 1tipo : Familia
+tv level no tv info 1
+valor do id 1353200valor do tv level atual 1tipo : Subfamilia
+empresa : TOTALLLIGHT
+ tipo: 
+ familia : 
+ subfamilia : 
+starting_id  
+same_window massaestrut
+ treeview: tv1
+tv level no tv info 1
+valor do id 1353200valor do tv level atual 1tipo : Empresa
+tv level no tv info 1
+valor do id 1353200valor do tv level atual 1tipo : Tipo
+tv level no tv info 1
+valor do id 1353200valor do tv level atual 1tipo : Familia
+tv level no tv info 1
+valor do id 1353200valor do tv level atual 1tipo : Subfamilia
+empresa : TOTALLLIGHT
+ tipo: 
+ familia : 
+ subfamilia : 
+starting_id  
+same_window massaestrut
+ treeview: tv1
+tv level no tv info 2
+valor do id 1353272valor do tv level atual 2tipo : Empresa
+tv level no tv info 2
+valor do id 1353272valor do tv level atual 2tipo : Tipo
+tv level no tv info 2
+valor do id 1353272valor do tv level atual 2tipo : Familia
+tv level no tv info 2
+valor do id 1353272valor do tv level atual 2tipo : Subfamilia
+empresa : TOTALLLIGHT
+ tipo: PRODUTOS ACABADOS
+ familia : 
+ subfamilia : 
+starting_id  
+same_window massaestrut
+ treeview: tv1
+tv level no tv info 2
+valor do id 1353272valor do tv level atual 2tipo : Empresa
+tv level no tv info 2
+valor do id 1353272valor do tv level atual 2tipo : Tipo
+tv level no tv info 2
+valor do id 1353272valor do tv level atual 2tipo : Familia
+tv level no tv info 2
+valor do id 1353272valor do tv level atual 2tipo : Subfamilia
+empresa : TOTALLLIGHT
+ tipo: PRODUTOS ACABADOS
+ familia : 
+ subfamilia : 
+starting_id  
+same_window massaestrut
+ treeview: tv1
+tv level no tv info 3
+valor do id 1353920valor do tv level atual 3tipo : Empresa
+tv level no tv info 3
+valor do id 1353920valor do tv level atual 3tipo : Tipo
+tv level no tv info 3
+valor do id 1353920valor do tv level atual 3tipo : Familia
+tv level no tv info 3
+valor do id 1353920valor do tv level atual 3tipo : Subfamilia
+empresa : TOTALLLIGHT
+ tipo: PRODUTOS ACABADOS
+ familia : ACESSORIOS PARA BATERIA
+ subfamilia : 
+starting_id  
+same_window massaestrut
+ treeview: tv1
+tv level no tv info 3
+valor do id 1354640valor do tv level atual 3tipo : Empresa
+tv level no tv info 3
+valor do id 1354640valor do tv level atual 3tipo : Tipo
+tv level no tv info 3
+valor do id 1354640valor do tv level atual 3tipo : Familia
+tv level no tv info 3
+valor do id 1354640valor do tv level atual 3tipo : Subfamilia
+empresa : TOTALLLIGHT
+ tipo: PRODUTOS ACABADOS
+ familia : LUMINARIA
+ subfamilia : 
+starting_id  
+same_window massaestrut
+ treeview: tv1
+tv level no tv info 4
+valor do id 1453016valor do tv level atual 4tipo : Empresa
+tv level no tv info 4
+valor do id 1453016valor do tv level atual 4tipo : Tipo
+tv level no tv info 4
+valor do id 1453016valor do tv level atual 4tipo : Familia
+tv level no tv info 4
+valor do id 1453016valor do tv level atual 4tipo : Subfamilia
+empresa : TOTALLLIGHT
+ tipo: PRODUTOS ACABADOS
+ familia : LUMINARIA
+ subfamilia : TL.L.EXE.010
+o item nao tinha subfamilia 
+selected model  TL.L.EXE.010
+super id 1354640
+starting_id 1354640 
+same_window massaestrut
+ treeview: tv1
+tv level no tv info 4
+ o starting id nao estava em branco 
+valor do id 1354640valor do tv level atual 3tipo : Empresa
+tv level no tv info 4
+ o starting id nao estava em branco 
+valor do id 1354640valor do tv level atual 3tipo : Tipo
+tv level no tv info 4
+ o starting id nao estava em branco 
+valor do id 1354640valor do tv level atual 3tipo : Familia
+tv level no tv info 4
+ o starting id nao estava em branco 
+valor do id 1354640valor do tv level atual 3tipo : Subfamilia
+empresa : TOTALLLIGHT
+ tipo: PRODUTOS ACABADOS
+ familia : LUMINARIA
+ subfamilia : 
+retornou do ultimo get info 
+code table TL010Codigo

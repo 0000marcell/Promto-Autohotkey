@@ -10,10 +10,11 @@ estruturas_view(){
 	/* 
 		Gui init
 	*/
+	FileDelete, % "debug.txt"
 	Gui,massaestrut:New
-	;Gui, Font,s%SMALL_FONT%, %FONT%
-	;Gui,massaestrut:+ownerM
-	;Gui, Color, %GLOBAL_COLOR%	
+	Gui, Font,s%SMALL_FONT%, %FONT%
+	Gui,massaestrut:+ownerM
+	Gui, Color, %GLOBAL_COLOR%	
 	Gui, Add, Edit, x415 gpesquisarlv w400 r1 vpesquisarlv uppercase ,Pesquisar!!!
 	Gui, Add, Treeview, xm y+5 w400 h300 vtv1 gtvstrut,
 	Gui, Add, Listview, x+5 w400 h300 vlv1 checked gestrutlv,Codigos| Descricao Completa| Descricao Resumida | Descricao Ingles
@@ -36,6 +37,8 @@ estruturas_view(){
 	)
 	Gui, Treeview, tv1
 	CreateTreeView(TvDefinition)
+	Gui, Treeview, tvaddmass
+	CreateTreeView(TvDefinition)
 	Gui, Show,, Estruturas!!
 	return
 
@@ -48,7 +51,7 @@ estruturas_view(){
 	return
 
 	tvstrut:
-	tv_strut()
+	tv_strut("massaestrut", "tv1", "lv1")
 	return
 
 	estrutlv:
@@ -80,6 +83,7 @@ estruturas_view(){
 	return 
 
 	tvaddmass:
+	tv_strut("massaestrut", "tvaddmass", "lvaddmass")
 	return
 
 	lvaddmass:

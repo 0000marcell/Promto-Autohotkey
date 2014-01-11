@@ -67,6 +67,7 @@ db := new PromtoSQL(
 */
 GLOBAL_TVSTRING := ""
 ETF_TVSTRING := ""
+S_ETF_hashmask := {}
 hashmask:={},field:=["Aba", "Familia", "Subfamilia", "Modelo"]
 _reload_gettable := True
 

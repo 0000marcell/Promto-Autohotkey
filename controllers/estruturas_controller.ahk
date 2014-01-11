@@ -213,37 +213,42 @@ tv_add_mass(){
 	return 
 }
 
-tv_strut(){
+tv_strut(window, tv, lv){
 	Global
 	Local id, super_id, tv_level
 
-	tv_level := get_tv_level("massaestrut", "tv1")
-	info := get_item_info("massaestrut", "", "tv1", "", "massaestrut")
+	tv_level := get_tv_level(window, tv)
+	info := get_item_info(window, "", tv, "", window)
 	tabela1 := info.empresa[2] info.tipo[2] info.subfamilia[2] info.familia[1]
-	MsgBox, % "tv level " tv_level
-	;MsgBox, % " tabela1 " tabela1
 
-	if(tv_level = 3 || tv_level = 4){
-		
-		MsgBox, % "ira verificar se o item tem subitem tabela1 " tabela1
-
-		if(db.have_subfamilia(tabela1))
-			return
+	if(tv_level = 3){
 		model_table := db.get_reference("Modelo", tabela1)
-		db.load_subitems_tv(get_tv_id("massaestrut", "lv1"), model_table)
+		db.load_subitems_tv(get_tv_id(window, lv), model_table)
+		return
 	}	
 
 	if(tv_level = 4 || tv_level = 5){
-		if(db.have_subfamilia(tabela1))
+		
+		if(info.subfamilia[2] != ""){
+			FileAppend, % "o item tinha subfamilia ira carregar os modelo `n" , % "debug.txt"
+			tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[1]
+			model_table := db.get_reference("Modelo", tabela1)
+			db.load_subitems_tv(get_tv_id(window, lv), model_table)
 			return
-		Gui, massaestrut:default
-		Gui, Treeview, tv1
+		}
+		FileAppend, % "o item nao tinha subfamilia `n", % "debug.txt"
+		Gui, %window%:default
+		Gui, Treeview, tv		
 		id := TV_GetSelection()
 		TV_GetText(selected_model, id)
+		FileAppend, % "selected model  " selected_model "`n", % "debug.txt"
 		super_id := TV_GetParent(id)
-		info := get_item_info("massaestrut", "", "tv1", super_id, same_window)
+		FileAppend, % "super id " super_id "`n", % "debug.txt"
+		info := get_item_info(window, "", tv, super_id, window)
+		FileAppend, % "retornou do ultimo get info `n", % "debug.txt"
 		code_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] S_ETF_hashmask[selected_model] "Codigo"
-		db.load_lv("massaestrut", "lv1", code_table)
+		FileAppend, % "code table " code_table "`n", % "debug.txt"
+		db.load_lv(window, lv, code_table, 1)
 	}
 }
 

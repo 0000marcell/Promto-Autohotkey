@@ -745,4 +745,5 @@ class PromtoSQL{
 	#include lib\promto_sql_mariadb_modelo.ahk
 	#include lib\promto_sql_mariadb_campo.ahk
 	#include lib\promto_sql_mariadb_imagem.ahk
+	#include lib\promto_sql_mariadb_estrutura.ahk
 }

@@ -68,6 +68,8 @@ estruturas_view(){
 	return
 	
 	addmassa:
+	FileDelete, % "debug.txt"
+	add_componente_marcado()
 	return 
 
 	addquantidademassa:

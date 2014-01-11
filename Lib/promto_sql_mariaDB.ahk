@@ -604,10 +604,10 @@ class PromtoSQL{
 		Carrega uma estrutura em determinada treeview
 	*/
 	load_estrut(window, treeview, codigo){
-		Global already_load_table, tvstring
-		MsgBox, % "no load estrut "
+		Global tvstring
+		
 		tvstring := codigo
-		already_load_table := 0
+		nivel := "", ownercode := "", prev_inserted := ""
 		this.get_tv_string(codigo, "")
 	
 		FileAppend, % "tvretornada " tvstring "`n", % "debug.txt"
@@ -627,7 +627,7 @@ class PromtoSQL{
 		determinado item
 	*/
 	get_tv_string(item, nivel, ownercode = "", semUN = 1, quantidade = "", prev_inserted = ""){
-		Global already_load_table, tvstring
+		Global tvstring
 
 		FileAppend, % "tvstring: " tvstring "`n", % "debug.txt" 
 

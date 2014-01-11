@@ -10,7 +10,6 @@ estruturas_view(){
 	/* 
 		Gui init
 	*/
-	FileDelete, % "debug.txt"
 	Gui,massaestrut:New
 	Gui, Font,s%SMALL_FONT%, %FONT%
 	Gui,massaestrut:+ownerM
@@ -55,6 +54,7 @@ estruturas_view(){
 	return
 
 	estrutlv:
+	FileDelete, % "debug.txt"
 	estrut_lv()
 	return
 
@@ -68,7 +68,6 @@ estruturas_view(){
 	return
 	
 	addmassa:
-	FileDelete, % "debug.txt"
 	add_componente_marcado()
 	return 
 

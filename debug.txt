@@ -1,25 +1,35 @@
-tvstring: TL010222956ACS
-item TL010222956ACS
-SELECT * FROM estruturas WHERE item like 'TL010222956ACS'
-valores de subitem retornado item TL010222956ACS componente ITL010CJC2AC
-table_item: TL010222956ACS table_componente: ITL010CJC2AC table_quantidade: 1
-o item nao tinha owner 
-adicionando item sem owner item : ITL010CJC2AC
-tvstring: TL010222956ACS
-item ITL010CJC2AC
-SELECT * FROM estruturas WHERE item like 'ITL010CJC2AC'
-valores de subitem retornado item  componente 
-o componente estava em branco ira inserir o item ITL010CJC2AC
-o componente tinha owner 
- item ITL010CJC2AC prev_inserted ITL010CJC2AC
-table_item: TL010222956ACS table_componente: ITL010CJC2AI table_quantidade: 1
+tvstring: TL010222956AIS
+item TL010222956AIS
+SELECT * FROM estruturas WHERE item like 'TL010222956AIS'
+valores de subitem retornado item TL010222956AIS componente ITL010CJC2AI
+table_item: TL010222956AIS table_componente: ITL010CJC2AI table_quantidade: 1
 o item nao tinha owner 
 adicionando item sem owner item : ITL010CJC2AI
-tvstring: TL010222956ACS
+tvstring: TL010222956AIS
 item ITL010CJC2AI
 SELECT * FROM estruturas WHERE item like 'ITL010CJC2AI'
 valores de subitem retornado item  componente 
 o componente estava em branco ira inserir o item ITL010CJC2AI
 o componente tinha owner 
  item ITL010CJC2AI prev_inserted ITL010CJC2AI
-tvretornada TL010222956ACS
+table_item: TL010222956AIS table_componente: ITL010CJC4AC table_quantidade: 1
+o item nao tinha owner 
+adicionando item sem owner item : ITL010CJC4AC
+tvstring: TL010222956AIS
+item ITL010CJC4AC
+SELECT * FROM estruturas WHERE item like 'ITL010CJC4AC'
+valores de subitem retornado item  componente 
+o componente estava em branco ira inserir o item ITL010CJC4AC
+o componente tinha owner 
+ item ITL010CJC4AC prev_inserted ITL010CJC4AC
+table_item: TL010222956AIS table_componente: ITL010CJC4AI table_quantidade: 1
+o item nao tinha owner 
+adicionando item sem owner item : ITL010CJC4AI
+tvstring: TL010222956AIS
+item ITL010CJC4AI
+SELECT * FROM estruturas WHERE item like 'ITL010CJC4AI'
+valores de subitem retornado item  componente 
+o componente estava em branco ira inserir o item ITL010CJC4AI
+o componente tinha owner 
+ item ITL010CJC4AI prev_inserted ITL010CJC4AI
+tvretornada TL010222956AIS

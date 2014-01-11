@@ -251,8 +251,6 @@ estrut_lv(){
 	if A_GuiEvent = DoubleClick
 	{
 		codigo := GetSelected("massaestrut","lv1")
-		MsgBox, % "codigo retornado " codigo
-		FileDelete, % "debug.txt"
 		db.load_estrut("massaestrut", "tv2", codigo)
 	}
 }

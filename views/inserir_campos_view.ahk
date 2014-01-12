@@ -121,6 +121,10 @@ inserir_campos_view(info){
 	tabela_tbe := db.Modelo.get_tabela_campo_esp(campos_combobox, tabela1)
 	values_tbe := db.load_table_in_array(tabela_tbe)
 	FileDelete, % "temp\temp_export.csv"
+	IfNotExist, % "temp"
+	{
+		FileCreateDir, % "temp"
+	}
 	for, each, value in values_tbe{
 		if(values_tbe[A_Index, 1] = "")
 			Continue

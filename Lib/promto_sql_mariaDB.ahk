@@ -223,8 +223,9 @@ class PromtoSQL{
 				(JOIN
 					"TRUNCATE TABLE " tabela
 				))
-		}catch e 
-			MsgBox,16,Erro, % "Ocorreu um erro ao apagar todos os items da tabela " tabela " `n" ExceptionDetail(e)		
+		}catch e{
+			
+		}
 	}
 
 	/*

@@ -50,9 +50,9 @@ inserir_modelo_view(model_table){
 	*/
 	Gui, Add, Groupbox,xp-5 y+10 w200 h180, Descricao
 	Gui, Add, Text, xp+10 yp+15 w100, Portugues
-	Gui, Add, Edit, y+5 w180 h40 vdescricao_geral_edit,
+	Gui, Add, Edit, y+5 w180 h40 vdescricao_geral_edit uppercase,
 	Gui, Add, Text, y+5 w100 ,Ingles
-	Gui, Add, Edit, y+5 w180 h40 vdescricao_geral_ingles_edit,
+	Gui, Add, Edit, y+5 w180 h40 vdescricao_geral_ingles_edit uppercase,
 	Gui, Add, Button, y+5 w100 h20 gsalvar_descricao_geral_button, Salvar 
 
 	Gui, Show, Autosize, Inserir Modelo

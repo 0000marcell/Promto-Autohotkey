@@ -84,7 +84,6 @@ importar_lista_bloqueio(){
   	MsgBox, % "o arquivo selecionado tem que ser .csv!!!!"
   	return 
   }
-
   MsgBox, 4,, Deseja apagar os items atuais?
   IfMsgBox Yes
   {
@@ -101,6 +100,7 @@ importar_lista_bloqueio(){
   	db.Modelo.incluir_bloqueio(x[A_Index, 1], bloq_table)
 
   }
+  db.load_lv("MAB", "codigos_bloqueados", bloq_table)
   Gui,progress:destroy
   MsgBox,64,,% "valores importados!"
 	return

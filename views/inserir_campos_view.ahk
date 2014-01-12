@@ -106,6 +106,7 @@ inserir_campos_view(info){
     valores := {codigo: codigo_value, dr: dr_value, dc: dc_value, di: di_value}
     db.Modelo.incluir_campo_esp(campos_combobox ,valores, s_info)
   }
+  db.load_lv("inserir_campos_view", "valores_de_campo_lv", tabela_tbi, 1)
   Gui,progress:destroy
   MsgBox,64,,% "valores importados!"
 	return
@@ -209,8 +210,8 @@ inserir_campos_view(info){
 	tabela_campos_especificos := get_tabela_campo_esp(campos_combobox, s_info)
 	values_in_table := db.load_table_in_array(tabela_campos_especificos)
 	GuiControl,, numero_items, % values_in_table.maxindex()
-	db.load_lv("inserir_campos_view", "valores_de_campo_lv", tabela_campos_especificos)
-	LV_ModifyCol(1, 150), LV_ModifyCol(2, 150), LV_ModifyCol(3, 150), LV_ModifyCol(4, 150)	
+	db.load_lv("inserir_campos_view", "valores_de_campo_lv", tabela_campos_especificos, 1)
+	;LV_ModifyCol(1, 150), LV_ModifyCol(2, 150), LV_ModifyCol(3, 150), LV_ModifyCol(4, 150)	
 	return
 
 	valores_de_campo_action:

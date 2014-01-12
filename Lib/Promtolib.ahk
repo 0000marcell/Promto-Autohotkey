@@ -2085,7 +2085,6 @@ load_ETF(db){
 		Essa funcao ira carregar
 		a string ETF_TVSTRING
 	*/
-	FileDelete, % "load_tv_debug.csv"
 	db.get_treeview("empresas",0,"","")
 }
 

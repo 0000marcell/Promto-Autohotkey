@@ -214,6 +214,8 @@ recarregar_main_tv:
 Gui, M:default
 Gui, Treeview, main_tv
 TV_Delete() 
+ETF_TVSTRING := ""
+load_ETF(db)
 load_main_tv()
 return
 

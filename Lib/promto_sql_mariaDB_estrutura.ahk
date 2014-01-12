@@ -20,6 +20,27 @@ class Estrutura{
 		record.quantidade := 1
 		mariaDB.Insert(record, "estruturas")
 	}
+
+	/*
+		Insere quantidade em determinado item
+	*/
+	inserir_quantidade(item, componente, quantidade){
+		Global mariaDB
+
+		sql :=
+		(JOIN 
+			" UPDATE estruturas " 
+			" SET quantidade = '" quantidade "'"
+			" WHERE item LIKE '" item "' AND "
+			" componente LIKE '%" componente "%'" 
+		)	 
+		
+		try{
+			mariaDB.Query(sql)
+		}catch e{
+			MsgBox, 16, Erro, % " Erro ao tentar alterar a quantidade " ExceptionDetail(e)
+		}
+	}
 	/*
 		Verifica se 
 		determinado componente 

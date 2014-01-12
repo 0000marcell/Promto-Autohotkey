@@ -1,5 +1,6 @@
-inserir_dialogo_2_view(action, owner_name, numero_de_campos = 2){
+inserir_dialogo_2_view(action, owner_name, numero_de_campos = 2, campos = ""){
 	Global db, input_name, input_mascara, SMALL_FONT, GLOBAL_COLOR
+
 
 	/*
 		Gui init
@@ -18,10 +19,19 @@ inserir_dialogo_2_view(action, owner_name, numero_de_campos = 2){
 		groupbox_height := "70"
 	}
 	Gui, Add, Groupbox, w230 h%groupbox_height%, Campos
-	Gui, Add, Text,xp+10 yp+15, Item:
+	
+	if(campos[1] != ""){
+		campo_1 := campos[1]
+		campo_2 := campos[2]	
+	}else{
+		campo_1 := "Nome"
+		campo_2 := "Mascara"
+	}
+	
+	Gui, Add, Text,xp+10 yp+15, %campo_1%:
 	Gui, Add, Edit, y+10 w200 vinput_name uppercase,
 	if(numero_de_campos = 2){
-		Gui, Add, Text, y+10, Mascara:
+		Gui, Add, Text, y+10, %campo_2%:
 		Gui, Add, Edit, y+10 w200 vinput_mascara uppercase,	
 	}
 	/*

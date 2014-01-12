@@ -72,6 +72,7 @@ estruturas_view(){
 	return 
 
 	addquantidademassa:
+	add_quantidade_em_massa()
 	return 
 
 	remmassa:

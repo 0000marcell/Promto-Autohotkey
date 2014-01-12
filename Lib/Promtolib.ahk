@@ -2074,7 +2074,7 @@ getmascara(name,table,field){
 }
 
 /*
-	Carrega a string do tv 
+Carrega a string do tv 
 	principal
 */
 load_ETF(db){

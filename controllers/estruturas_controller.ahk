@@ -128,16 +128,26 @@ add_massa(){
 	Gui,Show,,Adicionar em massa!
 }
 
-add_quantidade_massa(){
+add_quantidade_em_massa(){
 	Global
 
 	checkeditems := GetCheckedRows2("massaestrut","estrutlv")
+
 	if(!checkeditems["code"]){
 		MsgBox, % "Selecione pelo menos um item antes de continuar!"
 		return 
 	}
-	addquantidademassa(checkeditems)
+	inserir_dialogo_2_view("adicionar_em_massa", "massaestrut", 2, ["codigo compoenente", "quantidade"])
+	;addquantidademassa(checkeditems)
 }
+
+adicionar_em_massa:
+Gui, Submit, nohide
+item := checkeditems["code", 1]
+componente := input_name
+quantidade := input_mascara
+db.Estrutura.inserir_quantidade(item, componente, quantidade)
+return
 
 rem_massa(){
 	Global

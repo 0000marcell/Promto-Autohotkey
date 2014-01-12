@@ -1,35 +1,26 @@
-tvstring: TL010222956AIS
-item TL010222956AIS
-SELECT * FROM estruturas WHERE item like 'TL010222956AIS'
-valores de subitem retornado item TL010222956AIS componente ITL010CJC2AI
-table_item: TL010222956AIS table_componente: ITL010CJC2AI table_quantidade: 1
-o item nao tinha owner 
-adicionando item sem owner item : ITL010CJC2AI
-tvstring: TL010222956AIS
-item ITL010CJC2AI
+item recebido TL010242956ACS
+SELECT * FROM estruturas WHERE item like 'TL010242956ACS'
+4 O item TL010242956ACS nao tinha owner 
+ira inserir o item TL010242956ACS 
+ item recebido ITL010CJC2AI
 SELECT * FROM estruturas WHERE item like 'ITL010CJC2AI'
-valores de subitem retornado item  componente 
-o componente estava em branco ira inserir o item ITL010CJC2AI
-o componente tinha owner 
- item ITL010CJC2AI prev_inserted ITL010CJC2AI
-table_item: TL010222956AIS table_componente: ITL010CJC4AC table_quantidade: 1
-o item nao tinha owner 
-adicionando item sem owner item : ITL010CJC4AC
-tvstring: TL010222956AIS
-item ITL010CJC4AC
+ 1 O item ITL010CJC2AI nao tinha componente 
+O item ITL010CJC2AI tinha owner 
+ira inserir o item ITL010CJC2AI na tvstring 
+4 O item TL010242956ACS nao tinha owner 
+item recebido ITL010CJC4AC
 SELECT * FROM estruturas WHERE item like 'ITL010CJC4AC'
-valores de subitem retornado item  componente 
-o componente estava em branco ira inserir o item ITL010CJC4AC
-o componente tinha owner 
- item ITL010CJC4AC prev_inserted ITL010CJC4AC
-table_item: TL010222956AIS table_componente: ITL010CJC4AI table_quantidade: 1
-o item nao tinha owner 
-adicionando item sem owner item : ITL010CJC4AI
-tvstring: TL010222956AIS
-item ITL010CJC4AI
+ 1 O item ITL010CJC4AC nao tinha componente 
+O item ITL010CJC4AC tinha owner 
+ira inserir o item ITL010CJC4AC na tvstring 
+4 O item TL010242956ACS nao tinha owner 
+item recebido ITL010CJC4AI
 SELECT * FROM estruturas WHERE item like 'ITL010CJC4AI'
-valores de subitem retornado item  componente 
-o componente estava em branco ira inserir o item ITL010CJC4AI
-o componente tinha owner 
- item ITL010CJC4AI prev_inserted ITL010CJC4AI
-tvretornada TL010222956AIS
+ 1 O item ITL010CJC4AI nao tinha componente 
+O item ITL010CJC4AI tinha owner 
+ira inserir o item ITL010CJC4AI na tvstring 
+tvstring final : 
+	TL010242956ACS
+		ITL010CJC2AI
+		ITL010CJC4AC
+		ITL010CJC4AI

@@ -41,8 +41,9 @@ class Familia{
 			Pega a referencia da tabela de items 
 			linkados
 		*/
+		append_debug("ira buscar a tabela de familias empresa mascara " empresa_mascara " tipo nome " tipo_nome)
 		familia_table := this.get_parent_reference(empresa_mascara, tipo_nome)
-
+		append_debug("tabela de familias retornada " familia_table)
 		;MsgBox, % "familia_table: " familia_table
 		
 		/*
@@ -50,6 +51,7 @@ class Familia{
 			ja existe
 		*/
 		;MsgBox, % "ira verificar se a mascara ja existe `n familia nome : " familia_nome " familia mascara : " familia_mascara " familia table " familia_table
+		
 		if(this.exists(familia_nome, familia_mascara, familia_table)){
 			MsgBox,16,Erro, % " A mascara a ser inserida ja existe!" 
 			return 0
@@ -74,6 +76,20 @@ class Familia{
 	inserir_com_modelo(familia_nome, familia_mascara, prefixo, familia_table){
 		Global mariaDB
 
+		append_debug("ira inserir a familia com modelo ")
+		/*
+			Insere o campo subfamilia na tabela de familias
+		*/
+		try{
+			mariaDB.Query(
+				(JOIN
+					"ALTER TABLE " familia_table " ADD Subfamilia VARCHAR(60);"
+				))
+			}catch e{
+				;MsgBox,16, Erro, % "Um erro ocorreu ao tentar inserir o valor de campo Subfamilia!"
+				;return 
+			}
+			
 		/*
 			Insere o valor na tabela
 		*/
@@ -87,7 +103,7 @@ class Familia{
 			Cria a tabela de Familias e insere a
 			referencia na reltable
 		*/
-
+		append_debug("ira criar a tabela de modelos case nao exista " prefixo familia_mascara "Modelo")
 		try{
 			mariaDB.Query(
 				(JOIN 
@@ -99,6 +115,7 @@ class Familia{
 		}catch e
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Modelos `n" ExceptionDetail(e)
 
+		append_debug("ira inserir a referencia da tabela de modelos")
 		record := {}
 		record.tipo := "Modelo"
 		record.tabela1 := prefixo familia_nome

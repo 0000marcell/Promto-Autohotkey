@@ -730,6 +730,20 @@ class PromtoSQL{
 			Fazer todas as tabelas de codigos do reltable
 		*/
 	}
+
+	/*
+		Retorna o prefixo do determinado item 
+		pela ordem feita pelo usuario
+	*/
+	get_ordened_prefix(info){
+		table_prefix := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "prefixo"
+		table := this.load_table_in_array(table_prefix)
+		prefix := ""
+		for each, value in table{
+			prefix .= table[A_Index, 2]
+		}
+		return prefix
+	}
 	
 	
 	#include lib\promto_sql_mariadb_empresa.ahk

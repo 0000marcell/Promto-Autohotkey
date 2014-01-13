@@ -194,14 +194,14 @@ class Imagem{
 		Funcao que pega o caminho da
 		imagem relacionada com esse modelo
 	*/
-	get_image_path(tabela2){
+	get_image_path(tabela1){
 		Global mariaDB
 
 		rs := mariaDB.OpenRecordSet(
 			(JOIN 
 				" SELECT tabela2 FROM reltable "
 				" WHERE tipo like 'image' "
-				" AND tabela1 like '" tabela2 "'"
+				" AND tabela1 like '" tabela1 "'"
 			))
 		reference_table := rs.tabela2
 		rs.close()

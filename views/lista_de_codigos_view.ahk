@@ -32,9 +32,7 @@ lista_de_codigos(info){
 	Gui, Add, Button, x+5 w100 h30 ggerarplaquetas, Gerar Plaquetas
 
 	code_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "Codigo"
-	;MsgBox, % "code_table " code_table
 	Listpesqcod := db.load_table_in_array(code_table)
-	;MsgBox, % "ira carregar a lista"
 	db.load_lv("lista_de_codigos_view", "lvcodetable", code_table)
 	LV_ModifyCol(1, 100), LV_ModifyCol(2, 300), LV_ModifyCol(3, 300), LV_ModifyCol(4, 300) 
 	Gui, Show,, Lista de Codigos
@@ -64,9 +62,15 @@ lista_de_codigos(info){
 	return
 
 	gerarplaquetas:
-	MsgBox, % "Gerar plaquetas ainda nao foi feito :( "
-	;prefix := s_info.empresa[2] s_info.tipo[2] s_info.familia[2]
-	;createtag(EmpresaMascara AbaMascara FamiliaMascara,prefixpt2,ModeloMascara,selectmodel,EmpresaMascara AbaMascara FamiliaMascara ModeloMascara "Codigo")
+	prefix := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2]
+	model_mask := s_info.modelo[2]
+	ordened_prefix := db.get_ordened_prefix(s_info)
+	StringReplace, ordened_prefix, ordened_prefix, %model_mask%,, All
+	model_name := s_info.modelo[1]
+	FileDelete, % "debug.txt"
+	
+	FileAppend, % "prefix : " prefix "`n ordened_prefix : " ordened_prefix "`n model_mask : " model_mask "`n model_name : " model_name "`n", % "debug.txt"
+	createtag(prefix, ordened_prefix, model_mask, model_name, prefix model_mask "Codigo")
 	return 
 
 }

@@ -1705,62 +1705,95 @@ load_lv_from_array(columns, array, window, lv){
 
 ;############### createtag #################################
 createtag(prefix,prefix2,model,selectmodel,codelist,textsize=20,textcolor="ff000000",imagepath="image.png"){
-	Global db
+	Global db, global_image_path
 	
-	;MsgBox, % " prefix " prefix " prefix2 " prefix2 " model " model " selectmodel " selectmodel " codelist " codelist
-	table:=db.iquery("SELECT * FROM " codelist ";")
-	;MsgBox, % table.Rows.Count() 
-	progress(table.Rows.Count())
-	totalwidth:=378.17*table.Rows.Count()
-	newgdi({w:807,h:totalwidth})
-	StringLen,prefixlength,prefix
-	StringLen,modellength,model
+	table := db.load_table_in_array(codelist)
+	
+	progress(table.maxindex())
+	totalheight := 500.17 * table.maxindex()
+	newgdi({w:1200,h:totalheight})
+	StringLen, prefixlength, prefix
+	StringLen, modellength, model
 	y:=80 
-	panel({x:0,y:0,w:750,h:totalwidth,color: "white",boardcolor: "0x00000000"})
-	;MsgBox, % " ira iniciar os codigos !!! " codelist 
-	;FileDelete,debug.txt
-	for,each,value in list:=db.getvalues("Codigos,DR",codelist){
+	panel({x:0, y:0, w:1200, h:totalheight, color: "white", boardcolor: "0x00000000"})
+	
+	for, each, value in table{
+		if(table[A_Index,1] = "")
+			Continue
 		x:=30	
-		updateprogress("Criando Tags: " list[A_Index,1],1)
-		result:=db.query("SELECT tabela2 FROM reltable WHERE tipo='image' AND tabela1='" list[A_Index,1] "'")
-		if(result["tabela2"]!="")
-			db.loadimage("","",result["tabela2"])
+		updateprogress("Criando Tags: " table[A_Index,1],1)
+		
+		; Pega a imagem
+		append_debug("ira buscar a imagem com a tabela1 : " prefix model selectmodel)
+		
+		imagepath := global_image_path db.Imagem.get_image_path(prefix model selectmodel) ".jpg"
+		
+		append_debug("caminho da imagem retornado : " imagepath)
+
 		panel({x:x,y:y-60,w:110,h:50,color: "nocolor",text:"Familia",textsize: 10,textcolor: textcolor,boardersize:0})
 		panel({x:x,y:y,w:110,h:50,color: "nocolor",text:prefix2,textsize: textsize,textcolor: textcolor})
 		panel({x:x+=120,y:y-60,w:110,h:50,color: "nocolor",text:"Modelo",textsize: 10,textcolor: textcolor,boardersize:0})
 		panel({x:x,y:y,w:110,h:50,color: "nocolor",text:model,textsize: textsize,textcolor: textcolor})
-		codigo:=list[A_Index,1]	
-		;FileAppend,% "codigo inicial de entrada " codigo "`n",debug.txt
-		StringTrimleft,codigo,codigo,prefixlength+modellength
-		;FileAppend,% "codigo depois do primeiro trim " codigo "`n",debug.txt
-		;MsgBox, % "to relreference " prefix model selectmodel
-		relreference:=getreferencetable("oc",prefix model selectmodel)
-		;MsgBox, % " retorno relreference " relreference 
-		for,each,value in list2:=db.getvalues("Campos",relreference){
-			campname:=list2[A_Index,1]
-			StringReplace,campname,campname,%A_Space%,,All
-			result:=db.query("SELECT tabela2 FROM reltable WHERE tipo='" campname "' AND tabela1='" prefix model selectmodel "'")
-			camplist:=result["tabela2"]
-			;FileAppend,% camplist "`n",debug.txt 
-			for,each,value in list3:=db.getvalues("CODIGO,DR",camplist){
-				codepiece:=list3[A_Index,1]
-				;FileAppend,% "antes da quebra " codepiece "`n",debug.txt
+		
+
+		codigo := table[A_Index,1]	
+		append_debug("codigo atual " codigo)
+		StringTrimleft,codigo,codigo, prefixlength + modellength
+		
+		/*
+			Pega a tabela de campos, para pega o nome dos campos
+		*/
+		camp_table := db.get_reference("oc", prefix model selectmodel)
+		
+		append_debug("tabela de campos retornada " camp_table)
+
+		table_camp := db.load_table_in_array(camp_table)
+
+		append_debug("table_camp " table_camp[1, 1])
+
+		for, each, value in table_camp{
+			if(table_camp[A_Index,1] = "")
+				Continue
+			campname := table_camp[A_Index, 2]
+
+			append_debug("campname " campname)
+
+			StringReplace, campname, campname, %A_Space%,, All
+			
+			;Pega a tabela de campos especificos
+			camp_esp_table := db.get_reference(campname, prefix model selectmodel)
+			
+			append_debug("camp esp table " camp_esp_table)
+
+			table_camp_esp := db.load_table_in_array(camp_esp_table)
+
+			append_debug("table camp esp " table_camp_esp[1, 1])
+
+			for, each, value in table_camp_esp{
+				if(table_camp_esp[A_Index,1] = "")
+					Continue
+				codepiece := table_camp_esp[A_Index,1]
+
+				append_debug("codepiece " codepiece)
+
 				StringLen,length,codepiece
+
 				if(length!=""){
 					StringLeft,codepiece,codigo,length
 					StringTrimLeft,codigo,codigo,length
-					;FileAppend,% "depois da quebra " codepiece "`n",debug.txt	
-					;FileAppend,% "depois da quebra codigo " codigo "`n",debug.txt
 					Break
 				}
 			} 	
-			;FileAppend,% "codepiece final " codepiece "`n",debug.txt
-			panel({x:x+=120,y:y-60,w:110,h:50,color: "nocolor",text:list2[A_Index,1],textsize:8,textcolor: textcolor})
+
+			panel({x:x+=120,y:y-60,w:110,h:50,color: "nocolor",text: table_camp[A_Index,2],textsize:8,textcolor: textcolor})
 			panel({x:x,y:y,w:110,h:50,color: "nocolor",text:codepiece,textsize: textsize,textcolor: textcolor})
 		}
+
+		; Insere a foto na plaqueta  
 		panel({x:30,y:y+=60,w:200,h:200,color: "nocolor",imagepath: imagepath})
-		panel({x:245,y:y,w:505,h:200,color: "nocolor",text:list[A_Index,2],textsize: 30,textcolor: textcolor})	
-		dottedliney:=y+234.17	
+
+		panel({x:245,y:y,w:505,h:200,color: "nocolor",text: table[A_Index,2],textsize: 30,textcolor: textcolor})	
+		dottedliney := y+234.17	
 		pPen := Gdip_CreatePen(0xff000000, 3)
 		DrawDottedLine(0,dottedliney,750,dottedliney)
 		Gdip_DeletePen(pPen)
@@ -2317,4 +2350,19 @@ singledim_array(array, col = 1){
 		return_array.insert(array[A_Index, col])
 	}
 	Return return_array
+}
+
+/*
+deleta o arquivo de debug 
+*/
+
+reset_debug(){
+	FileDelete, % "debug.txt"
+}
+
+/*
+	Insere novos valores no debug
+*/
+append_debug(string){
+	FileAppend, % string "`n", % "debug.txt"
 }

@@ -2366,3 +2366,23 @@ reset_debug(){
 append_debug(string){
 	FileAppend, % string "`n", % "debug.txt"
 }
+
+/*
+	Marca todos os items de uma determinada listview
+*/
+check_all(window, listview){
+	Gui, %window%:default
+	Gui, Listview, %listview%
+	Loop, % LV_GetCount()
+		LV_Modify("","+check")	
+}
+
+/*
+	Desmarca todos os items de determinada listview
+*/
+uncheck_all(window, listview){
+	Gui, %window%:default
+	Gui, Listview, %listview%
+	Loop, % LV_GetCount()
+		LV_Modify("","-check")	
+}

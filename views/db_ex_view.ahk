@@ -10,8 +10,8 @@ db_ex_view(){
 	Gui, add, edit, w900 r1  vpesquisadbex gpesquisadbex uppercase,
 	Gui, add, listview, w900 h400 y+5 checked vlvdbex, Codigo|Descricao Completa|Descricao Resumida
 	Gui, add, button, w100 h30 y+5 ginserirdbex,Inserir
-	Gui, add, button, w100 h30 x+5 gmarctodos,Marc.todos 
-	Gui, add, button, w100 h30 x+5 gdesmarctodos,Desm.todos
+	Gui, add, button, w100 h30 x+5 gmarctodos_dbex,Marc.todos 
+	Gui, add, button, w100 h30 x+5 gdesmarctodos_dbex,Desm.todos
 	Gui, add, button, w100 h30 x+5 ginserirvalores,Inserir Valores
 	Gui, add, button, w100 h30 x+5 gconfigdbex,Configurar.
 	;Gui, add, button, w100 h30 x+5 ginserirtodos,Inserir todos!!
@@ -83,5 +83,11 @@ db_ex_view(){
 	Gui,Show,,Exportar Para DB
 	return 
 
-	
+	marctodos_dbex:
+	check_all("dbex", "lvdbex")
+	return
+
+	desmarctodos_dbex:
+	uncheck_all("dbex", "lvdbex")
+	return
 }

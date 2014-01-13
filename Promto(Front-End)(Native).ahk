@@ -437,8 +437,9 @@ return
 	return 
 
 	fotoindividual:
-	Gui,submit,nohide
-	massainsertphoto(codtable) 
+	foto_individual_view()
+	;Gui,submit,nohide
+	;massainsertphoto(codtable) 
 	return 
 
 	combocodes:

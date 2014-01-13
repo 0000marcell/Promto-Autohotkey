@@ -1,4 +1,4 @@
-inserir_imagem_db_view(owner_name, picture_control){
+inserir_imagem_db_view(owner_name, picture_control, codigos_array){
 	Global
 	Static s_picture_control, s_owner_name
 
@@ -48,9 +48,24 @@ inserir_imagem_db_view(owner_name, picture_control){
 		relaciona o caminho da imagem selecionada no 
 		momento com o modelo selecionado
 	*/
-	valor_selecionado := GetSelected("inserir_imagem_db_view", "inserir_imagem_db_lv")
+	
+	/*
+		Se for passado um array de volores para inserir 
+		a foto selecionada
+	*/
 	info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
-	db.Imagem.link_up(info, valor_selecionado)
+	
+	if(codigos_array[1] != 0){
+		for, each, value in codigos_array{
+			if(codigos_array[A_Index] = "")
+				Continue
+			db.Imagem.link_up(info, codigos_array[A_Index])
+		}	
+	}else{
+		valor_selecionado := GetSelected("inserir_imagem_db_view", "inserir_imagem_db_lv")
+		db.Imagem.link_up(info, valor_selecionado)	
+	}
+
 	Gui, %s_owner_name%:default
 	GuiControl,, s_picture_control,%global_image_path%%valor_selecionado%.jpg 
 	return

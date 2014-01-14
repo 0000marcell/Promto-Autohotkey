@@ -4,7 +4,7 @@ class Imagem{
 		Incluir uma nova imagem no banco e copia o arquivo 
 		para a pasta de imagems do programa
 	*/
-	incluir(source = "", nome_imagem = ""){
+	incluir(source = "", nome_imagem = "", codigos_array = ""){
 		Global mariaDB, empresa, tipo, familia, modelo, global_image_path
 
 		if(empresa.mascara = "" || familia.mascara = "" | modelo.mascara = ""){
@@ -47,7 +47,7 @@ class Imagem{
 			Move a imagem para a pasta externa
 		*/ 
 		FileCopy, temp\%nome_imagem%.jpg, %global_image_path%%nome_imagem%.jpg, 1
-		
+
 		if(ErrorLevel){
 			MsgBox,16,Erro, % "A imagem nao pode ser copiada!"
 			return 
@@ -70,13 +70,24 @@ class Imagem{
 		/*
 			Insere a imagem na tabela de referencia
 		*/
-		record := {}
-		record.tipo := "image"
-		record.tabela1 := tabela1
-		record.tabela2 := nome_imagem
-		mariaDB.Insert(record, "reltable")
-
-		;MsgBox,64,Sucesso, % "A imagem foi inserida!"		
+		if(codigos_array["code", 1] != ""){
+			for, each, value in codigos_array["code"]{
+				codigo := codigos_array["code", A_Index]
+				this.remove_old_relation(codigo)
+				append_debug("ira inserir a imagem tabela1 : " codigo " tabela2 " nome_imagem)
+				record := {}
+				record.tipo := "image"
+				record.tabela1 := codigo
+				record.tabela2 := nome_imagem
+				mariaDB.Insert(record, "reltable")		
+			}
+		}else{
+			record := {}
+			record.tipo := "image"
+			record.tabela1 := tabela1
+			record.tabela2 := nome_imagem
+			mariaDB.Insert(record, "reltable")	
+		}		
 	}
 
 	/*
@@ -127,7 +138,7 @@ class Imagem{
 		Relaciona uma imagem ja existente no 
 		banco com um modelo 
 	*/
-	link_up(info, image_name){
+	link_up(info, image_name, codigo = "", convert_image = 1){
 		Global mariaDB, global_image_path
 
 		if(info.empresa[2] = "" || image_name = ""){
@@ -135,8 +146,7 @@ class Imagem{
 			return
 		}
 
-		
-
+	
 		/*
 			Move a imagem para a pasta do programa para ser convertida
 		*/
@@ -145,7 +155,8 @@ class Imagem{
 		/*
 			Converte a imagem para o formato neccessario 
 		*/
-		this.convert_image("temp\" image_name ".jpg")
+		if(convert_image = 1)
+			this.convert_image("temp\" image_name ".jpg")
 
 		/*
 			Copia a imagem de volta para a pasta externa
@@ -155,13 +166,19 @@ class Imagem{
 		/*
 			Retira a entrada de referencia antiga 
 			caso exista
-		*/
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
+		*/		
+		if(codigo = ""){
+			tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
+		}else{
+			tabela1 := codigo 
+		}
+
 		this.remove_old_relation(tabela1)
 
 		/*
 			Insere a imagem na tabela de referencia
 		*/
+		append_debug("ira fazer a linkagem da imagem tabela1 : " tabela1 " image_name : " image_name)
 		record := {}
 		record.tipo := "image"
 		record.tabela1 := tabela1

@@ -120,7 +120,6 @@ inserir_modelo_view(model_table){
 		}
 		inserir_imagem_view("inserir_modelo_view", "modelos_foto_control")
 	}else if (fonte_imagem_radio = 2){
-		
 		/*
 			Ira carregar uma outra view onde sera possivel escolher a 
 			imagem do banco de dados
@@ -170,6 +169,7 @@ inserir_modelo_view(model_table){
 	return
 
 	excluir_modelo_button:
+	reset_debug()
 	info_inserir_modelo := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
 	info := get_item_info("M", "MODlv")
 	MsgBox, 4,, % "Deseja apagar o modelo " info_inserir_modelo.modelo[1] "e todas as suas dependencias?"

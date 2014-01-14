@@ -16,6 +16,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 /*
 	Parametros de configuracao 
 */
+
 $$ := JSON_load(A_WorkingDir "\settings.json")
 jsonString := JSON_to($$)
 settings := JSON_from(jsonString)
@@ -2191,44 +2192,44 @@ massainsertphoto(codtable){
 	db.loadlv("massaphoto","lv",codtable)
 	return 
 
-	massalv:
-	if A_GuiEvent = i
-	{
-		selecteditem2 := GetSelected("massaphoto","lv")
-		if(selecteditem2 = "" || selecteditem2 = "Codigos")
-			return 
-		result:=db.query("SELECT tipo,tabela1,tabela2 FROM reltable WHERE tipo='image' AND tabela1='" selecteditem2 "'")
-		if(result["tabela2"]!="")
-			db.loadimage("massaphoto","picture",result["tabela2"])
-		Else
-			guicontrol,,picture,% "noimage.png"
-	}
-	return 
+	;massalv:
+	;if A_GuiEvent = i
+	;{
+	;	selecteditem2 := GetSelected("massaphoto","lv")
+	;	if(selecteditem2 = "" || selecteditem2 = "Codigos")
+	;		return 
+	;	result:=db.query("SELECT tipo,tabela1,tabela2 FROM reltable WHERE tipo='image' AND tabela1='" selecteditem2 "'")
+	;	if(result["tabela2"]!="")
+	;		db.loadimage("massaphoto","picture",result["tabela2"])
+	;	Else
+	;		guicontrol,,picture,% "noimage.png"
+	;}
+	;return 
 
-	marcartodos:
-	gui,listview,lv
-	Loop, % LV_GetCount()
-		LV_Modify("","+check")
-	return 
+	;marcartodos:
+	;gui,listview,lv
+	;Loop, % LV_GetCount()
+	;	LV_Modify("","+check")
+	;return 
 
-	desmarcartodos:
-	gui,listview,lv
-	Loop, % LV_GetCount()
-		LV_Modify("","-check")
-	return 
+	;desmarcartodos:
+	;gui,listview,lv
+	;Loop, % LV_GetCount()
+	;	LV_Modify("","-check")
+	;return 
 
-	inserirfotoemmassa:  ;passa um array para o inserirfoto
-	result := GetCheckedRows("massaphoto","lv")
-	arrayofitems := {}
-	for,each,value in result{
-		arrayofitems[each] := result[each,1]
-		;MsgBox, % " valores no arrayofitems " arrayofitems[each]  
-	}
-	inserirfoto("","",arrayofitems)
-	return 
+	;inserirfotoemmassa:  ;passa um array para o inserirfoto
+	;result := GetCheckedRows("massaphoto","lv")
+	;arrayofitems := {}
+	;for,each,value in result{
+	;	arrayofitems[each] := result[each,1]
+	;	;MsgBox, % " valores no arrayofitems " arrayofitems[each]  
+	;}
+	;inserirfoto("","",arrayofitems)
+	;return 
 
-	excluirfotosemmassa:
-	return 
+	;excluirfotosemmassa:
+	;return 
 
 
 }
@@ -2752,7 +2753,6 @@ inserir2(args)
 		db.loadlv("inserir1","lv",args1["table"])
 		MsgBox,64,, % "valores inseridos com sucesso!!"
 		closefunc:=args1["closefunc"]
-		;MsgBox, % "closefunc "closefunc
 		;tvstring:=""
 		;gettable("empresa",0,"","")
 		%closefunc%(args)
@@ -2920,6 +2920,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, views/nova_conexao_view.ahk
 #include, views/inserir_val_view.ahk
 #include, views/estruturas_view.ahk 
+#include, views/foto_individual_view.ahk
 
 /*
 	Controllers
@@ -2928,3 +2929,4 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, controllers/inserir_valores_controller.ahk
 #include, controllers/inserir_bloqueio_controller.ahk
 #include, controllers/estruturas_controller.ahk
+#include, controllers/foto_individual_controller.ahk

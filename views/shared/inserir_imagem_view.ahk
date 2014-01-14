@@ -1,9 +1,10 @@
-inserir_imagem_view(owner_name, picture_control = ""){
+inserir_imagem_view(owner_name, picture_control = "", codigos_array = ""){
 	Global
 	Static s_picture_control, s_owner_name
 
 	s_picture_control := picture_control 
 	s_owner_name := owner_name 
+	s_codigos_array := codigos_array
 
 	FileSelectFile, source, 1, , Selecione uma imagem, Imagens (*.png; *.jpg; *.bmp)
 
@@ -46,7 +47,8 @@ inserir_imagem_view(owner_name, picture_control = ""){
 	/* 
 		Incluir a foto 
 	*/
-	db.Imagem.incluir(source, nome_imagem)
+	append_debug("ira inserir os valores source : " source " naome imagem : " nome_imagem "codigo array 1 " s_codigos_array["code", 1])
+	db.Imagem.incluir(source, nome_imagem, s_codigos_array)
 	
 	/*
 		Recarrega o controle da foto com 

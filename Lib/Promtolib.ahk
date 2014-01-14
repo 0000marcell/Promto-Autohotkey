@@ -1726,7 +1726,7 @@ createtag(prefix,prefix2,model,selectmodel,codelist,textsize=20,textcolor="ff000
 		; Pega a imagem
 		append_debug("ira buscar a imagem com a tabela1 : " prefix model selectmodel)
 		
-		imagepath := global_image_path db.Imagem.get_image_path(prefix model selectmodel) ".jpg"
+		imagepath := global_image_path db.Imagem.get_image_path(table[A_Index, 1]) ".jpg"
 		
 		append_debug("caminho da imagem retornado : " imagepath)
 

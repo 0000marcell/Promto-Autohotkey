@@ -1,10 +1,10 @@
-inserir_imagem_db_view(owner_name, picture_control, codigos_array){
+inserir_imagem_db_view(owner_name, picture_control, codigos_array = ""){
 	Global
 	Static s_picture_control, s_owner_name
 
 	s_picture_control := picture_control 
 	s_owner_name := owner_name 
-
+	s_codigos_array := codigos_array
 	/*
 		Gui init
 	*/
@@ -54,20 +54,25 @@ inserir_imagem_db_view(owner_name, picture_control, codigos_array){
 		a foto selecionada
 	*/
 	info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
-	
-	if(codigos_array[1] != 0){
-		for, each, value in codigos_array{
-			if(codigos_array[A_Index] = "")
+	valor_selecionado := GetSelected("inserir_imagem_db_view", "inserir_imagem_db_lv")
+	append_debug("valor selecionado que sera linkado : " valor_selecionado)
+	convert_image := ""
+	if(s_codigos_array["code", 1] != ""){
+		append_debug("o array de valores nao estava em branco! codigo " s_codigos_array["code", 1])
+		for, each, value in s_codigos_array["code"]{
+			append_debug("ira linkar com o array de codigos parametros info.emprsa " info.empresa[2] " codigo : " s_codigos_array["code", A_Index])
+			if(s_codigos_array["code", A_Index] = "")
 				Continue
-			db.Imagem.link_up(info, codigos_array[A_Index])
+			if(A_Index > 1)
+				convert_image = 0
+			db.Imagem.link_up(info, valor_selecionado, s_codigos_array["code", A_Index], convert_image)
 		}	
 	}else{
-		valor_selecionado := GetSelected("inserir_imagem_db_view", "inserir_imagem_db_lv")
 		db.Imagem.link_up(info, valor_selecionado)	
 	}
-
 	Gui, %s_owner_name%:default
-	GuiControl,, s_picture_control,%global_image_path%%valor_selecionado%.jpg 
+	GuiControl,, s_picture_control, %global_image_path%%valor_selecionado%.jpg 
+	MsgBox, % "As imagems foram salvas"
 	return
 
 	excluir_imagem_db_button:

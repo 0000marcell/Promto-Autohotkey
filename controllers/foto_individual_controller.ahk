@@ -6,10 +6,15 @@ massa_lv(){
 		selecteditem2 := GetSelected("massaphoto","lv")
 		if(selecteditem2 = "" || selecteditem2 = "Codigos")
 			return 
-		result:=db.query("SELECT tipo,tabela1,tabela2 FROM reltable WHERE tipo='image' AND tabela1='" selecteditem2 "'")
-		if(result["tabela2"]!="")
-			db.loadimage("massaphoto","picture",result["tabela2"])
-		Else
-			guicontrol,,picture,% "noimage.png"
+		image_path := db.Imagem.get_image_path(selecteditem2)
+		
+		if(image_path != ""){
+			full_image_path = %global_image_path%%image_path%.jpg
+		 	append_debug(full_image_path)
+			Guicontrol,, picture, % full_image_path 
+		}else{
+			Guicontrol,,Picture,% "img\sem_foto.jpg"
+		}	
 	}
 }
+

@@ -1,174 +1,664 @@
-prefix : TSP
- ordened_prefix : STP
- model_mask : 911
- model_name : TL.P.TGVP.911
-ira buscar a imagem com a tabela1 : TSP911TL.P.TGVP.911
-caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PROJETOR TL.P.TGVP.911.jpg
-codigo atual STP911MS500AL
-tabela de campos retornada TSP911oc
+prefix : TL
+ ordened_prefix : TL
+ model_mask : 010
+ model_name : TL.L.EXE.010
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\TESTE_INSERCAO.jpg
+codigo atual TL010222156ACE
+tabela de campos retornada TL010oc
 table_camp 1
-campname TIPO DE LAMPADA
-camp esp table TSP911TIPODELAMPADA
-table camp esp MS
-codepiece MS
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
 campname POTENCIA
-camp esp table TSP911POTENCIA
-table camp esp 150
-codepiece 150
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
 campname MATERIA PRIMA
-camp esp table TSP911MATERIAPRIMA
-table camp esp AL
-codepiece AL
-ira buscar a imagem com a tabela1 : TSP911TL.P.TGVP.911
-caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PROJETOR TL.P.TGVP.911.jpg
-codigo atual STP911VM150AL
-tabela de campos retornada TSP911oc
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\TESTE_INSERCAO.jpg
+codigo atual TL010222156ACS
+tabela de campos retornada TL010oc
 table_camp 1
-campname TIPO DE LAMPADA
-camp esp table TSP911TIPODELAMPADA
-table camp esp MS
-codepiece MS
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
 campname POTENCIA
-camp esp table TSP911POTENCIA
-table camp esp 150
-codepiece 150
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
 campname MATERIA PRIMA
-camp esp table TSP911MATERIAPRIMA
-table camp esp AL
-codepiece AL
-ira buscar a imagem com a tabela1 : TSP911TL.P.TGVP.911
-caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PROJETOR TL.P.TGVP.911.jpg
-codigo atual STP911VM250AL
-tabela de campos retornada TSP911oc
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\TESTE_INSERCAO.jpg
+codigo atual TL010222156AIE
+tabela de campos retornada TL010oc
 table_camp 1
-campname TIPO DE LAMPADA
-camp esp table TSP911TIPODELAMPADA
-table camp esp MS
-codepiece MS
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
 campname POTENCIA
-camp esp table TSP911POTENCIA
-table camp esp 150
-codepiece 150
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
 campname MATERIA PRIMA
-camp esp table TSP911MATERIAPRIMA
-table camp esp AL
-codepiece AL
-ira buscar a imagem com a tabela1 : TSP911TL.P.TGVP.911
-caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PROJETOR TL.P.TGVP.911.jpg
-codigo atual STP911VM400AL
-tabela de campos retornada TSP911oc
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\TESTE_INSERCAO.jpg
+codigo atual TL010222156AIS
+tabela de campos retornada TL010oc
 table_camp 1
-campname TIPO DE LAMPADA
-camp esp table TSP911TIPODELAMPADA
-table camp esp MS
-codepiece MS
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
 campname POTENCIA
-camp esp table TSP911POTENCIA
-table camp esp 150
-codepiece 150
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
 campname MATERIA PRIMA
-camp esp table TSP911MATERIAPRIMA
-table camp esp AL
-codepiece AL
-ira buscar a imagem com a tabela1 : TSP911TL.P.TGVP.911
-caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PROJETOR TL.P.TGVP.911.jpg
-codigo atual STP911VR160AL
-tabela de campos retornada TSP911oc
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\LUMINARIA TL.L.EXE.010.jpg
+codigo atual TL010222256ACE
+tabela de campos retornada TL010oc
 table_camp 1
-campname TIPO DE LAMPADA
-camp esp table TSP911TIPODELAMPADA
-table camp esp MS
-codepiece MS
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
 campname POTENCIA
-camp esp table TSP911POTENCIA
-table camp esp 150
-codepiece 150
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
 campname MATERIA PRIMA
-camp esp table TSP911MATERIAPRIMA
-table camp esp AL
-codepiece AL
-ira buscar a imagem com a tabela1 : TSP911TL.P.TGVP.911
-caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PROJETOR TL.P.TGVP.911.jpg
-codigo atual STP911VR250AL
-tabela de campos retornada TSP911oc
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\LUMINARIA TL.L.EXE.010.jpg
+codigo atual TL010222256ACS
+tabela de campos retornada TL010oc
 table_camp 1
-campname TIPO DE LAMPADA
-camp esp table TSP911TIPODELAMPADA
-table camp esp MS
-codepiece MS
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
 campname POTENCIA
-camp esp table TSP911POTENCIA
-table camp esp 150
-codepiece 150
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
 campname MATERIA PRIMA
-camp esp table TSP911MATERIAPRIMA
-table camp esp AL
-codepiece AL
-ira buscar a imagem com a tabela1 : TSP911TL.P.TGVP.911
-caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PROJETOR TL.P.TGVP.911.jpg
-codigo atual STP911VR400AL
-tabela de campos retornada TSP911oc
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\LUMINARIA TL.L.EXE.010.jpg
+codigo atual TL010222256AIE
+tabela de campos retornada TL010oc
 table_camp 1
-campname TIPO DE LAMPADA
-camp esp table TSP911TIPODELAMPADA
-table camp esp MS
-codepiece MS
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
 campname POTENCIA
-camp esp table TSP911POTENCIA
-table camp esp 150
-codepiece 150
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
 campname MATERIA PRIMA
-camp esp table TSP911MATERIAPRIMA
-table camp esp AL
-codepiece AL
-ira buscar a imagem com a tabela1 : TSP911TL.P.TGVP.911
-caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PROJETOR TL.P.TGVP.911.jpg
-codigo atual STP911VS150AL
-tabela de campos retornada TSP911oc
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\LUMINARIA TL.L.EXE.010.jpg
+codigo atual TL010222256AIS
+tabela de campos retornada TL010oc
 table_camp 1
-campname TIPO DE LAMPADA
-camp esp table TSP911TIPODELAMPADA
-table camp esp MS
-codepiece MS
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
 campname POTENCIA
-camp esp table TSP911POTENCIA
-table camp esp 150
-codepiece 150
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
 campname MATERIA PRIMA
-camp esp table TSP911MATERIAPRIMA
-table camp esp AL
-codepiece AL
-ira buscar a imagem com a tabela1 : TSP911TL.P.TGVP.911
-caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PROJETOR TL.P.TGVP.911.jpg
-codigo atual STP911VS250AL
-tabela de campos retornada TSP911oc
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\LUMINARIA TL.L.EXE.010.jpg
+codigo atual TL010222956ACS
+tabela de campos retornada TL010oc
 table_camp 1
-campname TIPO DE LAMPADA
-camp esp table TSP911TIPODELAMPADA
-table camp esp MS
-codepiece MS
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
 campname POTENCIA
-camp esp table TSP911POTENCIA
-table camp esp 150
-codepiece 150
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
 campname MATERIA PRIMA
-camp esp table TSP911MATERIAPRIMA
-table camp esp AL
-codepiece AL
-ira buscar a imagem com a tabela1 : TSP911TL.P.TGVP.911
-caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PROJETOR TL.P.TGVP.911.jpg
-codigo atual STP911VS400AL
-tabela de campos retornada TSP911oc
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\LUMINARIA TL.L.EXE.010.jpg
+codigo atual TL010222956AIS
+tabela de campos retornada TL010oc
 table_camp 1
-campname TIPO DE LAMPADA
-camp esp table TSP911TIPODELAMPADA
-table camp esp MS
-codepiece MS
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
 campname POTENCIA
-camp esp table TSP911POTENCIA
-table camp esp 150
-codepiece 150
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
 campname MATERIA PRIMA
-camp esp table TSP911MATERIAPRIMA
-table camp esp AL
-codepiece AL
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\LUMINARIA TL.L.EXE.010.jpg
+codigo atual TL010224156ACE
+tabela de campos retornada TL010oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
+campname MATERIA PRIMA
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\LUMINARIA TL.L.EXE.010.jpg
+codigo atual TL010224156ACS
+tabela de campos retornada TL010oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
+campname MATERIA PRIMA
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\LUMINARIA TL.L.EXE.010.jpg
+codigo atual TL010224156AIE
+tabela de campos retornada TL010oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
+campname MATERIA PRIMA
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\.jpg
+codigo atual TL010224156AIS
+tabela de campos retornada TL010oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
+campname MATERIA PRIMA
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\.jpg
+codigo atual TL010224256ACE
+tabela de campos retornada TL010oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
+campname MATERIA PRIMA
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\.jpg
+codigo atual TL010224256ACS
+tabela de campos retornada TL010oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
+campname MATERIA PRIMA
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\.jpg
+codigo atual TL010224256AIE
+tabela de campos retornada TL010oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
+campname MATERIA PRIMA
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\.jpg
+codigo atual TL010224256AIS
+tabela de campos retornada TL010oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
+campname MATERIA PRIMA
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\.jpg
+codigo atual TL010224956ACS
+tabela de campos retornada TL010oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
+campname MATERIA PRIMA
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : TL010TL.L.EXE.010
+caminho da imagem retornado : img\.jpg
+codigo atual TL010224956AIS
+tabela de campos retornada TL010oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table TL010QUANTIDADEDEREATORES
+table camp esp 2
+codepiece 2
+campname QUANTIDADE DE LAMPADAS
+camp esp table TL010QUANTIDADEDELAMPADAS
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table TL010POTENCIA
+table camp esp 2
+codepiece 2
+campname TENSAO
+camp esp table TL010TENSAO
+table camp esp 1
+codepiece 1
+campname FREQUENCIA
+camp esp table TL010FREQUENCIA
+table camp esp 56
+codepiece 56
+campname MATERIA PRIMA
+camp esp table TL010MATERIAPRIMA
+table camp esp AC
+codepiece AC
+campname AUTONOMIA
+camp esp table TL010AUTONOMIA
+table camp esp E
+codepiece E

@@ -153,6 +153,8 @@ inserir_modelo_view(model_table){
 	/*
 		Insere os valores na tabela 
 	*/
+	reset_debug()
+	append_debug("name " input_name "`n mascara " input_mascara "`n prefixo " prefixo)
 	db.Modelo.incluir(input_name, input_mascara, prefixo)
 
 	/*
@@ -176,6 +178,7 @@ inserir_modelo_view(model_table){
 	IfMsgBox Yes
 	{
 		select_number := GetSelected("inserir_modelo_view","inserir_modelo_lv","number")
+		append_debug("ira excluir o item modelo " info_inserir_modelo.modelo[1] " `n modelo mascara " info_inserir_modelo.modelo[2] " info " info.empresa[2])
 		db.Modelo.excluir(info_inserir_modelo.modelo[1], info_inserir_modelo.modelo[2], info)	
 		LV_Delete(select_number) 
 		select_number_main := GetSelected("M","MODlv","number")

@@ -409,6 +409,7 @@ return
 				empresa := get_tv_info("Empresa")
 
 				model_table := db.get_reference("Modelo", empresa.mascara tipo.mascara familia.nome)
+				;MsgBox, % "tabela de modelos " model_table
 			}
   	}
   	

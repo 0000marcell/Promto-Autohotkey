@@ -1729,12 +1729,21 @@ createtag(prefix,prefix2,model,selectmodel,codelist,textsize=20,textcolor="ff000
 		imagepath := global_image_path db.Imagem.get_image_path(table[A_Index, 1]) ".jpg"
 		
 		append_debug("caminho da imagem retornado : " imagepath)
+		f_hight := y-60
+		for, each, value in prefix2{
+			panel({x:x, y:f_hight, w:110, h:50, color: "nocolor", text:"Prefixo", textsize: 10, textcolor: textcolor, boardersize:0})
+			panel({x:x, y:f_hight+60, w:110, h:50, color: "nocolor", text:prefix2[A_Index], textsize: textsize, textcolor: textcolor})	
+			x += 120
+		}
+		x -= 120
+		/*
 
 		panel({x:x,y:y-60,w:110,h:50,color: "nocolor",text:"Familia",textsize: 10,textcolor: textcolor,boardersize:0})
 		panel({x:x,y:y,w:110,h:50,color: "nocolor",text:prefix2,textsize: textsize,textcolor: textcolor})
 		panel({x:x+=120,y:y-60,w:110,h:50,color: "nocolor",text:"Modelo",textsize: 10,textcolor: textcolor,boardersize:0})
-		panel({x:x,y:y,w:110,h:50,color: "nocolor",text:model,textsize: textsize,textcolor: textcolor})
+		panel({x:x,y:y,w:110,h:50,color: "nocolor",text: model,textsize: textsize,textcolor: textcolor})
 		
+		*/
 
 		codigo := table[A_Index,1]	
 		append_debug("codigo atual " codigo)
@@ -1790,14 +1799,14 @@ createtag(prefix,prefix2,model,selectmodel,codelist,textsize=20,textcolor="ff000
 		}
 
 		; Insere a foto na plaqueta  
-		panel({x:30,y:y+=60,w:200,h:200,color: "nocolor",imagepath: imagepath})
+		panel({x:30,y:y+=60,w:200,h:200,color: "nocolor", imagepath: imagepath})
 
-		panel({x:245,y:y,w:505,h:200,color: "nocolor",text: table[A_Index,2],textsize: 30,textcolor: textcolor})	
-		dottedliney := y+234.17	
+		panel({x:245,y: y,w: 850,h: 200,color: "nocolor",text: table[A_Index,2],textsize: 30,textcolor: textcolor})	
+		dottedliney := y + 234.17	
 		pPen := Gdip_CreatePen(0xff000000, 3)
-		DrawDottedLine(0,dottedliney,750,dottedliney)
+		DrawDottedLine(0,dottedliney,1500,dottedliney)
 		Gdip_DeletePen(pPen)
-		y+=234.17+81
+		y += 234.17+81
 	}
 	Gui,progress:destroy
 	MsgBox, % "O arquivo foi salvo!!"

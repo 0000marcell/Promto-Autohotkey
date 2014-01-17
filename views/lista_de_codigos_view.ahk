@@ -62,14 +62,13 @@ lista_de_codigos(info){
 	return
 
 	gerarplaquetas:
+	reset_debug()
 	prefix := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2]
 	model_mask := s_info.modelo[2]
 	ordened_prefix := db.get_ordened_prefix(s_info)
+	append_debug("ordened_prefix : " ordened_prefix[1])
 	StringReplace, ordened_prefix, ordened_prefix, %model_mask%,, All
 	model_name := s_info.modelo[1]
-	FileDelete, % "debug.txt"
-	
-	FileAppend, % "prefix : " prefix "`n ordened_prefix : " ordened_prefix "`n model_mask : " model_mask "`n model_name : " model_name "`n", % "debug.txt"
 	createtag(prefix, ordened_prefix, model_mask, model_name, prefix model_mask "Codigo")
 	return 
 

@@ -1,7 +1,6 @@
 foto_individual_view(){
 	Global
 
-	reset_debug()
 	info := get_item_info("M", "MODlv")
 	/*
 		GUi init 
@@ -15,7 +14,6 @@ foto_individual_view(){
 	Gui, Add, Button, x+260  w100 ginserirfotoemmassa , Inserir imagem
 	Gui, Show,, Adicionar fotos
 	code_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "codigo"
-	append_debug("code table " code_table)
 	db.load_lv("massaphoto","lv", code_table, 1)
 	return 
 
@@ -45,5 +43,4 @@ foto_individual_view(){
 
 	excluirfotosemmassa:
 	return 
-
 }

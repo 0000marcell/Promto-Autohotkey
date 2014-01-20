@@ -345,7 +345,9 @@ return
 			Apaga a familia selecionada e todos 
 			os seus subitems
 		*/
+		reset_debug()
 		info := get_item_info("M", "MODlv")
+		append_debug("familia nome " familia.nome " familia mascara " familia.mascara)
 		db.Familia.excluir(familia.nome, familia.mascara, info)
 		MsgBox, 64, Sucesso, % "A familia e todos os subitems foram apagados." 
 		TV_Delete(current_id)
@@ -362,9 +364,8 @@ return
 			os seus subitems
 		*/
 		info := get_item_info("M", "MODlv")
-		MsgBox, % "ira deletar a subfamilia " subfamilia.nome " mascara " subfamilia.mascara
+
 		db.Subfamilia.excluir(subfamilia.nome, subfamilia.mascara, info)
-		MsgBox, 64, Sucesso, % "A Subfamilia e todos os subitems foram apagados." 
 		TV_Delete(current_id)
 		/*
 			Limpa a listview da janela principal

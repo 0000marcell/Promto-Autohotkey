@@ -1,3 +1,871 @@
-name TL.MO.EXE.201
- mascara 201
- prefixo TIMOREF
+familia nome BOTAO familia mascara BO
+ira buscar a tabela de familias empresa mascara T tipo nome PRODUTOS INTERMEDIARIOS
+tabela de familias retornada TIFamilia
+ira inserir a familia com modelo 
+ira criar a tabela de modelos case nao exista TIBTModelo
+ira inserir a referencia da tabela de modelos
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+dentro da exclusao de modelos modelo : TL.BO.EXE.201 modelo mascara : 201
+ira verificar se existe modelo nome : TL.BO.EXE.201 modelo mascara : 201 prefixo : TIBT
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+dentro da exclusao de modelos modelo : TL.BO.EXE.201 modelo mascara : 201
+ira verificar se existe modelo nome : TL.BO.EXE.201 modelo mascara : 201 prefixo : TIBT
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+dentro da exclusao de modelos modelo : TL.BO.EXE.202 modelo mascara : 202
+ira verificar se existe modelo nome : TL.BO.EXE.202 modelo mascara : 202 prefixo : TIBT
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 212
+dentro da exclusao de modelos modelo : TL.BO.EXE.212 modelo mascara : 212
+ira verificar se existe modelo nome : TL.BO.EXE.212 modelo mascara : 212 prefixo : TIBT
+ modelo nome : TL.BT.EXE.201
+ modelo mascara : 201
+ira testar se existe
+ira gravar o item modelo nome TL.BT.EXE.201 mascara 201 tabela TIBTModelo
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+ modelo nome : TL.BT.EXE.202
+ modelo mascara : 202
+ira testar se existe
+ira gravar o item modelo nome TL.BT.EXE.202 mascara 202 tabela TIBTModelo
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ modelo nome : TL.BT.EXE.212
+ modelo mascara : 212
+ira testar se existe
+ira gravar o item modelo nome TL.BT.EXE.212 mascara 212 tabela TIBTModelo
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 212
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+valor selecionado que sera linkado : BOTAO SIMPLES PULSADOR TL.BO.EXE.201
+ira fazer a linkagem da imagem tabela1 : TIBT201TL.BT.EXE.201 image_name : BOTAO SIMPLES PULSADOR TL.BO.EXE.201
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+valor selecionado que sera linkado : BOTAO SINALEIRO TL.BO.EXE.202
+ira fazer a linkagem da imagem tabela1 : TIBT202TL.BT.EXE.202 image_name : BOTAO SINALEIRO TL.BO.EXE.202
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 212
+valor selecionado que sera linkado : BOTAO SINALEIRO PULSADOR
+ira fazer a linkagem da imagem tabela1 : TIBT212TL.BT.EXE.212 image_name : BOTAO SINALEIRO PULSADOR
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 212
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 212
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 212
+ira buscar a tabela de familias empresa mascara T tipo nome PRODUTOS INTERMEDIARIOS
+tabela de familias retornada TIFamilia
+ira inserir a familia com modelo 
+ira criar a tabela de modelos case nao exista TIBOModelo
+ira inserir a referencia da tabela de modelos
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 201
+empresa T
+ tipo I
+ familia BO
+ subfamilia CJB
+ modelo 201
+dentro da exclusao de modelos modelo : TL.BO.EXE.201 modelo mascara : 201
+ira verificar se existe modelo nome : TL.BO.EXE.201 modelo mascara : 201 prefixo : TIBO
+ira deletar da tabela TIBOModelo o modelo de mascara 201
+empresa T
+ tipo I
+ familia BO
+ subfamilia CJB
+ modelo 202
+dentro da exclusao de modelos modelo : TL.BO.EXE.202 modelo mascara : 202
+ira verificar se existe modelo nome : TL.BO.EXE.202 modelo mascara : 202 prefixo : TIBO
+ira deletar da tabela TIBOModelo o modelo de mascara 202
+empresa T
+ tipo I
+ familia BO
+ subfamilia CJB
+ modelo 212
+dentro da exclusao de modelos modelo : TL.BO.EXE.212 modelo mascara : 212
+ira verificar se existe modelo nome : TL.BO.EXE.212 modelo mascara : 212 prefixo : TIBO
+ira deletar da tabela TIBOModelo o modelo de mascara 212
+ modelo nome : PC 10
+ modelo mascara : 10T
+ira testar se existe
+ira gravar o item modelo nome PC 10 mascara 10T tabela TIBOModelo
+ modelo nome : PC 16
+ modelo mascara : 16T
+ira testar se existe
+ira gravar o item modelo nome PC 16 mascara 16T tabela TIBOModelo
+ modelo nome : PC 2.5(MINI)
+ modelo mascara : 25M
+ira testar se existe
+ira gravar o item modelo nome PC 2.5(MINI) mascara 25M tabela TIBOModelo
+ modelo nome : PC 2.5(TRILHO)
+ modelo mascara : 25T
+ira testar se existe
+ira gravar o item modelo nome PC 2.5(TRILHO) mascara 25T tabela TIBOModelo
+ modelo nome : PC 35
+ modelo mascara : 35T
+ira testar se existe
+ira gravar o item modelo nome PC 35 mascara 35T tabela TIBOModelo
+ modelo nome : PC 4
+ modelo mascara : 04T
+ira testar se existe
+ira gravar o item modelo nome PC 4 mascara 04T tabela TIBOModelo
+ modelo nome : PC 6
+ modelo mascara : 06T
+ira testar se existe
+ira gravar o item modelo nome PC 6 mascara 06T tabela TIBOModelo
+ modelo nome : PONTE CONECTORA
+ modelo mascara : PC
+ira testar se existe
+ira gravar o item modelo nome PONTE CONECTORA mascara PC tabela TIBOModelo
+ modelo nome : POSTE PARA TRILHO
+ modelo mascara : POT
+ira testar se existe
+ira gravar o item modelo nome POSTE PARA TRILHO mascara POT tabela TIBOModelo
+ modelo nome : IDENTIFICADOR DE REGUA
+ modelo mascara : IDT
+ira testar se existe
+ira gravar o item modelo nome IDENTIFICADOR DE REGUA mascara IDT tabela TIBOModelo
+ modelo nome : PC 2.5B(PARA TRILHO)
+ modelo mascara : 2BT
+ira testar se existe
+ira gravar o item modelo nome PC 2.5B(PARA TRILHO) mascara 2BT tabela TIBOModelo
+ modelo nome : CONECTOR PLASTICO
+ modelo mascara : CO
+ira testar se existe
+ira gravar o item modelo nome CONECTOR PLASTICO mascara CO tabela TIBOModelo
+ modelo nome : BORNE 3 VIAS
+ modelo mascara : B3
+ira testar se existe
+ira gravar o item modelo nome BORNE 3 VIAS mascara B3 tabela TIBOModelo
+ modelo nome : SINDAL
+ modelo mascara : SD
+ira testar se existe
+ira gravar o item modelo nome SINDAL mascara SD tabela TIBOModelo
+ modelo nome : BORNE CERAMICA
+ modelo mascara : CE
+ira testar se existe
+ira gravar o item modelo nome BORNE CERAMICA mascara CE tabela TIBOModelo
+empresa T
+ tipo I
+ familia BO
+ subfamilia CJB
+ modelo 04T
+empresa T
+ tipo I
+ familia BO
+ subfamilia CJB
+ modelo 06T
+empresa T
+ tipo I
+ familia BO
+ subfamilia CJB
+ modelo 10T
+empresa T
+ tipo I
+ familia BO
+ subfamilia CJB
+ modelo 16T
+empresa T
+ tipo I
+ familia BO
+ subfamilia CJB
+ modelo 25M
+empresa T
+ tipo I
+ familia BO
+ subfamilia CJB
+ modelo 25T
+empresa T
+ tipo I
+ familia BO
+ subfamilia CJB
+ modelo 2BT
+empresa T
+ tipo I
+ familia BO
+ subfamilia CJB
+ modelo 35T
+empresa T
+ tipo I
+ familia BO
+ subfamilia CJB
+ modelo B3
+empresa T
+ tipo I
+ familia BO
+ subfamilia CJB
+ modelo CE
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 04T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 06T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 10T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 16T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 04T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 04T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 06T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 04T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 16T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 10T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 06T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 04T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 06T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 04T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 06T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 10T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 16T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 25M
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 25T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 25M
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 25T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 2BT
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 35T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 2BT
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 35T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo B3
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 35T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 2BT
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 35T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo B3
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 35T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo B3
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo CE
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo B3
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo CE
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo CO
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo CO
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo IDT
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo CO
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo CE
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo CO
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo IDT
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo PC
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo POT
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo SD
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia TO
+ subfamilia DIV
+ modelo 251
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia TO
+ subfamilia DIV
+ modelo 252
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia TO
+ subfamilia DIV
+ modelo 253
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia TO
+ subfamilia DIV
+ modelo 251
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia TO
+ subfamilia DIV
+ modelo 252
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 04T
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 04T
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 06T
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 04T
+valor selecionado que sera linkado : BORNE NORMAL PARA TRILHO
+ira fazer a linkagem da imagem tabela1 : TIBO04TPC 4 image_name : BORNE NORMAL PARA TRILHO
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 06T
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 04T
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 06T
+valor selecionado que sera linkado : BORNE NORMAL PARA TRILHO
+ira fazer a linkagem da imagem tabela1 : TIBO06TPC 6 image_name : BORNE NORMAL PARA TRILHO
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 10T
+valor selecionado que sera linkado : BORNE NORMAL PARA TRILHO
+ira fazer a linkagem da imagem tabela1 : TIBO10TPC 10 image_name : BORNE NORMAL PARA TRILHO
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 16T
+valor selecionado que sera linkado : BORNE NORMAL PARA TRILHO
+ira fazer a linkagem da imagem tabela1 : TIBO16TPC 16 image_name : BORNE NORMAL PARA TRILHO
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 25M
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 16T
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 25M
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 06T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 04T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 10T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 16T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 25M
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 25M
+ira inserir os valores source : P:\DEP\image_back_up\ITBO25M BORNE DEGSON 25 MINI MID 1 UN.jpg naome imagem : BORNE 2.5 MINI codigo array 1 
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 25T
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 25M
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 25T
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 2BT
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 25T
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 25M
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 25T
+valor selecionado que sera linkado : BORNE NORMAL PARA TRILHO
+ira fazer a linkagem da imagem tabela1 : TIBO25TPC 2.5(TRILHO) image_name : BORNE NORMAL PARA TRILHO
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 25M
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 25T
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 2BT
+valor selecionado que sera linkado : BORNE NORMAL PARA TRILHO
+ira fazer a linkagem da imagem tabela1 : TIBO2BTPC 2.5B(PARA TRILHO) image_name : BORNE NORMAL PARA TRILHO
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 25T
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 2BT
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 35T
+valor selecionado que sera linkado : BORNE NORMAL PARA TRILHO
+ira fazer a linkagem da imagem tabela1 : TIBO35TPC 35 image_name : BORNE NORMAL PARA TRILHO
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 2BT
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo 35T
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo B3
+valor selecionado que sera linkado : BORNE NORMAL PARA TRILHO
+ira fazer a linkagem da imagem tabela1 : TIBOB3BORNE 3 VIAS image_name : BORNE NORMAL PARA TRILHO
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo CE
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo B3
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo CE
+empresa T
+ tipo I
+ familia BO
+ subfamilia DIV
+ modelo B3

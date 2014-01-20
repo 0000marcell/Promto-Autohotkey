@@ -62,7 +62,6 @@ lista_de_codigos(info){
 	return
 
 	gerarplaquetas:
-	reset_debug()
 	prefix := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2]
 	model_mask := s_info.modelo[2]
 	ordened_prefix := db.get_ordened_prefix(s_info)

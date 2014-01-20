@@ -14,6 +14,7 @@ class Modelo{
 			return
 		}
 
+		append_debug(" modelo nome : " modelo_nome "`n modelo mascara : " modelo_mascara)
 		if(modelo_nome = "" || modelo_mascara = ""){
 			MsgBox, % "o nome e a mascara do modelo nao podem estar em brancos!"
 			return			
@@ -23,6 +24,7 @@ class Modelo{
 			Verifica se a mascara a ser inserida 
 			ja existe
 		*/
+		append_debug("ira testar se existe")
 		if(this.exists(modelo_nome, modelo_mascara, prefixo)){
 			MsgBox,16,Erro, % " A mascara a ser inserida ja existe!" 
 			return 
@@ -33,6 +35,7 @@ class Modelo{
 		/*
 			Insere o valor na tabela
 		*/
+		append_debug("ira gravar o item modelo nome " modelo_nome " mascara " modelo_mascara " tabela " prefixo "Modelo")
 		record := {}
 		record.Modelos := modelo_nome
 		record.Mascara := modelo_mascara
@@ -587,6 +590,7 @@ class Modelo{
 	get_desc(info){
 		Global mariaDB
 
+		append_debug("empresa " info.empresa[2] "`n tipo " info.tipo[2] "`n familia " info.familia[2] "`n subfamilia " info.subfamilia[2] "`n modelo " info.modelo[2])  
 		if(info.subfamilia[2] != ""){
 			prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] 
 		}else{

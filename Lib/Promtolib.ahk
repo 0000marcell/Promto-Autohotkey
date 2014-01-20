@@ -295,6 +295,7 @@ get_tree(table,x,nivel,masc){
 			Break
 		}
 		ETF_TVSTRING .= "`n" . nivel . list[A_Index, 1]		
+		append_debug("o nome : " list[A_Index, 1] " >> mascara " list[A_Index, 2])
 		ETF_hashmask[list[A_Index, 1]] := list[A_Index, 2] 	
 		result := db.query("SELECT tabela2 FROM reltable WHERE tipo='" . field[x] . "' AND tabela1='" . masc . list[A_Index,1] . "'")
 		new_table := result["tabela2"]
@@ -747,7 +748,6 @@ check_if_ETF_exist(nome, mascara_antiga){
 get_item_info(window, lv, treeview = "main_tv", starting_id = "", same_window = ""){
 	Global empresa, tipo, familia, modelo
 	
-
 	empresa := get_tv_info("Empresa", 0, "M", treeview, starting_id, same_window)
 	tipo := get_tv_info("Tipo", 1, "M", treeview, starting_id, same_window)
 	familia := get_tv_info("Familia", 1, "M", treeview, starting_id, same_window)
@@ -1115,6 +1115,7 @@ show_image_and_code(image, with_desc = 1){
 			Pega a descricao 
 		*/
 		if(with_desc){
+			append_debug("ira buscar a descricao!")
 			desc_ := db.Modelo.get_desc(info)
 			StringSplit, desc_, desc_ ,|,
 			descricao_model := desc_1
@@ -1801,7 +1802,7 @@ createtag(prefix,prefix2,model,selectmodel,codelist,textsize=20,textcolor="ff000
 		; Insere a foto na plaqueta  
 		panel({x:30,y:y+=60,w:200,h:200,color: "nocolor", imagepath: imagepath})
 
-		panel({x:245,y: y,w: 850,h: 200,color: "nocolor",text: table[A_Index,2],textsize: 30,textcolor: textcolor})	
+		panel({x:245,y: y,w: 500,h: 200,color: "nocolor",text: table[A_Index,2],textsize: 30,textcolor: textcolor})	
 		dottedliney := y + 234.17	
 		pPen := Gdip_CreatePen(0xff000000, 3)
 		DrawDottedLine(0,dottedliney,1500,dottedliney)

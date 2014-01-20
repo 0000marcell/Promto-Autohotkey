@@ -195,12 +195,7 @@ class Familia{
 			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela"
 			return 
 		}
-
-		if(recursiva = 1){
-			this.remove_subitems(familia_nome, familia_mascara, info)
-			return
-		}
- 
+		
 		try{
 			mariaDB.Query(
 			(JOIN 
@@ -210,6 +205,11 @@ class Familia{
 		}catch e 
 			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de Familias `n " ExceptionDetail(e)
 		
+		if(recursiva = 1){
+			this.remove_subitems(familia_nome, familia_mascara, info)
+			return
+		}
+
 		/*
 			Exclui a tabela de modelos
 			relacionada com essa familia

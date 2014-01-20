@@ -1,3 +1,14 @@
-name TL.MO.EXE.201
- mascara 201
- prefixo TIMOREF
+ira remover o item familia nome TESTE8
+ familia mascara TE8
+tabela de familia retornada TIFamilia
+ familia nome TESTE8
+ familia mascara TE8
+ira deletar recursivamente !
+tipo Subfamilia
+ira buscar a referencia da tabela 
+referencia da tabela retornada TITE8Subfamilia
+tipo 
+ira buscar a referencia da tabela 
+referencia da tabela retornada 
+ira deletar os subitems nome TESTE10
+ mascara TE10 nivel Modelo

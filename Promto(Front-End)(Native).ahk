@@ -346,7 +346,9 @@ return
 			os seus subitems
 		*/
 		info := get_item_info("M", "MODlv")
-		db.Familia.excluir(familia.nome, familia.mascara, info)
+		reset_debug()
+		append_debug("ira remover o item familia nome " info.familia[1] "`n familia mascara " info.familia[2])
+		db.Familia.excluir(info.familia[1], info.familia[2], info)
 		MsgBox, 64, Sucesso, % "A familia e todos os subitems foram apagados." 
 		TV_Delete(current_id)
 		
@@ -362,7 +364,6 @@ return
 			os seus subitems
 		*/
 		info := get_item_info("M", "MODlv")
-		MsgBox, % "ira deletar a subfamilia " subfamilia.nome " mascara " subfamilia.mascara
 		db.Subfamilia.excluir(subfamilia.nome, subfamilia.mascara, info)
 		MsgBox, 64, Sucesso, % "A Subfamilia e todos os subitems foram apagados." 
 		TV_Delete(current_id)

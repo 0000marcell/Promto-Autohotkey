@@ -120,8 +120,6 @@ inserir_ETF_view(window, treeview, current_id, columns){
 		edit_mask_ETF := check_if_ETF_exist(edit_name_ETF, edit_mask_ETF) 
 		if(old_edit_mask != edit_mask_ETF)
 			MsgBox, % "Ja existia uma mascara para o nome inserido `n por isso a mascara inserida foi trocada de " old_edit_mask " para " edit_mask_ETF 
-		reset_debug()
-		append_debug("ira inserir a familia name " edit_name_ETF "`n mascara " edit_mask_ETF "`n familia prefixo " fam_prefix "`n tipo nome " tipo_nome)
 		
 		if(db.Familia.incluir(edit_name_ETF, edit_mask_ETF, fam_prefix, tipo_nome)){
 			ETF_hashmask[edit_name_ETF] := edit_mask_ETF

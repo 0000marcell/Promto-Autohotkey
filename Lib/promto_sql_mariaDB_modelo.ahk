@@ -118,19 +118,16 @@ class Modelo{
 	excluir(modelo_nome = "", modelo_mascara = "", info = "", recursiva = 1){
 		Global mariaDB
 
-		append_debug("dentro da exclusao de modelos modelo : " modelo_nome " modelo mascara : " modelo_mascara)
 		/*
 		 Excluir a entrada do modelo
 		 na tabela de modelos
 		*/
 		prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] 
-		append_debug("ira verificar se existe modelo nome : " modelo_nome " modelo mascara : " modelo_mascara " prefixo : " prefixo) 
 		if(!this.exists(modelo_nome, modelo_mascara, prefixo)){
 			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela"
 			return 
 		}
 
-		append_debug("ira deletar da tabela " prefixo "Modelo o modelo de mascara " modelo_mascara)
 		try{
 			mariaDB.Query(
 			(JOIN 

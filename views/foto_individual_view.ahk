@@ -1,7 +1,6 @@
 foto_individual_view(){
 	Global
 
-	reset_debug()
 	info := get_item_info("M", "MODlv")
 	/*
 		GUi init 

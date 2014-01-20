@@ -140,7 +140,6 @@ inserir_modelo_view(model_table){
 	Gui, Submit, Nohide
 	Gui, insert_dialogo_2:destroy
 	prefixo := empresa.mascara tipo.mascara familia.mascara subfamilia.mascara
-
 	/*
 		Verifica se algum dos valores necessarios esta em branco
 	*/
@@ -153,8 +152,6 @@ inserir_modelo_view(model_table){
 	/*
 		Insere os valores na tabela 
 	*/
-	reset_debug()
-	append_debug("name " input_name "`n mascara " input_mascara "`n prefixo " prefixo)
 	db.Modelo.incluir(input_name, input_mascara, prefixo)
 
 	/*
@@ -171,7 +168,6 @@ inserir_modelo_view(model_table){
 	return
 
 	excluir_modelo_button:
-	reset_debug()
 	info_inserir_modelo := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
 	info := get_item_info("M", "MODlv")
 	MsgBox, 4,, % "Deseja apagar o modelo " info_inserir_modelo.modelo[1] "e todas as suas dependencias?"

@@ -12,3 +12,977 @@ ira buscar a referencia da tabela
 referencia da tabela retornada 
 ira deletar os subitems nome TESTE10
  mascara TE10 nivel Modelo
+ordened_prefix : I
+ira buscar a imagem com a tabela1 : TICDIV002TL.C.EXE.002
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+codigo atual ITC002DIVCHAI
+tabela de campos retornada TICDIV002oc
+table_camp 1
+campname PARTES
+camp esp table TICDIV002PARTES
+table camp esp CHAI
+codepiece CHAI
+ira buscar a imagem com a tabela1 : TICDIV002TL.C.EXE.002
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+codigo atual ITC002DIVDBAI
+tabela de campos retornada TICDIV002oc
+table_camp 1
+campname PARTES
+camp esp table TICDIV002PARTES
+table camp esp CHAI
+codepiece CHAI
+ira buscar a imagem com a tabela1 : TICDIV002TL.C.EXE.002
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+codigo atual ITC002DIVPBAI
+tabela de campos retornada TICDIV002oc
+table_camp 1
+campname PARTES
+camp esp table TICDIV002PARTES
+table camp esp CHAI
+codepiece CHAI
+ordened_prefix : I
+ira buscar a imagem com a tabela1 : TICDIV002TL.C.EXE.002
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+codigo atual ITC002DIVCHAI
+tabela de campos retornada TICDIV002oc
+table_camp 1
+campname PARTES
+camp esp table TICDIV002PARTES
+table camp esp CHAI
+codepiece CHAI
+ira buscar a imagem com a tabela1 : TICDIV002TL.C.EXE.002
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+codigo atual ITC002DIVDBAI
+tabela de campos retornada TICDIV002oc
+table_camp 1
+campname PARTES
+camp esp table TICDIV002PARTES
+table camp esp CHAI
+codepiece CHAI
+ira buscar a imagem com a tabela1 : TICDIV002TL.C.EXE.002
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+codigo atual ITC002DIVPBAI
+tabela de campos retornada TICDIV002oc
+table_camp 1
+campname PARTES
+camp esp table TICDIV002PARTES
+table camp esp CHAI
+codepiece CHAI
+ordened_prefix : I
+ira buscar a imagem com a tabela1 : TICDIV002TL.C.EXE.002
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+codigo atual ITC002DIVCHAI
+tabela de campos retornada TICDIV002oc
+table_camp 1
+campname PARTES
+camp esp table TICDIV002PARTES
+table camp esp CHAI
+codepiece CHAI
+ira buscar a imagem com a tabela1 : TICDIV002TL.C.EXE.002
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+codigo atual ITC002DIVDBAI
+tabela de campos retornada TICDIV002oc
+table_camp 1
+campname PARTES
+camp esp table TICDIV002PARTES
+table camp esp CHAI
+codepiece CHAI
+ira buscar a imagem com a tabela1 : TICDIV002TL.C.EXE.002
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+codigo atual ITC002DIVPBAI
+tabela de campos retornada TICDIV002oc
+table_camp 1
+campname PARTES
+camp esp table TICDIV002PARTES
+table camp esp CHAI
+codepiece CHAI
+code table TICDIV002codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+code table TICDIV003codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Fotos Novas\CAM00757.jpg naome imagem : FECHO DA CAIXA 003 codigo array 1 ITC003DIVFHAI
+ira inserir a imagem tabela1 : ITC003DIVFHAI tabela2 FECHO DA CAIXA 003 
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Fotos Novas\CAM00755.jpg naome imagem : PARAFUSO DA DOBRADICA DA CAIXA 003codigo array 1 ITC003DIVPADBAI
+ira inserir a imagem tabela1 : ITC003DIVPADBAI tabela2 PARAFUSO DA DOBRADICA DA CAIXA 003
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Caixa\ITCDIV003 PINO DOBRADICA ACO INOX.jpg naome imagem : PINA DA DOBRADICA DA CAIXA 003codigo array 1 ITC003DIVPIDBAI
+ira inserir a imagem tabela1 : ITC003DIVPIDBAI tabela2 PINA DA DOBRADICA DA CAIXA 003
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Caixa\ITCDIV003 ARRUELA DA DOBRADICA.jpg naome imagem : PORCA DA DOBRADICA DA CAIXA 003codigo array 1 ITC003DIVPRDB
+ira inserir a imagem tabela1 : ITC003DIVPRDB tabela2 PORCA DA DOBRADICA DA CAIXA 003
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Caixa\ITCDIV003 INSERTO.jpg naome imagem : REBITE DA CAIXA 003codigo array 1 ITC003DIVREAI
+ira inserir a imagem tabela1 : ITC003DIVREAI tabela2 REBITE DA CAIXA 003
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Caixa\ITCDIV003 SUPORTE DA CAIXA ACO INOX.jpg naome imagem : SUPORTE DA CAIXA 003codigo array 1 ITC003DIVSPAI
+ira inserir a imagem tabela1 : ITC003DIVSPAI tabela2 SUPORTE DA CAIXA 003
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+ordened_prefix : I
+ira buscar a imagem com a tabela1 : TICDIV003TL.C.EXE.003
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+codigo atual ITC003DIVANAP
+tabela de campos retornada TICDIV003oc
+table_camp 1
+campname PARTE
+camp esp table TICDIV003PARTE
+table camp esp ANAP
+codepiece ANAP
+ira buscar a imagem com a tabela1 : TICDIV003TL.C.EXE.003
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITC003DIVDBAI
+tabela de campos retornada TICDIV003oc
+table_camp 1
+campname PARTE
+camp esp table TICDIV003PARTE
+table camp esp ANAP
+codepiece ANAP
+ira buscar a imagem com a tabela1 : TICDIV003TL.C.EXE.003
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+codigo atual ITC003DIVFHAI
+tabela de campos retornada TICDIV003oc
+table_camp 1
+campname PARTE
+camp esp table TICDIV003PARTE
+table camp esp ANAP
+codepiece ANAP
+ira buscar a imagem com a tabela1 : TICDIV003TL.C.EXE.003
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+codigo atual ITC003DIVISAI
+tabela de campos retornada TICDIV003oc
+table_camp 1
+campname PARTE
+camp esp table TICDIV003PARTE
+table camp esp ANAP
+codepiece ANAP
+ira buscar a imagem com a tabela1 : TICDIV003TL.C.EXE.003
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+codigo atual ITC003DIVPADBAI
+tabela de campos retornada TICDIV003oc
+table_camp 1
+campname PARTE
+camp esp table TICDIV003PARTE
+table camp esp ANAP
+codepiece ANAP
+ira buscar a imagem com a tabela1 : TICDIV003TL.C.EXE.003
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+codigo atual ITC003DIVPIDBAI
+tabela de campos retornada TICDIV003oc
+table_camp 1
+campname PARTE
+camp esp table TICDIV003PARTE
+table camp esp ANAP
+codepiece ANAP
+ira buscar a imagem com a tabela1 : TICDIV003TL.C.EXE.003
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+codigo atual ITC003DIVPRDB
+tabela de campos retornada TICDIV003oc
+table_camp 1
+campname PARTE
+camp esp table TICDIV003PARTE
+table camp esp ANAP
+codepiece ANAP
+ira buscar a imagem com a tabela1 : TICDIV003TL.C.EXE.003
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+codigo atual ITC003DIVREAI
+tabela de campos retornada TICDIV003oc
+table_camp 1
+campname PARTE
+camp esp table TICDIV003PARTE
+table camp esp ANAP
+codepiece ANAP
+ira buscar a imagem com a tabela1 : TICDIV003TL.C.EXE.003
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+codigo atual ITC003DIVSPAI
+tabela de campos retornada TICDIV003oc
+table_camp 1
+campname PARTE
+camp esp table TICDIV003PARTE
+table camp esp ANAP
+codepiece ANAP
+code table TICDIV002codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+code table TICDIV002codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Caixa\ITCFH003 FECHO CAIXA.jpg naome imagem : FECHO DA CAIXA 002codigo array 1 ITC002DIVFHAI
+ira inserir a imagem tabela1 : ITC002DIVFHAI tabela2 FECHO DA CAIXA 002
+code table TICDIV003codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+code table TICDIV002codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+code table TICDIV002codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+code table TICDIV002codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+code table TIIDBOcodigo
+code table TICDIV002codigo
+code table TICDIV002codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+code table TICDIV003codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+ira inserir os valores source : C:\Users\Monique Soares\Desktop\identificador_do_borne.jpg naome imagem : IDENTIFICADOR DO BORNEcodigo array 1 
+code table TIIDBOcodigo
+valor selecionado que sera linkado : IDENTIFICADOR DO BORNE
+o array de valores nao estava em branco! codigo ITBOIDPL
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBOIDPL
+ira fazer a linkagem da imagem tabela1 : ITBOIDPL image_name : IDENTIFICADOR DO BORNE
+code table TICDIV002codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+code table TICDIV002codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Fotos Novas\CAM00760.jpg naome imagem : PINO DA DOBRADICA EM ACO INOXcodigo array 1 ITC002DIVPBAI
+ira inserir a imagem tabela1 : ITC002DIVPBAI tabela2 PINO DA DOBRADICA EM ACO INOX
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA EM ACO INOX.jpg
+code table TICDIV002codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA EM ACO INOX.jpg
+code table TICDIV002codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA EM ACO INOX.jpg
+code table TICDIV003codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Fotos Novas\CAM00762.jpg naome imagem : DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOXcodigo array 1 ITC003DIVDBAI
+ira inserir a imagem tabela1 : ITC003DIVDBAI tabela2 DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINA DA DOBRADICA DA CAIXA 003.jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Fotos Novas\CAM00764.jpg naome imagem : PINO DA DOBRADICA DA CAIXA TL.C.EXE.003codigo array 1 ITC003DIVPIDBAI
+ira inserir a imagem tabela1 : ITC003DIVPIDBAI tabela2 PINO DA DOBRADICA DA CAIXA TL.C.EXE.003
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Fotos Novas\CAM00753.jpg naome imagem : PORCA DA DOBRADICA DA CAIXA 003codigo array 1 ITC003DIVPRDB
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+code table TL010codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TESTE_INSERCAO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TESTE_INSERCAO.jpg
+code table TICDIV002codigo
+code table TICDIV002codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA EM ACO INOX.jpg
+code table TICDIV003codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Fotos Novas\CAM00753.jpg naome imagem : PORCA DA DOBRADICA DA CAIXA 003codigo array 1 ITC003DIVPRDB
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Fotos Novas\CAM00753.jpg naome imagem : PORCA DA DOBRADICA DA CAIXA 003codigo array 1 ITC003DIVPRDB
+ira inserir a imagem tabela1 : ITC003DIVPRDB tabela2 PORCA DA DOBRADICA DA CAIXA 003
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+code table TICDIV002codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA EM ACO INOX.jpg
+code table TICDIV003codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Fotos Novas\CAM00768.jpg naome imagem : PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003codigo array 1 ITC003DIVPIAT
+ira inserir a imagem tabela1 : ITC003DIVPIAT tabela2 PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+code table TICDIV003codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+code table TICDIV003codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA 003.jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Fotos Novas\CAM00770.jpg naome imagem : SUPORTE DA CAIXA TL.C.EXE.003 EM ACO INOX codigo array 1 ITC003DIVSPAI
+ira inserir a imagem tabela1 : ITC003DIVSPAI tabela2 SUPORTE DA CAIXA TL.C.EXE.003 EM ACO INOX 
+ira inserir os valores source : Y:\DEP\image_back_up\Fotos Novas\CAM00758.jpg naome imagem : SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONOcodigo array 1 ITC003DIVSPAC
+ira inserir a imagem tabela1 : ITC003DIVSPAC tabela2 SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONO
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO INOX .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO INOX .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO INOX .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+code table TICDIV002codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 002.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA EM ACO INOX.jpg
+code table TICDIV002codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE DAS CAIXAS 002 E 003.jpg
+code table TICDIV003codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO INOX .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+code table TICDIV003codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO INOX .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO INOX .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+code table TICDIV003codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+valor selecionado que sera linkado : DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX
+o array de valores nao estava em branco! codigo ITC003DIVDBAC
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITC003DIVDBAC
+ira fazer a linkagem da imagem tabela1 : ITC003DIVDBAC image_name : DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+valor selecionado que sera linkado : PINO DA DOBRADICA DA CAIXA TL.C.EXE.003
+o array de valores nao estava em branco! codigo ITC003DIVPIDBAC
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITC003DIVPIDBAC
+ira fazer a linkagem da imagem tabela1 : ITC003DIVPIDBAC image_name : PINO DA DOBRADICA DA CAIXA TL.C.EXE.003
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+code table TICDIV003codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO INOX .jpg
+code table TICDIV003codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+code table TICDIV003codigo
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ANEL ANTI-PERDA DOS PARAFUSOS DAS CAIXAS 002 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DOBRADICA DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\FECHO DA CAIXA 003 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\INSERTO DA CAIXA TL.C.EXE.003 EM ACO INOX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PARAFUSO DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE ATERRAMENTO DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA DOBRADICA DA CAIXA TL.C.EXE.003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PORCA DA DOBRADICA DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\REBITE DA CAIXA 003.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DA CAIXA TL.C.EXE.003 EM ACO CARBONO.jpg

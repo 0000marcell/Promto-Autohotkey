@@ -7,7 +7,7 @@ foto_individual_view(){
 	*/
 	Gui,massaphoto:New 
 	Gui, Color,%GLOBAL_COLOR%
-	Gui, Add, Listview, w500 h300 xm section checked vlv altsubmit gmassalv,Codigos|Descricao Completa|Descricao Resumida, Descricao Ingles
+	Gui, Add, Listview, w900 h300 xm section checked vlv altsubmit gmassalv,Codigos|Descricao Completa|Descricao Resumida, Descricao Ingles
 	Gui, Add, Picture, x+5 w300 h300 vpicture, % "img\sem_foto.jpg"
 	Gui, Add, Button, xm y+5 w100 gmarcartodos, Marcar todos
 	Gui, Add, Button, x+5 w100 gdesmarcartodos, Desmarcar todos

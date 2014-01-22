@@ -3759,3 +3759,954 @@ campname PARTES
 camp esp table TITODIV041PARTES
 table camp esp AC1PL
 codepiece AC1PL
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia TO
+ subfamilia DIV
+ modelo 041
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015N
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015N
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015R
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015N
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015R
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015R
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015N
+valor selecionado que sera linkado : LUMINARIA TL.L.EXN.015N
+o array de valores nao estava em branco! codigo ITL015NCJCGEAL
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITL015NCJCGEAL
+ira fazer a linkagem da imagem tabela1 : ITL015NCJCGEAL image_name : LUMINARIA TL.L.EXN.015N
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITL015NCJCPMAL
+ira fazer a linkagem da imagem tabela1 : ITL015NCJCPMAL image_name : LUMINARIA TL.L.EXN.015N
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.EXN.015N.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.EXN.015N.jpg
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015R
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia REF
+ modelo 015N
+empresa T
+ tipo I
+ familia L
+ subfamilia REF
+ modelo 015N
+ modelo nome : TL.N.EXD.801
+ modelo mascara : 801
+ira testar se existe
+ira gravar o item modelo nome TL.N.EXD.801 mascara 801 tabela TSNModelo
+ modelo nome : TL.N.EXD.802
+ modelo mascara : 802
+ira testar se existe
+ira gravar o item modelo nome TL.N.EXD.802 mascara 802 tabela TSNModelo
+ modelo nome : TL.N.TGVP.803
+ modelo mascara : 803
+ira testar se existe
+ira gravar o item modelo nome TL.N.TGVP.803 mascara 803 tabela TSNModelo
+ modelo nome : TL.N.806
+ modelo mascara : 806
+ira testar se existe
+ira gravar o item modelo nome TL.N.806 mascara 806 tabela TSNModelo
+ modelo nome : TL.N.807
+ modelo mascara : 807
+ira testar se existe
+ira gravar o item modelo nome TL.N.807 mascara 807 tabela TSNModelo
+ modelo nome : TL.N.808
+ modelo mascara : 808
+ira testar se existe
+ira gravar o item modelo nome TL.N.808 mascara 808 tabela TSNModelo
+ modelo nome : TL.N.809
+ modelo mascara : 809
+ira testar se existe
+ira gravar o item modelo nome TL.N.809 mascara 809 tabela TSNModelo
+ modelo nome : TL.N.810
+ modelo mascara : 810
+ira testar se existe
+ira gravar o item modelo nome TL.N.810 mascara 810 tabela TSNModelo
+ modelo nome : TL.N.811
+ modelo mascara : 811
+ira testar se existe
+ira gravar o item modelo nome TL.N.811 mascara 811 tabela TSNModelo
+ modelo nome : TL.N.814
+ modelo mascara : 814
+ira testar se existe
+ira gravar o item modelo nome TL.N.814 mascara 814 tabela TSNModelo
+ modelo nome : TL.N.816
+ modelo mascara : 816
+ira testar se existe
+ira gravar o item modelo nome TL.N.816 mascara 816 tabela TSNModelo
+ modelo nome : TL.N.EXE.817
+ modelo mascara : 817
+ira testar se existe
+ira gravar o item modelo nome TL.N.EXE.817 mascara 817 tabela TSNModelo
+ modelo nome : TL.N.818
+ modelo mascara : 818
+ira testar se existe
+ira gravar o item modelo nome TL.N.818 mascara 818 tabela TSNModelo
+ modelo nome : TL.N.TGVP.819
+ modelo mascara : 819
+ira testar se existe
+ira gravar o item modelo nome TL.N.TGVP.819 mascara 819 tabela TSNModelo
+ modelo nome : TL.N.820
+ modelo mascara : 820
+ira testar se existe
+ira gravar o item modelo nome TL.N.820 mascara 820 tabela TSNModelo
+ modelo nome : TL.N.821
+ modelo mascara : 821
+ira testar se existe
+ira gravar o item modelo nome TL.N.821 mascara 821 tabela TSNModelo
+ modelo nome : TL.N.822
+ modelo mascara : 822
+ira testar se existe
+ira gravar o item modelo nome TL.N.822 mascara 822 tabela TSNModelo
+ modelo nome : TL.N.823
+ modelo mascara : 823
+ira testar se existe
+ira gravar o item modelo nome TL.N.823 mascara 823 tabela TSNModelo
+ modelo nome : TL.N.824
+ modelo mascara : 824
+ira testar se existe
+ira gravar o item modelo nome TL.N.824 mascara 824 tabela TSNModelo
+ modelo nome : TL.N.825
+ modelo mascara : 825
+ira testar se existe
+ira gravar o item modelo nome TL.N.825 mascara 825 tabela TSNModelo
+ modelo nome : TL.N.EXD.837
+ modelo mascara : 837
+ira testar se existe
+ira gravar o item modelo nome TL.N.EXD.837 mascara 837 tabela TSNModelo
+ modelo nome : TL.N.EXE.FH800
+ modelo mascara : FH800
+ira testar se existe
+ira gravar o item modelo nome TL.N.EXE.FH800 mascara FH800 tabela TSNModelo
+ modelo nome : TL.N.EXE.HFL
+ modelo mascara : HFL
+ira testar se existe
+ira gravar o item modelo nome TL.N.EXE.HFL mascara HFL tabela TSNModelo
+ modelo nome : TL.N.EXD.HSL
+ modelo mascara : HSL
+ira testar se existe
+ira gravar o item modelo nome TL.N.EXD.HSL mascara HSL tabela TSNModelo
+ modelo nome : TL.N.EXE.L75
+ modelo mascara : L75
+ira testar se existe
+ira gravar o item modelo nome TL.N.EXE.L75 mascara L75 tabela TSNModelo
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 801
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 802
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 803
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 806
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 807
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 806
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 807
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 808
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 809
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 811
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 816
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 818
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 820
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 822
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 824
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 825
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 824
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 825
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 824
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 823
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 822
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 821
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 820
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 825
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 824
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 825
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo FH800
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo HFL
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo L75
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo HSL
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo FH800
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 825
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 824
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 823
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 822
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 821
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 820
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 819
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 817
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 814
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 810
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 808
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 806
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 803
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 801
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 802
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 803
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 817
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 821
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 823
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 837
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 825
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 824
+empresa T
+ tipo S
+ familia N
+ subfamilia REF
+ modelo 824
+empresa T
+ tipo S
+ familia N
+ subfamilia REF
+ modelo 823
+empresa T
+ tipo S
+ familia N
+ subfamilia REF
+ modelo 824
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 824
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 825
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 825
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 824
+empresa T
+ tipo S
+ familia N
+ subfamilia REF
+ modelo 824
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 825
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 824
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 825
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 824
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 825
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 824
+ira inserir os valores source : Y:\DEP\image_back_up\TN824 AMARELO.jpg naome imagem : LANTERNA DE AUXILIO A NAVEGACAO 824 AMARELAcodigo array 1 STN824AMPE
+ira inserir a imagem tabela1 : STN824AMPE tabela2 LANTERNA DE AUXILIO A NAVEGACAO 824 AMARELA
+ira inserir os valores source : Y:\DEP\image_back_up\TN824.jpg naome imagem : LANTERNA DE AUXILIO A NAVEGACAO 824 NA COR BRANCAcodigo array 1 STN824BRPE
+ira inserir a imagem tabela1 : STN824BRPE tabela2 LANTERNA DE AUXILIO A NAVEGACAO 824 NA COR BRANCA
+ira inserir os valores source : Y:\DEP\image_back_up\TN824 VERDE.jpg naome imagem : LANTERNA DE AUXILIO A NAVEGACAO 824 NA COR VERDEcodigo array 1 STN824VDPE
+ira inserir a imagem tabela1 : STN824VDPE tabela2 LANTERNA DE AUXILIO A NAVEGACAO 824 NA COR VERDE
+ira inserir os valores source : Y:\DEP\image_back_up\TN824 VERMELHO.jpg naome imagem : LANTERNA DE AUXILIO A NAVEGACAO 824 NA COR VERMELHAcodigo array 1 STN824VMPE
+ira inserir a imagem tabela1 : STN824VMPE tabela2 LANTERNA DE AUXILIO A NAVEGACAO 824 NA COR VERMELHA
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LANTERNA DE AUXILIO A NAVEGACAO 824 NA COR VERDE.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LANTERNA DE AUXILIO A NAVEGACAO 824 NA COR BRANCA.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LANTERNA DE AUXILIO A NAVEGACAO 824 AMARELA.jpg
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 825
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 824
+empresa T
+ tipo S
+ familia N
+ subfamilia REF
+ modelo 824
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 825
+ira buscar a tabela de familias empresa mascara T tipo nome PRODUTOS INTERMEDIARIOS
+tabela de familias retornada TIFamilia
+ira inserir a familia com modelo 
+ira criar a tabela de modelos case nao exista TIEQIModelo
+ira inserir a referencia da tabela de modelos
+ modelo nome : MANTA DE CERAMICA
+ modelo mascara : MC
+ira testar se existe
+ modelo nome : MANTA CERAMICA
+ modelo mascara : MC
+ira testar se existe
+ira gravar o item modelo nome MANTA CERAMICA mascara MC tabela TIEQIModelo
+empresa T
+ tipo I
+ familia EQI
+ subfamilia 
+ modelo MC
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia EQI
+ subfamilia 
+ modelo MC
+empresa T
+ tipo I
+ familia EQI
+ subfamilia 
+ modelo MC
+empresa T
+ tipo I
+ familia EQI
+ subfamilia 
+ modelo MC
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015N
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015R
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015N
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015G
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015N
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.EXN.015N.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.EXN.015N.jpg
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia REF
+ modelo 015N
+ira inserir os valores source : Y:\DEP\image_back_up\Fotos Novas\DSC00581.JPG naome imagem : DISCO EXTERNO DE ALUMINIO LUMINARIA TL.L.EXN.015Ncodigo array 1 ITL015NREFDSEAL
+ira inserir a imagem tabela1 : ITL015NREFDSEAL tabela2 DISCO EXTERNO DE ALUMINIO LUMINARIA TL.L.EXN.015N
+ira inserir os valores source : Y:\DEP\image_back_up\Fotos Novas\DSC00582.JPG naome imagem : DISCO INTERNO EM ALUMINIO LUMINARIA TL.L.EXN.015N codigo array 1 ITL015NREFDSIAL
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DISCO EXTERNO DE ALUMINIO LUMINARIA TL.L.EXN.015N.jpg
+ira inserir a imagem tabela1 : ITL015NREFDSIAL tabela2 DISCO INTERNO EM ALUMINIO LUMINARIA TL.L.EXN.015N 
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DISCO INTERNO EM ALUMINIO LUMINARIA TL.L.EXN.015N .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DISCO EXTERNO DE ALUMINIO LUMINARIA TL.L.EXN.015N.jpg
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia REF
+ modelo 015R
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015N
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.EXN.015N.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.EXN.015N.jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Fotos Novas\DSC00583.JPG naome imagem : PECAS METALICAS LUMINARIA TL.L.EXN.015Ncodigo array 1 ITL015NCJCPMAL
+ira inserir a imagem tabela1 : ITL015NCJCPMAL tabela2 PECAS METALICAS LUMINARIA TL.L.EXN.015N
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.EXN.015N.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PECAS METALICAS LUMINARIA TL.L.EXN.015N.jpg
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015R
+ira inserir os valores source : Y:\DEP\image_back_up\Fotos Novas\DSC00583.JPG naome imagem : CONJUNTO DE PECAS METALICAS FABRICACAO EM ALUMINIOcodigo array 1 ITL015RCJCPMAL
+ira inserir a imagem tabela1 : ITL015RCJCPMAL tabela2 CONJUNTO DE PECAS METALICAS FABRICACAO EM ALUMINIO
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CONJUNTO DE PECAS METALICAS FABRICACAO EM ALUMINIO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CONJUNTO DE PECAS METALICAS FABRICACAO EM ALUMINIO.jpg
+valor selecionado que sera linkado : LUMINARIA TL.L.EXN.015N
+o array de valores nao estava em branco! codigo ITL015RCJCGEAL
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITL015RCJCGEAL
+ira fazer a linkagem da imagem tabela1 : ITL015RCJCGEAL image_name : LUMINARIA TL.L.EXN.015N
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CONJUNTO DE PECAS METALICAS FABRICACAO EM ALUMINIO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.EXN.015N.jpg
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015N
+@@@@@@@@@@@@
+ira buscar a imagem com a tabela1 : TILCJC015NTL.L.EXN.015N
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.EXN.015N.jpg
+codigo atual ITL015NCJCGEAL
+tabela de campos retornada TILCJC015Noc
+table_camp 1
+campname TIPO
+camp esp table TILCJC015NTIPO
+table camp esp GE
+codepiece GE
+campname MATERIA PRIMA
+camp esp table TILCJC015NMATERIAPRIMA
+table camp esp AL
+codepiece AL
+ira buscar a imagem com a tabela1 : TILCJC015NTL.L.EXN.015N
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PECAS METALICAS LUMINARIA TL.L.EXN.015N.jpg
+codigo atual ITL015NCJCPMAL
+tabela de campos retornada TILCJC015Noc
+table_camp 1
+campname TIPO
+camp esp table TILCJC015NTIPO
+table camp esp GE
+codepiece GE
+campname MATERIA PRIMA
+camp esp table TILCJC015NMATERIAPRIMA
+table camp esp AL
+codepiece AL
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015R
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015N
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015R
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 016
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015R
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015N
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015R
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CJC
+ modelo 015N
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.EXN.015N.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PECAS METALICAS LUMINARIA TL.L.EXN.015N.jpg
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia EQI
+ subfamilia 
+ modelo MC
+empresa T
+ tipo I
+ familia EQI
+ subfamilia CJC
+ modelo MC
+ira inserir os valores source : Y:\DEP\image_back_up\Fotos Novas\manta_de_la_de_rocha_telada.jpg naome imagem : MANTA DE LA CERAMICAcodigo array 1 ITEQIMC00160
+ira inserir a imagem tabela1 : ITEQIMC00160 tabela2 MANTA DE LA CERAMICA
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MANTA DE LA CERAMICA.jpg
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia EQI
+ subfamilia 
+ modelo MC
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia CO
+ modelo 015N
+empresa T
+ tipo I
+ familia L
+ subfamilia CO
+ modelo 015N
+empresa T
+ tipo I
+ familia L
+ subfamilia CO
+ modelo 015N
+empresa T
+ tipo I
+ familia L
+ subfamilia CO
+ modelo 015G
+empresa T
+ tipo I
+ familia L
+ subfamilia CO
+ modelo 015N
+empresa T
+ tipo I
+ familia L
+ subfamilia CO
+ modelo 015G
+empresa T
+ tipo I
+ familia L
+ subfamilia CO
+ modelo 015N
+ira buscar a descricao!
+empresa T
+ tipo S
+ familia N
+ subfamilia 
+ modelo 825
+ira inserir os valores source : Y:\DEP\image_back_up\TN825 AMARELO.jpg naome imagem : AUXILIO A NAVEGACAO TL.N.825 NA COR AMARELAcodigo array 1 STN825AMPE
+ira inserir a imagem tabela1 : STN825AMPE tabela2 AUXILIO A NAVEGACAO TL.N.825 NA COR AMARELA
+ira inserir os valores source : Y:\DEP\image_back_up\TN825.jpg naome imagem : AUXILIO A NAVEGACAO TL.N.825 NA COR BRANCAcodigo array 1 STN825BRPE
+ira inserir a imagem tabela1 : STN825BRPE tabela2 AUXILIO A NAVEGACAO TL.N.825 NA COR BRANCA
+ira inserir os valores source : Y:\DEP\image_back_up\TN825 VERDE.jpg naome imagem : AUXILIO A NAVEGACAO TL.N.825 NA COR VERDEcodigo array 1 STN825VDPE
+ira inserir a imagem tabela1 : STN825VDPE tabela2 AUXILIO A NAVEGACAO TL.N.825 NA COR VERDE
+ira inserir os valores source : Y:\DEP\image_back_up\TN825 VERMELHA.jpg naome imagem : AUXILIO A NAVEGACAO TL.N.825 NA COR VERMELHAcodigo array 1 STN825VMPE
+ira inserir a imagem tabela1 : STN825VMPE tabela2 AUXILIO A NAVEGACAO TL.N.825 NA COR VERMELHA
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR VERDE.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR BRANCA.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR AMARELA.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR VERDE.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR VERMELHA.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR VERDE.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR BRANCA.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR AMARELA.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR BRANCA.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR VERDE.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR VERMELHA.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR VERDE.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR BRANCA.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR AMARELA.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR BRANCA.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR VERDE.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR VERMELHA.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\AUXILIO A NAVEGACAO TL.N.825 NA COR VERDE.jpg
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia REF
+ modelo AVF
+empresa T
+ tipo I
+ familia L
+ subfamilia REF
+ modelo AVF
+empresa T
+ tipo I
+ familia L
+ subfamilia REF
+ modelo AVF
+empresa T
+ tipo I
+ familia L
+ subfamilia REF
+ modelo AVF
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia REF
+ modelo 959
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia L
+ subfamilia REF
+ modelo AVF
+ira inserir os valores source : Y:\DEP\image_back_up\Luminarias\ITLREFAVF REFLETORA AVF.jpg naome imagem : PLACA REFLETORA 20W/40W LUMINARIA TL.L.EXE.AVF codigo array 1 ITLREFAVF20AC
+ira inserir a imagem tabela1 : ITLREFAVF20AC tabela2 PLACA REFLETORA 20W/40W LUMINARIA TL.L.EXE.AVF 
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PLACA REFLETORA 20W/40W LUMINARIA TL.L.EXE.AVF .jpg
+ira inserir a imagem tabela1 : ITLREFAVF40AC tabela2 PLACA REFLETORA 20W/40W LUMINARIA TL.L.EXE.AVF 
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PLACA REFLETORA 20W/40W LUMINARIA TL.L.EXE.AVF .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PLACA REFLETORA 20W/40W LUMINARIA TL.L.EXE.AVF .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PLACA REFLETORA 20W/40W LUMINARIA TL.L.EXE.AVF .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PLACA REFLETORA 20W/40W LUMINARIA TL.L.EXE.AVF .jpg
+ira inserir os valores source : Y:\DEP\image_back_up\Luminarias\ITLREFAVF REFLETORA AVF.jpg naome imagem : PLACA REFLETORA LUMINARIA TL.L.EXE.AVFcodigo array 1 ITLREFAVF20AC
+ira inserir a imagem tabela1 : ITLREFAVF20AC tabela2 PLACA REFLETORA LUMINARIA TL.L.EXE.AVF
+ira inserir a imagem tabela1 : ITLREFAVF40AC tabela2 PLACA REFLETORA LUMINARIA TL.L.EXE.AVF
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PLACA REFLETORA LUMINARIA TL.L.EXE.AVF.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PLACA REFLETORA LUMINARIA TL.L.EXE.AVF.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PLACA REFLETORA LUMINARIA TL.L.EXE.AVF.jpg
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia PL
+ subfamilia 
+ modelo AV
+empresa T
+ tipo I
+ familia PL
+ subfamilia 
+ modelo AV
+@@@@@@@@@@@@ITPLAVDAZ
+ira buscar a imagem com a tabela1 : TIPLAVANTI-VIBRATORIO
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITPLAVDAZ
+tabela de campos retornada TIPLAVoc
+table_camp 1
+campname PARTE
+camp esp table TIPLAVPARTE
+table camp esp BA0
+codepiece BA0

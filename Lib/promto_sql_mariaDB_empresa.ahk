@@ -4,7 +4,7 @@ class Empresa{
 		Inclui uma nova empresa
 	*/
 	incluir(empresa_nome, empresa_mascara){
-		Global mariaDB
+		Global mariaDB, ETF_hashmask
 		
 		/*
 			Verifica se a mascara a ser inserida 
@@ -15,6 +15,14 @@ class Empresa{
 			return 
 		}
 
+		if(ETF_hashmask[empresa_nome] != ""){
+			MsgBox, % "empresa " empresa_nome " empreas mascara " ETF_hashmask[empresa_nome]
+			MsgBox, 4, Item duplicado, % "Ja existe uma outra empresa com o mesmo nome `n Nesse caso a mascara a ser inserida deve ser a mesma `n deseja mudar a mascara do item para a mascara ja existente ou abortar a operacao!" 
+			IfMsgBox Yes
+			{
+				empresa_mascara := ETF_hashmask[empresa_nome]
+			}	
+		}
 		/*
 			Insere o valor na tabela
 		*/

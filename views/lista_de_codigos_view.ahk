@@ -22,7 +22,7 @@ lista_de_codigos(info){
 		Listview
 	*/
 	Gui, Add, Groupbox, xm y+20 w1000 h520, Codigos
-	Gui, Add, Listview, xp+10 yp+15 w980 h500 vlvcodetable glvcodetable,Codigo|Descricao Completa|Descricao Resumida|Descricao Ingles
+	Gui, Add, Listview, xp+10 yp+15 w980 h500 vlvcodetable checked glvcodetable,Codigo|Descricao Completa|Descricao Resumida|Descricao Ingles
 
 	/*
 		Opcoes
@@ -62,13 +62,16 @@ lista_de_codigos(info){
 	return
 
 	gerarplaquetas:
+
+	codigos_selecionados := GetCheckedRows2("lista_de_codigos_view","lvcodetable")
+	codigos_selecionados := transform_array(codigos_selecionados)
+	append_debug("@@@@@@@@@@@@" codigos_selecionados[1, 1])
 	prefix := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2]
 	model_mask := s_info.modelo[2]
 	ordened_prefix := db.get_ordened_prefix(s_info)
-	append_debug("ordened_prefix : " ordened_prefix[1])
 	StringReplace, ordened_prefix, ordened_prefix, %model_mask%,, All
 	model_name := s_info.modelo[1]
-	createtag(prefix, ordened_prefix, model_mask, model_name, prefix model_mask "Codigo")
+	createtag(prefix, ordened_prefix, model_mask, model_name, prefix model_mask "Codigo", codigos_selecionados)
 	return 
 
 }

@@ -140,7 +140,6 @@ inserir_modelo_view(model_table){
 	Gui, Submit, Nohide
 	Gui, insert_dialogo_2:destroy
 	prefixo := empresa.mascara tipo.mascara familia.mascara subfamilia.mascara
-
 	/*
 		Verifica se algum dos valores necessarios esta em branco
 	*/

@@ -1704,11 +1704,28 @@ load_lv_from_array(columns, array, window, lv){
 	}
 }
 
+/*
+	Transform array
+*/
+transform_array(array){
+	return_array := []
+
+	for, each, value in array{
+		return_array[A_Index, 1] := array["code", A_Index]
+		return_array[A_Index, 2] := array["desc", A_Index]
+	}
+	return return_array
+}
+
 ;############### createtag #################################
-createtag(prefix,prefix2,model,selectmodel,codelist,textsize=20,textcolor="ff000000",imagepath="image.png"){
+createtag(prefix,prefix2,model, selectmodel,codelist, codigos_array = "", textsize=20,textcolor="ff000000",imagepath="image.png"){
 	Global db, global_image_path
 	
-	table := db.load_table_in_array(codelist)
+	if(codigos_array[1, 1] = ""){
+		table := db.load_table_in_array(codelist)
+	}else{
+		table := codigos_array
+	}
 	
 	progress(table.maxindex())
 	totalheight := 500.17 * table.maxindex()

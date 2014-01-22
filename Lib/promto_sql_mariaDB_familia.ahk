@@ -187,15 +187,30 @@ class Familia{
 		 Excluir a entrada da familia
 		 na tabela de familias 
 		*/ 
+
 		prefixo := info.empresa[2] info.tipo[2]
 		
 		familia_table := this.get_parent_reference(info.empresa[2], info.tipo[1])
-
+		append_debug("tabela de familia retornada " familia_table "`n familia nome " familia_nome "`n familia mascara " familia_mascara)
+		
 		if(!this.exists(familia_nome, familia_mascara, familia_table)){
 			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela"
 			return 
 		}
-		
+
+		append_debug("ira deletar recursivamente !")
+		if(recursiva = 1){
+			tabela1 := info.empresa[2] info.tipo[2] info.familia[1]
+			
+			if(db.have_subfamilia(tabela1)){
+				nivel_tipo := {1: ["Familia", "Subfamilia"], 2: ["Subfamilia", "Modelo"], 3: ["Modelo", "break"]}
+			}else{
+				nivel_tipo := {1: ["Familia", "Modelo"], 2: ["Modelo", "break"]}
+			}
+			this.remove_subitems(familia_nome, familia_mascara, info, nivel_tipo)
+			return
+		}
+ 		append_debug("ira deletar a entrada da mascara na tabela : " prefixo "Familia `n familia mascara : " familia_mascara)
 		try{
 			mariaDB.Query(
 			(JOIN 
@@ -338,9 +353,6 @@ class Familia{
 		Global mariaDB, db
 
 		i++
-		if(nivel_tipo = ""){
-			nivel_tipo := {1: ["familia", "Modelo"], 2: ["subfamilia", "Modelo"], 3: ["Modelo", "break"]}
-		}
 
 		nivel := nivel_tipo[i,1]
 
@@ -348,6 +360,7 @@ class Familia{
 			Funcao que verifica no nivel de familias 
 			se a proxima tabela e de subfamilias ou de modelos
 		*/
+
 		if(nivel = "familia"){
 			tabela1 := info.empresa[2] info.tipo[2] info.familia[1]
 			if(db.have_subfamilia(tabela1)){
@@ -356,7 +369,9 @@ class Familia{
 				tipo := nivel_tipo[i,2]		
 			}
 		}
-		
+
+		append_debug("tipo " tipo)
+
 		/*
 			Pega a tabela de referencia que 
 			contem o subitem do item atual
@@ -384,9 +399,12 @@ class Familia{
 			tabela1 := info.empresa[2] info.tipo[2] info.familia[2] nome
 		}
 
+		append_debug("ira buscar a referencia da tabela ")
 		table := db.get_reference(tipo, tabela1)
+		append_debug("referencia da tabela retornada " table)
 
 		if(table = ""){
+			append_debug("ira deletar os subitems nome " nome "`n mascara " mascara " nivel " nivel)
 			this.delete_subitem(nome, mascara, info, nivel)
 			return 
 		}

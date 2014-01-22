@@ -3205,3 +3205,557 @@ campname PARTES
 camp esp table TITODIV041PARTES
 table camp esp AC1PL
 codepiece AC1PL
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia TO
+ subfamilia DIV
+ modelo 041
+@@@@@@@@@@@@ITTO041DIVAC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ACOPLADOR DOS CABOS 16, 32A.jpg
+codigo atual ITTO041DIVAC1PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia TO
+ subfamilia DIV
+ modelo 041
+@@@@@@@@@@@@
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ACOPLADOR DOS CABOS 16, 32A.jpg
+codigo atual ITTO041DIVAC1PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ARRANHA DE CONTATO DO TERMINAL OLHAL EM ACO INOX.jpg
+codigo atual ITTO041DIVACTAI
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITTO041DIVBBCLN
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BARRA DE CONTATO UTILIZADA NO BLOCO LN 16, 32A AI.jpg
+codigo atual ITTO041DIVBC1AI
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BARRA DE CONTATO UTILIZADA NO BLOCO LN 63A  AI.jpg
+codigo atual ITTO041DIVBC6AI
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITTO041DIVBFCLN
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITTO041DIVBLHAI
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CILINDRO DA CHAVE DAS TOMADAS AI.jpg
+codigo atual ITTO041DIVCCTAI
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+codigo atual ITTO041DIVCP1AL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CINTA PINO.jpg
+codigo atual ITTO041DIVCP3AL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CINTA PINO.jpg
+codigo atual ITTO041DIVCP6AL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE SELETORA DE 16A, 32A EM PLASTICO.jpg
+codigo atual ITTO041DIVCS1PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE SELETORA DE 63A EM PLASTICO.jpg
+codigo atual ITTO041DIVCS6PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CINTA PINO.jpg
+codigo atual ITTO041DIVCT1AL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CINTA PINO.jpg
+codigo atual ITTO041DIVCT3AL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CINTA PINO.jpg
+codigo atual ITTO041DIVCT6AL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DISCO DE AJUSTE DA CHAVE DA HASTE DA ENG. 16, 32 E 63A.jpg
+codigo atual ITTO041DIVDACPL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DISCO INDICADOR ON OFF DA CHAVE DA TOMADA 16A, 32A.jpg
+codigo atual ITTO041DIVDI1PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DISCO INDICADOR ON OFF DA CHAVE DA  TOMADA 63A EM PLASTICO.jpg
+codigo atual ITTO041DIVDI6PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITTO041DIVE1ABO
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITTO041DIVE1PBO
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ENGRENAGEM DO BLOCO 16A, 32A EM PLASTICO.jpg
+codigo atual ITTO041DIVEB1PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ENGRENAGEM DO BLOCO 63A.jpg
+codigo atual ITTO041DIVEB6PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ENGRENAGEM DA CHAVE 16A, 32A EM PLASTICO.jpg
+codigo atual ITTO041DIVEC1PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ENGRENAGEM DA CHAVE 63A EM PLASTICO.jpg
+codigo atual ITTO041DIVEC6PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ENGRENAGEM DE FIXACAO DO MIOLO 16A EM PLASTICO.jpg
+codigo atual ITTO041DIVEM1PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ENGRENAGEM DE FIXACAO DO MIOLO 32A EM PLASTICO.jpg
+codigo atual ITTO041DIVEM3PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ENGRENAGEM DE FIXACAO DO MIOLO 63A EM PLASTICO.jpg
+codigo atual ITTO041DIVEM6PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\HASTE DA ENGRENAGEM DO BLOCO 16, 32 E 63A EM LN.jpg
+codigo atual ITTO041DIVHEBLN
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITTO041DIVLBZN0
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LIMITADOR DA HASTE DA ENGRENAGEM 16, 32, 63A EM PLASTICO.jpg
+codigo atual ITTO041DIVLHEPL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITTO041DIVMBFLN
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITTO041DIVMP1AI
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MOLA DO PINO DE FIXACAO DO SUPORTE DO MIOLO DE 63A EM AI.jpg
+codigo atual ITTO041DIVMP6AI
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MOLA DO PINO DA TAMPA PROTETORA 16A, 32A AI.jpg
+codigo atual ITTO041DIVMPTAI
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MOLA DO TENSOR UTILIZASO NA CHAVE DA TOMADA 16A, 32A, 63A AI.jpg
+codigo atual ITTO041DIVMTCAI
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO TERRA FEMEA 16A EM LN.jpg
+codigo atual ITTO041DIVPE1LN
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO FASE FEMEA 32A EM LN.jpg
+codigo atual ITTO041DIVPE3LN
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO FASE FEMEA 63A EM LN.jpg
+codigo atual ITTO041DIVPE6LN
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE FIXACAO DO SUPORTE DO MIOLO 16, 32A EM AI.jpg
+codigo atual ITTO041DIVPF1AI
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DE FIXACAO DO SUPORTE DO MIOLO 63A EM AI.jpg
+codigo atual ITTO041DIVPF6AI
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PLACA PROTETORA DO BLOCO DA TOMADA EM LATAO NIQUELADO.jpg
+codigo atual ITTO041DIVPPBLN
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO TERRA FEMEA 16A EM LN.jpg
+codigo atual ITTO041DIVPT1LN
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO TERRA FEMEA 32A EM LN.jpg
+codigo atual ITTO041DIVPT3LN
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO TERRA FEMEA 32A EM LN.jpg
+codigo atual ITTO041DIVPT6LN
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO TENSOR DA TAMPA FRONTAL 16, 32, 63A EM AI.jpg
+codigo atual ITTO041DIVPTFAI
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\PINO DA TRAVA DA TAMPA PROTETORA EM AI.jpg
+codigo atual ITTO041DIVPTTAI
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ROTOR DA CHAVE DA TOMADA UTI NA HASTE DA ENGRENAGEM 63A.jpg
+codigo atual ITTO041DIVRCTLN
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITTO041DIVRHCAL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DE FIXACAO DO MIOLO 16A EM PLASTICO.jpg
+codigo atual ITTO041DIVSM1PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DE FIXACAO DO MIOLO 32A EM PLASTICO.jpg
+codigo atual ITTO041DIVSM3PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\SUPORTE DE FIXACAO DO MIOLO 63A.jpg
+codigo atual ITTO041DIVSM6PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TENSOR DA MOLA UTILIZADO NA CHAVE 16, 32, 63A AI.jpg
+codigo atual ITTO041DIVTDMAI
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TRAVA DA TAMPA PROTETORA 16, 32A EM LN.jpg
+codigo atual ITTO041DIVTTPLN
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+@@@@@@@@@@@@ITTO041DIVAC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ACOPLADOR DOS CABOS 16, 32A.jpg
+codigo atual ITTO041DIVAC1PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BARRA DE CONTATO UTILIZADA NO BLOCO LN 63A  AI.jpg
+codigo atual ITTO041DIVBC6AI
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\CHAVE SELETORA DE 16A, 32A EM PLASTICO.jpg
+codigo atual ITTO041DIVCS1PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\DISCO INDICADOR ON OFF DA CHAVE DA TOMADA 16A, 32A.jpg
+codigo atual ITTO041DIVDI1PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL
+ira buscar a imagem com a tabela1 : TITODIV041TL.TO.EXE.041
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\ENGRENAGEM DO BLOCO 16A, 32A EM PLASTICO.jpg
+codigo atual ITTO041DIVEB1PL
+tabela de campos retornada TITODIV041oc
+table_camp 1
+campname PARTES
+camp esp table TITODIV041PARTES
+table camp esp AC1PL
+codepiece AC1PL

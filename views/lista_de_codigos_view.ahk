@@ -63,8 +63,7 @@ lista_de_codigos(info){
 
 	gerarplaquetas:
 
-	codigos_selecionados := GetCheckedRows2("lista_de_codigos_view","lvcodetable")
-	codigos_selecionados := transform_array(codigos_selecionados)
+	codigos_selecionados := GetCheckedRows("lista_de_codigos_view","lvcodetable")
 	append_debug("@@@@@@@@@@@@" codigos_selecionados[1, 1])
 	prefix := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2]
 	model_mask := s_info.modelo[2]

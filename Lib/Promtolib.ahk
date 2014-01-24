@@ -1718,7 +1718,7 @@ transform_array(array){
 }
 
 ;############### createtag #################################
-createtag(prefix,prefix2,model, selectmodel,codelist, codigos_array = "", textsize=20,textcolor="ff000000",imagepath="image.png"){
+createtag(prefix,prefix2,model, selectmodel,codelist, codigos_array = "", textsize=30,textcolor="ff000000",imagepath="image.png"){
 	Global db, global_image_path
 	
 	if(codigos_array[1, 1] = ""){
@@ -1750,7 +1750,7 @@ createtag(prefix,prefix2,model, selectmodel,codelist, codigos_array = "", textsi
 		f_hight := y-60
 		for, each, value in prefix2{
 			panel({x:x, y:f_hight, w:110, h:50, color: "nocolor", text:"Prefixo", textsize: 10, textcolor: textcolor, boardersize:0})
-			panel({x:x, y:f_hight+60, w:110, h:50, color: "nocolor", text:prefix2[A_Index], textsize: textsize, textcolor: textcolor})	
+			panel({x:x, y:f_hight+60, w:110, h:50, color: "nocolor", text:prefix2[A_Index], textsize: textsize, textcolor: "ffff3311"})	
 			x += 120
 		}
 		x -= 120

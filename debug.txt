@@ -4183,3 +4183,3332 @@ campname AUTONOMIA
 camp esp table ML254AUTONOMIA
 table camp esp E
 codepiece E
+@@@@@@@@@@@@ML2541249PES
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541249PES
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+@@@@@@@@@@@@ML2541211PEE
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541211PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+@@@@@@@@@@@@ML2541249PES
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541249PES
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia HO
+ subfamilia 
+ modelo 501
+@@@@@@@@@@@@MHO5011K2CAI
+ira buscar a imagem com a tabela1 : MHO501MAC.NAV.501
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual MHO5011K2CAI
+tabela de campos retornada MHO501oc
+table_camp 1
+campname POTENCIA
+camp esp table MHO501POTENCIA
+table camp esp 1K
+codepiece 1K
+campname TENSAO
+camp esp table MHO501TENSAO
+table camp esp 2
+codepiece 2
+campname CONTROLE
+camp esp table MHO501CONTROLE
+table camp esp C
+codepiece C
+campname MATERIA PRIMA
+camp esp table MHO501MATERIAPRIMA
+table camp esp AI
+codepiece AI
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+@@@@@@@@@@@@ML2541249PES
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541249PES
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 228
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 240
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 228
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 227
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 240
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 228
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+ modelo nome : MAC.TGVP.255
+ modelo mascara : 255
+ira testar se existe
+ira gravar o item modelo nome MAC.TGVP.255 mascara 255 tabela MLModelo
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+valor selecionado que sera linkado : LUMINARIA TL.L.TGVP.917
+ira fazer a linkagem da imagem tabela1 : ML255MAC.TGVP.255 image_name : LUMINARIA TL.L.TGVP.917
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo AVF
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo AVF
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo AVF
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo AVF
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+valor selecionado que sera linkado : LUMINARIA TL.L.TGVP.917
+o array de valores nao estava em branco! codigo ML2551211PEE
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2551211PEE
+ira fazer a linkagem da imagem tabela1 : ML2551211PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2551212PEE
+ira fazer a linkagem da imagem tabela1 : ML2551212PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2551219PES
+ira fazer a linkagem da imagem tabela1 : ML2551219PES image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2551221PEE
+ira fazer a linkagem da imagem tabela1 : ML2551221PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2551222PEE
+ira fazer a linkagem da imagem tabela1 : ML2551222PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2551229PES
+ira fazer a linkagem da imagem tabela1 : ML2551229PES image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2551241PEE
+ira fazer a linkagem da imagem tabela1 : ML2551241PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2551242PEE
+ira fazer a linkagem da imagem tabela1 : ML2551242PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2551249PES
+ira fazer a linkagem da imagem tabela1 : ML2551249PES image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2551281PEE
+ira fazer a linkagem da imagem tabela1 : ML2551281PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2551282PEE
+ira fazer a linkagem da imagem tabela1 : ML2551282PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2551289PES
+ira fazer a linkagem da imagem tabela1 : ML2551289PES image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2552211PEE
+ira fazer a linkagem da imagem tabela1 : ML2552211PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2552212PEE
+ira fazer a linkagem da imagem tabela1 : ML2552212PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2552219PES
+ira fazer a linkagem da imagem tabela1 : ML2552219PES image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2552221PEE
+ira fazer a linkagem da imagem tabela1 : ML2552221PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2552222PEE
+ira fazer a linkagem da imagem tabela1 : ML2552222PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2552229PES
+ira fazer a linkagem da imagem tabela1 : ML2552229PES image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2552241PEE
+ira fazer a linkagem da imagem tabela1 : ML2552241PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2552242PEE
+ira fazer a linkagem da imagem tabela1 : ML2552242PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2552249PES
+ira fazer a linkagem da imagem tabela1 : ML2552249PES image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2552281PEE
+ira fazer a linkagem da imagem tabela1 : ML2552281PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2552282PEE
+ira fazer a linkagem da imagem tabela1 : ML2552282PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2552289PES
+ira fazer a linkagem da imagem tabela1 : ML2552289PES image_name : LUMINARIA TL.L.TGVP.917
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo AVF
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+ modelo nome : MAC.TGVP.238
+ modelo mascara : 238
+ira testar se existe
+ira gravar o item modelo nome MAC.TGVP.238 mascara 238 tabela MLModelo
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 238
+ira inserir os valores source : P:\DEP\image_back_up\TL938 LUMINARIA TGVP.jpg naome imagem : LUMINARIA 238 (938)codigo array 1 
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 238
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 238
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 238
+@@@@@@@@@@@@ML238VS2502AL
+ira buscar a imagem com a tabela1 : ML238MAC.TGVP.238
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ML238VS2502AL
+tabela de campos retornada ML238oc
+table_camp 1
+campname TIPO DE LAMPADA
+camp esp table ML238TIPODELAMPADA
+table camp esp MS
+codepiece MS
+campname POTENCIA 
+camp esp table ML238POTENCIA
+table camp esp 250
+codepiece 250
+campname TENSAO
+camp esp table ML238TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML238MATERIAPRIMA
+table camp esp AL
+codepiece AL
+valor selecionado que sera linkado : LUMINARIA 238 (938)
+o array de valores nao estava em branco! codigo ML238MS5001AL
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML238MS5001AL
+ira fazer a linkagem da imagem tabela1 : ML238MS5001AL image_name : LUMINARIA 238 (938)
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML238VM2502AL
+ira fazer a linkagem da imagem tabela1 : ML238VM2502AL image_name : LUMINARIA 238 (938)
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML238VM4002AL
+ira fazer a linkagem da imagem tabela1 : ML238VM4002AL image_name : LUMINARIA 238 (938)
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML238VR2502AL
+ira fazer a linkagem da imagem tabela1 : ML238VR2502AL image_name : LUMINARIA 238 (938)
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML238VR4002AL
+ira fazer a linkagem da imagem tabela1 : ML238VR4002AL image_name : LUMINARIA 238 (938)
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML238VS2502AL
+ira fazer a linkagem da imagem tabela1 : ML238VS2502AL image_name : LUMINARIA 238 (938)
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML238VS4002AL
+ira fazer a linkagem da imagem tabela1 : ML238VS4002AL image_name : LUMINARIA 238 (938)
+@@@@@@@@@@@@ML238VS2502AL
+ira buscar a imagem com a tabela1 : ML238MAC.TGVP.238
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA 238 (938).jpg
+codigo atual ML238VS2502AL
+tabela de campos retornada ML238oc
+table_camp 1
+campname TIPO DE LAMPADA
+camp esp table ML238TIPODELAMPADA
+table camp esp MS
+codepiece MS
+campname POTENCIA 
+camp esp table ML238POTENCIA
+table camp esp 250
+codepiece 250
+campname TENSAO
+camp esp table ML238TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML238MATERIAPRIMA
+table camp esp AL
+codepiece AL
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 238
+@@@@@@@@@@@@ML238VS2502AL
+ira buscar a imagem com a tabela1 : ML238MAC.TGVP.238
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA 238 (938).jpg
+codigo atual ML238VS2502AL
+tabela de campos retornada ML238oc
+table_camp 1
+campname TIPO DE LAMPADA
+camp esp table ML238TIPODELAMPADA
+table camp esp MS
+codepiece MS
+campname POTENCIA 
+camp esp table ML238POTENCIA
+table camp esp 250
+codepiece 250
+campname TENSAO
+camp esp table ML238TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML238MATERIAPRIMA
+table camp esp AL
+codepiece AL
+@@@@@@@@@@@@ML238VS2502AL
+ira buscar a imagem com a tabela1 : ML238MAC.TGVP.238
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA 238 (938).jpg
+codigo atual ML238VS2502AL
+tabela de campos retornada ML238oc
+table_camp 1
+campname TIPO DE LAMPADA
+camp esp table ML238TIPODELAMPADA
+table camp esp MS
+codepiece MS
+campname POTENCIA 
+camp esp table ML238POTENCIA
+table camp esp 250
+codepiece 250
+campname TENSAO
+camp esp table ML238TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML238MATERIAPRIMA
+table camp esp AL
+codepiece AL
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 238
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 255
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 238
+ modelo nome : TL.B.EXE.045
+ modelo mascara : 045
+ira testar se existe
+ira gravar o item modelo nome TL.B.EXE.045 mascara 045 tabela TIBCJCModelo
+ modelo nome : TL.B.EXE.046
+ modelo mascara : 046
+ira testar se existe
+ira gravar o item modelo nome TL.B.EXE.046 mascara 046 tabela TIBCJCModelo
+ modelo nome : TL.B.EXE.240
+ modelo mascara : 240
+ira testar se existe
+ira gravar o item modelo nome TL.B.EXE.240 mascara 240 tabela TIBCJCModelo
+ modelo nome : TL.B.TGVP.940
+ modelo mascara : 940
+ira testar se existe
+ira gravar o item modelo nome TL.B.TGVP.940 mascara 940 tabela TIBCJCModelo
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 045
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 046
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 240
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 940
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 940
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 240
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 046
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 045
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 240
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 046
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 045
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 240
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CO
+ modelo 240
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia TP
+ modelo 240
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 940
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 940
+valor selecionado que sera linkado : TAMPA BOTOEIRA TL.B.EXE.240 2 FUROS REDONDOS P0
+ira fazer a linkagem da imagem tabela1 : TIBCJC940TL.B.TGVP.940 image_name : TAMPA BOTOEIRA TL.B.EXE.240 2 FUROS REDONDOS P0
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 240
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 940
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CO
+ modelo 940
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CO
+ modelo 240
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CO
+ modelo 940
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 240
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 045
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 046
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 240
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 940
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 940
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 240
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 940
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CO
+ modelo 240
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CO
+ modelo 940
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CO
+ modelo 240
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia TP
+ modelo 240
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 240
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 940
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia TP
+ modelo 240
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 240
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 940
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 940
+valor selecionado que sera linkado : TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO
+o array de valores nao estava em branco! codigo ITB940CJC1R0QP0
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITB940CJC1R0QP0
+ira fazer a linkagem da imagem tabela1 : ITB940CJC1R0QP0 image_name : TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+valor selecionado que sera linkado : TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO
+o array de valores nao estava em branco! codigo ITB940CJC1R0QPP
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITB940CJC1R0QPP
+ira fazer a linkagem da imagem tabela1 : ITB940CJC1R0QPP image_name : TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+valor selecionado que sera linkado : TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO
+o array de valores nao estava em branco! codigo ITB940CJC1R1QM0
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITB940CJC1R1QM0
+ira fazer a linkagem da imagem tabela1 : ITB940CJC1R1QM0 image_name : TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITB940CJC1R1QP0
+ira fazer a linkagem da imagem tabela1 : ITB940CJC1R1QP0 image_name : TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+valor selecionado que sera linkado : BOTOEIRA COM 2 FUROS REDONDOS TL.B.EXE.240
+o array de valores nao estava em branco! codigo ITB940CJC2R0QM0
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITB940CJC2R0QM0
+ira fazer a linkagem da imagem tabela1 : ITB940CJC2R0QM0 image_name : BOTOEIRA COM 2 FUROS REDONDOS TL.B.EXE.240
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITB940CJC2R0QP0
+ira fazer a linkagem da imagem tabela1 : ITB940CJC2R0QP0 image_name : BOTOEIRA COM 2 FUROS REDONDOS TL.B.EXE.240
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTOEIRA COM 2 FUROS REDONDOS TL.B.EXE.240.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTOEIRA COM 2 FUROS REDONDOS TL.B.EXE.240.jpg
+valor selecionado que sera linkado : TAMPA BOTOEIRA TL.B.EXE.240 4 FUROS REDONDOS
+o array de valores nao estava em branco! codigo ITB940CJC4R0QG0
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITB940CJC4R0QG0
+ira fazer a linkagem da imagem tabela1 : ITB940CJC4R0QG0 image_name : TAMPA BOTOEIRA TL.B.EXE.240 4 FUROS REDONDOS
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 4 FUROS REDONDOS.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTOEIRA COM 2 FUROS REDONDOS TL.B.EXE.240.jpg
+valor selecionado que sera linkado : TAMPA BOTOEIRA 3 FUROS REDONDOS TL.B.EXE.240
+o array de valores nao estava em branco! codigo ITB940CJC3R0QG0
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITB940CJC3R0QG0
+ira fazer a linkagem da imagem tabela1 : ITB940CJC3R0QG0 image_name : TAMPA BOTOEIRA 3 FUROS REDONDOS TL.B.EXE.240
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITB940CJC3R0QM0
+ira fazer a linkagem da imagem tabela1 : ITB940CJC3R0QM0 image_name : TAMPA BOTOEIRA 3 FUROS REDONDOS TL.B.EXE.240
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA 3 FUROS REDONDOS TL.B.EXE.240.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA 3 FUROS REDONDOS TL.B.EXE.240.jpg
+@@@@@@@@@@@@
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+codigo atual ITB940CJC1R0QP0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+codigo atual ITB940CJC1R0QPP
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+codigo atual ITB940CJC1R1QM0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+codigo atual ITB940CJC1R1QP0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTOEIRA COM 2 FUROS REDONDOS TL.B.EXE.240.jpg
+codigo atual ITB940CJC2R0QM0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTOEIRA COM 2 FUROS REDONDOS TL.B.EXE.240.jpg
+codigo atual ITB940CJC2R0QP0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA 3 FUROS REDONDOS TL.B.EXE.240.jpg
+codigo atual ITB940CJC3R0QG0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA 3 FUROS REDONDOS TL.B.EXE.240.jpg
+codigo atual ITB940CJC3R0QM0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 4 FUROS REDONDOS.jpg
+codigo atual ITB940CJC4R0QG0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 940
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 940
+@@@@@@@@@@@@
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+codigo atual ITB940CJC1R0QP0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+codigo atual ITB940CJC1R0QPP
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+codigo atual ITB940CJC1R1QM0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+codigo atual ITB940CJC1R1QP0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTOEIRA COM 2 FUROS REDONDOS TL.B.EXE.240.jpg
+codigo atual ITB940CJC2R0QM0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTOEIRA COM 2 FUROS REDONDOS TL.B.EXE.240.jpg
+codigo atual ITB940CJC2R0QP0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA 3 FUROS REDONDOS TL.B.EXE.240.jpg
+codigo atual ITB940CJC3R0QG0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA 3 FUROS REDONDOS TL.B.EXE.240.jpg
+codigo atual ITB940CJC3R0QM0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 4 FUROS REDONDOS.jpg
+codigo atual ITB940CJC4R0QG0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+@@@@@@@@@@@@ITB940CJC1R0QP0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+codigo atual ITB940CJC1R0QP0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+@@@@@@@@@@@@ITB940CJC1R1QP0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+codigo atual ITB940CJC1R1QP0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 240
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia TP
+ modelo 240
+@@@@@@@@@@@@
+ira buscar a imagem com a tabela1 : TIBTP240TL.B.EXE.240
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+codigo atual ITB240TP1R0QP0
+tabela de campos retornada TIBTP240oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBTP240QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBTP240DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBTP240TL.B.EXE.240
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+codigo atual ITB240TP1R0QPP
+tabela de campos retornada TIBTP240oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBTP240QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBTP240DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBTP240TL.B.EXE.240
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTOEIRA TL.B.EXE.240 1 FURO REDONDO E 1 QUADRADO.jpg
+codigo atual ITB240TP1R1QM0
+tabela de campos retornada TIBTP240oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBTP240QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBTP240DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBTP240TL.B.EXE.240
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+codigo atual ITB240TP1R1QP0
+tabela de campos retornada TIBTP240oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBTP240QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBTP240DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBTP240TL.B.EXE.240
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTOEIRA COM 2 FUROS REDONDOS TL.B.EXE.240.jpg
+codigo atual ITB240TP2R0QM0
+tabela de campos retornada TIBTP240oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBTP240QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBTP240DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBTP240TL.B.EXE.240
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 2 FUROS REDONDOS P0.jpg
+codigo atual ITB240TP2R0QP0
+tabela de campos retornada TIBTP240oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBTP240QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBTP240DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBTP240TL.B.EXE.240
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA 3 FUROS REDONDOS TL.B.EXE.240.jpg
+codigo atual ITB240TP3R0QG0
+tabela de campos retornada TIBTP240oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBTP240QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBTP240DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBTP240TL.B.EXE.240
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA 3 FUROS REDONDOS TL.B.EXE.240.jpg
+codigo atual ITB240TP3R0QM0
+tabela de campos retornada TIBTP240oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBTP240QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBTP240DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBTP240TL.B.EXE.240
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 4 FUROS REDONDOS.jpg
+codigo atual ITB240TP4R0QG0
+tabela de campos retornada TIBTP240oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBTP240QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBTP240DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia TP
+ modelo 940
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia CJC
+ modelo 940
+@@@@@@@@@@@@
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+codigo atual ITB940CJC1R0QP0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+codigo atual ITB940CJC1R0QPP
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+codigo atual ITB940CJC1R1QM0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P 1 FURO REDONDO E 1 QUADRADO.jpg
+codigo atual ITB940CJC1R1QP0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTOEIRA COM 2 FUROS REDONDOS TL.B.EXE.240.jpg
+codigo atual ITB940CJC2R0QM0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTOEIRA COM 2 FUROS REDONDOS TL.B.EXE.240.jpg
+codigo atual ITB940CJC2R0QP0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA 3 FUROS REDONDOS TL.B.EXE.240.jpg
+codigo atual ITB940CJC3R0QG0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA 3 FUROS REDONDOS TL.B.EXE.240.jpg
+codigo atual ITB940CJC3R0QM0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a imagem com a tabela1 : TIBCJC940TL.B.TGVP.940
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 4 FUROS REDONDOS.jpg
+codigo atual ITB940CJC4R0QG0
+tabela de campos retornada TIBCJC940oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBCJC940QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBCJC940DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 238
+@@@@@@@@@@@@
+ira buscar a imagem com a tabela1 : ML238MAC.TGVP.238
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA 238 (938).jpg
+codigo atual ML238MS5001AL
+tabela de campos retornada ML238oc
+table_camp 1
+campname TIPO DE LAMPADA
+camp esp table ML238TIPODELAMPADA
+table camp esp MS
+codepiece MS
+campname POTENCIA 
+camp esp table ML238POTENCIA
+table camp esp 250
+codepiece 250
+campname TENSAO
+camp esp table ML238TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML238MATERIAPRIMA
+table camp esp AL
+codepiece AL
+ira buscar a imagem com a tabela1 : ML238MAC.TGVP.238
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA 238 (938).jpg
+codigo atual ML238VR2502AL
+table_camp 1
+campname TIPO DE LAMPADA
+camp esp table ML238TIPODELAMPADA
+table camp esp MS
+codepiece MS
+campname POTENCIA 
+camp esp table ML238POTENCIA
+table camp esp 250
+codepiece 250
+campname TENSAO
+camp esp table ML238TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML238MATERIAPRIMA
+table camp esp AL
+codepiece AL
+ira buscar a imagem com a tabela1 : ML238MAC.TGVP.238
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA 238 (938).jpg
+codigo atual ML238VR4002AL
+tabela de campos retornada ML238oc
+table_camp 1
+campname TIPO DE LAMPADA
+camp esp table ML238TIPODELAMPADA
+table camp esp MS
+codepiece MS
+campname POTENCIA 
+camp esp table ML238POTENCIA
+table camp esp 250
+codepiece 250
+campname TENSAO
+camp esp table ML238TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML238MATERIAPRIMA
+table camp esp AL
+codepiece AL
+ira buscar a imagem com a tabela1 : ML238MAC.TGVP.238
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA 238 (938).jpg
+codigo atual ML238VS2502AL
+tabela de campos retornada ML238oc
+table_camp 1
+campname TIPO DE LAMPADA
+camp esp table ML238TIPODELAMPADA
+table camp esp MS
+codepiece MS
+campname POTENCIA 
+camp esp table ML238POTENCIA
+table camp esp 250
+codepiece 250
+campname TENSAO
+camp esp table ML238TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML238MATERIAPRIMA
+table camp esp AL
+codepiece AL
+ira buscar a imagem com a tabela1 : ML238MAC.TGVP.238
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA 238 (938).jpg
+codigo atual ML238VS4002AL
+tabela de campos retornada ML238oc
+table_camp 1
+campname TIPO DE LAMPADA
+camp esp table ML238TIPODELAMPADA
+table camp esp MS
+codepiece MS
+campname POTENCIA 
+camp esp table ML238POTENCIA
+table camp esp 250
+codepiece 250
+campname TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML238MATERIAPRIMA
+table camp esp AL
+codepiece AL
+@@@@@@@@@@@@ML238VS2502AL
+ira buscar a imagem com a tabela1 : ML238MAC.TGVP.238
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA 238 (938).jpg
+codigo atual ML238VS2502AL
+tabela de campos retornada ML238oc
+table_camp 1
+campname TIPO DE LAMPADA
+camp esp table ML238TIPODELAMPADA
+table camp esp MS
+codepiece MS
+campname POTENCIA 
+camp esp table ML238POTENCIA
+table camp esp 250
+codepiece 250
+campname TENSAO
+camp esp table ML238TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML238MATERIAPRIMA
+table camp esp AL
+codepiece AL
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 240
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 228
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 238
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia B
+ subfamilia TP
+ modelo 240
+@@@@@@@@@@@@ITB240TP1R0QP0
+ira buscar a imagem com a tabela1 : TIBTP240TL.B.EXE.240
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\TAMPA BOTOEIRA TL.B.EXE.240 P0 1 FURO.jpg
+codigo atual ITB240TP1R0QP0
+tabela de campos retornada TIBTP240oc
+table_camp 1
+campname QUANTIDADE DE FUROS
+camp esp table TIBTP240QUANTIDADEDEFUROS
+table camp esp 0R1Q
+codepiece 0R1Q
+campname DIMENSAO
+camp esp table TIBTP240DIMENSAO
+table camp esp G0
+codepiece G0
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 238
+@@@@@@@@@@@@
+ira buscar a imagem com a tabela1 : ML238MAC.TGVP.238
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA 238 (938).jpg
+codigo atual ML238MS5001AL
+tabela de campos retornada ML238oc
+table_camp 1
+campname TIPO DE LAMPADA
+camp esp table ML238TIPODELAMPADA
+table camp esp MS
+codepiece MS
+campname POTENCIA 
+camp esp table ML238POTENCIA
+table camp esp 250
+codepiece 250
+campname TENSAO
+camp esp table ML238TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML238MATERIAPRIMA
+table camp esp AL
+codepiece AL
+ira buscar a imagem com a tabela1 : ML238MAC.TGVP.238
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA 238 (938).jpg
+codigo atual ML238VR2502AL
+tabela de campos retornada ML238oc
+table_camp 1
+campname TIPO DE LAMPADA
+camp esp table ML238TIPODELAMPADA
+table camp esp MS
+codepiece MS
+campname POTENCIA 
+camp esp table ML238POTENCIA
+table camp esp 250
+codepiece 250
+campname TENSAO
+camp esp table ML238TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML238MATERIAPRIMA
+table camp esp AL
+codepiece AL
+ira buscar a imagem com a tabela1 : ML238MAC.TGVP.238
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA 238 (938).jpg
+codigo atual ML238VR4002AL
+tabela de campos retornada ML238oc
+table_camp 1
+campname TIPO DE LAMPADA
+camp esp table ML238TIPODELAMPADA
+table camp esp MS
+codepiece MS
+campname POTENCIA 
+camp esp table ML238POTENCIA
+table camp esp 250
+codepiece 250
+campname TENSAO
+camp esp table ML238TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML238MATERIAPRIMA
+table camp esp AL
+codepiece AL
+ira buscar a imagem com a tabela1 : ML238MAC.TGVP.238
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA 238 (938).jpg
+codigo atual ML238VS2502AL
+tabela de campos retornada ML238oc
+table_camp 1
+campname TIPO DE LAMPADA
+camp esp table ML238TIPODELAMPADA
+table camp esp MS
+codepiece MS
+campname POTENCIA 
+camp esp table ML238POTENCIA
+table camp esp 250
+codepiece 250
+campname TENSAO
+camp esp table ML238TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML238MATERIAPRIMA
+table camp esp AL
+codepiece AL
+ira buscar a imagem com a tabela1 : ML238MAC.TGVP.238
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA 238 (938).jpg
+codigo atual ML238VS4002AL
+tabela de campos retornada ML238oc
+table_camp 1
+campname TIPO DE LAMPADA
+camp esp table ML238TIPODELAMPADA
+table camp esp MS
+codepiece MS
+campname POTENCIA 
+camp esp table ML238POTENCIA
+table camp esp 250
+codepiece 250
+campname TENSAO
+camp esp table ML238TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML238MATERIAPRIMA
+table camp esp AL
+codepiece AL
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 901
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 901
+ira inserir os valores source : C:\Users\mcruz\Desktop\DSC06109.JPG naome imagem : MODULO TGVP 901 codigo array 1 ITMO9011AFPA
+ira inserir a imagem tabela1 : ITMO9011AFPA tabela2 MODULO TGVP 901 
+ira inserir a imagem tabela1 : ITMO9011AFPC tabela2 MODULO TGVP 901 
+ira inserir a imagem tabela1 : ITMO9011AFTR tabela2 MODULO TGVP 901 
+ira inserir a imagem tabela1 : ITMO9012NAPA tabela2 MODULO TGVP 901 
+ira inserir a imagem tabela1 : ITMO9012NAPC tabela2 MODULO TGVP 901 
+ira inserir a imagem tabela1 : ITMO9012NATR tabela2 MODULO TGVP 901 
+ira inserir a imagem tabela1 : ITMO9012NFPA tabela2 MODULO TGVP 901 
+ira inserir a imagem tabela1 : ITMO9012NFPC tabela2 MODULO TGVP 901 
+ira inserir a imagem tabela1 : ITMO9012NFTR tabela2 MODULO TGVP 901 
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MODULO TGVP 901 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MODULO TGVP 901 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MODULO TGVP 901 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MODULO TGVP 901 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MODULO TGVP 901 .jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MODULO TGVP 901 .jpg
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 212
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 901
+empresa T
+ tipo I
+ familia MO
+ subfamilia TP
+ modelo 901
+valor selecionado que sera linkado : MODULO TGVP 901 
+ira fazer a linkagem da imagem tabela1 : TIMO901TL.MO.TGVP.901 image_name : MODULO TGVP 901 
+empresa T
+ tipo I
+ familia MO
+ subfamilia TP
+ modelo 212
+empresa T
+ tipo I
+ familia MO
+ subfamilia TP
+ modelo 901
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 212
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 901
+@@@@@@@@@@@@
+ira buscar a imagem com a tabela1 : TIMO901TL.MO.TGVP.901
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MODULO TGVP 901 .jpg
+codigo atual ITMO9011AFPA
+tabela de campos retornada TIMO901oc
+table_camp 1
+campname TIPO DE CONTATO
+camp esp table TIMO901TIPODECONTATO
+table camp esp 1AF
+codepiece 1AF
+campname FIXACAO
+camp esp table TIMO901FIXACAO
+table camp esp PA
+codepiece PA
+ira buscar a imagem com a tabela1 : TIMO901TL.MO.TGVP.901
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MODULO TGVP 901 .jpg
+codigo atual ITMO9011AFPC
+tabela de campos retornada TIMO901oc
+table_camp 1
+campname TIPO DE CONTATO
+camp esp table TIMO901TIPODECONTATO
+table camp esp 1AF
+codepiece 1AF
+campname FIXACAO
+camp esp table TIMO901FIXACAO
+table camp esp PA
+codepiece PA
+ira buscar a imagem com a tabela1 : TIMO901TL.MO.TGVP.901
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MODULO TGVP 901 .jpg
+codigo atual ITMO9011AFTR
+tabela de campos retornada TIMO901oc
+table_camp 1
+campname TIPO DE CONTATO
+camp esp table TIMO901TIPODECONTATO
+table camp esp 1AF
+codepiece 1AF
+campname FIXACAO
+camp esp table TIMO901FIXACAO
+table camp esp PA
+codepiece PA
+ira buscar a imagem com a tabela1 : TIMO901TL.MO.TGVP.901
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MODULO TGVP 901 .jpg
+codigo atual ITMO9012NAPA
+tabela de campos retornada TIMO901oc
+table_camp 1
+campname TIPO DE CONTATO
+camp esp table TIMO901TIPODECONTATO
+table camp esp 1AF
+codepiece 1AF
+campname FIXACAO
+camp esp table TIMO901FIXACAO
+table camp esp PA
+codepiece PA
+ira buscar a imagem com a tabela1 : TIMO901TL.MO.TGVP.901
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MODULO TGVP 901 .jpg
+codigo atual ITMO9012NAPC
+tabela de campos retornada TIMO901oc
+table_camp 1
+campname TIPO DE CONTATO
+camp esp table TIMO901TIPODECONTATO
+table camp esp 1AF
+codepiece 1AF
+campname FIXACAO
+camp esp table TIMO901FIXACAO
+table camp esp PA
+codepiece PA
+ira buscar a imagem com a tabela1 : TIMO901TL.MO.TGVP.901
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MODULO TGVP 901 .jpg
+codigo atual ITMO9012NATR
+tabela de campos retornada TIMO901oc
+table_camp 1
+campname TIPO DE CONTATO
+camp esp table TIMO901TIPODECONTATO
+table camp esp 1AF
+codepiece 1AF
+campname FIXACAO
+camp esp table TIMO901FIXACAO
+table camp esp PA
+codepiece PA
+ira buscar a imagem com a tabela1 : TIMO901TL.MO.TGVP.901
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MODULO TGVP 901 .jpg
+codigo atual ITMO9012NFPA
+tabela de campos retornada TIMO901oc
+table_camp 1
+campname TIPO DE CONTATO
+camp esp table TIMO901TIPODECONTATO
+table camp esp 1AF
+codepiece 1AF
+campname FIXACAO
+camp esp table TIMO901FIXACAO
+table camp esp PA
+codepiece PA
+ira buscar a imagem com a tabela1 : TIMO901TL.MO.TGVP.901
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MODULO TGVP 901 .jpg
+codigo atual ITMO9012NFPC
+tabela de campos retornada TIMO901oc
+table_camp 1
+campname TIPO DE CONTATO
+camp esp table TIMO901TIPODECONTATO
+table camp esp 1AF
+codepiece 1AF
+campname FIXACAO
+camp esp table TIMO901FIXACAO
+table camp esp PA
+codepiece PA
+ira buscar a imagem com a tabela1 : TIMO901TL.MO.TGVP.901
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\MODULO TGVP 901 .jpg
+codigo atual ITMO9012NFTR
+tabela de campos retornada TIMO901oc
+table_camp 1
+campname TIPO DE CONTATO
+camp esp table TIMO901TIPODECONTATO
+table camp esp 1AF
+codepiece 1AF
+campname FIXACAO
+camp esp table TIMO901FIXACAO
+table camp esp PA
+codepiece PA
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 203
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 203
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 211
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 212
+ modelo nome : TL.MO.EXE.003
+ modelo mascara : 003
+ira testar se existe
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 901
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 901
+ modelo nome : TL.MO.EXE.003
+ modelo mascara : 003
+ira testar se existe
+ira gravar o item modelo nome TL.MO.EXE.003 mascara 003 tabela TIMOModelo
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 003
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 901
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 003
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 901
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 003
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 003
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 901
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 003
+ modelo nome : TL.MO.EXE.004
+ modelo mascara : 004
+ira testar se existe
+ira gravar o item modelo nome TL.MO.EXE.004 mascara 004 tabela TIMOModelo
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 004
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 901
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 004
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 004
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 003
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 004
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 003
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 201
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 003
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 003
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 201
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 003
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 003
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 004
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 203
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 003
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 004
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 004
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 004
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 004
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 003
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 901
+ modelo nome : TL.MO.TGVP.902
+ modelo mascara : 902
+ira testar se existe
+ira gravar o item modelo nome TL.MO.TGVP.902 mascara 902 tabela TIMOModelo
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 902
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 901
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 902
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 901
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 902
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 901
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 902
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 901
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 902
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 901
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 902
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 004
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 902
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 004
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 902
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 902
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+@@@@@@@@@@@@
+ira buscar a imagem com a tabela1 : TRLAUARXAUREONLUX
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA REVENDA AUREONLUX.jpg
+codigo atual RTLAUARX020PL
+tabela de campos retornada TRLAUARXoc
+table_camp 1
+campname POTENCIA
+camp esp table TRLAUARXPOTENCIA
+table camp esp 020
+codepiece 020
+campname MATERIA PRIMA
+camp esp table TRLAUARXMATERIAPRIMA
+table camp esp PL
+codepiece PL
+ira buscar a imagem com a tabela1 : TRLAUARXAUREONLUX
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA REVENDA AUREONLUX.jpg
+codigo atual RTLAUARX055PL
+tabela de campos retornada TRLAUARXoc
+table_camp 1
+campname POTENCIA
+camp esp table TRLAUARXPOTENCIA
+table camp esp 020
+codepiece 020
+campname MATERIA PRIMA
+camp esp table TRLAUARXMATERIAPRIMA
+table camp esp PL
+codepiece PL
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+valor selecionado que sera linkado : LUMINARIA REVENDA AUREON FLUXEON
+o array de valores nao estava em branco! codigo RTLAUFLUX111BPL
+ira linkar com o array de codigos parametros info.emprsa T codigo : RTLAUFLUX111BPL
+ira fazer a linkagem da imagem tabela1 : RTLAUFLUX111BPL image_name : LUMINARIA REVENDA AUREON FLUXEON
+ira linkar com o array de codigos parametros info.emprsa T codigo : RTLAUFLUX211BPL
+ira fazer a linkagem da imagem tabela1 : RTLAUFLUX211BPL image_name : LUMINARIA REVENDA AUREON FLUXEON
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA REVENDA AUREON FLUXEON.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA REVENDA AUREON FLUXEON.jpg
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+@@@@@@@@@@@@
+ira buscar a imagem com a tabela1 : TRLAUFLUXFLUXEON
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA REVENDA AUREON FLUXEON.jpg
+codigo atual RTLAUFLUX111BPL
+tabela de campos retornada TRLAUFLUXoc
+table_camp 1
+campname QUANTIDADE DE LAMPADAS
+camp esp table TRLAUFLUXQUANTIDADEDELAMPADAS
+table camp esp 1
+codepiece 1
+campname POTENCIA
+camp esp table TRLAUFLUXPOTENCIA
+table camp esp 11
+codepiece 11
+campname TENSAO
+camp esp table TRLAUFLUXTENSAO
+table camp esp B
+codepiece B
+campname MATERIA PRIMA
+camp esp table TRLAUFLUXMATERIAPRIMA
+table camp esp PL
+codepiece PL
+ira buscar a imagem com a tabela1 : TRLAUFLUXFLUXEON
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA REVENDA AUREON FLUXEON.jpg
+codigo atual RTLAUFLUX211BPL
+tabela de campos retornada TRLAUFLUXoc
+table_camp 1
+campname QUANTIDADE DE LAMPADAS
+camp esp table TRLAUFLUXQUANTIDADEDELAMPADAS
+table camp esp 1
+codepiece 1
+campname POTENCIA
+camp esp table TRLAUFLUXPOTENCIA
+table camp esp 11
+codepiece 11
+campname TENSAO
+camp esp table TRLAUFLUXTENSAO
+table camp esp B
+codepiece B
+campname MATERIA PRIMA
+camp esp table TRLAUFLUXMATERIAPRIMA
+table camp esp PL
+codepiece PL
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA REVENDA AUREONLUX.jpg
+@@@@@@@@@@@@
+ira buscar a imagem com a tabela1 : TRLAUARXAUREONLUX
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA REVENDA AUREONLUX.jpg
+codigo atual RTLAUARX020PL
+tabela de campos retornada TRLAUARXoc
+table_camp 1
+campname POTENCIA
+camp esp table TRLAUARXPOTENCIA
+table camp esp 020
+codepiece 020
+campname MATERIA PRIMA
+camp esp table TRLAUARXMATERIAPRIMA
+table camp esp PL
+codepiece PL
+ira buscar a imagem com a tabela1 : TRLAUARXAUREONLUX
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA REVENDA AUREONLUX.jpg
+codigo atual RTLAUARX055PL
+tabela de campos retornada TRLAUARXoc
+table_camp 1
+campname POTENCIA
+camp esp table TRLAUARXPOTENCIA
+table camp esp 020
+codepiece 020
+campname MATERIA PRIMA
+camp esp table TRLAUARXMATERIAPRIMA
+table camp esp PL
+codepiece PL
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA REVENDA AUREON FLUXEON.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA REVENDA AUREON FLUXEON.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA REVENDA AUREON FLUXEON.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA REVENDA AUREON FLUXEON.jpg
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo I
+ familia BT
+ subfamilia AU
+ modelo 04T
+ira buscar a tabela de familias empresa mascara T tipo nome PRODUTOS INTERMEDIARIOS
+tabela de familias retornada TIFamilia
+ira inserir a familia com modelo 
+ira criar a tabela de modelos case nao exista TIBTModelo
+ira inserir a referencia da tabela de modelos
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+ira inserir os valores source : P:\DEP\image_back_up\Botoeira\ScreenShot031.bmp naome imagem : BOTAO DW PARA POTENCIOMETROcodigo array 1 TIBT201DW
+ira inserir a imagem tabela1 : TIBT201DW tabela2 BOTAO DW PARA POTENCIOMETRO
+ira inserir os valores source : P:\DEP\image_back_up\Botoeira\ScreenShot012.bmp naome imagem : BOTAO PULSADOR TL.BT.EXE.201 39MMcodigo array 1 TIBT201K1
+ira inserir a imagem tabela1 : TIBT201K1 tabela2 BOTAO PULSADOR TL.BT.EXE.201 39MM
+ira inserir a imagem tabela1 : TIBT201K2 tabela2 BOTAO PULSADOR TL.BT.EXE.201 39MM
+ira inserir a imagem tabela1 : TIBT201K3 tabela2 BOTAO PULSADOR TL.BT.EXE.201 39MM
+ira inserir a imagem tabela1 : TIBT201K4 tabela2 BOTAO PULSADOR TL.BT.EXE.201 39MM
+ira inserir a imagem tabela1 : TIBT201K5 tabela2 BOTAO PULSADOR TL.BT.EXE.201 39MM
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+valor selecionado que sera linkado : BOTAO SIMPLES PULSADOR TL.BO.EXE.201
+o array de valores nao estava em branco! codigo TIBT201P1
+ira linkar com o array de codigos parametros info.emprsa T codigo : TIBT201P1
+ira fazer a linkagem da imagem tabela1 : TIBT201P1 image_name : BOTAO SIMPLES PULSADOR TL.BO.EXE.201
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO SIMPLES PULSADOR TL.BO.EXE.201.jpg
+valor selecionado que sera linkado : BOTAO DUPLO PULSADOR P2 TL.BO.EXE.202
+o array de valores nao estava em branco! codigo TIBT201P2
+ira linkar com o array de codigos parametros info.emprsa T codigo : TIBT201P2
+ira fazer a linkagem da imagem tabela1 : TIBT201P2 image_name : BOTAO DUPLO PULSADOR P2 TL.BO.EXE.202
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO SIMPLES PULSADOR TL.BO.EXE.201.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO DUPLO PULSADOR P2 TL.BO.EXE.202.jpg
+valor selecionado que sera linkado : BOTAO PULSADOR EMERGENCIA TL.BO.EXE.212
+o array de valores nao estava em branco! codigo TIBT201P3
+ira linkar com o array de codigos parametros info.emprsa T codigo : TIBT201P3
+ira fazer a linkagem da imagem tabela1 : TIBT201P3 image_name : BOTAO PULSADOR EMERGENCIA TL.BO.EXE.212
+valor selecionado que sera linkado : BOTAO EMERGENCIA PRETO TL.BO.EXE.201
+o array de valores nao estava em branco! codigo TIBT201P4
+ira linkar com o array de codigos parametros info.emprsa T codigo : TIBT201P4
+ira fazer a linkagem da imagem tabela1 : TIBT201P4 image_name : BOTAO EMERGENCIA PRETO TL.BO.EXE.201
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR EMERGENCIA TL.BO.EXE.212.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO EMERGENCIA PRETO TL.BO.EXE.201.jpg
+ira inserir os valores source : P:\DEP\image_back_up\Botoeira\ScreenShot013.bmp naome imagem : BOTAO TIPO CHAVE 60MMcodigo array 1 TIBT201S1
+ira inserir a imagem tabela1 : TIBT201S1 tabela2 BOTAO TIPO CHAVE 60MM
+ira inserir a imagem tabela1 : TIBT201S2 tabela2 BOTAO TIPO CHAVE 60MM
+ira inserir a imagem tabela1 : TIBT201S3 tabela2 BOTAO TIPO CHAVE 60MM
+ira inserir a imagem tabela1 : TIBT201S4 tabela2 BOTAO TIPO CHAVE 60MM
+ira inserir a imagem tabela1 : TIBT201S5 tabela2 BOTAO TIPO CHAVE 60MM
+ira inserir os valores source : P:\DEP\image_back_up\Botoeira\ScreenShot010.bmp naome imagem : BOTAO COM CHAVE EMERGENCIA 201codigo array 1 TIBT201Y0
+ira inserir a imagem tabela1 : TIBT201Y0 tabela2 BOTAO COM CHAVE EMERGENCIA 201
+ira inserir os valores source : P:\DEP\image_back_up\Botoeira\ScreenShot011.bmp naome imagem : BOTAO 201 COM CHAVE PRETOcodigo array 1 TIBT201Y1
+ira inserir a imagem tabela1 : TIBT201Y1 tabela2 BOTAO 201 COM CHAVE PRETO
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO COM CHAVE EMERGENCIA 201.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO 201 COM CHAVE PRETO.jpg
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+@@@@@@@@@@@@
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201DW
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201K1
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201K2
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201K3
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201K4
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201K5
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201P1
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201P2
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201P3
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201P4
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201S1
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201S2
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201S3
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201S4
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201S5
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201Y0
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201Y1
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+valor selecionado que sera linkado : BOTAO DW PARA POTENCIOMETRO
+o array de valores nao estava em branco! codigo ITBT201DW
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201DW
+ira fazer a linkagem da imagem tabela1 : ITBT201DW image_name : BOTAO DW PARA POTENCIOMETRO
+valor selecionado que sera linkado : BOTAO PULSADOR TL.BT.EXE.201 39MM
+o array de valores nao estava em branco! codigo ITBT201K1
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201K1
+ira fazer a linkagem da imagem tabela1 : ITBT201K1 image_name : BOTAO PULSADOR TL.BT.EXE.201 39MM
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201K2
+ira fazer a linkagem da imagem tabela1 : ITBT201K2 image_name : BOTAO PULSADOR TL.BT.EXE.201 39MM
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201K3
+ira fazer a linkagem da imagem tabela1 : ITBT201K3 image_name : BOTAO PULSADOR TL.BT.EXE.201 39MM
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201K4
+ira fazer a linkagem da imagem tabela1 : ITBT201K4 image_name : BOTAO PULSADOR TL.BT.EXE.201 39MM
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201K5
+ira fazer a linkagem da imagem tabela1 : ITBT201K5 image_name : BOTAO PULSADOR TL.BT.EXE.201 39MM
+@@@@@@@@@@@@
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO DW PARA POTENCIOMETRO.jpg
+codigo atual ITBT201DW
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+codigo atual ITBT201K1
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+codigo atual ITBT201K2
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+codigo atual ITBT201K3
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+codigo atual ITBT201K4
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+codigo atual ITBT201K5
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201P1
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201P2
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201P3
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201P4
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201S1
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201S2
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201S3
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201S4
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201S5
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201Y0
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\.jpg
+codigo atual ITBT201Y1
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO DW PARA POTENCIOMETRO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO DW PARA POTENCIOMETRO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO DW PARA POTENCIOMETRO.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+valor selecionado que sera linkado : BOTAO SIMPLES PULSADOR TL.BO.EXE.201
+o array de valores nao estava em branco! codigo ITBT201P1
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201P1
+ira fazer a linkagem da imagem tabela1 : ITBT201P1 image_name : BOTAO SIMPLES PULSADOR TL.BO.EXE.201
+valor selecionado que sera linkado : BOTAO DUPLO PULSADOR P2 TL.BO.EXE.202
+o array de valores nao estava em branco! codigo ITBT201P2
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201P2
+ira fazer a linkagem da imagem tabela1 : ITBT201P2 image_name : BOTAO DUPLO PULSADOR P2 TL.BO.EXE.202
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO SIMPLES PULSADOR TL.BO.EXE.201.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO DUPLO PULSADOR P2 TL.BO.EXE.202.jpg
+valor selecionado que sera linkado : BOTAO PULSADOR EMERGENCIA TL.BO.EXE.212
+o array de valores nao estava em branco! codigo ITBT201P3
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201P3
+ira fazer a linkagem da imagem tabela1 : ITBT201P3 image_name : BOTAO PULSADOR EMERGENCIA TL.BO.EXE.212
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR EMERGENCIA TL.BO.EXE.212.jpg
+valor selecionado que sera linkado : BOTAO EMERGENCIA PRETO TL.BO.EXE.201
+o array de valores nao estava em branco! codigo ITBT201P4
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201P4
+ira fazer a linkagem da imagem tabela1 : ITBT201P4 image_name : BOTAO EMERGENCIA PRETO TL.BO.EXE.201
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR EMERGENCIA TL.BO.EXE.212.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO EMERGENCIA PRETO TL.BO.EXE.201.jpg
+valor selecionado que sera linkado : BOTAO TIPO CHAVE 60MM
+o array de valores nao estava em branco! codigo ITBT201S1
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201S1
+ira fazer a linkagem da imagem tabela1 : ITBT201S1 image_name : BOTAO TIPO CHAVE 60MM
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201S2
+ira fazer a linkagem da imagem tabela1 : ITBT201S2 image_name : BOTAO TIPO CHAVE 60MM
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201S3
+ira fazer a linkagem da imagem tabela1 : ITBT201S3 image_name : BOTAO TIPO CHAVE 60MM
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201S4
+ira fazer a linkagem da imagem tabela1 : ITBT201S4 image_name : BOTAO TIPO CHAVE 60MM
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201S5
+ira fazer a linkagem da imagem tabela1 : ITBT201S5 image_name : BOTAO TIPO CHAVE 60MM
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO TIPO CHAVE 60MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO TIPO CHAVE 60MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO TIPO CHAVE 60MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO TIPO CHAVE 60MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO TIPO CHAVE 60MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO TIPO CHAVE 60MM.jpg
+valor selecionado que sera linkado : BOTAO COM CHAVE EMERGENCIA 201
+o array de valores nao estava em branco! codigo ITBT201Y0
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201Y0
+ira fazer a linkagem da imagem tabela1 : ITBT201Y0 image_name : BOTAO COM CHAVE EMERGENCIA 201
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO TIPO CHAVE 60MM.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO COM CHAVE EMERGENCIA 201.jpg
+valor selecionado que sera linkado : BOTAO 201 COM CHAVE PRETO
+o array de valores nao estava em branco! codigo ITBT201Y1
+ira linkar com o array de codigos parametros info.emprsa T codigo : ITBT201Y1
+ira fazer a linkagem da imagem tabela1 : ITBT201Y1 image_name : BOTAO 201 COM CHAVE PRETO
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO COM CHAVE EMERGENCIA 201.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO 201 COM CHAVE PRETO.jpg
+@@@@@@@@@@@@
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO DW PARA POTENCIOMETRO.jpg
+codigo atual ITBT201DW
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+codigo atual ITBT201K1
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+codigo atual ITBT201K2
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+codigo atual ITBT201K3
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+codigo atual ITBT201K4
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR TL.BT.EXE.201 39MM.jpg
+codigo atual ITBT201K5
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO SIMPLES PULSADOR TL.BO.EXE.201.jpg
+codigo atual ITBT201P1
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO DUPLO PULSADOR P2 TL.BO.EXE.202.jpg
+codigo atual ITBT201P2
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO PULSADOR EMERGENCIA TL.BO.EXE.212.jpg
+codigo atual ITBT201P3
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO EMERGENCIA PRETO TL.BO.EXE.201.jpg
+codigo atual ITBT201P4
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO TIPO CHAVE 60MM.jpg
+codigo atual ITBT201S1
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO TIPO CHAVE 60MM.jpg
+codigo atual ITBT201S2
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO TIPO CHAVE 60MM.jpg
+codigo atual ITBT201S3
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO TIPO CHAVE 60MM.jpg
+codigo atual ITBT201S4
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO TIPO CHAVE 60MM.jpg
+codigo atual ITBT201S5
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO COM CHAVE EMERGENCIA 201.jpg
+codigo atual ITBT201Y0
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a imagem com a tabela1 : TIBT201TL.BT.EXE.201
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\BOTAO 201 COM CHAVE PRETO.jpg
+codigo atual ITBT201Y1
+tabela de campos retornada TIBT201oc
+table_camp 1
+campname TIPO
+camp esp table TIBT201TIPO
+table camp esp DW
+codepiece DW
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+empresa T
+ tipo I
+ familia BT
+ subfamilia AU
+ modelo 201
+valor selecionado que sera linkado : BOTAO SIMPLES PULSADOR TL.BO.EXE.201
+ira fazer a linkagem da imagem tabela1 : TIBT201TL.BT.EXE.201 image_name : BOTAO SIMPLES PULSADOR TL.BO.EXE.201
+empresa T
+ tipo I
+ familia BT
+ subfamilia AU
+ modelo 202
+empresa T
+ tipo I
+ familia BT
+ subfamilia AU
+ modelo 201
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 212
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 04T
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BO
+ subfamilia 
+ modelo 04T
+ira buscar a tabela de familias empresa mascara T tipo nome PRODUTOS INTERMEDIARIOS
+tabela de familias retornada TIFamilia
+ modelo nome : TL.MO.EXE.201
+ modelo mascara : 201
+ira testar se existe
+ira gravar o item modelo nome TL.MO.EXE.201 mascara 201 tabela TIBTModelo
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 004
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia MO
+ subfamilia 
+ modelo 201
+ modelo nome : TL.BT.EXE.201
+ modelo mascara : 201
+ira testar se existe
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+ modelo nome : TL.BT.EXE.202
+ modelo mascara : 202
+ira testar se existe
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ modelo nome : TL.BT.EXE.212
+ modelo mascara : 212
+ira testar se existe
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 212
+ modelo nome : TL.BT.EXE.201
+ modelo mascara : 201
+ira testar se existe
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 212
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 212
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 212
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 212
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 202
+ira buscar a descricao!
+empresa T
+ tipo I
+ familia BT
+ subfamilia 
+ modelo 201

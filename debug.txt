@@ -1,169 +1,1198 @@
-### familia nome MODULO PARA BOTAO familia mascara MO
-ira remover o item familia nome MODULO PARA BOTAO
- familia mascara MO
-tabela de familia retornada TIFamilia
- familia nome MODULO PARA BOTAO
- familia mascara MO
+### familia nome LUMINARIA familia mascara L
+ira remover o item familia nome LUMINARIA
+ familia mascara L
+tabela de familia retornada TRFamilia
+ familia nome LUMINARIA
+ familia mascara L
 ira deletar recursivamente !
 tipo Modelo
 ira buscar a referencia da tabela 
-referencia da tabela retornada 
-ira deletar os subitems nome MODULO PARA BOTAO
- mascara MO nivel Familia
-tabela de familia retornada TIFamilia
- familia nome MODULO PARA BOTAO
- familia mascara MO
+referencia da tabela retornada TRLModelo
+tabela de familia retornada TRFamilia
+ familia nome LUMINARIA
+ familia mascara L
 ira deletar recursivamente !
-ira deletar a entrada da mascara na tabela : TIFamilia 
- familia mascara : MO
-ira buscar a tabela de familias empresa mascara T tipo nome PRODUTOS INTERMEDIARIOS
-tabela de familias retornada TIFamilia
-ira inserir a familia com modelo 
-ira criar a tabela de modelos case nao exista TIMOModelo
-ira inserir a referencia da tabela de modelos
+ira deletar a entrada da mascara na tabela : TRFamilia 
+ familia mascara : L
+ira buscar a tabela de familias empresa mascara T tipo nome PRODUTOS REVENDA
+tabela de familias retornada TRFamilia
+ modelo nome : AUREONLUX
+ modelo mascara : ARX
+ira testar se existe
+ira gravar o item modelo nome AUREONLUX mascara ARX tabela TRLAUModelo
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+ modelo nome : FLUXEON
+ modelo mascara : FLUX
+ira testar se existe
+ira gravar o item modelo nome FLUXEON mascara FLUX tabela TRLAUModelo
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+ira inserir os valores source : C:\Users\mcruz\Desktop\aureonlux.jpg naome imagem : LUMINARIA REVENDA AUREONLUXcodigo array 1 
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+ira inserir os valores source : C:\Users\mcruz\Desktop\FLUXEON.jpg naome imagem : LUMINARIA REVENDA AUREON FLUXEONcodigo array 1 
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
 ira buscar a descricao!
 empresa T
  tipo I
- familia MO
+ familia AM
  subfamilia 
- modelo 201
+ modelo AM
+ modelo nome : TL.AM.EXE.205
+ modelo mascara : 205
+ira testar se existe
+empresa T
+ tipo I
+ familia AM
+ subfamilia AU
+ modelo AM
+ modelo nome : TL.AM.EXE.205
+ modelo mascara : 205
+ira testar se existe
+ modelo nome : TL.AM.EXE.205
+ modelo mascara : 205
+ira testar se existe
+ira gravar o item modelo nome TL.AM.EXE.205 mascara 205 tabela TIAMModelo
+empresa T
+ tipo I
+ familia AM
+ subfamilia 
+ modelo 205
 ira buscar a descricao!
 empresa T
  tipo I
- familia MO
+ familia AM
  subfamilia 
- modelo 202
+ modelo 205
 ira buscar a descricao!
 empresa T
  tipo I
- familia MO
+ familia AM
  subfamilia 
- modelo 212
+ modelo 205
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+ira inserir os valores source : C:\Users\mcruz\Desktop\aureonlux.jpg naome imagem : LUMINARIA AUREONLUX PARA REVENDAcodigo array 1 
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+valor selecionado que sera linkado : LUMINARIA REVENDA AUREON FLUXEON
+ira fazer a linkagem da imagem tabela1 : TRLAUFLUXFLUXEON image_name : LUMINARIA REVENDA AUREON FLUXEON
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+valor selecionado que sera linkado : LUMINARIA AUREONLUX PARA REVENDA
+ira fazer a linkagem da imagem tabela1 : TRLAUARXAUREONLUX image_name : LUMINARIA AUREONLUX PARA REVENDA
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+ira buscar a descricao!
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
 ira buscar a descricao!
 empresa T
  tipo I
- familia MO
+ familia AM
  subfamilia 
- modelo 201
+ modelo 205
 ira buscar a descricao!
 empresa T
- tipo I
- familia MO
- subfamilia 
- modelo 202
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
 ira buscar a descricao!
 empresa T
- tipo I
- familia MO
- subfamilia 
- modelo 212
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
 ira buscar a descricao!
 empresa T
- tipo I
- familia MO
- subfamilia 
- modelo 202
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo ARX
+empresa T
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
+valor selecionado que sera linkado : LUMINARIA REVENDA AUREONLUX
+o array de valores nao estava em branco! codigo RTLAUARX020PL
+ira linkar com o array de codigos parametros info.emprsa T codigo : RTLAUARX020PL
+ira fazer a linkagem da imagem tabela1 : RTLAUARX020PL image_name : LUMINARIA REVENDA AUREONLUX
+ira linkar com o array de codigos parametros info.emprsa T codigo : RTLAUARX055PL
+ira fazer a linkagem da imagem tabela1 : RTLAUARX055PL image_name : LUMINARIA REVENDA AUREONLUX
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA REVENDA AUREONLUX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA REVENDA AUREONLUX.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA REVENDA AUREONLUX.jpg
 ira buscar a descricao!
 empresa T
- tipo I
- familia MO
- subfamilia 
- modelo 201
-empresa T
- tipo I
- familia MO
- subfamilia 
- modelo 201
-valor selecionado que sera linkado : MODULO PULSADOR PARA PAINEL TL.MO.EXE.201
-ira fazer a linkagem da imagem tabela1 : TIMO201TL.MO.EXE.201 image_name : MODULO PULSADOR PARA PAINEL TL.MO.EXE.201
-empresa T
- tipo I
- familia MO
- subfamilia 
- modelo 202
-empresa T
- tipo I
- familia MO
- subfamilia 
- modelo 201
-empresa T
- tipo I
- familia MO
- subfamilia 
- modelo 202
-valor selecionado que sera linkado : MODULO PARA BOTAO TL.MO.EXE.202
-ira fazer a linkagem da imagem tabela1 : TIMO202TL.MO.EXE.202 image_name : MODULO PARA BOTAO TL.MO.EXE.202
-empresa T
- tipo I
- familia MO
- subfamilia 
- modelo 201
-empresa T
- tipo I
- familia MO
- subfamilia 
- modelo 202
-empresa T
- tipo I
- familia MO
- subfamilia 
- modelo 212
-valor selecionado que sera linkado : MODULO PARA BOTAO TL.MO.EXE.212
-ira fazer a linkagem da imagem tabela1 : TIMO212TL.MO.EXE.212 image_name : MODULO PARA BOTAO TL.MO.EXE.212
-empresa T
- tipo I
- familia MO
- subfamilia 
- modelo 202
-empresa T
- tipo I
- familia MO
- subfamilia 
- modelo 201
-empresa T
- tipo I
- familia MO
- subfamilia 
- modelo 212
+ tipo R
+ familia L
+ subfamilia AU
+ modelo FLUX
 ira buscar a descricao!
-empresa T
- tipo I
- familia MO
+empresa M
+ tipo 
+ familia L
  subfamilia 
- modelo 202
+ modelo 254
+empresa M
+ tipo 
+ familia L
+ subfamilia AU
+ modelo 254
+empresa M
+ tipo 
+ familia L
+ subfamilia AU
+ modelo 246
+empresa M
+ tipo 
+ familia L
+ subfamilia AU
+ modelo 240
 ira buscar a descricao!
-empresa T
- tipo I
- familia MO
+empresa M
+ tipo 
+ familia L
  subfamilia 
- modelo 201
+ modelo 014
 ira buscar a descricao!
-empresa T
- tipo I
- familia MO
+empresa M
+ tipo 
+ familia L
  subfamilia 
- modelo 212
+ modelo 015N
 ira buscar a descricao!
-empresa T
- tipo I
- familia MO
+empresa M
+ tipo 
+ familia L
  subfamilia 
- modelo 201
+ modelo 015R
 ira buscar a descricao!
-empresa T
- tipo I
- familia MO
+empresa M
+ tipo 
+ familia L
  subfamilia 
- modelo 202
+ modelo 016
 ira buscar a descricao!
-empresa T
- tipo I
- familia MO
+empresa M
+ tipo 
+ familia L
  subfamilia 
- modelo 201
+ modelo 254
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+valor selecionado que sera linkado : LUMINARIA TL.L.TGVP.917
+ira fazer a linkagem da imagem tabela1 : ML254MAC.TGVP.254 image_name : LUMINARIA TL.L.TGVP.917
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 246
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
 ira buscar a descricao!
-empresa T
- tipo I
- familia MO
+empresa M
+ tipo 
+ familia L
  subfamilia 
- modelo 202
+ modelo 246
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+valor selecionado que sera linkado : LUMINARIA TL.L.TGVP.917
+o array de valores nao estava em branco! codigo ML2541211PEE
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2541211PEE
+ira fazer a linkagem da imagem tabela1 : ML2541211PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2541212PEE
+ira fazer a linkagem da imagem tabela1 : ML2541212PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2541219PES
+ira fazer a linkagem da imagem tabela1 : ML2541219PES image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2541221PEE
+ira fazer a linkagem da imagem tabela1 : ML2541221PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2541222PEE
+ira fazer a linkagem da imagem tabela1 : ML2541222PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2541229PES
+ira fazer a linkagem da imagem tabela1 : ML2541229PES image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2541241PEE
+ira fazer a linkagem da imagem tabela1 : ML2541241PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2541242PEE
+ira fazer a linkagem da imagem tabela1 : ML2541242PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2541249PES
+ira fazer a linkagem da imagem tabela1 : ML2541249PES image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2541281PEE
+ira fazer a linkagem da imagem tabela1 : ML2541281PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2541282PEE
+ira fazer a linkagem da imagem tabela1 : ML2541282PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2541289PES
+ira fazer a linkagem da imagem tabela1 : ML2541289PES image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2542211PEE
+ira fazer a linkagem da imagem tabela1 : ML2542211PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2542212PEE
+ira fazer a linkagem da imagem tabela1 : ML2542212PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2542219PES
+ira fazer a linkagem da imagem tabela1 : ML2542219PES image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2542221PEE
+ira fazer a linkagem da imagem tabela1 : ML2542221PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2542222PEE
+ira fazer a linkagem da imagem tabela1 : ML2542222PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2542229PES
+ira fazer a linkagem da imagem tabela1 : ML2542229PES image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2542241PEE
+ira fazer a linkagem da imagem tabela1 : ML2542241PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2542242PEE
+ira fazer a linkagem da imagem tabela1 : ML2542242PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2542249PES
+ira fazer a linkagem da imagem tabela1 : ML2542249PES image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2542281PEE
+ira fazer a linkagem da imagem tabela1 : ML2542281PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2542282PEE
+ira fazer a linkagem da imagem tabela1 : ML2542282PEE image_name : LUMINARIA TL.L.TGVP.917
+ira linkar com o array de codigos parametros info.emprsa M codigo : ML2542289PES
+ira fazer a linkagem da imagem tabela1 : ML2542289PES image_name : LUMINARIA TL.L.TGVP.917
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+@@@@@@@@@@@@
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541211PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541212PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541219PES
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541221PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541222PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541229PES
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541241PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541242PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541249PES
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541281PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541282PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541289PES
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2542211PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2542212PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2542219PES
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2542221PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2542222PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2542229PES
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2542241PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2542242PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2542249PES
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2542281PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2542282PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2542289PES
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E
+ira buscar a descricao!
+empresa M
+ tipo 
+ familia L
+ subfamilia 
+ modelo 254
+\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+@@@@@@@@@@@@ML2541211PEE
+ira buscar a imagem com a tabela1 : ML254MAC.TGVP.254
+caminho da imagem retornado : \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\LUMINARIA TL.L.TGVP.917.jpg
+codigo atual ML2541211PEE
+tabela de campos retornada ML254oc
+table_camp 1
+campname QUANTIDADE DE REATORES
+camp esp table ML254QUANTIDADEDEREATORES
+table camp esp 1
+codepiece 1
+campname QUANTIDADE DE LAMPADA
+camp esp table ML254QUANTIDADEDELAMPADA
+table camp esp 2
+codepiece 2
+campname POTENCIA
+camp esp table ML254POTENCIA
+table camp esp 1
+codepiece 1
+campname TENSAO
+camp esp table ML254TENSAO
+table camp esp 1
+codepiece 1
+campname MATERIA PRIMA
+camp esp table ML254MATERIAPRIMA
+table camp esp PE
+codepiece PE
+campname AUTONOMIA
+camp esp table ML254AUTONOMIA
+table camp esp E
+codepiece E

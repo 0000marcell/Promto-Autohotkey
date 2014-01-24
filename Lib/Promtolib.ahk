@@ -1819,7 +1819,7 @@ createtag(prefix,prefix2,model, selectmodel,codelist, codigos_array = "", textsi
 		; Insere a foto na plaqueta  
 		panel({x:30,y:y+=60,w:200,h:200,color: "nocolor", imagepath: imagepath})
 
-		panel({x:245,y: y,w: 500,h: 200,color: "nocolor",text: table[A_Index,2],textsize: 30,textcolor: textcolor})	
+		panel({x:245,y: y,w: 800,h: 200,color: "nocolor",text: table[A_Index,2],textsize: 30,textcolor: textcolor})	
 		dottedliney := y + 234.17	
 		pPen := Gdip_CreatePen(0xff000000, 3)
 		DrawDottedLine(0,dottedliney,1500,dottedliney)

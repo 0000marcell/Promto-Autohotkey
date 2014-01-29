@@ -5,6 +5,9 @@ class Modelo{
 	incluir(modelo_nome = "", modelo_mascara = "", prefixo = ""){
 		Global mariaDB
 
+		modelo_nome := Trim(modelo_nome), modelo_mascara := Trim(modelo_mascara)
+		prefixo := Trim(prefixo)
+
 		/*	
 			Verifica se o prefixo a inserir o item 
 			esta em branco
@@ -204,7 +207,6 @@ class Modelo{
 	incluir_ordem(items, tabela_ordem){
 		Global mariaDB
 
-		;MsgBox, % "truncate " tabela_ordem
 
 		try{
 			mariaDB.Query(
@@ -215,7 +217,7 @@ class Modelo{
 			MsgBox,16,Erro, % "Ocorreu um erro ao apagar todos os items da tabela de ordem `n" ExceptionDetail(e)
 		
 		for each, item in items{
-			;MsgBox, % "items: " item
+
 			record := {}
 			record.Campos := item
 			mariaDB.Insert(record, tabela_ordem)
@@ -227,6 +229,8 @@ class Modelo{
 	*/
 	incluir_campo(campo_nome, info){
 		Global mariaDB
+
+		campo_nome := Trim(campo_nome)
 
 		/*
 			Pega a tabela de campos relacionada 
@@ -289,12 +293,11 @@ class Modelo{
 	*/
 	inserir_codigo(tabela, valores){
 		Global mariaDB
+
 		if(tabela = "" || valores[1] = ""){
 			MsgBox,16, Erro, % "A tabela de codigos ou os valores estavam em branco `n tabela de codigos: " tabela "`n valores " valores[1] 
 			return
 		}
-
-		FileAppend, % "codigo " valores[1] "`n", % "lista_codigos.txt"
 		
 		record := {}
 		record.Codigos := valores[1]
@@ -326,6 +329,8 @@ class Modelo{
 	*/
 	incluir_bloqueio(value, bloq_table){
 		Global mariaDB
+
+		value := Trim(value)
 
 		if(value = ""){
 			MsgBox,16, Erro, % "O valor a ser inserido nao pode estar em branco !"
@@ -397,18 +402,19 @@ class Modelo{
 	incluir_campo_esp(nome_campo, valores, info){
 		Global mariaDB
 		
-		;MsgBox, % "nome_campo: " nome_campo " `n codigo " valores.codigo "`n dr " valores.dr "`n dc " valores.dc "`n di " valores.di 
 		tabela_campos_especificos := get_tabela_campo_esp(nome_campo, info)
+		
 		if(this.valor_campo_existe(tabela_campos_especificos, valores.codigo)){
 			MsgBox,16, Erro, % "O codigo a ser inserido ja existe na lista!"
 			return
 		}
 
 		record := {}
-		record.Codigo := valores.codigo
-		record.DR := valores.dr
-		record.DC := valores.dc
-		record.DI := valores.di
+		record.Codigo := Trim(valores.codigo)
+		record.DR := Trim(valores.dr)
+		record.DC := Trim(valores.dc)
+		record.DI := Trim(valores.di)
+
 		mariaDB.Insert(record, tabela_campos_especificos)
 	}
 
@@ -437,7 +443,7 @@ class Modelo{
 		sql :=
 		(JOIN 
 			" UPDATE " tabela 
-			" SET Codigo='" valores.codigo "', DC='" valores.DC "', DR='" valores.DR "', DI='" valores.DI "'"
+			" SET Codigo='" Trim(valores.codigo) "', DC='" Trim(valores.DC) "', DR='" Trim(valores.DR) "', DI='" Trim(valores.DI) "'"
 			" WHERE Codigo='" old_cod "'"
 		)	 
 		
@@ -540,6 +546,8 @@ class Modelo{
 	descricao_geral(descricao, descricao_ingles){
 		Global mariaDB, empresa, tipo, familia, subfamilia, modelo
 
+		descricao := Trim(descricao), descricao_ingles := Trim(descricao_ingles) 
+		
 		if(modelo.mascara = ""){
 			MsgBox,16,Erro, % "Selecione um modelo antes de continuar!" 
 			return

@@ -59,6 +59,7 @@ for,each,value in tables {
 	}
 }
 MsgBox,64,, % " Aguarde.... (numero total de codigos:" finalcod["oc"].maxindex() ")"
+
 db.clean_table(codtable)
 
 codes := {}
@@ -104,7 +105,12 @@ for,each,value in finalcod["oc"]{
 			_error:=1
 			Break 
 		}
-		db.Modelo.inserir_codigo(codtable, [finalresult.oc, descgeral " " finalresult.dc, descgeral " " finalresult.dr, descgeralingles " " finalresult.di])
+		
+		descricao_completa := descgeral " " finalresult.dc
+		descricao_resumida := descgeral " " finalresult.dr 
+		descricao_ingles := descgeralingles " " finalresult.di
+
+		db.Modelo.inserir_codigo(codtable, [finalresult.oc, Trim(descricao_completa), Trim(descricao_resumida), Trim(descricao_ingles)])
 }
 Gui,progress:destroy
 if(_error = 0)

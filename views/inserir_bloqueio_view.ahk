@@ -74,6 +74,7 @@ inserir_bloqueio_view(){
 	return
 
 	pesquisa_cod_bloq:
+	Gui, submit, nohide
 	pesquisalv4("MAB", "codigos_bloqueados", pesquisa_cod_bloq, bloqueados_a)
 	return
 

@@ -1607,27 +1607,27 @@ CreateTreeView(TreeViewDefinitionString) {  ; by Learning one
     }
     if(match1="PRODUTOS ACABADOS"){
         icon:="icon2"
-        _dontchange:=1
+        _dontchange := 1
       }
       if(match1="PRODUTOS SEMI-ACABADOS"){
         icon:="icon3"
-        _dontchange:=1
+        _dontchange := 1
       }
       if(match1="MATERIA PRIMA"){
         icon:="icon4"
-        _dontchange:=1
+        _dontchange := 1
       }
       if(match1="PRODUTOS INTERMEDIARIOS"){
         icon:="icon5"
-        _dontchange:=1
+        _dontchange := 1
       }
       if(match1="CONJUNTOS"){
         icon:="icon6"
-        _dontchange:=1
+        _dontchange := 1
       }
       if(match1="MAO DE OBRA"){
         icon:="icon7"
-        _dontchange:=1
+        _dontchange := 1
       }
     if (Level=0){
       IDs["Level0"] := TV_Add(match1, 0,icon)
@@ -1718,7 +1718,7 @@ transform_array(array){
 }
 
 ;############### createtag #################################
-createtag(prefix,prefix2,model, selectmodel,codelist, codigos_array = "", textsize=30,textcolor="ff000000",imagepath="image.png"){
+createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", textsize=30, textcolor="ff000000", imagepath="image.png"){
 	Global db, global_image_path
 	
 	if(codigos_array[1, 1] = ""){
@@ -1742,11 +1742,9 @@ createtag(prefix,prefix2,model, selectmodel,codelist, codigos_array = "", textsi
 		updateprogress("Criando Tags: " table[A_Index,1],1)
 		
 		; Pega a imagem
-		append_debug("ira buscar a imagem com a tabela1 : " prefix model selectmodel)
 		
 		imagepath := global_image_path db.Imagem.get_image_path(table[A_Index, 1]) ".jpg"
 		
-		append_debug("caminho da imagem retornado : " imagepath)
 		f_hight := y-60
 		for, each, value in prefix2{
 			panel({x:x, y:f_hight, w:110, h:50, color: "nocolor", text:"Prefixo", textsize: 10, textcolor: textcolor, boardersize:0})
@@ -1754,6 +1752,7 @@ createtag(prefix,prefix2,model, selectmodel,codelist, codigos_array = "", textsi
 			x += 120
 		}
 		x -= 120
+
 		/*
 
 		panel({x:x,y:y-60,w:110,h:50,color: "nocolor",text:"Familia",textsize: 10,textcolor: textcolor,boardersize:0})
@@ -1764,7 +1763,6 @@ createtag(prefix,prefix2,model, selectmodel,codelist, codigos_array = "", textsi
 		*/
 
 		codigo := table[A_Index,1]	
-		append_debug("codigo atual " codigo)
 		StringTrimleft,codigo,codigo, prefixlength + modellength
 		
 		/*
@@ -1772,36 +1770,23 @@ createtag(prefix,prefix2,model, selectmodel,codelist, codigos_array = "", textsi
 		*/
 		camp_table := db.get_reference("oc", prefix model selectmodel)
 		
-		append_debug("tabela de campos retornada " camp_table)
-
 		table_camp := db.load_table_in_array(camp_table)
-
-		append_debug("table_camp " table_camp[1, 1])
 
 		for, each, value in table_camp{
 			if(table_camp[A_Index,1] = "")
 				Continue
 			campname := table_camp[A_Index, 2]
 
-			append_debug("campname " campname)
-
 			StringReplace, campname, campname, %A_Space%,, All
 			
-			;Pega a tabela de campos especificos
 			camp_esp_table := db.get_reference(campname, prefix model selectmodel)
 			
-			append_debug("camp esp table " camp_esp_table)
-
 			table_camp_esp := db.load_table_in_array(camp_esp_table)
-
-			append_debug("table camp esp " table_camp_esp[1, 1])
 
 			for, each, value in table_camp_esp{
 				if(table_camp_esp[A_Index,1] = "")
 					Continue
 				codepiece := table_camp_esp[A_Index,1]
-
-				append_debug("codepiece " codepiece)
 
 				StringLen,length,codepiece
 
@@ -1827,10 +1812,9 @@ createtag(prefix,prefix2,model, selectmodel,codelist, codigos_array = "", textsi
 		y += 234.17+81
 	}
 	Gui,progress:destroy
-	MsgBox, % "O arquivo foi salvo!!"
-	savetofile("imagename.png")
-	run imagename.png
-	;run debug.txt
+	MsgBox, 64, Sucesso, % "O arquivo foi salvo!!"
+	savetofile("temp\" selectmodel ".png")
+	run, % "temp\" selectmodel ".png"
 }
 
 DrawDottedLine(sx,sy,ex,ey){

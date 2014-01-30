@@ -74,7 +74,6 @@ class Imagem{
 			for, each, value in codigos_array["code"]{
 				codigo := codigos_array["code", A_Index]
 				this.remove_old_relation(codigo)
-				append_debug("ira inserir a imagem tabela1 : " codigo " tabela2 " nome_imagem)
 				record := {}
 				record.tipo := "image"
 				record.tabela1 := codigo
@@ -178,7 +177,6 @@ class Imagem{
 		/*
 			Insere a imagem na tabela de referencia
 		*/
-		append_debug("ira fazer a linkagem da imagem tabela1 : " tabela1 " image_name : " image_name)
 		record := {}
 		record.tipo := "image"
 		record.tabela1 := tabela1

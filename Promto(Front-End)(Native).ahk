@@ -9,7 +9,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ;##################################################
 ;#												  											#
-;#				EMPRESAS						  									#
+;#				EMPRESAS						  									#	
 ;#												  											#
 ;##################################################
 
@@ -347,8 +347,6 @@ return
 		*/
 		reset_debug()
 		info := get_item_info("M", "MODlv")
-		append_debug("### familia nome " info.familia[1] " familia mascara " info.familia[2])
-		append_debug("ira remover o item familia nome " info.familia[1] "`n familia mascara " info.familia[2])
 		db.Familia.excluir(info.familia[1], info.familia[2], info)
 		MsgBox, 64, Sucesso, % "A familia e todos os subitems foram apagados." 
 		TV_Delete(current_id)
@@ -388,6 +386,7 @@ return
   	que a selecao esta
   */
   tv_level := get_tv_level("M", "main_tv")
+
   if(tv_level = 3 || tv_level = 4){
   	/*
   		Se estiver no nivel das 
@@ -409,32 +408,26 @@ return
 				/*
   			Pega a tabela de modelos
   			*/	 
-				familia := get_tv_info("Familia")
-				tipo := get_tv_info("Tipo")
-				empresa := get_tv_info("Empresa")
-
-				model_table := db.get_reference("Modelo", empresa.mascara tipo.mascara familia.nome)
-				;MsgBox, % "tabela de modelos " model_table
+  			info := get_item_info("M", "MODlv")
+				model_table := db.get_reference("Modelo", info.empresa[2] info.tipo[2] info.familia[1])
 			}
   	}
   	
   	if(tv_level = 4){
-  		subfamilia := get_tv_info("Subfamilia")
-  		familia := get_tv_info("Familia")
-			tipo := get_tv_info("Tipo")
-			empresa := get_tv_info("Empresa")
-			model_table := db.get_reference("Modelo", empresa.mascara tipo.mascara familia.mascara subfamilia.nome)
+  		info := get_item_info("M", "MODlv")
+
+			model_table := db.get_reference("Modelo", info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[1])
   	}
+
 		/*
 			Metodo que carrega a lista de modelos
 			em determinada listview
 		*/
-		;MsgBox, % "ira carregar a tabela de modelo " model_table
+
 		db.load_lv("M", "MODlv", model_table)
 		LV_ModifyCol(1)
 		load_logo_in_main()	
   }else{
-  	
   	/*
   		Funcao que substui a imagem que foi gerada
   		no load_image... pelo logo do programa
@@ -545,13 +538,12 @@ return
 		checkeditems:=GetCheckedRows2("massaestrut","estrutlv")
 		filedelete,dadosestrutura.csv
 		MsgBox, % checkeditems["code"].maxindex()
-		FileAppend,% "G1_COD;G1_COMP;G1_QUANT;G1_INI;G1_FIM;G1_FIXVAR;G1_REVFIM;G1_NIV;G1_NIVINV`n",dadosestrutura.csv
+		FileAppend,% "G1_COD;G1_COMP;G1_QUANT;G1_INI;G1_FIM;G1_FIXVAR;G1_REVFIM;G1_NIV;G1_NIVINV`n", dadosestrutura.csv
 		already_in_structure:=""
 		filedelete,debug.txt
 		filedelete,debug2.txt
 		number_of_parents:=0
 		for,each,value in checkeditems["code"]{
-			fileappend,% "checkeditem: " checkeditems["code",A_Index] "`n",debug2.txt
 			loadestruturatofile(checkeditems["code",A_Index] ">>" checkeditems["desc",A_Index])
 		}
 		run,dadosestrutura.csv
@@ -658,7 +650,7 @@ return
 	
 
 CODlv:
-if A_GuiEvent=DoubleClick
+if A_GuiEvent = DoubleClick
 {
 	LV_GetText(selected,A_EventInfo)
 	tvstring := ""
@@ -850,12 +842,10 @@ loadestruturatofile(item){
 			StringReplace,itemtbi1,itemtbi1,MODT,MOD, All    ;SUBSTITUI O MODT POR MOD
 		if(testprefix="TL0"){
 			number_of_parents++
-			FileAppend, % number_of_parents " item " itemtbi1 "`n" ,debug.txt
 		}
 		IfNotInString,already_in_structure,%itemtbi1%;%componentetbi1%
 		{
 			if(testprefix="TL0"){
-				FileAppend, % ">>>>>>>>> Nao existia na estrutura `n",debug.txt
 			}
 			FileAppend,% itemtbi1 ";" componentetbi1 ";" table["QUANTIDADE"] ";31/12/2006;31/12/2049;V;ZZZZ;01;99" "`n",dadosestrutura.csv
 		}
@@ -909,7 +899,6 @@ loadestruturatodb(item){
 				"',D_E_L_E_T_='"
 				"' WHERE G1_COD='" itemtbi1 "' AND G1_COMP='" componentetbi1 "'"
 			)
-			FileAppend,% sql "`n",debug.txt
 			sigaconnection.query(sql)
 		}else{
 			R_E_C_N_O_TBI++
@@ -929,15 +918,12 @@ loadestruturatodb(item){
 				"','" 
 				"','99')"
 			)
-			FileAppend,% sql "`n",debug.txt
 			sigaconnection.query(sql)
 		}
-		FileAppend,% "Select B1_COD from SB1010 WHERE B1_COD LIKE '" itemtbi1 "%'" "`n",debug.txt
 		exist:=existindb(sigaconnection,"Select B1_COD from SB1010 WHERE B1_COD LIKE '" itemtbi1 "%'")
 		if(exist=false){
 			FileAppend, % itemtbi1 "`n",missingitems.csv
 		}
-		FileAppend,% "Select B1_COD from SB1010 WHERE B1_COD LIKE '" componentetbi1 "%'" "`n",debug.txt
 		exist:=existindb(sigaconnection,"Select B1_COD from SB1010 WHERE B1_COD LIKE '" componentetbi1 "%'")
 		if(exist=false){
 			FileAppend, % componentetbi1 "`n",missingitems.csv

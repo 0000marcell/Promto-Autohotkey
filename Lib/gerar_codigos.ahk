@@ -28,12 +28,17 @@ args["mascaraant"] := info.empresa[2] info.tipo[2] info.familia[2] info.subfamil
 /*
 	Carrega a tabela de campos
 */
+
 table_values := db.load_table_in_array(info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "prefixo")
 
 for,each,value in table_values{
-	if(table_values[A_Index,2] = "")
+	if(table_values[A_Index, 2] = "")
 		Continue
-	args["mascaraant2"] .= table_values[A_Index,2]	
+	
+	if(table_values[A_Index, 3] != 1){ ; SE O PREFIXO NAO ESTIVER COMO OMITIDO
+		args["mascaraant2"] .= table_values[A_Index, 2]	
+	}	
+		
 }
 
 if(args["mascaraant2"] = ""){
@@ -50,11 +55,11 @@ for,each,value in tables2
 	args["ordemtable"] := args[value], args["field"] := fields[A_Index], args["type"] := tables[A_Index], loadtables(args)	
 
 finalcod := []
-for,each,value in tables {
+
+for, each, value in tables {
 	codlist := []
-	args["table"] := value, prefix := args["mascaraant2"], global_prefix := prefix, x := 1,gerarcodigos(args,prefix,x)
+	args["table"] := value, prefix := args["mascaraant2"], global_prefix := prefix, x := 1, gerarcodigos(args,prefix,x)
 	for,each2,value2 in codlist {
-		;FileAppend, % "valor final para " value " > " value2 "`n", % "gc_debug.txt"
 		finalcod[value, A_Index] := value2 
 	}
 }
@@ -72,6 +77,7 @@ descgeralingles := desc_2
 progress(finalcod["oc"].maxindex(), parar_gerar_codigo)
 _error := 0
 for,each,value in finalcod["oc"]{
+
 		finalresult := organizecode(finalcod["oc",each]) ;Funcao que organiza os codigos com as descricao correspondentes.
 		updateprogress("Inserindo Codigos " finalresult.oc,1)
 		code_initial_prefix := finalresult.oc

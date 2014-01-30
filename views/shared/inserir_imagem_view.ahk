@@ -47,7 +47,6 @@ inserir_imagem_view(owner_name, picture_control = "", codigos_array = ""){
 	/* 
 		Incluir a foto 
 	*/
-	append_debug("ira inserir os valores source : " source " naome imagem : " nome_imagem "codigo array 1 " s_codigos_array["code", 1])
 	db.Imagem.incluir(source, nome_imagem, s_codigos_array)
 	
 	/*

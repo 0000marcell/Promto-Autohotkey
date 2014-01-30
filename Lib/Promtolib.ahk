@@ -295,7 +295,6 @@ get_tree(table,x,nivel,masc){
 			Break
 		}
 		ETF_TVSTRING .= "`n" . nivel . list[A_Index, 1]		
-		append_debug("o nome : " list[A_Index, 1] " >> mascara " list[A_Index, 2])
 		ETF_hashmask[list[A_Index, 1]] := list[A_Index, 2] 	
 		result := db.query("SELECT tabela2 FROM reltable WHERE tipo='" . field[x] . "' AND tabela1='" . masc . list[A_Index,1] . "'")
 		new_table := result["tabela2"]
@@ -1115,7 +1114,6 @@ show_image_and_code(image, with_desc = 1){
 			Pega a descricao 
 		*/
 		if(with_desc){
-			append_debug("ira buscar a descricao!")
 			desc_ := db.Modelo.get_desc(info)
 			StringSplit, desc_, desc_ ,|,
 			descricao_model := desc_1
@@ -1721,6 +1719,7 @@ transform_array(array){
 createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", textsize=30, textcolor="ff000000", imagepath="image.png"){
 	Global db, global_image_path
 	
+
 	if(codigos_array[1, 1] = ""){
 		table := db.load_table_in_array(codelist)
 	}else{
@@ -1754,12 +1753,10 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 		x -= 120
 
 		/*
-
 		panel({x:x,y:y-60,w:110,h:50,color: "nocolor",text:"Familia",textsize: 10,textcolor: textcolor,boardersize:0})
 		panel({x:x,y:y,w:110,h:50,color: "nocolor",text:prefix2,textsize: textsize,textcolor: textcolor})
 		panel({x:x+=120,y:y-60,w:110,h:50,color: "nocolor",text:"Modelo",textsize: 10,textcolor: textcolor,boardersize:0})
 		panel({x:x,y:y,w:110,h:50,color: "nocolor",text: model,textsize: textsize,textcolor: textcolor})
-		
 		*/
 
 		codigo := table[A_Index,1]	
@@ -1772,42 +1769,49 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 		
 		table_camp := db.load_table_in_array(camp_table)
 
-		for, each, value in table_camp{
-			if(table_camp[A_Index,1] = "")
-				Continue
-			campname := table_camp[A_Index, 2]
 
+		for, each, value in table_camp{
+
+			if(table_camp[A_Index, 2] = ""){
+				Continue
+			}
+
+			campname := table_camp[A_Index, 2]
 			StringReplace, campname, campname, %A_Space%,, All
-			
 			camp_esp_table := db.get_reference(campname, prefix model selectmodel)
 			
 			table_camp_esp := db.load_table_in_array(camp_esp_table)
 
 			for, each, value in table_camp_esp{
-				if(table_camp_esp[A_Index,1] = "")
-					Continue
+
+				;if(table_camp_esp[A_Index,1] = "")
+				;	Continue
+
 				codepiece := table_camp_esp[A_Index,1]
 
-				StringLen,length,codepiece
 
-				if(length!=""){
-					StringLeft,codepiece,codigo,length
-					StringTrimLeft,codigo,codigo,length
+				StringLen, length, codepiece
+
+				
+				if(length != ""){
+					StringLeft, codepiece, codigo, length
+					StringTrimLeft, codigo, codigo, length
 					Break
 				}
 			} 	
 
-			panel({x:x+=120,y:y-60,w:110,h:50,color: "nocolor",text: table_camp[A_Index,2],textsize:8,textcolor: textcolor})
-			panel({x:x,y:y,w:110,h:50,color: "nocolor",text:codepiece,textsize: textsize,textcolor: textcolor})
+			panel({x:x+=120,y:y-60,w:110,h:50,color: "nocolor",text: table_camp[A_Index,2], textsize:8, textcolor: textcolor})
+			panel({x:x, y:y, w:110, h:50, color: "nocolor", text:codepiece, textsize: textsize, textcolor: textcolor})
 		}
 
 		; Insere a foto na plaqueta  
 		panel({x:30,y:y+=60,w:200,h:200,color: "nocolor", imagepath: imagepath})
 
 		panel({x:245,y: y,w: 800,h: 200,color: "nocolor",text: table[A_Index,2],textsize: 30,textcolor: textcolor})	
+
 		dottedliney := y + 234.17	
 		pPen := Gdip_CreatePen(0xff000000, 3)
-		DrawDottedLine(0,dottedliney,1500,dottedliney)
+		DrawDottedLine(0, dottedliney, 1500, dottedliney)
 		Gdip_DeletePen(pPen)
 		y += 234.17+81
 	}
@@ -1993,11 +1997,9 @@ any_word_search(wname,lvname,string,List){
             string2:=List[A_Index,1] List[A_Index,2]
             StringSplit,splitted_string,string,%A_Space%
             _exists_in_all:=0
-            ;FileAppend,% "string pesquisa " string2 "`n",debug_search.txt
 			Loop,% splitted_string0
 			{
 				value_to_search:=trim(splitted_string%A_Index%)
-				;FileAppend,% "value to search " value_to_search  "`n",debug_search.txt
 				IfInString,string2,%value_to_search%
 	            {
 	                _exists_in_all:=1
@@ -2007,7 +2009,6 @@ any_word_search(wname,lvname,string,List){
 	            }
 				;MsgBox, % result%A_Index%	
 			}
-			;FileAppend,% "final result " _exists_in_all   "`n",debug_search.txt
 			if(_exists_in_all=1)
 				resultsearch.insert(i)
         }
@@ -2228,7 +2229,6 @@ printestrutura(item,offset,textcolor = "ff000000",ownercode = "",quantidade = ""
 					imagepath := "noimage.png"
 				}
 				result.close()
-				FileAppend,% "1`n",debug.csv
 		 		panel({x:offset,y:y += 130,w:100,h:100,color: "nocolor",imagepath: imagepath,boardsize: 0})
 		 		panel({x:offset+105,y:y,w:450,h:100,color:"nocolor",text:item1 "`n" item2,textsize:10,textcolor: textcolor,boardsize: 0})
 		 		panel({x:offset+560,y:y,w:100,h:100,color:"nocolor",text:quantidade "`n",textsize:quantidade_text_size,textcolor: textcolor,boardsize: 0,textalign: "center"})
@@ -2247,7 +2247,6 @@ printestrutura(item,offset,textcolor = "ff000000",ownercode = "",quantidade = ""
 				}
 				result.close()
 				;StringLeft,codetype,item1,1
-				FileAppend,% "2`n",debug.csv
 		 		panel({x:offset,y:y+=130,w:100,h:100,color: "nocolor",imagepath: imagepath,boardsize: 0})
 		 		panel({x:offset+105,y:y,w:450,h:100,color:"nocolor",text:item1 "`n" item2,textsize:10,textcolor: textcolor,boardsize: 0})
 		 		panel({x:offset+560,y:y,w:100,h:100,color:"nocolor",text:quantidade "`n",textsize:quantidade_text_size,textcolor: textcolor,boardsize: 0, textalign: "center"})
@@ -2270,7 +2269,6 @@ printestrutura(item,offset,textcolor = "ff000000",ownercode = "",quantidade = ""
 				}
 				result.close()
 				;StringLeft,codetype,tableitem1,1
-				FileAppend,% "3`n",debug.csv
 				panel({x:offset,y:y+=130,w:100,h:100,color: "nocolor",imagepath: imagepath,boardsize: 0})
 		 		panel({x:offset+105,y:y,w:450,h:100,color:"nocolor",text:tableitem1 "`n" tableitem2,textsize: 10,textcolor: textcolor,boardsize: 0})
 		 		panel({x:offset+560,y:y,w:100,h:100,color:"nocolor",text:quantidade "`n",textsize:quantidade_text_size,textcolor: textcolor,boardsize: 0, textalign: "center"})
@@ -2289,7 +2287,6 @@ printestrutura(item,offset,textcolor = "ff000000",ownercode = "",quantidade = ""
 				}
 				result.close()
 				;StringLeft,codetype,tableitem1,1
-				FileAppend,% "4`n",debug.csv
 				panel({x:offset,y:y+=210,w:100,h:100,color: "nocolor",imagepath: imagepath,boardsize: 0})
 		 		panel({x:offset+105,y:y,w:450,h:100,color:"nocolor",text:tableitem1 "`n" tableitem2,textsize: 10,textcolor: textcolor,boardsize: 0})
 		 		panel({x:offset+560,y:y,w:100,h:100,color:"nocolor",text:quantidade "`n",textsize:quantidade_text_size,textcolor: textcolor,boardsize: 0, textalign: "center"})

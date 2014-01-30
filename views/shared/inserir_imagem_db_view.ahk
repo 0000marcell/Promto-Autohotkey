@@ -55,12 +55,9 @@ inserir_imagem_db_view(owner_name, picture_control, codigos_array = ""){
 	*/
 	info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
 	valor_selecionado := GetSelected("inserir_imagem_db_view", "inserir_imagem_db_lv")
-	append_debug("valor selecionado que sera linkado : " valor_selecionado)
 	convert_image := ""
 	if(s_codigos_array["code", 1] != ""){
-		append_debug("o array de valores nao estava em branco! codigo " s_codigos_array["code", 1])
 		for, each, value in s_codigos_array["code"]{
-			append_debug("ira linkar com o array de codigos parametros info.emprsa " info.empresa[2] " codigo : " s_codigos_array["code", A_Index])
 			if(s_codigos_array["code", A_Index] = "")
 				Continue
 			if(A_Index > 1)

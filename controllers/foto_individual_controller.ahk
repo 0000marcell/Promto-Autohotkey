@@ -10,7 +10,6 @@ massa_lv(){
 		
 		if(image_path != ""){
 			full_image_path = %global_image_path%%image_path%.jpg
-		 	append_debug(full_image_path)
 			Guicontrol,, picture, % full_image_path 
 		}else{
 			Guicontrol,,Picture,% "img\sem_foto.jpg"

@@ -1,6 +1,8 @@
 ordem_view(tipo, info){
-	Global db, SMALL_FONT, GLOBAL_COLOR, updownv, ordem_lv
-	Static tabela_ordem
+	Global db, SMALL_FONT, GLOBAL_COLOR, updownv, ordem_lv, ordem_view
+	Static tabela_ordem, s_tipo
+
+	s_tipo := tipo
 
 	/*
 		Gui init
@@ -14,7 +16,10 @@ ordem_view(tipo, info){
 		Items
 	*/
 	Gui, Add, Groupbox, w250 h300, Items
-	Gui, Add, Listview, xp+10 yp+15 w230 h280 vordem_lv,Id|Campos
+	if(tipo = "prefixo")
+		Gui, Add, Listview, xp+10 yp+15 w230 h280 vordem_lv checked, Id|Campos
+	Else
+		Gui, Add, Listview, xp+10 yp+15 w230 h280 vordem_lv , Id|Campos
 
 	/*
 		Handle
@@ -27,21 +32,36 @@ ordem_view(tipo, info){
 	 Gui, Add, Groupbox, xm y+5 w250 h60, Opcoes
 	 Gui, Add, Button, xp+10 yp+15 w100 h30 gsalvar_ordem_prefixo_button, Salvar 
 	 tabela_ordem := get_tabela_ordem(tipo, info)
+	 
 	 /*
 	 	Insere os novos campos na tabela de prefixo
 	 */
+	 tabela_ordem_array := db.load_table_in_array(tabela_ordem)
 	 db.correct_tabela_ordem(tipo, info) 
 	 db.load_lv("ordem_view", "ordem_lv", tabela_ordem)
 	 Gui, Show,, Alterar Ordem
+	 check_omited_items(tabela_ordem_array)
 	 return
 	 
 	 salvar_ordem_prefixo_button:
 	 nova_ordem := []
+	 reset_debug()
 	 Loop % LV_GetCount(){
     	LV_GetText(RetrievedText, A_Index, 2)
+    	append_debug("nova ordem " RetrievedText)
     	nova_ordem.insert(RetrievedText)
 	 }
-	 db.Modelo.incluir_ordem( nova_ordem, tabela_ordem)
+	 /* ######## PEGAR OS ITEMS QUE ESTAO MARCADOS 
+	 	CRIAR UM NOVO CAMPO NA TABELA DE ORDEM E INSERIR 1 QUANDO O ITEM ESTIVER
+	 	MARCADO E 0 QUANDO NAO ESTIVER
+	 */
+	 if(s_tipo = "prefixo"){
+	 	codigos_omitidos := GetCheckedRows("ordem_view", "ordem_lv")	
+	 }else{
+	 	codigos_omitidos := ""
+	 }
+	 
+	 db.Modelo.incluir_ordem(nova_ordem, tabela_ordem, codigos_omitidos)
 	 MsgBox,64, Sucesso, % "Todos os items foram inseridos com sucesso!"
 	 Gui, ordem_view:destroy 
 	 return
@@ -58,5 +78,20 @@ ordem_view(tipo, info){
 		 }
 		LV_MoveRowfam("ordem_view", "ordem_lv", condition)
 	 return 
+}
+
+
+check_omited_items(table){
+	Gui, ordem_view:default
+	Gui, listview, ordem_lv
+
+	for, each, value in table{
+		append_debug("valores omitir " table[A_Index, 3])
+		if(table[A_Index, 3] = 1){
+			append_debug("ira modificar o item " A_Index " da tabela")
+			LV_Modify(A_Index, "+Check")
+		}
+	}
+
 }
 

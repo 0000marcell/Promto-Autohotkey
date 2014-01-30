@@ -740,7 +740,7 @@ class PromtoSQL{
 		table := this.load_table_in_array(table_prefix)
 		prefix := []
 		for each, value in table{
-			if(table[A_Index, 2] = "")
+			if(table[A_Index, 2] = "" or table[A_Index, 3] = 1)
 				Continue
 			prefix[A_Index] := table[A_Index, 2] 
 		}

@@ -1716,9 +1716,10 @@ transform_array(array){
 }
 
 ;############### createtag #################################
-createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", textsize=30, textcolor="ff000000", imagepath="image.png"){
+createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", textsize = 30, textcolor = "ff000000", imagepath = "image.png"){
 	Global db, global_image_path
 	
+	reset_debug()
 
 	if(codigos_array[1, 1] = ""){
 		table := db.load_table_in_array(codelist)
@@ -1738,6 +1739,7 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 		if(table[A_Index,1] = "")
 			Continue
 		x:=30	
+		
 		updateprogress("Criando Tags: " table[A_Index,1],1)
 		
 		; Pega a imagem
@@ -1817,6 +1819,7 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 	}
 	Gui,progress:destroy
 	MsgBox, 64, Sucesso, % "O arquivo foi salvo!!"
+	append_debug("temp\" selectmodel ".png")
 	savetofile("temp\" selectmodel ".png")
 	run, % "temp\" selectmodel ".png"
 }
@@ -2168,7 +2171,7 @@ savetofile(imagename,show=0){
 	Global pBitmap
 
 	FileDelete, % imagename  
-	Gdip_SaveBitmapToFile(pBitmap,imagename)
+	Gdip_SaveBitmapToFile(pBitmap, imagename)
 	Gdip_DisposeImage(pBitmap)
 	if(show=1)
 		run,%imagename%
@@ -2176,11 +2179,11 @@ savetofile(imagename,show=0){
 
 newgdi(a){
 	Global
-	If !pToken := Gdip_Startup()
-	{
-	    MsgBox, 48, gdiplus error!, Gdiplus failed to start. Please ensure you have gdiplus on your system
-	    ExitApp
-	}
+	;If !pToken := Gdip_Startup()
+	;{
+	;    MsgBox, 48, gdiplus error!, Gdiplus failed to start. Please ensure you have gdiplus on your system
+	;    ExitApp
+	;}
 	a.w:= (a.w="") ? 500 : a.w
 	a.h:= (a.h="") ? 500 : a.h
 	pBitmap := Gdip_CreateBitmap(a.w,a.h), G := Gdip_GraphicsFromImage(pBitmap), Gdip_SetSmoothingMode(G, 4)

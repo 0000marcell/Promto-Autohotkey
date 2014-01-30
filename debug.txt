@@ -1,9 +1,1 @@
-nova ordem T
-nova ordem MP
-nova ordem BR
-nova ordem P101
-ira inserir o campo Omitir na tabela
-prefixo item : T
-prefixo item : MP
-prefixo item : BR
-prefixo item : P101
+temp\TL.L.EXE.014.png

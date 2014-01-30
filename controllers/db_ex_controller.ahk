@@ -33,21 +33,19 @@ conectar(){
 	selected_item_name :=  selecteditem[1]
 	StringLeft, base_test_name, selected_item_name, 10
 	base_value := ""
-	;MsgBox, % "base test name " base_test_name
 	if(base_test_name = "TOTALLIGHT"){
 		base_value := "SB1060" 
 	}else{
 		base_value := "SB1010"
 	}
 	connectionvalue := db.query_table("connections",["name", selecteditem[1]], ["name", "connection", "type"])
-	;MsgBox, % "connection " connectionvalue["connection"]
+
 	if(connectionvalue["connection"] = ""){
 		MsgBox, % "Nao existe conxao para esse nome tente adicionar outra conexao."
 		return 
 	}
 	ddDatabaseConnection := connectionvalue["connection"]
 	ddDatabaseType:= connectionvalue["type"]
-	;MsgBox, % "ddDatabaseConnection " ddDatabaseConnection "`n ddDatabaseType " ddDatabaseType  
 	try {
 		sigaconnection := DBA.DataBaseFactory.OpenDataBase(ddDatabaseType,ddDatabaseConnection)
 	} catch e {
@@ -68,23 +66,7 @@ salvar_config(){
 	Global
 
 	Gui,submit,nohide 
-	;MsgBox, % "Ira testar a conexao antes de inserir o valor!"
-	;MsgBox, % "valores configedit2 " configedit2 " configedit " configedit
-	;try {
-	;	sigaconnection:= DBA.DataBaseFactory.OpenDataBase(configedit2,configedit)
-	;} catch e {
-	;	MsgBox,16, Error, % "Erro ao tentar conectar!`n`n" ExceptionDetail(e)
-	;	return 
-	;}
-	;if(IsObject(sigaconnection)){
-	;	 MsgBox,64,,% "A connexao esta funcionando!!!"
-	;}else{
-	;    MsgBox,16,,% "A conexao falhou!! confira os parametros!!"
-	;    return 
-	;}
-	;MsgBox, % "connectionname " connectionname " configedit " configedit " configedit2 " configedit2 
-	db.inserir_conexao(connectionname, configedit, configedit2)
-	;MsgBox,64,,% "Os valores da nova conexao foram salvos!" 
+	db.inserir_conexao(connectionname, configedit, configedit2) 
 	Gui, configdbex:default
 	Gui, Listview, choosedb 
 	LV_Add("", connectionname)
@@ -93,7 +75,7 @@ salvar_config(){
 loadvaltables(){
 	Global
 
-	NCM := {},UM := {},ORIGEM:={},TCONTA:={},TIPO:={},GRUPO:={},IPI:={},LOCPAD:={}
+	NCM := {}, UM := {}, ORIGEM := {}, TCONTA := {}, TIPO := {}, GRUPO := {}, IPI:={}, LOCPAD:={}
 	for,each,list_name in ["NCM","UM","ORIGEM","TCONTA","TIPO","GRUPO","IPI","LOCPAD"]{
     table := db.load_table_in_array(list_name)
     for, each, value in table{
@@ -108,10 +90,8 @@ salvar_val(){
 
 	Gui,submit,nohide
   if(editinserirval1="")||(editinserirval2="")
-      MsgBox, % "Nenhum dos campos pode estar em branco!!!"
-  ;MsgBox, % "selectedvaluecol " selectedvaluecol
+      MsgBox, % "Nenhum dos campos pode estar em branco!"
   db.create_val_table(selectedvaluecol)
-  ;MsgBox, % " editar val 1 " editinserirval1 " editar val 2 " editinserirval2
   db.insert_val(editinserirval1, editinserirval2, selectedvaluecol)
   loadvaltables()
   db.load_lv("inserirval", "lviv2", selectedvaluecol)

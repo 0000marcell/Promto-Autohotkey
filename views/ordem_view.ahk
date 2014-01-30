@@ -45,10 +45,9 @@ ordem_view(tipo, info){
 	 
 	 salvar_ordem_prefixo_button:
 	 nova_ordem := []
-	 reset_debug()
+	 
 	 Loop % LV_GetCount(){
     	LV_GetText(RetrievedText, A_Index, 2)
-    	append_debug("nova ordem " RetrievedText)
     	nova_ordem.insert(RetrievedText)
 	 }
 	 /* ######## PEGAR OS ITEMS QUE ESTAO MARCADOS 
@@ -86,9 +85,7 @@ check_omited_items(table){
 	Gui, listview, ordem_lv
 
 	for, each, value in table{
-		append_debug("valores omitir " table[A_Index, 3])
 		if(table[A_Index, 3] = 1){
-			append_debug("ira modificar o item " A_Index " da tabela")
 			LV_Modify(A_Index, "+Check")
 		}
 	}

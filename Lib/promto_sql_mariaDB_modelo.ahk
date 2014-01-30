@@ -217,7 +217,6 @@ class Modelo{
 		/* 
 			Incluir o campo de omicao
 		*/
-		append_debug("ira inserir o campo Omitir na tabela")
 
 		try{
 			mariaDB.Query(
@@ -226,8 +225,6 @@ class Modelo{
 				))
 		}catch e 
 			;MsgBox,16,Erro, % "Ocorreu um erro ao apagar todos os items da tabela de ordem `n" ExceptionDetail(e)
-
-		append_debug("ira inserir os valores !")
 		
 		for each, item in items{
 			record := {}
@@ -238,7 +235,6 @@ class Modelo{
 				record.Omitir := 0
 			}
 
-			append_debug("prefixo item : " item)
 			mariaDB.Insert(record, tabela_ordem)
 		}
 	}
@@ -249,8 +245,13 @@ class Modelo{
 	incluir_campo(campo_nome, info){
 		Global mariaDB
 
-		campo_nome := Trim(campo_nome)
+		; Coloca o campo no formato necessario
+		campo_nome := this.format_field(campo_nome)
 
+		if(campo_nome = ""){
+			MsgBox, 16, Erro, %  "Existe um erro na formatacao do campo e nao sera incluido !"
+			return
+		}
 		/*
 			Pega a tabela de campos relacionada 
 			com o modelo
@@ -305,6 +306,8 @@ class Modelo{
 		record.tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1] 
 		record.tabela2 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] campo_nome_sem_espaco
 		mariaDB.Insert(record, "reltable")	
+
+		MsgBox,64, Sucesso, % "O campo foi inserido!"
 	}
 
 	/*
@@ -753,5 +756,25 @@ class Modelo{
 		odrtable := db.get_reference("odr", tabela1)
 		oditable := db.get_reference("odi", tabela1)
 		codtable := db.get_reference("Codigo", tabela1)
+	}
+
+	format_field(field){
+		return_field := Trim(field)
+		_ilegal_char := 0
+		IfInString, return_field, "
+		{
+			_ilegal_char := 1
+		} 
+
+		IfInString, return_field, '
+		{
+			_ilegal_char := 1
+		}
+
+		if(_ilegal_char = 1){
+			MsgBox, 16, Erro, % "O campo nao pode conter aspas simples ou duplas!"
+			return
+		}
+		return return_field
 	}
 }

@@ -159,7 +159,6 @@ inserir_campos_view(info){
 	tabela := db.Modelo.get_tabela_campo_referencia(tabela1)
 	control := {window: "inserir_campos_view", combobox: "campos_combobox"}
 	db.load_combobox(control, tabela)
-	MsgBox,64, Sucesso, % "O campo foi inserido!"
 	return
 
 	excluir_campo_button: 

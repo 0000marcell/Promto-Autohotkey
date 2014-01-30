@@ -345,7 +345,7 @@ return
 			Apaga a familia selecionada e todos 
 			os seus subitems
 		*/
-		reset_debug()
+		
 		info := get_item_info("M", "MODlv")
 		db.Familia.excluir(info.familia[1], info.familia[2], info)
 		MsgBox, 64, Sucesso, % "A familia e todos os subitems foram apagados." 
@@ -2133,14 +2133,13 @@ inserir1(args)
 	MsgBox, 4,, Deseja apagar a empresa %selecteditem%?
 	IfMsgBox Yes
 	{
-		db.delete(args1["table"],selecteditem,args1["field1"])
+		db.delete(args1["table"], selecteditem, args1["field1"])
 		SQL:="DELETE FROM reltable WHERE tipo='" . args1["tipo"]  "' AND tabela1='" . args1["tabela1"] . "';"
 		if (!db.Query(SQL)) {
 					  Msg := "ErrorLevel: " . ErrorLevel . "`n" . SQLite_LastError() "`n`n" sQry
 					  throw Exception("Query failed: " Msg)
-					 ; MsgBox, 0, Query failed, %Msg%
 					}
-		db.loadlv("inserir1","lv1",args1["table"],args1["field"])
+		db.loadlv("inserir1", "lv1", args1["table"], args1["field"])
 		closefunc:=args1["closefunc"]
 		%closefunc%(args)
 	}else{

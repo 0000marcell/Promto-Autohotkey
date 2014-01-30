@@ -6,12 +6,9 @@ bloquear_codigo(){
 	selected_items := ""
 	selected_numbers := ""
 	selected_items := getselecteditems("MAB", "codigos_livres")
-	;selected_numbers := getselecteditems("MAB", "codigos_livres", "number")
-	;MsgBox, % "numero de items selecionados " selected_items.maxindex()
+
 	for, each, value in selected_items{
-		;MsgBox, % "select item " selected_items[A_Index] "`n select number " selected_numbers[A_Index]
 		selected_item := selected_items[A_Index]
-		;selected_number := selected_numbers[A_Index]
 
 		if(selected_item = "Codigos" || selected_item = ""){
 			Continue
@@ -19,10 +16,7 @@ bloquear_codigo(){
 
 		Gui, Listview, codigos_bloqueados
 		item_inserted := LV_Add("", selected_item)
-		;LV_Modify(item_inserted, "Select")
-		;LV_Modify(item_inserted, "Focus")	
 	}
-	; remove os items selecionados na determinada listview
 	remove_selected_in_lv("MAB", "codigos_livres")
 }
 
@@ -45,10 +39,7 @@ desbloquear_codigo(){
 
 		Gui, Listview, codigos_livres
 		item_inserted := LV_Add("", selected_item)
-		;LV_Modify(item_inserted, "Select")
-		;LV_Modify(item_inserted, "Focus")	
 	} 
-	; remove os items selecionados na determinada listivew
 	remove_selected_in_lv("MAB", "codigos_bloqueados")
 }
 

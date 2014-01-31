@@ -62,14 +62,34 @@ lista_de_codigos(info){
 	return
 
 	gerarplaquetas:
-
 	codigos_selecionados := GetCheckedRows("lista_de_codigos_view","lvcodetable")
 	prefix := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2]
 	model_mask := s_info.modelo[2]
 	ordened_prefix := db.get_ordened_prefix(s_info)
-	StringReplace, ordened_prefix, ordened_prefix, %model_mask%,, All
 	model_name := s_info.modelo[1]
 	createtag(prefix, ordened_prefix, model_mask, model_name, prefix model_mask "Codigo", codigos_selecionados)
 	return 
 
+	lista_de_codigos_viewContextMenu:
+	MsgBox, % "context menu "
+	if A_GuiControl = lvcodetable
+	{
+		MsgBox, % "ccc"	
+		Menu, lista_de_codigos_menu, Add, Marcar Todos , marcar_todos_lista_de_codigos
+		Menu, lista_de_codigos_menu, Add, Desmarcar Todos, desmarcar_todos_lista_de_codigos	
+		Menu, lista_de_codigos_menu, Show, x%A_GuiX% y%A_GuiY%
+	}
+	return
+
+	marcar_todos_lista_de_codigos:
+	/* 
+		###### TO DO 
+	*/
+	return
+
+	desmarcar_todos_lista_de_codigos:
+	/* 
+		###### TO DO 
+	*/
+	return
 }

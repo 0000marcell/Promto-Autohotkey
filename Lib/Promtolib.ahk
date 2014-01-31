@@ -1718,8 +1718,6 @@ transform_array(array){
 ;############### createtag #################################
 createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", textsize = 30, textcolor = "ff000000", imagepath = "image.png"){
 	Global db, global_image_path
-	
-	reset_debug()
 
 	if(codigos_array[1, 1] = ""){
 		table := db.load_table_in_array(codelist)
@@ -1729,25 +1727,30 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 	
 	progress(table.maxindex())
 	totalheight := 500.17 * table.maxindex()
-	newgdi({w:1200,h:totalheight})
-	StringLen, prefixlength, prefix
-	StringLen, modellength, model
-	y:=80 
+	newgdi({w:1200, h:totalheight})
+	prefix_in_string := get_prefix_in_string(prefix2)
+	StringLen, prefixlength, prefix_in_string
+	
+	y := 80
+	 
 	panel({x:0, y:0, w:1200, h:totalheight, color: "white", boardcolor: "0x00000000"})
 	
 	for, each, value in table{
 		if(table[A_Index,1] = "")
 			Continue
 		x:=30	
-		
 		updateprogress("Criando Tags: " table[A_Index,1],1)
 		
 		; Pega a imagem
-		
 		imagepath := global_image_path db.Imagem.get_image_path(table[A_Index, 1]) ".jpg"
 		
+		/*
+			Insere o prefixo
+		*/
 		f_hight := y-60
 		for, each, value in prefix2{
+			if(prefix2[A_Index] = "")
+				Continue
 			panel({x:x, y:f_hight, w:110, h:50, color: "nocolor", text:"Prefixo", textsize: 10, textcolor: textcolor, boardersize:0})
 			panel({x:x, y:f_hight+60, w:110, h:50, color: "nocolor", text:prefix2[A_Index], textsize: textsize, textcolor: "ffff3311"})	
 			x += 120
@@ -1762,7 +1765,8 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 		*/
 
 		codigo := table[A_Index,1]	
-		StringTrimleft,codigo,codigo, prefixlength + modellength
+
+		StringTrimleft,codigo,codigo, prefixlength
 		
 		/*
 			Pega a tabela de campos, para pega o nome dos campos
@@ -1801,7 +1805,9 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 					Break
 				}
 			} 	
-
+			/*
+				Insere os campos especificos
+			*/
 			panel({x:x+=120,y:y-60,w:110,h:50,color: "nocolor",text: table_camp[A_Index,2], textsize:8, textcolor: textcolor})
 			panel({x:x, y:y, w:110, h:50, color: "nocolor", text:codepiece, textsize: textsize, textcolor: textcolor})
 		}
@@ -1809,6 +1815,9 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 		; Insere a foto na plaqueta  
 		panel({x:30,y:y+=60,w:200,h:200,color: "nocolor", imagepath: imagepath})
 
+		/*
+			Insere a descricao
+		*/
 		panel({x:245,y: y,w: 800,h: 200,color: "nocolor",text: table[A_Index,2],textsize: 30,textcolor: textcolor})	
 
 		dottedliney := y + 234.17	
@@ -1819,9 +1828,16 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 	}
 	Gui,progress:destroy
 	MsgBox, 64, Sucesso, % "O arquivo foi salvo!!"
-	append_debug("temp\" selectmodel ".png")
 	savetofile("temp\" selectmodel ".png")
 	run, % "temp\" selectmodel ".png"
+}
+
+get_prefix_in_string(table){
+	
+	for, each, value in table{
+		return_value .= table[A_Index]
+	}
+	return return_value
 }
 
 DrawDottedLine(sx,sy,ex,ey){
@@ -2368,14 +2384,14 @@ deleta o arquivo de debug
 */
 
 reset_debug(){
-	FileDelete, % "debug.txt"
+	FileDelete, % "temp\debug.txt"
 }
 
 /*
 	Insere novos valores no debug
 */
 append_debug(string){
-	FileAppend, % string "`n", % "debug.txt"
+	FileAppend, % string "`n", % "temp\debug.txt"
 }
 
 /*

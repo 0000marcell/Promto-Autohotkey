@@ -739,10 +739,15 @@ class PromtoSQL{
 		table_prefix := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "prefixo"
 		table := this.load_table_in_array(table_prefix)
 		prefix := []
+		i := 0
 		for each, value in table{
-			if(table[A_Index, 2] = "" or table[A_Index, 3] = 1)
+			i++
+			if(table[A_Index, 2] = "" or table[A_Index, 3] = 1){
+				i--
 				Continue
-			prefix[A_Index] := table[A_Index, 2] 
+			}
+			FileAppend, % "prefixo antes : " table[A_Index, 2] "`n", % "debug.txt"
+			prefix[i] := table[A_Index, 2] 
 		}
 		return prefix
 	}

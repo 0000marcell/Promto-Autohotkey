@@ -259,6 +259,7 @@ if A_GuiControl = main_tv
 		Caso a insercao esteja no nivel 
 		de familias
 	*/
+
 	if(tv_level_menu = 2){
 		current_columns := "Familias"
 		info := get_item_info("M", "MODlv")

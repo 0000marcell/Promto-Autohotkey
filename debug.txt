@@ -1,1 +1,12 @@
-temp\TL.L.EXE.014.png
+prefixo antes : I
+prefixo antes : T
+prefixo antes : L
+prefixo antes : 010
+prefixo antes : CJC
+prefixo intermediario I
+prefixo intermediario T
+prefixo intermediario L
+prefixo intermediario 010
+prefixo intermediario CJC
+prefixo na string ITL010CJC
+prefix length 9

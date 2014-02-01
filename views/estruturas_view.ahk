@@ -54,7 +54,6 @@ estruturas_view(){
 	return
 
 	estrutlv:
-	FileDelete, % "debug.txt"
 	estrut_lv()
 	return
 

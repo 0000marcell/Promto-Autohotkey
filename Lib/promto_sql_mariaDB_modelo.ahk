@@ -565,12 +565,12 @@ class Modelo{
 	/*
 		Altera a descricao geral de determinado modelo
 	*/
-	descricao_geral(descricao, descricao_ingles){
-		Global mariaDB, empresa, tipo, familia, subfamilia, modelo
+	descricao_geral(descricao, descricao_ingles, info){
+		Global mariaDB
 
 		descricao := Trim(descricao), descricao_ingles := Trim(descricao_ingles) 
 		
-		if(modelo.mascara = ""){
+		if(info.modelo[2] = ""){
 			MsgBox,16,Erro, % "Selecione um modelo antes de continuar!" 
 			return
 		}
@@ -578,7 +578,7 @@ class Modelo{
 
 		record := {}
 		record.descricao := descricao "|" descricao_ingles
-		table := empresa.mascara tipo.mascara familia.mascara subfamilia.mascara modelo.mascara "Desc"
+		table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "Desc"
 		
 		/*
 			Deleta a descricao anterior
@@ -622,7 +622,9 @@ class Modelo{
 		}else{
 			prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2]
 		}
-		try{
+		
+
+		try{ 
 			rs := mariaDB.OpenRecordSet("select descricao from " prefixo "Desc order by descricao asc limit 1;")
 		}catch e{
 			MsgBox,16, Erro, % "Ocorreu um erro ao tentar buscar a descricao!"

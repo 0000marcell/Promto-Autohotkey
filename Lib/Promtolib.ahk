@@ -1201,14 +1201,14 @@ change_info(v_info){
 	e_info.empresa[2] := empresa.mascara
 	e_info.tipo[2] := tipo.mascara
 	e_info.familia[2] := familia.mascara
-	e_info.subfamilia[2] := subfamilia.mascara
+	e_info.subfamilia[2] := v_info.subfamilia[2]
 	e_info.modelo[2] := v_info.modelo[2]
 
 	e_info.empresa[1] :=  empresa.nome
 	e_info.tipo[1] := tipo.nome
 	e_info.familia[1] := familia.nome
-	e_info.subfamilia[1] := subfamilia.nome
-	e_info.modelo[1] := v_info.nome 
+	e_info.subfamilia[1] := v_info.subfamilia[1]
+	e_info.modelo[1] := v_info.modelo[1]
 
 	return e_info
 }

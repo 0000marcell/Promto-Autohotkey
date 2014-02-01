@@ -291,7 +291,6 @@ add_componente_marcado(){
 			componente := checked_componentes["code", A_Index]
 			if(componente = "")
 				Continue
-			FileAppend, % " o componente " componente " sera inserido no item " item "`n", % "debug.txt"
 			db.Estrutura.inserir(item, componente)
 		}
 	}

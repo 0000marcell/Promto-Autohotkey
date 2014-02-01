@@ -1,12 +1,69 @@
+tabela 1 TRLAUFLUXFLUXEON
+empresa T
+ tipo R
+ familia L subfamilia AU modelo FLUXprefixo buscar descricao TRLAUFLUX
+prefixo buscar descricao TRLAUARX
+prefixo buscar descricao TRLAUFLUX
+prefixo buscar descricao TRLAUBATFLUX
+prefixo buscar descricao TRLAUFLUX
+prefixo buscar descricao TRLAUARX
+prefixo buscar descricao TRLAUBATFLUX
+prefixo buscar descricao TRLAUFLUX
+prefixo buscar descricao TRLAUARX
+prefixo buscar descricao TRLAUBATFLUX
+prefixo buscar descricao TRLAUBATFLUX
+prefixo buscar descricao TRLAUFLUX
+prefixo buscar descricao TRLAUBATFLUX
+prefixo buscar descricao TRLAUFLUX
+prefixo buscar descricao TRLAUARX
+prefixo buscar descricao TRLAUFLUX
+prefixo buscar descricao TRLAUBATFLUX
+prefixo buscar descricao TRLAUBATFLUX
+prefixo buscar descricao TRLAUFLUX
+prefixo buscar descricao TRLAUBATFLUX
+prefixo buscar descricao TILCJCAVF
+prefixo buscar descricao TILCJC959
+prefixo buscar descricao TILCJCAVF
+prefixo buscar descricao TILCJPAVF
+prefixo buscar descricao TILCJPAVF
+prefixo buscar descricao TILCJPAVF
 prefixo antes : I
 prefixo antes : T
 prefixo antes : L
-prefixo antes : 010
+prefixo antes : AVF
 prefixo antes : CJC
-prefixo intermediario I
-prefixo intermediario T
-prefixo intermediario L
-prefixo intermediario 010
-prefixo intermediario CJC
-prefixo na string ITL010CJC
-prefix length 9
+prefixo buscar descricao TRLAUFLUX
+prefixo buscar descricao TRLAUFLUX
+prefixo buscar descricao TILCJCAVF
+prefixo buscar descricao TILCOAVF
+prefixo buscar descricao TILCOAVF
+prefixo buscar descricao TILDIVAVF
+prefixo buscar descricao TILCOAVF
+prefixo buscar descricao TILDIVAVF
+prefixo buscar descricao TILDIVAVF
+prefixo buscar descricao TILDIV959
+prefixo buscar descricao TILDIVAVF
+prefixo buscar descricao TILDIVAVF
+prefixo buscar descricao TILDIVAVF
+prefixo buscar descricao TL010
+prefixo buscar descricao TL009
+prefixo buscar descricao TL010
+prefixo buscar descricao TL015G
+prefixo buscar descricao TL015R
+prefixo buscar descricao TILDIVAVF
+prefixo buscar descricao TILDIV015G
+prefixo buscar descricao TILDIVAVF
+prefixo buscar descricao TILDIV959
+prefixo buscar descricao TILDIVAVF
+prefixo buscar descricao TILDIVAVF
+prefixo buscar descricao TILDIVAVF
+prefixo buscar descricao TILDIV959
+prefixo buscar descricao TILDIVAVF
+prefixo buscar descricao TIPDIV101
+prefixo buscar descricao TIPDIV103
+prefixo buscar descricao TIPCO101
+prefixo buscar descricao TP021
+prefixo buscar descricao TP101
+prefixo buscar descricao TIPCO101
+prefixo buscar descricao TIPCO101
+prefixo buscar descricao TIPCO101

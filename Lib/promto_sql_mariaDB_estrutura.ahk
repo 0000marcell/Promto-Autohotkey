@@ -7,13 +7,11 @@ class Estrutura{
 			return
 		}
 
-		FileAppend, % "ira comferir se o item " item " existe no componente " componente " `n ", % "debug.txt"
 		
 		if(this.exists(item, componente)){
 			MsgBox, 16, Erro, % " O componente " componente " ja existia no item " item 
 			return
 		}
-		FileAppend, % "ira inserir o componente `n", % "debug.txt"
 		record := {}
 		record.item := item
 		record.componente := componente
@@ -48,8 +46,7 @@ class Estrutura{
 	*/
 	exists(item, componente){
 		Global mariaDB
-
-
+		
 		table := mariaDB.Query(
 			(JOIN 
 				" SELECT * FROM estruturas " 

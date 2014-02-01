@@ -255,7 +255,6 @@ class Empresa{
 			Quando voltar da iteracao de todos os subitems
 			excluir o item pai (este item)
 		*/
-		;FileAppend, % "#DELETE fim do loop nome: " nome " mascara: " mascara "`n", % "debug.txt"
 		this.delete_subitem(nome, mascara, info, nivel)
 	}
 

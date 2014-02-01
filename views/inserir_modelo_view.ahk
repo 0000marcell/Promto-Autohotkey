@@ -62,7 +62,8 @@ inserir_modelo_view(model_table){
 
 	salvar_descricao_geral_button:
 	Gui, Submit, Nohide
-	db.Modelo.descricao_geral(descricao_geral_edit, descricao_geral_ingles_edit)
+	v_info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
+	db.Modelo.descricao_geral(descricao_geral_edit, descricao_geral_ingles_edit, v_info)
 	return
 
 	inserir_modelo_viewguiclose:
@@ -139,7 +140,8 @@ inserir_modelo_view(model_table){
 	salvar_modelo_button:
 	Gui, Submit, Nohide
 	Gui, insert_dialogo_2:destroy
-	prefixo := empresa.mascara tipo.mascara familia.mascara subfamilia.mascara
+	v_info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
+	prefixo := v_info.empresa[2] v_info.tipo[2] v_info.familia[2] v_info.subfamilia[2]
 	/*
 		Verifica se algum dos valores necessarios esta em branco
 	*/
@@ -152,6 +154,7 @@ inserir_modelo_view(model_table){
 	/*
 		Insere os valores na tabela 
 	*/
+
 	db.Modelo.incluir(input_name, input_mascara, prefixo)
 
 	/*

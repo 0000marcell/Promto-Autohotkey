@@ -309,7 +309,6 @@ return
 			Apaga a empresa selecionada e todos 
 			os seus subitems
 		*/
-		;FileDelete, % "debug.txt"
 		
 		empresa := get_tv_info("Empresa")
 		
@@ -541,8 +540,6 @@ return
 		MsgBox, % checkeditems["code"].maxindex()
 		FileAppend,% "G1_COD;G1_COMP;G1_QUANT;G1_INI;G1_FIM;G1_FIXVAR;G1_REVFIM;G1_NIV;G1_NIVINV`n", dadosestrutura.csv
 		already_in_structure:=""
-		filedelete,debug.txt
-		filedelete,debug2.txt
 		number_of_parents:=0
 		for,each,value in checkeditems["code"]{
 			loadestruturatofile(checkeditems["code",A_Index] ">>" checkeditems["desc",A_Index])
@@ -882,7 +879,6 @@ loadestruturatodb(item){
 		StringSplit,itemtbi,itemtbi,|
 		StringReplace,componentetbi,componentetbi,% ">>",|, All
 		StringSplit,componentetbi,componentetbi,|
-		FileAppend, % "Select G1_COD from SG1010 WHERE G1_COD LIKE '" itemtbi1 "%' AND G1_COMP LIKE '" componentetbi1 "%'" "`n",debug.txt
 		exist:=existindb(sigaconnection,"Select G1_COD from SG1010 WHERE G1_COD LIKE '" itemtbi1 "%' AND G1_COMP LIKE '" componentetbi1 "%'")
 		if(exist=true){ 
 			sql:=

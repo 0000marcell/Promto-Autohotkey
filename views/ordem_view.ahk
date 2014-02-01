@@ -2,7 +2,6 @@ ordem_view(tipo, info){
 	Global db, SMALL_FONT, GLOBAL_COLOR, updownv, ordem_lv, ordem_view
 	Static tabela_ordem, s_tipo
 
-	MsgBox, % "modelo " info.modelo[2] 
 	if(info.modelo[2] = "" or info.modelo[2] = "Mascara"){
 		MsgBox, 16, Erro, % "Selecione um modelo antes de continuar!"
 		return

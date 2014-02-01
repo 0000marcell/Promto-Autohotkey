@@ -746,7 +746,6 @@ class PromtoSQL{
 				i--
 				Continue
 			}
-			FileAppend, % "prefixo antes : " table[A_Index, 2] "`n", % "debug.txt"
 			prefix[i] := table[A_Index, 2] 
 		}
 		return prefix

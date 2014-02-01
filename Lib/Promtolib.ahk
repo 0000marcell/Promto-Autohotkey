@@ -1719,6 +1719,9 @@ transform_array(array){
 createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", textsize = 30, textcolor = "ff000000", imagepath = "image.png"){
 	Global db, global_image_path
 
+	code_rect_size := 125 ; tamanho do retangulo onde vai o codigo
+	code_rect_spacing := 130 ; tamanho do espacamento entre os retangulos 
+
 	if(codigos_array[1, 1] = ""){
 		table := db.load_table_in_array(codelist)
 	}else{
@@ -1751,17 +1754,17 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 		for, each, value in prefix2{
 			if(prefix2[A_Index] = "")
 				Continue
-			panel({x:x, y:f_hight, w:110, h:50, color: "nocolor", text:"Prefixo", textsize: 10, textcolor: textcolor, boardersize:0})
-			panel({x:x, y:f_hight+60, w:110, h:50, color: "nocolor", text:prefix2[A_Index], textsize: textsize, textcolor: "ffff3311"})	
-			x += 120
+			panel({x:x, y:f_hight, w:code_rect_size, h:50, color: "nocolor", text:"Prefixo", textsize: 10, textcolor: textcolor, boardersize:0})
+			panel({x:x, y:f_hight+60, w:code_rect_size, h:50, color: "nocolor", text:prefix2[A_Index], textsize: textsize, textcolor: "ffff3311"})	
+			x += code_rect_spacing
 		}
-		x -= 120
+		x -= code_rect_spacing
 
 		/*
-		panel({x:x,y:y-60,w:110,h:50,color: "nocolor",text:"Familia",textsize: 10,textcolor: textcolor,boardersize:0})
-		panel({x:x,y:y,w:110,h:50,color: "nocolor",text:prefix2,textsize: textsize,textcolor: textcolor})
-		panel({x:x+=120,y:y-60,w:110,h:50,color: "nocolor",text:"Modelo",textsize: 10,textcolor: textcolor,boardersize:0})
-		panel({x:x,y:y,w:110,h:50,color: "nocolor",text: model,textsize: textsize,textcolor: textcolor})
+		panel({x:x,y:y-60,w:code_rect_size,h:50,color: "nocolor",text:"Familia",textsize: 10,textcolor: textcolor,boardersize:0})
+		panel({x:x,y:y,w:code_rect_size,h:50,color: "nocolor",text:prefix2,textsize: textsize,textcolor: textcolor})
+		panel({x:x+=code_rect_spacing,y:y-60,w:code_rect_size,h:50,color: "nocolor",text:"Modelo",textsize: 10,textcolor: textcolor,boardersize:0})
+		panel({x:x,y:y,w:code_rect_size,h:50,color: "nocolor",text: model,textsize: textsize,textcolor: textcolor})
 		*/
 
 		codigo := table[A_Index,1]	
@@ -1808,8 +1811,8 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 			/*
 				Insere os campos especificos
 			*/
-			panel({x:x+=120,y:y-60,w:110,h:50,color: "nocolor",text: table_camp[A_Index,2], textsize:8, textcolor: textcolor})
-			panel({x:x, y:y, w:110, h:50, color: "nocolor", text:codepiece, textsize: textsize, textcolor: textcolor})
+			panel({x:x+=code_rect_spacing,y:y-60,w:code_rect_size,h:50,color: "nocolor",text: table_camp[A_Index,2], textsize:8, textcolor: textcolor})
+			panel({x:x, y:y, w:code_rect_size, h:50, color: "nocolor", text:codepiece, textsize: textsize, textcolor: textcolor})
 		}
 
 		; Insere a foto na plaqueta  

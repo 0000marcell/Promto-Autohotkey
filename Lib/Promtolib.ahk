@@ -1686,10 +1686,10 @@ haschild(itemid,wname,tv){
 
 ;############# load lv from array ################
 load_lv_from_array(columns, array, window, lv){
-	Gui,%window%:default
-	gui,listview,%lv% 
+	Gui, %window%:default
+	Gui, listview, %lv% 
 	prev_count := 0
-	loop,% array.maxindex(){
+	loop, % array.maxindex(){
 		col_number := A_Index
 		LV_InsertCol(col_number,"",columns[A_Index])
 		loop,% array[col_number].maxindex(){

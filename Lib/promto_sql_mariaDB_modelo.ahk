@@ -782,4 +782,62 @@ class Modelo{
 		}
 		return return_field
 	}
+
+	/*
+		Linka uma tabela especifica 
+	*/
+	link_specific_field(values, info){
+		Global mariaDB
+
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] 
+		if(this.exist_relation(values.tipo, tabela1)){
+			this.delete_relation(values.tipo, tabela1)
+		}
+		record := {}
+		record.tipo := values.tipo  	
+		record.tabela1 := tabela1
+		record.tabela2 := values.tabela2
+		mariaDB.Insert(record, "reltable")
+	}
+
+	/*
+		Verifica se existe alguma tabela linkada
+	*/
+	exist_relation(tipo, tabela2){
+		Global mariaDB
+
+		table := mariaDB.Query(
+			(JOIN 
+				" SELECT tipo,tabela1,tabela2 FROM reltable "
+				" WHERE tipo LIKE '" tipo "' "
+				" AND tabela2 LIKE '" tabela2 "'"
+			))
+		linked := ""
+		columnCount := table.Columns.Count()
+		for each, row in table.Rows{
+			Loop, % columnCount
+				linked .= row[A_index] "`n"
+		} 
+		
+		if(linked != ""){
+			return 1
+		}else{
+			return 0
+		}
+	}
+
+	delete_relation(tipo, tabela1){
+		Global mariaDB
+		try{
+			mariaDB.Query(
+			(JOIN 
+				" DELETE FROM reltable "
+				" WHERE tipo like '" tipo "'"
+				" AND tabela1 like '" tabela1 "'"
+			))	
+		}catch e 
+			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de referencia " ExceptionDetail(e)
+			
+	}
+
 }

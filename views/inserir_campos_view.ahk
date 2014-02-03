@@ -30,6 +30,7 @@ inserir_campos_view(info){
 	Gui, Add, Groupbox, x+20 yp-15 w220 h45, Opcoes campo
 	Gui, Add, Button, xp+5 yp+15 w100 h20 gincluir_campo_button, Incluir
 	Gui, Add, Button, x+5  w100 h20 gexcluir_campo_button, Excluir
+	Gui, Add, Button, x+5 w100 h20 glinkar_button, Linkar
 
 	/*
 		Quantidade de items
@@ -178,6 +179,10 @@ inserir_campos_view(info){
 	LV_Delete()
 	return
 
+	linkar_button:
+	linkar_campos_view(s_info)
+	return
+
 	inserir_valores_campo_button:
 	Gui, Submit, Nohide
 	if(campos_combobox = "" || s_info.modelo[2] = ""){
@@ -216,5 +221,6 @@ inserir_campos_view(info){
 	valores_de_campo_action:
 
 	return
+
 }
 	

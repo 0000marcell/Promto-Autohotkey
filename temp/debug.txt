@@ -2,3 +2,55 @@ prefixo na string ITTO041CO
 prefix length 9
 prefixo na string MPBRP101
 prefix length 8
+items a serem inseridos na nova odem : I
+items a serem inseridos na nova odem : T
+items a serem inseridos na nova odem : PO
+items a serem inseridos na nova odem : B22D
+items a serem inseridos na nova odem : I
+items a serem inseridos na nova odem : T
+items a serem inseridos na nova odem : PO
+items a serem inseridos na nova odem : AV
+items a serem inseridos Iitem do arrayI
+items a serem inseridos Titem do arrayT
+items a serem inseridos POitem do arrayPO
+items a serem inseridos AVitem do arrayAV
+items a serem inseridos na nova odem : I
+items a serem inseridos na nova odem : T
+items a serem inseridos na nova odem : PO
+items a serem inseridos na nova odem : AV
+items a serem inseridos Iitem do arrayI
+items a serem inseridos Titem do arrayT
+items a serem inseridos POitem do arrayPO
+items a serem inseridos AVitem do arrayAV
+items a serem inseridos na nova odem : I
+items a serem inseridos na nova odem : T
+items a serem inseridos na nova odem : PO
+items a serem inseridos na nova odem : AV
+items a serem inseridos Iitem do arrayI
+items a serem inseridos Titem do arrayT
+items a serem inseridos POitem do arrayPO
+items a serem inseridos AVitem do arrayAV
+items a serem inseridos na nova odem : I
+items a serem inseridos na nova odem : T
+items a serem inseridos na nova odem : PO
+items a serem inseridos na nova odem : AV
+items a serem inseridos Iitem do arrayI
+items a serem inseridos Titem do arrayT
+items a serem inseridos POitem do arrayPO
+items a serem inseridos AVitem do arrayAV
+items a serem inseridos na nova odem : I
+items a serem inseridos na nova odem : T
+items a serem inseridos na nova odem : PO
+items a serem inseridos na nova odem : E27
+items a serem inseridos na nova odem : I
+items a serem inseridos na nova odem : T
+items a serem inseridos na nova odem : PO
+items a serem inseridos na nova odem : E40
+items a serem inseridos na nova odem : I
+items a serem inseridos na nova odem : T
+items a serem inseridos na nova odem : PO
+items a serem inseridos na nova odem : G13C
+items a serem inseridos na nova odem : I
+items a serem inseridos na nova odem : T
+items a serem inseridos na nova odem : PO
+items a serem inseridos na nova odem : G13P

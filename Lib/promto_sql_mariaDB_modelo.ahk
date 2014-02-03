@@ -226,6 +226,9 @@ class Modelo{
 		}catch e 
 			;MsgBox,16,Erro, % "Ocorreu um erro ao apagar todos os items da tabela de ordem `n" ExceptionDetail(e)
 		
+		for, each, item in items{
+			;append_debug("items a serem inseridos " item "item do array" items[A_Index])
+		}
 		for each, item in items{
 			record := {}
 			record.Campos := item

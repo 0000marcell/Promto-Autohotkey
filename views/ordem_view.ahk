@@ -48,10 +48,13 @@ ordem_view(tipo, info){
 	 return
 	 
 	 salvar_ordem_prefixo_button:
+	 Gui, ordem_view:default
+	 Gui, listview, ordem_lv
 	 nova_ordem := []
 	 
 	 Loop % LV_GetCount(){
     	LV_GetText(RetrievedText, A_Index, 2)
+    	;append_debug("items a serem inseridos na nova odem : " RetrievedText)
     	nova_ordem.insert(RetrievedText)
 	 }
 	 /* ######## PEGAR OS ITEMS QUE ESTAO MARCADOS 
@@ -71,15 +74,15 @@ ordem_view(tipo, info){
 
 
 	 updown:
-		gui,submit,nohide
-		if(updownv>0){
-		 	condition:=1
-		 	updownv:=0
-		 }else{
-		 	updownv:=0
-		 	condition:=0
-		 }
-		LV_MoveRowfam("ordem_view", "ordem_lv", condition)
+	 Gui, Submit, Nohide
+	 if(updownv > 0){
+	 	condition := 1
+	 	updownv := 0
+	 }else{
+	 	updownv := 0
+	 	condition := 0
+	 }
+	 LV_MoveRowfam("ordem_view", "ordem_lv", condition)
 	 return 
 }
 

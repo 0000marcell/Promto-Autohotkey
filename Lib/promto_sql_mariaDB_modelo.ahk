@@ -789,8 +789,9 @@ class Modelo{
 	link_specific_field(values, info){
 		Global mariaDB
 
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] 
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]   
 		if(this.exist_relation(values.tipo, tabela1)){
+			append_debug("o valor existia e sera deletado!")
 			this.delete_relation(values.tipo, tabela1)
 		}
 		record := {}
@@ -803,14 +804,14 @@ class Modelo{
 	/*
 		Verifica se existe alguma tabela linkada
 	*/
-	exist_relation(tipo, tabela2){
+	exist_relation(tipo, tabela1){
 		Global mariaDB
 
 		table := mariaDB.Query(
 			(JOIN 
 				" SELECT tipo,tabela1,tabela2 FROM reltable "
 				" WHERE tipo LIKE '" tipo "' "
-				" AND tabela2 LIKE '" tabela2 "'"
+				" AND tabela1 LIKE '" tabela1 "'"
 			))
 		linked := ""
 		columnCount := table.Columns.Count()

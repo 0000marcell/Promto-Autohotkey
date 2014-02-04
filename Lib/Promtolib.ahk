@@ -1687,7 +1687,8 @@ haschild(itemid,wname,tv){
 ;############# load lv from array ################
 load_lv_from_array(columns, array, window, lv){
 	Gui, %window%:default
-	Gui, listview, %lv% 
+	Gui, Listview, %lv%
+	LV_Delete()
 	prev_count := 0
 	loop, % array.maxindex(){
 		col_number := A_Index
@@ -1697,7 +1698,26 @@ load_lv_from_array(columns, array, window, lv){
 				prev_count++
 				LV_Add("","","")
 			}
-			LV_Modify(A_Index, "Col" . col_number,array[col_number,A_Index])
+			LV_Modify(A_Index, "Col" . col_number, array[ A_Index, col_number])
+
+		}
+	}
+
+}
+
+load_lv_from_matrix(number_of_columns, array, window, lv){
+	Gui, %window%:default
+	Gui, Listview, %lv%
+
+	prev_count := 0
+	loop, % array.maxindex(){
+		row_number := A_Index
+		if(row_number = "")
+			Continue
+		LV_Add("","","")
+		Loop, % number_of_columns{
+			LV_Modify(row_number, "Col" . A_index, array[row_number, A_Index])			
+				LV_ModifyCol(A_Index, 200)
 		}
 	}
 }
@@ -2002,7 +2022,49 @@ pesquisalv(wname,lvname,string,List){
     LV_Modify(1, "+Select")
 }
 
-any_word_search(wname,lvname,string,List){
+any_word_search(wname, lvname, string,List){
+	Gui,%wname%:default
+    Gui,listview,%lvname%
+    GuiControl, -Redraw,%lvname%
+    Gui, Submit, NoHide
+    resultsearch:=[] 
+    If (string=""){ 
+        LV_Delete()
+        for,each,value in List{
+            LV_Add("",List[A_Index,1],List[A_Index,2], List[A_Index,3])
+        }       
+    }Else{
+        for,each,value in List{
+            i++
+            string2:=List[A_Index,1] List[A_Index,2] List[A_Index,3]
+            StringSplit,splitted_string,string,%A_Space%
+            _exists_in_all:=0
+			Loop,% splitted_string0
+			{
+				value_to_search:=trim(splitted_string%A_Index%)
+				IfInString,string2,%value_to_search%
+	            {
+	                _exists_in_all:=1
+	            }else{
+	            	_exists_in_all:=0
+	            	Break
+	            }
+				;MsgBox, % result%A_Index%	
+			}
+			if(_exists_in_all=1)
+				resultsearch.insert(i)
+        }
+        i:=0
+        LV_Delete()
+        for,each,value in resultsearch{
+            LV_Add("",List[value,1],List[value,2], List[A_Index,3])
+        }
+    }
+    GuiControl, +Redraw,%lvname%
+    LV_Modify(1, "+Select")
+}
+
+any_word_search_backup(wname, lvname, string,List){
 	Gui,%wname%:default
     Gui,listview,%lvname%
     GuiControl, -Redraw,%lvname%

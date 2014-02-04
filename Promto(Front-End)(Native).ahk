@@ -2909,9 +2909,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, views/inserir_val_view.ahk
 #include, views/estruturas_view.ahk 
 #include, views/foto_individual_view.ahk
-#include, views/linkar_campos_view.ahk
 #include, views/selecionar_campo_externo_view.ahk
-#include, views/linkar_todos_os_campos_view.ahk
 
 /*
 	Controllers

@@ -14,10 +14,7 @@ db_ex_view(){
 	Gui, add, button, w100 h30 x+5 gdesmarctodos_dbex,Desm.todos
 	Gui, add, button, w100 h30 x+5 ginserirvalores,Inserir Valores
 	Gui, add, button, w100 h30 x+5 gconfigdbex,Configurar.
-	;Gui, add, button, w100 h30 x+5 ginserirtodos,Inserir todos!!
 	Gui, add, button, w100 h30 x+5 gexport_code_list_to_file,Exportar para arquivo
-	;Gui, add, button, w100 h30 x+5 gcheck_if_exist_in_external_db, ja foi inserido?
-	;Gui, add, button,w100 h30 x+5 ,Remover
 	Gui, Show,, adicionar db externo!
 	GuiControl, -Redraw, lvdbex
 	Listdbex := []

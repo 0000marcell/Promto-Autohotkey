@@ -43,13 +43,12 @@ importar_val(){
 excluir_val(){
 	Global
 
-	currentvalue:=object()
-	currentvalue:=GetSelectedRow("inserirval","lviv2")
-	MsgBox, % "valor " currentvalue[1] " descricao " currentvalue[2]  "  selectcolum " selectedvaluecol 
+	currentvalue := object()
+	currentvalue := GetSelectedRow("inserirval","lviv2")
 	MsgBox, 4,,Deseja apagar a Campo %currentvalue%?
   IfMsgBox Yes
   {
-    db.query("DELETE FROM " selectedvaluecol " WHERE valor='"  currentvalue[1] "' AND descricao='" currentvalue[2] "';")
+    db.delete_items_where("valor='"  currentvalue[1] "' AND descricao='" currentvalue[2] "';", selectedvaluecol)
     loadvaltables()
     loadlv(selectedvaluecol)
   }else{

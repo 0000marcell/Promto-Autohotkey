@@ -31,10 +31,10 @@ inserir_valores_view(){
 	colvalue:
 	if A_GuiEvent = i
 	{
-		Gui,submit,nohide
-		gui,listview,lviv
-		selectedvaluecol:=GetSelected("inserirval","lviv")
-		if(selectedvaluecol="")
+		Gui, Submit, Nohide
+		Gui, Listview, lviv
+		selectedvaluecol := GetSelected("inserirval","lviv")
+		if(selectedvaluecol = "")
 			return 
 		else 
 			loadlv(selectedvaluecol)

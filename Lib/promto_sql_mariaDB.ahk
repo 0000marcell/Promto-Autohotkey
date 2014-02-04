@@ -66,6 +66,21 @@ class PromtoSQL{
 	}
 
 	/*
+		Deleta um determinado valor de uma determinada 
+		tabela
+	*/
+	delete_items_where(where_statement, table){
+		Global mariaDB
+
+		try{
+				rs := mariaDB.OpenRecordSet("DELETE FROM " table " WHERE " where_statement)		
+			}catch e{
+				MsgBox, % "Ocorreu um erro ao deletar os valores da tabela " table " !"
+				return
+		}
+	}
+
+	/*
 		Abre um record set e retorna os valores
 		de determinada tabela em um hash com o nome do 
 		campo e o valor value.name := name

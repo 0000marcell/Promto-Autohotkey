@@ -157,7 +157,7 @@ inserir_modelo_view(model_table){
 		Insere os valores na tabela 
 	*/
 
-	db.Modelo.incluir(input_name, input_mascara, prefixo)
+	db.Modelo.incluir(input_name, input_mascara, prefixo, "", v_info)
 
 	/*
 		Insere o novo valor nas listviews

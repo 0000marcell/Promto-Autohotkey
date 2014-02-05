@@ -3,7 +3,7 @@ class Modelo{
 	/*
 		Incluir um novo modelo
 	*/
-	incluir(modelo_nome = "", modelo_mascara = "", prefixo = "", already_in_table = ""){
+	incluir(modelo_nome = "", modelo_mascara = "", prefixo = "", already_in_table = "", info = ""){
 		Global mariaDB
 
 		modelo_nome := Trim(modelo_nome), modelo_mascara := Trim(modelo_mascara)
@@ -36,8 +36,10 @@ class Modelo{
 			info.modelo[2]
 			info.modelo[1] 
 		)
-
 		model_table := db.get_reference("Modelo", tabela1)
+		if(model_table = ""){
+			model_table := prefixo "Modelo"
+		}
 		MsgBox, % "tabela de modelos retornada " model_table
 
 		if(already_in_table != 1){	
@@ -47,9 +49,6 @@ class Modelo{
 			}	
 		}
 		
-
-		;MsgBox, % "modelo nome: " modelo_nome "`n modelo mascara " modelo_mascara "`n prefixo " prefixo
-
 		/*
 			Insere o valor na tabela
 			caso o parametro de existencia na tabela nao seja verdadeiro

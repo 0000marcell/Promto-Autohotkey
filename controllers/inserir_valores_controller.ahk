@@ -43,12 +43,17 @@ importar_val(){
 excluir_val(){
 	Global
 
+  if((current_connection_value = "MACCOMEVAP") && (selectedvaluecol = "TCONTA" || selectedvaluecol = "LOCPAD" )){
+    selectedvaluecol_2 := selectedvaluecol "_" current_connection_value 
+  }
+
 	currentvalue := object()
 	currentvalue := GetSelectedRow("inserirval","lviv2")
+
 	MsgBox, 4,,Deseja apagar a Campo %currentvalue%?
   IfMsgBox Yes
   {
-    db.delete_items_where("valor='"  currentvalue[1] "' AND descricao='" currentvalue[2] "';", selectedvaluecol)
+    db.delete_items_where("valor='"  currentvalue[1] "' AND descricao='" currentvalue[2] "';", selectedvaluecol_2)
     loadvaltables()
     loadlv(selectedvaluecol)
   }else{

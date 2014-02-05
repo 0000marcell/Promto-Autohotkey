@@ -62,7 +62,8 @@ selecionar_campo_externo_view(info){
 	salvar_relacao:
 	selected_values := GetSelectedRow("selecionar_campo_externo_view", "selecionar_campo_externo_lv")
 	values := {tipo: selected_values[1], tabela2: selected_values[3]} 
-	db.Modelo.link_specific_field(values, s_info)
+	tabela1 := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2] s_info.modelo[2] s_info.modelo[1]
+	db.Modelo.link_specific_field(values, tabela1)
 	MsgBox, 64, Sucesso, % "A linkagem foi concluida!" 
 	return
 

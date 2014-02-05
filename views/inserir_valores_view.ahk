@@ -18,7 +18,7 @@ inserir_valores_view(){
 	for,each,value in COLUNAS
 		LV_Add("",value)
 	Gui,listview,lviv2
-	Listiv:=[]
+	Listiv := []
 	for,each,value in NCM{
 		Listiv[A_Index,1] := each
 		Listiv[A_Index,2] := value

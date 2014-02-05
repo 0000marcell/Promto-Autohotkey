@@ -214,14 +214,16 @@ LV_MoveRowfam(wname,lvname,moveup = true) {
 
 loadlv(hash){
 	Global Listiv
-	Gui,inserirval:default
-	Gui,listview,lviv2
+	Gui, inserirval:default
+	Gui, Listview, lviv2
 	LV_Delete()
-	Listiv:=[]
-	for,each,value in %hash%["valor"]{
-		Listiv[A_Index,1]:=%hash%["valor",A_Index]
-		Listiv[A_Index,2]:=%hash%["descricao",A_Index]
-		LV_Add("",%hash%["valor",A_Index],%hash%["descricao",A_Index])
+	Listiv := []
+	for, each, value in %hash%["valor"]{
+		if(%hash%["valor",A_Index] = "")
+			Continue
+		Listiv[A_Index,1] := %hash%["valor",A_Index]
+		Listiv[A_Index,2] := %hash%["descricao",A_Index]
+		LV_Add("", %hash%["valor",A_Index], %hash%["descricao", A_Index])
 	}
 	lv_modifycol(1,200)
 }
@@ -230,10 +232,10 @@ pesquisalvmod(wname,lvname,string,List){    ;funcao de pesquisa na listview modi
 	Global 
 
 	Gui,%wname%:default
-  Gui,listview,%lvname%
-  GuiControl, -Redraw,%lvname%
+  Gui, Listview, %lvname%
+  GuiControl, -Redraw, %lvname%
   Gui, Submit, NoHide
-  resultsearch:=[] 
+  resultsearch := [] 
   If (string=""){ 
       LV_Delete()
 	for,each,value in List{
@@ -2022,43 +2024,46 @@ pesquisalv(wname,lvname,string,List){
     LV_Modify(1, "+Select")
 }
 
-any_word_search(wname, lvname, string,List){
+any_word_search(wname, lvname, string, List){
 	Gui,%wname%:default
-    Gui,listview,%lvname%
-    GuiControl, -Redraw,%lvname%
-    Gui, Submit, NoHide
-    resultsearch:=[] 
-    If (string=""){ 
-        LV_Delete()
-        for,each,value in List{
-            LV_Add("",List[A_Index,1],List[A_Index,2], List[A_Index,3])
-        }       
+  Gui, listview,%lvname%
+  GuiControl, -Redraw,%lvname%
+  Gui, Submit, NoHide
+
+    resultsearch := [] 
+    If (string = ""){ 
+      LV_Delete()
+      for,each,value in List{
+        LV_Add("",List[A_Index,1],List[A_Index,2], List[A_Index,3])
+      }       
     }Else{
-        for,each,value in List{
-            i++
-            string2:=List[A_Index,1] List[A_Index,2] List[A_Index,3]
-            StringSplit,splitted_string,string,%A_Space%
-            _exists_in_all:=0
-			Loop,% splitted_string0
-			{
-				value_to_search:=trim(splitted_string%A_Index%)
-				IfInString,string2,%value_to_search%
-	            {
-	                _exists_in_all:=1
-	            }else{
-	            	_exists_in_all:=0
-	            	Break
-	            }
-				;MsgBox, % result%A_Index%	
-			}
-			if(_exists_in_all=1)
-				resultsearch.insert(i)
-        }
-        i:=0
-        LV_Delete()
-        for,each,value in resultsearch{
-            LV_Add("",List[value,1],List[value,2], List[A_Index,3])
-        }
+      for,each,value in List{
+        i++
+
+        string2 := List[A_Index, 1] List[A_Index, 2] List[A_Index, 3]
+
+        StringSplit, splitted_string, string,%A_Space%
+
+        _exists_in_all := 0
+				Loop,% splitted_string0
+				{
+					value_to_search := trim(splitted_string%A_Index%)
+					IfInString, string2, %value_to_search%
+          {
+            _exists_in_all := 1
+          }else{
+          	_exists_in_all := 0
+          	Break
+          }	
+				}
+				if(_exists_in_all = 1)
+					resultsearch.insert(i)
+      }
+      i := 0
+      LV_Delete()
+      for, each, value in resultsearch{
+          LV_Add("",List[value,1], List[value,2], List[value,3])
+      }
     }
     GuiControl, +Redraw,%lvname%
     LV_Modify(1, "+Select")

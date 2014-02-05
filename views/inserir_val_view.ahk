@@ -1,13 +1,14 @@
 inserir_val_view(){
 	Global
 	
-	if(selectedvaluecol=""){
+	if(selectedvaluecol = ""){
 		MsgBox, % "selecione uma coluna antes de continuar!!"
 		return 
 	}
 	Gui,inserirval2:New
-	Gui,font,s%SMALL_FONT%,%FONT% 
-	Gui,inserirval2:+ownerinserirval
+	Gui, font, s%SMALL_FONT%,%FONT% 
+	Gui, inserirval2:+ownerinserirval
+
 	Gui,add,text,,Valor Campo:
 	Gui,add,edit,w150 y+5 r1 veditinserirval1 uppercase
 	Gui,add,text,y+5,Nome Campo:
@@ -19,5 +20,4 @@ inserir_val_view(){
 	salvarval:
   salvar_val()
   return 
-
 }

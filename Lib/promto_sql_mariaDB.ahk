@@ -180,6 +180,32 @@ class PromtoSQL{
 		}catch e
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela connections `n" ExceptionDetail(e)
 
+		/*
+			TCONTA MACCOMEVAP
+		*/
+		try{
+			mariaDB.Query(
+				(JOIN
+					"	CREATE TABLE IF NOT EXISTS TCONTA_MACCOMEVAP "
+					" (valor VARCHAR(250), "
+					" descricao VARCHAR(250))"
+				))
+		}catch e
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de contas MACCOMEVAP `n" ExceptionDetail(e)
+
+		/*
+			LOCPAD MACCOMEVAP
+		*/
+		try{
+			mariaDB.Query(
+				(JOIN
+					"	CREATE TABLE IF NOT EXISTS LOCPAD_MACCOMEVAP "
+					" (valor VARCHAR(250), "
+					" descricao VARCHAR(250))"
+				))
+		}catch e
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela connections `n" ExceptionDetail(e)
+
 	}
 
 	/*

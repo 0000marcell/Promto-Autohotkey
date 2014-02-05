@@ -29,8 +29,11 @@ check_if_exist_in_external_db(){
 conectar(){
 	Global
 	
+	current_connection_value := ""
 	selecteditem := getselecteditems("configdbex","choosedb")
 	selected_item_name :=  selecteditem[1]
+	current_connection_value := selected_item_name
+
 	StringLeft, base_test_name, selected_item_name, 10
 	base_value := ""
 	if(base_test_name = "TOTALLIGHT"){
@@ -55,6 +58,7 @@ conectar(){
 	if(IsObject(sigaconnection)){
 			CONNECTED_DBEX := selecteditem[1]
 		 MsgBox,64,,% "A connexao esta funcionando!!!"
+		 GuiControl,, connection_status, % "Conectado a " selected_item_name
 	}else{
 	    MsgBox,64,,% "A conexao falhou!! confira os parametros!!"
 	    return 
@@ -75,9 +79,18 @@ salvar_config(){
 loadvaltables(){
 	Global
 
-	NCM := {}, UM := {}, ORIGEM := {}, TCONTA := {}, TIPO := {}, GRUPO := {}, IPI:={}, LOCPAD:={}
+	NCM := {}, UM := {}, ORIGEM := {}, TCONTA := {}, TIPO := {}, GRUPO := {}, IPI := {}, LOCPAD := {}
 	for,each,list_name in ["NCM","UM","ORIGEM","TCONTA","TIPO","GRUPO","IPI","LOCPAD"]{
-    table := db.load_table_in_array(list_name)
+		if(list_name = "")
+			Continue
+		
+		if((current_connection_value = "MACCOMEVAP") && (list_name = "TCONTA" || list_name = "LOCPAD" )){
+			selectedvaluecol_2 := list_name "_" current_connection_value 
+		}else{
+			selectedvaluecol_2 := list_name 
+		}
+
+    table := db.load_table_in_array(selectedvaluecol_2)
     for, each, value in table{
     	%list_name%["valor", A_Index] := table[A_Index, 1]
     	%list_name%["descricao", A_Index] := table[A_Index, 2]
@@ -91,11 +104,19 @@ salvar_val(){
 	Gui,submit,nohide
   if(editinserirval1="")||(editinserirval2="")
       MsgBox, % "Nenhum dos campos pode estar em branco!"
-  db.create_val_table(selectedvaluecol)
-  db.insert_val(editinserirval1, editinserirval2, selectedvaluecol)
+  
+  if((current_connection_value = "MACCOMEVAP") && (selectedvaluecol = "TCONTA" || selectedvaluecol = "LOCPAD" )){
+		selectedvaluecol_2 := selectedvaluecol "_" current_connection_value 
+	}
+  
+  db.create_val_table(selectedvaluecol_2)
+  db.insert_val(editinserirval1, editinserirval2, selectedvaluecol_2)
+  %selectedvaluecol%["valor"].insert(editinserirval1)
+  %selectedvaluecol%["descricao"].insert(editinserirval2)
+ 	loadlv(selectedvaluecol)
   loadvaltables()
-  db.load_lv("inserirval", "lviv2", selectedvaluecol)
-  Gui,inserirval2:destroy	
+  db.load_lv("inserirval", "lviv2", selectedvaluecol_2)
+  Gui, inserirval2:destroy	
 }
 
 /*

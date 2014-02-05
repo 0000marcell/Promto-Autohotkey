@@ -1,6 +1,6 @@
 linkar_campos_view(info){
 	Global db, campos_especificos_cbox, SMALL_FONT, GLOBAL_COLOR
- 	Static s_info,
+ 	Static s_info
 		
 	s_info := info
 

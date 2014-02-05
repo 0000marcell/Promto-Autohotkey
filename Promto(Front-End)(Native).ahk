@@ -423,7 +423,7 @@ return
 			Metodo que carrega a lista de modelos
 			em determinada listview
 		*/
-
+		db.Modelo.check_data_consistency(model_table, info) ;verifica se todos os elementos na lista tem as tabela necessarias.
 		db.load_lv("M", "MODlv", model_table)
 		LV_ModifyCol(1)
 		load_logo_in_main()	
@@ -643,7 +643,7 @@ return
 	return 
 
 	dbex:
-	db_ex_view()
+	config_db_ex_view()
 	return 
 	
 
@@ -2727,7 +2727,7 @@ inserir2(args)
 			MsgBox,64,, % "Nenhum dos valores podem estar em branco"
 			return 
 		}
-		;MsgBox, % "create " . table1 . "`nfield1 " . field1 . "`nprimaryk " . primaryk1
+
 		db.createtable(args1["table"],"(" . args1["field"] . ", PRIMARY KEY(" . args1["primarykey"] . "))")
 		istring:="('" . edit1 . "','" . edit2 . "')"
 		db.insert(args1["table"],"(" . args1["field"] . ")",istring)
@@ -2741,10 +2741,7 @@ inserir2(args)
 		db.loadlv("inserir1","lv",args1["table"])
 		MsgBox,64,, % "valores inseridos com sucesso!!"
 		closefunc:=args1["closefunc"]
-		;tvstring:=""
-		;gettable("empresa",0,"","")
 		%closefunc%(args)
-		;Gui,inserir2:destroy
 		return 
 		
 		cancelar:
@@ -2783,7 +2780,9 @@ inserir3(table,field,primarykey,tipo,mascaraant="")
 	return 
 
 	excluir3:
+
 	selecteditem:=GetSelected("inserir3","lv3")
+
 	MsgBox, 4,,Deseja apagar a empresa %selecteditem%?
 	IfMsgBox Yes
 	{
@@ -2798,7 +2797,7 @@ inserir3(table,field,primarykey,tipo,mascaraant="")
 compararcamp(camptable,otable)
 {
 	Global db 
-	;se um valor da tabela 1 nao estiver na 2 ,incluir 
+ 
 	sql:="SELECT Campos FROM " . camptable
 	rs := db.query(sql)
 	while(!rs.EOF){   
@@ -2910,6 +2909,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, views/estruturas_view.ahk 
 #include, views/foto_individual_view.ahk
 #include, views/selecionar_campo_externo_view.ahk
+#include, views/linkar_modelos_view.ahk
 
 /*
 	Controllers

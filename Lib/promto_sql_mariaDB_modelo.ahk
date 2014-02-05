@@ -3,7 +3,7 @@ class Modelo{
 	/*
 		Incluir um novo modelo
 	*/
-	incluir(modelo_nome = "", modelo_mascara = "", prefixo = ""){
+	incluir(modelo_nome = "", modelo_mascara = "", prefixo = "", already_in_table = ""){
 		Global mariaDB
 
 		modelo_nome := Trim(modelo_nome), modelo_mascara := Trim(modelo_mascara)
@@ -27,20 +27,40 @@ class Modelo{
 			Verifica se a mascara a ser inserida 
 			ja existe
 		*/
-		if(this.exists(modelo_nome, modelo_mascara, prefixo)){
-			MsgBox,16,Erro, % " A mascara a ser inserida ja existe!" 
-			return 
+		tabela1 :=
+		(JOIN
+			info.empresa[2]
+			info.tipo[2]
+			info.familia[2]
+			info.subfamilia[2]
+			info.modelo[2]
+			info.modelo[1] 
+		)
+
+		model_table := db.get_reference("Modelo", tabela1)
+		MsgBox, % "tabela de modelos retornada " model_table
+
+		if(already_in_table != 1){	
+			if(this.exists(modelo_nome, modelo_mascara, prefixo, model_table)){
+				MsgBox,16,Erro, % " A mascara a ser inserida ja existe!" 
+				return 
+			}	
 		}
+		
 
 		;MsgBox, % "modelo nome: " modelo_nome "`n modelo mascara " modelo_mascara "`n prefixo " prefixo
 
 		/*
 			Insere o valor na tabela
+			caso o parametro de existencia na tabela nao seja verdadeiro
 		*/
-		record := {}
-		record.Modelos := modelo_nome
-		record.Mascara := modelo_mascara
-		mariaDB.Insert(record, prefixo "Modelo")
+		if(already_in_table != 1){
+			record := {}
+			record.Modelos := modelo_nome
+			record.Mascara := modelo_mascara
+			mariaDB.Insert(record, model_table)	
+		}
+		
 
 		/*
 			Cria a tabela de campos
@@ -120,22 +140,36 @@ class Modelo{
 		Excluir modelo
 	*/
 	excluir(modelo_nome = "", modelo_mascara = "", info = "", recursiva = 1){
-		Global mariaDB
+		Global mariaDB, db
 
 		/*
 		 Excluir a entrada do modelo
 		 na tabela de modelos
 		*/
+
 		prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] 
-		if(!this.exists(modelo_nome, modelo_mascara, prefixo)){
-			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela"
+		tabela1 :=
+		(JOIN
+			info.empresa[2]
+			info.tipo[2]
+			info.familia[2]
+			info.subfamilia[2]
+			info.modelo[2]
+			info.modelo[1] 
+		)
+
+		model_table := db.get_reference("Modelo", tabela1)
+		MsgBox, % "tabela de modelos retornada " model_table
+
+		if(!this.exists(modelo_nome, modelo_mascara, prefixo, model_table)){
+			MsgBox, 16, Erro, % " O valor a ser deletado nao existia na tabela"
 			return 
 		}
 
 		try{
 			mariaDB.Query(
 			(JOIN 
-				" DELETE FROM " prefixo "Modelo"
+				" DELETE FROM " model_table
 				" WHERE Mascara like '" modelo_mascara "'"
 			))	
 		}catch e 
@@ -147,6 +181,7 @@ class Modelo{
 			caso ela nao esteja mais relacionada com mais nada
 			e exclui a referencia
 		*/
+
 		tables := ["Campo", "oc", "odr", "odc", "odi", "Codigo", "Desc"]
 
 		for,each, tipo in tables{  
@@ -668,12 +703,17 @@ class Modelo{
 		Verifica se determinado 
 		Familia ja existe na tabela
 	*/
-	exists(modelo_nome, modelo_mascara, prefixo){
+	exists(modelo_nome, modelo_mascara, prefixo, table = ""){
 		Global mariaDB
-
+		
+		if(table != ""){
+			search_table := table 
+		}else{
+			search_table := prefixo "Modelo"
+		}
 		table := mariaDB.Query(
 			(JOIN 
-				" SELECT Modelos FROM " prefixo "Modelo"
+				" SELECT Modelos FROM " search_table
 				" WHERE Mascara LIKE '" modelo_mascara "'"
 				" AND Modelos LIKE '" modelo_nome "'"
 			))
@@ -784,14 +824,12 @@ class Modelo{
 	}
 
 	/*
-		Linka uma tabela especifica 
+		Linka uma tabela especifica
 	*/
-	link_specific_field(values, info){
+	link_specific_field(values, tabela1){
 		Global mariaDB
-
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]   
+   
 		if(this.exist_relation(values.tipo, tabela1)){
-			append_debug("o valor existia e sera deletado!")
 			this.delete_relation(values.tipo, tabela1)
 		}
 		record := {}
@@ -799,6 +837,25 @@ class Modelo{
 		record.tabela1 := tabela1
 		record.tabela2 := values.tabela2
 		mariaDB.Insert(record, "reltable")
+	}
+
+	link_models_table(values, tabela1, info){
+		Global mariaDB, db
+   
+		if(this.exist_relation(values.tipo, tabela1)){
+			this.delete_relation(values.tipo, tabela1)
+		}
+		record := {}
+		record.tipo := values.tipo  	
+		record.tabela1 := tabela1
+		record.tabela2 := values.tabela2
+		models_array := db.load_table_in_array(values.tabela2)
+		/*
+			Cria os modelos na familia
+			correspondente
+		*/
+		this.create_models(models_array, info) 
+		mariaDB.Insert(record, "reltable")	
 	}
 
 	/*
@@ -839,6 +896,78 @@ class Modelo{
 		}catch e 
 			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de referencia " ExceptionDetail(e)
 			
+	}
+
+	/*
+		Insere todos os modelos de 
+		um determinado array de valores
+	*/
+	create_models(models, info){
+		Global mariaDB, db
+
+		prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2]
+		for, each, value in models{
+			name := models[A_Index, 1]
+			code := models[A_Index, 2]
+			if(name = "" || code = "")
+				Continue
+			this.incluir(name, code, prefixo, 1)
+		} 
+	}
+
+	check_data_consistency(model_table, info){
+		Global mariaDB, db
+
+		prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2]
+		models_table := db.load_table_in_array(model_table)
+		for, each, value in models_table{
+			if(models_table[A_Index, 1] = ""){
+				Continue
+			}
+			table_desc := 
+			(JOIN
+				info.empresa[2]
+				info.tipo[2]
+				info.familia[2]
+				info.subfamilia[2]
+				models_table[A_Index, 2] "Desc"
+			)
+
+			/*
+				Se o modelo nao existir 
+				insere as tabelas necessarias
+			*/
+
+			if(!db.table_exists(table_desc)){
+				MsgBox, 16, Erro, % "O modelo " models_table[A_Index, 1] " estava inconsistente `n suas dependencias serao resolvidas!"
+				this.incluir(models_table[A_Index, 1], models_table[A_Index, 2], prefixo, 1)
+			}
+		} 
+	}
+
+	/*
+		Verifica se a tabela de 
+		descricao do modelo existe 
+		caso nao exista cria todas as tabelas
+		necessarias pra o modelo
+	*/
+	model_exists(table_desc){
+		Global mariaDB
+		MsgBox, % "a tabela de descricao existe ? " table_desc 
+		table := mariaDB.Query(
+			(JOIN 
+				" SELECT descricao FROM " table_desc
+			))
+		exists := ""
+		for each, row in table.Rows{
+			Loop, % columnCount
+				exists .= row[A_index] "`n"
+		} 
+		if(exists != ""){
+			return 1
+		}else{
+			return 0
+		}
 	}
 
 }

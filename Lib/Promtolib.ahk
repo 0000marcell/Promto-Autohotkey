@@ -2150,6 +2150,8 @@ pesquisalv4(wname,lvname,string,List){     ;## PESQUISAR PARA 3 COLUNAS####
     If (string=""){ 
         LV_Delete()
         for,each,value in List{
+        		if(List[A_Index,1] = "")
+        			Continue
             LV_Add("",List[A_Index,1],List[A_Index,2],List[A_Index,3],List[A_Index,4])
         }       
     }Else{
@@ -2482,4 +2484,15 @@ uncheck_all(window, listview){
 	Gui, Listview, %listview%
 	Loop, % LV_GetCount()
 		LV_Modify("","-check")	
+}
+
+remove_from_array(array, value){
+	For, each, row in array{
+		For, each, item in row{
+			if(item = value){
+				row.remove(A_Index)
+			}
+		}
+	}
+	return array
 }

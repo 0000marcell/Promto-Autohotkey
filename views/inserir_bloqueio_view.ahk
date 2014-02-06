@@ -11,7 +11,7 @@ inserir_bloqueio_view(){
 		Gui init
 	*/
 	Gui,MAB:New
-	;Gui,font,s%SMALL_FONT%,%FONT%
+	;Gui,font, s%SMALL_FONT%, %FONT%
 	Gui,MAB:+ownerM
 	Gui, color, white
 
@@ -22,7 +22,7 @@ inserir_bloqueio_view(){
 	Gui, Add, text, xm, Livres
 	Gui, Font, s8 cBlack
 	Gui, Add, Groupbox, w200 h50, Pesquisa
-	Gui, Add, Edit, xp+10 yp+15 w180 gpesquisa_cod_livre vpesquisa_cod_livre,
+	Gui, Add, Edit, xp+10 yp+15 w180 gpesquisa_cod_livre vpesquisa_cod_livre uppercase,
 
 	/*
 		Pesquisa codigos bloqueados
@@ -31,7 +31,7 @@ inserir_bloqueio_view(){
 	Gui, Add, text, x+80 yp-60 , Bloqueados
 	Gui, Font, s8 cBlack
 	Gui, Add, Groupbox, y+10 w200 h50, Pesquisa
-	Gui, Add, Edit, xp+10 yp+15 w180 gpesquisa_cod_bloq vpesquisa_cod_bloq,
+	Gui, Add, Edit, xp+10 yp+15 w180 gpesquisa_cod_bloq vpesquisa_cod_bloq uppercase,
 	
 	/*
 		Listview Codigo livre
@@ -61,6 +61,7 @@ inserir_bloqueio_view(){
 	Gui, Add, Button, x+5 w100 h30 gimportar_lista_bloqueio, Importar
 	Gui, Add, Button, x+5 w100 h30 gexportar_lista_bloqueio, Exportar
 	cod_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "Codigo"
+	desbloqueados_a := [], bloqueados_a := []
 	desbloqueados_a := db.load_table_in_array(cod_table) 
 	bloqueados_a := db.load_table_in_array(bloq_table)
 	db.load_lv("MAB", "codigos_livres", cod_table)

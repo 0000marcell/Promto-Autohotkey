@@ -6,15 +6,18 @@ bloquear_codigo(){
 	selected_items := ""
 	selected_numbers := ""
 	selected_items := getselecteditems("MAB", "codigos_livres")
-
+	last_item := bloqueados_a.maxindex()
+	if(last_item = "")
+		last_item := 0
 	for, each, value in selected_items{
 		selected_item := selected_items[A_Index]
-
 		if(selected_item = "Codigos" || selected_item = ""){
 			Continue
 		}
-
+		last_item++
+		bloqueados_a[last_item, 1] := selected_item 
 		Gui, Listview, codigos_bloqueados
+
 		item_inserted := LV_Add("", selected_item)
 	}
 	remove_selected_in_lv("MAB", "codigos_livres")
@@ -36,7 +39,8 @@ desbloquear_codigo(){
 		if(selected_item = "Codigos" || selected_item = ""){
 			Continue
 		}
-
+		;remove os items que foram desbloqueados do array
+		bloqueados_a := remove_from_array(bloqueados_a, selected_item)
 		Gui, Listview, codigos_livres
 		item_inserted := LV_Add("", selected_item)
 	} 

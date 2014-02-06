@@ -40,7 +40,6 @@ class Modelo{
 		if(model_table = ""){
 			model_table := prefixo "Modelo"
 		}
-		MsgBox, % "tabela de modelos retornada " model_table
 
 		if(already_in_table != 1){	
 			if(this.exists(modelo_nome, modelo_mascara, prefixo, model_table)){
@@ -158,8 +157,9 @@ class Modelo{
 		)
 
 		model_table := db.get_reference("Modelo", tabela1)
-		MsgBox, % "tabela de modelos retornada " model_table
-
+		if(model_table = ""){
+			model_table := prefixo "Modelo"
+		}
 		if(!this.exists(modelo_nome, modelo_mascara, prefixo, model_table)){
 			MsgBox, 16, Erro, % " O valor a ser deletado nao existia na tabela"
 			return 
@@ -709,7 +709,7 @@ class Modelo{
 			search_table := table 
 		}else{
 			search_table := prefixo "Modelo"
-		}
+		} 
 		table := mariaDB.Query(
 			(JOIN 
 				" SELECT Modelos FROM " search_table
@@ -968,5 +968,4 @@ class Modelo{
 			return 0
 		}
 	}
-
 }

@@ -14,8 +14,6 @@ inserir_campos_view(info){
 	*/
 	Gui, inserir_campos_view:New
 	Gui, inserir_campos_view:+ownerM
-	;Gui, Font, s%SMALL_FONT%, %FONT%
-	;Gui, Color, %GLOBAL_COLOR%
 	Gui, Color, white
 
 	/*
@@ -58,8 +56,6 @@ inserir_campos_view(info){
 	Gui, Add, Groupbox, x+180 yp-15 w180 h60, Importacao
 	Gui, Add, Button, xp+10 yp+15 w60 h30 gimportar_valores_camp_esp, Importar 
 	Gui, Add, Button, x+5 w60 h30 gexportar_valores_camp_esp, Exportar
-	;ILButton(impbutton, "promtoshell.dll:" 10, 32, 32, 0)
-	;ILButton(expbutton, "promtoshell.dll:" 20, 32, 32, 0)
 	Gui, Show, Autosize, Inserir campos e valores
 	
 	/*

@@ -423,7 +423,7 @@ return
 			Metodo que carrega a lista de modelos
 			em determinada listview
 		*/
-		db.Modelo.check_data_consistency(model_table, info) ;verifica se todos os elementos na lista tem as tabela necessarias.
+		;db.Modelo.check_data_consistency(model_table, info) ;verifica se todos os elementos na lista tem as tabela necessarias.
 		db.load_lv("M", "MODlv", model_table)
 		LV_ModifyCol(1)
 		load_logo_in_main()	

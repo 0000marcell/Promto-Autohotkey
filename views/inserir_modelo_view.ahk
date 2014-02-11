@@ -28,10 +28,10 @@ inserir_modelo_view(model_table){
 	Gui, Add, Button, x+5 w30 h30 ginserir_modelo_more_options vmore_options_button,+
 	Gui, Add, Button, x40 y+5 w100 h30 vimportar_button gimportar_button,Importar
 	Gui, Add, Button, x+5 w100 h30 vexportar_button gexportar_button, Exportar
-	Gui, Add, Button, x+5 w100 h30 vlinkar_modelos_button glinkar_modelos_button, Linkar
+	;Gui, Add, Button, x+5 w100 h30 vlinkar_modelos_button glinkar_modelos_button, Linkar
 	GuiControl, Hide, importar_button
 	GuiControl, Hide, exportar_button
-	GuiControl, Hide, linkar_modelos_button 
+	;GuiControl, Hide, linkar_modelos_button 
 
 	/*
 		Foto
@@ -234,10 +234,10 @@ inserir_modelo_view(model_table){
 	run, % "temp\export_model.csv" 
 	return 
 
-	linkar_modelos_button:
-	v_info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
-	linkar_modelos_view(v_info)
-	return
+	;linkar_modelos_button:
+	;v_info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
+	;linkar_modelos_view(v_info)
+	;return
 
 
 	inserir_modelo_more_options:
@@ -245,7 +245,7 @@ inserir_modelo_view(model_table){
 		GuiControl,Move, opcoes_groupbox, h100 w350
 		GuiControl, Show,	importar_button
 		GuiControl, Show, exportar_button
-		GuiControl, Show, linkar_modelos_button
+		;GuiControl, Show, linkar_modelos_button
 		GuiControl,, more_options_button,- 
 		Gui, Show, Autosize,
 		_plus := 0	
@@ -253,7 +253,7 @@ inserir_modelo_view(model_table){
 		GuiControl,Move, opcoes_groupbox, h60
 		GuiControl, Hide,	importar_button
 		GuiControl, Hide, exportar_button
-		GuiControl, Hide, linkar_modelos_button
+		;GuiControl, Hide, linkar_modelos_button
 		GuiControl,, more_options_button, +
 		Gui, Show, Autosize,
 		_plus := 1

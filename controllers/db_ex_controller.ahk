@@ -107,13 +107,15 @@ salvar_val(){
   
   if((current_connection_value = "MACCOMEVAP") && (selectedvaluecol = "TCONTA" || selectedvaluecol = "LOCPAD" )){
 		selectedvaluecol_2 := selectedvaluecol "_" current_connection_value 
+	}else{
+		selectedvaluecol_2 := selectedvaluecol
 	}
   
   db.create_val_table(selectedvaluecol_2)
   db.insert_val(editinserirval1, editinserirval2, selectedvaluecol_2)
-  %selectedvaluecol%["valor"].insert(editinserirval1)
-  %selectedvaluecol%["descricao"].insert(editinserirval2)
- 	loadlv(selectedvaluecol)
+  %selectedvaluecol_2%["valor"].insert(editinserirval1)
+  %selectedvaluecol_2%["descricao"].insert(editinserirval2)
+ 	loadlv(selectedvaluecol_2)
   loadvaltables()
   db.load_lv("inserirval", "lviv2", selectedvaluecol_2)
   Gui, inserirval2:destroy	

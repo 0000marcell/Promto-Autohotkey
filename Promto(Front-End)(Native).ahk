@@ -859,6 +859,7 @@ loadestruturatofile(item){
 
 loadestruturatodb(item){
 	Global db,sigaconnection,R_E_C_N_O_TBI
+	
 	if item =
 		return
 	table:=db.query("SELECT item,componente,QUANTIDADE FROM ESTRUTURAS WHERE item='" item "'")
@@ -917,11 +918,11 @@ loadestruturatodb(item){
 			)
 			sigaconnection.query(sql)
 		}
-		exist:=existindb(sigaconnection,"Select B1_COD from SB1010 WHERE B1_COD LIKE '" itemtbi1 "%'")
+		exist := existindb(sigaconnection,"Select B1_COD from SB1010 WHERE B1_COD LIKE '" itemtbi1 "%'")
 		if(exist=false){
 			FileAppend, % itemtbi1 "`n",missingitems.csv
 		}
-		exist:=existindb(sigaconnection,"Select B1_COD from SB1010 WHERE B1_COD LIKE '" componentetbi1 "%'")
+		exist := existindb(sigaconnection,"Select B1_COD from SB1010 WHERE B1_COD LIKE '" componentetbi1 "%'")
 		if(exist=false){
 			FileAppend, % componentetbi1 "`n",missingitems.csv
 		}

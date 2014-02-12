@@ -45,6 +45,8 @@ excluir_val(){
 
   if((current_connection_value = "MACCOMEVAP") && (selectedvaluecol = "TCONTA" || selectedvaluecol = "LOCPAD" )){
     selectedvaluecol_2 := selectedvaluecol "_" current_connection_value 
+  }else{
+    selectedvaluecol_2 := selectedvaluecol
   }
 
 	currentvalue := object()
@@ -55,7 +57,7 @@ excluir_val(){
   {
     db.delete_items_where("valor='"  currentvalue[1] "' AND descricao='" currentvalue[2] "';", selectedvaluecol_2)
     loadvaltables()
-    loadlv(selectedvaluecol)
+    loadlv(selectedvaluecol_2)
   }else{
     return 
   }

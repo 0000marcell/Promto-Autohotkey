@@ -524,13 +524,13 @@ inserirdbexterno(values){
 	local itemvalue
 
 	/*
-	Pega o prefixo do codigo
+		Pega o prefixo do codigo
 	*/
 	prefixbloq := ""
 	prefixbloq := get_prefixbloq(info) 
 
 	/*
-	testa a conecao
+		testa a conecao
 	*/
 	if(IsObject(sigaconnection)){
 	    MsgBox,64,,% "A connexao esta funcionando!!!"
@@ -539,7 +539,7 @@ inserirdbexterno(values){
 	}
 
 	/*
-	pega o numero do ultimo registro
+		pega o numero do ultimo registro
 	*/
 	rs := sigaconnection.OpenRecordSet("SELECT TOP 1 B1_COD,B1_DESC,R_E_C_N_O_ FROM " base_value " ORDER BY R_E_C_N_O_ DESC")
 	R_E_C_N_O_TBI := rs["R_E_C_N_O_"]
@@ -565,8 +565,7 @@ inserirdbexterno(values){
 		rs.close()
 	}
 
-	;LOCPAD:="01"
-	GARANT:=2,XCALCPR:=0,B1_LOCALIZ:="N"
+	GARANT := 2,XCALCPR := 0,B1_LOCALIZ := "N"
 	progress(values.maxindex())
 
 	/*
@@ -577,22 +576,16 @@ inserirdbexterno(values){
 	MsgBox, % "numero de items : " values.maxindex()
 
 	for,each,value in values{
-		itemvalue:=values[A_Index,1]
-		StringLeft,testprefix,itemvalue,3
-		if(testprefix = "mpt")
-			StringReplace,itemvalue,itemvalue,MPT,MP, All    ;SUBSTITUI O MPT POR MP
-		if(testprefix = "mod")
-			StringReplace,itemvalue,itemvalue,MODT,MOD, All    ;SUBSTITUI O MODT POR MOD
+		itemvalue := values[A_Index,1]
 		updateprogress("Inserindo valores: " itemvalue,1)
 
 		/*
 		Confere se o item a ser inserido 
 		ja existe no dbex
 		*/
-
 		table := sigaconnection.Query("Select B1_COD from " base_value " WHERE B1_COD LIKE '" itemvalue "'")
 		columnCount := table.Columns.Count()
-		_exists:=0
+		_exists := 0
 		for each,row in table.Rows{
 			Loop, % columnCount{
 				if(row[A_index]!="")
@@ -607,8 +600,7 @@ inserirdbexterno(values){
 		Caso exista cria um update
 		*/
 
-		if(_exists=1){
-			;MsgBox, % "Existe"
+		if(_exists = 1){
 			/*
 				Faz a relacao entre o campo e o valor do campo 
 				em um hash. 
@@ -649,11 +641,12 @@ inserirdbexterno(values){
 			}
 			sql .= "' WHERE B1_COD='" itemvalue "';"
 		}else{
-			;MsgBox, % "nao existia"
 			/*
-			Caso nao exista cria um insert
+				Caso nao exista cria um insert
 			*/
+			
 			R_E_C_N_O_TBI++
+
 			sql:=
 			(JOIN
 				"INSERT INTO " base_value " ("

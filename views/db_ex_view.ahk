@@ -82,11 +82,11 @@ db_ex_view(){
 	
 
 	exportarparabanco:
-	gosub,configdbex
-	Gui,exportarparadb:New
-	Gui,font,s%SMALL_FONT%,%FONT%
-	Gui,add,button,w100 gexportarparadb,Exportar para db
-	Gui,Show,,Exportar Para DB
+	gosub, configdbex
+	Gui, exportarparadb:New
+	Gui,font, s%SMALL_FONT%, %FONT%
+	Gui,add,button, w100 gexportarparadb, Exportar para db
+	Gui,Show,, Exportar Para DB
 	return 
 
 	marctodos_dbex:

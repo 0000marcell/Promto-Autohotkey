@@ -53,9 +53,8 @@ ordem_view(tipo, info){
 	 nova_ordem := []
 	 
 	 Loop % LV_GetCount(){
-    	LV_GetText(RetrievedText, A_Index, 2)
-    	;append_debug("items a serem inseridos na nova odem : " RetrievedText)
-    	nova_ordem.insert(RetrievedText)
+  	LV_GetText(RetrievedText, A_Index, 2)
+  	nova_ordem.insert(RetrievedText)
 	 }
 	 /* ######## PEGAR OS ITEMS QUE ESTAO MARCADOS 
 	 	CRIAR UM NOVO CAMPO NA TABELA DE ORDEM E INSERIR 1 QUANDO O ITEM ESTIVER

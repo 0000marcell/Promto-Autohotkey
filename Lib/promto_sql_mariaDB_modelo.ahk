@@ -239,7 +239,7 @@ class Modelo{
 	incluir_ordem(items, tabela_ordem, codigos_omitidos = ""){
 		Global mariaDB
 
-
+		
 		try{
 			mariaDB.Query(
 				(JOIN
@@ -258,17 +258,21 @@ class Modelo{
 					"ALTER TABLE " tabela_ordem " ADD Omitir VARCHAR(60);"
 				))
 		}catch e 
-			;MsgBox,16,Erro, % "Ocorreu um erro ao apagar todos os items da tabela de ordem `n" ExceptionDetail(e)
+			MsgBox,64 , Aviso, % "A estrutura da tabela foi alterada  `n" ExceptionDetail(e)
 		
 		for each, item in items{
 			record := {}
+
 			record.Campos := item
+
 			if(MatHasValue(codigos_omitidos, item)){
+				
 				record.Omitir := 1	
 			}else{
+				
 				record.Omitir := 0
 			}
-
+			
 			mariaDB.Insert(record, tabela_ordem)
 		}
 	}

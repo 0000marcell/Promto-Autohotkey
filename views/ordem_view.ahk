@@ -54,6 +54,7 @@ ordem_view(tipo, info){
 	 
 	 Loop % LV_GetCount(){
   	LV_GetText(RetrievedText, A_Index, 2)
+
   	nova_ordem.insert(RetrievedText)
 	 }
 	 /* ######## PEGAR OS ITEMS QUE ESTAO MARCADOS 
@@ -61,8 +62,10 @@ ordem_view(tipo, info){
 	 	MARCADO E 0 QUANDO NAO ESTIVER
 	 */
 	 if(s_tipo = "prefixo"){
+	 	
 	 	codigos_omitidos := GetCheckedRows("ordem_view", "ordem_lv")	
 	 }else{
+	 	
 	 	codigos_omitidos := ""
 	 }
 	 

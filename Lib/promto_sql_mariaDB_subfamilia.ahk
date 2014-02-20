@@ -4,7 +4,7 @@ class Subfamilia{
 		Incluir uma nova subfamilia
 	*/
 	incluir(subfam_nome = "", subfam_mascara = "", prefixo = "", familia_nome = ""){
-		Global mariaDB
+		Global mariaDB, info
 
 		if(subfam_nome = "" || subfam_mascara = "" || prefixo = ""){
 			MsgBox, 16, % "Um dos items necessarios para incluir a subfamilia estava em branco!" 
@@ -14,12 +14,12 @@ class Subfamilia{
 		/*
 			Pega a mascara da empresa
 		*/
-		StringLeft, sub_prefixo, prefixo, 2
 
 		/*
 			Pega a referencia da tabela de items 
 			linkados
 		*/
+		sub_prefixo := info.empresa[2] info.tipo[2]
 		subfam_table := this.get_parent_reference(sub_prefixo, familia_nome)
 		if(subfam_table = ""){
 			MsgBox, 16, Erro, % "A familia selecionada nao tem subfamilia!"

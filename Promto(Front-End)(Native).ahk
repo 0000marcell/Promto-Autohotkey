@@ -297,87 +297,15 @@ return
 	return 
 
 	remover_item:
+	Gui, M:default
+	Gui, Treeview, main_tv
 	TV_GetText(selected_name, current_id)
 	MsgBox, 4,,Deseja apagar o item %selected_name% e todos os seus subitems? 
 	IfMsgBox No
 	{
 		return
 	}
-
-	if(tv_level_menu = 1){
-		/*
-			Apaga a empresa selecionada e todos 
-			os seus subitems
-		*/
-		
-		empresa := get_tv_info("Empresa")
-		
-		db.Empresa.excluir(empresa.nome, empresa.mascara)
-		
-		TV_Delete(current_id)
-		
-		/*
-			Limpa a listview da janela principal
-		*/
-		Gui,M:default
-		Gui,Listview, MODlv
-		LV_Delete()
-	}else if(tv_level_menu = 2){
-		/*
-			Apaga o tipo selecionada e todos
-			os seus subitems
-		*/
-		info := get_item_info("M", "MODlv")
-
-		;MsgBox, % "info empresa: " info.empresa[1] " mascara " info.empresa[2]
-		db.Tipo.excluir(tipo.nome, tipo.mascara, info)
-		MsgBox,64, Sucesso, % "O tipo e todos os subitems foram apagados." 
-		TV_Delete(current_id)
-		/*
-			Limpa a listview da janela principal
-		*/
-		Gui,M:default
-		Gui,Listview, MODlv
-		LV_Delete()
-	}else if(tv_level_menu = 3){
-		
-		/*
-			Apaga a familia selecionada e todos 
-			os seus subitems
-		*/
-		
-		info := get_item_info("M", "MODlv")
-		db.Familia.excluir(info.familia[1], info.familia[2], info)
-		MsgBox, 64, Sucesso, % "A familia e todos os subitems foram apagados." 
-		TV_Delete(current_id)
-		
-		/*
-			Limpa a listview da janela principal
-		*/
-		Gui,M:default
-		Gui,Listview, MODlv
-		LV_Delete()
-	}else if(tv_level = 4){
-		/*
-			Apaga a familia selecionada e todos 
-			os seus subitems
-		*/
-		info := get_item_info("M", "MODlv")
-<<<<<<< HEAD
-
-=======
->>>>>>> d9be96b769bb58b2ccd098ed8ec2bb4319cdc787
-		db.Subfamilia.excluir(subfamilia.nome, subfamilia.mascara, info)
-		TV_Delete(current_id)
-		/*
-			Limpa a listview da janela principal
-		*/
-		Gui,M:default
-		Gui,Listview, MODlv
-		LV_Delete()
-	}
-
-	;remover_item_ETF("M", "main_tv", current_id, current_columns)
+	delete_confirmation_view(selected_name)
 	return
 
 	main_tv:
@@ -2911,6 +2839,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, views/foto_individual_view.ahk
 #include, views/selecionar_campo_externo_view.ahk
 #include, views/linkar_modelos_view.ahk
+#include, views/delete_confirmation_view.ahk
 
 /*
 	Controllers
@@ -2920,3 +2849,4 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, controllers/inserir_bloqueio_controller.ahk
 #include, controllers/estruturas_controller.ahk
 #include, controllers/foto_individual_controller.ahk
+#include, controllers/delete_confirmation_controller.ahk

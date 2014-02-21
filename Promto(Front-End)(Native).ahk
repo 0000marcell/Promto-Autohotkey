@@ -200,7 +200,16 @@ _loading := 1
 Gui, Add, Groupbox, x480 y+20 w815 h290, Formacao do codigo:
 Gui, Add, Picture, xp+5 yp+50 w790 h270 vfmcode,
 
+/*
+	Menu de backup
+*/
+Menu, backup_menu, Add, Fazer Back up, make_back_up
+Menu, backup_menu, Add, Carregar Back up, load_back_up
+Menu, backup_menu_bar, Add, &Back up, :backup_menu
+Menu, backup_menu_bar, Color, White
+Gui, Menu, backup_menu_bar
 Gui, Show,W1300 h720 , %FamiliaName%
+
 Gui, Listview, MODlv
 LV_ModifyCol(2,300) 
 LV_Modify(2, "+Select")
@@ -2850,3 +2859,4 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, controllers/estruturas_controller.ahk
 #include, controllers/foto_individual_controller.ahk
 #include, controllers/delete_confirmation_controller.ahk
+#include, controllers/back_up_controller.ahk

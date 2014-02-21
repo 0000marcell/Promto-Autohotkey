@@ -1,54 +1,16 @@
-Gui, teste:new
-Gui, Add, Listview, w500 h200 vlv, Nome|Codigo
-Gui, Add, Button, xm y+10 w100 h30 gremover, Remover
-Gui, Show,,
-load_lv()
+Menu, backup_menu, Add, Fazer Back up, make_back_up
+Menu, backup_menu, Add, Carregar Back up, load_back_up
+Menu, backup_menu_bar, Add, &Back up, :backup_menu
+Menu, backup_menu_bar, Color, White
+Gui, Menu, backup_menu_bar
+Gui, Show, w500 h500, 
 return
 
-remover:
-delete_row_from_lv("teste", "lv", "coluna15")
+make_back_up:
+back_up_path := A_WorkingDir "\" A_DD "-" A_MM "-" A_YYYY "backup.sql"
+Run, %comspec% /K cd C:\Program Files\MariaDB 5.5\bin && mysqldump -v -u root -pRecovergun test > %back_up_path%
 return
 
+load_back_up:
+return
 
-
-load_lv(){
-	Loop, 10
-	{
-		LV_Add("", "coluna1" A_Index, "coluna2" A_Index)
-	}
-}
-
-delete_row_from_lv(window, lv, item_to_remove){
-	Gui, %window%:default
-	Gui, Listview, %lv%
-	
-	values := getvaluesLV(window, lv)
-	
-	for, each, row in values{
-		row_number := A_Index
-		for, each, item in row{
-			if(item = item_to_remove){
-				LV_Delete(row_number)
-			}	
-		}
-	}
-}
-
-getvaluesLV(wName,lvName)   ;extrai todos os valores de uma listview e retorna um array.
-{
-	values := []
-	i := 0
-	gui, %wName%:default 
-	Gui, listview, %lvName%
-
-	Loop, % LV_GetCount("Column")
-	{
-		i+=1
-		Loop, % LV_GetCount()
-		{
-			LV_GetText(text,A_Index,i)
-			values[A_Index,i] := text
-		}
-	}
-	return values
-}

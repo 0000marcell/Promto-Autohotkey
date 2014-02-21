@@ -203,12 +203,14 @@ Gui, Add, Picture, xp+5 yp+50 w790 h270 vfmcode,
 /*
 	Menu de backup
 */
+Menu, update_menu, Add, Atualizar, make_update
 Menu, backup_menu, Add, Fazer Back up, make_back_up
 Menu, backup_menu, Add, Carregar Back up, load_back_up
-Menu, backup_menu_bar, Add, &Back up, :backup_menu
-Menu, backup_menu_bar, Color, White
-Gui, Menu, backup_menu_bar
-Gui, Show,W1300 h720 , %FamiliaName%
+Menu, main_menu_bar, Add, &Atualizar, :update_menu
+Menu, main_menu_bar, Add, &Back up, :backup_menu
+Menu, main_menu_bar, Color, White
+Gui, Menu, main_menu_bar
+Gui, Show,W1300 h700 , %FamiliaName%
 
 Gui, Listview, MODlv
 LV_ModifyCol(2,300) 
@@ -2860,3 +2862,4 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, controllers/foto_individual_controller.ahk
 #include, controllers/delete_confirmation_controller.ahk
 #include, controllers/back_up_controller.ahk
+#include, controllers/update_controller.ahk

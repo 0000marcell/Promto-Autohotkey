@@ -85,12 +85,12 @@ loadvaltables(){
 			Continue
 		
 		if((current_connection_value = "MACCOMEVAP") && (list_name = "TCONTA" || list_name = "LOCPAD" )){
-			selectedvaluecol_2 := list_name "_" current_connection_value 
+			selectedvaluecol_23 := list_name "_" current_connection_value 
 		}else{
-			selectedvaluecol_2 := list_name 
+			selectedvaluecol_23 := list_name 
 		}
 
-    table := db.load_table_in_array(selectedvaluecol_2)
+    table := db.load_table_in_array(selectedvaluecol_23)
     for, each, value in table{
     	%list_name%["valor", A_Index] := table[A_Index, 1]
     	%list_name%["descricao", A_Index] := table[A_Index, 2]
@@ -100,7 +100,7 @@ loadvaltables(){
 
 salvar_val(){
 	Global
-
+  Local current_selected_table
 	Gui,submit,nohide
   if(editinserirval1="")||(editinserirval2="")
       MsgBox, % "Nenhum dos campos pode estar em branco!"
@@ -110,14 +110,15 @@ salvar_val(){
 	}else{
 		selectedvaluecol_2 := selectedvaluecol
 	}
-  
+
   db.create_val_table(selectedvaluecol_2)
   db.insert_val(editinserirval1, editinserirval2, selectedvaluecol_2)
   %selectedvaluecol_2%["valor"].insert(editinserirval1)
   %selectedvaluecol_2%["descricao"].insert(editinserirval2)
- 	loadlv(selectedvaluecol_2)
+  current_selected_table := selectedvaluecol_2
   loadvaltables()
-  db.load_lv("inserirval", "lviv2", selectedvaluecol_2)
+  loadlv(selectedvaluecol_2)
+  db.load_lv("inserirval", "lviv2", current_selected_table)
   Gui, inserirval2:destroy	
 }
 

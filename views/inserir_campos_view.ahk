@@ -1,5 +1,5 @@
 inserir_campos_view(info){
-	Global db, input_name, numero_items, SMALL_FONT,GLOBAL_COLOR, campos_combobox, valores_de_campo_lv,empresa, tipo, familia, input_name, input_mascara,importar_button, inserir_modelo_lv, exportar_button,more_options_button,opcoes_groupbox, modelos_foto_control, modelo 
+	Global db, linked_table,input_name, numero_items, SMALL_FONT,GLOBAL_COLOR, campos_combobox, valores_de_campo_lv,empresa, tipo, familia, input_name, input_mascara,importar_button, inserir_modelo_lv, exportar_button,more_options_button,opcoes_groupbox, modelos_foto_control, modelo 
  	Static s_info
 	
 	s_info := info
@@ -56,6 +56,9 @@ inserir_campos_view(info){
 	Gui, Add, Groupbox, x+180 yp-15 w180 h60, Importacao
 	Gui, Add, Button, xp+10 yp+15 w60 h30 gimportar_valores_camp_esp, Importar 
 	Gui, Add, Button, x+5 w60 h30 gexportar_valores_camp_esp, Exportar
+	Gui, Font, s15 cRed,
+	Gui, Add, Text, xm y+15 w500 vlinked_table glinked_table, 
+	Gui, Font, s8 cBlack
 	Gui, Show, Autosize, Inserir campos e valores
 	
 	/*
@@ -76,6 +79,7 @@ inserir_campos_view(info){
 	tabela1 := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2] s_info.modelo[2] s_info.modelo[1]
 	tabela_tbi := db.Modelo.get_tabela_campo_esp( campos_combobox, tabela1)
 	codigo_esp_table := tabela_tbi 
+
 	FileSelectFile, source, ""
 	Stringright,_iscsv,source,3
   if(_iscsv!="csv"){
@@ -208,6 +212,12 @@ inserir_campos_view(info){
 		return
 	} 
 	tabela_campos_especificos := get_tabela_campo_esp(campos_combobox, s_info)
+  
+  if(tabela_campos_especificos != "")
+    GuiControl,, linked_table , % "Este campo esta linkado a tabela " tabela_campos_especificos
+  else
+    GuiControl,, linked_table , % ""
+
 	values_in_table := db.load_table_in_array(tabela_campos_especificos)
 	GuiControl,, numero_items, % values_in_table.maxindex()
 	db.load_lv("inserir_campos_view", "valores_de_campo_lv", tabela_campos_especificos)
@@ -216,6 +226,14 @@ inserir_campos_view(info){
 
 	valores_de_campo_action:
 
+	return
+
+	linked_table:
+	MsgBox, 4,,Tem certeza que deseja remover o linkagem da tabela? 
+	IfMsgBox Yes
+	{
+    remove_table_link()
+	}
 	return
 
 }

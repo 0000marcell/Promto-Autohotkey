@@ -386,7 +386,6 @@ class PromtoSQL{
 		try{
 			rs := mariaDB.OpenRecordSet("SELECT * FROM " table)	
 		}catch e{
-			;MsgBox,16,Erro, % "Ainda nao existe tabela de codigos para o modelo selecionado!"
 			return 
 		} 
 		

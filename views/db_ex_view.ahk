@@ -21,7 +21,7 @@ db_ex_view(){
 	Gui, add, button, w100 h30 x+5 gdesmarctodos_dbex,Desm.todos
 	Gui, add, button, w100 h30 x+5 ginserirvalores,Inserir Valores
 	Gui, add, button, w100 h30 x+5 gconfigdbex,Configurar.
-	Gui, add, button, w100 h30 x+5 gexport_code_list_to_file,Exportar para arquivo
+	Gui, add, button, w100 h30 x+5 gexport_code_list_to_file, Exportar para arquivo
 	Gui, Font, s15 cGreen
 	Gui, add, Text, xm y+5 w800 h30 vconnection_status, % "Conectado a " current_connection_value
 	Gui, Show,, adicionar db externo!

@@ -42,6 +42,7 @@ importar_val(){
 
 excluir_val(){
 	Global
+  Local current_selected_table
 
   if((current_connection_value = "MACCOMEVAP") && (selectedvaluecol = "TCONTA" || selectedvaluecol = "LOCPAD" )){
     selectedvaluecol_2 := selectedvaluecol "_" current_connection_value 
@@ -56,8 +57,10 @@ excluir_val(){
   IfMsgBox Yes
   {
     db.delete_items_where("valor='"  currentvalue[1] "' AND descricao='" currentvalue[2] "';", selectedvaluecol_2)
+    current_selected_table := selectedvaluecol_2
     loadvaltables()
     loadlv(selectedvaluecol_2)
+    db.load_lv("inserirval", "lviv2", current_selected_table)
   }else{
     return 
   }

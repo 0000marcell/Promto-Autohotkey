@@ -5,16 +5,16 @@ inserir_valores_view(){
 	COLUNAS := ["NCM","UM","ORIGEM","TCONTA","TIPO","GRUPO","IPI","LOCPAD"]
 	checkedlistdb := GetCheckedRows("dbex","lvdbex")
 	Gui,inserirval:new
-	Gui,font,s%SMALL_FONT%,%FONT%
-	Gui,add,edit,w300 r1 x165 vpesquisaiv gpesquisaiv uppercase,
-	Gui,add,listview,w150 h300 xm y+5 vlviv gcolvalue altsubmit,colunas
-	Gui,add,listview,w700 h300 x+5 vlviv2 -multi,Valores|descricao
-	Gui,add,button,w100 h30 y+5 ginserirvalcamp,Inserir
-	Gui,add,button,w100 h30 x+5 ginserirval,Inserir Valor
-	Gui,add,button,w100 h30 x+5 gimportarval,Importar Valor
-	Gui,add,button,w100 h30 x+5 gexcluirval,Excluir
+	Gui, font,s%SMALL_FONT%,%FONT%
+	Gui, Add, edit,w300 r1 x165 vpesquisaiv gpesquisaiv uppercase,
+	Gui, Add, listview,w150 h300 xm y+5 vlviv gcolvalue altsubmit,colunas
+	Gui, Add, listview,w700 h300 x+5 vlviv2 -multi,Valores|descricao
+	Gui, Add, button, w100 h30 y+5 ginserirvalcamp,Inserir
+	Gui, Add, button, w100 h30 x+5 ginserirval,Inserir Valor
+	Gui, Add, button, w100 h30 x+5 gimportarval,Importar Valor
+	Gui, Add, button, w100 h30 x+5 gexcluirval,Excluir
 	Gui,Show,,
-	Gui,listview,lviv
+	Gui, listview, lviv
 	for,each,value in COLUNAS
 		LV_Add("",value)
 	Gui,listview,lviv2
@@ -42,7 +42,7 @@ inserir_valores_view(){
 	return 
 
 	pesquisaiv:
-	Gui,submit,nohide
+	Gui, Submit, Nohide
 	pesquisalv("inserirval","lviv2",pesquisaiv,Listiv)
 	return 
 

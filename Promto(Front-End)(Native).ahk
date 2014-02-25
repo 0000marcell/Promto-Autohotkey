@@ -2761,7 +2761,7 @@ compararcamp(camptable,otable)
 	rs := db.query(sql)
 	while(!rs.EOF){   
 	  campvalue := rs["Campos"]
-	  _exist:=FALSE
+	  _exist := FALSE
 	  sql:="SELECT Campos FROM " . camptable
 	  rs2 := db.query(sql) 
 	  while(!rs2.EOF){
@@ -2863,3 +2863,4 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, controllers/delete_confirmation_controller.ahk
 #include, controllers/back_up_controller.ahk
 #include, controllers/update_controller.ahk
+#include, controllers/inserir_campos_controller.ahk

@@ -474,11 +474,11 @@ return
 	return
 
 		exportarparaarquivo:
-		checkeditems:=GetCheckedRows2("massaestrut","estrutlv")
-		filedelete,dadosestrutura.csv
+		checkeditems := GetCheckedRows2("massaestrut","estrutlv")
+		filedelete, dadosestrutura.csv
 		MsgBox, % checkeditems["code"].maxindex()
 		FileAppend,% "G1_COD;G1_COMP;G1_QUANT;G1_INI;G1_FIM;G1_FIXVAR;G1_REVFIM;G1_NIV;G1_NIVINV`n", dadosestrutura.csv
-		already_in_structure:=""
+		already_in_structure := ""
 		number_of_parents:=0
 		for,each,value in checkeditems["code"]{
 			loadestruturatofile(checkeditems["code",A_Index] ">>" checkeditems["desc",A_Index])

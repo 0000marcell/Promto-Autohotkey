@@ -1846,8 +1846,11 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 	}
 	Gui,progress:destroy
 	MsgBox, 64, Sucesso, % "O arquivo foi salvo!!"
-	savetofile("temp\" selectmodel ".png")
-	run, % "temp\" selectmodel ".png"
+	
+	formated_model := format_file_name(selectmodel)
+	savetofile("temp\" formated_model ".png")
+	MsgBox, % "ira rodar o arquivo " formated_model
+	run, % "temp\" formated_model ".png"
 }
 
 get_prefix_in_string(table){
@@ -2527,3 +2530,80 @@ delete_row_from_lv(window, lv, item_to_remove, everyone = 0){
 		}
 	}
 }
+
+/*
+	Impede que caracteres ilegais sejam inseridos no 
+	nome do arquivo
+*/
+format_file_name(file_name){
+	file_name := Trim(file_name)
+	unmodified_name := file_name 
+	_ilegal_char := 0
+
+	IfInString, file_name, "
+	{
+		StringReplace, file_name, file_name,",,All
+		_ilegal_char := 1
+	} 
+
+	IfInString, file_name, '
+	{
+		StringReplace, file_name, file_name,',,All
+		_ilegal_char := 1
+	}
+
+	IfInString, file_name, \
+	{
+		StringReplace, file_name, file_name,\,,All
+		_ilegal_char := 1
+	}
+
+	IfInString, file_name, /
+	{
+		StringReplace, file_name, file_name,/,,All
+		_ilegal_char := 1
+	}
+
+	IfInString, file_name, :
+	{
+		StringReplace, file_name, file_name,:,,All
+		_ilegal_char := 1
+	}
+
+	IfInString, file_name, *
+	{
+		StringReplace, file_name, file_name,*,,All
+		_ilegal_char := 1
+	}
+
+	IfInString, file_name, ?
+	{
+		StringReplace, file_name, file_name,?,,All
+		_ilegal_char := 1
+	}
+
+	IfInString, file_name, <
+	{
+		StringReplace, file_name, file_name,<,,All
+		_ilegal_char := 1
+	}
+
+	IfInString, file_name, >
+	{
+		StringReplace, file_name, file_name,>,,All
+		_ilegal_char := 1
+	}
+
+	IfInString, file_name, |
+	{
+		StringReplace, file_name, file_name,|,,All
+		_ilegal_char := 1
+	}
+
+	if(_ilegal_char = 1){
+		MsgBox, 16, Erro, % "O nome do arquivo continha caracteres ilegais `n e foi alterado de " unmodified_name " para " file_name
+		return
+	}
+	return file_name
+}
+	

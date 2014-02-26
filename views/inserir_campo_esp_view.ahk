@@ -18,7 +18,7 @@ inserir_campo_esp_view(campo, info){
 	*/
 	Gui, Add, Groupbox, w300 h230, Campos
 	Gui, Add, Text, xp+10 yp+15, Codigo
-	Gui, Add, Edit, y+5 w250 vcodigo_field_esp UPPERCASE,
+	Gui, Add, Edit, y+5 w250 vcodigo_field_esp UPPERCASE limit5,
 	Gui, Add, Text, y+15, Descricao Resumida
 	Gui, Add, Edit, y+5 w250 vdr_field_esp UPPERCASE,
 	Gui, Add, Text, y+15, Descricao completa

@@ -980,7 +980,6 @@ class Modelo{
 		Global mariaDB
 
 		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
-		append_debug("tabela 1 " tabela1)
 		try{
 			mariaDB.Query(
 			(JOIN 
@@ -990,7 +989,6 @@ class Modelo{
 		}catch e 
 			MsgBox,16,Erro,% " Erro ao tentar deletar a referencia da tabela `n " ExceptionDetail(e)
 		
-		append_debug("ira inserir a nova referencia na tabela de referencias tipo " field_name " tabela1 " tabela1 " tabela2 " native_table) 
 		record := {}
 		record.tipo := field_name
 		record.tabela1 := tabela1

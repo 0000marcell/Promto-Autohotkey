@@ -212,8 +212,6 @@ inserir_campos_view(info){
 		MsgBox,16, Erro, % "Selecione um campo antes de continuar!"
 		return
 	} 
-  reset_debug()
-  append_debug("campos combobox " campos_combobox)
 	tabela_campos_especificos := get_tabela_campo_esp(campos_combobox, s_info)
   
   if(tabela_campos_especificos != ""){
@@ -232,7 +230,6 @@ inserir_campos_view(info){
 	MsgBox, 4,,Tem certeza que deseja remover a linkagem da tabela? 
 	IfMsgBox Yes
 	{
-    append_debug("tabela campos especificos :" tabela_campos_especificos " campos_combobox " campos_combobox)
     remove_table_link(s_info, tabela_campos_especificos, campos_combobox)
 	}
 	return

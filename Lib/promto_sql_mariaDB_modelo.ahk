@@ -884,6 +884,9 @@ class Modelo{
 		}
 	}
 
+	/*
+		Deleta uma relacao de tabelas existente
+	*/
 	delete_relation(tipo, tabela1){
 		Global mariaDB
 		try{
@@ -968,5 +971,32 @@ class Modelo{
 		}else{
 			return 0
 		}
+	}
+
+	/*
+		Redefine de uma tabela para o seu valor padrao
+	*/
+	reset_table_relation(info, native_table, field_name){
+		Global mariaDB
+
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
+		append_debug("tabela 1 " tabela1)
+		try{
+			mariaDB.Query(
+			(JOIN 
+				" DELETE FROM reltable" 
+				" WHERE tipo like '" field_name "' And tabela1 like '" tabela1 "'"
+			))	
+		}catch e 
+			MsgBox,16,Erro,% " Erro ao tentar deletar a referencia da tabela `n " ExceptionDetail(e)
+		
+		append_debug("ira inserir a nova referencia na tabela de referencias tipo " field_name " tabela1 " tabela1 " tabela2 " native_table) 
+		record := {}
+		record.tipo := field_name
+		record.tabela1 := tabela1
+		record.tabela2 := native_table
+		mariaDB.Insert(record, "reltable")
+
+		MsgBox, 64, Sucesso, % "A linkagem da tabela retornou para o seu valor padrao!"
 	}
 }

@@ -91,6 +91,7 @@ loadvaltables(){
 		}
 
     table := db.load_table_in_array(selectedvaluecol_23)
+    
     for, each, value in table{
     	%list_name%["valor", A_Index] := table[A_Index, 1]
     	%list_name%["descricao", A_Index] := table[A_Index, 2]

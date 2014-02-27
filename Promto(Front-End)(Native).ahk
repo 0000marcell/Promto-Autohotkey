@@ -82,9 +82,19 @@ Gui, Color, %GLOBAL_COLOR%
 Gui, Add, Picture, xm ym w300 h150,img\promtologo.png
 
 /*
+	Nome do usuario
+*/
+Gui, Add, Groupbox, w300 h110, Usuario
+Gui, Add, Text, xp+5 yp+15, Nome:
+Gui, Add, Edit, w280 vuser_name, 
+Gui, Add, Text, , Senha:
+Gui, Add, Edit, w280 vpassword,
+Gui, Add, Button, w100 h20 gmanager_users, Gerenciar usuarios
+
+/*
 	Localizacao
 */
-Gui, Add, Groupbox, w300 h60 , Localizacao DB
+Gui, Add, Groupbox, xm y+10 w300 h80 , Localizacao DB
 Gui, Add, Edit, xp+25 yp+25 w250 vdb_location_to_save , %db_location%
 
 /*
@@ -106,7 +116,7 @@ Return
 	Gui, Add, Text, xm y+10, Carregando...
 	Gui, Add, Progress, xm y+5 vprogress  -Smooth 0x8 w300 h18
 	Gui, Show, AutoSize, Carregando...
-  SetTimer, undetermine_progress_action,45
+  SetTimer, undetermine_progress_action, 45
   load_ETF(db)
   Gui, initialize:destroy
   Gosub, M
@@ -116,6 +126,10 @@ Return
 		Gui, initialize:default
 		GuiControl,, progress, 1
 		Return
+
+manager_users:
+manager_users_view()
+return
 
 M:
 /*
@@ -2851,6 +2865,9 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, views/selecionar_campo_externo_view.ahk
 #include, views/linkar_modelos_view.ahk
 #include, views/delete_confirmation_view.ahk
+#include, views/manager_users_view.ahk
+#include, views/insert_user_view.ahk
+#include, views/edit_user_view.ahk
 
 /*
 	Controllers
@@ -2864,3 +2881,4 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, controllers/back_up_controller.ahk
 #include, controllers/update_controller.ahk
 #include, controllers/inserir_campos_controller.ahk
+#include, controllers/manager_users_controller.ahk

@@ -4,6 +4,7 @@ class PromtoSQL{
 		Conecta no DB
 	*/
 	__New(databaseType,connectionString){
+		
 		/*
 		 Tenta Conectar
 		*/
@@ -13,6 +14,7 @@ class PromtoSQL{
 		} catch e {
 			MsgBox,16, Error, % "A conexao nao foi estabelecida. Verifique os parametros da conexao!`n`n" ExceptionDetail(e)
 		}
+		
 		/*
 			Verifica se existe uma estrutura
 			de dados coerente com o programa
@@ -44,6 +46,7 @@ class PromtoSQL{
 	*/
 	find_items_where(where_statement, table){
 		Global mariaDB  
+		
 		try{
 				;MsgBox, % "SELECT * FROM " table " WHERE " field_value[1] " LIKE '" field_value[2] "'"
 				rs := mariaDB.OpenRecordSet("SELECT * FROM " table " WHERE " where_statement)		
@@ -51,9 +54,11 @@ class PromtoSQL{
 				MsgBox, % "Ocorreu um erro ao buscar os valores!"
 				return
 		}
+		
 		columns := rs.getColumnNames()
 		columnCount := columns.Count()
 		return_value := []
+		
 		while(!rs.EOF){	
 			r := A_Index
 			Loop, % columnCount{
@@ -206,6 +211,21 @@ class PromtoSQL{
 		}catch e
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela connections `n" ExceptionDetail(e)
 
+		/*
+			Usuarios
+		*/
+		try{
+			mariaDB.Query(
+				(JOIN
+					"	CREATE TABLE IF NOT EXISTS usuarios "
+					" (Nome VARCHAR(250), "
+					" Senha VARCHAR(250), "
+					" Privilegio VARCHAR(250), "
+					" PRIMARY KEY (Nome))"
+				))
+		}catch e 
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de usuarios `n" ExceptionDetail(e)
+		
 	}
 
 	/*

@@ -13,8 +13,7 @@
   /*
     Opcoes
   */
-
-  Gui, Add, Groupbox, x10 y10 w300 h200, Opcoes
+  Gui, Add, Groupbox, x10 y10 w160 h200, Opcoes
   Gui, Add, Text, xp+5 yp+15 w150, Nome
   Gui, Add, Edit, y+5 w150 vuser_name,
   Gui, Add, Text, y+5 w150 , Senha

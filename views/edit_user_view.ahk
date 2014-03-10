@@ -28,7 +28,7 @@
 
   save_edited_user:
   Gui, Submit, Nohide
-  save_edited_user(user_name, user_password)
+  ;save_edited_user(user_name, user_password)
   return
 
 }

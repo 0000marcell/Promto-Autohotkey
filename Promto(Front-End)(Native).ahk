@@ -206,9 +206,14 @@ Gui, Font, s8
 Gui, Add, Button, x+5 gfotoindividual w100, Foto
 
 /*
-	Informacao 
+	Informacao
 */
-Gui, Add, Groupbox, x480 y+20 w815 h300, Informacao:
+
+
+/*
+	Formacao do codigo 
+*/
+Gui, Add, Groupbox, x480 y+20 w815 h300, Formacao do codigo:
 Gui, Add, Picture, xp+5 yp+15 w780 h270 vptcode ,
 _loading := 1
 
@@ -271,12 +276,14 @@ if A_GuiControl = main_tv
 		os valores
 	*/
 	TV_GetText(current_selected_name, A_EventInfo)
+
 	current_id := A_EventInfo
 	
 	/*
 		Caso a selecao esteja no nivel de insercao 
 		de tipos
 	*/
+
 	if(tv_level_menu = 1){
 		current_columns := "Abas"
 		info := get_item_info("M", "MODlv")
@@ -338,6 +345,7 @@ return
 	return
 
 	main_tv:
+
   /*
   	funcao que busca o nivel 
   	que a selecao esta

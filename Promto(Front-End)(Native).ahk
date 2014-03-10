@@ -88,8 +88,8 @@ Gui, Add, Groupbox, w300 h110, Usuario
 Gui, Add, Text, xp+5 yp+15, Nome:
 Gui, Add, Edit, w280 vuser_name, 
 Gui, Add, Text, , Senha:
-Gui, Add, Edit, w280 vpassword,
-Gui, Add, Button, w100 h20 gmanager_users, Gerenciar usuarios
+Gui, Add, Edit, w280 vuser_password password,
+Gui, Add, Button, w150 h20 y+10 gmanager_users, Gerenciar usuarios
 
 /*
 	Localizacao
@@ -110,6 +110,10 @@ Return
 	Return
 
 	loading_main:
+	Gui, Submit, Nohide
+	if(!db.Usuario.log_in_user(user_name, user_password)){
+		return 
+	}
 	Gui, initialize:default
 	GuiControl, Disable, loading_main,
 	GuiControl, Disable, edit_config_file
@@ -224,7 +228,7 @@ Menu, main_menu_bar, Add, &Atualizar, :update_menu
 Menu, main_menu_bar, Add, &Back up, :backup_menu
 Menu, main_menu_bar, Color, White
 Gui, Menu, main_menu_bar
-Gui, Show,W1300 h700 , %FamiliaName%
+Gui, Show, w1300 h700 , %FamiliaName%
 
 Gui, Listview, MODlv
 LV_ModifyCol(2,300) 
@@ -2838,6 +2842,9 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include,lib\json_parser.ahk
 #include,<SQL_new>
 #include, lib\gerar_codigos.ahk
+#Include lib\Crypt.ahk
+#Include lib\CryptConst.ahk
+#Include lib\CryptFoos.ahk
 
 /*
 	Views

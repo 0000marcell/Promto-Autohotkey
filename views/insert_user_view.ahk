@@ -1,34 +1,42 @@
 ﻿insert_user_view(){
-  Static user_name, user_password
+  Global db, GLOBAL_COLOR, SMALL_FONT
+  Static user_name, user_password, priv_combo
 
   /*
     Gui init
   */
-  Gui, insert_user_view:New
-  Gui, insert_user_view:+ownerM
+  Gui, inserir_user_view:New
+  Gui, inserir_user_view:+ownermanager_users_view
   Gui, Font, s%SMALL_FONT%, %FONT%
   Gui, Color, %GLOBAL_COLOR%
-
-  /*
-    Dados
-  */
-  Gui, Add, Groupbox, w300 h110, Dados
-  Gui, Add, Text, xp+5 yp+15, Nome:
-  Gui, Add, Edit, w280 vuser_name, 
-  Gui, Add, Text, , Senha:
-  Gui, Add, Edit, w280 vuser_password,
-
+  
   /*
     Opcoes
   */
-  Gui, Add, Groupbox, w300 h60, Opcoes
-  Gui, Add, Button, w200 h60 gsave_user, Salvar
-  Gui, Show,, Salvar usuario
-  return 
 
+  Gui, Add, Groupbox, x10 y10 w300 h200, Opcoes
+  Gui, Add, Text, xp+5 yp+15 w150, Nome
+  Gui, Add, Edit, y+5 w150 vuser_name,
+  Gui, Add, Text, y+5 w150 , Senha
+  Gui, Add, Edit, y+5 w150 vuser_password password,
+  Gui, Add, Text, y+5 w150, Privilegios
+  Gui, Add, Combobox, y+5 w150 vpriv_combo, Leitura|Edicao
+  Gui, Add, Button, y+5 w150 h30 gsave_new_user, Salvar
+  Gui, Show,, Inserir usuario
+  return
 
-  save_user:
-  Gui, Submit, nohide
-  save_user(user_name, user_password)
+  save_new_user:
+  Gui, Submit, Nohide
+  if(user_name = "" || user_password = "" || priv_combo = "")
+    MsgBox, 64, Sucesso, % "Nenhum dos valores do formulario podem estar em branco! " 
+  
+  if(db.Usuario.new_user(user_name, user_password, priv_combo)){
+    Gui, manager_users_view:default
+    Gui, Listview, users_lv
+    LV_Add("", user_name, user_password, priv_combo)
+    LV_ModifyCol()
+  }else{
+    return 0  
+  }
   return
 }

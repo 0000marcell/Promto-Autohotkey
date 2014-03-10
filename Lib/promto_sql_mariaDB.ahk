@@ -76,12 +76,14 @@ class PromtoSQL{
 	*/
 	delete_items_where(where_statement, table){
 		Global mariaDB
-
+		
 		try{
-				rs := mariaDB.OpenRecordSet("DELETE FROM " table " WHERE " where_statement)		
-			}catch e{
-				MsgBox, % "Ocorreu um erro ao deletar os valores da tabela " table " !"
-				return
+			sql := "DELETE FROM " table " WHERE " where_statement
+			mariaDB.Query(sql)
+			return 1
+		}catch e {
+			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela " table  ExceptionDetail(e)
+			return 0
 		}
 	}
 
@@ -225,7 +227,6 @@ class PromtoSQL{
 				))
 		}catch e 
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de usuarios `n" ExceptionDetail(e)
-		
 	}
 
 	/*
@@ -819,4 +820,5 @@ class PromtoSQL{
 	#include lib\promto_sql_mariadb_campo.ahk
 	#include lib\promto_sql_mariadb_imagem.ahk
 	#include lib\promto_sql_mariadb_estrutura.ahk
+	#include lib\promto_sql_mariadb_usuario.ahk
 }

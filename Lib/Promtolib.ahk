@@ -2606,4 +2606,38 @@ format_file_name(file_name){
 	}
 	return file_name
 }
-	
+
+
+load_mod_info(){
+	Global db, info
+
+	items := db.Log.get_mod_info(info)
+	for, each, item in Items{
+	  usuario := items[A_Index, 2]
+	  hash := hashify(items[A_Index, 3])
+	  data := items[A_Index, 4]
+	  hora := items[A_Index, 5]
+		string .= usuario " alterou o item " hash.modelo " em " data " as " hora "`n"
+		mensagem .= items[A_Index, 6] "`n"
+	} 
+	Gui, M:default
+	GuiControl,, mod_info, % string  
+	GuiControl,, msg_info, % mensagem
+
+}
+
+/*
+	Retorna um hash com todas 
+	as informacoes do item da tabela 
+	log em um hash
+*/
+hashify(string){
+	StringSplit, string, string, |,, All
+	hash := {}
+	hash.empresa := string3
+	hash.tipo := string5
+	hash.familia := string7
+	hash.subfamilia := string9
+	hash.modelo := string11
+	return hash
+}

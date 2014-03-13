@@ -48,7 +48,6 @@ class PromtoSQL{
 		Global mariaDB  
 		
 		try{
-				;MsgBox, % "SELECT * FROM " table " WHERE " field_value[1] " LIKE '" field_value[2] "'"
 				rs := mariaDB.OpenRecordSet("SELECT * FROM " table " WHERE " where_statement)		
 			}catch e{
 				MsgBox, % "Ocorreu um erro ao buscar os valores!"
@@ -227,6 +226,27 @@ class PromtoSQL{
 				))
 		}catch e 
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de usuarios `n" ExceptionDetail(e)
+
+		/*
+			Log
+		*/
+		try{
+			mariaDB.Query(
+				(JOIN
+					"	CREATE TABLE IF NOT EXISTS log "
+					"(Id MEDIUMINT NOT NULL AUTO_INCREMENT,"
+					" Usuario VARCHAR(250), "
+					" Item VARCHAR(250), "
+					" Data VARCHAR(250), "
+					" Hora VARCHAR(250), "
+					" Mensagem VARCHAR(250), "
+					" Validade VARCHAR(250), "
+					" Prodkey VARCHAR(250), "
+					" PRIMARY KEY (id))"
+				))
+		}catch e 
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de log `n" ExceptionDetail(e)
+	
 	}
 
 	/*
@@ -821,4 +841,5 @@ class PromtoSQL{
 	#include lib\promto_sql_mariadb_imagem.ahk
 	#include lib\promto_sql_mariadb_estrutura.ahk
 	#include lib\promto_sql_mariadb_usuario.ahk
+	#include lib\promto_sql_mariadb_log.ahk
 }

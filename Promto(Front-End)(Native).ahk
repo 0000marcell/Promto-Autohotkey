@@ -18,17 +18,17 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 */
 
 $$ := JSON_load(A_WorkingDir "\settings.json")
-jsonString := JSON_to($$)
-settings := JSON_from(jsonString)
-db_type := settings.db_type 
-db_location := settings.db_location
-TAB_COLOR := settings.tab_color
-TAB_TEXT_SIZE := settings.tab_text_size
+jsonString := JSON_to($$) 
+settings := JSON_from(jsonString) 
+db_type := settings.db_type  
+db_location := settings.db_location 
+TAB_COLOR := settings.tab_color 
+TAB_TEXT_SIZE := settings.tab_text_size 
 SMALL_FONT := settings.small_font 
 MEDIUM_FONT := settings.medium_font 
 LARGE_FONT := settings.large_font 
 BUTTON_SIZE := settings.button_size 
-global_image_path := settings.image_folder_path
+global_image_path := settings.image_folder_path 
 StringReplace, global_image_path, global_image_path, /,\, All
 if(BUTTON_SIZE = "small")
 	button_h := 15
@@ -114,6 +114,7 @@ Return
 	if(!db.Usuario.log_in_user(user_name, user_password)){
 		return 
 	}
+	USER_NAME := user_name
 	Gui, initialize:default
 	GuiControl, Disable, loading_main,
 	GuiControl, Disable, edit_config_file
@@ -157,7 +158,7 @@ Gui, Add, Edit, xp+5 yp+15 w220,
 /*
 	Empresas/Tipos/Familias
 */
-Gui, Add, Groupbox, xp-5 y+10 w230 h370,Empresas/Tipos/Familias
+Gui, Add, Groupbox, xp-5 y+10 w230 h370, Empresas/Tipos/Familias
 Gui, Add, TreeView, xp+5 yp+15 w220 h360 vmain_tv gmain_tv
 load_main_tv()
 
@@ -173,7 +174,7 @@ ILButton(hBtn, "promtoshell.dll:" 5, 32, 32, 0)
 	Modelos 
 */
 Gui, Add, Groupbox, xm+240 ym w220 h290, Modelos 
-Gui, Add, Listview, xp+5 yp+15 w200 h270 section  vMODlv gMODlv altsubmit,Modelo|Mascara
+Gui, Add, Listview, xp+5 yp+15 w200 h270 section  vMODlv gMODlv altsubmit, Modelo|Mascara
 Gui, Add, Groupbox, xm+240 y+10 w220 h60, Numero de items:
 Gui, Font, s15
 Gui, Add,	Text, xp+75 yp+15 w100 vnumberofitems cblue,
@@ -211,16 +212,26 @@ Gui, Add, Button, x+5 gfotoindividual w100, Foto
 
 
 /*
-	Formacao do codigo 
+	Info
 */
-Gui, Add, Groupbox, x480 y+20 w815 h300, Formacao do codigo:
+Gui, Add, Groupbox, x480 y+20 w815 h300, Info:
 Gui, Add, Picture, xp+5 yp+15 w780 h270 vptcode ,
 _loading := 1
 
 /*
+	Ultimas atualizacoes
+*/
+Gui, Add, Groupbox, x480 y+20 w815 h100, Ultimas atualizacoes:
+Gui, Font, cgreen
+Gui, Add, Text, xp+5 yp+15 w365 h80 vmod_info,
+Gui, Font, cblue 
+Gui, Add, Text, x+2 w300 h80 vmsg_info,
+Gui, Font, cblack
+
+/*
 	Formacao codigo
 */
-Gui, Add, Groupbox, x480 y+20 w815 h290, Formacao do codigo:
+Gui, Add, Groupbox, x480 y+10 w815 h290, Formacao do codigo:
 Gui, Add, Picture, xp+5 yp+50 w790 h270 vfmcode,
 
 /*
@@ -485,10 +496,10 @@ return
 	plotptcode(EmpresaMascara AbaMascara FamiliaMascara,prefixpt2,currentvalue[2],1,900,6000)
 	return 
 
-MGuiSize:
-GuiSize:
-	UpdateScrollBars(A_Gui, A_GuiWidth, A_GuiHeight)
-return
+;MGuiSize:
+;GuiSize:
+;	UpdateScrollBars(A_Gui, A_GuiWidth, A_GuiHeight)
+;return
 
 	codetable:
 	info := get_item_info("M", "MODlv")
@@ -1216,6 +1227,7 @@ if A_GuiEvent = i
 	info := get_item_info("M", "MODlv") 
 	if(info.modelo[1] != "Modelo"){
 		load_image_in_main_window()	
+		load_mod_info()
 		load_formation_in_main_window(info)
 	}
 	number_of_items()
@@ -2883,6 +2895,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, views/manager_users_view.ahk
 #include, views/insert_user_view.ahk
 #include, views/edit_user_view.ahk
+#include, views/insert_mod_msg_view.ahk
 
 /*
 	Controllers

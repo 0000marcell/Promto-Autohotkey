@@ -119,10 +119,15 @@ for,each,value in finalcod["oc"]{
 		db.Modelo.inserir_codigo(codtable, [finalresult.oc, Trim(descricao_completa), Trim(descricao_resumida), Trim(descricao_ingles)])
 }
 Gui,progress:destroy
-if(_error = 0)
+if(_error = 0){
 	MsgBox,64,, % "codigos gerados!!"
-else
+	/*
+		Grava as informacoes da alteracao no log
+	*/
+	insert_mod_msg_view()
+}else{
 	MsgBox,16,, % "Os codigos NAO foram gerados!!"
+}
 db.load_codigos_combobox(codtable)
 number_of_items()
 return 

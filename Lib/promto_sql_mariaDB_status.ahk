@@ -17,6 +17,7 @@ class Status{
 		 	MsgBox, 16, Erro, % "Umas das informacoes sobre o item estava em falta por isso as informacoes nao foram gravadas no status!"
 		 	return
 		 }
+     
 		Prodkey := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2]
 
 		if(!this.status_exists(Prodkey)){
@@ -51,6 +52,16 @@ class Status{
 		items := db.find_items_where("Prodkey like '" Prodkey "'", "status")
     return items
 	}
+
+  /*
+    Pega todos os items da lista de status com determinada 
+    condicao
+  */
+  get_items(condition){
+    Global mariaDB, db
+    items := db.find_items_where(condition, "status")
+    return items
+  }
 
 
 	/*

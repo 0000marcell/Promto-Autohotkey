@@ -202,7 +202,7 @@ for,each,value in ["Gerar Estruturas", "Linkar", "Add db Externo", "Estrutura", 
 */
 Gui, Add, Groupbox, x480 ym w815 h70, name
 Gui, Add, Picture, xp+5 yp+15 w50 h50 vstatus_picture,
-Gui, Add, Text, x+5 w400 h50 vstatus_info,
+Gui, Add, Text, x+5 w805 h50 vstatus_info,
 Gui, Add, Button, x480 y+5 w80 h20 gchange_status , Alterar status
 
 /*
@@ -251,6 +251,7 @@ _loading := 0
 return	
 
 list_options:
+list_options_view()
 return
 
 insert_empresa:
@@ -2904,6 +2905,8 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, views/edit_user_view.ahk
 #include, views/insert_mod_msg_view.ahk
 #include, views/change_status_view.ahk
+#include, views/list_options_view.ahk
+
 
 
 /*

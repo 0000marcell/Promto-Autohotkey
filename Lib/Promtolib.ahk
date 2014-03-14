@@ -2634,6 +2634,7 @@ load_status_in_main_window(info){
 	if(items[1, 1] = ""){
 		Gui, M:default
  		Gui, Font, s12 cBlack
+ 		GuiControl, Font, status_info
 		GuiControl,, status_picture, % "img\gray_glossy_ball.png"
 		GuiControl,, status_info, % "Nao foi feito"
 		return  	

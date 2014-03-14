@@ -5,7 +5,7 @@
     Gui init
   */
   Gui, manager_users_view:New
-  Gui, manager_users_view:+ownerinitialize
+  Gui, manager_users_view:+ownerM
   Gui, Font, s%SMALL_FONT%, %FONT%
   Gui, Color, %GLOBAL_COLOR%
 

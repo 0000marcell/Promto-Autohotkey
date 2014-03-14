@@ -89,7 +89,7 @@ Gui, Add, Text, xp+5 yp+15, Nome:
 Gui, Add, Edit, w280 vuser_name, 
 Gui, Add, Text, , Senha:
 Gui, Add, Edit, w280 vuser_password password,
-Gui, Add, Button, w150 h20 y+10 gmanager_users, Gerenciar usuarios
+;Gui, Add, Button, w150 h20 y+10 gmanager_users, Gerenciar usuarios
 
 /*
 	Localizacao
@@ -198,24 +198,18 @@ for,each,value in ["Gerar Estruturas", "Linkar", "Add db Externo", "Estrutura", 
 }
 
 /*
-	Pesquisa
+	Status
 */
-Gui, Add, Groupbox, x480 ym w815 h50,Pesquisa
-Gui, Font,s7
-Gui, Add, Combobox, xp+5 yp+15 w695 vcombocodes gcombocodes,
-Gui, Font, s8
-Gui, Add, Button, x+5 gfotoindividual w100, Foto
-
-/*
-	Informacao
-*/
-
+Gui, Add, Groupbox, x480 ym w815 h70, name
+Gui, Add, Picture, xp+5 yp+15 w50 h50 vstatus_picture,
+Gui, Add, Text, x+5 w400 h50 vstatus_info,
+Gui, Add, Button, x480 y+5 w80 h20 gchange_status , Alterar status
 
 /*
 	Info
 */
-Gui, Add, Groupbox, x480 y+20 w815 h300, Info:
-Gui, Add, Picture, xp+5 yp+15 w780 h270 vptcode ,
+Gui, Add, Groupbox, x480 y+5 w815 h220, Info:
+Gui, Add, Picture, xp+5 yp+15 w780 h210 vptcode ,
 _loading := 1
 
 /*
@@ -239,9 +233,13 @@ Gui, Add, Picture, xp+5 yp+50 w790 h270 vfmcode,
 */
 Menu, update_menu, Add, Atualizar, make_update
 Menu, backup_menu, Add, Fazer Back up, make_back_up
+Menu, users_menu, Add, Usuarios, manager_users
+Menu, list_menu, Add, Listas, list_options
 Menu, backup_menu, Add, Carregar Back up, load_back_up
 Menu, main_menu_bar, Add, &Atualizar, :update_menu
 Menu, main_menu_bar, Add, &Back up, :backup_menu
+Menu, main_menu_bar, Add, &Usuarios, :users_menu
+Menu, main_menu_bar, Add, &Listas, :list_menu
 Menu, main_menu_bar, Color, White
 Gui, Menu, main_menu_bar
 Gui, Show, w1300 h700 , %FamiliaName%
@@ -251,6 +249,9 @@ LV_ModifyCol(2,300)
 LV_Modify(2, "+Select")
 _loading := 0
 return	
+
+list_options:
+return
 
 insert_empresa:
 inserir_ETF_view("M", "main_tv", "", "Empresas")
@@ -263,6 +264,11 @@ TV_Delete()
 ETF_TVSTRING := ""
 load_ETF(db)
 load_main_tv()
+return
+
+change_status:
+info := get_item_info("M", "MODlv")
+change_status_view(info)
 return
 
 MGuiContextMenu:
@@ -1229,6 +1235,7 @@ if A_GuiEvent = i
 		load_image_in_main_window()	
 		load_mod_info()
 		load_formation_in_main_window(info)
+		load_status_in_main_window(info)
 	}
 	number_of_items()
 }
@@ -2896,6 +2903,8 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, views/insert_user_view.ahk
 #include, views/edit_user_view.ahk
 #include, views/insert_mod_msg_view.ahk
+#include, views/change_status_view.ahk
+
 
 /*
 	Controllers

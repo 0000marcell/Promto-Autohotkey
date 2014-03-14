@@ -1,5 +1,4 @@
 insert_mod_msg_view(){
-	Global
 	Global db, SMALL_FONT, GLOBAL_COLOR, info, USER_NAME
 	Static msg_value_edit
 

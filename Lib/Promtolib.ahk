@@ -2626,6 +2626,51 @@ load_mod_info(){
 
 }
 
+load_status_in_main_window(info){
+	Global USER_NAME, db
+
+	items := db.Status.get_status(info)
+
+	if(items[1, 1] = ""){
+		Gui, M:default
+ 		Gui, Font, s12 cBlack
+		GuiControl,, status_picture, % "img\gray_glossy_ball.png"
+		GuiControl,, status_info, % "Nao foi feito"
+		return  	
+	}
+
+	usuario := items[1, 2]
+	status := items[1, 3]
+	mensagem := items[1, 4]
+
+	img_path := ""
+
+	if(status = 1){
+			img_path := "img\green_glossy_ball.png"
+			current_status := "OK:"
+			font_color := "green" 
+		}else if(status = 2){
+			img_path := "img\blue_glossy_ball.png"
+			current_status := "Em andamento:"
+			font_color := "blue"
+			}else if(status = 3){
+				img_path := "img\red_glossy_ball.png"
+				current_status := "Com problemas:"
+				font_color := "red"
+				}else if(status = 4){
+					img_path := "img\gray_glossy_ball.png"
+					current_status := "Nao foi feito:"
+					font_color := "gray"
+				}
+
+ 	msg := current_status " " mensagem " `n Usuario: " usuario
+ 	Gui, M:default
+ 	Gui, Font, s12 c%font_color%
+ 	GuiControl, Font, status_info 
+	GuiControl,, status_picture, % img_path
+	GuiControl,, status_info, % msg
+}
+
 /*
 	Retorna um hash com todas 
 	as informacoes do item da tabela 

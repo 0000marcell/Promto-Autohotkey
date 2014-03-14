@@ -246,7 +246,25 @@ class PromtoSQL{
 				))
 		}catch e 
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de log `n" ExceptionDetail(e)
-	
+		
+		/*
+			Status
+		*/
+		try{
+			mariaDB.Query(
+				(JOIN
+					"	CREATE TABLE IF NOT EXISTS status "
+					"(Id MEDIUMINT NOT NULL AUTO_INCREMENT,"
+					" Usuario VARCHAR(250), "
+					" Status VARCHAR(250), "
+					" Mensagem VARCHAR(250), "
+					" Prodkey VARCHAR(250), "
+					" PRIMARY KEY (id))"
+				))
+		}catch e 
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de status `n" ExceptionDetail(e)
+		
+
 	}
 
 	/*
@@ -842,4 +860,5 @@ class PromtoSQL{
 	#include lib\promto_sql_mariadb_estrutura.ahk
 	#include lib\promto_sql_mariadb_usuario.ahk
 	#include lib\promto_sql_mariadb_log.ahk
+	#include lib\promto_sql_mariadb_status.ahk
 }

@@ -101,12 +101,12 @@ for,each,value in finalcod["oc"]{
 			_error:=1
 			Break 
 		}
-		if(StrLen(descgeral " " finalresult.dr)>155){
+		if(StrLen(descgeral " " finalresult.dr)>255){
 			MsgBox,16,,% "A descricao resumida do codigo " finalresult.oc " tem mais de 155 caracteres a insercao de codigo ira parar "
 			_error := 1
 			Break 
 		}
-		if(StrLen(descgeralingles " " finalresult.di)>155){
+		if(StrLen(descgeralingles " " finalresult.di)>255){
 			MsgBox,16,,% "A descricao em ingles do codigo " finalresult.oc " tem mais de 155 caracteres a insercao de codigo ira parar "
 			_error:=1
 			Break 

@@ -128,11 +128,16 @@ salvar_val(){
 */
 loadlvdbex(){
 	Global 
+
 	Gui,dbex:default
 	Gui,listview,lvdbex
 	for,each,value in Listdbex{
-		codname:=Listdbex[A_Index,1]
-		LV_Modify(A_Index,"",codname,Listdbex[A_Index,2],Listdbex[A_Index,3],%codname%["NCM"],%codname%["UM"],%codname%["ORIGEM"],%codname%["TCONTA"],%codname%["TIPO"],%codname%["GRUPO"],%codname%["IPI"],%codname%["LOCPAD"])
+		codname := Listdbex[A_Index,1]
+		if(codname = "")
+			Continue
+		append_debug("listdbex 4 " Listdbex[A_Index,4])
+
+		LV_Modify(A_Index,"",codname,Listdbex[A_Index,2],Listdbex[A_Index,3], Listdbex[A_Index, 4], %codname%["NCM"],%codname%["UM"],%codname%["ORIGEM"],%codname%["TCONTA"],%codname%["TIPO"],%codname%["GRUPO"],%codname%["IPI"],%codname%["LOCPAD"])
 	}	
-	pesquisalvmod("dbex","lvdbex",pesquisadbex,Listdbex)
+	pesquisalvmod("dbex","lvdbex",pesquisadbex, Listdbex)
 }

@@ -15,7 +15,7 @@ db_ex_view(){
 	Gui, dbex:+ownerM
 
 	Gui, add, edit, w900 r1  vpesquisadbex gpesquisadbex uppercase,
-	Gui, add, listview, w900 h400 y+5 checked vlvdbex, Codigo|Descricao Completa|Descricao Resumida
+	Gui, add, listview, w900 h400 y+5 checked vlvdbex, Codigo|Descricao Completa|Descricao Resumida|Descricao Ingles
 	Gui, add, button, w100 h30 y+5 ginserirdbex,Inserir
 	Gui, add, button, w100 h30 x+5 gmarctodos_dbex,Marc.todos 
 	Gui, add, button, w100 h30 x+5 gdesmarctodos_dbex,Desm.todos
@@ -39,7 +39,7 @@ db_ex_view(){
 	LV_ModifyCol(1, 150), LV_ModifyCol(2, 300)
 	GuiControl, -Redraw, lvdbex
 	for,each,value in ["NCM", "UM", "ORIGIGEM", "CONTA", "TIPO", "GRUPO", "IPI", "LOCPAD"]
-		LV_InsertCol(each+3,"",value)
+		LV_InsertCol(each+4,"",value)
 	GuiControl, +Redraw,lvdbex
 	return 
 

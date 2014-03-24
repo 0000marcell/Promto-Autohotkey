@@ -209,7 +209,7 @@ Gui, Add, Button, x480 y+5 w80 h20 gchange_status , Alterar status
 	Info
 */
 Gui, Add, Groupbox, x480 y+5 w815 h220, Info:
-Gui, Add, Picture, xp+5 yp+15 w780 h210 vptcode ,
+Gui, Add, Picture, xp+5 yp+15 w780 h210 vptcode gfotoindividual,
 _loading := 1
 
 /*
@@ -249,6 +249,10 @@ LV_ModifyCol(2,300)
 LV_Modify(2, "+Select")
 _loading := 0
 return	
+
+MGuiClose:
+ExitApp
+return
 
 list_options:
 list_options_view()

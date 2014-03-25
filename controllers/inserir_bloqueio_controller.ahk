@@ -5,6 +5,7 @@ bloquear_codigo(){
 	LV_Modify(0, "-Select")
 	selected_items := ""
 	selected_numbers := ""
+	; Pega os items selecionados na listview
 	selected_items := getselecteditems("MAB", "codigos_livres")
 	last_item := bloqueados_a.maxindex()
 	if(last_item = "")

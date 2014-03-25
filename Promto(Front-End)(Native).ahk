@@ -2910,6 +2910,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, views/insert_mod_msg_view.ahk
 #include, views/change_status_view.ahk
 #include, views/list_options_view.ahk
+#include, views/show_status_result_view.ahk
 
 
 

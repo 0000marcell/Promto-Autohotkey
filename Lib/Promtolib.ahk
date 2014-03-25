@@ -1407,7 +1407,6 @@ GetSelectedItems(wName = "", lvName = "", type = "text"){
         break
 			LV_GetText(text,rownumber)
 			returnValue[A_Index] := text
-			;MsgBox, % "valor pego " text
 		}
 	}
 	if(type = "number"){
@@ -1417,7 +1416,6 @@ GetSelectedItems(wName = "", lvName = "", type = "text"){
 			rownumber := LV_GetNext(rownumber)
 			if not rownumber  ; The above returned zero, so there are no more selected rows.
         break
-			;MsgBox, % "numero retornado : " rownumber
 			returnValue[A_Index] := rownumber
 		}
 	}
@@ -1441,10 +1439,17 @@ remove_selected_in_lv(window_name, lv_name){
       break
     selected_rows[A_Index] := rownumber 
 	}
-
+	alredy_removed := 0
+	removed_count := 0
 	for, each, value in selected_rows{
-		LV_Delete(selected_rows[1])
-		;MsgBox, % "linha selecionada " selected_rows[A_Index]
+		selected_tbr := selected_rows[A_Index] 
+		if(alredy_removed){
+			removed_count++
+			selected_tbr-=removed_count 
+		}
+		LV_GetText(selected_text, selected_tbr)
+		LV_Delete(selected_tbr)
+		alredy_removed := 1
 	}
 	GuiControl, +Redraw, %lv_name%
 }

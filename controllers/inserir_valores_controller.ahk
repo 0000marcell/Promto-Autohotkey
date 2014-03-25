@@ -11,8 +11,6 @@ inserir_val_camp(){
 		codname := checkedlistdb[A_Index,1]
 		%codname%[selectedvaluecol] := checkedval
 	}
-  reset_debug()
-  append_debug("ira recarregar os valores")
 	loadlvdbex()	
 }
 

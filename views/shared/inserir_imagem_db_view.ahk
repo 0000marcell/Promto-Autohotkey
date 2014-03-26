@@ -19,7 +19,7 @@ inserir_imagem_db_view(owner_name, picture_control, codigos_array = ""){
 	Gui, Add, Groupbox, xm  w250 h45, Pesquisa
 	Gui, Add, Edit, xp+5 yp+15 w230 gpesquisa_inserir_imagem_db_view vpesquisa_inserir_imagem_db_view,
 	Gui, Add, Groupbox, xp-5 y+5 w250 h300, Imagens
-	Gui, Add, Listview, xp+5 yp+15 w230 h280 ginserir_imagem_db_lv vinserir_imagem_db_lv altsubmit,Imagens
+	Gui, Add, Listview, xp+5 yp+15 w230 h280 ginserir_imagem_db_lv vinserir_imagem_db_lv altsubmit, id| Imagens
 
 	/*
 		Opcoes
@@ -54,7 +54,7 @@ inserir_imagem_db_view(owner_name, picture_control, codigos_array = ""){
 		a foto selecionada
 	*/
 	info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
-	valor_selecionado := GetSelected("inserir_imagem_db_view", "inserir_imagem_db_lv")
+	valor_selecionado := GetSelectedRow("inserir_imagem_db_view", "inserir_imagem_db_lv")
 	convert_image := ""
 	if(s_codigos_array["code", 1] != ""){
 		for, each, value in s_codigos_array["code"]{
@@ -68,12 +68,13 @@ inserir_imagem_db_view(owner_name, picture_control, codigos_array = ""){
 		db.Imagem.link_up(info, valor_selecionado)	
 	}
 	Gui, %s_owner_name%:default
+
 	GuiControl,, s_picture_control, %global_image_path%%valor_selecionado%.jpg 
 	MsgBox, % "As imagems foram salvas"
 	return
 
 	excluir_imagem_db_button:
-	valor_selecionado := GetSelected("inserir_imagem_db_view", "inserir_imagem_db_lv")
+	valor_selecionado := GetSelectedRow("inserir_imagem_db_view", "inserir_imagem_db_lv")
 	db.Imagem.remove(valor_selecionado)
 	Gui, %s_owner_name%:default
 	Gui, listview, inserir_imagem_db_lv
@@ -83,10 +84,15 @@ inserir_imagem_db_view(owner_name, picture_control, codigos_array = ""){
 	inserir_imagem_db_lv:
 	if A_GuiEvent = i
 	{
-		valor_selecionado := GetSelected("inserir_imagem_db_view", "inserir_imagem_db_lv")
-		;MsgBox, % "ira carregar a imagem " global_image_path valor_selecionado
-		Gui, inserir_imagem_db_view:default 
-		GuiControl,, inserir_imagem_db_picture,%global_image_path%%valor_selecionado%.jpg
+		
+		valor_selecionado := GetSelectedRow("inserir_imagem_db_view", "inserir_imagem_db_lv")
+		image_name := Trim(valor_selecionado[2]) 
+		if(image_name = "Imagens")
+			return 
+		Gui, inserir_imagem_db_view:default
+		image_id := db.Imagem.get_image_id(image_name)
+		image_source := global_image_path "promto_imagens\promto_" image_id  ".jpg"
+		GuiControl,, inserir_imagem_db_picture,%image_source%
 	}
 	return 
 

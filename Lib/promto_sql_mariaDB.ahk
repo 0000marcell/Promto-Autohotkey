@@ -111,13 +111,14 @@ class PromtoSQL{
 	}
 
 	schema(){
-		Global mariaDB
+		Global mariaDB, global_image_path
 
 		/*
 			Verifica se as tabelas 
 			empresas, reltable, imagetable, connections
+			existem
 		*/
-		
+
 		/*
 			empresas
 		*/
@@ -163,6 +164,15 @@ class PromtoSQL{
 		/*
 			imagetable
 		*/
+
+		;rs := mariaDB.OpenRecordSet("SELECT * FROM imagetable")
+		;while(!rs.EOF){   
+  ;    id := rs["id"] 
+  ;    Name := rs["Name"] 
+  ;    FileMove, %global_image_path%%Name%.jpg, %global_image_path%promto_imagens\promto_%id%.jpg, 1
+  ;    rs.MoveNext()
+	 ; }
+
 		try{
 			mariaDB.Query(
 				(JOIN

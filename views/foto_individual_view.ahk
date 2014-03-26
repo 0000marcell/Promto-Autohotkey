@@ -31,7 +31,6 @@ foto_individual_view(){
 
 	inserirfotoemmassa:
 	codigos_selecionados := GetCheckedRows2("massaphoto","lv")
-
 	MsgBox, 4,, Inserir fotos que estao no banco de dados?
 	IfMsgBox Yes
 	{

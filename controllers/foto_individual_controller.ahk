@@ -6,11 +6,10 @@ massa_lv(){
 		selecteditem2 := GetSelected("massaphoto","lv")
 		if(selecteditem2 = "" || selecteditem2 = "Codigos")
 			return 
-		image_path := db.Imagem.get_image_path(selecteditem2)
-		
+
+		image_path := db.Imagem.get_image_full_path(selecteditem2)
 		if(image_path != ""){
-			full_image_path = %global_image_path%%image_path%.jpg
-			Guicontrol,, picture, % full_image_path 
+			Guicontrol,, picture, % image_path 
 		}else{
 			Guicontrol,,Picture,% "img\sem_foto.jpg"
 		}	

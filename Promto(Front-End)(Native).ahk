@@ -1435,7 +1435,7 @@ refreshm(){
 					updateprogress("Inserindo bloqueios: " x[A_Index,1],1)
 				    db.query("INSERT INTO " bloqtable " (Codigos) VALUES ('" x[A_Index,1] "');")
 				}
-				gui,progress:destroy
+				Gui,progress:destroy
 				MsgBox,64,,% "valores importados!!!!"
 				return 
 

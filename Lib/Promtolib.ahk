@@ -814,12 +814,12 @@ load_image_in_main_window(){
 	*/
 	tabela2_value := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
 	
-	image_name_value := db.Imagem.get_image_path(tabela2_value)
+	image_name_value := db.Imagem.get_image_full_path(tabela2_value)
+
 	if(image_name_value = ""){
-		image_name_value := "sem_foto" 
+		image_name_value := "img\sem_foto.jpg" 
 	}
-	image_source := global_image_path image_name_value ".jpg"
-	show_image_and_code(image_source)
+	show_image_and_code(image_name_value)
 }
 
 /*
@@ -1770,7 +1770,7 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 		updateprogress("Criando Tags: " table[A_Index,1],1)
 		
 		; Pega a imagem
-		imagepath := global_image_path db.Imagem.get_image_path(table[A_Index, 1]) ".jpg"
+		imagepath := db.Imagem.get_image_full_path(table[A_Index, 1])
 		
 		/*
 			Insere o prefixo

@@ -5,9 +5,9 @@ class Imagem{
 		para a pasta de imagems do programa
 	*/
 	incluir(source = "", nome_imagem = "", codigos_array = ""){
-		Global mariaDB, empresa, tipo, familia, modelo, global_image_path
+		Global mariaDB, info, global_image_path
 
-		if(empresa.mascara = "" || familia.mascara = "" | modelo.mascara = ""){
+		if(info.empresa[2] = "" || info.familia[2] = "" | info.modelo[2] = ""){
 			MsgBox, % "empresa mascara: " empresa.mascara " tipo mascara: " tipo.mascara " familia mascara : " familia.mascara " modelo.mascara " modelo.mascara
 			MsgBox,16,Erro, % "Algum valor referente ao item estava em branco(empresa, tipo, familia ou modelo)"
 			return
@@ -35,24 +35,14 @@ class Imagem{
 			Move a imagem inserida para a 
 			pasta de imagens do programa
 		*/
+
 		FileCopy, %source%,temp\%nome_imagem%.jpg, 1
 
-		final_image_path = %global_image_path%%nome_imagem%.jpg
 		/*
 			Converte a imagem para o formato necessario
 		*/
 		this.convert_image("temp\" nome_imagem ".jpg")
 		
-		/*
-			Move a imagem para a pasta externa
-		*/ 
-		FileCopy, temp\%nome_imagem%.jpg, %global_image_path%%nome_imagem%.jpg, 1
-
-		if(ErrorLevel){
-			MsgBox,16,Erro, % "A imagem nao pode ser copiada!"
-			return 
-		}
-
 		/*
 			Insere o valor na tabela
 		*/
@@ -60,11 +50,26 @@ class Imagem{
 		record.Name := nome_imagem
 		mariaDB.Insert(record, "imagetable")
 
+		MsgBox, % "nome_imagem: " nome_imagem
+		image_id := this.get_image_id(nome_imagem)
+
+		/*
+			Move a imagem para a pasta externa
+		*/ 
+		FileCopy, temp\%nome_imagem%.jpg, %global_image_path%promto_imagens\promto_%image_id%.jpg, 1
+
+		if(ErrorLevel){
+			MsgBox,16,Erro, % "A imagem nao pode ser copiada!"
+			return 
+		}
+
 		/*
 			Retira a entrada de referencia antiga 
 			caso exista
 		*/
-		tabela1 := empresa.mascara tipo.mascara familia.mascara modelo.mascara modelo.nome
+
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+		
 		this.remove_old_relation(tabela1)
 
 		/*
@@ -94,7 +99,10 @@ class Imagem{
 		de outros items com essa imagem 
 	*/
 	remove(image_name){
-		Global mariaDB
+		Global mariaDB, global_image_path
+
+		image_id := image_name[1]
+		image_name := image_name[2]
 
 		if(image_name = ""){
 			MsgBox,16,Erro, % "O nome da imagem nao pode estar em branco!"
@@ -128,6 +136,8 @@ class Imagem{
 					))
 			}catch e
 				MsgBox,16,Erro, % "Um erro ocorreu ao tentar remover a entrada da tabela antiga `n" ExceptionDetail(e) 	
+			
+			FileDelete, %global_image_path%promto_imagens\promto_%image_id%.jpg 
 			MsgBox,64,Sucesso!, % "A imagem e todas as suas dependencias foram removidas!" 
 		}
 		
@@ -137,8 +147,11 @@ class Imagem{
 		Relaciona uma imagem ja existente no 
 		banco com um modelo 
 	*/
-	link_up(info, image_name, codigo = "", convert_image = 1){
+	link_up(info, image, codigo = "", convert_image = 1){
 		Global mariaDB, global_image_path
+
+		image_id := image[1]
+		image_name := image[2]
 
 		if(info.empresa[2] = "" || image_name = ""){
 			MsgBox,16,Erro, % "As informacoes sobre o modelo ou o caminho da imagem esta em branco!" 
@@ -149,7 +162,7 @@ class Imagem{
 		/*
 			Move a imagem para a pasta do programa para ser convertida
 		*/
-		FileCopy, %global_image_path%%image_name%.jpg, temp\%image_name%.jpg, 1
+		FileCopy, %global_image_path%promto_imagens\promto_%image_id%.jpg, temp\%image_name%.jpg, 1
 		
 		/*
 			Converte a imagem para o formato neccessario 
@@ -160,7 +173,7 @@ class Imagem{
 		/*
 			Copia a imagem de volta para a pasta externa
 		*/
-		FileCopy, temp\%image_name%.jpg, %global_image_path%%image_name%.jpg, 1
+		FileCopy, temp\%image_name%.jpg, %global_image_path%promto_imagens\promto_%image_id%.jpg, 1
 
 		/*
 			Retira a entrada de referencia antiga 
@@ -250,5 +263,38 @@ class Imagem{
 	  ;MsgBox, % "caminho da imagem apos a conversao " image_path
 		FileAppend, % image_path, % "temp\image_info.txt"
 		RunWait, % "Lib\ConvertImage.jar"
+	}
+
+	get_image_id(image_name){
+		Global mariaDB, db
+
+		if(image_name = ""){
+			return 
+		}
+
+		items := db.find_items_where("Name like '" image_name "'", "imagetable")
+		id := items[1, 1]
+		return id
+	}
+
+	get_image_full_path(tabela1){
+		Global mariaDB, global_image_path
+
+		
+		rs := mariaDB.OpenRecordSet(
+			(JOIN 
+				" SELECT tabela2 FROM reltable "
+				" WHERE tipo like 'image' "
+				" AND tabela1 like '" tabela1 "'"
+			))
+		reference_table := rs.tabela2
+		rs.close()
+
+		image_id := this.get_image_id(reference_table)
+		if(image_id = "")
+			image_id := 0
+
+		image_source := global_image_path "promto_imagens\promto_" image_id  ".jpg"
+		return image_source
 	}
 }

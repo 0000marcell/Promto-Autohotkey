@@ -1,9 +1,7 @@
-ira inserir os items
-s_items T708BJ
-s_items T708LV
-s_items T908BJ
-s_items T908LV
-s_items TARLE
-s_items TARPR
-s_items TARSR
-s_items TILDIVM006
+ira inserir a referencia por codigo
+ira inserir a referencia no codigo: TL010122156AIE
+  nome da imagem: IMAGEM_TESTE
+ira inserir a referencia no codigo: TL010122256ACE
+  nome da imagem: IMAGEM_TESTE
+ira inserir a referencia no codigo: TL010122256AIE
+  nome da imagem: IMAGEM_TESTE

@@ -80,14 +80,12 @@ inserir_modelo_view(model_table){
 		if(v_info.modelo[1] = "Modelos" || v_info.modelo[1] = "")
 			Return
 		tabela1 := v_info.empresa[2] v_info.tipo[2] v_info.familia[2] v_info.subfamilia[2] v_info.modelo[2] v_info.modelo[1]
-		tabela2_value := db.get_reference("image", tabela1)
-		image_name_value := tabela2_value
+		image_name_value := db.Imagem.get_image_full_path(tabela1)
 		if(image_name_value = ""){
-			image_name_value := "sem_foto" 
+			image_name_value := global_image_path "promto_imagens\promto_0.jpg"  
 		}
-		image_source := global_image_path image_name_value ".jpg"
 		Gui, inserir_modelo_view:default 
-		GuiControl,, modelos_foto_control,%image_source%
+		GuiControl,, modelos_foto_control,%image_name_value%
 		
 		/*
 			Pega a descricao garal do modelo

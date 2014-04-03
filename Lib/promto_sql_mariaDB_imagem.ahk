@@ -50,7 +50,6 @@ class Imagem{
 		record.Name := nome_imagem
 		mariaDB.Insert(record, "imagetable")
 
-		MsgBox, % "nome_imagem: " nome_imagem
 		image_id := this.get_image_id(nome_imagem)
 
 		/*

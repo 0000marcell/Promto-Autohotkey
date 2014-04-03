@@ -18,7 +18,7 @@ insert_mod_msg_view(){
 	Gui, Add, Text, xp+5 yp+15 w170 h30 , % msg
 	Gui, Add, Edit, y+5 w290 vmsg_value_edit,
 	Gui, Add, Button, y+5 w100 h30 gsave_changes_in_insert , % "Salvar"
-	Gui, Show,, Inserir mensagem! 
+	Gui, Show,, Inseira uma mensagem. 
 	return  
 
 

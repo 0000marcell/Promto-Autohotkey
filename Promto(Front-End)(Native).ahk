@@ -55,6 +55,7 @@ If !pToken := Gdip_Startup()
 /*
 	Conectando no banco
 */
+
 db := new PromtoSQL(
 	(JOIN 
 		db_type,
@@ -111,9 +112,9 @@ Return
 
 	loading_main:
 	Gui, Submit, Nohide
-	if(!db.Usuario.log_in_user(user_name, user_password)){
-		return 
-	}
+	;if(!db.Usuario.log_in_user(user_name, user_password)){
+		;return 
+	;}
 	USER_NAME := user_name
 	Gui, initialize:default
 	GuiControl, Disable, loading_main,
@@ -166,8 +167,9 @@ load_main_tv()
 	Opcoes
 */
 Gui, Add, Groupbox, xm y+20 w230 h60, Opcoes
-Gui, Add, Button, xp+45 yp+15 w100 h30 ginsert_empresa, Criar Empresa 
+Gui, Add, Button, xp+25 yp+15 w100 h30 ginsert_empresa, Criar Empresa 
 Gui, Add, Button, x+5 w40 h30 hwndhBtn grecarregar_main_tv
+Gui, Add, Button, x+t w40 h30 ggerar_html, HTML
 ILButton(hBtn, "promtoshell.dll:" 5, 32, 32, 0)
 
 /*
@@ -256,6 +258,11 @@ return
 
 list_options:
 list_options_view()
+return
+
+gerar_html:
+HTML := new PromtoHTML()
+HTML.generate(ETF_TVSTRING, ETF_hashmask)
 return
 
 insert_empresa:
@@ -2877,6 +2884,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #Include lib\Crypt.ahk
 #Include lib\CryptConst.ahk
 #Include lib\CryptFoos.ahk
+#include, lib\html-parser.ahk
 
 /*
 	Views

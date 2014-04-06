@@ -1,7 +1,2426 @@
-ira inserir a referencia por codigo
-ira inserir a referencia no codigo: TL010122156AIE
-  nome da imagem: IMAGEM_TESTE
-ira inserir a referencia no codigo: TL010122256ACE
-  nome da imagem: IMAGEM_TESTE
-ira inserir a referencia no codigo: TL010122256AIE
-  nome da imagem: IMAGEM_TESTE
+array max index: 1
+array max index: 2
+array max index: 3
+prefix : MCAIXAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: MCAIXA
+tabela de modelo retornada MCModelo
+ira buscar a lista da tabela MCModelo
+modelo retornado MAC.EXE.131
+final prefix : MC131MAC.EXE.131
+modelo retornado MAC.EXE.131.121
+final prefix : MC1310MAC.EXE.131.121
+modelo retornado MAC.EXE.132
+final prefix : MC132MAC.EXE.132
+modelo retornado MAC.EXE.134
+final prefix : MC134MAC.EXE.134
+modelo retornado MAC.EXE.135
+final prefix : MC135MAC.EXE.135
+modelo retornado MAC.EXN.431
+final prefix : MC431MAC.EXN.431
+modelo retornado MAC.EXN.432
+final prefix : MC432MAC.EXN.432
+modelo retornado 
+array max index: 3
+prefix : MLUMINARIAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: MLUMINARIA
+tabela de modelo retornada MLModelo
+ira buscar a lista da tabela MLModelo
+modelo retornado MAC.EXE.002
+final prefix : ML002MAC.EXE.002
+modelo retornado MAC.EXN.003
+final prefix : ML003MAC.EXN.003
+modelo retornado MAC.EXE.010
+final prefix : ML010MAC.EXE.010
+modelo retornado MAC.EXN.011
+final prefix : ML011MAC.EXN.011
+modelo retornado MAC.EXE.014
+final prefix : ML014MAC.EXE.014
+modelo retornado MAC.EXN.015N
+final prefix : ML015NMAC.EXN.015N
+modelo retornado MAC.EXN.015R
+final prefix : ML015RMAC.EXN.015R
+modelo retornado MAC.EXE.016
+final prefix : ML016MAC.EXE.016
+modelo retornado MAC.EXN.017
+final prefix : ML017MAC.EXN.017
+modelo retornado MAC.TGVP.222
+final prefix : ML222MAC.TGVP.222
+modelo retornado MAC.TGVP.227
+final prefix : ML227MAC.TGVP.227
+modelo retornado MAC.TGVP.228
+final prefix : ML228MAC.TGVP.228
+modelo retornado MAC.TGVP.240
+final prefix : ML240MAC.TGVP.240
+modelo retornado MAC.TGVP.246
+final prefix : ML246MAC.TGVP.246
+modelo retornado MAC.TGVP.254
+final prefix : ML254MAC.TGVP.254
+modelo retornado MAC.TGVP.258
+final prefix : ML258MAC.TGVP.258
+modelo retornado MAC.TGVP.260
+final prefix : ML260MAC.TGVP.260
+modelo retornado MAC.TGVP.347
+final prefix : ML347MAC.TGVP.347
+modelo retornado MAC.TGVP.348
+final prefix : ML348MAC.TGVP.348
+modelo retornado MAC.EXE.AVF
+final prefix : MLAVFMAC.EXE.AVF
+modelo retornado 
+array max index: 3
+prefix : MAUXILIO A NAVEGACAOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: MAUXILIO A NAVEGACAO
+tabela de modelo retornada MNModelo
+ira buscar a lista da tabela MNModelo
+modelo retornado MAC.NAV.800
+final prefix : MAN800MAC.NAV.800
+modelo retornado 
+array max index: 3
+prefix : MPROJETORira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: MPROJETOR
+tabela de modelo retornada MPModelo
+ira buscar a lista da tabela MPModelo
+modelo retornado 
+array max index: 1
+array max index: 2
+array max index: 3
+prefix : TCONEXOESira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TCONEXOES
+tabela de modelo retornada T708Modelo
+ira buscar a lista da tabela T708Modelo
+modelo retornado ADAPTADOR
+final prefix : T708ADADAPTADOR
+modelo retornado BUJAO
+final prefix : T708BJBUJAO
+modelo retornado BUCHA DE REDUCAO
+final prefix : T708BRBUCHA DE REDUCAO
+modelo retornado GANCHO
+final prefix : T708GAGANCHO
+modelo retornado LUVA
+final prefix : T708LVLUVA
+modelo retornado UNIDADE SELADORA
+final prefix : T708USUNIDADE SELADORA
+modelo retornado 
+array max index: 3
+prefix : TCONEXOES TGVPira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TCONEXOES TGVP
+tabela de modelo retornada T908Modelo
+ira buscar a lista da tabela T908Modelo
+modelo retornado ADAPTADOR
+final prefix : T908ADADAPTADOR
+modelo retornado BUJAO
+final prefix : T908BJBUJAO
+modelo retornado BUCHA DE REDUCAO
+final prefix : T908BRBUCHA DE REDUCAO
+modelo retornado GANCHO
+final prefix : T908GAGANCHO
+modelo retornado LUVA
+final prefix : T908LVLUVA
+modelo retornado UNIDADE SELADORA
+final prefix : T908USUNIDADE SELADORA
+modelo retornado 
+array max index: 3
+prefix : TABRACADEIRAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TABRACADEIRA
+tabela de modelo retornada TABModelo
+ira buscar a lista da tabela TABModelo
+modelo retornado CLEAT TREFOIL
+final prefix : TABCTCLEAT TREFOIL
+modelo retornado NORMAL
+final prefix : TABNONORMAL
+modelo retornado 
+array max index: 3
+prefix : TAUXILIO A NAVEGACAOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TAUXILIO A NAVEGACAO
+tabela de modelo retornada TANModelo
+ira buscar a lista da tabela TANModelo
+modelo retornado 
+array max index: 3
+prefix : TARRUELAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TARRUELA
+tabela de modelo retornada TARModelo
+ira buscar a lista da tabela TARModelo
+modelo retornado LISA ESPECIAL
+final prefix : TARLELISA ESPECIAL
+modelo retornado LISA
+final prefix : TARLSLISA
+modelo retornado PRESSAO
+final prefix : TARPRPRESSAO
+modelo retornado SERRILHADA
+final prefix : TARSRSERRILHADA
+modelo retornado 
+array max index: 3
+prefix : TANEL DE ATERRAMENTOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TANEL DE ATERRAMENTO
+tabela de modelo retornada TATModelo
+ira buscar a lista da tabela TATModelo
+modelo retornado TL.AT.001
+final prefix : TAN001TL.AT.001
+modelo retornado 
+array max index: 3
+prefix : TANEL DE VEDACAOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TANEL DE VEDACAO
+tabela de modelo retornada TAVModelo
+ira buscar a lista da tabela TAVModelo
+modelo retornado 
+array max index: 3
+prefix : TBOTOEIRAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TBOTOEIRA
+tabela de modelo retornada TBModelo
+ira buscar a lista da tabela TBModelo
+modelo retornado TL.B.EXE.240
+final prefix : TB240TL.B.EXE.240
+modelo retornado TL.B.EXE.045
+final prefix : TB45TL.B.EXE.045
+modelo retornado TL.B.EXE.046
+final prefix : TB46TL.B.EXE.046
+modelo retornado TL.B.TGVP.940
+final prefix : TB940TL.B.TGVP.940
+modelo retornado 
+array max index: 3
+prefix : TACESSORIOS PARA BATERIAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TACESSORIOS PARA BATERIA
+tabela de modelo retornada TBATModelo
+ira buscar a lista da tabela TBATModelo
+modelo retornado CILINDRO PARA BATERIA
+final prefix : TBATCI0CILINDRO PARA BATERIA
+modelo retornado CAIXA PARA BATERIA (PILHA NORMAL) QUADRADA
+final prefix : TBATCXNQCAIXA PARA BATERIA (PILHA NORMAL) QUADRADA
+modelo retornado CAIXA PARA BATERIA (PILHA NORMAL) RETANGULAR
+final prefix : TBATCXNRCAIXA PARA BATERIA (PILHA NORMAL) RETANGULAR
+modelo retornado CAIXA  PARA BATERIA(PILHA PEQUENA)
+final prefix : TBATCXP0CAIXA  PARA BATERIA(PILHA PEQUENA)
+modelo retornado CONJUNTO DE PILHAS
+final prefix : TBATPCJCONJUNTO DE PILHAS
+modelo retornado PILHA NORMAL
+final prefix : TBATPNPILHA NORMAL
+modelo retornado 
+array max index: 3
+prefix : TCAIXAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TCAIXA
+tabela de modelo retornada TCModelo
+ira buscar a lista da tabela TCModelo
+modelo retornado TL.C.EXE.001
+final prefix : TC001TL.C.EXE.001
+modelo retornado TL.C.EXE.002
+final prefix : TC002TL.C.EXE.002
+modelo retornado TL.C.EXE.003
+final prefix : TC003TL.C.EXE.003
+modelo retornado TL.C.EXD.005
+final prefix : TC005TL.C.EXD.005
+modelo retornado TL.C.EXD.005R
+final prefix : TC005RTL.C.EXD.005R
+modelo retornado TL.C.EXE.006
+final prefix : TC006TL.C.EXE.006
+modelo retornado TL.C.EXN.006R
+final prefix : TC006RTL.C.EXN.006R
+modelo retornado TL.C.EXN.007
+final prefix : TC007TL.C.EXN.007
+modelo retornado TL.C.EXN.008
+final prefix : TC008TL.C.EXN.008
+modelo retornado TL.C.EXN.011R
+final prefix : TC011RTL.C.EXN.011R
+modelo retornado TL.C.EXE.5213
+final prefix : TC5213TL.C.EXE.5213
+modelo retornado TL.C.EXE.5214
+final prefix : TC5214TL.C.EXE.5214
+modelo retornado TL.C.EXE.5223
+final prefix : TC5223TL.C.EXE.5223
+modelo retornado TL.C.EXE.5224
+final prefix : TC5224TL.C.EXE.5224
+modelo retornado TL.C.TGVP.903
+final prefix : TC903TL.C.TGVP.903
+modelo retornado TL.C.TGVP.909
+final prefix : TC909TL.C.TGVP.909
+modelo retornado TL.C.EXE.F2092
+final prefix : TCF209TL.C.EXE.F2092
+modelo retornado 
+array max index: 3
+prefix : TCONDULETEira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TCONDULETE
+tabela de modelo retornada TCOModelo
+ira buscar a lista da tabela TCOModelo
+modelo retornado TL.CO.EXD.713
+final prefix : TCO713TL.CO.EXD.713
+modelo retornado TL.CO.EXD.719
+final prefix : TCO719TL.CO.EXD.719
+modelo retornado TL.CO.TGVP.913
+final prefix : TCO913TL.CO.TGVP.913
+modelo retornado TL.CO.TGVP.914
+final prefix : TCO914TL.CO.TGVP.914
+modelo retornado 
+array max index: 3
+prefix : TCONTRA PORCAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TCONTRA PORCA
+tabela de modelo retornada TCPModelo
+ira buscar a lista da tabela TCPModelo
+modelo retornado TL.CP.EXE.001
+final prefix : TCP001TL.CP.EXE.001
+modelo retornado TL.CP.EXE.007
+final prefix : TCP007TL.CP.EXE.007
+modelo retornado 
+array max index: 3
+prefix : TFOTO-CELULAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TFOTO-CELULA
+tabela de modelo retornada TFCModelo
+ira buscar a lista da tabela TFCModelo
+modelo retornado TL.FC.EXE.SS24EX
+final prefix : TFCSS24EXTL.FC.EXE.SS24EX
+modelo retornado 
+array max index: 3
+prefix : TGRADEira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TGRADE
+tabela de modelo retornada TGRADModelo
+ira buscar a lista da tabela TGRADModelo
+modelo retornado TL.L.EXD.009
+final prefix : TGRAD0009TL.L.EXD.009
+modelo retornado TL.L.EXN.026
+final prefix : TGRAD0026TL.L.EXN.026
+modelo retornado TL.L.EXD.039
+final prefix : TGRAD0039TL.L.EXD.039
+modelo retornado TL.L.EXN.015G
+final prefix : TGRAD015GTL.L.EXN.015G
+modelo retornado TL.L.EXN.015N
+final prefix : TGRAD015NTL.L.EXN.015N
+modelo retornado TL.L.EXN.015R
+final prefix : TGRAD015RTL.L.EXN.015R
+modelo retornado TL.L.EXD.029N
+final prefix : TGRAD029NTL.L.EXD.029N
+modelo retornado TL.L.EXD.029R
+final prefix : TGRAD029RTL.L.EXD.029R
+modelo retornado TL.L.EXN.030N
+final prefix : TGRAD030NTL.L.EXN.030N
+modelo retornado TL.L.EXN.030R
+final prefix : TGRAD030RTL.L.EXN.030R
+modelo retornado TL.N.EXD.835N
+final prefix : TGRAD835NTL.N.EXD.835N
+modelo retornado TL.N.EXD.835R
+final prefix : TGRAD835RTL.N.EXD.835R
+modelo retornado TL.L.EXE.M006
+final prefix : TGRADM006TL.L.EXE.M006
+modelo retornado 
+array max index: 3
+prefix : THOLOFOTEira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: THOLOFOTE
+tabela de modelo retornada THOModelo
+ira buscar a lista da tabela THOModelo
+modelo retornado TL.HO.002
+final prefix : THO002TL.HO.002
+modelo retornado TL.HO.003
+final prefix : THO003TL.HO.003
+modelo retornado TL.HO.004
+final prefix : THO004TL.HO.004
+modelo retornado TL.HO.005
+final prefix : THO005TL.HO.005
+modelo retornado 
+array max index: 3
+prefix : TINVERSORira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TINVERSOR
+tabela de modelo retornada TINModelo
+ira buscar a lista da tabela TINModelo
+modelo retornado TL.IN.EXE.001
+final prefix : TIE001TL.IN.EXE.001
+modelo retornado TL.IN.EXE.002
+final prefix : TIE002TL.IN.EXE.002
+modelo retornado TL.IN.TGVP.901
+final prefix : TIE901TL.IN.TGVP.901
+modelo retornado TL..IN.TGVP.902
+final prefix : TIE902TL..IN.TGVP.902
+modelo retornado 
+array max index: 3
+prefix : TIGNITORira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TIGNITOR
+tabela de modelo retornada TIGModelo
+ira buscar a lista da tabela TIGModelo
+modelo retornado TL.IG.001
+final prefix : TIG001TL.IG.001
+modelo retornado 
+array max index: 3
+prefix : TINVERSORira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TINVERSOR
+tabela de modelo retornada TINModelo
+ira buscar a lista da tabela TINModelo
+modelo retornado TL.IN.EXE.001
+final prefix : TIE001TL.IN.EXE.001
+modelo retornado TL.IN.EXE.002
+final prefix : TIE002TL.IN.EXE.002
+modelo retornado TL.IN.TGVP.901
+final prefix : TIE901TL.IN.TGVP.901
+modelo retornado TL..IN.TGVP.902
+final prefix : TIE902TL..IN.TGVP.902
+modelo retornado 
+array max index: 3
+prefix : TLUMINARIAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TLUMINARIA
+tabela de modelo retornada TLModelo
+ira buscar a lista da tabela TLModelo
+modelo retornado TL.L.EXE.002
+final prefix : TL002TL.L.EXE.002
+modelo retornado TL.L.EXN.003
+final prefix : TL003TL.L.EXN.003
+modelo retornado TL.L.EXD.004
+final prefix : TL004TL.L.EXD.004
+modelo retornado TL.L.EXN.006
+final prefix : TL006TL.L.EXN.006
+modelo retornado TL.L.EXE.007
+final prefix : TL007TL.L.EXE.007
+modelo retornado TL.L.EXD.009
+final prefix : TL009TL.L.EXD.009
+modelo retornado TL.L.EXE.010
+final prefix : TL010TL.L.EXE.010
+modelo retornado TL.L.EXN.011
+final prefix : TL011TL.L.EXN.011
+modelo retornado TL.L.EXE.014
+final prefix : TL014TL.L.EXE.014
+modelo retornado TL.L.EXN.015G
+final prefix : TL015GTL.L.EXN.015G
+modelo retornado TL.L.EXN.015N
+final prefix : TL015NTL.L.EXN.015N
+modelo retornado TL.L.EXN.015R
+final prefix : TL015RTL.L.EXN.015R
+modelo retornado TL.L.EXE.016
+final prefix : TL016TL.L.EXE.016
+modelo retornado TL.L.EXN.017
+final prefix : TL017TL.L.EXN.017
+modelo retornado TL.L.EXE.022
+final prefix : TL022TL.L.EXE.022
+modelo retornado TL.L.EXD.023
+final prefix : TL023TL.L.EXD.023
+modelo retornado TL.L.EXN.026
+final prefix : TL026TL.L.EXN.026
+modelo retornado TL.L.EXD.029N
+final prefix : TL029NTL.L.EXD.029N
+modelo retornado TL.L.EXD.029R
+final prefix : TL029RTL.L.EXD.029R
+modelo retornado TL.L.EXN.030N
+final prefix : TL030NTL.L.EXN.030N
+modelo retornado TL.L.EXN.030R
+final prefix : TL030RTL.L.EXN.030R
+modelo retornado TL.L.EXE.035N
+final prefix : TL035NTL.L.EXE.035N
+modelo retornado TL.L.EXE.035R
+final prefix : TL035RTL.L.EXE.035R
+modelo retornado TL.L.EXN.038
+final prefix : TL038TL.L.EXN.038
+modelo retornado TL.L.EXD.039
+final prefix : TL039TL.L.EXD.039
+modelo retornado TL.L.EXE.265
+final prefix : TL265TL.L.EXE.265
+modelo retornado TL.L.EXD.040
+final prefix : TL540TL.L.EXD.040
+modelo retornado TL.L.EXD.041
+final prefix : TL541TL.L.EXD.041
+modelo retornado TL.L.EXD.042
+final prefix : TL542TL.L.EXD.042
+modelo retornado TL.L.EXN.046
+final prefix : TL546TL.L.EXN.046
+modelo retornado TL.L.TGVP.547
+final prefix : TL547TL.L.TGVP.547
+modelo retornado MAC.EXS.025
+final prefix : TL725MAC.EXS.025
+modelo retornado MAC.EXS.026
+final prefix : TL726MAC.EXS.026
+modelo retornado TL.L.TGVP.904
+final prefix : TL904TL.L.TGVP.904
+modelo retornado TL.L.TGVP.905
+final prefix : TL905TL.L.TGVP.905
+modelo retornado TL.L.TGVP.908
+final prefix : TL908TL.L.TGVP.908
+modelo retornado TL.L.TGVP.910
+final prefix : TL910TL.L.TGVP.910
+modelo retornado TL.L.TGVP.912G
+final prefix : TL912GTL.L.TGVP.912G
+modelo retornado TL.L.TGVP.912N
+final prefix : TL912NTL.L.TGVP.912N
+modelo retornado TL.L.TGVP.913
+final prefix : TL913TL.L.TGVP.913
+modelo retornado TL.L.TGVP.914
+final prefix : TL914TL.L.TGVP.914
+modelo retornado TL.L.TGVP.915G
+final prefix : TL915GTL.L.TGVP.915G
+modelo retornado TL.L.TGVP.915N
+final prefix : TL915NTL.L.TGVP.915N
+modelo retornado TL.L.TGVP.915R
+final prefix : TL915RTL.L.TGVP.915R
+modelo retornado TL.L.TGVP.917
+final prefix : TL917TL.L.TGVP.917
+modelo retornado TL.L.TGVP.918
+final prefix : TL918TL.L.TGVP.918
+modelo retornado TL.L.TGVP.919
+final prefix : TL919TL.L.TGVP.919
+modelo retornado TL.L.TGVP.920
+final prefix : TL920TL.L.TGVP.920
+modelo retornado TL.L.TGVP.921
+final prefix : TL921TL.L.TGVP.921
+modelo retornado TL.L.TGVP.922
+final prefix : TL922TL.L.TGVP.922
+modelo retornado TL.L.TGVP.926
+final prefix : TL926TL.L.TGVP.926
+modelo retornado TL.L.TGVP.927
+final prefix : TL927TL.L.TGVP.927
+modelo retornado TL.L.TGVP.930N
+final prefix : TL930NTL.L.TGVP.930N
+modelo retornado TL.L.TGVP.930R
+final prefix : TL930RTL.L.TGVP.930R
+modelo retornado TL.L.TGVP.931
+final prefix : TL931TL.L.TGVP.931
+modelo retornado TL.L.TGVP.932
+final prefix : TL932TL.L.TGVP.932
+modelo retornado TL.L.TGVP.933
+final prefix : TL933TL.L.TGVP.933
+modelo retornado TL.L.TGVP.934
+final prefix : TL934TL.L.TGVP.934
+modelo retornado TL.L.TGVP.935N
+final prefix : TL935NTL.L.TGVP.935N
+modelo retornado TL.L.TGVP.935R
+final prefix : TL935RTL.L.TGVP.935R
+modelo retornado TL.L.TGVP.938
+final prefix : TL938TL.L.TGVP.938
+modelo retornado TL.L.TGVP.939
+final prefix : TL939TL.L.TGVP.939
+modelo retornado TL.L.TGVP.954
+final prefix : TL954TL.L.TGVP.954
+modelo retornado TL.L.TGVP.958
+final prefix : TL958TL.L.TGVP.958
+modelo retornado TL.L.TGVP.959
+final prefix : TL959TL.L.TGVP.959
+modelo retornado TL.L.EXE.AVF
+final prefix : TLAVFTL.L.EXE.AVF
+modelo retornado TL.L.EXE.M006
+final prefix : TLM006TL.L.EXE.M006
+modelo retornado TL.L.TGVP.M906
+final prefix : TLM906TL.L.TGVP.M906
+modelo retornado 
+array max index: 3
+prefix : TLAMPADAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TLAMPADA
+tabela de modelo retornada TLAMModelo
+ira buscar a lista da tabela TLAMModelo
+modelo retornado FLUORESCENTE
+final prefix : TLAMFLFLUORESCENTE
+modelo retornado HALOGENA
+final prefix : TLAMHAHALOGENA
+modelo retornado INCANDESCENTE
+final prefix : TLAMININCANDESCENTE
+modelo retornado FLUORESCENTE COMPACTA
+final prefix : TLAMPLFLUORESCENTE COMPACTA
+modelo retornado VAPOR METALICO
+final prefix : TLAMVMVAPOR METALICO
+modelo retornado VAPOR MERCURIO
+final prefix : TLAMVRVAPOR MERCURIO
+modelo retornado VAPOR DE SODIO
+final prefix : TLAMVSVAPOR DE SODIO
+modelo retornado 
+array max index: 3
+prefix : TMODULOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TMODULO
+tabela de modelo retornada TMModelo
+ira buscar a lista da tabela TMModelo
+modelo retornado TL.MD.565
+final prefix : TM565TL.MD.565
+modelo retornado TL.MD.566
+final prefix : TM566TL.MD.566
+modelo retornado TL.MD.567
+final prefix : TM567TL.MD.567
+modelo retornado TL.MR.568
+final prefix : TM568TL.MR.568
+modelo retornado TL.MC.EXD.512BDI
+final prefix : TMC512DITL.MC.EXD.512BDI
+modelo retornado TL.MC.EXD.512BDIN
+final prefix : TMC512DINTL.MC.EXD.512BDIN
+modelo retornado TL.MD.EXD.511BF
+final prefix : TMD511FTL.MD.EXD.511BF
+modelo retornado TL.MD.EXD.511BFL
+final prefix : TMD511FLTL.MD.EXD.511BFL
+modelo retornado TL.MD.EXD.511BL
+final prefix : TMD511LTL.MD.EXD.511BL
+modelo retornado TL.MD.EXD.511BLD
+final prefix : TMD511LDTL.MD.EXD.511BLD
+modelo retornado TL.MF.EXD.204
+final prefix : TMF204TL.MF.EXD.204
+modelo retornado TL.MH.EXD.512BPK
+final prefix : TMH512PKTL.MH.EXD.512BPK
+modelo retornado MAA-NICD-CB
+final prefix : TMMAAMAA-NICD-CB
+modelo retornado TL.MO.EXE.516
+final prefix : TMO516TL.MO.EXE.516
+modelo retornado TL.MP.EXD.512BZCI
+final prefix : TMP512CITL.MP.EXD.512BZCI
+modelo retornado TL.MP.EXD.517
+final prefix : TMP517TL.MP.EXD.517
+modelo retornado TL.MR.EXD.512BH3
+final prefix : TMR512H3TL.MR.EXD.512BH3
+modelo retornado TL.MR.EXD.512BMY
+final prefix : TMR512MYTL.MR.EXD.512BMY
+modelo retornado TL.MR.EXD.512BZC
+final prefix : TMR512ZCTL.MR.EXD.512BZC
+modelo retornado TL.MS.EXD.513
+final prefix : TMS513TL.MS.EXD.513
+modelo retornado TL.MT.EXE.515
+final prefix : TMT515TL.MT.EXE.515
+modelo retornado 
+array max index: 3
+prefix : TMASSA SELADORAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TMASSA SELADORA
+tabela de modelo retornada TMSModelo
+ira buscar a lista da tabela TMSModelo
+modelo retornado COMPOUND-A
+final prefix : TMSCACOMPOUND-A
+modelo retornado FIBER-X
+final prefix : TMSFXFIBER-X
+modelo retornado MODELO MFB-1 HEON
+final prefix : TMSMFBMODELO MFB-1 HEON
+modelo retornado 
+array max index: 3
+prefix : TPROJETORira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TPROJETOR
+tabela de modelo retornada TPModelo
+ira buscar a lista da tabela TPModelo
+modelo retornado TL.P.EXN.002
+final prefix : TP002TL.P.EXN.002
+modelo retornado TL.P.EXN.003
+final prefix : TP003TL.P.EXN.003
+modelo retornado TL.P.EXN.006
+final prefix : TP006TL.P.EXN.006
+modelo retornado TL.P.EXD.007
+final prefix : TP007TL.P.EXD.007
+modelo retornado TL.P.EXD.008
+final prefix : TP008TL.P.EXD.008
+modelo retornado TL.P.EXN.009
+final prefix : TP009TL.P.EXN.009
+modelo retornado TL.P.EXN.021
+final prefix : TP021TL.P.EXN.021
+modelo retornado TL.P.EXN.101
+final prefix : TP101TL.P.EXN.101
+modelo retornado TL.P.EXN.103
+final prefix : TP103TL.P.EXN.103
+modelo retornado TL.P.EXN.104
+final prefix : TP104TL.P.EXN.104
+modelo retornado TL.P.EXN.105
+final prefix : TP105TL.P.EXN.105
+modelo retornado TL.P.EXD.044
+final prefix : TP544TL.P.EXD.044
+modelo retornado TL.P.EXN.545
+final prefix : TP545TL.P.EXN.545
+modelo retornado TL.P.TGVP.901
+final prefix : TP901TL.P.TGVP.901
+modelo retornado TL.P.TGVP.903
+final prefix : TP903TL.P.TGVP.903
+modelo retornado TL.P.TGVP.904
+final prefix : TP904TL.P.TGVP.904
+modelo retornado TL.P.TGVP.905
+final prefix : TP905TL.P.TGVP.905
+modelo retornado TL.P.TGVP.907
+final prefix : TP907TL.P.TGVP.907
+modelo retornado TL.P.TGVP.908
+final prefix : TP908TL.P.TGVP.908
+modelo retornado TL.P.TGVP.909
+final prefix : TP909TL.P.TGVP.909
+modelo retornado TL.P.TGVP.911
+final prefix : TP911TL.P.TGVP.911
+modelo retornado TL.P.TGVP.917
+final prefix : TP917TL.P.TGVP.917
+modelo retornado TL.P.TGVP.920
+final prefix : TP920TL.P.TGVP.920
+modelo retornado TL.P.TGVP.921
+final prefix : TP921TL.P.TGVP.921
+modelo retornado TL.P.TGVP.922
+final prefix : TP922TL.P.TGVP.922
+modelo retornado 
+array max index: 3
+prefix : TPAINELira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TPAINEL
+tabela de modelo retornada TPAModelo
+ira buscar a lista da tabela TPAModelo
+modelo retornado TL.PA.EXE.525
+final prefix : TPA525TL.PA.EXE.525
+modelo retornado 
+array max index: 3
+prefix : TPRENSA CABOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TPRENSA CABO
+tabela de modelo retornada TPCModelo
+ira buscar a lista da tabela TPCModelo
+modelo retornado TL.PC.EXD.001
+final prefix : TPC001TL.PC.EXD.001
+modelo retornado TL.PC.EXD.002-NORMAL
+final prefix : TPC002NTL.PC.EXD.002-NORMAL
+modelo retornado TL.PC.EXD.002-UNIAO
+final prefix : TPC002UTL.PC.EXD.002-UNIAO
+modelo retornado TL.PC.EXE.003
+final prefix : TPC003TL.PC.EXE.003
+modelo retornado TL.PC.EXE.004
+final prefix : TPC004TL.PC.EXE.004
+modelo retornado TL.PC.EXE.006
+final prefix : TPC006TL.PC.EXE.006
+modelo retornado TL.PC.EXE.007
+final prefix : TPC007TL.PC.EXE.007
+modelo retornado TL.PC.TGVP.902
+final prefix : TPC902UTL.PC.TGVP.902
+modelo retornado TL.PC.TGVP.903
+final prefix : TPC903TL.PC.TGVP.903
+modelo retornado TL.PC.TGVP.904
+final prefix : TPC904TL.PC.TGVP.904
+modelo retornado TL.PC.TGVP.907
+final prefix : TPC907TL.PC.TGVP.907
+modelo retornado TL.PC.TGVP.909
+final prefix : TPC909TL.PC.TGVP.909
+modelo retornado 
+array max index: 3
+prefix : TPARAFUSOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TPARAFUSO
+tabela de modelo retornada TPFModelo
+ira buscar a lista da tabela TPFModelo
+modelo retornado 
+array max index: 3
+prefix : TPLUGUEira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TPLUGUE
+tabela de modelo retornada TPLModelo
+ira buscar a lista da tabela TPLModelo
+modelo retornado TL.PL.EXE.251
+final prefix : TPL251TL.PL.EXE.251
+modelo retornado TL.PL.EXE.252
+final prefix : TPL252TL.PL.EXE.252
+modelo retornado TL.PL.EXE.253
+final prefix : TPL253TL.PL.EXE.253
+modelo retornado TL.PL.EXE.041
+final prefix : TPL41TL.PL.EXE.041
+modelo retornado TL.PL.TGVP.966P
+final prefix : TPL966PTL.PL.TGVP.966P
+modelo retornado TL.PL.TGVP.967
+final prefix : TPL967TL.PL.TGVP.967
+modelo retornado 
+array max index: 3
+prefix : TRACKira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TRACK
+tabela de modelo retornada TRAModelo
+ira buscar a lista da tabela TRAModelo
+modelo retornado TL.RA.001
+final prefix : TRA001TL.RA.001
+modelo retornado 
+array max index: 3
+prefix : TREATOR ELETRONICOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TREATOR ELETRONICO
+tabela de modelo retornada TREModelo
+ira buscar a lista da tabela TREModelo
+modelo retornado TL.RE.001
+final prefix : TRE001TL.RE.001
+modelo retornado TL.RE.EXQ.003 NORMAL
+final prefix : TRE003NTL.RE.EXQ.003 NORMAL
+modelo retornado TL.RE.EXQ.003 PEQUENO
+final prefix : TRE003PTL.RE.EXQ.003 PEQUENO
+modelo retornado TL.RE.EX.005
+final prefix : TRE005TL.RE.EX.005
+modelo retornado TL.RE.EX.008
+final prefix : TRE008TL.RE.EX.008
+modelo retornado 
+array max index: 3
+prefix : TREATOR ELETROMAGNETICOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TREATOR ELETROMAGNETICO
+tabela de modelo retornada TRMModelo
+ira buscar a lista da tabela TRMModelo
+modelo retornado TL.RM.004
+final prefix : TRM004TL.RM.004
+modelo retornado 
+array max index: 3
+prefix : TSUPORTEira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSUPORTE
+tabela de modelo retornada TSUPModelo
+ira buscar a lista da tabela TSUPModelo
+modelo retornado ANGULAR
+final prefix : TSUPANANGULAR
+modelo retornado ARANDELA
+final prefix : TSUPARARANDELA
+modelo retornado GAFANHOTO
+final prefix : TSUPGAGAFANHOTO
+modelo retornado GRAMPO
+final prefix : TSUPGRGRAMPO
+modelo retornado PENDENTE
+final prefix : TSUPPEPENDENTE
+modelo retornado POSTE
+final prefix : TSUPPOPOSTE
+modelo retornado PAREDE
+final prefix : TSUPPRPAREDE
+modelo retornado SUSPENSO
+final prefix : TSUPSUSUSPENSO
+modelo retornado TETO
+final prefix : TSUPTETETO
+modelo retornado 
+array max index: 3
+prefix : TTAMPAOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TTAMPAO
+tabela de modelo retornada TTAModelo
+ira buscar a lista da tabela TTAModelo
+modelo retornado TL.TA.EXD.005
+final prefix : TTA005TL.TA.EXD.005
+modelo retornado TL.TA.TGVP.905
+final prefix : TTA905TL.TA.TGVP.905
+modelo retornado 
+array max index: 3
+prefix : TTOMADA PARA ACOMODACOESira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TTOMADA PARA ACOMODACOES
+tabela de modelo retornada TTACModelo
+ira buscar a lista da tabela TTACModelo
+modelo retornado ARMACAO
+final prefix : TTACARARMACAO
+modelo retornado DUPLA
+final prefix : TTACDPDUPLA
+modelo retornado MACHO
+final prefix : TTACMCMACHO
+modelo retornado SIMPLES
+final prefix : TTACSMSIMPLES
+modelo retornado TRIPLA
+final prefix : TTACTRTRIPLA
+modelo retornado 
+array max index: 3
+prefix : TTOMADAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TTOMADA
+tabela de modelo retornada TTOModelo
+ira buscar a lista da tabela TTOModelo
+modelo retornado TL.TO.EXE.041
+final prefix : TTO041TL.TO.EXE.041
+modelo retornado TL.TO.EXE.251
+final prefix : TTO251TL.TO.EXE.251
+modelo retornado TL.TO.EXE.252
+final prefix : TTO252TL.TO.EXE.252
+modelo retornado TL.TO.EXE.253
+final prefix : TTO253TL.TO.EXE.253
+modelo retornado TL.TO.EXE.254
+final prefix : TTO254TL.TO.EXE.254
+modelo retornado TL.TO.TGVP.901
+final prefix : TTO901TL.TO.TGVP.901
+modelo retornado TL.TO.TGVP.902
+final prefix : TTO902TL.TO.TGVP.902
+modelo retornado TL.TO.TGVP.966E
+final prefix : TTO966TL.TO.TGVP.966E
+modelo retornado TL.TO.TGVP.966D
+final prefix : TTO966DTL.TO.TGVP.966D
+modelo retornado TL.TO.TGVP.966F
+final prefix : TTO966FTL.TO.TGVP.966F
+modelo retornado TL.TO.TGVP.967
+final prefix : TTO967TL.TO.TGVP.967
+modelo retornado 
+array max index: 3
+prefix : TTOMADA PARA PAREDEira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TTOMADA PARA PAREDE
+tabela de modelo retornada TTPModelo
+ira buscar a lista da tabela TTPModelo
+modelo retornado TL.TA.EXE.251
+final prefix : TTP251TL.TA.EXE.251
+modelo retornado TL.TA.EXE.252
+final prefix : TTP252TL.TA.EXE.252
+modelo retornado TL.TA.EXE.253
+final prefix : TTP253TL.TA.EXE.253
+modelo retornado TL.TA.EXE.254
+final prefix : TTP254TL.TA.EXE.254
+modelo retornado 
+array max index: 2
+array max index: 3
+prefix : TCJLUMINARIA CORPOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TCJLUMINARIA CORPO
+tabela de modelo retornada TCJLCOModelo
+ira buscar a lista da tabela TCJLCOModelo
+modelo retornado TL.L.EXE.014
+final prefix : TCJLCO014TL.L.EXE.014
+modelo retornado TL.L.EXE.016
+final prefix : TCJLCO016TL.L.EXE.016
+modelo retornado TL.L.EXN.017
+final prefix : TCJLCO017TL.L.EXN.017
+modelo retornado TL.L.TGVP.927
+final prefix : TCJLCO927TL.L.TGVP.927
+modelo retornado 
+array max index: 3
+prefix : TCJLUMINARIA PARTE ELETRICAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TCJLUMINARIA PARTE ELETRICA
+tabela de modelo retornada TCJLPEModelo
+ira buscar a lista da tabela TCJLPEModelo
+modelo retornado TL.L.EXE.014
+final prefix : TCJLPE014TL.L.EXE.014
+modelo retornado TL.L.EXE.016
+final prefix : TCJLPE016TL.L.EXE.016
+modelo retornado TL.L.EXN.017
+final prefix : TCJLPE017TL.L.EXN.017
+modelo retornado TL.L.TGVP.927
+final prefix : TCJLPE927TL.L.TGVP.927
+modelo retornado 
+array max index: 2
+array max index: 3
+prefix : TIINVERSORira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TIINVERSOR
+tabela de modelo retornada TIINModelo
+ira buscar a lista da tabela TIINModelo
+modelo retornado TL.IN.EXE.001
+final prefix : TIIE001TL.IN.EXE.001
+modelo retornado TL.IN.EXE.002
+final prefix : TIIE002TL.IN.EXE.002
+modelo retornado TL.IN.TGVP.901
+final prefix : TIIE901TL.IN.TGVP.901
+modelo retornado TL.IN.TGVP.902
+final prefix : TIIE902TL.IN.TGVP.902
+modelo retornado 
+array max index: 3
+prefix : TILUMINARIAira verificar se existe subfamilia
+tem subfamilia
+array max index: 4
+prefix : TILCONJUNTO DO CORPOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TILCONJUNTO DO CORPO
+tabela de modelo retornada TILCJCModelo
+ira buscar a lista da tabela TILCJCModelo
+modelo retornado TL.L.EXE.002
+final prefix : TILCJC002TL.L.EXE.002
+modelo retornado TL.L.EXN.003
+final prefix : TILCJC003TL.L.EXN.003
+modelo retornado TL.L.EXD.004
+final prefix : TILCJC004TL.L.EXD.004
+modelo retornado TL.L.EXN.006
+final prefix : TILCJC006TL.L.EXN.006
+modelo retornado TL.L.EXE.007
+final prefix : TILCJC007TL.L.EXE.007
+modelo retornado TL.L.EXD.009
+final prefix : TILCJC009TL.L.EXD.009
+modelo retornado TL.L.EXE.010
+final prefix : TILCJC010TL.L.EXE.010
+modelo retornado TL.L.EXN.011
+final prefix : TILCJC011TL.L.EXN.011
+modelo retornado TL.L.EXE.014
+final prefix : TILCJC014TL.L.EXE.014
+modelo retornado TL.L.EXN.015G
+final prefix : TILCJC015GTL.L.EXN.015G
+modelo retornado TL.L.EXN.015N
+final prefix : TILCJC015NTL.L.EXN.015N
+modelo retornado TL.L.EXN.015R
+final prefix : TILCJC015RTL.L.EXN.015R
+modelo retornado TL.L.EXE.016
+final prefix : TILCJC016TL.L.EXE.016
+modelo retornado TL.L.EXN.017
+final prefix : TILCJC017TL.L.EXN.017
+modelo retornado TL.L.EXE.022
+final prefix : TILCJC022TL.L.EXE.022
+modelo retornado TL.L.EXD.023
+final prefix : TILCJC023TL.L.EXD.023
+modelo retornado TL.L.EXN.026
+final prefix : TILCJC026TL.L.EXN.026
+modelo retornado TL.L.EXD.029N
+final prefix : TILCJC029NTL.L.EXD.029N
+modelo retornado TL.L.EXD.029R
+final prefix : TILCJC029RTL.L.EXD.029R
+modelo retornado TL.L.EXN.030N
+final prefix : TILCJC030NTL.L.EXN.030N
+modelo retornado TL.L.EXN.030R
+final prefix : TILCJC030RTL.L.EXN.030R
+modelo retornado TL.L.EXE.035N
+final prefix : TILCJC035NTL.L.EXE.035N
+modelo retornado TL.L.EXE.035R
+final prefix : TILCJC035RTL.L.EXE.035R
+modelo retornado TL.L.EXN.038
+final prefix : TILCJC038TL.L.EXN.038
+modelo retornado TL.L.EXD.039
+final prefix : TILCJC039TL.L.EXD.039
+modelo retornado TL.L.EXE.265
+final prefix : TILCJC265TL.L.EXE.265
+modelo retornado TL.L.EXD.040
+final prefix : TILCJC540TL.L.EXD.040
+modelo retornado TL.L.EXD.041
+final prefix : TILCJC541TL.L.EXD.041
+modelo retornado TL.L.EXD.042
+final prefix : TILCJC542TL.L.EXD.042
+modelo retornado TL.L.EXN.046
+final prefix : TILCJC546TL.L.EXN.046
+modelo retornado TL.L.TGVP.547
+final prefix : TILCJC547TL.L.TGVP.547
+modelo retornado MAC.EXS.025
+final prefix : TILCJC725MAC.EXS.025
+modelo retornado MAC.EXS.026
+final prefix : TILCJC726MAC.EXS.026
+modelo retornado TL.L.TGVP.904
+final prefix : TILCJC904TL.L.TGVP.904
+modelo retornado TL.L.TGVP.905
+final prefix : TILCJC905TL.L.TGVP.905
+modelo retornado TL.L.TGVP.908
+final prefix : TILCJC908TL.L.TGVP.908
+modelo retornado TL.L.TGVP.910
+final prefix : TILCJC910TL.L.TGVP.910
+modelo retornado TL.L.TGVP.912G
+final prefix : TILCJC912GTL.L.TGVP.912G
+modelo retornado TL.L.TGVP.912N
+final prefix : TILCJC912NTL.L.TGVP.912N
+modelo retornado TL.L.TGVP.913
+final prefix : TILCJC913TL.L.TGVP.913
+modelo retornado TL.L.TGVP.914
+final prefix : TILCJC914TL.L.TGVP.914
+modelo retornado TL.L.TGVP.915G
+final prefix : TILCJC915GTL.L.TGVP.915G
+modelo retornado TL.L.TGVP.915N
+final prefix : TILCJC915NTL.L.TGVP.915N
+modelo retornado TL.L.TGVP.915R
+final prefix : TILCJC915RTL.L.TGVP.915R
+modelo retornado TL.L.TGVP.917
+final prefix : TILCJC917TL.L.TGVP.917
+modelo retornado TL.L.TGVP.918
+final prefix : TILCJC918TL.L.TGVP.918
+modelo retornado TL.L.TGVP.919
+final prefix : TILCJC919TL.L.TGVP.919
+modelo retornado TL.L.TGVP.920
+final prefix : TILCJC920TL.L.TGVP.920
+modelo retornado TL.L.TGVP.921
+final prefix : TILCJC921TL.L.TGVP.921
+modelo retornado TL.L.TGVP.922
+final prefix : TILCJC922TL.L.TGVP.922
+modelo retornado TL.L.TGVP.926
+final prefix : TILCJC926TL.L.TGVP.926
+modelo retornado TL.L.TGVP.927
+final prefix : TILCJC927TL.L.TGVP.927
+modelo retornado TL.L.TGVP.930N
+final prefix : TILCJC930NTL.L.TGVP.930N
+modelo retornado TL.L.TGVP.930R
+final prefix : TILCJC930RTL.L.TGVP.930R
+modelo retornado TL.L.TGVP.931
+final prefix : TILCJC931TL.L.TGVP.931
+modelo retornado TL.L.TGVP.932
+final prefix : TILCJC932TL.L.TGVP.932
+modelo retornado TL.L.TGVP.933
+final prefix : TILCJC933TL.L.TGVP.933
+modelo retornado TL.L.TGVP.934
+final prefix : TILCJC934TL.L.TGVP.934
+modelo retornado TL.L.TGVP.935N
+final prefix : TILCJC935NTL.L.TGVP.935N
+modelo retornado TL.L.TGVP.935R
+final prefix : TILCJC935RTL.L.TGVP.935R
+modelo retornado TL.L.TGVP.938
+final prefix : TILCJC938TL.L.TGVP.938
+modelo retornado TL.L.TGVP.939
+final prefix : TILCJC939TL.L.TGVP.939
+modelo retornado TL.L.TGVP.954
+final prefix : TILCJC954TL.L.TGVP.954
+modelo retornado TL.L.TGVP.958
+final prefix : TILCJC958TL.L.TGVP.958
+modelo retornado TL.L.TGVP.959
+final prefix : TILCJC959TL.L.TGVP.959
+modelo retornado TL.L.EXE.AVF
+final prefix : TILCJCAVFTL.L.EXE.AVF
+modelo retornado TL.L.EXE.M006
+final prefix : TILCJCM006TL.L.EXE.M006
+modelo retornado TL.L.TGVP.M906
+final prefix : TILCJCM906TL.L.TGVP.M906
+modelo retornado 
+array max index: 4
+prefix : TILCONJUNTO DE PARTES ELETRICASira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TILCONJUNTO DE PARTES ELETRICAS
+tabela de modelo retornada TILCJPModelo
+ira buscar a lista da tabela TILCJPModelo
+modelo retornado TL.L.EXE.002
+final prefix : TILCJP002TL.L.EXE.002
+modelo retornado TL.L.EXN.003
+final prefix : TILCJP003TL.L.EXN.003
+modelo retornado TL.L.EXD.004
+final prefix : TILCJP004TL.L.EXD.004
+modelo retornado TL.L.EXN.006
+final prefix : TILCJP006TL.L.EXN.006
+modelo retornado TL.L.EXE.007
+final prefix : TILCJP007TL.L.EXE.007
+modelo retornado TL.L.EXD.009
+final prefix : TILCJP009TL.L.EXD.009
+modelo retornado TL.L.EXE.010
+final prefix : TILCJP010TL.L.EXE.010
+modelo retornado TL.L.EXN.011
+final prefix : TILCJP011TL.L.EXN.011
+modelo retornado TL.L.EXE.014
+final prefix : TILCJP014TL.L.EXE.014
+modelo retornado TL.L.EXN.015G
+final prefix : TILCJP015GTL.L.EXN.015G
+modelo retornado TL.L.EXN.015N
+final prefix : TILCJP015NTL.L.EXN.015N
+modelo retornado TL.L.EXN.015R
+final prefix : TILCJP015RTL.L.EXN.015R
+modelo retornado TL.L.EXE.016
+final prefix : TILCJP016TL.L.EXE.016
+modelo retornado TL.L.EXN.017
+final prefix : TILCJP017TL.L.EXN.017
+modelo retornado TL.L.EXE.022
+final prefix : TILCJP022TL.L.EXE.022
+modelo retornado TL.L.EXD.023
+final prefix : TILCJP023TL.L.EXD.023
+modelo retornado TL.L.EXN.026
+final prefix : TILCJP026TL.L.EXN.026
+modelo retornado TL.L.EXD.029N
+final prefix : TILCJP029NTL.L.EXD.029N
+modelo retornado TL.L.EXD.029R
+final prefix : TILCJP029RTL.L.EXD.029R
+modelo retornado TL.L.EXN.030N
+final prefix : TILCJP030NTL.L.EXN.030N
+modelo retornado TL.L.EXN.030R
+final prefix : TILCJP030RTL.L.EXN.030R
+modelo retornado TL.L.EXE.035N
+final prefix : TILCJP035NTL.L.EXE.035N
+modelo retornado TL.L.EXE.035R
+final prefix : TILCJP035RTL.L.EXE.035R
+modelo retornado TL.L.EXN.038
+final prefix : TILCJP038TL.L.EXN.038
+modelo retornado TL.L.EXD.039
+final prefix : TILCJP039TL.L.EXD.039
+modelo retornado TL.L.EXE.265
+final prefix : TILCJP265TL.L.EXE.265
+modelo retornado TL.L.EXD.040
+final prefix : TILCJP540TL.L.EXD.040
+modelo retornado TL.L.EXD.041
+final prefix : TILCJP541TL.L.EXD.041
+modelo retornado TL.L.EXD.042
+final prefix : TILCJP542TL.L.EXD.042
+modelo retornado TL.L.EXN.046
+final prefix : TILCJP546TL.L.EXN.046
+modelo retornado TL.L.TGVP.547
+final prefix : TILCJP547TL.L.TGVP.547
+modelo retornado MAC.EXS.025
+final prefix : TILCJP725MAC.EXS.025
+modelo retornado MAC.EXS.026
+final prefix : TILCJP726MAC.EXS.026
+modelo retornado TL.L.TGVP.904
+final prefix : TILCJP904TL.L.TGVP.904
+modelo retornado TL.L.TGVP.905
+final prefix : TILCJP905TL.L.TGVP.905
+modelo retornado TL.L.TGVP.908
+final prefix : TILCJP908TL.L.TGVP.908
+modelo retornado TL.L.TGVP.910
+final prefix : TILCJP910TL.L.TGVP.910
+modelo retornado TL.L.TGVP.912G
+final prefix : TILCJP912GTL.L.TGVP.912G
+modelo retornado TL.L.TGVP.912N
+final prefix : TILCJP912NTL.L.TGVP.912N
+modelo retornado TL.L.TGVP.913
+final prefix : TILCJP913TL.L.TGVP.913
+modelo retornado TL.L.TGVP.914
+final prefix : TILCJP914TL.L.TGVP.914
+modelo retornado TL.L.TGVP.915G
+final prefix : TILCJP915GTL.L.TGVP.915G
+modelo retornado TL.L.TGVP.915N
+final prefix : TILCJP915NTL.L.TGVP.915N
+modelo retornado TL.L.TGVP.915R
+final prefix : TILCJP915RTL.L.TGVP.915R
+modelo retornado TL.L.TGVP.917
+final prefix : TILCJP917TL.L.TGVP.917
+modelo retornado TL.L.TGVP.918
+final prefix : TILCJP918TL.L.TGVP.918
+modelo retornado TL.L.TGVP.919
+final prefix : TILCJP919TL.L.TGVP.919
+modelo retornado TL.L.TGVP.920
+final prefix : TILCJP920TL.L.TGVP.920
+modelo retornado TL.L.TGVP.921
+final prefix : TILCJP921TL.L.TGVP.921
+modelo retornado TL.L.TGVP.922
+final prefix : TILCJP922TL.L.TGVP.922
+modelo retornado TL.L.TGVP.926
+final prefix : TILCJP926TL.L.TGVP.926
+modelo retornado TL.L.TGVP.927
+final prefix : TILCJP927TL.L.TGVP.927
+modelo retornado TL.L.TGVP.930N
+final prefix : TILCJP930NTL.L.TGVP.930N
+modelo retornado TL.L.TGVP.930R
+final prefix : TILCJP930RTL.L.TGVP.930R
+modelo retornado TL.L.TGVP.931
+final prefix : TILCJP931TL.L.TGVP.931
+modelo retornado TL.L.TGVP.932
+final prefix : TILCJP932TL.L.TGVP.932
+modelo retornado TL.L.TGVP.933
+final prefix : TILCJP933TL.L.TGVP.933
+modelo retornado TL.L.TGVP.934
+final prefix : TILCJP934TL.L.TGVP.934
+modelo retornado TL.L.TGVP.935N
+final prefix : TILCJP935NTL.L.TGVP.935N
+modelo retornado TL.L.TGVP.935R
+final prefix : TILCJP935RTL.L.TGVP.935R
+modelo retornado TL.L.TGVP.938
+final prefix : TILCJP938TL.L.TGVP.938
+modelo retornado TL.L.TGVP.939
+final prefix : TILCJP939TL.L.TGVP.939
+modelo retornado TL.L.TGVP.954
+final prefix : TILCJP954TL.L.TGVP.954
+modelo retornado TL.L.TGVP.958
+final prefix : TILCJP958TL.L.TGVP.958
+modelo retornado TL.L.TGVP.959
+final prefix : TILCJP959TL.L.TGVP.959
+modelo retornado TL.L.EXE.AVF
+final prefix : TILCJPAVFTL.L.EXE.AVF
+modelo retornado TL.L.EXE.M006
+final prefix : TILCJPM006TL.L.EXE.M006
+modelo retornado TL.L.TGVP.M906
+final prefix : TILCJPM906TL.L.TGVP.M906
+modelo retornado 
+array max index: 4
+prefix : TILCORPOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TILCORPO
+tabela de modelo retornada TILCOModelo
+ira buscar a lista da tabela TILCOModelo
+modelo retornado TL.L.EXE.002
+final prefix : TILCO002TL.L.EXE.002
+modelo retornado TL.L.EXN.003
+final prefix : TILCO003TL.L.EXN.003
+modelo retornado TL.L.EXD.004
+final prefix : TILCO004TL.L.EXD.004
+modelo retornado TL.L.EXN.006
+final prefix : TILCO006TL.L.EXN.006
+modelo retornado TL.L.EXE.007
+final prefix : TILCO007TL.L.EXE.007
+modelo retornado TL.L.EXD.009
+final prefix : TILCO009TL.L.EXD.009
+modelo retornado TL.L.EXE.010
+final prefix : TILCO010TL.L.EXE.010
+modelo retornado TL.L.EXN.011
+final prefix : TILCO011TL.L.EXN.011
+modelo retornado TL.L.EXE.014
+final prefix : TILCO014TL.L.EXE.014
+modelo retornado TL.L.EXN.015G
+final prefix : TILCO015GTL.L.EXN.015G
+modelo retornado TL.L.EXN.015N
+final prefix : TILCO015NTL.L.EXN.015N
+modelo retornado TL.L.EXN.015R
+final prefix : TILCO015RTL.L.EXN.015R
+modelo retornado TL.L.EXE.016
+final prefix : TILCO016TL.L.EXE.016
+modelo retornado TL.L.EXN.017
+final prefix : TILCO017TL.L.EXN.017
+modelo retornado TL.L.EXE.022
+final prefix : TILCO022TL.L.EXE.022
+modelo retornado TL.L.EXD.023
+final prefix : TILCO023TL.L.EXD.023
+modelo retornado TL.L.EXN.026
+final prefix : TILCO026TL.L.EXN.026
+modelo retornado TL.L.EXD.029N
+final prefix : TILCO029NTL.L.EXD.029N
+modelo retornado TL.L.EXD.029R
+final prefix : TILCO029RTL.L.EXD.029R
+modelo retornado TL.L.EXN.030N
+final prefix : TILCO030NTL.L.EXN.030N
+modelo retornado TL.L.EXN.030R
+final prefix : TILCO030RTL.L.EXN.030R
+modelo retornado TL.L.EXE.035N
+final prefix : TILCO035NTL.L.EXE.035N
+modelo retornado TL.L.EXE.035R
+final prefix : TILCO035RTL.L.EXE.035R
+modelo retornado TL.L.EXN.038
+final prefix : TILCO038TL.L.EXN.038
+modelo retornado TL.L.EXD.039
+final prefix : TILCO039TL.L.EXD.039
+modelo retornado TL.L.EXE.265
+final prefix : TILCO265TL.L.EXE.265
+modelo retornado TL.L.EXD.040
+final prefix : TILCO540TL.L.EXD.040
+modelo retornado TL.L.EXD.041
+final prefix : TILCO541TL.L.EXD.041
+modelo retornado TL.L.EXD.042
+final prefix : TILCO542TL.L.EXD.042
+modelo retornado TL.L.EXN.046
+final prefix : TILCO546TL.L.EXN.046
+modelo retornado TL.L.TGVP.547
+final prefix : TILCO547TL.L.TGVP.547
+modelo retornado MAC.EXS.025
+final prefix : TILCO725MAC.EXS.025
+modelo retornado MAC.EXS.026
+final prefix : TILCO726MAC.EXS.026
+modelo retornado TL.L.TGVP.904
+final prefix : TILCO904TL.L.TGVP.904
+modelo retornado TL.L.TGVP.905
+final prefix : TILCO905TL.L.TGVP.905
+modelo retornado TL.L.TGVP.908
+final prefix : TILCO908TL.L.TGVP.908
+modelo retornado TL.L.TGVP.910
+final prefix : TILCO910TL.L.TGVP.910
+modelo retornado TL.L.TGVP.912G
+final prefix : TILCO912GTL.L.TGVP.912G
+modelo retornado TL.L.TGVP.912N
+final prefix : TILCO912NTL.L.TGVP.912N
+modelo retornado TL.L.TGVP.913
+final prefix : TILCO913TL.L.TGVP.913
+modelo retornado TL.L.TGVP.914
+final prefix : TILCO914TL.L.TGVP.914
+modelo retornado TL.L.TGVP.915G
+final prefix : TILCO915GTL.L.TGVP.915G
+modelo retornado TL.L.TGVP.915N
+final prefix : TILCO915NTL.L.TGVP.915N
+modelo retornado TL.L.TGVP.915R
+final prefix : TILCO915RTL.L.TGVP.915R
+modelo retornado TL.L.TGVP.917
+final prefix : TILCO917TL.L.TGVP.917
+modelo retornado TL.L.TGVP.918
+final prefix : TILCO918TL.L.TGVP.918
+modelo retornado TL.L.TGVP.919
+final prefix : TILCO919TL.L.TGVP.919
+modelo retornado TL.L.TGVP.920
+final prefix : TILCO920TL.L.TGVP.920
+modelo retornado TL.L.TGVP.921
+final prefix : TILCO921TL.L.TGVP.921
+modelo retornado TL.L.TGVP.922
+final prefix : TILCO922TL.L.TGVP.922
+modelo retornado TL.L.TGVP.926
+final prefix : TILCO926TL.L.TGVP.926
+modelo retornado TL.L.TGVP.927
+final prefix : TILCO927TL.L.TGVP.927
+modelo retornado TL.L.TGVP.930N
+final prefix : TILCO930NTL.L.TGVP.930N
+modelo retornado TL.L.TGVP.930R
+final prefix : TILCO930RTL.L.TGVP.930R
+modelo retornado TL.L.TGVP.931
+final prefix : TILCO931TL.L.TGVP.931
+modelo retornado TL.L.TGVP.932
+final prefix : TILCO932TL.L.TGVP.932
+modelo retornado TL.L.TGVP.933
+final prefix : TILCO933TL.L.TGVP.933
+modelo retornado TL.L.TGVP.934
+final prefix : TILCO934TL.L.TGVP.934
+modelo retornado TL.L.TGVP.935N
+final prefix : TILCO935NTL.L.TGVP.935N
+modelo retornado TL.L.TGVP.935R
+final prefix : TILCO935RTL.L.TGVP.935R
+modelo retornado TL.L.TGVP.938
+final prefix : TILCO938TL.L.TGVP.938
+modelo retornado TL.L.TGVP.939
+final prefix : TILCO939TL.L.TGVP.939
+modelo retornado TL.L.TGVP.954
+final prefix : TILCO954TL.L.TGVP.954
+modelo retornado TL.L.TGVP.958
+final prefix : TILCO958TL.L.TGVP.958
+modelo retornado TL.L.TGVP.959
+final prefix : TILCO959TL.L.TGVP.959
+modelo retornado TL.L.EXE.AVF
+final prefix : TILCOAVFTL.L.EXE.AVF
+modelo retornado TL.L.EXE.M006
+final prefix : TILCOM006TL.L.EXE.M006
+modelo retornado TL.L.TGVP.M906
+final prefix : TILCOM906TL.L.TGVP.M906
+modelo retornado 
+array max index: 4
+prefix : TILPLACA REFLETORAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TILPLACA REFLETORA
+tabela de modelo retornada TILREFModelo
+ira buscar a lista da tabela TILREFModelo
+modelo retornado TL.L.EXE.002
+final prefix : TILREF002TL.L.EXE.002
+modelo retornado TL.L.EXN.003
+final prefix : TILREF003TL.L.EXN.003
+modelo retornado TL.L.EXD.004
+final prefix : TILREF004TL.L.EXD.004
+modelo retornado TL.L.EXN.006
+final prefix : TILREF006TL.L.EXN.006
+modelo retornado TL.L.EXE.007
+final prefix : TILREF007TL.L.EXE.007
+modelo retornado TL.L.EXD.009
+final prefix : TILREF009TL.L.EXD.009
+modelo retornado TL.L.EXE.010
+final prefix : TILREF010TL.L.EXE.010
+modelo retornado TL.L.EXN.011
+final prefix : TILREF011TL.L.EXN.011
+modelo retornado TL.L.EXE.014
+final prefix : TILREF014TL.L.EXE.014
+modelo retornado TL.L.EXN.015G
+final prefix : TILREF015GTL.L.EXN.015G
+modelo retornado TL.L.EXN.015N
+final prefix : TILREF015NTL.L.EXN.015N
+modelo retornado TL.L.EXN.015R
+final prefix : TILREF015RTL.L.EXN.015R
+modelo retornado TL.L.EXE.016
+final prefix : TILREF016TL.L.EXE.016
+modelo retornado TL.L.EXN.017
+final prefix : TILREF017TL.L.EXN.017
+modelo retornado TL.L.EXE.022
+final prefix : TILREF022TL.L.EXE.022
+modelo retornado TL.L.EXD.023
+final prefix : TILREF023TL.L.EXD.023
+modelo retornado TL.L.EXN.026
+final prefix : TILREF026TL.L.EXN.026
+modelo retornado TL.L.EXD.029N
+final prefix : TILREF029NTL.L.EXD.029N
+modelo retornado TL.L.EXD.029R
+final prefix : TILREF029RTL.L.EXD.029R
+modelo retornado TL.L.EXN.030N
+final prefix : TILREF030NTL.L.EXN.030N
+modelo retornado TL.L.EXN.030R
+final prefix : TILREF030RTL.L.EXN.030R
+modelo retornado TL.L.EXE.035N
+final prefix : TILREF035NTL.L.EXE.035N
+modelo retornado TL.L.EXE.035R
+final prefix : TILREF035RTL.L.EXE.035R
+modelo retornado TL.L.EXN.038
+final prefix : TILREF038TL.L.EXN.038
+modelo retornado TL.L.EXD.039
+final prefix : TILREF039TL.L.EXD.039
+modelo retornado TL.L.EXE.265
+final prefix : TILREF265TL.L.EXE.265
+modelo retornado TL.L.EXD.040
+final prefix : TILREF540TL.L.EXD.040
+modelo retornado TL.L.EXD.041
+final prefix : TILREF541TL.L.EXD.041
+modelo retornado TL.L.EXD.042
+final prefix : TILREF542TL.L.EXD.042
+modelo retornado TL.L.EXN.046
+final prefix : TILREF546TL.L.EXN.046
+modelo retornado TL.L.TGVP.547
+final prefix : TILREF547TL.L.TGVP.547
+modelo retornado MAC.EXS.025
+final prefix : TILREF725MAC.EXS.025
+modelo retornado MAC.EXS.026
+final prefix : TILREF726MAC.EXS.026
+modelo retornado TL.L.TGVP.904
+final prefix : TILREF904TL.L.TGVP.904
+modelo retornado TL.L.TGVP.905
+final prefix : TILREF905TL.L.TGVP.905
+modelo retornado TL.L.TGVP.908
+final prefix : TILREF908TL.L.TGVP.908
+modelo retornado TL.L.TGVP.910
+final prefix : TILREF910TL.L.TGVP.910
+modelo retornado TL.L.TGVP.912G
+final prefix : TILREF912GTL.L.TGVP.912G
+modelo retornado TL.L.TGVP.912N
+final prefix : TILREF912NTL.L.TGVP.912N
+modelo retornado TL.L.TGVP.913
+final prefix : TILREF913TL.L.TGVP.913
+modelo retornado TL.L.TGVP.914
+final prefix : TILREF914TL.L.TGVP.914
+modelo retornado TL.L.TGVP.915G
+final prefix : TILREF915GTL.L.TGVP.915G
+modelo retornado TL.L.TGVP.915N
+final prefix : TILREF915NTL.L.TGVP.915N
+modelo retornado TL.L.TGVP.915R
+final prefix : TILREF915RTL.L.TGVP.915R
+modelo retornado TL.L.TGVP.917
+final prefix : TILREF917TL.L.TGVP.917
+modelo retornado TL.L.TGVP.918
+final prefix : TILREF918TL.L.TGVP.918
+modelo retornado TL.L.TGVP.919
+final prefix : TILREF919TL.L.TGVP.919
+modelo retornado TL.L.TGVP.920
+final prefix : TILREF920TL.L.TGVP.920
+modelo retornado TL.L.TGVP.921
+final prefix : TILREF921TL.L.TGVP.921
+modelo retornado TL.L.TGVP.922
+final prefix : TILREF922TL.L.TGVP.922
+modelo retornado TL.L.TGVP.926
+final prefix : TILREF926TL.L.TGVP.926
+modelo retornado TL.L.TGVP.927
+final prefix : TILREF927TL.L.TGVP.927
+modelo retornado TL.L.TGVP.930N
+final prefix : TILREF930NTL.L.TGVP.930N
+modelo retornado TL.L.TGVP.930R
+final prefix : TILREF930RTL.L.TGVP.930R
+modelo retornado TL.L.TGVP.931
+final prefix : TILREF931TL.L.TGVP.931
+modelo retornado TL.L.TGVP.932
+final prefix : TILREF932TL.L.TGVP.932
+modelo retornado TL.L.TGVP.933
+final prefix : TILREF933TL.L.TGVP.933
+modelo retornado TL.L.TGVP.934
+final prefix : TILREF934TL.L.TGVP.934
+modelo retornado TL.L.TGVP.935N
+final prefix : TILREF935NTL.L.TGVP.935N
+modelo retornado TL.L.TGVP.935R
+final prefix : TILREF935RTL.L.TGVP.935R
+modelo retornado TL.L.TGVP.938
+final prefix : TILREF938TL.L.TGVP.938
+modelo retornado TL.L.TGVP.939
+final prefix : TILREF939TL.L.TGVP.939
+modelo retornado TL.L.TGVP.954
+final prefix : TILREF954TL.L.TGVP.954
+modelo retornado TL.L.TGVP.958
+final prefix : TILREF958TL.L.TGVP.958
+modelo retornado TL.L.TGVP.959
+final prefix : TILREF959TL.L.TGVP.959
+modelo retornado TL.L.EXE.AVF
+final prefix : TILREFAVFTL.L.EXE.AVF
+modelo retornado TL.L.EXE.M006
+final prefix : TILREFM006TL.L.EXE.M006
+modelo retornado TL.L.TGVP.M906
+final prefix : TILREFM906TL.L.TGVP.M906
+modelo retornado 
+array max index: 3
+prefix : TICORPO LUMINARIAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TICORPO LUMINARIA
+tabela de modelo retornada TILCOModelo
+ira buscar a lista da tabela TILCOModelo
+modelo retornado TL.L.EXE.002
+final prefix : TILCO002TL.L.EXE.002
+modelo retornado TL.L.EXN.003
+final prefix : TILCO003TL.L.EXN.003
+modelo retornado TL.L.EXD.004
+final prefix : TILCO004TL.L.EXD.004
+modelo retornado TL.L.EXN.006
+final prefix : TILCO006TL.L.EXN.006
+modelo retornado TL.L.EXE.007
+final prefix : TILCO007TL.L.EXE.007
+modelo retornado TL.L.EXD.009
+final prefix : TILCO009TL.L.EXD.009
+modelo retornado TL.L.EXE.010
+final prefix : TILCO010TL.L.EXE.010
+modelo retornado TL.L.EXN.011
+final prefix : TILCO011TL.L.EXN.011
+modelo retornado TL.L.EXE.014
+final prefix : TILCO014TL.L.EXE.014
+modelo retornado TL.L.EXN.015G
+final prefix : TILCO015GTL.L.EXN.015G
+modelo retornado TL.L.EXN.015N
+final prefix : TILCO015NTL.L.EXN.015N
+modelo retornado TL.L.EXN.015R
+final prefix : TILCO015RTL.L.EXN.015R
+modelo retornado TL.L.EXE.016
+final prefix : TILCO016TL.L.EXE.016
+modelo retornado TL.L.EXN.017
+final prefix : TILCO017TL.L.EXN.017
+modelo retornado TL.L.EXE.022
+final prefix : TILCO022TL.L.EXE.022
+modelo retornado TL.L.EXD.023
+final prefix : TILCO023TL.L.EXD.023
+modelo retornado TL.L.EXN.026
+final prefix : TILCO026TL.L.EXN.026
+modelo retornado TL.L.EXD.029N
+final prefix : TILCO029NTL.L.EXD.029N
+modelo retornado TL.L.EXD.029R
+final prefix : TILCO029RTL.L.EXD.029R
+modelo retornado TL.L.EXN.030N
+final prefix : TILCO030NTL.L.EXN.030N
+modelo retornado TL.L.EXN.030R
+final prefix : TILCO030RTL.L.EXN.030R
+modelo retornado TL.L.EXE.035N
+final prefix : TILCO035NTL.L.EXE.035N
+modelo retornado TL.L.EXE.035R
+final prefix : TILCO035RTL.L.EXE.035R
+modelo retornado TL.L.EXN.038
+final prefix : TILCO038TL.L.EXN.038
+modelo retornado TL.L.EXD.039
+final prefix : TILCO039TL.L.EXD.039
+modelo retornado TL.L.EXE.265
+final prefix : TILCO265TL.L.EXE.265
+modelo retornado TL.L.EXD.040
+final prefix : TILCO540TL.L.EXD.040
+modelo retornado TL.L.EXD.041
+final prefix : TILCO541TL.L.EXD.041
+modelo retornado TL.L.EXD.042
+final prefix : TILCO542TL.L.EXD.042
+modelo retornado TL.L.EXN.046
+final prefix : TILCO546TL.L.EXN.046
+modelo retornado TL.L.TGVP.547
+final prefix : TILCO547TL.L.TGVP.547
+modelo retornado MAC.EXS.025
+final prefix : TILCO725MAC.EXS.025
+modelo retornado MAC.EXS.026
+final prefix : TILCO726MAC.EXS.026
+modelo retornado TL.L.TGVP.904
+final prefix : TILCO904TL.L.TGVP.904
+modelo retornado TL.L.TGVP.905
+final prefix : TILCO905TL.L.TGVP.905
+modelo retornado TL.L.TGVP.908
+final prefix : TILCO908TL.L.TGVP.908
+modelo retornado TL.L.TGVP.910
+final prefix : TILCO910TL.L.TGVP.910
+modelo retornado TL.L.TGVP.912G
+final prefix : TILCO912GTL.L.TGVP.912G
+modelo retornado TL.L.TGVP.912N
+final prefix : TILCO912NTL.L.TGVP.912N
+modelo retornado TL.L.TGVP.913
+final prefix : TILCO913TL.L.TGVP.913
+modelo retornado TL.L.TGVP.914
+final prefix : TILCO914TL.L.TGVP.914
+modelo retornado TL.L.TGVP.915G
+final prefix : TILCO915GTL.L.TGVP.915G
+modelo retornado TL.L.TGVP.915N
+final prefix : TILCO915NTL.L.TGVP.915N
+modelo retornado TL.L.TGVP.915R
+final prefix : TILCO915RTL.L.TGVP.915R
+modelo retornado TL.L.TGVP.917
+final prefix : TILCO917TL.L.TGVP.917
+modelo retornado TL.L.TGVP.918
+final prefix : TILCO918TL.L.TGVP.918
+modelo retornado TL.L.TGVP.919
+final prefix : TILCO919TL.L.TGVP.919
+modelo retornado TL.L.TGVP.920
+final prefix : TILCO920TL.L.TGVP.920
+modelo retornado TL.L.TGVP.921
+final prefix : TILCO921TL.L.TGVP.921
+modelo retornado TL.L.TGVP.922
+final prefix : TILCO922TL.L.TGVP.922
+modelo retornado TL.L.TGVP.926
+final prefix : TILCO926TL.L.TGVP.926
+modelo retornado TL.L.TGVP.927
+final prefix : TILCO927TL.L.TGVP.927
+modelo retornado TL.L.TGVP.930N
+final prefix : TILCO930NTL.L.TGVP.930N
+modelo retornado TL.L.TGVP.930R
+final prefix : TILCO930RTL.L.TGVP.930R
+modelo retornado TL.L.TGVP.931
+final prefix : TILCO931TL.L.TGVP.931
+modelo retornado TL.L.TGVP.932
+final prefix : TILCO932TL.L.TGVP.932
+modelo retornado TL.L.TGVP.933
+final prefix : TILCO933TL.L.TGVP.933
+modelo retornado TL.L.TGVP.934
+final prefix : TILCO934TL.L.TGVP.934
+modelo retornado TL.L.TGVP.935N
+final prefix : TILCO935NTL.L.TGVP.935N
+modelo retornado TL.L.TGVP.935R
+final prefix : TILCO935RTL.L.TGVP.935R
+modelo retornado TL.L.TGVP.938
+final prefix : TILCO938TL.L.TGVP.938
+modelo retornado TL.L.TGVP.939
+final prefix : TILCO939TL.L.TGVP.939
+modelo retornado TL.L.TGVP.954
+final prefix : TILCO954TL.L.TGVP.954
+modelo retornado TL.L.TGVP.958
+final prefix : TILCO958TL.L.TGVP.958
+modelo retornado TL.L.TGVP.959
+final prefix : TILCO959TL.L.TGVP.959
+modelo retornado TL.L.EXE.AVF
+final prefix : TILCOAVFTL.L.EXE.AVF
+modelo retornado TL.L.EXE.M006
+final prefix : TILCOM006TL.L.EXE.M006
+modelo retornado TL.L.TGVP.M906
+final prefix : TILCOM906TL.L.TGVP.M906
+modelo retornado 
+array max index: 3
+prefix : TIDIFUSOR LUMINARIAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TIDIFUSOR LUMINARIA
+tabela de modelo retornada TILDIFModelo
+ira buscar a lista da tabela TILDIFModelo
+modelo retornado TL.L.EXN.015G
+final prefix : TILDIF015GTL.L.EXN.015G
+modelo retornado TL.L.EXE.016
+final prefix : TILDIF016TL.L.EXE.016
+modelo retornado 
+array max index: 3
+prefix : TIDIVERSOS LUMINARIAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TIDIVERSOS LUMINARIA
+tabela de modelo retornada TILDIVModelo
+ira buscar a lista da tabela TILDIVModelo
+modelo retornado TL.L.EXN.015G
+final prefix : TILDIV015GTL.L.EXN.015G
+modelo retornado TL.L.EXE.016
+final prefix : TILDIV016TL.L.EXE.016
+modelo retornado 
+array max index: 3
+prefix : TIFECHO LUMINARIAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TIFECHO LUMINARIA
+tabela de modelo retornada TILFHModelo
+ira buscar a lista da tabela TILFHModelo
+modelo retornado 
+array max index: 3
+prefix : TIREFLETORA LUMINARIAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TIREFLETORA LUMINARIA
+tabela de modelo retornada TILREFModelo
+ira buscar a lista da tabela TILREFModelo
+modelo retornado TL.L.EXE.002
+final prefix : TILREF002TL.L.EXE.002
+modelo retornado TL.L.EXN.003
+final prefix : TILREF003TL.L.EXN.003
+modelo retornado TL.L.EXD.004
+final prefix : TILREF004TL.L.EXD.004
+modelo retornado TL.L.EXN.006
+final prefix : TILREF006TL.L.EXN.006
+modelo retornado TL.L.EXE.007
+final prefix : TILREF007TL.L.EXE.007
+modelo retornado TL.L.EXD.009
+final prefix : TILREF009TL.L.EXD.009
+modelo retornado TL.L.EXE.010
+final prefix : TILREF010TL.L.EXE.010
+modelo retornado TL.L.EXN.011
+final prefix : TILREF011TL.L.EXN.011
+modelo retornado TL.L.EXE.014
+final prefix : TILREF014TL.L.EXE.014
+modelo retornado TL.L.EXN.015G
+final prefix : TILREF015GTL.L.EXN.015G
+modelo retornado TL.L.EXN.015N
+final prefix : TILREF015NTL.L.EXN.015N
+modelo retornado TL.L.EXN.015R
+final prefix : TILREF015RTL.L.EXN.015R
+modelo retornado TL.L.EXE.016
+final prefix : TILREF016TL.L.EXE.016
+modelo retornado TL.L.EXN.017
+final prefix : TILREF017TL.L.EXN.017
+modelo retornado TL.L.EXE.022
+final prefix : TILREF022TL.L.EXE.022
+modelo retornado TL.L.EXD.023
+final prefix : TILREF023TL.L.EXD.023
+modelo retornado TL.L.EXN.026
+final prefix : TILREF026TL.L.EXN.026
+modelo retornado TL.L.EXD.029N
+final prefix : TILREF029NTL.L.EXD.029N
+modelo retornado TL.L.EXD.029R
+final prefix : TILREF029RTL.L.EXD.029R
+modelo retornado TL.L.EXN.030N
+final prefix : TILREF030NTL.L.EXN.030N
+modelo retornado TL.L.EXN.030R
+final prefix : TILREF030RTL.L.EXN.030R
+modelo retornado TL.L.EXE.035N
+final prefix : TILREF035NTL.L.EXE.035N
+modelo retornado TL.L.EXE.035R
+final prefix : TILREF035RTL.L.EXE.035R
+modelo retornado TL.L.EXN.038
+final prefix : TILREF038TL.L.EXN.038
+modelo retornado TL.L.EXD.039
+final prefix : TILREF039TL.L.EXD.039
+modelo retornado TL.L.EXE.265
+final prefix : TILREF265TL.L.EXE.265
+modelo retornado TL.L.EXD.040
+final prefix : TILREF540TL.L.EXD.040
+modelo retornado TL.L.EXD.041
+final prefix : TILREF541TL.L.EXD.041
+modelo retornado TL.L.EXD.042
+final prefix : TILREF542TL.L.EXD.042
+modelo retornado TL.L.EXN.046
+final prefix : TILREF546TL.L.EXN.046
+modelo retornado TL.L.TGVP.547
+final prefix : TILREF547TL.L.TGVP.547
+modelo retornado MAC.EXS.025
+final prefix : TILREF725MAC.EXS.025
+modelo retornado MAC.EXS.026
+final prefix : TILREF726MAC.EXS.026
+modelo retornado TL.L.TGVP.904
+final prefix : TILREF904TL.L.TGVP.904
+modelo retornado TL.L.TGVP.905
+final prefix : TILREF905TL.L.TGVP.905
+modelo retornado TL.L.TGVP.908
+final prefix : TILREF908TL.L.TGVP.908
+modelo retornado TL.L.TGVP.910
+final prefix : TILREF910TL.L.TGVP.910
+modelo retornado TL.L.TGVP.912G
+final prefix : TILREF912GTL.L.TGVP.912G
+modelo retornado TL.L.TGVP.912N
+final prefix : TILREF912NTL.L.TGVP.912N
+modelo retornado TL.L.TGVP.913
+final prefix : TILREF913TL.L.TGVP.913
+modelo retornado TL.L.TGVP.914
+final prefix : TILREF914TL.L.TGVP.914
+modelo retornado TL.L.TGVP.915G
+final prefix : TILREF915GTL.L.TGVP.915G
+modelo retornado TL.L.TGVP.915N
+final prefix : TILREF915NTL.L.TGVP.915N
+modelo retornado TL.L.TGVP.915R
+final prefix : TILREF915RTL.L.TGVP.915R
+modelo retornado TL.L.TGVP.917
+final prefix : TILREF917TL.L.TGVP.917
+modelo retornado TL.L.TGVP.918
+final prefix : TILREF918TL.L.TGVP.918
+modelo retornado TL.L.TGVP.919
+final prefix : TILREF919TL.L.TGVP.919
+modelo retornado TL.L.TGVP.920
+final prefix : TILREF920TL.L.TGVP.920
+modelo retornado TL.L.TGVP.921
+final prefix : TILREF921TL.L.TGVP.921
+modelo retornado TL.L.TGVP.922
+final prefix : TILREF922TL.L.TGVP.922
+modelo retornado TL.L.TGVP.926
+final prefix : TILREF926TL.L.TGVP.926
+modelo retornado TL.L.TGVP.927
+final prefix : TILREF927TL.L.TGVP.927
+modelo retornado TL.L.TGVP.930N
+final prefix : TILREF930NTL.L.TGVP.930N
+modelo retornado TL.L.TGVP.930R
+final prefix : TILREF930RTL.L.TGVP.930R
+modelo retornado TL.L.TGVP.931
+final prefix : TILREF931TL.L.TGVP.931
+modelo retornado TL.L.TGVP.932
+final prefix : TILREF932TL.L.TGVP.932
+modelo retornado TL.L.TGVP.933
+final prefix : TILREF933TL.L.TGVP.933
+modelo retornado TL.L.TGVP.934
+final prefix : TILREF934TL.L.TGVP.934
+modelo retornado TL.L.TGVP.935N
+final prefix : TILREF935NTL.L.TGVP.935N
+modelo retornado TL.L.TGVP.935R
+final prefix : TILREF935RTL.L.TGVP.935R
+modelo retornado TL.L.TGVP.938
+final prefix : TILREF938TL.L.TGVP.938
+modelo retornado TL.L.TGVP.939
+final prefix : TILREF939TL.L.TGVP.939
+modelo retornado TL.L.TGVP.954
+final prefix : TILREF954TL.L.TGVP.954
+modelo retornado TL.L.TGVP.958
+final prefix : TILREF958TL.L.TGVP.958
+modelo retornado TL.L.TGVP.959
+final prefix : TILREF959TL.L.TGVP.959
+modelo retornado TL.L.EXE.AVF
+final prefix : TILREFAVFTL.L.EXE.AVF
+modelo retornado TL.L.EXE.M006
+final prefix : TILREFM006TL.L.EXE.M006
+modelo retornado TL.L.TGVP.M906
+final prefix : TILREFM906TL.L.TGVP.M906
+modelo retornado 
+array max index: 3
+prefix : TIVEDACAO LUMINARIAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TIVEDACAO LUMINARIA
+tabela de modelo retornada TILVDModelo
+ira buscar a lista da tabela TILVDModelo
+modelo retornado ANTI-VIBRATORIO
+final prefix : TILVDAVANTI-VIBRATORIO
+modelo retornado B22D
+final prefix : TILVDB22DB22D
+modelo retornado E27
+final prefix : TILVDE27E27
+modelo retornado E40
+final prefix : TILVDE40E40
+modelo retornado G13 CADEIRINHA
+final prefix : TILVDG13CG13 CADEIRINHA
+modelo retornado G13 PAREDE
+final prefix : TILVDG13PG13 PAREDE
+modelo retornado GX24Q-4
+final prefix : TILVDGX24Q4GX24Q-4
+modelo retornado P28S
+final prefix : TILVDP28SP28S
+modelo retornado R7S
+final prefix : TILVDR7SR7S
+modelo retornado 
+array max index: 3
+prefix : TIMICRO CHAVEira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TIMICRO CHAVE
+tabela de modelo retornada TIMCModelo
+ira buscar a lista da tabela TIMCModelo
+modelo retornado 
+array max index: 3
+prefix : TIPORTA LAMPADAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TIPORTA LAMPADA
+tabela de modelo retornada TIPLModelo
+ira buscar a lista da tabela TIPLModelo
+modelo retornado ANTI-VIBRATORIO
+final prefix : TIPLAVANTI-VIBRATORIO
+modelo retornado B22D
+final prefix : TIPLB22DB22D
+modelo retornado E27
+final prefix : TIPLE27E27
+modelo retornado E40
+final prefix : TIPLE40E40
+modelo retornado G13 CADEIRINHA
+final prefix : TIPLG13CG13 CADEIRINHA
+modelo retornado G13 PAREDE
+final prefix : TIPLG13PG13 PAREDE
+modelo retornado GX24Q-4
+final prefix : TIPLGX24Q4GX24Q-4
+modelo retornado P28S
+final prefix : TIPLP28SP28S
+modelo retornado R7S
+final prefix : TIPLR7SR7S
+modelo retornado 
+array max index: 3
+prefix : TIREATOR ELETRONICOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TIREATOR ELETRONICO
+tabela de modelo retornada TIREModelo
+ira buscar a lista da tabela TIREModelo
+modelo retornado TL.RE.001
+final prefix : TIRE001TL.RE.001
+modelo retornado TL.RE.EXQ.003 NORMAL
+final prefix : TIRE003NTL.RE.EXQ.003 NORMAL
+modelo retornado TL.RE.EXQ.003 PEQUENO
+final prefix : TIRE003PTL.RE.EXQ.003 PEQUENO
+modelo retornado TL.RE.EX.005
+final prefix : TIRE005TL.RE.EX.005
+modelo retornado TL.RE.EX.008
+final prefix : TIRE008TL.RE.EX.008
+modelo retornado 
+array max index: 3
+prefix : TITOMADAira verificar se existe subfamilia
+tem subfamilia
+array max index: 4
+prefix : TITOCONJUNTO DO BLOCOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TITOCONJUNTO DO BLOCO
+tabela de modelo retornada TITOCJBModelo
+ira buscar a lista da tabela TITOCJBModelo
+modelo retornado TL.TO.EXE.253
+final prefix : TITOCJB253TL.TO.EXE.253
+modelo retornado 
+array max index: 4
+prefix : TITOCONJUNTO DO CORPOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TITOCONJUNTO DO CORPO
+tabela de modelo retornada TITOCJCModelo
+ira buscar a lista da tabela TITOCJCModelo
+modelo retornado TL.TO.EXE.041
+final prefix : TITOCJC041TL.TO.EXE.041
+modelo retornado TL.TO.EXE.251
+final prefix : TITOCJC251TL.TO.EXE.251
+modelo retornado TL.TO.EXE.252
+final prefix : TITOCJC252TL.TO.EXE.252
+modelo retornado TL.TO.EXE.253
+final prefix : TITOCJC253TL.TO.EXE.253
+modelo retornado TL.TO.EXE.254
+final prefix : TITOCJC254TL.TO.EXE.254
+modelo retornado TL.TO.TGVP.901
+final prefix : TITOCJC901TL.TO.TGVP.901
+modelo retornado TL.TO.TGVP.902
+final prefix : TITOCJC902TL.TO.TGVP.902
+modelo retornado TL.TO.TGVP.905
+final prefix : TITOCJC905TL.TO.TGVP.905
+modelo retornado TL.TO.TGVP.966E
+final prefix : TITOCJC966TL.TO.TGVP.966E
+modelo retornado TL.TO.TGVP.966D
+final prefix : TITOCJC966DTL.TO.TGVP.966D
+modelo retornado TL.TO.TGVP.966F
+final prefix : TITOCJC966FTL.TO.TGVP.966F
+modelo retornado TL.TO.TGVP.967
+final prefix : TITOCJC967TL.TO.TGVP.967
+modelo retornado 
+array max index: 4
+prefix : TITOCONJUNTO DO MIOLOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TITOCONJUNTO DO MIOLO
+tabela de modelo retornada TITOCJMModelo
+ira buscar a lista da tabela TITOCJMModelo
+modelo retornado TL.TO.EXE.041
+final prefix : TITOCJM041TL.TO.EXE.041
+modelo retornado TL.TO.EXE.251
+final prefix : TITOCJM251TL.TO.EXE.251
+modelo retornado TL.TO.EXE.252
+final prefix : TITOCJM252TL.TO.EXE.252
+modelo retornado TL.TO.EXE.253
+final prefix : TITOCJM253TL.TO.EXE.253
+modelo retornado TL.TO.EXE.254
+final prefix : TITOCJM254TL.TO.EXE.254
+modelo retornado TL.TO.TGVP.901
+final prefix : TITOCJM901TL.TO.TGVP.901
+modelo retornado TL.TO.TGVP.902
+final prefix : TITOCJM902TL.TO.TGVP.902
+modelo retornado TL.TO.TGVP.905
+final prefix : TITOCJM905TL.TO.TGVP.905
+modelo retornado TL.TO.TGVP.966E
+final prefix : TITOCJM966TL.TO.TGVP.966E
+modelo retornado TL.TO.TGVP.966D
+final prefix : TITOCJM966DTL.TO.TGVP.966D
+modelo retornado TL.TO.TGVP.966F
+final prefix : TITOCJM966FTL.TO.TGVP.966F
+modelo retornado TL.TO.TGVP.967
+final prefix : TITOCJM967TL.TO.TGVP.967
+modelo retornado 
+array max index: 4
+prefix : TITOCORPOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TITOCORPO
+tabela de modelo retornada TITOCOModelo
+ira buscar a lista da tabela TITOCOModelo
+modelo retornado TL.TO.EXE.041
+final prefix : TITOCO041TL.TO.EXE.041
+modelo retornado TL.TO.EXE.251
+final prefix : TITOCO251TL.TO.EXE.251
+modelo retornado TL.TO.EXE.252
+final prefix : TITOCO252TL.TO.EXE.252
+modelo retornado TL.TO.EXE.253
+final prefix : TITOCO253TL.TO.EXE.253
+modelo retornado TL.TO.EXE.254
+final prefix : TITOCO254TL.TO.EXE.254
+modelo retornado TL.TO.TGVP.901
+final prefix : TITOCO901TL.TO.TGVP.901
+modelo retornado TL.TO.TGVP.902
+final prefix : TITOCO902TL.TO.TGVP.902
+modelo retornado TL.TO.TGVP.905
+final prefix : TITOCO905TL.TO.TGVP.905
+modelo retornado TL.TO.TGVP.966E
+final prefix : TITOCO966TL.TO.TGVP.966E
+modelo retornado TL.TO.TGVP.966D
+final prefix : TITOCO966DTL.TO.TGVP.966D
+modelo retornado TL.TO.TGVP.966F
+final prefix : TITOCO966FTL.TO.TGVP.966F
+modelo retornado TL.TO.TGVP.967
+final prefix : TITOCO967TL.TO.TGVP.967
+modelo retornado 
+array max index: 4
+prefix : TITODIVERSOSira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TITODIVERSOS
+tabela de modelo retornada TITODIVModelo
+ira buscar a lista da tabela TITODIVModelo
+modelo retornado TL.TO.EXE.041
+final prefix : TITODIV041TL.TO.EXE.041
+modelo retornado TL.TO.EXE.251
+final prefix : TITODIV251TL.TO.EXE.251
+modelo retornado TL.TO.EXE.252
+final prefix : TITODIV252TL.TO.EXE.252
+modelo retornado TL.TO.EXE.253
+final prefix : TITODIV253TL.TO.EXE.253
+modelo retornado TL.TO.EXE.254
+final prefix : TITODIV254TL.TO.EXE.254
+modelo retornado TL.TO.TGVP.901
+final prefix : TITODIV901TL.TO.TGVP.901
+modelo retornado TL.TO.TGVP.902
+final prefix : TITODIV902TL.TO.TGVP.902
+modelo retornado TL.TO.TGVP.905
+final prefix : TITODIV905TL.TO.TGVP.905
+modelo retornado TL.TO.TGVP.966E
+final prefix : TITODIV966TL.TO.TGVP.966E
+modelo retornado TL.TO.TGVP.966D
+final prefix : TITODIV966DTL.TO.TGVP.966D
+modelo retornado TL.TO.TGVP.966F
+final prefix : TITODIV966FTL.TO.TGVP.966F
+modelo retornado TL.TO.TGVP.967
+final prefix : TITODIV967TL.TO.TGVP.967
+modelo retornado 
+array max index: 4
+prefix : TITOVEDACAOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TITOVEDACAO
+tabela de modelo retornada TITOVDModelo
+ira buscar a lista da tabela TITOVDModelo
+modelo retornado TL.TO.EXE.041
+final prefix : TITOVD041TL.TO.EXE.041
+modelo retornado TL.TO.EXE.251
+final prefix : TITOVD251TL.TO.EXE.251
+modelo retornado TL.TO.EXE.252
+final prefix : TITOVD252TL.TO.EXE.252
+modelo retornado TL.TO.EXE.253
+final prefix : TITOVD253TL.TO.EXE.253
+modelo retornado TL.TO.EXE.254
+final prefix : TITOVD254TL.TO.EXE.254
+modelo retornado TL.TO.TGVP.901
+final prefix : TITOVD901TL.TO.TGVP.901
+modelo retornado TL.TO.TGVP.902
+final prefix : TITOVD902TL.TO.TGVP.902
+modelo retornado TL.TO.TGVP.905
+final prefix : TITOVD905TL.TO.TGVP.905
+modelo retornado TL.TO.TGVP.966E
+final prefix : TITOVD966TL.TO.TGVP.966E
+modelo retornado TL.TO.TGVP.966D
+final prefix : TITOVD966DTL.TO.TGVP.966D
+modelo retornado TL.TO.TGVP.966F
+final prefix : TITOVD966FTL.TO.TGVP.966F
+modelo retornado TL.TO.TGVP.967
+final prefix : TITOVD967TL.TO.TGVP.967
+modelo retornado 
+array max index: 2
+array max index: 3
+prefix : TRLUMINARIAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TRLUMINARIA
+tabela de modelo retornada TRLModelo
+ira buscar a lista da tabela TRLModelo
+modelo retornado 
+array max index: 2
+array max index: 3
+prefix : TSCONEXOESira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSCONEXOES
+tabela de modelo retornada TS708Modelo
+ira buscar a lista da tabela TS708Modelo
+modelo retornado ADAPTADOR
+final prefix : TS708ADADAPTADOR
+modelo retornado BUJAO
+final prefix : TS708BJBUJAO
+modelo retornado BUCHA DE REDUCAO
+final prefix : TS708BRBUCHA DE REDUCAO
+modelo retornado GANCHO
+final prefix : TS708GAGANCHO
+modelo retornado LUVA
+final prefix : TS708LVLUVA
+modelo retornado UNIDADE SELADORA
+final prefix : TS708USUNIDADE SELADORA
+modelo retornado 
+array max index: 3
+prefix : TSANEL DE ATERRAMENTOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSANEL DE ATERRAMENTO
+tabela de modelo retornada TSANModelo
+ira buscar a lista da tabela TSANModelo
+modelo retornado ATERRAMENTO 
+final prefix : TSANATATERRAMENTO 
+modelo retornado 
+array max index: 3
+prefix : TSARRUELAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSARRUELA
+tabela de modelo retornada TSARModelo
+ira buscar a lista da tabela TSARModelo
+modelo retornado LISA ESPECIAL
+final prefix : TSARLELISA ESPECIAL
+modelo retornado LISA
+final prefix : TSARLSLISA
+modelo retornado PRESSAO
+final prefix : TSARPRPRESSAO
+modelo retornado SERRILHADA
+final prefix : TSARSRSERRILHADA
+modelo retornado 
+array max index: 3
+prefix : TSBOTOEIRAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSBOTOEIRA
+tabela de modelo retornada TSBModelo
+ira buscar a lista da tabela TSBModelo
+modelo retornado TL.B.EXE.240
+final prefix : TSB240TL.B.EXE.240
+modelo retornado TL.B.EXE.045
+final prefix : TSB45TL.B.EXE.045
+modelo retornado TL.B.EXE.046
+final prefix : TSB46TL.B.EXE.046
+modelo retornado TL.B.TGVP.940
+final prefix : TSB940TL.B.TGVP.940
+modelo retornado 
+array max index: 3
+prefix : TSCAIXAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSCAIXA
+tabela de modelo retornada TSCModelo
+ira buscar a lista da tabela TSCModelo
+modelo retornado TL.C.EXE.001
+final prefix : TSC001TL.C.EXE.001
+modelo retornado TL.C.EXE.002
+final prefix : TSC002TL.C.EXE.002
+modelo retornado TL.C.EXE.003
+final prefix : TSC003TL.C.EXE.003
+modelo retornado TL.C.EXD.005
+final prefix : TSC005TL.C.EXD.005
+modelo retornado TL.C.EXD.005R
+final prefix : TSC005RTL.C.EXD.005R
+modelo retornado TL.C.EXE.006
+final prefix : TSC006TL.C.EXE.006
+modelo retornado TL.C.EXN.006R
+final prefix : TSC006RTL.C.EXN.006R
+modelo retornado TL.C.EXN.007
+final prefix : TSC007TL.C.EXN.007
+modelo retornado TL.C.EXN.008
+final prefix : TSC008TL.C.EXN.008
+modelo retornado TL.C.EXN.011R
+final prefix : TSC011RTL.C.EXN.011R
+modelo retornado TL.C.EXE.5213
+final prefix : TSC5213TL.C.EXE.5213
+modelo retornado TL.C.EXE.5214
+final prefix : TSC5214TL.C.EXE.5214
+modelo retornado TL.C.EXE.5223
+final prefix : TSC5223TL.C.EXE.5223
+modelo retornado TL.C.EXE.5224
+final prefix : TSC5224TL.C.EXE.5224
+modelo retornado TL.C.TGVP.903
+final prefix : TSC903TL.C.TGVP.903
+modelo retornado TL.C.TGVP.909
+final prefix : TSC909TL.C.TGVP.909
+modelo retornado TL.C.EXE.F2092
+final prefix : TSCF209TL.C.EXE.F2092
+modelo retornado 
+array max index: 3
+prefix : TSCONDULETEira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSCONDULETE
+tabela de modelo retornada TSCOModelo
+ira buscar a lista da tabela TSCOModelo
+modelo retornado TL.CO.EXD.713
+final prefix : TSCO713TL.CO.EXD.713
+modelo retornado TL.CO.EXD.719
+final prefix : TSCO719TL.CO.EXD.719
+modelo retornado TL.CO.TGVP.913
+final prefix : TSCO913TL.CO.TGVP.913
+modelo retornado TL.CO.TGVP.914
+final prefix : TSCO914TL.CO.TGVP.914
+modelo retornado 
+array max index: 3
+prefix : TSCONTRA PORCAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSCONTRA PORCA
+tabela de modelo retornada TSCPModelo
+ira buscar a lista da tabela TSCPModelo
+modelo retornado TL.CP.EXE.001
+final prefix : TSCP001TL.CP.EXE.001
+modelo retornado TL.CP.EXE.007
+final prefix : TSCP007TL.CP.EXE.007
+modelo retornado 
+array max index: 3
+prefix : TSFOTO-CELULAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSFOTO-CELULA
+tabela de modelo retornada TSFCModelo
+ira buscar a lista da tabela TSFCModelo
+modelo retornado TL.FC.EXE.SS24EX
+final prefix : TSFCSS24EXTL.FC.EXE.SS24EX
+modelo retornado 
+array max index: 3
+prefix : TSGRADEira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSGRADE
+tabela de modelo retornada TSGRADModelo
+ira buscar a lista da tabela TSGRADModelo
+modelo retornado TL.L.EXD.009
+final prefix : TSGRAD009TL.L.EXD.009
+modelo retornado TL.L.EXN.015G
+final prefix : TSGRAD015GTL.L.EXN.015G
+modelo retornado TL.L.EXN.015N
+final prefix : TSGRAD015NTL.L.EXN.015N
+modelo retornado TL.L.EXN.015R
+final prefix : TSGRAD015RTL.L.EXN.015R
+modelo retornado TL.L.EXN.026
+final prefix : TSGRAD026TL.L.EXN.026
+modelo retornado TL.L.EXD.029N
+final prefix : TSGRAD029NTL.L.EXD.029N
+modelo retornado TL.L.EXD.029R
+final prefix : TSGRAD029RTL.L.EXD.029R
+modelo retornado TL.L.EXN.030N
+final prefix : TSGRAD030NTL.L.EXN.030N
+modelo retornado TL.L.EXN.030R
+final prefix : TSGRAD030RTL.L.EXN.030R
+modelo retornado TL.L.EXD.039
+final prefix : TSGRAD039TL.L.EXD.039
+modelo retornado TL.N.EXD.835N
+final prefix : TSGRAD835NTL.N.EXD.835N
+modelo retornado TL.N.EXD.835R
+final prefix : TSGRAD835RTL.N.EXD.835R
+modelo retornado TL.L.EXE.M006
+final prefix : TSGRADM006TL.L.EXE.M006
+modelo retornado 
+array max index: 3
+prefix : TSHOLOFOTEira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSHOLOFOTE
+tabela de modelo retornada TSHOModelo
+ira buscar a lista da tabela TSHOModelo
+modelo retornado TL.HO.002
+final prefix : TSHO002TL.HO.002
+modelo retornado TL.HO.003
+final prefix : TSHO003TL.HO.003
+modelo retornado TL.HO.004
+final prefix : TSHO004TL.HO.004
+modelo retornado TL.HO.005
+final prefix : TSHO005TL.HO.005
+modelo retornado 
+array max index: 3
+prefix : TSINVERSORira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSINVERSOR
+tabela de modelo retornada TSIEModelo
+ira buscar a lista da tabela TSIEModelo
+modelo retornado TL.IN.EXE.001
+final prefix : TSIE001TL.IN.EXE.001
+modelo retornado TL.IN.EXE.002
+final prefix : TSIE002TL.IN.EXE.002
+modelo retornado TL.IN.TGVP.901
+final prefix : TSIE901TL.IN.TGVP.901
+modelo retornado TL..IN.TGVP.902
+final prefix : TSIE902TL..IN.TGVP.902
+modelo retornado 
+array max index: 3
+prefix : TSLUMINARIAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSLUMINARIA
+tabela de modelo retornada TSLModelo
+ira buscar a lista da tabela TSLModelo
+modelo retornado TL.L.EXE.002
+final prefix : TSL002TL.L.EXE.002
+modelo retornado TL.L.EXN.003
+final prefix : TSL003TL.L.EXN.003
+modelo retornado TL.L.EXD.004
+final prefix : TSL004TL.L.EXD.004
+modelo retornado TL.L.EXN.006
+final prefix : TSL006TL.L.EXN.006
+modelo retornado TL.L.EXE.007
+final prefix : TSL007TL.L.EXE.007
+modelo retornado TL.L.EXD.009
+final prefix : TSL009TL.L.EXD.009
+modelo retornado TL.L.EXE.010
+final prefix : TSL010TL.L.EXE.010
+modelo retornado TL.L.EXN.011
+final prefix : TSL011TL.L.EXN.011
+modelo retornado TL.L.EXE.014
+final prefix : TSL014TL.L.EXE.014
+modelo retornado TL.L.EXN.015G
+final prefix : TSL015GTL.L.EXN.015G
+modelo retornado TL.L.EXN.015N
+final prefix : TSL015NTL.L.EXN.015N
+modelo retornado TL.L.EXN.015R
+final prefix : TSL015RTL.L.EXN.015R
+modelo retornado TL.L.EXE.016
+final prefix : TSL016TL.L.EXE.016
+modelo retornado TL.L.EXN.017
+final prefix : TSL017TL.L.EXN.017
+modelo retornado TL.L.EXE.022
+final prefix : TSL022TL.L.EXE.022
+modelo retornado TL.L.EXD.023
+final prefix : TSL023TL.L.EXD.023
+modelo retornado TL.L.EXN.026
+final prefix : TSL026TL.L.EXN.026
+modelo retornado TL.L.EXD.029N
+final prefix : TSL029NTL.L.EXD.029N
+modelo retornado TL.L.EXD.029R
+final prefix : TSL029RTL.L.EXD.029R
+modelo retornado TL.L.EXN.030N
+final prefix : TSL030NTL.L.EXN.030N
+modelo retornado TL.L.EXN.030R
+final prefix : TSL030RTL.L.EXN.030R
+modelo retornado TL.L.EXE.035N
+final prefix : TSL035NTL.L.EXE.035N
+modelo retornado TL.L.EXE.035R
+final prefix : TSL035RTL.L.EXE.035R
+modelo retornado TL.L.EXN.038
+final prefix : TSL038TL.L.EXN.038
+modelo retornado TL.L.EXD.039
+final prefix : TSL039TL.L.EXD.039
+modelo retornado TL.L.EXE.265
+final prefix : TSL265TL.L.EXE.265
+modelo retornado TL.L.EXD.040
+final prefix : TSL540TL.L.EXD.040
+modelo retornado TL.L.EXD.041
+final prefix : TSL541TL.L.EXD.041
+modelo retornado TL.L.EXD.042
+final prefix : TSL542TL.L.EXD.042
+modelo retornado TL.L.EXN.046
+final prefix : TSL546TL.L.EXN.046
+modelo retornado TL.L.TGVP.547
+final prefix : TSL547TL.L.TGVP.547
+modelo retornado MAC.EXS.025
+final prefix : TSL725MAC.EXS.025
+modelo retornado MAC.EXS.026
+final prefix : TSL726MAC.EXS.026
+modelo retornado TL.L.TGVP.904
+final prefix : TSL904TL.L.TGVP.904
+modelo retornado TL.L.TGVP.905
+final prefix : TSL905TL.L.TGVP.905
+modelo retornado TL.L.TGVP.908
+final prefix : TSL908TL.L.TGVP.908
+modelo retornado TL.L.TGVP.910
+final prefix : TSL910TL.L.TGVP.910
+modelo retornado TL.L.TGVP.912G
+final prefix : TSL912GTL.L.TGVP.912G
+modelo retornado TL.L.TGVP.912N
+final prefix : TSL912NTL.L.TGVP.912N
+modelo retornado TL.L.TGVP.913
+final prefix : TSL913TL.L.TGVP.913
+modelo retornado TL.L.TGVP.914
+final prefix : TSL914TL.L.TGVP.914
+modelo retornado TL.L.TGVP.915G
+final prefix : TSL915GTL.L.TGVP.915G
+modelo retornado TL.L.TGVP.915N
+final prefix : TSL915NTL.L.TGVP.915N
+modelo retornado TL.L.TGVP.915R
+final prefix : TSL915RTL.L.TGVP.915R
+modelo retornado TL.L.TGVP.917
+final prefix : TSL917TL.L.TGVP.917
+modelo retornado TL.L.TGVP.918
+final prefix : TSL918TL.L.TGVP.918
+modelo retornado TL.L.TGVP.919
+final prefix : TSL919TL.L.TGVP.919
+modelo retornado TL.L.TGVP.920
+final prefix : TSL920TL.L.TGVP.920
+modelo retornado TL.L.TGVP.922
+final prefix : TSL922TL.L.TGVP.922
+modelo retornado TL.L.TGVP.926
+final prefix : TSL926TL.L.TGVP.926
+modelo retornado TL.L.TGVP.927
+final prefix : TSL927TL.L.TGVP.927
+modelo retornado TL.L.TGVP.930N
+final prefix : TSL930NTL.L.TGVP.930N
+modelo retornado TL.L.TGVP.930R
+final prefix : TSL930RTL.L.TGVP.930R
+modelo retornado TL.L.TGVP.931
+final prefix : TSL931TL.L.TGVP.931
+modelo retornado TL.L.TGVP.932
+final prefix : TSL932TL.L.TGVP.932
+modelo retornado TL.L.TGVP.933
+final prefix : TSL933TL.L.TGVP.933
+modelo retornado TL.L.TGVP.934
+final prefix : TSL934TL.L.TGVP.934
+modelo retornado TL.L.TGVP.935N
+final prefix : TSL935NTL.L.TGVP.935N
+modelo retornado TL.L.TGVP.935R
+final prefix : TSL935RTL.L.TGVP.935R
+modelo retornado TL.L.TGVP.938
+final prefix : TSL938TL.L.TGVP.938
+modelo retornado TL.L.TGVP.939
+final prefix : TSL939TL.L.TGVP.939
+modelo retornado TL.L.TGVP.954
+final prefix : TSL954TL.L.TGVP.954
+modelo retornado TL.L.TGVP.958
+final prefix : TSL958TL.L.TGVP.958
+modelo retornado TL.L.TGVP.959
+final prefix : TSL959TL.L.TGVP.959
+modelo retornado TL.L.EXE.AVF
+final prefix : TSLAVFTL.L.EXE.AVF
+modelo retornado TL.L.EXE.M006
+final prefix : TSLM006TL.L.EXE.M006
+modelo retornado TL.L.TGVP.M906
+final prefix : TSLM906TL.L.TGVP.M906
+modelo retornado 
+array max index: 3
+prefix : TSLAMPADAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSLAMPADA
+tabela de modelo retornada TSLAMModelo
+ira buscar a lista da tabela TSLAMModelo
+modelo retornado FLUORESCENTE
+final prefix : TSLAMFLFLUORESCENTE
+modelo retornado HALOGENA
+final prefix : TSLAMHAHALOGENA
+modelo retornado INCANDESCENTE
+final prefix : TSLAMININCANDESCENTE
+modelo retornado FLUORESCENTE COMPACTA
+final prefix : TSLAMPLFLUORESCENTE COMPACTA
+modelo retornado VAPOR METALICO
+final prefix : TSLAMVMVAPOR METALICO
+modelo retornado VAPOR MERCURIO
+final prefix : TSLAMVRVAPOR MERCURIO
+modelo retornado VAPOR DE SODIO
+final prefix : TSLAMVSVAPOR DE SODIO
+modelo retornado 
+array max index: 3
+prefix : TSMODULOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSMODULO
+tabela de modelo retornada TSMModelo
+ira buscar a lista da tabela TSMModelo
+modelo retornado TL.MD.565
+final prefix : TSM565TL.MD.565
+modelo retornado TL.MD.566
+final prefix : TSM566TL.MD.566
+modelo retornado TL.MD.567
+final prefix : TSM567TL.MD.567
+modelo retornado TL.MR.568
+final prefix : TSM568TL.MR.568
+modelo retornado TL.MC.EXD.512BDI
+final prefix : TSMC512DITL.MC.EXD.512BDI
+modelo retornado TL.MC.EXD.512BDIN
+final prefix : TSMC512DINTL.MC.EXD.512BDIN
+modelo retornado TL.MD.EXD.511BF
+final prefix : TSMD511FTL.MD.EXD.511BF
+modelo retornado TL.MD.EXD.511BFL
+final prefix : TSMD511FLTL.MD.EXD.511BFL
+modelo retornado TL.MD.EXD.511BL
+final prefix : TSMD511LTL.MD.EXD.511BL
+modelo retornado TL.MD.EXD.511BLD
+final prefix : TSMD511LDTL.MD.EXD.511BLD
+modelo retornado TL.MF.EXD.204
+final prefix : TSMF204TL.MF.EXD.204
+modelo retornado TL.MH.EXD.512BPK
+final prefix : TSMH512PKTL.MH.EXD.512BPK
+modelo retornado MAA-NICD-CB
+final prefix : TSMMAAMAA-NICD-CB
+modelo retornado TL.MO.EXE.516
+final prefix : TSMO516TL.MO.EXE.516
+modelo retornado TL.MP.EXD.512BZCI
+final prefix : TSMP512CITL.MP.EXD.512BZCI
+modelo retornado TL.MP.EXD.517
+final prefix : TSMP517TL.MP.EXD.517
+modelo retornado TL.MR.EXD.512BH3
+final prefix : TSMR512H3TL.MR.EXD.512BH3
+modelo retornado TL.MR.EXD.512BMY
+final prefix : TSMR512MYTL.MR.EXD.512BMY
+modelo retornado TL.MR.EXD.512BZC
+final prefix : TSMR512ZCTL.MR.EXD.512BZC
+modelo retornado TL.MS.EXD.513
+final prefix : TSMS513TL.MS.EXD.513
+modelo retornado TL.MT.EXE.515
+final prefix : TSMT515TL.MT.EXE.515
+modelo retornado 
+array max index: 3
+prefix : TSAUXILIO A NEVEGACAOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSAUXILIO A NEVEGACAO
+tabela de modelo retornada TSNModelo
+ira buscar a lista da tabela TSNModelo
+modelo retornado 
+array max index: 3
+prefix : TSPROJETORira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSPROJETOR
+tabela de modelo retornada TSPModelo
+ira buscar a lista da tabela TSPModelo
+modelo retornado 
+array max index: 3
+prefix : TSPAINELira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSPAINEL
+tabela de modelo retornada TSPAModelo
+ira buscar a lista da tabela TSPAModelo
+modelo retornado 
+array max index: 3
+prefix : TSPRENSA CABOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSPRENSA CABO
+tabela de modelo retornada TSPCModelo
+ira buscar a lista da tabela TSPCModelo
+modelo retornado 
+array max index: 3
+prefix : TSPLUGUEira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSPLUGUE
+tabela de modelo retornada TSPLModelo
+ira buscar a lista da tabela TSPLModelo
+modelo retornado 
+array max index: 3
+prefix : TSREATOR ELETRONICOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSREATOR ELETRONICO
+tabela de modelo retornada TSREModelo
+ira buscar a lista da tabela TSREModelo
+modelo retornado 
+array max index: 3
+prefix : TSREATOR ELETROMAGNETICOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSREATOR ELETROMAGNETICO
+tabela de modelo retornada TSRMModelo
+ira buscar a lista da tabela TSRMModelo
+modelo retornado 
+array max index: 3
+prefix : TSTAMPAOira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSTAMPAO
+tabela de modelo retornada TSTAModelo
+ira buscar a lista da tabela TSTAModelo
+modelo retornado 
+array max index: 3
+prefix : TSTOMADAira verificar se existe subfamilia
+ira pegar a tabela de modelo prefix: TSTOMADA
+tabela de modelo retornada TSTOModelo
+ira buscar a lista da tabela TSTOModelo
+modelo retornado 

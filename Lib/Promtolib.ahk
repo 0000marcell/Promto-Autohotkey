@@ -1,169 +1,5 @@
 
 
-/*
-	get_lv_in_array(window_name, lv_name, number_of_columns = 1)
-	pega todos os items de uma determinada listview em
-	um array 
-*/
-
-Class OTTK
-{
-	__New(filePath){
-		file:=FileOpen(filePath,"r")
-
-		value:=file.Read()
-		this.path:=filePath
-		StringSplit,fileLine,value,`n,%A_Space%%A_Tab%`r
-		Loop,%fileLine0%
-		{
-			i+=1
-			if(fileLine%A_Index%!="")
-			{
-					StringSplit,value,fileLine%A_Index%,;
-					Loop,%value0%
-					{
-						this[i,A_Index]:=value%A_Index%
-					}
-			}
-		}
-	}
-	
-	delete(value)
-	{
-		for,k,v in this
-		{
-			for,w,z in this[k]
-			{
-				if(this[k,w]=value)
-				{
-				  this[k].remove(w)	
-				}	
-			}
-		}
-		this.write()
-	}
-
-	deleterow(row){
-		this.remove(row)
-		this.write()
-	}
-	deletevalue(row,column){
-		this[row].remove(column)
-		this.write()
-	}
-	
-	rename(ovalue,nvalue)
-	{
-		i:=0
-		while(this[A_Index,1]!="")
-		{
-			i+=1
-			while(this[i,A_Index]!="")
-			{
-				if(this[i,A_Index]=ovalue)
-				{
-					this[i,A_Index]:=nvalue
-				}
-			}
-		}
-		this.write()
-	}
-	
-	append(value)
-	{
-		i=0
-		while(this[A_Index,1]!="")
-		{
-			i+=1
-		}
-		this[i+1,1]:=value
-		this.write()
-	}
-	
-	write()
-	{
-		fPath:=this.path
-		FileDelete,% this.path
-		write:=FileOpen(fPath,"w")
-		for,k,v in this
-		{
-			for,w,z in this[k]
-			{
-				if(w=1)
-				{
-						write.Write(this[k,w])
-				}else{
-						write.Write(";" . this[k,w])
-				}
-			}
-			write.Write("`r`n")	
-		}
-		write.close()
-	}
-
-	exist(value,column)
-	{
-		returnValue:=0
-		while(this[A_Index,column]!="")
-			{
-				if(value=this[A_Index,column])
-					{
-						returnValue:=1
-					}
-			}	
-			return returnValue
-	}
-
-	clear()
-	{
-		while(this[A_Index,1]!="")
-		{
-			this.remove(A_Index)
-		}
-	}
-
-	checkduplicated()
-	{
-		MsgBox, % "CheckDuplicated"
-		valores:=object()
-		duplicatedValues:=""
-
-		i:=0
-		while(this[A_Index,1]!="")
-		{
-			i+=1	
-			while(this[i,A_Index]!="")
-			{
-				_naoinserir:=0
-				for,index,k in valores
-				{
-					if(k=this[i,A_Index])
-					{
-						_naoinserir:=1
-						if(duplicatedValues="")
-						{
-							duplicatedValues.=k	
-						}Else{
-							duplicatedValues.=";" . k
-						}
-							
-					}
-				}
-				if(_naoinserir=0)
-				{
-					valores.insert(this[i,A_Index])	
-				}
-			}
-				
-		}
-		return duplicatedValues
-	}
-}
-
-/*
-	Funcao que conta o numero de codigos de determinado modelo 
-	e insere a quantidade na janela principal
-*/
 number_of_items(){
  	Global
 	
@@ -971,47 +807,13 @@ carregandologo(){
 	savetofile("logopequeno.png")
 	loadintowindow("logopequeno.png",hwnd1)
 	_cog:=0
-	;SetTimer,carregandoaction,500
+
 	return 		
 }
 
-;############# carregando action ############ ; rotina de carregamento
-;carregandoaction:
-;_cog+=1
-;GC4:="blue"
-;GC5:="blue"
-;if(_cog=1){
-;  GC1:="orange"
-;  GC2:="lightblue"
-;  GC3:="lightblue"  
-;}
-;if(_cog=2){
-;  GC1:="lightblue"
-;  GC2:="orange"
-;  GC3:="lightblue"  
-;}
-;if(_cog=3){
-;  GC1:="lightblue"
-;  GC2:="lightblue"
-;  GC3:="orange"
-;  _cog:=0
-;}
-;sw:=A_ScreenWidth,sh:=A_ScreenHeight
-;logow:=sw*0.17,logoh:=sh*0.19
-;promtologo([GC1,GC2,GC3,GC4,GC5],logow,logoh,0)
-;savetofile("logopequeno.png")
-;loadintowindow("logopequeno.png",hwnd1)
-;return 
-
-
 getcolors(colorname){
 	colors:=[]
-	;lightblue:=75c2d4
-	;blue:=3f8c9e
-	;darkblue:=235c73
-	;75c2d4
-	;ff00ff
-	;oldblue colors[1]:="0xff1e90ff",colors[2]:="0xff0949e9"
+
 	if(colorname="blue")
 		colors[1]:="0xff2661dd",colors[2]:="0xff1941A5"
 	if(colorname="black")
@@ -1107,7 +909,7 @@ show_image_and_code(image, with_desc = 1){
 	newgdi({w:850,h:280})
 	image := Gdip_CreateBitmapFromFile(image)
 	w := Gdip_GetImageWidth(image), h := Gdip_GetImageHeight(image)
-	Gdip_DrawImage(G,image,10,10,250,250,0,0,w,h)
+	Gdip_DrawImage(G, image, 10, 10, 247, 142, 0, 0, w, h)
 	if(text = ""){
 
 		/*
@@ -1136,6 +938,7 @@ show_image_and_code(image, with_desc = 1){
 	Gdip_SaveBitmapToFile(pBitmap,"img/simpleplot.png")
 	Gdip_DisposeImage(pBitmap)
 	Gdip_DisposeImage(image)	
+	Gdip_DeleteGraphics(G)
 	Gui, M:default 
 	Guicontrol,,ptcode,img/simpleplot.png
 }
@@ -1186,6 +989,7 @@ plotptcode(prefixpt,prefixpt2,modelpt,_showcode=0,iwidth=820,iheight=1076){
 	Gdip_SaveBitmapToFile(pBitmap,A_WorkingDir "\temp\" prefixpt2 modelpt "grupo.png")
 	Gdip_DisposeImage(pBitmap)
 	Gdip_DisposeImage(image)
+	Gdip_DeleteGraphics(G)
 	if(_showcode=1)
 		run,% A_WorkingDir "\temp\" prefixpt2 modelpt "grupo.png"
 	return 
@@ -1257,6 +1061,7 @@ plot_pt_code_list(){
 	}
 	Gdip_SaveBitmapToFile(pBitmap,A_WorkingDir "\temp\" FamiliaName ".png")
 	Gdip_DisposeImage(pBitmap)
+	Gdip_DeleteGraphics(G)
 	run,% A_WorkingDir "\temp\" FamiliaName ".png"
 	return 
 }
@@ -2274,11 +2079,7 @@ savetofile(imagename,show=0){
 
 newgdi(a){
 	Global
-	;If !pToken := Gdip_Startup()
-	;{
-	;    MsgBox, 48, gdiplus error!, Gdiplus failed to start. Please ensure you have gdiplus on your system
-	;    ExitApp
-	;}
+
 	a.w:= (a.w="") ? 500 : a.w
 	a.h:= (a.h="") ? 500 : a.h
 	pBitmap := Gdip_CreateBitmap(a.w,a.h), G := Gdip_GraphicsFromImage(pBitmap), Gdip_SetSmoothingMode(G, 4)

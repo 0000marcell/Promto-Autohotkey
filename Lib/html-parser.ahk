@@ -152,7 +152,8 @@ class PromtoHTML{
 
 		list_fields := db.load_table_in_array(fields_table)
 		FileDelete, % path model_mask ".html"
-		FileAppend, % "<!DOCTYPE html>`n`t<html>`n`t<link rel='stylesheet' type='text/css' href='../test.css'>`n`t<head>`n<title>" model_name "</title>`n`t</head>`n`t<body>`n`t<h1>" model_name "</h1>`n<div class='code-container'>", % path model_mask ".html"
+		image_path := "../sem_foto.jpg"
+		FileAppend, % "<!DOCTYPE html>`n`t<html>`n`t<link rel='stylesheet' type='text/css' href='../test.css'>`n`t<head>`n<title>" model_name "</title>`n`t</head>`n`t<body>`n`t<div class='model-page'><img src=" image_path "><h1>" model_name "</h1>`n<div class='code-container'>", % path model_mask ".html"
 		
 		/*
 			Insere o prefixo
@@ -225,6 +226,7 @@ class PromtoHTML{
 			html_piece := 
 			(JOIN
 				"</select>`n"
+				"</div>`n"
 				"</div>`n"
 				"</div>`n"
 				"</div>`n"

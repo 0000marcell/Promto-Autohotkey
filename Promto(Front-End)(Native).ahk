@@ -80,12 +80,12 @@ E:
 Gui, initialize:New
 Gui, Font, s%SMALL_FONT%, %FONT%
 Gui, Color, %GLOBAL_COLOR%
-Gui, Add, Picture, xm ym w300 h150,img\promtologo.png
+Gui, Add, Picture, x+30 ym ,img\promtologo.png
 
 /*
 	Nome do usuario
 */
-Gui, Add, Groupbox, w300 h110, Usuario
+Gui, Add, Groupbox, xm w300 h110, Usuario
 Gui, Add, Text, xp+5 yp+15, Nome:
 Gui, Add, Edit, w280 vuser_name, 
 Gui, Add, Text, , Senha:
@@ -149,7 +149,7 @@ Gui, Color, %GLOBAL_COLOR%
 /*
 	Logo tipo
 */
-Gui, Add, Picture, xm ym w230 h150,img\promtologo.png
+Gui, Add, Picture, xm ym,img\promtologo.png
 
 /*
 	Familias
@@ -389,7 +389,7 @@ return
   	*/
   		
   	/*
-  		Verifica se o nival atual tem um subnivel
+  		Verifica se o nivel atual tem um sub-nivel
   		se tiver retorna sem carregar tabela de modelo
   	*/
   	if(tv_level = 3){
@@ -2876,6 +2876,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 
 
 #include, lib\promto_sql_mariaDB.ahk
+#include, lib\OTTK.ahk
 #include, models\remover_item_ETF.ahk
 #include <promtolib>
 #include,lib\json_parser.ahk

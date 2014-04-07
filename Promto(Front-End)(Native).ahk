@@ -122,6 +122,7 @@ Return
 	Gui, Add, Text, xm y+10, Carregando...
 	Gui, Add, Progress, xm y+5 vprogress  -Smooth 0x8 w300 h18
 	Gui, Show, AutoSize, Carregando...
+	undetermine_progress_window := "initialize"
   SetTimer, undetermine_progress_action, 45
   load_ETF(db)
   Gui, initialize:destroy
@@ -129,7 +130,7 @@ Return
 	Return 
 
 		undetermine_progress_action:
-		Gui, initialize:default
+		Gui, %undetermine_progress_window%:default
 		GuiControl,, progress, 1
 		Return
 
@@ -169,7 +170,7 @@ load_main_tv()
 Gui, Add, Groupbox, xm y+20 w230 h60, Opcoes
 Gui, Add, Button, xp+25 yp+15 w100 h30 ginsert_empresa, Criar Empresa 
 Gui, Add, Button, x+5 w40 h30 hwndhBtn grecarregar_main_tv
-Gui, Add, Button, x+t w40 h30 ggerar_html, HTML
+Gui, Add, Button, x+t w40 h30 gHTML, HTML
 ILButton(hBtn, "promtoshell.dll:" 5, 32, 32, 0)
 
 /*
@@ -244,7 +245,7 @@ Menu, main_menu_bar, Add, &Usuarios, :users_menu
 Menu, main_menu_bar, Add, &Listas, :list_menu
 Menu, main_menu_bar, Color, White
 Gui, Menu, main_menu_bar
-Gui, Show, w1300 h700 , %FamiliaName%
+Gui, Show, w1000 h700 , %FamiliaName%
 
 Gui, Listview, MODlv
 LV_ModifyCol(2,300) 
@@ -260,9 +261,8 @@ list_options:
 list_options_view()
 return
 
-gerar_html:
-HTML := new PromtoHTML()
-HTML.generate(ETF_TVSTRING, ETF_hashmask)
+HTML:
+generate_html_view()
 return
 
 insert_empresa:
@@ -2919,6 +2919,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, views/change_status_view.ahk
 #include, views/list_options_view.ahk
 #include, views/show_status_result_view.ahk
+#include, views/generate_html_view.ahk
 
 
 

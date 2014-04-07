@@ -1,8 +1,9 @@
 class PromtoHTML{
 	__New(){
 		this.item_number := 0 ;Variavel usada para fechar as tags
-		FileDelete, % "index.html"
-		FileAppend, % "<!DOCTYPE html>`n`t<html>`n`t<link rel='stylesheet' type='text/css' href='test.css'>`n`t<head>`n<title>Promto</title>`n`t</head>`n`t<body>`n`t<h1>Promto</h1>`n`t<h2>product manager tool</h2>`n`t<nav>`n`t<ul>`n`t<li>", % "index.html"
+		this.file_path := "html\index.html"
+		FileDelete, % this.file_path
+		FileAppend, % "<!DOCTYPE html>`n`t<html>`n`t<link rel='stylesheet' type='text/css' href='test.css'>`n`t<head>`n<title>Promto</title>`n`t</head>`n`t<body>`n`t<img src='promtologo.jpg' style='margin-left:40%;'>`n`t<nav>`n`t<ul>`n`t<li>", % this.file_path
 	}
 
 	;Recebe a string usada para montar o diagrama de arvore e 
@@ -47,11 +48,11 @@ class PromtoHTML{
 			prev_item_tab_count := this_item_tab_count
 		}
 		this.close()
-		Run, % "index.html"
+		Run, % this.file_path
 	}
 
 	item(name){
-		FileAppend, % "<li>`n`t<a href=''>" name "</a>`n`t<ul>", % "index.html"
+		FileAppend, % "<li>`n`t<a href=''>" name "</a>`n`t<ul>", % this.file_path
 		this.item_number += 1
 	}
 
@@ -65,31 +66,29 @@ class PromtoHTML{
 
 		; Cria a pagina do produto
 		this.create_model(name, model_mask, prefix_array, "html\" link "\")
-		FileAppend, % "<a href='html\" link "\" model_mask ".html'>" name "</a>`n", % "index.html"
+		FileAppend, % "<a href='" link "\" model_mask ".html'>" name "</a>`n", % this.file_path
 	}
 
 	close_item(){
-		FileAppend, % "</ul>`n", % "index.html"
-		FileAppend, % "</li>`n", % "index.html"
+		FileAppend, % "</ul>`n", % this.file_path
+		FileAppend, % "</li>`n", % this.file_path
 		this.item_number -= 1
 	}
 
 
 
 	close(){
-		MsgBox, % "this item number " this.item_number
-		
 		loop, % this.item_number
 		{
-			FileAppend, % "</ul>`n", % "index.html"
-			FileAppend, % "</li>`n", % "index.html"		
+			FileAppend, % "</ul>`n", % this.file_path
+			FileAppend, % "</li>`n", % this.file_path	
 		}
 		
-		FileAppend, % "</li>`n", % "index.html"
-		FileAppend, % "</ul>`n", % "index.html"
-		FileAppend, % "</nav>`n", % "index.html"
-		FileAppend, % "</body>`n", % "index.html"
-		FileAppend, % "</html>`n", % "index.html"
+		FileAppend, % "</li>`n", % this.file_path
+		FileAppend, % "</ul>`n", % this.file_path
+		FileAppend, % "</nav>`n", % this.file_path
+		FileAppend, % "</body>`n", % this.file_path
+		FileAppend, % "</html>`n", % this.file_path
 	}
 
 	;Verifica se determinado item tem lista de modelos
@@ -153,7 +152,7 @@ class PromtoHTML{
 
 		list_fields := db.load_table_in_array(fields_table)
 		FileDelete, % path model_mask ".html"
-		FileAppend, % "<!DOCTYPE html>`n`t<html>`n`t<link rel='stylesheet' type='text/css' href='../test.css'>`n`t<head>`n<title>" model_name "</title>`n`t</head>`n`t<body>`n`t<h1>" model_name "</h1>`n", % path model_mask ".html"
+		FileAppend, % "<!DOCTYPE html>`n`t<html>`n`t<link rel='stylesheet' type='text/css' href='../test.css'>`n`t<head>`n<title>" model_name "</title>`n`t</head>`n`t<body>`n`t<h1>" model_name "</h1>`n<div class='code-container'>", % path model_mask ".html"
 		
 		/*
 			Insere o prefixo
@@ -185,7 +184,7 @@ class PromtoHTML{
 			"`t`t<h2>" model_mask "</h2>`n"
 			"</div>`n"
 		)	
-
+		FileAppend, % html_piece, % path model_mask ".html"
 		/*
 			Insere os campos 
 		*/
@@ -219,13 +218,14 @@ class PromtoHTML{
 
 				html_piece := 
 				(JOIN
-					"<option>" especific_list_fields[A_Index, 1] "</option>`n"
+					"<option>" especific_list_fields[A_Index, 1] "<span>-" especific_list_fields[A_Index, 3] "</span></option>`n"
 				) 
 				FileAppend, % html_piece, % path model_mask ".html"
 			}
 			html_piece := 
 			(JOIN
 				"</select>`n"
+				"</div>`n"
 				"</div>`n"
 				"</div>`n"
 			) 

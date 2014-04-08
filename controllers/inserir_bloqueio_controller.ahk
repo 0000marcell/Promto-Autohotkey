@@ -67,7 +67,7 @@ salvar_bloqueio(){
 		db.Modelo.incluir_bloqueio(cod_bloqueado, bloq_table)
 	} 
 	algum_codigo_foi_desbloqueado := false
-	number_of_items() 
+	Promto.number_of_items() 
 	MsgBox, 64, Sucesso, % "Os valores foram inseridos!"
 }
 

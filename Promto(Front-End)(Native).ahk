@@ -1249,7 +1249,7 @@ if A_GuiEvent = i
 		load_formation_in_main_window(info)
 		load_status_in_main_window(info)
 	}
-	number_of_items()
+	Promto.number_of_items()
 }
 return 
 

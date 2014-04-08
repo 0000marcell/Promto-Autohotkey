@@ -43,7 +43,7 @@ inserir_campo_esp_view(campo, info){
 	valores := {codigo: codigo_field_esp, dr: dr_field_esp, dc: dc_field_esp, di: di_field_esp}
 	db.Modelo.incluir_campo_esp(s_campo ,valores, s_info)
 	Gui, inserir_campo_esp_view:destroy
-	tabela_campos_especificos := get_tabela_campo_esp(s_campo, s_info)
+	tabela_campos_especificos := db.Modelo.get_tabela_campo_esp(s_campo, s_info)
 	db.load_lv("inserir_campos_view", "valores_de_campo_lv", tabela_campos_especificos)
 	MsgBox, 64, Sucesso, % "O valor foi incluido!"
 	Return

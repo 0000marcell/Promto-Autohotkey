@@ -325,8 +325,6 @@ class Modelo{
 		}catch e
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar o valor de campo na tabela `n" ExceptionDetail(e)
 
-		StringReplace,campo_nome_sem_espaco,campo_nome,%A_Space%,,All
-
 		tabela_campo_especifica := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] campo_nome_sem_espaco
 			
 		try{
@@ -340,7 +338,7 @@ class Modelo{
 				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Campos especificos `n" ExceptionDetail(e)
 		
 		record := {}
-		record.tipo := campo_nome_sem_espaco me mt mf mm nm
+		record.tipo := AHK.rem_space(campo_nome) me mt mf mm nm
 		record.tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1] 
 		record.tabela2 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] campo_nome_sem_espaco
 		mariaDB.Insert(record, "reltable")	
@@ -462,7 +460,7 @@ class Modelo{
 	incluir_campo_esp(nome_campo, valores, info){
 		Global mariaDB
 		
-		tabela_campos_especificos := get_tabela_campo_esp(nome_campo, info)
+		tabela_campos_especificos := this.get_tabela_campo_esp(nome_campo, info)
 		
 		if(this.valor_campo_existe(tabela_campos_especificos, valores.codigo)){
 			MsgBox,16, Erro, % "O codigo a ser inserido ja existe na lista!"
@@ -499,7 +497,7 @@ class Modelo{
 	alterar_valores_campo(campo, valores, info, old_cod){
 		Global mariaDB
 
-		tabela := get_tabela_campo_esp(campo, info)
+		tabela := this.get_tabela_campo_esp(campo, info)
 		sql :=
 		(JOIN 
 			" UPDATE " tabela 
@@ -527,12 +525,9 @@ class Modelo{
 		*/
 
 		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
-		tabela_campo_esp := get_tabela_campo_esp(campo_nome, info)
-		tabela_campo := this.get_tabela_campo_referencia(tabela1) 
+		tabela_campo_esp := this.get_tabela_campo_esp(campo_nome, info)
+		tabela_campo := this.get_tabela_campo_referencia(Promto.join_tabela1(info)) 
 		
-		;MsgBox, % "tabela campo esp " tabela_campo_esp
-		;MsgBox, % "tabela campo " tabela_campo
-
 		/*
 			Deleta a entrada na tabela de campo
 		*/
@@ -548,12 +543,11 @@ class Modelo{
 		/*
 			Deleta a entrada na tabela de relacao
 		*/
-		StringReplace, campo_nome_sem_espaco, campo_nome,%A_Space%,,All
 		try{
 				mariaDB.Query(
 				(JOIN 
 					" DELETE FROM reltable "
-					" WHERE tipo like '" campo_nome_sem_espaco "'"
+					" WHERE tipo like '" AHK.rem_space(campo_nome) "'"
 					" AND tabela1 like '" tabela1 "'"
 				))	
 			}catch e 
@@ -586,14 +580,16 @@ class Modelo{
 	/*
 		Pega a tabela de campo especifico
 	*/
-	get_tabela_campo_esp(tipo, tabela1){
+	get_tabela_campo_esp(tipo, info){
 		Global mariaDB
 
+		
+		
 		rs := mariaDB.OpenRecordSet(
 			(JOIN 
 				" SELECT tabela2 FROM reltable "
-				" WHERE tipo like '" tipo "' "
-				" AND tabela1 like '" tabela1 "'"
+				" WHERE tipo like '" AHK.rem_space(tipo) "' "
+				" AND tabela1 like '" Promto.join_tabela1(info) "'"
 			))
 		reference_table := rs.tabela2
 		rs.close()

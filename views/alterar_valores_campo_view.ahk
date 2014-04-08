@@ -43,7 +43,7 @@ alterar_valores_campo_view(currentvalue, campo, info){
 	;MsgBox, % "codigo : " alt_codigo_field_esp " dr " alt_dr_field_esp " dc " alt_dc_field_esp " di " alt_di_field_esp 
 	valores := {codigo: alt_codigo_field_esp, dr: alt_dr_field_esp, dc: alt_dc_field_esp, di: alt_di_field_esp}
 	db.Modelo.alterar_valores_campo(s_campo, valores, s_info, s_old_cod)
-	tabela_campos_especificos := get_tabela_campo_esp(s_campo, s_info)
+	tabela_campos_especificos := db.Modelo.get_tabela_campo_esp(s_campo, s_info)
 	db.load_lv("inserir_campos_view", "valores_de_campo_lv", tabela_campos_especificos)
 	MsgBox, 64, Sucesso, % "Os valores foram alterados!"
 	return

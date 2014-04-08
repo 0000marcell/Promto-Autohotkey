@@ -2,15 +2,15 @@ class PromtoHTML{
 	__New(){
 		this.item_number := 0 ;Variavel usada para fechar as tags
 		this.file_path := "html\index.html"
+		this.date := A_DD "/" A_MM "/" A_YYYY " as " A_Hour ":" A_Min
 		FileCopyDir, % "\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens",% "html\promto_imagens", 1
 		FileDelete, % this.file_path
-		FileAppend, % "<!DOCTYPE html>`n`t<html>`n`t<link rel='stylesheet' type='text/css' href='test.css'>`n`t<head>`n<title>Promto</title>`n`t</head>`n`t<body>`n`t<img src='promtologo.jpg' style='margin-left:40%;'>`n`t<nav>`n`t<ul>`n`t<li>", % this.file_path
+		FileAppend, % "<!DOCTYPE html>`n`t<html>`n`t<link rel='stylesheet' type='text/css' href='test.css'>`n`t<head>`n<title>Promto</title>`n`t</head>`n`t<body>`n`t`t<h2>Ultima modificacao:" this.date "</h2>`n`t<img src='promtologo.jpg' style='margin-left:40%;'>`n`t<nav>`n`t<ul>`n`t<li>", % this.file_path
 	}
 
 	;Recebe a string usada para montar o diagrama de arvore e 
 	;transforma no html
 	generate(string, hash_mask){
-
 		StringSplit, items, string, `n,
 		prev_item_tab_count := 0
 		prefix_array := []
@@ -77,7 +77,7 @@ class PromtoHTML{
 		html_piece :=
 		(JOIN
 			"<a href='" link "\" model_mask ".html'>"
-			"<img src=" image_full_path " class='small-image'>" name "</a>`n" 
+			"<img src='" image_full_path "' class='small-image'>" name "</a>`n" 
 		)
 		FileAppend, % html_piece, % this.file_path
 	}
@@ -165,11 +165,12 @@ class PromtoHTML{
 			"`t<head>`n<title>" model_name "</title>`n"
 			"`t</head>`n`t<body>`n"
 			"`t<div class='model-page'>`n"
-			"`t`t<img src=..\" image_path " class='large-image'>`n"
+			"<h2>Ultima modificacao:" this.date "</h2>"
+			"`t`t<img src='..\" image_path "' class='large-image'>`n"
 			"<h1>" model_name "</h1>`n"
 			"<div class='code-container'>" 
 		)
-		FileAppend, % "<!DOCTYPE html>`n`t<html>`n`t<link rel='stylesheet' type='text/css' href='../test.css'>`n`t<head>`n<title>" model_name "</title>`n`t</head>`n`t<body>`n`t<div class='model-page'>`n`t`t<img src=" image_path " class='large-image'>`n<h1>" model_name "</h1>`n<div class='code-container'>", % path model_mask ".html"
+		FileAppend, % html_piece, % path model_mask ".html"
 		
 		/*
 			Insere o prefixo

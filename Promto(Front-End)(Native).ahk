@@ -2837,6 +2837,7 @@ compararcamp(camptable,otable)
 inserir4(table,field,primaryk,tipo,mascaraant="")
 {
 	Global db,selectmodel
+	
 	;MsgBox, % "table " . table . "`nfield " . field . "`nprimaryk " . primaryk . "`ntipo " . tipo
 	Static edit1
 	Global table1,field1,primaryk1,tipo1,mascaraant1

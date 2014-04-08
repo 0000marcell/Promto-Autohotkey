@@ -11,8 +11,8 @@ generate_html_view(){
 
 
 	generate_html:
-	HTML := new PromtoHTML()
 	undetermine_progress_window := "generate_html_view"
+	HTML := new PromtoHTML()
 	SetTimer, undetermine_progress_action, 45
 	HTML.generate(ETF_TVSTRING, ETF_hashmask)
 	Gui, generate_html_view:destroy

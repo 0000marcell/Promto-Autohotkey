@@ -19,7 +19,7 @@ if !sOrgPath
 ftp.InternetWriteFile( A_ScriptDir . "\FTP.zip" )
 
 ; download a file with progress
-ftp.InternetReadFile( "FTP.zip" , "delete_me.zip")
+;ftp.InternetReadFile( "FTP.zip" , "delete_me.zip")
 
 ; delete the file
 ftp.DeleteFile("FTP.zip")

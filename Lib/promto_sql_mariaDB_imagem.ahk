@@ -296,4 +296,25 @@ class Imagem{
 		image_source := global_image_path "promto_imagens\promto_" image_id  ".jpg"
 		return image_source
 	}
+
+	get_html_image_full_path(tabela1){
+		Global mariaDB, global_image_path
+
+		
+		rs := mariaDB.OpenRecordSet(
+			(JOIN 
+				" SELECT tabela2 FROM reltable "
+				" WHERE tipo like 'image' "
+				" AND tabela1 like '" tabela1 "'"
+			))
+		reference_table := rs.tabela2
+		rs.close()
+
+		image_id := this.get_image_id(reference_table)
+		if(image_id = "")
+			image_id := 0
+
+		image_source := "promto_imagens\promto_" image_id  ".jpg"
+		return image_source
+	}
 }

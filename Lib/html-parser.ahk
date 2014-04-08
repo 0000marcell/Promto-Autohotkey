@@ -2,6 +2,7 @@ class PromtoHTML{
 	__New(){
 		this.item_number := 0 ;Variavel usada para fechar as tags
 		this.file_path := "html\index.html"
+		FileCopyDir, % "\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens",% "html\promto_imagens", 1
 		FileDelete, % this.file_path
 		FileAppend, % "<!DOCTYPE html>`n`t<html>`n`t<link rel='stylesheet' type='text/css' href='test.css'>`n`t<head>`n<title>Promto</title>`n`t</head>`n`t<body>`n`t<img src='promtologo.jpg' style='margin-left:40%;'>`n`t<nav>`n`t<ul>`n`t<li>", % this.file_path
 	}
@@ -10,7 +11,6 @@ class PromtoHTML{
 	;transforma no html
 	generate(string, hash_mask){
 
-		reset_debug()
 		StringSplit, items, string, `n,
 		prev_item_tab_count := 0
 		prefix_array := []
@@ -57,6 +57,8 @@ class PromtoHTML{
 	}
 
 	model(name, link, prefix_array, model_mask){
+		Global db
+
 		if(model_mask = "")
 			return 
 		ifnotexist, % "html\" link "\"
@@ -64,9 +66,20 @@ class PromtoHTML{
 			FileCreateDir, % "html\" link "\"	
 		}
 
+		tabela1 := ""
+		for, each, valu in prefix_array
+			tabela1 .= prefix_array[A_Index]
+		tabela1 .= model_mask name
+		image_full_path := db.Imagem.get_html_image_full_path(tabela1)
+
 		; Cria a pagina do produto
-		this.create_model(name, model_mask, prefix_array, "html\" link "\")
-		FileAppend, % "<a href='" link "\" model_mask ".html'>" name "</a>`n", % this.file_path
+		this.create_model(name, model_mask, prefix_array, "html\" link "\", image_full_path)
+		html_piece :=
+		(JOIN
+			"<a href='" link "\" model_mask ".html'>"
+			"<img src=" image_full_path " class='small-image'>" name "</a>`n" 
+		)
+		FileAppend, % html_piece, % this.file_path
 	}
 
 	close_item(){
@@ -95,7 +108,6 @@ class PromtoHTML{
 	check_if_it_has_model(prefix_array, item_name){
 		Global db
 
-		append_debug("array max index: " prefix_array.MaxIndex())
 		if(prefix_array.MaxIndex() < 3){
 			return
 		}
@@ -111,31 +123,25 @@ class PromtoHTML{
 			}
 		}
 
-		append_debug("prefix : " prefix "ira verificar se existe subfamilia")
 		if(db.have_subfamilia(prefix)){
-			append_debug("tem subfamilia")
 			return
 		}else{
 			/*
 			Pega a tabela de modelos
 			*/	 
-			append_debug("ira pegar a tabela de modelo prefix: " prefix)
 			model_table := db.get_reference("Modelo", prefix)
-			append_debug("tabela de modelo retornada " model_table)
 			if(model_table = ""){
 				return
 			}
-			append_debug("ira buscar a lista da tabela " model_table)
 			list_model := db.load_table_in_array(model_table)
 			for, each, value in list_model{
-				append_debug("modelo retornado " list_model[A_Index, 1])
 				this.model(list_model[A_Index, 1], prefix, prefix_array, list_model[A_Index, 2])
 			}
 		}
 	}
 
 	;Cria a pagina do modelo
-	create_model(model_name, model_mask, prefix_array, path){
+	create_model(model_name, model_mask, prefix_array, path, image_path){
 		Global db
 
 		For, each, value in prefix_array{
@@ -144,15 +150,26 @@ class PromtoHTML{
 			prefix .= value
 		}
 
-		final_prefix := prefix model_mask model_name
-		append_debug("final prefix : " final_prefix) 
+		final_prefix := prefix model_mask model_name 
 		fields_table := db.get_reference("Campo", final_prefix)
 		if(fields_table = "")
 			return 
 
 		list_fields := db.load_table_in_array(fields_table)
 		FileDelete, % path model_mask ".html"
-		FileAppend, % "<!DOCTYPE html>`n`t<html>`n`t<link rel='stylesheet' type='text/css' href='../test.css'>`n`t<head>`n<title>" model_name "</title>`n`t</head>`n`t<body>`n`t<h1>" model_name "</h1>`n<div class='code-container'>", % path model_mask ".html"
+		html_piece :=
+		(JOIN
+			"<!DOCTYPE html>" 
+			"`n`t<html>`n"
+			"`t<link rel='stylesheet' type='text/css' href='../test.css'>`n"
+			"`t<head>`n<title>" model_name "</title>`n"
+			"`t</head>`n`t<body>`n"
+			"`t<div class='model-page'>`n"
+			"`t`t<img src=" image_path " class='large-image'>`n"
+			"<h1>" model_name "</h1>`n"
+			"<div class='code-container'>" 
+		)
+		FileAppend, % "<!DOCTYPE html>`n`t<html>`n`t<link rel='stylesheet' type='text/css' href='../test.css'>`n`t<head>`n<title>" model_name "</title>`n`t</head>`n`t<body>`n`t<div class='model-page'>`n`t`t<img src=" image_path " class='large-image'>`n<h1>" model_name "</h1>`n<div class='code-container'>", % path model_mask ".html"
 		
 		/*
 			Insere o prefixo
@@ -225,6 +242,7 @@ class PromtoHTML{
 			html_piece := 
 			(JOIN
 				"</select>`n"
+				"</div>`n"
 				"</div>`n"
 				"</div>`n"
 				"</div>`n"

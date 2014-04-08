@@ -232,7 +232,7 @@ tv_strut(window, tv, lv){
 
 	if(tv_level = 3){
 		model_table := db.get_reference("Modelo", tabela1)
-		db.load_subitems_tv(get_tv_id(window, lv), model_table)
+		db.load_subitems_tv(Promto.get_tv_id(window, lv), model_table)
 		return
 	}	
 
@@ -241,7 +241,7 @@ tv_strut(window, tv, lv){
 		if(info.subfamilia[2] != ""){
 			tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[1]
 			model_table := db.get_reference("Modelo", tabela1)
-			db.load_subitems_tv(get_tv_id(window, lv), model_table)
+			db.load_subitems_tv(Promto.get_tv_id(window, lv), model_table)
 			return
 		}
 		Gui, %window%:default

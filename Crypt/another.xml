@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<another>
+	<foo this="1">
+		<bar another="1">
+			<another this="1">Hi</another></bar></foo>
+	<foo that="1">Hello</foo>
+</another>

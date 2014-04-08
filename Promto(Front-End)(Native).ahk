@@ -1249,7 +1249,7 @@ if A_GuiEvent = i
 		load_formation_in_main_window(info)
 		load_status_in_main_window(info)
 	}
-	Promto.number_of_items()
+	main_view.set_code_number(promto_node.get_number_of_items())
 }
 return 
 
@@ -1878,6 +1878,16 @@ return
 				Gui, Add, Button, x+5 w100 h30 gMACICANCELAR, Cancelar
 				Gui, Show,,Modelos-Alterar-Campos-Incluir
 				return  
+
+					getreferencetable(tipo,table){
+						Global db
+
+						StringReplace, tipo, tipo, %A_Space%,,All
+						result := db.query("SELECT tabela2 FROM reltable WHERE tipo='" . tipo . "' AND tabela1='" . table . "'")
+						returnvalue := result["tabela2"]
+						result.close()
+						return	returnvalue
+					}
 
 					MACIIMPORT:
 					Gui,submit,nohide

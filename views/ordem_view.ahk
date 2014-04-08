@@ -35,7 +35,7 @@ ordem_view(tipo, info){
 	 */
 	 Gui, Add, Groupbox, xm y+5 w250 h60, Opcoes
 	 Gui, Add, Button, xp+10 yp+15 w100 h30 gsalvar_ordem_prefixo_button, Salvar 
-	 tabela_ordem := get_tabela_ordem(tipo, info)
+	 tabela_ordem := promto_node.get_order_table(tipo)
 	 
 	 /*
 	 	Insere os novos campos na tabela de prefixo

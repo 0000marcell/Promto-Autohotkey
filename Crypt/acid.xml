@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wierd>
+	<Just_A_Path>
+	</Just_A_Path>
+	<Path>With text</Path>
+	<unique value="4"></unique>
+	<unique value="3"></unique>
+	<foo this="1">
+		<bar another="1">
+			<another this="1">Hi</another></bar></foo>
+	<foo that="1">Hello</foo>
+</Wierd>

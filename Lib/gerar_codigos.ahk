@@ -129,7 +129,7 @@ if(_error = 0){
 	MsgBox,16,, % "Os codigos NAO foram gerados!!"
 }
 db.load_codigos_combobox(codtable)
-Promto.number_of_items()
+main_view.set_code_number(promto_node.get_number_of_items()) 
 return 
 
 parar_gerar_codigo(){

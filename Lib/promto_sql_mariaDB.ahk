@@ -489,9 +489,9 @@ class PromtoSQL{
 	correct_todas_ordems(info){
 		Global mariaDB,db
 
-		for, each, tipo in ["prefixo", "oc", "odc", "odr", "odi"]{
-			tabela_ordem := get_tabela_ordem(tipo, info) 
-			db.correct_tabela_ordem(tipo, info)
+		for, each, order_type in ["prefixo", "oc", "odc", "odr", "odi"]{
+			tabela_ordem := promto_node.get_order_table(order_type) 
+			db.correct_tabela_ordem(order_type, info)
 		}
 	}
 

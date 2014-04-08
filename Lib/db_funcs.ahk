@@ -12,7 +12,7 @@ Class DB {
 			Pega o prefixo do codigo
 		*/
 		prefixbloq := ""
-		prefixbloq := get_prefixbloq(info) 
+		prefixbloq := promto_node.prefix_in_order() 
 
 		/*
 			testa a conecao

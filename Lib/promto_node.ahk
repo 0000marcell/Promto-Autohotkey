@@ -3,55 +3,8 @@ Class PromtoNode{
 
 	}
 
-	/*
-		Funcao que pega valores 
-		referentes a treeview da janela principal
-	*/
-	get_tv_info(type, ignore_error = 0, window = "M", treeview = "main_tv", starting_id = "", same_window = ""){
-		Global ETF_hashmask
-
-
-		if(same_window != ""){
-			tv_level := get_tv_level(same_window, treeview)	
-		}else{
-			tv_level := get_tv_level(window, treeview)	
-		}
-		
-
-		if(tv_level = ""){
-			MsgBox,16,Erro, % "Nao existia nenhum item selecionado na treeview"
-		}
-		if(type = "subfamily" && tv_level != 4){
-			if(ignore_error = 0)
-				MsgBox,16,Erro, % "a selecao nao esta em nivel suficiente para retornar valores de family"
-		}
-		if(type = "family" && tv_level != 3 && tv_level != 4){
-			if(ignore_error = 0)
-				MsgBox,16,Erro, % "a selecao nao esta em nivel suficiente para retornar valores de family"
-		}
-		if(type = "type" && tv_level < 2){
-			if(ignore_error = 0)
-				MsgBox,16,Erro, % "a selecao nao esta em nivel suficiente para retornar valores de type"
-		}
-
-		return_values := []
-		if(same_window = ""){
-			Gui, %window%:Default
-		}else{
-			Gui, %same_window%:Default
-		}
-		
-		Gui, Treeview, %treeview%
-
-		if(starting_id = ""){
-			id := TV_GetSelection()
-		}else{
-			id := starting_id 
-			tv_level--
-		}
-		
-
-		if(type = "subfamily"){
+	get_tv_value(type_tv){
+		if(type_tv = "subfamily"){
 			if(tv_level = 4){
 				TV_GetText(name, id)
 				return_values.name := name
@@ -59,8 +12,7 @@ Class PromtoNode{
 			}
 		}
 
-		if(type = "family"){
-
+		if(type_tv = "family"){
 			if(tv_level = 4){
 				parent_id := TV_GetParent(id)
 				TV_GetText(name, parent_id)
@@ -74,8 +26,7 @@ Class PromtoNode{
 			}
 		}
 
-		if(type = "type"){
-			
+		if(type_tv = "type"){
 			if(tv_level = 4){
 				super_id := TV_GetParent(id)
 				parent_id := TV_GetParent(super_id)
@@ -83,14 +34,12 @@ Class PromtoNode{
 				return_values.name := name
 				return_values.mask := ETF_hashmask[name]
 			}
-
 			if(tv_level = 3){
 				parent_id := TV_GetParent(id)
 				TV_GetText(name, parent_id)
 				return_values.name := name
 				return_values.mask := ETF_hashmask[name]
 			}
-
 			if(tv_level = 2){
 				TV_GetText(name, id)
 				return_values.name := name
@@ -98,7 +47,7 @@ Class PromtoNode{
 			}
 		}
 
-		if(type = "company"){
+		if(type_tv = "company"){
 			if(tv_level = 4){
 				ultra_id := TV_GetParent(id)
 				super_id := TV_GetParent(ultra_id)
@@ -132,12 +81,50 @@ Class PromtoNode{
 		return return_values
 	}
 
+	get_tv_info(type_tv, ignore_error = 0, window = "M", treeview = "main_tv", starting_id = "", same_window = ""){
+		Global ETF_hashmask
+
+
+		if(same_window != ""){
+			tv_level := TV.get_tv_level(same_window, treeview)	
+		}else{
+			tv_level := TV.get_tv_level(window, treeview)	
+		}
+		
+
+		if(tv_level = ""){
+			MsgBox,16,Erro, % "Nao existia nenhum item selecionado na treeview"
+			return 
+		}
+
+		return_values := []
+		if(same_window = ""){
+			Gui, %window%:Default
+		}else{
+			Gui, %same_window%:Default
+		}
+		
+		Gui, Treeview, %treeview%
+
+		if(starting_id = ""){
+			id := TV_GetSelection()
+		}else{
+			id := starting_id 
+			tv_level--
+		}
+		
+		/*
+			Get the determined value in the TV
+		*/
+		return this.get_tv_value(type_tv)
+	}
+
 	get_node_info(window = "M", lv = "MODlv", treeview = "main_tv", starting_id = "", same_window = ""){
 		
-		company := get_tv_info("company", 0, "M", treeview, starting_id, same_window)
-		type := get_tv_info("type", 1, "M", treeview, starting_id, same_window)
-		family := get_tv_info("family", 1, "M", treeview, starting_id, same_window)
-		subfamily := get_tv_info("subfamily", 1, "M", treeview, starting_id, same_window)
+		company := this.get_tv_info("company", 0, "M", treeview, starting_id, same_window)
+		type := this.get_tv_info("type", 1, "M", treeview, starting_id, same_window)
+		family := this.get_tv_info("family", 1, "M", treeview, starting_id, same_window)
+		subfamily := this.get_tv_info("subfamily", 1, "M", treeview, starting_id, same_window)
 
 		/*
 			Get the select model in the listview
@@ -160,26 +147,52 @@ Class PromtoNode{
 		return info 	
 	}
 
-
-
-	/*
-		Get the number of items (codes)
-	*/ 
 	get_number_of_items(){
-		noi_prefixo := info.company[2] info.type[2] info.family[2] info.subfamily[2] info.modelo[2]
-		codigos_a := db.load_table_in_array(this.get_prefix "Codigo")
+		Global db
+		codes := db.load_table_in_array(this.prefix() "Codigo")
+		return codes.MaxIndex()
 	}
 
-	get_order_table(type){
-
+	get_order_table(table_type){		
+		Global db
+		return db.get_reference(table_type, this.id())
 	}
 
-	/*
-		Get the node prefix
-		without the model name
-	*/
-	get_prefix(){
-		this.get_node_info()
+	prefix(){
+		info := this.get_node_info()
+		prefix := 
+		(JOIN
+			info.company[2] 
+			info.type[2] 
+			info.family[2] 
+			info.subfamily[2] 
+			info.model[2] 
+		)
+		return prefix
+	}
 
+	prefix_in_order(){
+		Global db
+		
+		order := db.load_table_in_array(this.prefix() "prefixo")
+		
+		for, each, value in order
+			return_value .= order[A_Index, 2]
+		
+		return return_value
+	}
+
+	id(){
+		info := this.get_node_info()
+		id := 
+		(JOIN
+			info.company[2] 
+			info.type[2] 
+			info.family[2] 
+			info.subfamily[2] 
+			info.model[2]
+			info.modelo[1] 
+		)
+		return id 
 	}
 }

@@ -165,7 +165,7 @@ class PromtoHTML{
 			"`t<head>`n<title>" model_name "</title>`n"
 			"`t</head>`n`t<body>`n"
 			"`t<div class='model-page'>`n"
-			"`t`t<img src=" image_path " class='large-image'>`n"
+			"`t`t<img src=..\" image_path " class='large-image'>`n"
 			"<h1>" model_name "</h1>`n"
 			"<div class='code-container'>" 
 		)

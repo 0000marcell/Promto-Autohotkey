@@ -245,7 +245,7 @@ Menu, main_menu_bar, Add, &Usuarios, :users_menu
 Menu, main_menu_bar, Add, &Listas, :list_menu
 Menu, main_menu_bar, Color, White
 Gui, Menu, main_menu_bar
-Gui, Show, w1000 h700 , %FamiliaName%
+Gui, Show,, %FamiliaName%
 
 Gui, Listview, MODlv
 LV_ModifyCol(2,300) 

@@ -2875,7 +2875,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 		return 
 }
 
-
+#include, lib\gdip_all.ahk
 #include, lib\promto_sql_mariaDB.ahk
 #include, models\remover_item_ETF.ahk
 #include <promtolib>

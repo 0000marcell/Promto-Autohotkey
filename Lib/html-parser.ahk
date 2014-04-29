@@ -5,17 +5,26 @@ class PromtoHTML{
 		this.date := A_DD "/" A_MM "/" A_YYYY " as " A_Hour ":" A_Min
 		FileCopyDir, % "\\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens",% "html\promto_imagens", 1
 		FileDelete, % this.file_path
-		FileAppend, % "<!DOCTYPE html>`n`t<html>`n`t<link rel='stylesheet' type='text/css' href='test.css'>`n`t<head>`n<title>Promto</title>`n`t</head>`n`t<body>`n`t`t<h2>Ultima modificacao:" this.date "</h2>`n`t<img src='promtologo.jpg' style='margin-left:40%;'>`n`t<nav>`n`t<ul>`n`t<li>", % this.file_path
+		FileAppend, % "<!DOCTYPE html>`n`t<html>`n`t<link rel='stylesheet' type='text/css' href='css/main.css'>`n`t<head>`n<title>Promto</title>`n`t</head>`n`t<body>`n`t`t<h2>Ultima modificacao:" this.date "</h2>`n`t<img src='promtologo.jpg' style='margin-left:40%;'>`n`t<nav>`n`t<ul>`n`t<li>", % this.file_path
 	}
 
 	;Recebe a string usada para montar o diagrama de arvore e 
 	;transforma no html
 	generate(string, hash_mask){
+		reset_debug()
 		StringSplit, items, string, `n,
 		prev_item_tab_count := 0
 		prefix_array := []
 		Loop, % items0
 		{
+
+			/*
+				limite para teste
+			*/
+			if(A_Index = 5){
+				Break
+			}
+
 			if(items%A_Index% = "")
 				Continue
 			StringSplit, tab_count, items%A_Index%, `t,
@@ -161,14 +170,36 @@ class PromtoHTML{
 		(JOIN
 			"<!DOCTYPE html>" 
 			"`n`t<html>`n"
-			"`t<link rel='stylesheet' type='text/css' href='../test.css'>`n"
+			"`t<link rel='stylesheet' type='text/css' href='../css/main.css'>`n"
 			"`t<head>`n<title>" model_name "</title>`n"
+			"`t<script  src='../js/jquery.js'></script>`n"
+			"<script  src='../js/custom.js'></script>`n"
+		  "`t<script  src='../js/colResizable-1.3.min.js'></script>`n"
+		  "`t<script type='text/javascript'>`n"
+			"$(function(){`n"	
+				"var onSampleResized = function(e){`n"
+					"var columns = $(e.currentTarget).find('th');`n"
+					"var msg = 'columns widths: ';`n"
+					"columns.each(function(){ msg += $(this).width() + 'px; '; })`n"
+					"$('#sample2Txt').html(msg);`n"
+				"};`n"
+				"$('#sample2').colResizable({`n"
+					"liveDrag:true," 
+					"gripInnerHtml:""<div class='grip'></div>""," 
+					"draggingClass:""dragging""," 
+					"onResize:onSampleResized});"	
+			"});`n"	
+		  "</script>`n"
 			"`t</head>`n`t<body>`n"
 			"`t<div class='model-page'>`n"
-			"<h2>Ultima modificacao:" this.date "</h2>"
+			"`t<div class='info-panel'>`n"
+			""
+			"<h2>Ultima modificacao:" this.date "</h2>`n"
 			"`t`t<img src='..\" image_path "' class='large-image'>`n"
 			"<h1>" model_name "</h1>`n"
-			"<div class='code-container'>" 
+			"<h2>Ultimas Atualizacoes:</h2>`n"
+			"<h2>Ultimas Atualizacoes:</h2>`n"
+			"<div class='code-container'>`n" 
 		)
 		FileAppend, % html_piece, % path model_mask ".html"
 		
@@ -196,10 +227,12 @@ class PromtoHTML{
 			}
 			FileAppend, % html_piece, % path model_mask ".html"
 		}
+
 		html_piece := 
 		(JOIN 
 			"<div class='code-item'>`n"
 			"`t`t<h2>" model_mask "</h2>`n"
+			"</div>`n"
 			"</div>`n"
 		)	
 		FileAppend, % html_piece, % path model_mask ".html"
@@ -245,12 +278,88 @@ class PromtoHTML{
 				"</select>`n"
 				"</div>`n"
 				"</div>`n"
-				"</div>`n"
-				"</div>`n"
 			) 
 			FileAppend, % html_piece, % path model_mask ".html"
 		}
 
+		/*
+			Insere a lista de codigos
+		*/
+		append_debug("prefixo : " prefix model_mask "Codigo")
+		code_array := db.load_table_in_array(prefix model_mask "Codigo")
+		html_piece :=
+		(JOIN 
+			"`t<h2>Numero de modelos:" code_array.MaxIndex() "<h2>`n" 
+		)
+		FileAppend, % html_piece, % path model_mask ".html"
+
+		html_piece := 
+		(JOIN
+			"<br></br>`n"
+			"<div class='center' >`n"
+			"`t<table id='sample2' width='100%' border='0' cellpadding='0' cellspacing='0'>`n"
+			"`t<tr>`n"
+				"`t<th>Codigo</th><th>Descricao Completa</th><th>Descricao resumida</th>`n"			 
+			"`t</tr>`n"
+		)
+		FileAppend, % html_piece, % path model_mask ".html"
+
+		
+		for, each, value in code_array{
+			/*
+				verifica se e o ultimo item
+			*/
+			if(code_array[A_Index, 1] = "")
+				Continue
+			if(A_Index != code_array.MaxIndex()){
+				left_class := "left", right_class := "right" 
+			}else{
+				left_class := "left bottom", right_class := "bottom right"
+			}
+			html_piece :=
+			(JOIN
+				"`t<tr>`n"
+				"`t<td class='" left_class "'>" code_array[A_Index, 1] "</td><td>" code_array[A_Index, 2] "</td><td class='" right_class "'>" code_array[A_Index, 3] "</td>`n"
+				"`t</tr>`n" 
+			)
+			FileAppend, % html_piece, % path model_mask ".html"
+		}
+		
+		html_piece :=
+		(JOIN 																		
+			"`t</table>`n"
+			"`t<br/><br/>`n"
+			"`t</div>`n"
+		)
+		FileAppend, % html_piece, % path model_mask ".html"
+
+		html_piece :=
+		(JOIN
+			"</div>`n"
+			"</div>`n"
+			"</div>`n"
+			"</div>`n" 
+		)
+		FileAppend, % html_piece, % path model_mask ".html"
+	}
+
+	get_log(){
+		Global db
+
+		items := db.Log.get_mod_info(info)
+		for, each, item in Items{
+		  hash := hashify(items[A_Index, 3])
+			return_hash.usuario := items[A_Index, 2]
+			return_hash.modelo := hash.modelo 
+			return_hash.data := items[A_Index, 4]
+			return_hash.hora := items[A_Index, 5]
+			return_hash.mensagem := items[A_Index, 6]
+			mensagem .= items[A_Index, 6] "`n"
+			Break
+		} 
+		return_hash := {}
+
+		return 
 	}
 }
 

@@ -278,7 +278,6 @@ class Imagem{
 
 	get_image_full_path(tabela1){
 		Global mariaDB, global_image_path
-
 		
 		rs := mariaDB.OpenRecordSet(
 			(JOIN 

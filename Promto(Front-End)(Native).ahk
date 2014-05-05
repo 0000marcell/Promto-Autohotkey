@@ -454,12 +454,17 @@ return
 	return  
 
 	plotcode:
+	info := get_item_info("M", "MODlv")
+	Print.product_list(info)
+
+	/*
 	Gui,escolha_plotcode:New
 	Gui,font,s%SMALL_FONT%,%FONT% 
 	Gui,add,button,w100 gplotar_esse_item,Imprimir item marcado
 	Gui,add,button,x+5 w100 gplotar_todos_os_items,Imprimir todos os items 
 	Gui,add,button,xm y+5 w100 gplotar_todos_os_items_em_lista,Imprimir lista com todos os items 
 	Gui,Show,,Imprimir Escolha
+	*/
 	return 
 
 	plotar_todos_os_items_em_lista:
@@ -2875,6 +2880,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 		return 
 }
 
+#include, lib\print_funcs.ahk
 #include, lib\gdip_all.ahk
 #include, lib\promto_sql_mariaDB.ahk
 #include, models\remover_item_ETF.ahk

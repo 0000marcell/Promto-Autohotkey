@@ -56,7 +56,7 @@ lista_de_codigos(info){
 	carregartabela:
 	FileDelete,temp.csv 
 	for each, value in Listpesqcod{
-		FileAppend, % Listpesqcod[A_Index,1] ";" Listpesqcod[A_Index,2] "`n",temp.csv	
+		FileAppend, % Listpesqcod[A_Index,1] ";" Listpesqcod[A_Index,2] ";" Listpesqcod[A_Index,3] ";" Listpesqcod[A_Index,4]  "`n",temp.csv	
 	}
 	Run,temp.csv		
 	return

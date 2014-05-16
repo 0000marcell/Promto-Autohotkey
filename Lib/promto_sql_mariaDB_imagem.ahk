@@ -230,9 +230,16 @@ class Imagem{
 				" WHERE tipo like 'image' "
 				" AND tabela1 like '" tabela1 "'"
 			))
+
 		reference_table := rs.tabela2
 		rs.close()
-		return reference_table
+
+		image_id := this.get_image_id(reference_table)
+		if(image_id = "")
+			image_id := 0
+
+		image_path := "promto_" image_id
+		return image_path
 	}
 
 	/*

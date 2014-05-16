@@ -45,10 +45,12 @@ class Status{
 		Pega o status 
 		de determinado item
 	*/
-	get_status(info){
+	get_status(info, ProdKey = "blank"){
 		Global mariaDB, db
 
-		Prodkey := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2]
+		if(ProdKey = "blank"){
+			Prodkey := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2]	
+		}
 		items := db.find_items_where("Prodkey like '" Prodkey "'", "status")
     return items
 	}

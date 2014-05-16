@@ -170,7 +170,7 @@ load_main_tv()
 Gui, Add, Groupbox, xm y+20 w230 h60, Opcoes
 Gui, Add, Button, xp+25 yp+15 w100 h30 ginsert_empresa, Criar Empresa 
 Gui, Add, Button, x+5 w40 h30 hwndhBtn grecarregar_main_tv
-Gui, Add, Button, x+t w40 h30 gHTML, HTML
+;Gui, Add, Button, x+t w40 h30 gHTML, HTML
 ILButton(hBtn, "promtoshell.dll:" 5, 32, 32, 0)
 
 /*
@@ -238,11 +238,12 @@ Menu, update_menu, Add, Atualizar, make_update
 Menu, backup_menu, Add, Fazer Back up, make_back_up
 Menu, users_menu, Add, Usuarios, manager_users
 Menu, list_menu, Add, Listas, list_options
+Menu, xml_menu, Add, XML, xml
 Menu, backup_menu, Add, Carregar Back up, load_back_up
 Menu, main_menu_bar, Add, &Atualizar, :update_menu
 Menu, main_menu_bar, Add, &Back up, :backup_menu
 Menu, main_menu_bar, Add, &Usuarios, :users_menu
-Menu, main_menu_bar, Add, &Listas, :list_menu
+Menu, main_menu_bar, Add, &XML, :xml_menu
 Menu, main_menu_bar, Color, White
 Gui, Menu, main_menu_bar
 Gui, Show,, %FamiliaName%
@@ -260,6 +261,10 @@ return
 list_options:
 list_options_view()
 return
+
+xml:
+generate_xml_view()
+return 
 
 HTML:
 generate_html_view()
@@ -2881,6 +2886,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 }
 
 #include, lib\print_funcs.ahk
+#include, lib\promto_xml.ahk
 #include, lib\gdip_all.ahk
 #include, lib\promto_sql_mariaDB.ahk
 #include, models\remover_item_ETF.ahk
@@ -2896,6 +2902,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 /*
 	Views
 */
+#include, views/generate_xml_view.ahk
 #include, views/inserir_campos_view.ahk
 #include, views/inserir_ETF_view.ahk
 #include, views/inserir_modelo_view.ahk

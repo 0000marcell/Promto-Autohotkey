@@ -32,10 +32,12 @@ class Log{
     mariaDB.Insert(record, "log")
 	}
 
-	get_mod_info(info){
+	get_mod_info(info, Prodkey = "blank"){
 		Global db
 
-		Prodkey := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2]
+		if(Prodkey = "blank"){
+			Prodkey := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2]	
+		}
 		items := db.find_items_where("Prodkey like '" Prodkey "' ORDER BY id DESC limit 5", "log")
 		return items 
 	}

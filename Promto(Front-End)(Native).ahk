@@ -62,11 +62,6 @@ db := new PromtoSQL(
 		db_location
 	))
 
-/*
-	Resetando as 
-	duas strings que quardao as 
-	treeviews.
-*/
 GLOBAL_TVSTRING := ""
 ETF_TVSTRING := ""
 S_ETF_hashmask := {}
@@ -170,6 +165,7 @@ load_main_tv()
 Gui, Add, Groupbox, xm y+20 w230 h60, Opcoes
 Gui, Add, Button, xp+25 yp+15 w100 h30 ginsert_empresa, Criar Empresa 
 Gui, Add, Button, x+5 w40 h30 hwndhBtn grecarregar_main_tv
+
 ;Gui, Add, Button, x+t w40 h30 gHTML, HTML
 ILButton(hBtn, "promtoshell.dll:" 5, 32, 32, 0)
 

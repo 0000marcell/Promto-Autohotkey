@@ -1,36 +1,25 @@
-prefixo : MN003Codigo
-prefixo : MN004Codigo
-prefixo : MN018Codigo
-prefixo : MN023Codigo
-prefixo : MN075Codigo
-prefixo : MN155EXCodigo
-prefixo : MN436Codigo
-prefixo : MN502Codigo
-prefixo : MN503Codigo
-prefixo : MN505Codigo
-prefixo : MN506Codigo
-prefixo : MN507Codigo
-prefixo : MN508Codigo
-prefixo : MN509Codigo
-prefixo : MN510Codigo
-prefixo : MN511Codigo
-prefixo : MN513Codigo
-prefixo : MN514Codigo
-prefixo : MN515Codigo
-prefixo : MN516Codigo
-prefixo : MN517Codigo
-prefixo : MN518Codigo
-prefixo : MN519Codigo
-prefixo : MN520Codigo
-prefixo : MN55EXGCodigo
-prefixo : MNA1Codigo
-prefixo : MNA2Codigo
-prefixo : MNFH800Codigo
-prefixo : MNHFL010EXCodigo
-prefixo : MNHPL10EXCodigo
-prefixo : MNHWCCodigo
-prefixo : MNHWC2000Codigo
-prefixo : MNL303Codigo
-prefixo : MNL75Codigo
-prefixo : MNMK01Codigo
-prefixo : MNPSD001Codigo
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.EXN.002
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.EXN.003
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.EXN.006
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.EXD.007
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.EXD.008
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.EXN.009
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.EXN.021
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.EXN.101
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.EXN.103
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.EXN.104
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.EXN.105
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.EXD.044
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.EXN.545
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.TGVP.901
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.TGVP.903
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.TGVP.904
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.TGVP.905
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.TGVP.907
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.TGVP.908
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.TGVP.909
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.TGVP.911
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.TGVP.917
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.TGVP.920
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.TGVP.921
+image_path ..\img\promto_imagens\promto_0.jpg item_name TL.P.TGVP.922

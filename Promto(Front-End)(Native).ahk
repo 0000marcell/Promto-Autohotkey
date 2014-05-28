@@ -505,13 +505,13 @@ return
 	return
 
 	plotar_esse_item:
-	selecteditem:=GetSelected("M","MODlv")
-	currentvalue:=GetSelectedRow("M","MODlv")
+	selecteditem:=GetSelected("M", "MODlv")
+	currentvalue:=GetSelectedRow("M", "MODlv")
 	selectmodel:=selecteditem
 	result:=db.query("SELECT Mascara FROM " . modtable . " WHERE Modelos='" . selecteditem . "'")
 	ModeloMascara:=result["Mascara"]
 	prefixpt2:=""
-	for,each,value in list:=db.getvalues("Campos",EmpresaMascara AbaMascara FamiliaMascara ModeloMascara "prefixo"){
+	for,each,value in list := db.getvalues("Campos",EmpresaMascara AbaMascara FamiliaMascara ModeloMascara "prefixo"){
 		prefixpt2.=list[A_Index,1]	
 	} 
 	StringReplace,prefixpt2,prefixpt2,% currentvalue[2],,All
@@ -540,7 +540,7 @@ return
 		MsgBox, % checkeditems["code"].maxindex()
 		FileAppend,% "G1_COD;G1_COMP;G1_QUANT;G1_INI;G1_FIM;G1_FIXVAR;G1_REVFIM;G1_NIV;G1_NIVINV`n", dadosestrutura.csv
 		already_in_structure := ""
-		number_of_parents:=0
+		number_of_parents := 0
 		for,each,value in checkeditems["code"]{
 			loadestruturatofile(checkeditems["code",A_Index] ">>" checkeditems["desc",A_Index])
 		}
@@ -2898,6 +2898,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 /*
 	Views
 */
+#Include, views/rem_massa_view.ahk
 #include, views/generate_xml_view.ahk
 #include, views/inserir_campos_view.ahk
 #include, views/inserir_ETF_view.ahk
@@ -2936,6 +2937,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 /*
 	Controllers
 */
+#Include, controllers/rem_massa_controller.ahk
 #include, controllers/db_ex_controller.ahk
 #include, controllers/inserir_valores_controller.ahk
 #include, controllers/inserir_bloqueio_controller.ahk

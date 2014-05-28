@@ -59,4 +59,33 @@ class Estrutura{
 			return False
 		}
 	}
+
+	/*
+	 Remover
+	*/
+	remover(item, componente){
+		Global mariaDB
+
+		AHK.append_debug("inside method to remove the item " item " componente " componente)
+		
+		if(item = ""){
+			MsgBox, 16, Erro, % " O item a ser excluido nao pode estar em branco !"
+			return
+		}
+
+		if(componente = ""){
+			MsgBox, 16, Erro, % " O componente nao pode estar em branco !"
+			return
+		}
+
+		try{
+			mariaDB.Query(
+			(JOIN 
+				" DELETE FROM estruturas "
+				" WHERE item like '" item "' AND "
+				" componente like '%" componente "%'"
+			))	
+		}catch e 
+			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de empresas " ExceptionDetail(e)
+	}
 }

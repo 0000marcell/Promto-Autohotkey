@@ -1881,29 +1881,37 @@ DrawDottedLine(sx,sy,ex,ey){
 	}
 }
 
-GetCheckedRows2(wName="",lvName=""){
-	;MsgBox, % wName "  " lvName
-	if(wName!="")
-		Gui,%wName%:default
-	if(lvName!="")
-		Gui,listview,%lvName%
-	result:={}
-	RowNumber = 0  ; This causes the first loop iteration to start the search at the top of the list.
+GetCheckedRows2(wName = "", lvName = ""){
+	
+	AHK.append_debug("get checked rows wname " wName " lvName " lvName)
+
+	if(wName != "")
+		Gui, %wName%:default
+
+	if(lvName != "")
+		Gui, listview, %lvName%
+
+	result := {}
+	RowNumber = 0  
+	
 	Loop
 	{ 
-	    RowNumber := LV_GetNext(RowNumber,"Checked")  ; Resume the search at the row after that found by the previous iteration.
-	    if not RowNumber  ; The above returned zero, so there are no more selected rows.
-	        break
-	    LV_GetText(Text, RowNumber)
-	    LV_GetText(Desc, RowNumber,2)
-	    result["code",A_Index]:=Text
-	    result["desc",A_Index]:=Desc
+    RowNumber := LV_GetNext(RowNumber, "Checked")  ; Resume the search at the row after that found by the previous iteration.
+    if not RowNumber  ; The above returned zero, so there are no more selected rows.
+     break
+
+    LV_GetText(Text, RowNumber)
+    LV_GetText(Desc, RowNumber,2)
+    AHK.append_debug("result code " Text " desc " Desc " index " A_Index)
+    result["code", A_Index] := Text
+    result["desc", A_Index] := Desc
 	}
+
 	return result
 }
 
 GetCheckedRows(wName="",lvName=""){
-	;Global 
+
 	Local returnValue
 	if(wName!=""){
 		Gui,%wName%:default
@@ -2620,7 +2628,9 @@ format_file_name(file_name){
 load_mod_info(){
 	Global db, info
 
+	
 	items := db.Log.get_mod_info(info)
+
 	for, each, item in Items{
 	  usuario := items[A_Index, 2]
 	  hash := hashify(items[A_Index, 3])

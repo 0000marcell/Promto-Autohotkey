@@ -24,7 +24,7 @@ estruturas_view(){
 	Gui, Add, Button, xm w100 h30 gimprimirestrut,Imprimir Estruturas!!
 	Gui, Add, Button, x+250  w100 h30 gaddmassa, Add em Massa
 	Gui, Add, Button, x+5  w100 h30 gaddquantidademassa, Add Quantidade em Massa
-	Gui, Add, Button, x+5 w100 h30 gremmassa,Remover em Massa 
+	Gui, Add, Button, x+5 w100 h30 gremmassa, Remover em Massa 
 	Gui, Add, Button, x+5 w100 h30 gmarctodos, Marc.Todos!
 	Gui, Add, Button, x+5 w100 h30 gdesmarctodos,Des.Marc.Todos!
 	Gui, Add, Button, x+5 w100 h30 gexcluirestrut,Excluir estrutura!
@@ -75,9 +75,11 @@ estruturas_view(){
 	return 
 
 	remmassa:
+	rem_massa_view()
 	return
 
 	marctodos:
+	check_all("massaestrut", "lv1")
 	return 
 
 	desmarctodos:

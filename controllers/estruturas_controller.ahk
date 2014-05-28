@@ -149,24 +149,6 @@ quantidade := input_mascara
 db.Estrutura.inserir_quantidade(item, componente, quantidade)
 return
 
-rem_massa(){
-	Global
-
-	checkedremmassa:=GetCheckedRows2("massaestrut","estrutlv")
-	if(checkedremmassa["code"]=""){
-		MsgBox,64,, % "Marque os codigos das estruturas que deseja apagar items!!"
-		return 
-	}
-	Gui,remmassa:New
-	Gui,font,s%SMALL_FONT%,%FONT%
-	;Gui,remmassa:+toolwindow
-	Gui,color,%GLOBAL_COLOR%
-	Gui,add,text,xm cred w250 ,codigo do item a ser removido:
-	Gui,add,edit,xm y+5 w250 r1 vremedit uppercase
-	Gui,add,button,xm y+5 w100 h30 gremmassabutton,Remover!!
-	Gui,Show,,Remover em massa!!!
-}
-
 marc_todos(){
 	Global
 	

@@ -264,9 +264,7 @@ add_componente_marcado(){
 	}
 
 	for,each,value in checked_items["code"]{
-
 		item := checked_items["code", A_Index]
-		
 		if(item = "")
 			Continue
 		for, each, value in checked_componentes["code"]{
@@ -278,5 +276,60 @@ add_componente_marcado(){
 	}
 	MsgBox, 64, Sucesso, % "Os items foram inseridos!" 
 }
+
+remove_strut(){
+	Global
+
+	checked_items := GetCheckedRows2("massaestrut","lv1")
+	MsgBox, 4,, % "tem certeza que deseja excluir " checked_items.maxindex() " estrutura(s)."  
+	IfMsgBox Yes
+	{
+		for, each, value in checked_items["code"]{
+			item := checked_items["code", A_Index]
+			db.Estrutura.remove_strut(item)
+		}
+		MsgBox, 64, Sucesso, % "todos os items foram deletados com sucesso!"
+	}else{	
+	}
+}
+
+remove_componente(item, componente){
+	Global 
+
+	if(item = ""){
+		MsgBox, 16, Erro, % "Selecione um item a ser excluido!"
+		return 
+	}
+
+	if(componente = ""){
+		MsgBox, 16, Erro, % " Selecione um componente a ser excluido!" 
+	}
+
+	if(db.Estrutura.remove_componente(item, componente)){
+		return true
+	}else{
+		return false
+	}
+}
+
+export_strut(){
+	Global db
+
+	checked_items := GetCheckedRows2("massaestrut","estrutlv")
+	
+	if(checked_items["code", 1] = ""){
+		MsgBox, % " Marque um item antes de exportar!"
+		return
+	}
+
+	FileDelete, % "temp\export_strut.csv"
+	for, each, value in checked_items["code"]{
+		item := checked_items["code", A_Index]
+		db.Estrutura.export_strut(item)
+	}
+	MsgBox, 64, Sucesso, % "Os items foram exportados!"
+	run, % "temp\export_strut.csv"
+}
+
 
 			

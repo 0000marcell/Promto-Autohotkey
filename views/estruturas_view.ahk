@@ -1,15 +1,10 @@
 estruturas_view(){
 	Global
 
-	;if(_reload_gettable = True ){    ; Variavel utilizada para saber se a tabela de formacao de estrutura precisa ser recaregada
-	;	GLOBAL_TVSTRING := ""
-	;	gettable("empresa",0,"","")
-	;	_reload_gettable := False 
-	;}
-
 	/* 
 		Gui init
 	*/
+
 	Gui,massaestrut:New
 	Gui, Font,s%SMALL_FONT%, %FONT%
 	Gui,massaestrut:+ownerM
@@ -27,7 +22,7 @@ estruturas_view(){
 	Gui, Add, Button, x+5 w100 h30 gremmassa, Remover em Massa 
 	Gui, Add, Button, x+5 w100 h30 gmarctodos, Marc.Todos!
 	Gui, Add, Button, x+5 w100 h30 gdesmarctodos,Des.Marc.Todos!
-	Gui, Add, Button, x+5 w100 h30 gexcluirestrut,Excluir estrutura!
+	Gui, Add, Button, x+5 w100 h30 gexcluirestrut, Excluir estrutura!
 	Gui, Add, Button, x+5 w100 h30 gexcluiritemestrut,Excluir item!
 	Gui, Add, Button, x+5 w100 h30 gexportarestrut,Exportar estruturas!! 
 	TvDefinition =
@@ -45,7 +40,7 @@ estruturas_view(){
 	return
 
 	pesquisarlv:
-	Gui,submit,nohide
+	Gui, Submit, Nohide
 	any_word_search("massaestrut", "lv1", pesquisarlv, Listestrut)
 	return
 
@@ -58,12 +53,22 @@ estruturas_view(){
 	return
 
 	excluirestrut:
+	remove_strut()
 	return 
 
 	excluiritemestrut:
+	Gui, Submit, Nohide
+	TV_GetText(componente, TV_GetSelection())
+	parent := TV_GetParent(TV_GetSelection())
+	TV_GetText(item, parent)
+	if(remove_componente(item, componente)){
+		TV_Delete(TV_GetSelection())	
+	}
 	Return
 
 	exportarestrut:
+	AHK.reset_debug()
+	export_strut()
 	return
 	
 	addmassa:
@@ -83,6 +88,7 @@ estruturas_view(){
 	return 
 
 	desmarctodos:
+	uncheck_all("massaestrut", "lv1")
 	return 
 
 	tvaddmass:

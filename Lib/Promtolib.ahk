@@ -1882,8 +1882,6 @@ DrawDottedLine(sx,sy,ex,ey){
 }
 
 GetCheckedRows2(wName = "", lvName = ""){
-	
-	AHK.append_debug("get checked rows wname " wName " lvName " lvName)
 
 	if(wName != "")
 		Gui, %wName%:default
@@ -1902,7 +1900,6 @@ GetCheckedRows2(wName = "", lvName = ""){
 
     LV_GetText(Text, RowNumber)
     LV_GetText(Desc, RowNumber,2)
-    AHK.append_debug("result code " Text " desc " Desc " index " A_Index)
     result["code", A_Index] := Text
     result["desc", A_Index] := Desc
 	}

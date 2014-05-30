@@ -790,7 +790,7 @@ class PromtoSQL{
 	*/
 	get_estrut_items(item){
 		Global mariaDB
-  
+
 		return_value := []
 		return_value := this.find_items_where("item like '" item "'", "estruturas")
 		return return_value

@@ -65,8 +65,6 @@ class Estrutura{
 	*/
 	remover(item, componente){
 		Global mariaDB
-
-		AHK.append_debug("inside method to remove the item " item " componente " componente)
 		
 		if(item = ""){
 			MsgBox, 16, Erro, % " O item a ser excluido nao pode estar em branco !"
@@ -86,6 +84,75 @@ class Estrutura{
 				" componente like '%" componente "%'"
 			))	
 		}catch e 
-			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de empresas " ExceptionDetail(e)
+			MsgBox,16,Erro,% " Erro ao tentar deletar o  " ExceptionDetail(e)
+	}
+
+	/*
+		Remove todos os items de determinada 
+		estrutura
+	*/
+	remove_strut(item){
+		Global mariaDB
+
+		if(item = ""){
+			MsgBox, 16, Erro, % " O item a ser excluido nao pode estar em branco !"
+			return
+		}
+
+		try{
+			mariaDB.Query(
+			(JOIN 
+				" DELETE FROM estruturas "
+				" WHERE item like '" item "'"
+			))	
+		}catch e 
+			MsgBox,16,Erro,% " Erro ao tentar deletar o item das tabelas de estrutura " ExceptionDetail(e)
+	}
+
+	/*
+	 Remove 
+	*/
+	remove_componente(item, componente){
+		Global mariaDB
+		
+		if(item = ""){
+			MsgBox, 16, Erro, % " O item a ser excluido nao pode estar em branco !"
+			return
+		}
+
+		if(componente = ""){
+			MsgBox, 16, Erro, % " O componente nao pode estar em branco !"
+			return
+		}
+
+		try{
+			mariaDB.Query(
+			(JOIN 
+				" DELETE FROM estruturas "
+				" WHERE item like '" item "' AND "
+				" componente like '" componente "'"
+			))	
+			return true
+		}catch e {
+			MsgBox, 16, Erro, % " Erro ao tentar deletar o componente " componente " do item " item " erro: `n" ExceptionDetail(e)
+			return false
+		}
+			
+	}
+
+	/*
+	 Exportar estrutrua para arquivo .csv
+	*/
+	export_strut(item){
+		Global db
+		
+		subitems := db.get_estrut_items(item)
+		AHK.append_debug("")
+		for, each, value in subitems{
+			if(subitems[A_Index, 2] = "")
+				Continue 
+			FileAppend, % item ";" subitems[A_Index, 2] ";" subitems[A_Index, 3] "`n", % "temp/export_strut.csv"
+			this.export_strut(subitems[A_Index, 2])
+		}
 	}
 }

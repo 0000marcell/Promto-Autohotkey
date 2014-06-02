@@ -98,7 +98,7 @@ class Empresa{
 				" WHERE Mascara like '" empresa_mascara "'"
 			))	
 		}catch e 
-			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de empresas " ExceptionDetail(e)
+			MsgBox, 16, Erro,% " Erro ao tentar deletar o valor da tabela de empresas " ExceptionDetail(e)
 		
 		/*
 			Deleta o valor da tabela de referencia
@@ -107,6 +107,7 @@ class Empresa{
 			MsgBox,16,Erro, % " O valor a ser deletado nao existia na tabela de referencia"
 			return
 		}
+		
 		/*
 			Pega o nome da tabela de referencia de abas
 		*/

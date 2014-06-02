@@ -67,6 +67,7 @@ estruturas_view(){
 	Return
 
 	exportarestrut:
+	MsgBox, % "export estrutura"
 	AHK.reset_debug()
 	export_strut()
 	return

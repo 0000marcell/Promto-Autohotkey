@@ -1,8 +1,390 @@
-gonna start items loop
-gonna export strut TL010122156AIE
-gonna get subitems of the item TL010122156AIE
 
-gonna get subitems of the item STL010222156ACS
-
-gonna get subitems of the item ITL010CJC2AI
-
+gonna delete the image img\formation.png
+gonna save the image pBitmap 68718448 imagename img\formation.png
+ gonna dispose the bitmap 68718448
+gonna delete the image img\formation.png
+gonna save the image pBitmap 127078024 imagename img\formation.png
+ gonna dispose the bitmap 127078024
+gonna delete the image img\formation.png
+gonna save the image pBitmap 127079704 imagename img\formation.png
+ gonna dispose the bitmap 127079704
+gonna delete the image img\formation.png
+gonna save the image pBitmap 127081384 imagename img\formation.png
+ gonna dispose the bitmap 127081384
+gonna delete the image img\formation.png
+gonna save the image pBitmap 127083064 imagename img\formation.png
+ gonna dispose the bitmap 127083064
+ gonna save the file temp TL.L.EXD.009.png
+gonna delete the image temp\TL.L.EXD.009.png
+gonna save the image pBitmap 127083904 imagename temp\TL.L.EXD.009.png
+ gonna dispose the bitmap 127083904
+gonna run the file temp\TL.L.EXD.009.png
+ gonna save the file temp TL.L.EXD.009.png
+gonna delete the image temp\TL.L.EXD.009.png
+gonna save the image pBitmap 127084744 imagename temp\TL.L.EXD.009.png
+ gonna dispose the bitmap 127084744
+gonna run the file temp\TL.L.EXD.009.png
+ gonna save the file temp TL.L.EXD.009.png
+gonna delete the image temp\TL.L.EXD.009.png
+gonna save the image pBitmap 127085584 imagename temp\TL.L.EXD.009.png
+ gonna dispose the bitmap 127085584
+gonna run the file temp\TL.L.EXD.009.png
+gonna delete the image img\formation.png
+gonna save the image pBitmap 127087264 imagename img\formation.png
+ gonna dispose the bitmap 127087264
+ gonna save the file temp TL.L.EXE.010.png
+gonna delete the image temp\TL.L.EXE.010.png
+gonna save the image pBitmap 127088104 imagename temp\TL.L.EXE.010.png
+ gonna dispose the bitmap 127088104
+gonna run the file temp\TL.L.EXE.010.png
+gonna delete the image img\formation.png
+gonna save the image pBitmap 127089784 imagename img\formation.png
+ gonna dispose the bitmap 127089784
+ gonna save the file temp TL.L.EXD.009.png
+gonna delete the image temp\TL.L.EXD.009.png
+gonna save the image pBitmap 127090624 imagename temp\TL.L.EXD.009.png
+ gonna dispose the bitmap 127090624
+gonna run the file temp\TL.L.EXD.009.png
+gonna delete the image img\formation.png
+gonna save the image pBitmap 127092304 imagename img\formation.png
+ gonna dispose the bitmap 127092304
+ gonna save the file temp TL.L.EXE.010.png
+gonna delete the image temp\TL.L.EXE.010.png
+gonna save the image pBitmap 128521640 imagename temp\TL.L.EXE.010.png
+ gonna dispose the bitmap 128521640
+gonna run the file temp\TL.L.EXE.010.png
+gonna delete the image img\formation.png
+gonna save the image pBitmap 128523320 imagename img\formation.png
+ gonna dispose the bitmap 128523320
+gonna delete the image img\formation.png
+gonna save the image pBitmap 40947992 imagename img\formation.png
+ gonna dispose the bitmap 40947992
+gonna delete the image img\formation.png
+gonna save the image pBitmap 41224712 imagename img\formation.png
+ gonna dispose the bitmap 41224712
+ gonna save the file temp tag.png
+gonna delete the image temp\tag.png
+gonna save the image pBitmap 41225552 imagename temp\tag.png
+ gonna dispose the bitmap 41225552
+gonna run the file temp\tag.png
+ gonna save the file temp tag.png
+gonna delete the image temp\tag.png
+gonna save the image pBitmap 41226392 imagename temp\tag.png
+ gonna dispose the bitmap 41226392
+gonna run the file temp\tag.png
+gonna delete the image img\formation.png
+gonna save the image pBitmap 41228072 imagename img\formation.png
+ gonna dispose the bitmap 41228072
+ gonna save the file temp tag.png
+gonna delete the image temp\tag.png
+gonna save the image pBitmap 41228912 imagename temp\tag.png
+ gonna dispose the bitmap 41228912
+gonna run the file temp\tag.png
+gonna delete the image img\formation.png
+gonna save the image pBitmap 41230592 imagename img\formation.png
+ gonna dispose the bitmap 41230592
+ gonna save the file temp tag.png
+gonna delete the image temp\tag.png
+gonna save the image pBitmap 41231432 imagename temp\tag.png
+ gonna dispose the bitmap 41231432
+gonna run the file temp\tag.png
+gonna delete the image img\formation.png
+gonna save the image pBitmap 115004400 imagename img\formation.png
+ gonna dispose the bitmap 115004400
+gonna delete the image img\formation.png
+gonna save the image pBitmap 115006080 imagename img\formation.png
+ gonna dispose the bitmap 115006080
+gonna delete the image img\formation.png
+gonna save the image pBitmap 115007760 imagename img\formation.png
+ gonna dispose the bitmap 115007760
+gonna delete the image img\formation.png
+gonna save the image pBitmap 115009440 imagename img\formation.png
+ gonna dispose the bitmap 115009440
+gonna delete the image img\formation.png
+gonna save the image pBitmap 115011120 imagename img\formation.png
+ gonna dispose the bitmap 115011120
+gonna delete the image img\formation.png
+gonna save the image pBitmap 115012800 imagename img\formation.png
+ gonna dispose the bitmap 115012800
+gonna delete the image img\formation.png
+gonna save the image pBitmap 114458752 imagename img\formation.png
+ gonna dispose the bitmap 114458752
+gonna delete the image img\formation.png
+gonna save the image pBitmap 114460432 imagename img\formation.png
+ gonna dispose the bitmap 114460432
+gonna delete the image img\formation.png
+gonna save the image pBitmap 114462112 imagename img\formation.png
+ gonna dispose the bitmap 114462112
+gonna delete the image img\formation.png
+gonna save the image pBitmap 114463792 imagename img\formation.png
+ gonna dispose the bitmap 114463792
+gonna delete the image img\formation.png
+gonna save the image pBitmap 115790136 imagename img\formation.png
+ gonna dispose the bitmap 115790136
+gonna delete the image img\formation.png
+gonna save the image pBitmap 114512000 imagename img\formation.png
+ gonna dispose the bitmap 114512000
+gonna delete the image img\formation.png
+gonna save the image pBitmap 114513680 imagename img\formation.png
+ gonna dispose the bitmap 114513680
+gonna delete the image img\formation.png
+gonna save the image pBitmap 114515360 imagename img\formation.png
+ gonna dispose the bitmap 114515360
+gonna delete the image img\formation.png
+gonna save the image pBitmap 114516200 imagename img\formation.png
+ gonna dispose the bitmap 114516200
+gonna delete the image img\formation.png
+gonna save the image pBitmap 114517040 imagename img\formation.png
+ gonna dispose the bitmap 114517040
+gonna delete the image img\formation.png
+gonna save the image pBitmap 231441552 imagename img\formation.png
+ gonna dispose the bitmap 231441552
+gonna delete the image img\formation.png
+gonna save the image pBitmap 231444912 imagename img\formation.png
+ gonna dispose the bitmap 231444912
+gonna delete the image img\formation.png
+gonna save the image pBitmap 231448272 imagename img\formation.png
+ gonna dispose the bitmap 231448272
+gonna delete the image img\formation.png
+gonna save the image pBitmap 231825064 imagename img\formation.png
+ gonna dispose the bitmap 231825064
+gonna delete the image img\formation.png
+gonna save the image pBitmap 231829264 imagename img\formation.png
+ gonna dispose the bitmap 231829264
+gonna delete the image img\formation.png
+gonna save the image pBitmap 231830944 imagename img\formation.png
+ gonna dispose the bitmap 231830944
+gonna delete the image img\formation.png
+gonna save the image pBitmap 232156320 imagename img\formation.png
+ gonna dispose the bitmap 232156320
+gonna delete the image img\formation.png
+gonna save the image pBitmap 232158000 imagename img\formation.png
+ gonna dispose the bitmap 232158000
+gonna delete the image img\formation.png
+gonna save the image pBitmap 232159680 imagename img\formation.png
+ gonna dispose the bitmap 232159680
+gonna delete the image img\formation.png
+gonna save the image pBitmap 232161360 imagename img\formation.png
+ gonna dispose the bitmap 232161360
+gonna delete the image img\formation.png
+gonna save the image pBitmap 232162200 imagename img\formation.png
+ gonna dispose the bitmap 232162200
+gonna delete the image img\formation.png
+gonna save the image pBitmap 232497040 imagename img\formation.png
+ gonna dispose the bitmap 232497040
+gonna delete the image img\formation.png
+gonna save the image pBitmap 232498720 imagename img\formation.png
+ gonna dispose the bitmap 232498720
+gonna delete the image img\formation.png
+gonna save the image pBitmap 232500400 imagename img\formation.png
+ gonna dispose the bitmap 232500400
+gonna delete the image img\formation.png
+gonna save the image pBitmap 232502920 imagename img\formation.png
+ gonna dispose the bitmap 232502920
+gonna delete the image img\formation.png
+gonna save the image pBitmap 232834768 imagename img\formation.png
+ gonna dispose the bitmap 232834768
+gonna delete the image img\formation.png
+gonna save the image pBitmap 232838128 imagename img\formation.png
+ gonna dispose the bitmap 232838128
+gonna delete the image img\formation.png
+gonna save the image pBitmap 232841488 imagename img\formation.png
+ gonna dispose the bitmap 232841488
+gonna delete the image img\formation.png
+gonna save the image pBitmap 233176480 imagename img\formation.png
+ gonna dispose the bitmap 233176480
+gonna delete the image img\formation.png
+gonna save the image pBitmap 233178160 imagename img\formation.png
+ gonna dispose the bitmap 233178160
+gonna delete the image img\formation.png
+gonna save the image pBitmap 233180680 imagename img\formation.png
+ gonna dispose the bitmap 233180680
+gonna delete the image img\formation.png
+gonna save the image pBitmap 233182360 imagename img\formation.png
+ gonna dispose the bitmap 233182360
+gonna delete the image img\formation.png
+gonna save the image pBitmap 233183200 imagename img\formation.png
+ gonna dispose the bitmap 233183200
+gonna delete the image img\formation.png
+gonna save the image pBitmap 233560864 imagename img\formation.png
+ gonna dispose the bitmap 233560864
+gonna delete the image img\formation.png
+gonna save the image pBitmap 233561704 imagename img\formation.png
+ gonna dispose the bitmap 233561704
+gonna delete the image img\formation.png
+gonna save the image pBitmap 233563384 imagename img\formation.png
+ gonna dispose the bitmap 233563384
+gonna delete the image img\formation.png
+gonna save the image pBitmap 233565064 imagename img\formation.png
+ gonna dispose the bitmap 233565064
+gonna delete the image img\formation.png
+gonna save the image pBitmap 233819928 imagename img\formation.png
+ gonna dispose the bitmap 233819928
+gonna delete the image img\formation.png
+gonna save the image pBitmap 233820768 imagename img\formation.png
+ gonna dispose the bitmap 233820768
+gonna delete the image img\formation.png
+gonna save the image pBitmap 233822448 imagename img\formation.png
+ gonna dispose the bitmap 233822448
+gonna delete the image img\formation.png
+gonna save the image pBitmap 233825808 imagename img\formation.png
+ gonna dispose the bitmap 233825808
+gonna delete the image img\formation.png
+gonna save the image pBitmap 233826648 imagename img\formation.png
+ gonna dispose the bitmap 233826648
+gonna delete the image img\formation.png
+gonna save the image pBitmap 234235248 imagename img\formation.png
+ gonna dispose the bitmap 234235248
+gonna delete the image img\formation.png
+gonna save the image pBitmap 234237768 imagename img\formation.png
+ gonna dispose the bitmap 234237768
+gonna delete the image img\formation.png
+gonna save the image pBitmap 234239448 imagename img\formation.png
+ gonna dispose the bitmap 234239448
+gonna delete the image img\formation.png
+gonna save the image pBitmap 234241128 imagename img\formation.png
+ gonna dispose the bitmap 234241128
+gonna delete the image img\formation.png
+gonna save the image pBitmap 115292152 imagename img\formation.png
+ gonna dispose the bitmap 115292152
+gonna delete the image img\formation.png
+gonna save the image pBitmap 115293832 imagename img\formation.png
+ gonna dispose the bitmap 115293832
+gonna delete the image img\formation.png
+gonna save the image pBitmap 234671584 imagename img\formation.png
+ gonna dispose the bitmap 234671584
+gonna delete the image img\formation.png
+gonna save the image pBitmap 234673264 imagename img\formation.png
+ gonna dispose the bitmap 234673264
+gonna delete the image img\formation.png
+gonna save the image pBitmap 234674104 imagename img\formation.png
+ gonna dispose the bitmap 234674104
+gonna delete the image img\formation.png
+gonna save the image pBitmap 234675784 imagename img\formation.png
+ gonna dispose the bitmap 234675784
+gonna delete the image img\formation.png
+gonna save the image pBitmap 234677464 imagename img\formation.png
+ gonna dispose the bitmap 234677464
+gonna delete the image img\formation.png
+gonna save the image pBitmap 234998672 imagename img\formation.png
+ gonna dispose the bitmap 234998672
+gonna delete the image img\formation.png
+gonna save the image pBitmap 234999512 imagename img\formation.png
+ gonna dispose the bitmap 234999512
+gonna delete the image img\formation.png
+gonna save the image pBitmap 235001192 imagename img\formation.png
+ gonna dispose the bitmap 235001192
+gonna delete the image img\formation.png
+gonna save the image pBitmap 235002872 imagename img\formation.png
+ gonna dispose the bitmap 235002872
+gonna delete the image img\formation.png
+gonna save the image pBitmap 235003712 imagename img\formation.png
+ gonna dispose the bitmap 235003712
+gonna delete the image img\formation.png
+gonna save the image pBitmap 454193768 imagename img\formation.png
+ gonna dispose the bitmap 454193768
+gonna delete the image img\formation.png
+gonna save the image pBitmap 454197128 imagename img\formation.png
+ gonna dispose the bitmap 454197128
+gonna delete the image img\formation.png
+gonna save the image pBitmap 454201328 imagename img\formation.png
+ gonna dispose the bitmap 454201328
+gonna delete the image img\formation.png
+gonna save the image pBitmap 454204688 imagename img\formation.png
+ gonna dispose the bitmap 454204688
+gonna delete the image img\formation.png
+gonna save the image pBitmap 454205528 imagename img\formation.png
+ gonna dispose the bitmap 454205528
+gonna delete the image img\formation.png
+gonna save the image pBitmap 454206368 imagename img\formation.png
+ gonna dispose the bitmap 454206368
+gonna delete the image img\formation.png
+gonna save the image pBitmap 454208048 imagename img\formation.png
+ gonna dispose the bitmap 454208048
+gonna delete the image img\formation.png
+gonna save the image pBitmap 454854776 imagename img\formation.png
+ gonna dispose the bitmap 454854776
+gonna delete the image img\formation.png
+gonna save the image pBitmap 454856456 imagename img\formation.png
+ gonna dispose the bitmap 454856456
+gonna delete the image img\formation.png
+gonna save the image pBitmap 454858136 imagename img\formation.png
+ gonna dispose the bitmap 454858136
+gonna delete the image img\formation.png
+gonna save the image pBitmap 454858976 imagename img\formation.png
+ gonna dispose the bitmap 454858976
+gonna delete the image img\formation.png
+gonna save the image pBitmap 454860656 imagename img\formation.png
+ gonna dispose the bitmap 454860656
+gonna delete the image img\formation.png
+gonna save the image pBitmap 454862336 imagename img\formation.png
+ gonna dispose the bitmap 454862336
+gonna delete the image img\formation.png
+gonna save the image pBitmap 454864016 imagename img\formation.png
+ gonna dispose the bitmap 454864016
+gonna delete the image img\formation.png
+gonna save the image pBitmap 454865696 imagename img\formation.png
+ gonna dispose the bitmap 454865696
+gonna delete the image img\formation.png
+gonna save the image pBitmap 454869056 imagename img\formation.png
+ gonna dispose the bitmap 454869056
+gonna delete the image img\formation.png
+gonna save the image pBitmap 455606176 imagename img\formation.png
+ gonna dispose the bitmap 455606176
+gonna delete the image img\formation.png
+gonna save the image pBitmap 455607856 imagename img\formation.png
+ gonna dispose the bitmap 455607856
+gonna delete the image img\formation.png
+gonna save the image pBitmap 455609536 imagename img\formation.png
+ gonna dispose the bitmap 455609536
+gonna delete the image img\formation.png
+gonna save the image pBitmap 455610376 imagename img\formation.png
+ gonna dispose the bitmap 455610376
+gonna delete the image img\formation.png
+gonna save the image pBitmap 455612056 imagename img\formation.png
+ gonna dispose the bitmap 455612056
+gonna delete the image img\formation.png
+gonna save the image pBitmap 455613736 imagename img\formation.png
+ gonna dispose the bitmap 455613736
+gonna delete the image img\formation.png
+gonna save the image pBitmap 455618776 imagename img\formation.png
+ gonna dispose the bitmap 455618776
+gonna delete the image img\formation.png
+gonna save the image pBitmap 455620456 imagename img\formation.png
+ gonna dispose the bitmap 455620456
+gonna delete the image img\formation.png
+gonna save the image pBitmap 456334504 imagename img\formation.png
+ gonna dispose the bitmap 456334504
+gonna delete the image img\formation.png
+gonna save the image pBitmap 456339544 imagename img\formation.png
+ gonna dispose the bitmap 456339544
+gonna delete the image img\formation.png
+gonna save the image pBitmap 456343744 imagename img\formation.png
+ gonna dispose the bitmap 456343744
+gonna delete the image img\formation.png
+gonna save the image pBitmap 456347104 imagename img\formation.png
+ gonna dispose the bitmap 456347104
+gonna delete the image img\formation.png
+gonna save the image pBitmap 456347944 imagename img\formation.png
+ gonna dispose the bitmap 456347944
+gonna delete the image img\formation.png
+gonna save the image pBitmap 456348784 imagename img\formation.png
+ gonna dispose the bitmap 456348784
+gonna delete the image img\formation.png
+gonna save the image pBitmap 457020784 imagename img\formation.png
+ gonna dispose the bitmap 457020784
+gonna delete the image img\formation.png
+gonna save the image pBitmap 457022464 imagename img\formation.png
+ gonna dispose the bitmap 457022464
+gonna delete the image img\formation.png
+gonna save the image pBitmap 457024144 imagename img\formation.png
+ gonna dispose the bitmap 457024144
+gonna delete the image img\formation.png
+gonna save the image pBitmap 457025824 imagename img\formation.png
+ gonna dispose the bitmap 457025824
+gonna delete the image img\formation.png
+gonna save the image pBitmap 457027504 imagename img\formation.png
+ gonna dispose the bitmap 457027504
+gonna delete the image img\formation.png
+gonna save the image pBitmap 457029184 imagename img\formation.png
+ gonna dispose the bitmap 457029184

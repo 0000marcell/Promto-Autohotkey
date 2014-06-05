@@ -974,35 +974,6 @@ carregandologo(){
 	return 		
 }
 
-;############# carregando action ############ ; rotina de carregamento
-;carregandoaction:
-;_cog+=1
-;GC4:="blue"
-;GC5:="blue"
-;if(_cog=1){
-;  GC1:="orange"
-;  GC2:="lightblue"
-;  GC3:="lightblue"  
-;}
-;if(_cog=2){
-;  GC1:="lightblue"
-;  GC2:="orange"
-;  GC3:="lightblue"  
-;}
-;if(_cog=3){
-;  GC1:="lightblue"
-;  GC2:="lightblue"
-;  GC3:="orange"
-;  _cog:=0
-;}
-;sw:=A_ScreenWidth,sh:=A_ScreenHeight
-;logow:=sw*0.17,logoh:=sh*0.19
-;promtologo([GC1,GC2,GC3,GC4,GC5],logow,logoh,0)
-;savetofile("logopequeno.png")
-;loadintowindow("logopequeno.png",hwnd1)
-;return 
-
-
 getcolors(colorname){
 	colors:=[]
 	;lightblue:=75c2d4
@@ -1784,27 +1755,18 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 		}
 		x -= code_rect_spacing
 
-		/*
-		panel({x:x,y:y-60,w:code_rect_size,h:50,color: "nocolor",text:"Familia",textsize: 10,textcolor: textcolor,boardersize:0})
-		panel({x:x,y:y,w:code_rect_size,h:50,color: "nocolor",text:prefix2,textsize: textsize,textcolor: textcolor})
-		panel({x:x+=code_rect_spacing,y:y-60,w:code_rect_size,h:50,color: "nocolor",text:"Modelo",textsize: 10,textcolor: textcolor,boardersize:0})
-		panel({x:x,y:y,w:code_rect_size,h:50,color: "nocolor",text: model,textsize: textsize,textcolor: textcolor})
-		*/
-
 		codigo := table[A_Index,1]	
 
 		StringTrimleft,codigo,codigo, prefixlength
 		
 		/*
-			Pega a tabela de campos, para pega o nome dos campos
+			Pega a tabela de campos, para pegar o nome dos campos
 		*/
 		camp_table := db.get_reference("oc", prefix model selectmodel)
 		
 		table_camp := db.load_table_in_array(camp_table)
 
-
 		for, each, value in table_camp{
-
 			if(table_camp[A_Index, 2] = ""){
 				Continue
 			}
@@ -1817,15 +1779,10 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 
 			for, each, value in table_camp_esp{
 
-				;if(table_camp_esp[A_Index,1] = "")
-				;	Continue
-
 				codepiece := table_camp_esp[A_Index,1]
-
 
 				StringLen, length, codepiece
 
-				
 				if(length != ""){
 					StringLeft, codepiece, codigo, length
 					StringTrimLeft, codigo, codigo, length
@@ -1857,9 +1814,9 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 	MsgBox, 64, Sucesso, % "O arquivo foi salvo!!"
 	
 	formated_model := format_file_name(selectmodel)
-	savetofile("temp\" formated_model ".png")
-	MsgBox, % "ira rodar o arquivo " formated_model
-	run, % "temp\" formated_model ".png"
+	savetofile("temp\tag.png")
+	MsgBox, % "ira rodar o arquivo temp\tag.png" 
+	run, % "temp\tag.png"
 }
 
 get_prefix_in_string(table){
@@ -2266,10 +2223,10 @@ deletefromarray(string,array){
 }
 
 ;#################save an image to a file#####################
-savetofile(imagename,show=0){
+savetofile(imagename, show=0){
 	Global pBitmap
 
-	FileDelete, % imagename  
+	FileDelete, % imagename   
 	Gdip_SaveBitmapToFile(pBitmap, imagename)
 	Gdip_DisposeImage(pBitmap)
 	if(show=1)
@@ -2278,11 +2235,7 @@ savetofile(imagename,show=0){
 
 newgdi(a){
 	Global
-	;If !pToken := Gdip_Startup()
-	;{
-	;    MsgBox, 48, gdiplus error!, Gdiplus failed to start. Please ensure you have gdiplus on your system
-	;    ExitApp
-	;}
+	
 	a.w:= (a.w="") ? 500 : a.w
 	a.h:= (a.h="") ? 500 : a.h
 	pBitmap := Gdip_CreateBitmap(a.w,a.h), G := Gdip_GraphicsFromImage(pBitmap), Gdip_SetSmoothingMode(G, 4)
@@ -2460,21 +2413,6 @@ singledim_array(array, col = 1){
 		return_array.insert(array[A_Index, col])
 	}
 	Return return_array
-}
-
-/*
-deleta o arquivo de debug 
-*/
-
-reset_debug(){
-	FileDelete, % "temp\debug.txt"
-}
-
-/*
-	Insere novos valores no debug
-*/
-append_debug(string){
-	FileAppend, % string "`n", % "temp\debug.txt"
 }
 
 /*

@@ -2,7 +2,6 @@ class Print{
 	product_list(info){
 		Global db, file_name
 
-		reset_debug()
 		prefix := Print.get_prefix(info)
 		file_name := prefix
 		model_table := db.get_reference("Modelo", prefix)

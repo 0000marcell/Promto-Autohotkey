@@ -11,7 +11,6 @@ class PromtoHTML{
 	;Recebe a string usada para montar o diagrama de arvore e 
 	;transforma no html
 	generate(string, hash_mask){
-		reset_debug()
 		StringSplit, items, string, `n,
 		prev_item_tab_count := 0
 		prefix_array := []
@@ -285,7 +284,6 @@ class PromtoHTML{
 		/*
 			Insere a lista de codigos
 		*/
-		append_debug("prefixo : " prefix model_mask "Codigo")
 		code_array := db.load_table_in_array(prefix model_mask "Codigo")
 		html_piece :=
 		(JOIN 

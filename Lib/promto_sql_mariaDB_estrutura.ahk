@@ -147,7 +147,6 @@ class Estrutura{
 		Global db
 		
 		subitems := db.get_estrut_items(item)
-		AHK.append_debug("")
 		for, each, value in subitems{
 			if(subitems[A_Index, 2] = "")
 				Continue 

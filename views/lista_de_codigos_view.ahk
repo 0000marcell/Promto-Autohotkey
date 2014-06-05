@@ -58,11 +58,11 @@ lista_de_codigos(info){
 	for each, value in Listpesqcod{
 		FileAppend, % Listpesqcod[A_Index,1] ";" Listpesqcod[A_Index,2] ";" Listpesqcod[A_Index,3] ";" Listpesqcod[A_Index,4]  "`n",temp.csv	
 	}
-	Run,temp.csv		
+	Run, temp.csv		
 	return
 
 	gerarplaquetas:
-	codigos_selecionados := GetCheckedRows("lista_de_codigos_view","lvcodetable")
+	codigos_selecionados := GetCheckedRows("lista_de_codigos_view", "lvcodetable")
 	prefix := s_info.empresa[2] s_info.tipo[2] s_info.familia[2] s_info.subfamilia[2]
 	model_mask := s_info.modelo[2]
 	ordened_prefix := db.get_ordened_prefix(s_info)
@@ -73,8 +73,7 @@ lista_de_codigos(info){
 	lista_de_codigos_viewContextMenu:
 	MsgBox, % "context menu "
 	if A_GuiControl = lvcodetable
-	{
-		MsgBox, % "ccc"	
+	{	
 		Menu, lista_de_codigos_menu, Add, Marcar Todos , marcar_todos_lista_de_codigos
 		Menu, lista_de_codigos_menu, Add, Desmarcar Todos, desmarcar_todos_lista_de_codigos	
 		Menu, lista_de_codigos_menu, Show, x%A_GuiX% y%A_GuiY%

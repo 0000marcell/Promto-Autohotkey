@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<!--This is a comment-->
+	<child>
+		<Element_1 attribute="value 1">Sunday</Element_1>
+		<Element_2 attribute="value 2">Monday</Element_2>
+		<Element_3 attribute="value 3">Tuesday</Element_3>
+		<Element_4 attribute="value 4">Wednesday</Element_4>
+		<Element_5 attribute="value 5">Thursday</Element_5>
+		<Element_6 attribute="value 6">Friday</Element_6>
+		<Element_7 attribute="value 7">Saturday</Element_7>
+	</child>
+</root>

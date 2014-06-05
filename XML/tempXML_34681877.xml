@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<promto>
+		<companies>
+			<company attribute="value 1">Maccomevap<types></types>
+			</company>
+			<company attribute="value 2">Totallight</company>
+		</companies>
+	</promto>
+</root>

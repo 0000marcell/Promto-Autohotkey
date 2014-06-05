@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root name="XML Sample">
+	<!-- A comment -->
+	<child attribute="value">This is a CDATA Section
+This is a text
+<subchild_1>Text</subchild_1>
+		<subchild>
+Another text
+<node>The quick brown fox jumps over tha lazy dog</node>
+		</subchild>
+Second text
+</child>
+	<child>
+Some text
+<subchild name="Hello World">AutoHotkey</subchild>
+		<!-- Another comment -->
+	</child>
+</root>

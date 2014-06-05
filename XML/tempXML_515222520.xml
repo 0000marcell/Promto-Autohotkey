@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<promto>
+		<companies>
+			<company mask="M">Marcell<types>
+					<type mask="">Produtos acabados</type>
+				</types>
+			</company>
+			<company mask="T">Totallight<types>
+					<type mask="">Produtos acabados</type>
+				</types>
+			</company>
+		</companies>
+	</promto>
+</root>

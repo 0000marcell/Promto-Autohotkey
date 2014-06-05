@@ -1,0 +1,8 @@
+gonna start items loop
+gonna export strut TL010122156AIE
+gonna get subitems of the item TL010122156AIE
+
+gonna get subitems of the item STL010222156ACS
+
+gonna get subitems of the item ITL010CJC2AI
+

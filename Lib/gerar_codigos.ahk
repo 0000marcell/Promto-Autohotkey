@@ -8,7 +8,7 @@ db.correct_todas_ordems(info)
 info := get_item_info("M", "MODlv")
 db.Modelo.load_tables(info)
 if(!camptable)||(!octable)||(!odctable)||(!odrtable)||(!codtable){
-	MsgBox,64,, % "Uma ou mais campos, das tabelas necessarias para gerar os codigos esta em branco!"
+	MsgBox,64,, % "Um ou mais campos, das tabelas necessarias para gerar os codigos esta em branco!"
 }
 
 args := {}

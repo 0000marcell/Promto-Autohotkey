@@ -3,7 +3,7 @@ class Familia{
 		Incluir familia
 	*/
 	incluir(familia_nome = "", familia_mascara = "", prefixo = "", tipo_nome = ""){
-		Global mariaDB
+		Global mariaDB, ETF_hashmask
 
 		;MsgBox, % "familia_nome: " familia_nome " `n familia_mascara: " familia_mascara " `n prefixo: " prefixo " `n tipo_nome: " tipo_nome 
 		/*	
@@ -13,6 +13,28 @@ class Familia{
 		if(prefixo = ""){
 			MsgBox, % "O prefixo nao pode estar em branco nas familias!"
 			return 0
+		}
+
+		/*
+			Confere se o item a ser inserido 
+			ja contem uma mascara linkada a ele
+		*/
+		if(ETF_hashmask[familia_nome] != ""){
+			error_msg :=
+			(JOIN
+				"Ja existe uma outra mascara linkada com o nome inserido!`n "
+				"Voce pode usar a mesma mascara: " ETF_hashmask[familia_nome] "`n"
+				" Ou alterar o nome."  
+			)
+			MsgBox, 4, Item duplicado, % error_msg 
+			IfMsgBox Yes
+			{
+				familia_mascara := ETF_hashmask[familia_nome]
+				MsgBox, % "A mascara foi alterada para " familia_mascara 
+			}else{
+				MsgBox, % "O item nao foi inserido, insira outra vez alterando o nome! "
+				return
+			}
 		}
 
 		/*
@@ -188,7 +210,7 @@ class Familia{
 		familia_table := this.get_parent_reference(info.empresa[2], info.tipo[1])
 		
 		if(!this.exists(familia_nome, familia_mascara, familia_table)){
-			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela"
+			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela de familias : " familia_table
 			return 
 		}
 

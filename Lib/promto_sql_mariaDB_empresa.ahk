@@ -15,14 +15,29 @@ class Empresa{
 			return 
 		}
 
+		
+		/*
+			Confere se o item a ser inserido 
+			ja contem uma mascara linkada a ele
+		*/
 		if(ETF_hashmask[empresa_nome] != ""){
-			MsgBox, % "empresa " empresa_nome " empreas mascara " ETF_hashmask[empresa_nome]
-			MsgBox, 4, Item duplicado, % "Ja existe uma outra empresa com o mesmo nome `n Nesse caso a mascara a ser inserida deve ser a mesma `n deseja mudar a mascara do item para a mascara ja existente ou abortar a operacao!" 
+			error_msg :=
+			(JOIN
+				"Ja existe uma outra mascara linkada com o nome inserido!`n "
+				"Voce pode usar a mesma mascara: " ETF_hashmask[empresa_nome] "`n"
+				" Ou alterar o nome."  
+			)
+			MsgBox, 4, Item duplicado, % error_msg 
 			IfMsgBox Yes
 			{
 				empresa_mascara := ETF_hashmask[empresa_nome]
-			}	
+				MsgBox, % "A mascara foi alterada para " empresa_mascara 
+			}else{
+				MsgBox, % "O item nao foi inserido, insira outra vez alterando o nome! "
+				return
+			}
 		}
+		
 		/*
 			Insere o valor na tabela
 		*/
@@ -77,7 +92,7 @@ class Empresa{
 			Deleta o valor da tabela de empresas  
 		*/
 		if(!this.exists(empresa_mascara)){
-			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela"
+			MsgBox, 16, Erro, % " O valor a ser deletado nao existia na tabela de empresas"
 			return 
 		}
 

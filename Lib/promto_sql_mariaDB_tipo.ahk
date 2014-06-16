@@ -3,7 +3,7 @@ class Tipo{
 		Incluir um novo tipo
 	*/
 	incluir(tipo_nome = "", tipo_mascara = "", prefixo = "", empresa_nome = ""){
-		Global mariaDB
+		Global mariaDB, ETF_hashmask
 
 		/*
 			Se o nome estiver em branco
@@ -11,6 +11,28 @@ class Tipo{
 		if(tipo_nome = ""){
 			MsgBox, % "O nome do tipo nao pode estar em branco"
 			return 0
+		}
+
+		/*
+			Confere se o item a ser inserido 
+			ja contem uma mascara linkada a ele
+		*/
+		if(ETF_hashmask[tipo_nome] != ""){
+			error_msg :=
+			(JOIN
+				"Ja existe uma outra mascara linkada com o nome inserido!`n "
+				"Voce pode usar a mesma mascara: " ETF_hashmask[tipo_nome] "`n"
+				" Ou alterar o nome."  
+			)
+			MsgBox, 4, Item duplicado, % error_msg 
+			IfMsgBox Yes
+			{
+				tipo_mascara := ETF_hashmask[tipo_nome]
+				MsgBox, % "A mascara foi alterada para " tipo_mascara 
+			}else{
+				MsgBox, % "O item nao foi inserido, insira outra vez alterando o nome! "
+				return
+			}
 		}
 
 		/*
@@ -110,7 +132,7 @@ class Tipo{
 
 		tipo_table := this.get_parent_reference(info.empresa[1])
 		if(!this.exists(tipo_nome, tipo_mascara, tipo_table)){
-			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela"
+			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela de tipos " tipo_table
 			return 
 		}
 		

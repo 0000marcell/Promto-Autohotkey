@@ -4,11 +4,33 @@ class Subfamilia{
 		Incluir uma nova subfamilia
 	*/
 	incluir(subfam_nome = "", subfam_mascara = "", prefixo = "", familia_nome = ""){
-		Global mariaDB, info
+		Global mariaDB, info, ETF_hashmask
 
 		if(subfam_nome = "" || subfam_mascara = "" || prefixo = ""){
 			MsgBox, 16, % "Um dos items necessarios para incluir a subfamilia estava em branco!" 
 			return
+		}
+
+		/*
+			Confere se o item a ser inserido 
+			ja contem uma mascara linkada a ele
+		*/
+		if(ETF_hashmask[subfam_nome] != ""){
+			error_msg :=
+			(JOIN
+				"Ja existe uma outra mascara linkada com o nome inserido!`n "
+				"Voce pode usar a mesma mascara: " ETF_hashmask[subfam_nome] "`n"
+				" Ou alterar o nome."  
+			)
+			MsgBox, 4, Item duplicado, % error_msg 
+			IfMsgBox Yes
+			{
+				subfam_mascara := ETF_hashmask[subfam_nome]
+				MsgBox, % "A mascara foi alterada para " subfam_mascara 
+			}else{
+				MsgBox, % "O item nao foi inserido, insira outra vez alterando o nome! "
+				return
+			}
 		}
 
 		/*
@@ -76,11 +98,11 @@ class Subfamilia{
 		 Excluir a entrada da familia
 		 na tabela de familias 
 		*/
- 
+
 		prefixo := info.empresa[2] info.tipo[2]
 		subfam_table := this.get_parent_reference(prefixo, info.familia[1])
 		if(!this.exists(subfam_nome, subfam_mascara, subfam_table)){
-			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela"
+			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela de subfamilias: " subfam_table
 			return 
 		}
 		prefixo := info.empresa[2] info.tipo[2] info.familia[2]
@@ -265,11 +287,15 @@ class Subfamilia{
 	exists(subfam_nome, subfam_mascara, table){
 		Global mariaDB
 
-		table := mariaDB.Query(
-			(JOIN 
-				" SELECT Subfamilias FROM " table
-				" WHERE Mascara LIKE '" subfam_mascara "'"
-			))
+		sql :=
+		(JOIN
+		  " SELECT Subfamilias FROM " table
+			" WHERE Mascara LIKE '" subfam_mascara "'"
+		)
+		MsgBox, % "SQL: " sql
+
+		table := mariaDB.Query(sql)
+
 		if(table.Rows.maxindex()){
 			return True 
 		}else{

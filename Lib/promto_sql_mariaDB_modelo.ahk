@@ -4,10 +4,32 @@ class Modelo{
 		Incluir um novo modelo
 	*/
 	incluir(modelo_nome = "", modelo_mascara = "", prefixo = "", already_in_table = "", info = ""){
-		Global mariaDB
+		Global mariaDB, ETF_hashmask
 
 		modelo_nome := Trim(modelo_nome), modelo_mascara := Trim(modelo_mascara)
 		prefixo := Trim(prefixo)
+
+		/*
+			Confere se o item a ser inserido 
+			ja contem uma mascara linkada a ele
+		*/
+		if(ETF_hashmask[modelo_nome] != ""){
+			error_msg :=
+			(JOIN
+				"Ja existe uma outra mascara linkada com o nome inserido!`n "
+				"Voce pode usar a mesma mascara: " ETF_hashmask[modelo_nome] "`n"
+				" Ou alterar o nome."  
+			)
+			MsgBox, 4, Item duplicado, % error_msg 
+			IfMsgBox Yes
+			{
+				modelo_mascara := ETF_hashmask[modelo_nome]
+				MsgBox, % "A mascara foi alterada para " modelo_mascara 
+			}else{
+				MsgBox, % "O item nao foi inserido, insira outra vez alterando o nome! "
+				return
+			}
+		}
 
 		/*	
 			Verifica se o prefixo a inserir o item 
@@ -161,7 +183,7 @@ class Modelo{
 			model_table := prefixo "Modelo"
 		}
 		if(!this.exists(modelo_nome, modelo_mascara, prefixo, model_table)){
-			MsgBox, 16, Erro, % " O valor a ser deletado nao existia na tabela"
+			MsgBox, 16, Erro, % " O valor a ser deletado nao existia na tabela de modelos: " model_table
 			return 
 		}
 

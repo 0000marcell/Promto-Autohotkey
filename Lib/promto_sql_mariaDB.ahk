@@ -50,7 +50,7 @@ class PromtoSQL{
 		try{
 				rs := mariaDB.OpenRecordSet("SELECT * FROM " table " WHERE " where_statement)		
 			}catch e{
-				MsgBox, % "Ocorreu um erro ao buscar os valores!"
+				;MsgBox, % "Ocorreu um erro ao buscar os valores!"
 				return
 		}
 		

@@ -280,7 +280,7 @@ class Modelo{
 					"ALTER TABLE " tabela_ordem " ADD Omitir VARCHAR(60);"
 				))
 		}catch e 
-			MsgBox,64 , Aviso, % "A estrutura da tabela foi alterada  `n" ExceptionDetail(e)
+			MsgBox,64 , Aviso, % "A estrutura da tabela foi alterada  `n"
 		
 		for each, item in items{
 			record := {}

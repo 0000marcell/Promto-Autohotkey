@@ -534,7 +534,7 @@ inserirdbexterno(values){
 		testa a conecao
 	*/
 	if(IsObject(sigaconnection)){
-	    MsgBox,64,,% "A connexao esta funcionando!!!"
+	    ;MsgBox,64,,% "A connexao esta funcionando!!!"
 	}else{
 	    MsgBox,64,,% "A conexao falhou!! confira os parametros!!"
 	}
@@ -573,8 +573,6 @@ inserirdbexterno(values){
 	Inicia o loop que ira inserir todos 
 	os novos items no dbex
 	*/
-	
-	MsgBox, % "numero de items : " values.maxindex()
 
 	for,each,value in values{
 		itemvalue := values[A_Index,1]
@@ -706,6 +704,8 @@ inserirdbexterno(values){
 	}
 	gui,progress:destroy
 	MsgBox,64,,% "Os valores foram inseridos no db externo!!" 
+	info := get_item_info("M", "MODlv")
+	change_status_view(info)
 }
 
 get_tv_id(window, treeview){
@@ -775,8 +775,6 @@ get_item_info(window, lv, treeview = "main_tv", starting_id = "", same_window = 
 	info.tipo[2] := tipo.mascara
 	info.familia[1] := familia.nome
 	info.familia[2] := familia.mascara
-	info.subfamilia[1] := ""
-	info.subfamilia[2] := ""
 	info.subfamilia[1] := subfamilia.nome
 	info.subfamilia[2] := subfamilia.mascara
 	info.modelo[1] := modelo.nome
@@ -2389,14 +2387,14 @@ panel(a){
 }
 
 ;##############MATHASVALUE###########################
-MatHasValue(matrix,value){
+MatHasValue(matrix, value){
 		i:=0
 		returnValue := False
-		while(matrix[A_Index,1] != ""){
+		while(matrix[A_Index, 1] != ""){
 			i+=1
-			while(matrix[i,A_Index]!=""){
-				if(matrix[i,A_Index]=value){
-					returnValue:=True
+			while(matrix[i, A_Index]!=""){
+				if(matrix[i, A_Index] = value){
+					returnValue := True
 				}
 			}
 		}

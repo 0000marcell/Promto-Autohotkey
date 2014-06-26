@@ -130,6 +130,8 @@ if(_error = 0){
 }
 db.load_codigos_combobox(codtable)
 number_of_items()
+status_info := get_item_info("M", "MODlv")
+clean_status(status_info)
 return 
 
 parar_gerar_codigo(){

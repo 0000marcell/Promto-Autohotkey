@@ -57,7 +57,7 @@ conectar(){
 	}
 	if(IsObject(sigaconnection)){
 			CONNECTED_DBEX := selecteditem[1]
-		 MsgBox,64,,% "A connexao esta funcionando!!!"
+		 ;MsgBox,64,,% "A connexao esta funcionando!!!"
 		 GuiControl,, connection_status, % "Conectado a " selected_item_name
 	}else{
 	    MsgBox,64,,% "A conexao falhou!! confira os parametros!!"

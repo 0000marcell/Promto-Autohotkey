@@ -26,7 +26,7 @@ change_status_view(info){
 	return 
 
 	save_changes:
-	Gui, submit, nohide
+	Gui, submit,
 	db.Status.change_status(s_info, radio_group, USER_NAME, aditional_msg)
 	load_status_in_main_window(s_info)
 	return 

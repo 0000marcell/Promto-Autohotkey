@@ -2937,6 +2937,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 /*
 	Controllers
 */
+#Include, controllers/status_controller.ahk
 #Include, controllers/rem_massa_controller.ahk
 #include, controllers/db_ex_controller.ahk
 #include, controllers/inserir_valores_controller.ahk

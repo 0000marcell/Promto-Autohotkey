@@ -35,35 +35,61 @@ conectar(){
 	current_connection_value := selected_item_name
 
 	StringLeft, base_test_name, selected_item_name, 10
+
+	base_value := get_data_base_value(base_test_name)
+	if base_value = "")
+		return
+	sigaconnection := get_connection(selecteditem[1])
+
+	if(IsObject(sigaconnection)){
+	 CONNECTED_DBEX := selecteditem[1]
+	 GuiControl,, connection_status, % "Conectado a " selected_item_name
+	}else{
+   MsgBox,64,,% "A conexao falhou!! confira os parametros!!"
+   return 
+	} 
+}
+
+get_data_base_value(base_test_name){
 	base_value := ""
 	if(base_test_name = "TOTALLIGHT"){
 		base_value := "SB1060" 
-	}else{
+	}else if(base_test_name = "MACCOMEVAP"){
 		base_value := "SB1010"
-	}
-	connectionvalue := db.query_table("connections",["name", selecteditem[1]], ["name", "connection", "type"])
-
-	if(connectionvalue["connection"] = ""){
-		MsgBox, % "Nao existe conxao para esse nome tente adicionar outra conexao."
+	}else{
+		MsgBox, 16, Erro, % "A base de dados " base_test_name " nao contem relacao correspondente!"
 		return 
 	}
+	return base_value
+}
+
+get_connection(connection_name){
+	Global 
+
+	connectionvalue := get_connection_prop(connection_name)
 	ddDatabaseConnection := connectionvalue["connection"]
 	ddDatabaseType:= connectionvalue["type"]
+
 	try {
-		sigaconnection := DBA.DataBaseFactory.OpenDataBase(ddDatabaseType,ddDatabaseConnection)
+		created_connection := DBA.DataBaseFactory.OpenDataBase(ddDatabaseType, ddDatabaseConnection)
+		dbex := new SQL(ddDatabaseType, ddDatabaseConnection)
 	} catch e {
 		MsgBox,16, Error, % "A conexao falhou!`n" ExceptionDetail(e)
 		return 
 	}
-	if(IsObject(sigaconnection)){
-			CONNECTED_DBEX := selecteditem[1]
-		 ;MsgBox,64,,% "A connexao esta funcionando!!!"
-		 GuiControl,, connection_status, % "Conectado a " selected_item_name
+	return created_connection
+}
+
+get_connection_prop(connection_name){
+	Global db
+
+	connection_prop := db.query_table("connections",["name", connection_name], ["name", "connection", "type"])
+	if(connection_prop["connection"] = ""){
+		MsgBox, % "Nao existe conxao para esse nome tente adicionar outra conexao."
+		return 
 	}else{
-	    MsgBox,64,,% "A conexao falhou!! confira os parametros!!"
-	    return 
-	} 
-	dbex := new SQL(ddDatabaseType,ddDatabaseConnection)
+		return connection_prop	
+	}
 }
 
 salvar_config(){

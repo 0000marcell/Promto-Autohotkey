@@ -199,16 +199,16 @@ for,each,value in ["Gerar Estruturas", "Linkar", "Add db Externo", "Estrutura", 
 /*
 	Status
 */
-Gui, Add, Groupbox, x480 ym w815 h70, name
+Gui, Add, Groupbox, x480 ym w315 h90, Status
 Gui, Add, Picture, xp+5 yp+15 w50 h50 vstatus_picture,
-Gui, Add, Text, x+5 w805 h50 vstatus_info,
-Gui, Add, Button, x480 y+5 w80 h20 gchange_status , Alterar status
+Gui, Add, Text, x+5 w220 h60 vstatus_info,
+Gui, Add, Button, x480 y+15 w80 h20 gchange_status , Alterar status
 
 /*
 	Info
 */
-Gui, Add, Groupbox, x480 y+5 w815 h220, Info:
-Gui, Add, Picture, xp+5 yp+15 w780 h210 vptcode gfotoindividual,
+Gui, Add, Groupbox, x480 y+25 w815 h220, Info:
+Gui, Add, Picture, xp+5 yp+15 w780 h200 vptcode gfotoindividual,
 _loading := 1
 
 /*
@@ -224,18 +224,32 @@ Gui, Font, cblack
 /*
 	Formacao codigo
 */
-Gui, Add, Groupbox, x480 y+10 w815 h290, Formacao do codigo:
-Gui, Add, Picture, xp+5 yp+50 w790 h270 vfmcode,
+Gui, Add, Groupbox, x480 y+10 w815 h200, Formacao do codigo:
+Gui, Add, Picture, xp+5 yp+50 w790 h190 vfmcode,
+
+/*
+	Consistencia DBEX Totallight
+*/
+Gui, Add, Groupbox, x800 ym w150 h90, Totallight
+Gui, Add, Picture,  xp+5 yp+15 w50 h50 vconsistency_picture_tot,
+Gui, Add, Button,   x805 y+25 w80 h20 gverify_tot, Verificar
+
+/*
+	Consistencia DBEX Maccomevap
+*/
+Gui, Add, Groupbox, x960 ym w150 h90, Maccomevap
+Gui, Add, Picture, xp+5 yp+15 w50 h50 vconsistency_picture_mac,
+Gui, Add, Button, x965 y+25 w80 h20 gverify_mac, Verificar
 
 /*
 	Menu de backup
 */
-Menu, update_menu, Add, Atualizar, make_update
-Menu, backup_menu, Add, Fazer Back up, make_back_up
-Menu, users_menu, Add, Usuarios, manager_users
-Menu, list_menu, Add, Listas, list_options
-Menu, xml_menu, Add, XML, xml
-Menu, backup_menu, Add, Carregar Back up, load_back_up
+Menu, update_menu,   Add, Atualizar, make_update
+Menu, backup_menu,   Add, Fazer Back up, make_back_up
+Menu, users_menu,    Add, Usuarios, manager_users
+Menu, list_menu,     Add, Listas, list_options
+Menu, xml_menu,      Add, XML, xml
+Menu, backup_menu,   Add, Carregar Back up, load_back_up
 Menu, main_menu_bar, Add, &Atualizar, :update_menu
 Menu, main_menu_bar, Add, &Back up, :backup_menu
 Menu, main_menu_bar, Add, &Usuarios, :users_menu
@@ -249,6 +263,52 @@ LV_ModifyCol(2,300)
 LV_Modify(2, "+Select")
 _loading := 0
 return	
+
+verify_tot:
+info := get_item_info("M", "MODlv")
+tot_connection := get_connection("TOTALLIGHT")
+base_value := get_data_base_value("TOTALLIGHT")
+if(base_value = "")
+	return
+code_table :=
+(JOIN
+	info.empresa[2]
+	info.tipo[2] 
+	info.familia[2] 
+	info.subfamilia[2] 
+	info.modelo[2] "Codigo"
+)
+current_code_list := db.load_table_in_array(code_table)
+missing_codes := DBEC.codes(info, tot_connection, base_value, current_code_list) 
+if(missing_codes.maxindex() > 0){
+  DBEC.change_code_status(0, "consistency_picture_tot")
+}else{
+	DBEC.change_code_status(1, "consistency_picture_tot")
+}
+return 
+
+verify_mac:
+info := get_item_info("M", "MODlv")
+mac_connection := get_connection("MACCOMEVAP")
+base_value := get_data_base_value("MACCOMEVAP")
+if(base_value = "")
+	return
+code_table :=
+(JOIN
+	info.empresa[2]
+	info.tipo[2] 
+	info.familia[2] 
+	info.subfamilia[2] 
+	info.modelo[2] "Codigo"
+)
+current_code_list := db.load_table_in_array(code_table)
+missing_codes := DBEC.codes(info, mac_connection, base_value, current_code_list) 
+if(missing_codes.maxindex() > 0){
+  DBEC.change_code_status(0, "consistency_picture_mac")
+}else{
+	DBEC.change_code_status(1, "consistency_picture_mac")
+}
+return
 
 MGuiClose:
 ExitApp
@@ -1248,6 +1308,7 @@ MODlv:
 if A_GuiEvent = i
 {
 	Gui,submit,nohide
+	clear_prev_status()
 	info := get_item_info("M", "MODlv") 
 	if(info.modelo[1] != "Modelo"){
 		load_image_in_main_window()	
@@ -2937,6 +2998,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 /*
 	Controllers
 */
+#Include, controllers/db_ex_checker_controller.ahk
 #Include, controllers/status_controller.ahk
 #Include, controllers/rem_massa_controller.ahk
 #include, controllers/db_ex_controller.ahk

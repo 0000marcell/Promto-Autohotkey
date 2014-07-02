@@ -715,6 +715,11 @@ get_tv_id(window, treeview){
 	return id
 }
 
+clear_prev_status(){
+	GuiControl, , consistency_picture_tot , % "img\gray_glossy_ball.png"
+	GuiControl, , consistency_picture_mac , % "img\gray_glossy_ball.png"
+}
+
 ;#############GETREFERENCE################################################
 getreferencetable(tipo,table){
 	Global db
@@ -1181,7 +1186,11 @@ change_info(v_info){
 	return e_info
 }
 
-existindb(connection,sql){  ;connection fora da classe sql 
+existindb(connection, sql){  ;connection fora da classe sql 
+	if(!IsObject(connection)){
+	 	MsgBox,16, Erro,% "A conexao falhou, confira os parametros"
+	 	return
+	}
 	tableexist := connection.Query(sql)
 	columnCount := tableexist.Columns.Count()
 	for each,row in tableexist.Rows{

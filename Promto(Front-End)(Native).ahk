@@ -107,9 +107,9 @@ Return
 
 	loading_main:
 	Gui, Submit, Nohide
-	;if(!db.Usuario.log_in_user(user_name, user_password)){
-		;return 
-	;}
+	if(!db.Usuario.log_in_user(user_name, user_password)){
+		return 
+	}
 	USER_NAME := user_name
 	Gui, initialize:default
 	GuiControl, Disable, loading_main,
@@ -435,7 +435,7 @@ return
 	return
 
 	main_tv:
-
+	AHK.reset_debug()
   /*
   	funcao que busca o nivel 
   	que a selecao esta
@@ -450,7 +450,7 @@ return
   	*/
   		
   	/*
-  		Verifica se o nival atual tem um subnivel
+  		Verifica se o nivel atual tem um subnivel
   		se tiver retorna sem carregar tabela de modelo
   	*/
   	if(tv_level = 3){
@@ -479,6 +479,7 @@ return
 			em determinada listview
 		*/
 		;db.Modelo.check_data_consistency(model_table, info) ;verifica se todos os elementos na lista tem as tabela necessarias.
+		AHK.append_debug("gonna load model table " model_table)
 		db.load_lv("M", "MODlv", model_table)
 		LV_ModifyCol(1)
 		load_logo_in_main()	

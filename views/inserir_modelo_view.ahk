@@ -176,7 +176,7 @@ inserir_modelo_view(model_table){
 	MsgBox, 4,, % "Deseja apagar o modelo " info_inserir_modelo.modelo[1] " e todas as suas dependencias?"
 	IfMsgBox Yes
 	{
-		select_number := GetSelected("inserir_modelo_view","inserir_modelo_lv","number")
+		select_number := GetSelected("inserir_modelo_view", "inserir_modelo_lv", "number")
 		db.Modelo.excluir(info_inserir_modelo.modelo[1], info_inserir_modelo.modelo[2], info)	
 		delete_row_from_lv("inserir_modelo_view", "inserir_modelo_lv", info_inserir_modelo.modelo[1])
 		delete_row_from_lv("M", "MODlv", info_inserir_modelo.modelo[1]) 

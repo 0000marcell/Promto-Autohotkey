@@ -166,8 +166,8 @@ class Modelo{
 		 Excluir a entrada do modelo
 		 na tabela de modelos
 		*/
-
 		prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] 
+		
 		tabela1 :=
 		(JOIN
 			info.empresa[2]
@@ -186,7 +186,7 @@ class Modelo{
 			MsgBox, 16, Erro, % " O valor a ser deletado nao existia na tabela de modelos: " model_table
 			return 
 		}
-
+		AHK.append_debug("delete model table " model_table " modelo mascara " modelo_mascara)
 		try{
 			mariaDB.Query(
 			(JOIN 

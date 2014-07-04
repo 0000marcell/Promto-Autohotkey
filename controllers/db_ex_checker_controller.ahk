@@ -33,16 +33,12 @@ Class DBEC{
 	check_if_exist(code, connection, base_value){
 		Global db
 
-		AHK.append_debug("check if exist code " code)
-
 		sql :=
 		(JOIN 
 			"Select B1_COD "  
 			"from " base_value " WHERE B1_COD = '" code "'"
 		)
-		AHK.append_debug("sql passed " sql)
 		_exist_in_dbex := existindb(connection, sql)
-		AHK.append_debug("exist result " _exist_in_dbex)
 		if(_exist_in_dbex = 1){
 			return true
 		}else{
@@ -61,7 +57,6 @@ Class DBEC{
 		}else{
 			img_path := "img\red_glossy_ball.png"
 		}
-		AHK.append_debug("gonna change status in main window to " status)
 		GuiControl, , %hwd% , % img_path
 	}
 }

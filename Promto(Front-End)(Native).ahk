@@ -207,8 +207,8 @@ Gui, Add, Button, x480 y+15 w80 h20 gchange_status , Alterar status
 /*
 	Info
 */
-Gui, Add, Groupbox, x480 y+25 w815 h220, Info:
-Gui, Add, Picture, xp+5 yp+15 vptcode gfotoindividual, % "img\promtologo.png"
+Gui, Add, Picture, xp y+15 vptcode gfotoindividual, % "img\promtologo.png"
+Gui, Add, Listview, x+5 yp w600 h300 vall_mod_lv gall_mod_lv altsubmit,
 _loading := 1
 
 /*
@@ -221,11 +221,11 @@ Gui, Font, cblue
 Gui, Add, Text, x+2 w300 h80 vmsg_info,
 Gui, Font, cblack
 
-/*
-	Formacao codigo
-*/
-Gui, Add, Groupbox, x480 y+10 w815 h200, Formacao do codigo:
-Gui, Add, Picture, xp+5 yp+50 w790 h190 vfmcode,
+;/*
+;	Formacao codigo
+;*/
+;Gui, Add, Groupbox, x480 y+10 w815 h200, Formacao do codigo:
+;Gui, Add, Picture, xp+5 yp+50 w790 h190 vfmcode,
 
 /*
 	Consistencia DBEX Totallight
@@ -263,6 +263,25 @@ LV_ModifyCol(2,300)
 LV_Modify(2, "+Select")
 _loading := 0
 return	
+
+all_mod_lv:
+if A_GuiEvent = i
+{
+	Gui, Submit, Nohide
+	info := get_item_info("M", "MODlv") 
+	selected_mod := GetSelectedRow("M", "all_mod_lv")
+	if(selected_mod[1] = "" || selected_mod[1] = "Codigos")
+		return 
+	image_path := db.Imagem.get_image_full_path(selected_mod[1])
+	if(image_path != ""){
+		Guicontrol,, ptcode, % image_path 
+	}else{
+		Guicontrol,, ptcode,% "img\sem_foto.jpg"
+	}	
+}
+return
+
+
 
 verify_tot:
 info := get_item_info("M", "MODlv")
@@ -440,6 +459,11 @@ return
   	que a selecao esta
   */
   tv_level := get_tv_level("M", "main_tv")
+
+  /*
+   Limpa todas as informacoes deixadas pela ultima selecao
+  */
+  clear_main_info()
 
   if(tv_level = 3 || tv_level = 4){
   	/*
@@ -1310,12 +1334,12 @@ if A_GuiEvent = i
 	Gui,submit,nohide
 	clear_prev_status()
 	info := get_item_info("M", "MODlv") 
-	if(info.modelo[1] != "Modelo"){
-		load_model_image_in_main_window(info)	
+	if(info.modelo[1] != "Modelo"){	
 		load_mod_info(info)
-		load_codes_in_main(info)
+		load_all_mod(info)
 		load_status_in_main_window(info)
-		number_of_items(info)
+		load_model_image_in_main_window(info)
+		;number_of_items(info)
 	}
 }
 return 

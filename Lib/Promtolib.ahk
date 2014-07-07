@@ -180,6 +180,61 @@ get_prefix_from_info(info){
 	return prefixo
 }
 
+/*
+	Carrega todos os modelo na listview da janela principal
+*/
+load_all_mod(info){
+	Global db 
+
+	code_table := get_prefix_from_info(info) "codigo"
+	code_list_array := db.find_items_where("codigos like '%" info.modelo[2]  "%'", code_table)
+	GuiControl,, numberofitems, % code_list_array.maxindex() 
+	load_lv_from_array(["codigo", "descricao", "descricao completa", "descricao em ingles"], code_list_array, "M", "all_mod_lv")
+	Gui, Listview, all_mod_lv
+	LV_ModifyCol(1, 100), LV_ModifyCol(2, 480)	
+}
+
+/*
+	Removes determinadas colunas de um array 
+	multidimensional
+*/
+trim_array(array, columns_to_keep, number_of_columns){
+	new_array := []
+	new_array_column := 0
+	loop, % number_of_columns{
+		column := A_Index
+		for, each, column_to_keep in columns_to_keep{
+			if(column = column_to_keep ){
+				new_array_column++
+				loop, % array.maxindex(){
+					if(array[A_Index, column] = "")
+						Continue
+					new_array[A_Index, new_array_column] := array[A_Index, column]
+				}
+			}
+		}
+	}
+	Return new_array
+}
+
+/*
+	Limpa as informacoes sobre o 
+	modelo da tabela principal
+*/
+clear_main_info(){
+	Gui, M:default
+	Gui, Listview, MODlv
+	LV_Delete()
+	GuiControl,, numberofitems,
+	GuiControl,, status_picture, % "img\gray_glossy_ball.png"
+	GuiControl,, status_info,
+	GuiControl,, ptcode, % "img\promtologo.png"
+	Gui, Listview, all_mod_lv
+	LV_Delete()
+	GuiControl,, mod_info,
+	GuiControl,, msg_info,
+}
+
 
 LV_MoveRowfam(wname,lvname,moveup = true) {
 	gui,%wname%:Default
@@ -1683,25 +1738,44 @@ haschild(itemid,wname,tv){
 }
 
 ;############# load lv from array ################
-load_lv_from_array(columns, array, window, lv){
+load_lv_from_array(columns, array, window, lv, start_at = "1"){
 	Gui, %window%:default
 	Gui, Listview, %lv%
-	LV_Delete()
-	prev_count := 0
-	loop, % array.maxindex(){
-		col_number := A_Index
-		LV_InsertCol(col_number,"",columns[A_Index])
-		loop,% array[col_number].maxindex(){
-			if(prev_count < A_Index){
-				prev_count++
-				LV_Add("","","")
-			}
-			LV_Modify(A_Index, "Col" . col_number, array[ A_Index, col_number])
 
-		}
+	/*
+		Deleta todas as colunas existentes
+	*/
+	Loop, % columns.maxindex(){
+		LV_DeleteCol(1)
 	}
 
+	LV_Delete()
+	prev_count := 0
+	line_count := 0
+	column_count := 0
+	GuiControl, -Redraw, %lv% 
+	loop, % columns.maxindex(){
+		loop, % array[A_Index].maxindex(){
+			if(A_Index < start_at)
+				Continue
+
+			if(A_Index > column_count){
+				col_number := A_Index
+				LV_InsertCol(col_number,"",columns[A_Index])	
+				column_count++
+			}
+			loop, % array.maxindex(){
+				if(A_Index > line_count){
+					LV_Add("","","")
+					line_count++	
+				}
+				LV_Modify(A_Index, "Col" . col_number, array[ A_Index, col_number])
+			}
+		}	
+	}
+	GuiControl, +Redraw, %lv%
 }
+
 
 load_lv_from_matrix(number_of_columns, array, window, lv){
 	Gui, %window%:default

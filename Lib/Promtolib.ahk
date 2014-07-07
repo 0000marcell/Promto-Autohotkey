@@ -164,17 +164,20 @@ Class OTTK
 	Funcao que conta o numero de codigos de determinado modelo 
 	e insere a quantidade na janela principal
 */
-number_of_items(){
- 	Global
+number_of_items(info){
+ 	Global db
 	
-	Gui, M:default
-	if(info.subfamilia[2] != ""){
-		noi_prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2]
-	}else{
-		noi_prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2]
-	}
-	codigos_a := db.load_table_in_array(noi_prefixo "Codigo")
-	GuiControl,, numberofitems, % codigos_a.maxindex()
+	codigos := db.load_table_in_array(get_prefix_from_info(info) "Codigo")
+	GuiControl,, numberofitems, % codigos.maxindex()
+}
+
+/*
+ Retorna o prefixo 
+ baseada nas informacoes do info
+*/
+get_prefix_from_info(info){
+	prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2]
+	return prefixo
 }
 
 
@@ -822,6 +825,19 @@ load_image_in_main_window(){
 		image_name_value := "img\sem_foto.jpg" 
 	}
 	show_image_and_code(image_name_value)
+}
+
+/*
+ Carrega a imagem do modelo na janela principal
+*/
+load_model_image_in_main_window(info){
+	Global db
+	code := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
+	image_name_value := db.Imagem.get_image_full_path(code)
+	if(image_name_value = ""){
+		image_name_value := "img\sem_foto.jpg" 
+	}
+	GuiControl,, ptcode, % image_name_value  
 }
 
 /*
@@ -2566,9 +2582,12 @@ format_file_name(file_name){
 	return file_name
 }
 
-
-load_mod_info(){
-	Global db, info
+/*
+	Carrega as ultimas modificacoes do 
+	determinado modelo na janela principal
+*/
+load_mod_info(info){
+	Global db
 
 	
 	items := db.Log.get_mod_info(info)
@@ -2587,6 +2606,10 @@ load_mod_info(){
 
 }
 
+/*
+	Carrega o status do determinado item na janela 
+	principal
+*/
 load_status_in_main_window(info){
 	Global USER_NAME, db
 

@@ -26,7 +26,7 @@ insert_mod_msg_view(){
 	Gui, Submit, Nohide
 	Gui, insert_mod_msg_view:destroy
 	db.Log.insert_mod_info(info, USER_NAME, msg_value_edit)
-	load_mod_info()
+	load_mod_info(info)
 	load_formation_in_main_window(info)
 	return
 }

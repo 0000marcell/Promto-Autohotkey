@@ -129,7 +129,7 @@ if(_error = 0){
 	MsgBox,16,, % "Os codigos NAO foram gerados!!"
 }
 db.load_codigos_combobox(codtable)
-number_of_items()
+number_of_items(info)
 status_info := get_item_info("M", "MODlv")
 clean_status(status_info)
 return 

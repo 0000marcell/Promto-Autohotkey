@@ -75,12 +75,12 @@ E:
 Gui, initialize:New
 Gui, Font, s%SMALL_FONT%, %FONT%
 Gui, Color, %GLOBAL_COLOR%
-Gui, Add, Picture, xm ym w300 h150,img\promtologo.png
+Gui, Add, Picture, x30 ym, img\promtologo.png
 
 /*
 	Nome do usuario
 */
-Gui, Add, Groupbox, w300 h110, Usuario
+Gui, Add, Groupbox, xp-20 y+10 w300 h110, Usuario
 Gui, Add, Text, xp+5 yp+15, Nome:
 Gui, Add, Edit, w280 vuser_name, 
 Gui, Add, Text, , Senha:
@@ -144,7 +144,7 @@ Gui, Color, %GLOBAL_COLOR%
 /*
 	Logo tipo
 */
-Gui, Add, Picture, xm ym w230 h150,img\promtologo.png
+Gui, Add, Picture, xm ym,img\promtologo.png
 
 /*
 	Familias
@@ -200,7 +200,7 @@ for,each,value in ["Gerar Estruturas", "Linkar", "Add db Externo", "Estrutura", 
 	Status
 */
 Gui, Add, Groupbox, x480 ym w315 h90, Status
-Gui, Add, Picture, xp+5 yp+15 w50 h50 vstatus_picture,
+Gui, Add, Picture, xp+5 yp+15 vstatus_picture, % "img\gray_glossy_ball.png"
 Gui, Add, Text, x+5 w220 h60 vstatus_info,
 Gui, Add, Button, x480 y+15 w80 h20 gchange_status , Alterar status
 
@@ -208,7 +208,7 @@ Gui, Add, Button, x480 y+15 w80 h20 gchange_status , Alterar status
 	Info
 */
 Gui, Add, Groupbox, x480 y+25 w815 h220, Info:
-Gui, Add, Picture, xp+5 yp+15 w780 h200 vptcode gfotoindividual,
+Gui, Add, Picture, xp+5 yp+15 vptcode gfotoindividual, % "img\promtologo.png"
 _loading := 1
 
 /*
@@ -231,14 +231,14 @@ Gui, Add, Picture, xp+5 yp+50 w790 h190 vfmcode,
 	Consistencia DBEX Totallight
 */
 Gui, Add, Groupbox, x800 ym w150 h90, Totallight
-Gui, Add, Picture,  xp+5 yp+15 w50 h50 vconsistency_picture_tot,
+Gui, Add, Picture,  xp+5 yp+15 vconsistency_picture_tot, % "img\gray_glossy_ball.png"
 Gui, Add, Button,   x805 y+25 w80 h20 gverify_tot, Verificar
 
 /*
 	Consistencia DBEX Maccomevap
 */
 Gui, Add, Groupbox, x960 ym w150 h90, Maccomevap
-Gui, Add, Picture, xp+5 yp+15 w50 h50 vconsistency_picture_mac,
+Gui, Add, Picture, xp+5 yp+15 vconsistency_picture_mac, % "img\gray_glossy_ball.png"
 Gui, Add, Button, x965 y+25 w80 h20 gverify_mac, Verificar
 
 /*
@@ -435,7 +435,6 @@ return
 	return
 
 	main_tv:
-	AHK.reset_debug()
   /*
   	funcao que busca o nivel 
   	que a selecao esta
@@ -1312,12 +1311,12 @@ if A_GuiEvent = i
 	clear_prev_status()
 	info := get_item_info("M", "MODlv") 
 	if(info.modelo[1] != "Modelo"){
-		load_image_in_main_window()	
-		load_mod_info()
-		load_formation_in_main_window(info)
+		load_model_image_in_main_window(info)	
+		load_mod_info(info)
+		load_codes_in_main(info)
 		load_status_in_main_window(info)
+		number_of_items(info)
 	}
-	number_of_items()
 }
 return 
 

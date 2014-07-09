@@ -32,8 +32,8 @@ inserir_imagem_db_view(owner_name, picture_control, codigos_array = ""){
 		Fotos
 	*/
 	Gui, Add, Groupbox, x+45 ym w250 h250, Foto
-	Gui, Add, Picture, xp+5 yp+15 w200 h200 vinserir_imagem_db_picture,
-	Gui, Show,, Inserir Imagem do DB
+	Gui, Add, Picture, xp+5 yp+15 vinserir_imagem_db_picture,
+	Gui, Show,, Inserir Imagem do Banco de dados
 	Lista_de_pesquisa := db.get_values("*", "imagetable")
 	db.load_lv("inserir_imagem_db_view", "inserir_imagem_db_lv", "imagetable")
 	return
@@ -68,7 +68,6 @@ inserir_imagem_db_view(owner_name, picture_control, codigos_array = ""){
 		db.Imagem.link_up(info, valor_selecionado)	
 	}
 	Gui, %s_owner_name%:default
-
 	GuiControl,, s_picture_control, %global_image_path%%valor_selecionado%.jpg 
 	MsgBox, % "As imagems foram salvas"
 	return

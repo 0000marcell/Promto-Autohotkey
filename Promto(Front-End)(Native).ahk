@@ -146,23 +146,23 @@ Gui, Color, %GLOBAL_COLOR%
 */
 Gui, Add, Picture, xm ym,img\promtologo.png
 
-/*
-	Familias
-*/
-Gui, Add, Groupbox, xm y+10 w230 h40,Pesquisa
-Gui, Add, Edit, xp+5 yp+15 w220,
+;/*
+;	Familias
+;*/
+;Gui, Add, Groupbox, xm y+10 w230 h40,Pesquisa
+;Gui, Add, Edit, xp+5 yp+15 w220,
 
 /*
 	Empresas/Tipos/Familias
 */
-Gui, Add, Groupbox, xp-5 y+10 w230 h370, Empresas/Tipos/Familias
-Gui, Add, TreeView, xp+5 yp+15 w280 h360 vmain_tv gmain_tv
+Gui, Add, Groupbox, xp-5 y+10 w290 h450, Empresas/Tipos/Familias
+Gui, Add, TreeView, xp+5 yp+15 w280 h430 vmain_tv gmain_tv
 load_main_tv()
 
 /*
 	Opcoes
 */
-Gui, Add, Groupbox, xm y+20 w230 h60, Opcoes
+Gui, Add, Groupbox, xm y+10 w230 h60, Opcoes
 Gui, Add, Button, xp+25 yp+15 w100 h30 ginsert_empresa, Criar Empresa 
 Gui, Add, Button, x+5 w40 h30 hwndhBtn grecarregar_main_tv
 
@@ -214,7 +214,7 @@ _loading := 1
 /*
 	Ultimas atualizacoes
 */
-Gui, Add, Groupbox, x540 y+20 w815 h100, Ultimas atualizacoes:
+Gui, Add, Groupbox, x540 y+20 w815 h220, Ultimas atualizacoes:
 Gui, Font, cgreen
 Gui, Add, Text, xp+5 yp+15 w365 h80 vmod_info,
 Gui, Font, cblue 
@@ -232,14 +232,14 @@ Gui, Font, cblack
 */
 Gui, Add, Groupbox, x860 ym w150 h90, Totallight
 Gui, Add, Picture,  xp+5 yp+15 vconsistency_picture_tot, % "img\gray_glossy_ball.png"
-Gui, Add, Button,   x805 y+25 w80 h20 gverify_tot, Verificar
+Gui, Add, Button,   x865 y+15 w80 h20 gverify_tot, Verificar
 
 /*
 	Consistencia DBEX Maccomevap
 */
 Gui, Add, Groupbox, x1020 ym w150 h90, Maccomevap
 Gui, Add, Picture, xp+5 yp+15 vconsistency_picture_mac, % "img\gray_glossy_ball.png"
-Gui, Add, Button, x965 y+25 w80 h20 gverify_mac, Verificar
+Gui, Add, Button, x1025 y+15 w80 h20 gverify_mac, Verificar
 
 /*
 	Menu de backup

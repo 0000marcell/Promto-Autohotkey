@@ -156,7 +156,7 @@ Gui, Add, Edit, xp+5 yp+15 w220,
 	Empresas/Tipos/Familias
 */
 Gui, Add, Groupbox, xp-5 y+10 w230 h370, Empresas/Tipos/Familias
-Gui, Add, TreeView, xp+5 yp+15 w220 h360 vmain_tv gmain_tv
+Gui, Add, TreeView, xp+5 yp+15 w280 h360 vmain_tv gmain_tv
 load_main_tv()
 
 /*
@@ -172,9 +172,9 @@ ILButton(hBtn, "promtoshell.dll:" 5, 32, 32, 0)
 /*
 	Modelos 
 */
-Gui, Add, Groupbox, xm+240 ym w220 h290, Modelos 
+Gui, Add, Groupbox, xm+300 ym w220 h290, Modelos 
 Gui, Add, Listview, xp+5 yp+15 w200 h270 section  vMODlv gMODlv altsubmit, Modelo|Mascara
-Gui, Add, Groupbox, xm+240 y+10 w220 h60, Numero de items:
+Gui, Add, Groupbox, xm+300 y+10 w220 h60, Numero de items:
 Gui, Font, s15
 Gui, Add,	Text, xp+75 yp+15 w100 vnumberofitems cblue,
 Gui, Font, s8
@@ -182,7 +182,7 @@ Gui, Font, s8
 /*
 	Opcoes
 */
-Gui, Add, Groupbox, xm+240 y+20 w220 h300, Opcoes 
+Gui, Add, Groupbox, xm+300 y+20 w220 h300, Opcoes 
 Gui, Add, Button, hwndhMod xp+5 yp+15 w100 h30 gMAM, Modelos
 glabels := ["MAB", "MAC", "ordemprefix", "MAOC", "MAODC", "MAODR", "MAODI"]
 for,each,value in ["Bloqueados", "Campos", "Ordem Prefixo", "Ordem Codigo", "Ordem Desc Completa", "Ordem Desc Resumida", "Ordem Desc Ingles"]{
@@ -199,22 +199,22 @@ for,each,value in ["Gerar Estruturas", "Linkar", "Add db Externo", "Estrutura", 
 /*
 	Status
 */
-Gui, Add, Groupbox, x480 ym w315 h90, Status
+Gui, Add, Groupbox, x540 ym w315 h90, Status
 Gui, Add, Picture, xp+5 yp+15 vstatus_picture, % "img\gray_glossy_ball.png"
 Gui, Add, Text, x+5 w220 h60 vstatus_info,
-Gui, Add, Button, x480 y+15 w80 h20 gchange_status , Alterar status
+Gui, Add, Button, x540 y+15 w80 h20 gchange_status , Alterar status
 
 /*
 	Info
 */
 Gui, Add, Picture, xp y+15 vptcode gfotoindividual, % "img\promtologo.png"
-Gui, Add, Listview, x+5 yp w600 h300 vall_mod_lv gall_mod_lv altsubmit,
+Gui, Add, Listview, x+5 yp w540 h300 vall_mod_lv gall_mod_lv altsubmit,
 _loading := 1
 
 /*
 	Ultimas atualizacoes
 */
-Gui, Add, Groupbox, x480 y+20 w815 h100, Ultimas atualizacoes:
+Gui, Add, Groupbox, x540 y+20 w815 h100, Ultimas atualizacoes:
 Gui, Font, cgreen
 Gui, Add, Text, xp+5 yp+15 w365 h80 vmod_info,
 Gui, Font, cblue 
@@ -230,14 +230,14 @@ Gui, Font, cblack
 /*
 	Consistencia DBEX Totallight
 */
-Gui, Add, Groupbox, x800 ym w150 h90, Totallight
+Gui, Add, Groupbox, x860 ym w150 h90, Totallight
 Gui, Add, Picture,  xp+5 yp+15 vconsistency_picture_tot, % "img\gray_glossy_ball.png"
 Gui, Add, Button,   x805 y+25 w80 h20 gverify_tot, Verificar
 
 /*
 	Consistencia DBEX Maccomevap
 */
-Gui, Add, Groupbox, x960 ym w150 h90, Maccomevap
+Gui, Add, Groupbox, x1020 ym w150 h90, Maccomevap
 Gui, Add, Picture, xp+5 yp+15 vconsistency_picture_mac, % "img\gray_glossy_ball.png"
 Gui, Add, Button, x965 y+25 w80 h20 gverify_mac, Verificar
 

@@ -36,12 +36,12 @@ class Imagem{
 			pasta de imagens do programa
 		*/
 
-		FileCopy, %source%,temp\%nome_imagem%.jpg, 1
+		FileCopy, %source%, temp\image_to_convert.jpg, 1
 
 		/*
 			Converte a imagem para o formato necessario
 		*/
-		this.convert_image("temp\" nome_imagem ".jpg")
+		this.convert_image("temp\image_to_convert.jpg")
 		
 		/*
 			Insere o valor na tabela
@@ -55,7 +55,7 @@ class Imagem{
 		/*
 			Move a imagem para a pasta externa
 		*/ 
-		FileCopy, temp\%nome_imagem%.jpg, %global_image_path%promto_imagens\promto_%image_id%.jpg, 1
+		FileCopy, temp\image_to_convert.jpg, %global_image_path%promto_imagens\promto_%image_id%.jpg, 1
 
 		if(ErrorLevel){
 			MsgBox,16,Erro, % "A imagem nao pode ser copiada!"
@@ -263,6 +263,11 @@ class Imagem{
 		Convert image determinada imagem para jpg e coloca a imagem no mesmo lugar
 	*/
 	convert_image(image_path){
+		IfNotExist, % image_path
+		{
+			MsgBox, 16, Erro, % "A imagem a ser convertida nao existia na pasta."
+			return
+		}
 		FileDelete, % "temp\image_info.txt"
 		;MsgBox, % "caminho da imagem antes da conversao " image_path
 	  StringReplace, image_path, image_path, \, /,All

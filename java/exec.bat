@@ -1,0 +1,1 @@
+javac ConvertImageTest.java && java ConvertImageTest

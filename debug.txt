@@ -514,3 +514,5 @@ gonna load model table TLModelo
 gonna load model table TIEQIModelo
 gonna load model table TIPCCPModelo
 gonna load model table TIPCAModelo
+gonna load model table T908Modelo
+gonna load model table TLModelo

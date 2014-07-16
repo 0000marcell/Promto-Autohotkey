@@ -10,13 +10,12 @@ import javax.swing.JOptionPane;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.Integer;
 
 public class ConvertImageFolder{
 	JProgressBar progressBar;
 	JFrame frame;
 	int itemPercentage; // Porcentagem de cada item
-	int imageWidth;
-	int imageHeight;
 	JTextField widthField;
 	JTextField heightField;
 	String imageFolder;
@@ -37,14 +36,14 @@ public class ConvertImageFolder{
 	public void gui(){
 		// Get image folder
 		convertImage = new ConvertImageFolder(); 
-		imageFolder = convertImage.getImageFolder();
+		System.out.println("returned image folder "+imageFolder);
 		JOptionPane.showMessageDialog(null, "Pasta de imagem "+imageFolder, "Informacao", 
 	  		JOptionPane.INFORMATION_MESSAGE);
 
 
 		frame = new JFrame("Convertendo Imagens"); 
 		JPanel mainPanel = new JPanel();
-		JLabel infoLabel = new JLabel("Tamanho padrao do programa: 448 x 336");
+		JLabel infoLabel = new JLabel("padrao: 448 x 336");
 		JLabel widthLabel = new JLabel("Largura");
 		JLabel heightLabel = new JLabel("Altura");
 		widthField = new JTextField();
@@ -56,7 +55,7 @@ public class ConvertImageFolder{
     progressBar.setValue(0);
     progressBar.setStringPainted(true);
 		mainPanel.setBounds(0, 0, 280, 180);
-		infoLabel.setBounds(10+marginLeft, 10, 100, 20);
+		infoLabel.setBounds(10+marginLeft, 10, 200, 20);
 		widthLabel.setBounds(10+marginLeft, 35, 100, 20);
 		heightLabel.setBounds(10+marginLeft, 60, 100, 20);
 		widthField.setBounds(115+marginLeft, 35, 50, 20);
@@ -80,10 +79,8 @@ public class ConvertImageFolder{
 		frame.setVisible(true);
 	}
 
-	public void convertFolder(){
-		// Loop though all the files in that folder
-		// imageWidth = Integer.parseInt(widthField.getText());
-		// imageHeight = Integer.parseInt(heightField.getText()); 
+	public void convertFolder(int imageWidth, int imageHeight, JProgressBar progressBar){
+		// Loop though all the files in that folder 
 
 		if(imageWidth == 0 || imageHeight == 0){
 			JOptionPane.showMessageDialog(null, 
@@ -92,7 +89,9 @@ public class ConvertImageFolder{
 	  		JOptionPane.INFORMATION_MESSAGE);	
 			return;
 		}
-
+		ConvertImageFolder convertImage = new ConvertImageFolder(); 
+		imageFolder = convertImage.getImageFolder();
+		System.out.println("image folder "+imageFolder);
 		File[] files = new File(imageFolder).listFiles();
 		System.out.println("number of items "+files.length);
 		convertImage.setItemPercentage(files.length);
@@ -103,22 +102,25 @@ public class ConvertImageFolder{
 	    		"Informacao", 
 	  		JOptionPane.INFORMATION_MESSAGE);
 	    }else{
-	    	convertImage.convertImage(imageFolder, file.getName());  	
-	    	convertImage.changeProgress();
+	    	convertImage.convertImage(imageFolder, file.getName(), 
+	    														imageWidth, imageHeight);  	
+	    	convertImage.changeProgress(progressBar);
 	    }
 	  }
-	  convertImage.finish();
+	  convertImage.finish(progressBar);
 	}
 
-	public void finish(){
+	public void finish(JProgressBar progressBar){
+		progressBar.setValue(100);
 		frame.dispose();
 	}
 
-	public void changeProgress(){
+	public void changeProgress(JProgressBar progressBar){
 		progressBar.setValue(progressBar.getValue()+itemPercentage);
 	}
 
-	public void convertImage(String imageFolder, String fileName){
+	public void convertImage(String imageFolder, String fileName, 
+														int imageWidth, int imageHeight){
 		BufferedImage bufferedImage;
  		BufferedImage newBufferedImage;
  		Image image;
@@ -158,9 +160,12 @@ public class ConvertImageFolder{
 	}
 
 	public class startConvertionButton implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
-			System.out.println("gonna call gui"); 
-			new ConvertImageFolder().convertFolder();
+		public void actionPerformed(ActionEvent e) { 
+			String wStr = widthField.getText();
+			String hStr = heightField.getText();
+			int imageWidth = Integer.valueOf(wStr);
+			int imageHeight = Integer.valueOf(hStr);
+			new ConvertImageFolder().convertFolder(imageWidth, imageHeight, progressBar);
 		}
 	}
 }

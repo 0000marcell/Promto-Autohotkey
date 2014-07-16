@@ -31,8 +31,8 @@ inserir_imagem_db_view(owner_name, picture_control, codigos_array = ""){
 	/*
 		Fotos
 	*/
-	Gui, Add, Groupbox, x+45 ym w250 h250, Foto
-	Gui, Add, Picture, xp+5 yp+15 vinserir_imagem_db_picture,
+	Gui, Add, Groupbox, x+45 ym w310 h320, Foto
+	Gui, Add, Picture, xp+5 yp+15 w300 h300 vinserir_imagem_db_picture,
 	Gui, Show,, Inserir Imagem do Banco de dados
 	Lista_de_pesquisa := db.get_values("*", "imagetable")
 	db.load_lv("inserir_imagem_db_view", "inserir_imagem_db_lv", "imagetable")
@@ -91,6 +91,10 @@ inserir_imagem_db_view(owner_name, picture_control, codigos_array = ""){
 		Gui, inserir_imagem_db_view:default
 		image_id := db.Imagem.get_image_id(image_name)
 		image_source := global_image_path "promto_imagens\promto_" image_id  ".jpg"
+		IfNotExist, % image_source
+		{
+			image_source := global_image_path "promto_imagens\promto_0.jpg"	
+		} 
 		GuiControl,, inserir_imagem_db_picture,%image_source%
 	}
 	return 

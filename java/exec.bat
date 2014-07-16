@@ -1,1 +1,1 @@
-javac ConvertImageTest.java && java ConvertImageTest
+javac ConvertImageFolder.java && java ConvertImageFolder

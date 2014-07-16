@@ -207,7 +207,7 @@ Gui, Add, Button, x540 y+15 w80 h20 gchange_status , Alterar status
 /*
 	Info
 */
-Gui, Add, Picture, xp y+15 vptcode gfotoindividual, % "img\promtologo.png"
+Gui, Add, Picture, xp y+15 w268 h156 vptcode gfotoindividual, % "img\promtologo.png"
 Gui, Add, Listview, x+5 yp w540 h300 vall_mod_lv gall_mod_lv altsubmit,
 _loading := 1
 
@@ -249,11 +249,13 @@ Menu, backup_menu,   Add, Fazer Back up, make_back_up
 Menu, users_menu,    Add, Usuarios, manager_users
 Menu, list_menu,     Add, Listas, list_options
 Menu, xml_menu,      Add, XML, xml
+Menu, imagem_menu,   Add, Redimensionar, resize_image_folder 
 Menu, backup_menu,   Add, Carregar Back up, load_back_up
 Menu, main_menu_bar, Add, &Atualizar, :update_menu
 Menu, main_menu_bar, Add, &Back up, :backup_menu
 Menu, main_menu_bar, Add, &Usuarios, :users_menu
 Menu, main_menu_bar, Add, &XML, :xml_menu
+Menu, main_menu_bar, Add, &Imagem, :imagem_menu
 Menu, main_menu_bar, Color, White
 Gui, Menu, main_menu_bar
 Gui, Show,, %FamiliaName%
@@ -263,6 +265,10 @@ LV_ModifyCol(2,300)
 LV_Modify(2, "+Select")
 _loading := 0
 return	
+
+resize_image_folder:
+resize_image_folder_view()
+return
 
 all_mod_lv:
 if A_GuiEvent = i
@@ -2984,6 +2990,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 	Views
 */
 #Include, views/rem_massa_view.ahk
+#Include, views/resize_image_folder_view.ahk
 #include, views/generate_xml_view.ahk
 #include, views/inserir_campos_view.ahk
 #include, views/inserir_ETF_view.ahk

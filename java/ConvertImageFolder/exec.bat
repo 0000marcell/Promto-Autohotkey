@@ -1,0 +1,1 @@
+javac src/*.java && java ;./src ConvertImageFolder

@@ -30,12 +30,24 @@ lista_de_codigos(info){
 	Gui, Add, Groupbox, xm y+10 w800, Opcoes
 	Gui, Add, Button, xp+10 yp+15 w100 h30 gcarregartabela, Salvar em Arquivo
 	Gui, Add, Button, x+5 w100 h30 ggerarplaquetas, Gerar Plaquetas
+	Gui, Add, Button, x+5 w100 h30 gextract_images, Extrair imagens
 
 	code_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "Codigo"
 	Listpesqcod := db.load_table_in_array(code_table)
 	db.load_lv("lista_de_codigos_view", "lvcodetable", code_table)
 	LV_ModifyCol(1, 100), LV_ModifyCol(2, 300), LV_ModifyCol(3, 300), LV_ModifyCol(4, 300) 
 	Gui, Show,, Lista de Codigos
+	return
+
+	extract_images:
+	code_table := get_prefix_from_info(s_info) "Codigo"
+	codes := db.load_table_in_array(code_table)
+	for, each, item in codes {
+		image_path := db.Imagem.get_image_full_path(codes[A_Index, 1]) 
+		FileCopy, % image_path, % "temp\" codes[A_Index, 1] ".jpg", 1
+	} 
+	MsgBox, 64, Sucesso, % "Imagens copiadas"
+	Run, % "temp\"  
 	return
 
 	pesquisarcod:

@@ -16,7 +16,7 @@ class Print{
 				table_items[A_Index, 2] 
 				table_items[A_Index, 1] 
 			)
-			image_path := "..\" db.Imagem.get_image_full_path(tabela1)
+			image_path := db.Imagem.get_image_full_path(tabela1)
 			item_name := table_items[A_Index, 1]
 			Print.add_item(image_path, item_name)
 			Print.insert_break(A_Index, table_items.maxindex())

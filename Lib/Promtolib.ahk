@@ -675,7 +675,7 @@ inserirdbexterno(values){
 				B1_TIPO: values[A_Index,9], B1_GRUPO: values[A_Index,10], 
 				B1_IPI: values[A_Index,11], B1_LOCPAD: values[A_Index,12], B1_XGRUPO: values[A_Index, 10], 
 				B1_GARANT: GARANT, B1_XCALCPR: XCALCPR, B1_MSBLQL: "2", B1_USERLGI: A_UserName,
-				B1_LOCALIZ: "N"
+				B1_LOCALIZ: "N", B1_CODBAR: itemvalue
 			)}
 		
 			/*
@@ -724,6 +724,7 @@ inserirdbexterno(values){
 					"B1_XCALCPR,"
 					"B1_LOCALIZ,"
 					"B1_USERLGI,"
+					"B1_CODBAR,"
 					"R_E_C_N_O_) VALUES ('"
 					itemvalue "','"
 					values[A_Index,2] "','"
@@ -742,6 +743,7 @@ inserirdbexterno(values){
 					XCALCPR "','"
 					"N','" 
 					A_UserName "','"
+					itemvalue "','"
 					R_E_C_N_O_TBI "')"
 			)
 		}
@@ -1735,6 +1737,10 @@ haschild(itemid,wname,tv){
 	if not ItemID  
         return False
     return True 
+}
+
+get_info_in_string(info){
+	code_table := info 
 }
 
 ;############# load lv from array ################

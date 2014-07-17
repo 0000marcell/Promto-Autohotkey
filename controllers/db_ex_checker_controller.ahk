@@ -37,6 +37,7 @@ Class DBEC{
 		(JOIN 
 			"Select B1_COD "  
 			"from " base_value " WHERE B1_COD = '" code "'"
+			" AND B1_MSBLQL != '1'  "
 		)
 		_exist_in_dbex := existindb(connection, sql)
 		if(_exist_in_dbex = 1){

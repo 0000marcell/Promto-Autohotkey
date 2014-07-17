@@ -295,7 +295,7 @@ loadlv(hash){
 	lv_modifycol(1,200)
 }
 
-pesquisalvmod(wname,lvname,string,List){    ;funcao de pesquisa na listview modificada!!!!
+pesquisalvmod(wname, lvname, string, List){    ;funcao de pesquisa na listview modificada!!!!
 	Global 
 
 	Gui,%wname%:default
@@ -309,7 +309,7 @@ pesquisalvmod(wname,lvname,string,List){    ;funcao de pesquisa na listview modi
       	codname:=List[A_Index,1]
       	if(codname = "")
       		continue
-          LV_Add("",List[A_Index,1],List[A_Index,2],List[A_Index,3], List[A_Index, 4],%codname%["NCM"],%codname%["UM"],%codname%["ORIGEM"],%codname%["TCONTA"],%codname%["TIPO"],%codname%["GRUPO"],%codname%["IPI"],%codname%["LOCPAD"])
+          LV_Add("",List[A_Index,1],List[A_Index,2],List[A_Index,3], List[A_Index, 4], %codname%["NCM"], %codname%["UM"], %codname%["ORIGEM"], %codname%["TCONTA"], %codname%["TIPO"], %codname%["GRUPO"], %codname%["IPI"], %codname%["LOCPAD"])
       }    
   }Else{
       for,each,value in List{
@@ -327,7 +327,7 @@ pesquisalvmod(wname,lvname,string,List){    ;funcao de pesquisa na listview modi
     	  if(codname = "")
     		 continue
         
-        LV_Add("", List[value,1], List[value,2], List[A_Index,3], List[A_Index, 4], %codname%["NCM"], %codname%["UM"], %codname%["ORIGEM"], %codname%["TCONTA"], %codname%["TIPO"], %codname%["GRUPO"], %codname%["IPI"])
+        LV_Add("", List[value,1], List[value,2], List[A_Index,3], List[A_Index, 4], %codname%["NCM"], %codname%["UM"], %codname%["ORIGEM"], %codname%["TCONTA"], %codname%["TIPO"], %codname%["GRUPO"], %codname%["IPI"], %codname%["LOCPAD"])
       }
   }
   GuiControl, +Redraw,%lvname%

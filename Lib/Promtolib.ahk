@@ -168,6 +168,7 @@ number_of_items(info){
  	Global db
 	
 	codigos := db.load_table_in_array(get_prefix_from_info(info) "Codigo")
+	Gui, M:default
 	GuiControl,, numberofitems, % codigos.maxindex()
 }
 
@@ -188,10 +189,9 @@ load_all_mod(info){
 
 	code_table := get_prefix_from_info(info) "codigo"
 	code_list_array := db.find_items_where("codigos like '%" info.modelo[2]  "%'", code_table)
+	Gui, M:default
 	GuiControl,, numberofitems, % code_list_array.maxindex() 
-	load_lv_from_array(["codigo", "descricao", "descricao completa", "descricao em ingles"], code_list_array, "M", "all_mod_lv")
-	Gui, Listview, all_mod_lv
-	LV_ModifyCol(1, 100), LV_ModifyCol(2, 480)	
+	load_lv_from_array(["codigo", "descricao", "descricao completa", "descricao em ingles"], code_list_array, "M", "all_mod_lv", ["100", "200"])	
 }
 
 /*
@@ -222,18 +222,27 @@ trim_array(array, columns_to_keep, number_of_columns){
 	modelo da tabela principal
 */
 clear_main_info(){
+	Global change_ptcode
 	Gui, M:default
 	Gui, Listview, MODlv
 	LV_Delete()
 	GuiControl,, numberofitems,
 	GuiControl,, status_picture, % "img\gray_glossy_ball.png"
-	GuiControl,, status_info,
-	GuiControl,, ptcode, % "img\promtologo.png"
+	GuiControl,, status_info, 
+	if(change_ptcode){
+		change_ptcode := 0
+		GuiControl, , ptcode, % "img\promtologo.png"
+	}
 	Gui, Listview, all_mod_lv
 	LV_Delete()
 	GuiControl,, mod_info,
 	GuiControl,, msg_info,
 }
+
+/*
+	Funcao que muda a imagem de 
+	determinado controle 
+*/
 
 
 LV_MoveRowfam(wname,lvname,moveup = true) {
@@ -776,6 +785,7 @@ get_tv_id(window, treeview){
 }
 
 clear_prev_status(){
+	Gui, M:default
 	GuiControl, , consistency_picture_tot , % "img\gray_glossy_ball.png"
 	GuiControl, , consistency_picture_mac , % "img\gray_glossy_ball.png"
 }
@@ -861,39 +871,19 @@ check_if_blank(hash){
 	}
 }
 	
-/*
-	Carrega a imagem na janela principal
-*/
-load_image_in_main_window(){
-	Global empresa, tipo, familia, info,db, global_image_path
-	
-	codtable := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
-	
-	
-	db.load_codigos_combobox(codtable)
-
-	/*
-		Pega a foto linkada com o determinado modelo
-	*/
-	tabela2_value := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
-	
-	image_name_value := db.Imagem.get_image_full_path(tabela2_value)
-	if(image_name_value = ""){
-		image_name_value := "img\sem_foto.jpg" 
-	}
-	show_image_and_code(image_name_value)
-}
 
 /*
  Carrega a imagem do modelo na janela principal
 */
 load_model_image_in_main_window(info){
-	Global db
+	Global db, change_ptcode
+
 	code := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
 	image_name_value := db.Imagem.get_image_full_path(code)
 	if(image_name_value = ""){
 		image_name_value := "img\sem_foto.jpg" 
 	}
+	change_ptcode := 1
 	GuiControl,, ptcode, % image_name_value  
 }
 
@@ -1744,7 +1734,7 @@ get_info_in_string(info){
 }
 
 ;############# load lv from array ################
-load_lv_from_array(columns, array, window, lv, start_at = "1"){
+load_lv_from_array(columns, array, window, lv, col_sizes = "", start_at = "1"){
 	Gui, %window%:default
 	Gui, Listview, %lv%
 
@@ -1759,6 +1749,9 @@ load_lv_from_array(columns, array, window, lv, start_at = "1"){
 	prev_count := 0
 	line_count := 0
 	column_count := 0
+
+	Gui, %window%:default
+	Gui, Listview, %lv%
 	GuiControl, -Redraw, %lv% 
 	loop, % columns.maxindex(){
 		loop, % array[A_Index].maxindex(){
@@ -1779,6 +1772,9 @@ load_lv_from_array(columns, array, window, lv, start_at = "1"){
 			}
 		}	
 	}
+	for, each, size in col_sizes{
+	  LV_ModifyCol(A_Index, size)
+	} 
 	GuiControl, +Redraw, %lv%
 }
 
@@ -2014,13 +2010,13 @@ progress(maxrange, stop_progress_func_local="", undetermined=0, toolwindow=0){
   Gui,color,ffffff
   if(toolwindow=1)
   	Gui,progress:-caption +toolwindow
-  Gui,add,picture,w285 h199,%A_WorkingDir%\logotipos\logo.png
+  Gui, Add, Picture, x40 , % "img\promtologo.png"
   if(undetermined=0){
-  	Gui, Add, Progress, w300 h20 c2661dd Range0-%maxrange% vprogress
+  	Gui, Add, Progress, w300 h20 x10 c2661dd Range0-%maxrange% vprogress
   }
   Else{
-  	Gui, Add, Progress, vprogress  -Smooth 0x8 w300 h18
-  	SetTimer,undeterminedprogressaction,45
+  	Gui, Add, Progress, vprogress  -Smooth 0x8 w300 h18 x10
+  	SetTimer, undeterminedprogressaction, 45
   }
   Gui,font,s8
   Gui,Add,text,w300 y+5 vplabel
@@ -2669,7 +2665,6 @@ format_file_name(file_name){
 load_mod_info(info){
 	Global db
 
-	
 	items := db.Log.get_mod_info(info)
 
 	for, each, item in Items{
@@ -2683,7 +2678,6 @@ load_mod_info(info){
 	Gui, M:default
 	GuiControl,, mod_info, % string  
 	GuiControl,, msg_info, % mensagem
-
 }
 
 /*

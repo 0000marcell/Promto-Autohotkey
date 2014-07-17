@@ -1,7 +1,7 @@
 massa_lv(){
 	Global
 
-	if A_GuiEvent = i
+	if A_GuiEvent = I
 	{
 		selecteditem2 := GetSelected("massaphoto","lv")
 		if(selecteditem2 = "" || selecteditem2 = "Codigos")

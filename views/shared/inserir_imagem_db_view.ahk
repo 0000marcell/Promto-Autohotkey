@@ -81,7 +81,7 @@ inserir_imagem_db_view(owner_name, picture_control, codigos_array = ""){
 	return  
 
 	inserir_imagem_db_lv:
-	if A_GuiEvent = i
+	if A_GuiEvent = I
 	{
 		
 		valor_selecionado := GetSelectedRow("inserir_imagem_db_view", "inserir_imagem_db_lv")

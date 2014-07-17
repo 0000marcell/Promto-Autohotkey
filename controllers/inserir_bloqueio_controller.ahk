@@ -59,15 +59,18 @@ salvar_bloqueio(){
 	current_desbloq := get_lv_in_array("MAB", "codigos_livres")
 	result_table := []
 	db.clean_table(bloq_table)
+	progress(current_bloq.maxindex())
 	for, each, value in current_bloq{
+		updateprogress("Bloqueando codigos: " current_bloq[A_Index, 1], 1)
 		cod_bloqueado := current_bloq[A_Index, 1]
 		if(cod_bloqueado = "")
 			Continue
 		db.Modelo.remover_codigo(cod_bloqueado, cod_table)
 		db.Modelo.incluir_bloqueio(cod_bloqueado, bloq_table)
 	} 
+	Gui, progress:destroy
 	algum_codigo_foi_desbloqueado := false
-	number_of_items(info) 
+	load_all_mod(info)
 	MsgBox, 64, Sucesso, % "Os valores foram inseridos!"
 }
 

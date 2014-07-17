@@ -29,7 +29,7 @@ inserir_valores_view(){
 	return
 
 	colvalue:
-	if A_GuiEvent = i
+	if A_GuiEvent = I
 	{
 		Gui, Submit, Nohide
 		Gui, Listview, lviv

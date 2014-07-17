@@ -29,6 +29,7 @@ MEDIUM_FONT := settings.medium_font
 LARGE_FONT := settings.large_font 
 BUTTON_SIZE := settings.button_size 
 global_image_path := settings.image_folder_path 
+lv_grid := settings.lv_grid
 StringReplace, global_image_path, global_image_path, /,\, All
 if(BUTTON_SIZE = "small")
 	button_h := 15
@@ -173,7 +174,7 @@ ILButton(hBtn, "promtoshell.dll:" 5, 32, 32, 0)
 	Modelos 
 */
 Gui, Add, Groupbox, xm+300 ym w220 h290, Modelos 
-Gui, Add, Listview, xp+5 yp+15 w200 h270 section  vMODlv gMODlv altsubmit, Modelo|Mascara
+Gui, Add, Listview, xp+5 yp+15 w200 h270 section  vMODlv gMODlv altsubmit %lv_grid%, Modelo|Mascara
 Gui, Add, Groupbox, xm+300 y+10 w220 h60, Numero de items:
 Gui, Font, s15
 Gui, Add,	Text, xp+75 yp+15 w100 vnumberofitems cblue,
@@ -208,7 +209,7 @@ Gui, Add, Button, x540 y+15 w80 h20 gchange_status , Alterar status
 	Info
 */
 Gui, Add, Picture, xp y+15 w268 h156 vptcode gfotoindividual, % "img\promtologo.png"
-Gui, Add, Listview, x+5 yp w540 h300 vall_mod_lv gall_mod_lv altsubmit,
+Gui, Add, Listview, x+5 yp w540 h300 vall_mod_lv gall_mod_lv altsubmit %lv_grid%,
 _loading := 1
 
 /*
@@ -271,8 +272,10 @@ resize_image_folder_view()
 return
 
 all_mod_lv:
-if A_GuiEvent = i
+if A_GuiEvent = I
 {
+	if(ErrorLevel = "")
+		return
 	Gui, Submit, Nohide
 	info := get_item_info("M", "MODlv") 
 	selected_mod := GetSelectedRow("M", "all_mod_lv")
@@ -280,9 +283,11 @@ if A_GuiEvent = i
 		return 
 	image_path := db.Imagem.get_image_full_path(selected_mod[1])
 	if(image_path != ""){
+		change_ptcode := 1
 		Guicontrol,, ptcode, % image_path 
 	}else{
-		Guicontrol,, ptcode,% "img\sem_foto.jpg"
+		change_ptcode := 1
+		Guicontrol,, ptcode, % "img\sem_foto.jpg"
 	}	
 }
 return
@@ -486,7 +491,7 @@ return
   		info := get_item_info("M", "MODlv")
   		tabela1 := info.empresa[2] info.tipo[2] info.familia[1]
 			if(db.have_subfamilia(tabela1)){
-				load_logo_in_main()
+				;load_logo_in_main()
 				return
 			}else{
 				/*
@@ -508,16 +513,15 @@ return
 			em determinada listview
 		*/
 		;db.Modelo.check_data_consistency(model_table, info) ;verifica se todos os elementos na lista tem as tabela necessarias.
-		AHK.append_debug("gonna load model table " model_table)
 		db.load_lv("M", "MODlv", model_table)
 		LV_ModifyCol(1)
-		load_logo_in_main()	
+		;load_logo_in_main()	
   }else{
   	/*
   		Funcao que substui a imagem que foi gerada
   		no load_image... pelo logo do programa
   	*/
-  	load_logo_in_main()
+  	;load_logo_in_main()
   }
 	return 
 
@@ -541,7 +545,7 @@ return
 	}
 	result.close()
 	;showimageandcode(comboimagepath, 10, 10, EmpresaMascara AbaMascara FamiliaMascara,ModeloMascara, combocodes1 "`n" combocodes2 ,20)
-	Guicontrol,,ptcode,simpleplot.png
+	;Guicontrol,, ptcode, simpleplot.png
 	return  
 
 	plotcode:
@@ -1335,17 +1339,16 @@ linkar2(args)
 return 
 
 MODlv:
-if A_GuiEvent = i
+if A_GuiEvent = I
 {
 	Gui,submit,nohide
-	clear_prev_status()
 	info := get_item_info("M", "MODlv") 
 	if(info.modelo[1] != "Modelo"){	
+		clear_prev_status()
+		load_model_image_in_main_window(info)
 		load_mod_info(info)
 		load_all_mod(info)
 		load_status_in_main_window(info)
-		load_model_image_in_main_window(info)
-		;number_of_items(info)
 	}
 }
 return 
@@ -1367,7 +1370,7 @@ loaditem(){
 	;showimageandcode(A_WorkingDir "\img\" result["tabela2"] ".png",10,10,EmpresaMascara AbaMascara FamiliaMascara,ModeloMascara)
 	result.close()
 	Gui, M:default
-	Guicontrol,, ptcode, simpleplot.png
+	;Guicontrol,, ptcode, simpleplot.png
 	result:=db.query("SELECT tabela2 FROM reltable WHERE tipo='Bloqueio' AND tabela1='" . EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel . "'")
 	bloqtable:=result["tabela2"]
 	result.close()
@@ -1479,37 +1482,6 @@ refreshm(){
 		*/ 
 		db.Modelo.create_tabela_bloqueio(bloq_table, info)
 		inserir_bloqueio_view()
-		
-		/*
-
-		Gui, MAB:New
-		Gui, font,s%SMALL_FONT%,%FONT%
-		Gui, MAB:+owner%owner%
-		;Gui, MAB:+toolwindow
-		Gui, color,%GLOBAL_COLOR%
-		Gui, Add, Picture,w310 h50 0xE vbanner 
-		banner(BANNER_COLOR,banner,"Bloqueados")
-		Gui, add, edit,w300 y+5 r1 gpesquisabloq vpesquisamam uppercase,
-		Gui, add, listview,w300 h400 y+5 vMABlv  checked,
-		Gui, add, button,w100 h30 y+5 ginserirwindow,Inserir Bloqueios
-		Gui, add, button,w100 h30 x+5 gretirarbloq,Retirar do bloqueio
-		Gui, add, button,w100 h30 x+5 gfiltrarcod,Filtrar Codigos!!
-		Gui, add, button,w100 h30 y+5 xm gmarctodosmab,Marc.Todos
-		Gui, add, button,w100 h30 x+5 gdestodosmab,Des.Todos
-		Gui, add, button,w100  h30 x+5 gexportarbloqueio,Exportar
-		Gui, add, button,w100 h30 xm y+5 gimportarbloqueio,Importar
-		Gui,Show,,Modelos-Bloqueados!!
-		Listbloq:=[]
-		table:=db.query("SELECT Codigos FROM " bloqtable ";")
-		while(!table.EOF){  
-		        value1 := table["Codigos"],value2 := table["DC"]
-		        Listbloq[A_Index,1] := value1 
-		        Listbloq[A_Index,2] := value2
-		        table.MoveNext()
-		}
-		table.close()
-		db.loadlv("MAB","MABlv",bloqtable,"Codigos")
-		*/
 		return 
 
 
@@ -1539,7 +1511,7 @@ refreshm(){
 					updateprogress("Inserindo bloqueios: " x[A_Index,1],1)
 				    db.query("INSERT INTO " bloqtable " (Codigos) VALUES ('" x[A_Index,1] "');")
 				}
-				Gui,progress:destroy
+				Gui, progress:destroy
 				MsgBox,64,,% "valores importados!!!!"
 				return 
 
@@ -1784,7 +1756,7 @@ return
 				}
 
 				MACcod:
-				if A_GuiEvent = i 
+				if A_GuiEvent = I 
 				{
 					gui,submit,nohide
 					selecteditem9:=GetSelected("MAC","MACcod"),selectcode:=selecteditem9
@@ -1915,7 +1887,7 @@ return
 
 
 			MACcamp:
-			if A_GuiEvent = i 
+			if A_GuiEvent = I 
 			{
 				gui,submit,nohide
 				selecteditem := GetSelected("MAC","MACcamp")
@@ -2273,47 +2245,6 @@ massainsertphoto(codtable){
 	Gui, Show 
 	db.loadlv("massaphoto","lv",codtable)
 	return 
-
-	;massalv:
-	;if A_GuiEvent = i
-	;{
-	;	selecteditem2 := GetSelected("massaphoto","lv")
-	;	if(selecteditem2 = "" || selecteditem2 = "Codigos")
-	;		return 
-	;	result:=db.query("SELECT tipo,tabela1,tabela2 FROM reltable WHERE tipo='image' AND tabela1='" selecteditem2 "'")
-	;	if(result["tabela2"]!="")
-	;		db.loadimage("massaphoto","picture",result["tabela2"])
-	;	Else
-	;		guicontrol,,picture,% "noimage.png"
-	;}
-	;return 
-
-	;marcartodos:
-	;gui,listview,lv
-	;Loop, % LV_GetCount()
-	;	LV_Modify("","+check")
-	;return 
-
-	;desmarcartodos:
-	;gui,listview,lv
-	;Loop, % LV_GetCount()
-	;	LV_Modify("","-check")
-	;return 
-
-	;inserirfotoemmassa:  ;passa um array para o inserirfoto
-	;result := GetCheckedRows("massaphoto","lv")
-	;arrayofitems := {}
-	;for,each,value in result{
-	;	arrayofitems[each] := result[each,1]
-	;	;MsgBox, % " valores no arrayofitems " arrayofitems[each]  
-	;}
-	;inserirfoto("","",arrayofitems)
-	;return 
-
-	;excluirfotosemmassa:
-	;return 
-
-
 }
 
 inserirfoto(iprefix1="",selecteditem1="",arrayofitems1="",owner=""){ ;arrayofitems e usado no massainsertphoto
@@ -2397,7 +2328,7 @@ inserirfoto(iprefix1="",selecteditem1="",arrayofitems1="",owner=""){ ;arrayofite
 			return 
 
 			sblv:
-			if A_GuiEvent=i
+			if A_GuiEvent = I
 			{
 				selecteditem2 := GetSelected("selectfromdb","sblv")
 				if(selecteditem2 = "" || selecteditem2 = "Name")

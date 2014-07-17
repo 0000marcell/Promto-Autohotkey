@@ -74,7 +74,7 @@ inserir_modelo_view(model_table){
 	return 
 
 	inserir_modelo_lv:
-	if A_GuiEvent = i
+	if A_GuiEvent = I
 	{
 		v_info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
 		if(v_info.modelo[1] = "Modelos" || v_info.modelo[1] = "")

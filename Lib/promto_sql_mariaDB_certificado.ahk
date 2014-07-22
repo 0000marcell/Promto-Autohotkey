@@ -37,12 +37,12 @@ class Certificado{
 		Delete a veficacao do certificado
 	*/
 	delete_verification(info){
-		Global mariaDB
+		Global db
 
 		Prodkey := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] 
-		if(mariaDB.delete_items_where(" Prodkey = '" Prodkey "'", "certificado_verificacao")){
-			MsgBox, 64, Sucesso, % " O item foi deletado com sucesso!"
-			return 
+		if(!db.delete_items_where(" Prodkey = '" Prodkey "'", "certificado_verificacao")){
+			MsgBox, 13, Erro, % " Erro ao deletar a verificacao da certificacao! "
+			return
 		}
 	}
 

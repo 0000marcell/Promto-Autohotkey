@@ -37,7 +37,7 @@ change_status_view(info){
 	return 
 
 	save_changes:
-	Gui, submit,
+	Gui, Submit,
 	db.Status.change_status(s_info, radio_group, USER_NAME, aditional_msg)
 	if(checked_with_cert){
 		db.Certificado.insert_verification(s_info, USER_NAME)	

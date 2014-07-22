@@ -50,7 +50,7 @@ class PromtoSQL{
 		try{
 				rs := mariaDB.OpenRecordSet("SELECT * FROM " table " WHERE " where_statement)		
 			}catch e{
-				;MsgBox, % "Ocorreu um erro ao buscar os valores!"
+				MsgBox, % "Ocorreu um erro ao buscar os valores!"
 				return
 		}
 		
@@ -236,6 +236,32 @@ class PromtoSQL{
 				))
 		}catch e 
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de usuarios `n" ExceptionDetail(e)
+
+		;try{
+		;	mariaDB.Query(
+		;		(JOIN
+		;			"	Drop table certificado_verificacao "
+		;		))
+		;}catch e 
+		;	MsgBox,16,Erro, % "Ocorreu um erro ao apagar a tabela de verificacao de certificados `n" ExceptionDetail(e)
+		
+
+		/*
+			Certificacao
+		*/
+		try{
+			mariaDB.Query(
+				(JOIN
+					"	CREATE TABLE IF NOT EXISTS certificado_verificacao "
+					"(Usuario VARCHAR(250), "
+					" Data VARCHAR(250), "
+					" Hora VARCHAR(250), "
+					" Prodkey VARCHAR(250), "
+					" PRIMARY KEY (Prodkey))"
+				))
+		}catch e 
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de verificacao de certificados `n" ExceptionDetail(e)
+		
 
 		/*
 			Log
@@ -871,4 +897,5 @@ class PromtoSQL{
 	#include lib\promto_sql_mariadb_usuario.ahk
 	#include lib\promto_sql_mariadb_log.ahk
 	#include lib\promto_sql_mariadb_status.ahk
+	#include lib\promto_sql_mariadb_certificado.ahk
 }

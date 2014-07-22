@@ -748,3 +748,4 @@ gonna load model table TCPModelo
 gonna load model table MNModelo
 gonna load model table MHOModelo
 gonna load model table MLModelo
+delete model table TIAMModelo modelo mascara 210

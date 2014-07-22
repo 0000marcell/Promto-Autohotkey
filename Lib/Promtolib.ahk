@@ -335,6 +335,19 @@ pesquisalvmod(wname, lvname, string, List){    ;funcao de pesquisa na listview m
 }
 
 /*
+	Carrega a verificacao do certificado 
+	na janela de mudanca de status
+*/
+load_verification_cert(info){
+	Global db, checked_with_cert
+
+	if(db.Certificado.verification_exists(get_prefix_from_info(info))){
+		Gui, change_status_view:default
+		GuiControl,, checked_with_cert, 1
+	}
+}
+
+/*
 	Pega os items de determinada listview em um 
 	array 
 */

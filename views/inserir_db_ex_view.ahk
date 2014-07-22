@@ -18,7 +18,6 @@ inserir_db_ex_view(){
 	bloquear_outros_items := True
 	Gui, bloquear_outros:destroy
 	inserirdbexterno(values)
-	
 	return 
 
 	nao_bloquear_outros_items:

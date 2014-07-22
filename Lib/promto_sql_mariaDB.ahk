@@ -248,6 +248,7 @@ class PromtoSQL{
 
 		/*
 			Certificacao
+			Tabela usada para verificar conferencia com certificacao
 		*/
 		try{
 			mariaDB.Query(
@@ -261,6 +262,24 @@ class PromtoSQL{
 				))
 		}catch e 
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de verificacao de certificados `n" ExceptionDetail(e)
+		
+		/*
+			Certificados
+		*/
+		try{
+			mariaDB.Query(
+				(JOIN
+					"	CREATE TABLE IF NOT EXISTS certificados "
+					"(Usuario VARCHAR(250), "
+					" data_emissao VARCHAR(250), "
+					" data_vencimento VARCHAR(250), "
+					" modelo VARCHAR(250), "
+					" comp_info VARCHAR(250), "
+					" caminho_arquivo VARCHAR(250), "
+					" PRIMARY KEY (modelo))"
+				))
+		}catch e 
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de certificados `n" ExceptionDetail(e)
 		
 
 		/*

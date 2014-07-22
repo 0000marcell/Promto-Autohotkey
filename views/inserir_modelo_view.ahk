@@ -48,6 +48,14 @@ inserir_modelo_view(model_table){
 	Gui, Add, Button, y+10 w100 h20 ginserir_modelo_imagem_button,Inserir/Alterar
 
 	/*
+		Certificado
+	*/
+	Gui, Add, Groupbox, xp-5 y+10 w200 h90 , Certificado
+	Gui, Add, Radio, xp+5 yp+15 vfonte_cert Checked, Arquivo no computador
+	Gui, Add, Radio, y+10, Banco de dados
+	Gui, Add, Button, y+10 w100 h20 ginsert_cert ,Inserir/Alterar
+
+	/*
 		Descricao Geral
 	*/
 	Gui, Add, Groupbox,xp-5 y+10 w200 h180, Descricao
@@ -61,6 +69,20 @@ inserir_modelo_view(model_table){
 	db.load_lv("inserir_modelo_view", "inserir_modelo_lv", model_table)
 	LV_ModifyCol(1), LV_ModifyCol(2,200) 
 	return 
+
+	insert_cert:
+	Gui, Submit, Nohide
+	if(font_cert = 1){
+		insert_cert_from_file(v_info)
+	}else if(font_cert = 2){
+		v_info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
+		if(v_info.modelo[1] = "Modelos" || v_info.modelo[1] = ""){
+			MsgBox, 16, Erro, % "Selecione um modelo antes de continuar!" 
+			Return
+		}
+		cert_view(v_info)
+	}
+	return
 
 	salvar_descricao_geral_button:
 	Gui, Submit, Nohide

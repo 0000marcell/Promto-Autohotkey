@@ -191,8 +191,8 @@ for,each,value in ["Bloqueados", "Campos", "Ordem Prefixo", "Ordem Codigo", "Ord
 	Gui, Add, Button, wp hp g%glabel%,% "&" value
 }
 Gui, Add, Button, x+5 y380 wp hp ggerarcodigos, Gerar Codigos
-glabels := ["gerarestruturas","linkarm","dbex", "massaestrut", "codetable", "plotcode"]
-for,each,value in ["Gerar Estruturas", "Linkar", "Add db Externo", "Estrutura", "Lista de Codigos", "Imprimir"]{
+glabels := ["gerarestruturas","linkarm","dbex", "massaestrut", "codetable", "plotcode", "certificados"]
+for,each,value in ["Gerar Estruturas", "Linkar", "Add db Externo", "Estrutura", "Lista de Codigos", "Imprimir", "Certificados"]{
 	glabel := glabels[A_Index]
 	Gui, Add, Button, wp hp g%glabel%,% "&" value
 }
@@ -266,6 +266,10 @@ LV_ModifyCol(2,300)
 LV_Modify(2, "+Select")
 _loading := 0
 return	
+
+certificados:
+cert_view()
+return
 
 resize_image_folder:
 resize_image_folder_view()
@@ -2920,6 +2924,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 /*
 	Views
 */
+#Include, views/cert_view.ahk
 #Include, views/rem_massa_view.ahk
 #Include, views/resize_image_folder_view.ahk
 #include, views/generate_xml_view.ahk

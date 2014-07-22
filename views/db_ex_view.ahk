@@ -13,7 +13,6 @@ db_ex_view(){
 	Gui,font,s%SMALL_FONT%,%FONT%
 	Gui, color, %GLOBAL_COLOR%
 	Gui, dbex:+ownerM
-
 	Gui, add, edit, w900 r1  vpesquisadbex gpesquisadbex uppercase,
 	Gui, add, listview, w900 h400 y+5 checked vlvdbex, Codigo|Descricao Completa|Descricao Resumida|Descricao Ingles
 	Gui, add, button, w100 h30 y+5 ginserirdbex,Inserir
@@ -56,24 +55,18 @@ db_ex_view(){
 	inserir_todos_view()
 	return 
 
-	
-
 	configdbex:
 	config_db_ex_view()
 	return 
-
-
-	
 
 	inserirdbex:
 	inserir_db_ex_view()
 	return 
 
-
- pesquisadbex:
- Gui,submit,nohide
- pesquisalvmod("dbex","lvdbex",pesquisadbex,Listdbex)
- return 
+ 	pesquisadbex:
+ 	Gui,submit,nohide
+ 	pesquisalvmod("dbex","lvdbex",pesquisadbex,Listdbex)
+ 	return 
 
 	inserirvalores:
 	inserir_valores_view()

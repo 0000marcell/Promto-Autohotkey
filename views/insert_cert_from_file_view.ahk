@@ -4,6 +4,7 @@ insert_cert_from_file_view(info){
 	/*
 		Gui init
 	*/
+	s_info := info
 	Gui, insert_cert_from_file_view:New
 	Gui, insert_cert_from_file_view:+ownerinserir_modelo_view
 	Gui, Font, s%SMALL_FONT%, %FONT%
@@ -39,12 +40,12 @@ insert_cert_from_file_view(info){
 	Gui, Submit, Nohide 
 	db.Certificado.insert_cert(
 		(JOIN
-		  { path: file_path_cert,
-		  	model: mod_cert,
+		  { file_path_cert: file_path_cert,
+		  	mod_cert: mod_cert,
 		  	comp_info: comp_info,
 		  	emission_date: emission_date,
 		  	expiration_date: expiration_date 
 		  }
-		))
+		), s_info)
 	return
 }

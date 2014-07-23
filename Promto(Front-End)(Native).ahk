@@ -29,8 +29,10 @@ MEDIUM_FONT := settings.medium_font
 LARGE_FONT := settings.large_font 
 BUTTON_SIZE := settings.button_size 
 global_image_path := settings.image_folder_path 
+global_cert_path := settings.cert_folder_path
 lv_grid := settings.lv_grid
 StringReplace, global_image_path, global_image_path, /,\, All
+StringReplace, global_cert_path, global_cert_path, /,\, All
 if(BUTTON_SIZE = "small")
 	button_h := 15
 GLOBAL_COLOR := settings.global_color
@@ -268,7 +270,7 @@ _loading := 0
 return	
 
 certificados:
-cert_view()
+cert_view("", "M")
 return
 
 resize_image_folder:
@@ -2924,6 +2926,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 /*
 	Views
 */
+#Include, views/insert_cert_from_file_view.ahk
 #Include, views/cert_view.ahk
 #Include, views/rem_massa_view.ahk
 #Include, views/resize_image_folder_view.ahk

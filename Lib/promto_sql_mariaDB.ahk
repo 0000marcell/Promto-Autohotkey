@@ -270,11 +270,11 @@ class PromtoSQL{
 			mariaDB.Query(
 				(JOIN
 					"	CREATE TABLE IF NOT EXISTS certificados "
-					"(Usuario VARCHAR(250), "
+					"( modelo VARCHAR(250), "
+					"  comp_info VARCHAR(250), "
+					" Usuario VARCHAR(250), "
 					" data_emissao VARCHAR(250), "
 					" data_vencimento VARCHAR(250), "
-					" modelo VARCHAR(250), "
-					" comp_info VARCHAR(250), "
 					" caminho_arquivo VARCHAR(250), "
 					" PRIMARY KEY (modelo))"
 				))

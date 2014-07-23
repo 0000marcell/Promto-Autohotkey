@@ -2,7 +2,6 @@ inserir_modelo_view(model_table){
 	Global
 
 	tabela_de_modelo := model_table 
-	;Global db, desc_, SMALL_FONT, descricao_geral_ingles_edit, GLOBAL_COLOR, descricao_geral_edit,inserir_modelo_view, fonte_imagem_radio, empresa, tipo, familia, input_name, input_mascara,importar_button, inserir_modelo_lv, exportar_button,more_options_button,opcoes_groupbox, modelos_foto_control, modelo 
  
 	/*
 		Gui init
@@ -72,15 +71,15 @@ inserir_modelo_view(model_table){
 
 	insert_cert:
 	Gui, Submit, Nohide
-	if(font_cert = 1){
-		insert_cert_from_file(v_info)
-	}else if(font_cert = 2){
-		v_info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
-		if(v_info.modelo[1] = "Modelos" || v_info.modelo[1] = ""){
-			MsgBox, 16, Erro, % "Selecione um modelo antes de continuar!" 
-			Return
-		}
-		cert_view(v_info)
+	v_info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
+	if(v_info.modelo[1] = "Modelos" || v_info.modelo[1] = ""){
+		MsgBox, 16, Erro, % "Selecione um modelo antes de continuar!" 
+		Return
+	}
+	if(fonte_cert = 1){
+		insert_cert_from_file_view(v_info)
+	}else if(fonte_cert = 2){
+		cert_view(v_info, "inserir_modelo_view")
 	}
 	return
 

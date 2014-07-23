@@ -2113,7 +2113,7 @@ any_word_search(wname, lvname, string, List){
     If (string = ""){ 
       LV_Delete()
       for,each,value in List{
-        LV_Add("",List[A_Index,1],List[A_Index,2], List[A_Index,3])
+        LV_Add("",List[A_Index,1],List[A_Index,2], List[A_Index, 3], List[A_Index, 4],  List[A_Index, 5], List[A_Index, 6])
       }       
     }Else{
       for,each,value in List{
@@ -2141,7 +2141,7 @@ any_word_search(wname, lvname, string, List){
       i := 0
       LV_Delete()
       for, each, value in resultsearch{
-          LV_Add("",List[value,1], List[value,2], List[value,3])
+          LV_Add("",List[value,1], List[value,2], List[A_Index, 3], List[A_Index, 4],  List[A_Index, 5], List[A_Index, 6])
       }
     }
     GuiControl, +Redraw,%lvname%
@@ -2157,7 +2157,7 @@ any_word_search_backup(wname, lvname, string,List){
     If (string=""){ 
         LV_Delete()
         for,each,value in List{
-            LV_Add("",List[A_Index,1],List[A_Index,2])
+            LV_Add("", List[A_Index, 1], List[A_Index, 2], List[A_Index, 3], List[A_Index, 4],  List[A_Index, 5], List[A_Index, 6])
         }       
     }Else{
         for,each,value in List{
@@ -2183,7 +2183,7 @@ any_word_search_backup(wname, lvname, string,List){
         i:=0
         LV_Delete()
         for,each,value in resultsearch{
-            LV_Add("",List[value,1],List[value,2])
+            LV_Add("",List[value,1],List[value,2], List[A_Index, 3], List[A_Index, 4],  List[A_Index, 5], List[A_Index, 6])
         }
     }
     GuiControl, +Redraw,%lvname%

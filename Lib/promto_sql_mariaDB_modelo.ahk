@@ -63,9 +63,10 @@ class Modelo{
 			model_table := prefixo "Modelo"
 		}
 
-		if(already_in_table != 1){	
-			if(this.exists(modelo_nome, modelo_mascara, prefixo, model_table)){
-				MsgBox,16,Erro, % " A mascara a ser inserida ja existe!" 
+		if(already_in_table != 1){
+			exists_result := this.exists(modelo_nome, modelo_mascara, prefixo, model_table) 	
+			if(exists_result){
+				MsgBox, 16, Erro, % " Conflito com a mascara do item " exists_result " dois items nao podem ter a mesma mascara!" 
 				return 
 			}	
 		}
@@ -186,7 +187,6 @@ class Modelo{
 			MsgBox, 16, Erro, % " O valor a ser deletado nao existia na tabela de modelos: " model_table
 			return 
 		}
-		AHK.append_debug("delete model table " model_table " modelo mascara " modelo_mascara)
 		try{
 			mariaDB.Query(
 			(JOIN 
@@ -726,24 +726,9 @@ class Modelo{
 		Familia ja existe na tabela
 	*/
 	exists(modelo_nome, modelo_mascara, prefixo, table = ""){
-		Global mariaDB
-		
-		if(table != ""){
-			search_table := table 
-		}else{
-			search_table := prefixo "Modelo"
-		} 
-		table := mariaDB.Query(
-			(JOIN 
-				" SELECT Modelos FROM " search_table
-				" WHERE Mascara LIKE '" modelo_mascara "'"
-				" AND Modelos LIKE '" modelo_nome "'"
-			))
-		if(table.Rows.maxindex()){
-			return True 
-		}else{
-			return False
-		}
+		Global db
+		items := db.find_items_where(" Mascara LIKE '" modelo_mascara "'", table)
+		return (items[1, 1] = "") ? False : items[1, 1]
 	}
 
 	/*

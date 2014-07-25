@@ -1,9 +1,8 @@
-a := 
-	(JOIN
-		{ value1: "value1",
-			value2: "value2",
-			value3: "value3"
-		}
-	)
+x := "dfdf"
+(x != "") ? error()
 
-MsgBox, % "value1 " a.value1 "valu2" a.value2 " value3 " a.value3
+MsgBox, % "nao retornou "
+error(){
+	MsgBox, % "erro!"
+	return 0
+}

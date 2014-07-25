@@ -16,7 +16,6 @@ class Certificado{
 			return 
 		}
 		
-
 		Prodkey := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] 
 		
 		if(!this.verification_exists(Prodkey)){
@@ -185,8 +184,10 @@ class Certificado{
 			record.tabela1 := tabela1
 			record.tabela2 := modelo
 			mariaDB.Insert(record, "reltable")
+			return 1
 		}catch e{
 			MsgBox, 16, Erro, % " Houve um erro ao inserir a relacao do certificado com o modelo `n" ExceptionDetail(e)
+			return 0
 		}
 	}
 

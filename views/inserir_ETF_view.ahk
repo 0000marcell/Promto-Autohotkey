@@ -53,9 +53,9 @@ inserir_ETF_view(window, treeview, current_id, columns){
 		edit_mask_ETF := check_if_ETF_exist(edit_name_ETF, edit_mask_ETF) 
 		if(old_edit_mask != edit_mask_ETF)
 			MsgBox, % "Ja existia uma mascara para o nome inserido `n por isso a mascara inserida foi trocada de " old_edit_mask " para " edit_mask_ETF 
-		
+
 		if(db.Empresa.incluir(edit_name_ETF, edit_mask_ETF)){
-			ETF_hashmask[edit_name_ETF] := edit_mask_ETF
+			edit_mask_ETF := ETF_hashmask[edit_name_ETF] 
 		}else{
 			MsgBox,16,Erro, % " Algo deu errado ao tentar inserir a empresa!" 
 			return
@@ -72,7 +72,7 @@ inserir_ETF_view(window, treeview, current_id, columns){
 		*/
 		Gui, %s_window%:Default
 		Gui, Treeview, %s_treeview%
-		TV_GetText(empresa_nome, s_current_id)  
+		empresa_nome := get_item_from_tv(s_current_id)
 		/*
 			Verifica se existe correspondencia da mascara 
 			para o determinado nome
@@ -107,9 +107,9 @@ inserir_ETF_view(window, treeview, current_id, columns){
 		*/
 		Gui, %s_window%:Default
 		Gui, Treeview, %s_treeview%
-		TV_GetText(tipo_nome, s_current_id)
+		tipo_nome := get_item_from_tv(s_current_id)
 		parent_id := TV_GetParent(s_current_id)
-		TV_GetText(empresa_nome, parent_id)
+		empresa_nome := get_item_from_tv(parent_id)
 		fam_prefix := ETF_hashmask[empresa_nome] ETF_hashmask[tipo_nome]
 		/*
 			Verifica se existe correspondencia da mascara 
@@ -140,11 +140,11 @@ inserir_ETF_view(window, treeview, current_id, columns){
 		*/
 		Gui, %s_window%:Default
 		Gui, Treeview, %s_treeview%
-		TV_GetText(familia_nome, s_current_id)
+		familia_nome := get_item_from_tv(s_current_id)
 		tipo_id := TV_GetParent(s_current_id)
-		TV_GetText(tipo_nome, tipo_id)
+		tipo_nome := get_item_from_tv(tipo_id)
 		empresa_id := TV_GetParent(tipo_id)
-		TV_GetText(empresa_nome, empresa_id)
+		empresa_nome := get_item_from_tv(empresa_id)
 		subfam_prefix := ETF_hashmask[empresa_nome] ETF_hashmask[tipo_nome] ETF_hashmask[familia_nome]
 		/*
 			Verifica se existe correspondencia da mascara 
@@ -165,9 +165,10 @@ inserir_ETF_view(window, treeview, current_id, columns){
 	}
 	Gui, %s_window%:Default
 	Gui, Treeview, %s_treeview% 
-	id := TV_Add(edit_name_ETF , s_current_id)
-	Gui,insert_ETF:destroy
-	TV_Modify(id ,"visFirst")
+	ETF_name := edit_name_ETF " > " edit_mask_ETF
+	id := TV_Add(ETF_name , s_current_id)
+	Gui, insert_ETF:destroy
+	TV_Modify(id , "visFirst")
 	TV_Modify(id)
 	return 
 }

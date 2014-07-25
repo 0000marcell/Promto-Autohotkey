@@ -4,98 +4,48 @@ class Empresa{
 		Inclui uma nova empresa
 	*/
 	incluir(empresa_nome, empresa_mascara){
-		Global mariaDB, ETF_hashmask
-		
-		/*
-			Verifica se a mascara a ser inserida 
-			ja existe
-		*/
-		if(this.exists(empresa_mascara)){
-			MsgBox,16,Erro, % " A mascara a ser inserida ja existe!" 
-			return 
-		}
-
-		
-		/*
-			Confere se o item a ser inserido 
-			ja contem uma mascara linkada a ele
-		*/
-		if(ETF_hashmask[empresa_nome] != ""){
-			error_msg :=
-			(JOIN
-				"Ja existe uma outra mascara linkada com o nome inserido!`n "
-				"Voce pode usar a mesma mascara: " ETF_hashmask[empresa_nome] "`n"
-				" Ou alterar o nome."  
-			)
-			MsgBox, 4, Item duplicado, % error_msg 
-			IfMsgBox Yes
-			{
-				empresa_mascara := ETF_hashmask[empresa_nome]
-				MsgBox, % "A mascara foi alterada para " empresa_mascara 
-			}else{
-				MsgBox, % "O item nao foi inserido, insira outra vez alterando o nome! "
-				return
-			}
-		}
-		
-		/*
-			Insere o valor na tabela
-		*/
-		record := {}
-		record.Empresas := empresa_nome
-		record.Mascara := empresa_mascara
-		mariaDB.Insert(record, "empresas")
-
-		/*
-			Criar a tabela de tipos e inserir na reltable
-		*/
-
-		/*
-			Verifica se a relacao a ser inserida ja existe na 
-			tabela de referencia
-		*/
-		if(this.exists_in_reltable(empresa_nome)){
-			MsgBox, % "Ja existe uma tabela de tipos relacionada com essa empresa"
+		Global db, mariaDB
+		AHK.reset_debug()
+		AHK.append_debug("gonna try data consistency")
+		if(!this.check_data_consistency(empresa_nome, empresa_mascara))
 			return
-		}
-		
-		sql :=
-		(JOIN
-			"	CREATE TABLE IF NOT EXISTS " empresa_mascara "Aba "
-			" (Abas VARCHAR(250), "
-			" Mascara VARCHAR(250), "
-			" PRIMARY KEY (Mascara)) "
-		)
-
-		try{
-			mariaDB.Query(sql)
-		}catch e
-			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de tipos `n" ExceptionDetail(e)
-
-		
-		record := {}
-		record.tipo := "Aba"
-		record.tabela1 := empresa_nome
-		record.tabela2 := empresa_mascara "Aba"
-		mariaDB.Insert(record, "reltable")
+		AHK.append_debug("gonna try insert company")
+		this.insert_company(empresa_nome, empresa_mascara)
+		AHK.append_debug("gonna check if exists in reltable")
+		if(!this.exists_in_reltable(empresa_nome))
+			return	
+		db.create_table(empresa_mascara "Aba ", "(Abas VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))")
+		db.insert_record({tipo: "Aba", tabela1: empresa_nome, tabela2: empresa_mascara "Aba"})
 		MsgBox,64,Empresa Criada,% " valor inserido"
 		return 1
 	}
 
-	/*
-		Exclui uma empresa
-	*/
+	insert_company(empresa_nome, empresa_mascara){
+		Global mariaDB
+		record := {}
+		record.Empresas := empresa_nome
+		record.Mascara := empresa_mascara
+		mariaDB.Insert(record, "empresas")
+	}
+
+	check_data_consistency(empresa_nome, empresa_mascara){
+		Global ETF_hashmask
+		AHK.append_debug(" gonna check if company exists ")
+		(this.exists(empresa_nome, empresa_mascara) = 0) ? return 0
+		AHK.append_debug("gonna check if mask is unique")
+		(check_if_mask_is_unique(empresa_nome, empresa_mascara) = 0) ? return 0
+		return 1
+	}
+
 	excluir(empresa_nome, empresa_mascara, recursiva = 1){
 		Global mariaDB
-
 		/*
 			Deleta o valor da tabela de empresas  
 		*/
-		if(!this.exists(empresa_mascara)){
+		if(!this.exists(empresa_nome, empresa_mascara)){
 			MsgBox, 16, Erro, % " O valor a ser deletado nao existia na tabela de empresas"
 			return 
 		}
-
 		/*
 			Funcao recursiva que exclui todas os
 			tipos familias subfamilias e modelos dessa 
@@ -297,36 +247,21 @@ class Empresa{
 		Verifica se determinado valor
 		ja existe na tabela
 	*/
-	exists(empresa_mascara){
-		Global mariaDB
-
-		table := mariaDB.Query(
-			(JOIN 
-				" SELECT Mascara FROM empresas "
-				" WHERE Mascara like '" empresa_mascara "'"
+	exists(empresa_nome, empresa_mascara){
+		Global  db
+		items := db.find_items_where(
+			(JOIN
+				" Mascara like '" empresa_mascara 
+				"' OR Empresas like '" empresa_nome "'", 
+				"empresas"
 			))
-
-		if(table.Rows.maxindex()){
-			return True 
-		}else{
-			return False
-		}
+		return (items[1, 1] != "") ? error_msg("Ja existe essa mascara de codigo! ") : True
 	}
 
 	exists_in_reltable(empresa_nome){
-		Global mariaDB
-
-		table := mariaDB.Query(
-			(JOIN 
-				" SELECT tabela1 FROM reltable "
-				" WHERE tabela1 like '" empresa_nome "'"
-			))
-
-		if(table.Rows.maxindex()){
-			return True 
-		}else{
-			return False
-		}
+		Global db
+		items := db.find_items_where(" WHERE tabela1 like '" empresa_nome "'")
+		return (items[1, 1] != "") ? error_msg("Ja existe esse item na tabela de relacionamento ") : True
 	}
 
 	get_reference(tabela1, tipo){

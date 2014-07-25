@@ -74,8 +74,9 @@ class Tipo{
 			Verifica se a mascara a ser inserida 
 			ja existe
 		*/
-		if(this.exists(tipo_nome, tipo_mascara, tipo_table)){
-			MsgBox,16,Erro, % " A mascara a ser inserida ja existe!" 
+		exists_result := this.exists(tipo_nome, tipo_mascara, tipo_table) 
+		if(exists_result){
+			MsgBox, 16, Erro, % " Conflito com a mascara do item " exists_result " dois items diferentes nao podem ter a mesma mascara!" 
 			return 0
 		}
 
@@ -215,18 +216,9 @@ class Tipo{
 		tipo ja existe na tabela
 	*/
 	exists(tipo_nome, tipo_mascara, table){
-		Global mariaDB
-
-		table := mariaDB.Query(
-			(JOIN 
-				" SELECT Abas FROM " table
-				" WHERE Mascara LIKE '" tipo_mascara "'"
-			))
-		if(table.Rows.maxindex()){
-			return True 
-		}else{
-			return False
-		}
+		Global db 
+		items := db.find_items_where(" Mascara LIKE '" tipo_mascara "'", table)
+		return (items[1, 1] = "") ? False : items[1, 1]
 	}
 
 	/*

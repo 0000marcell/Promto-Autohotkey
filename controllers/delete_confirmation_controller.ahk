@@ -41,7 +41,6 @@ delete_item(){
 			Apaga a familia selecionada e todos 
 			os seus subitems
 		*/
-		
 		info := get_item_info("M", "MODlv")
 		db.Familia.excluir(info.familia[1], info.familia[2], info)
 		MsgBox, 64, Sucesso, % "A familia e todos os subitems foram apagados." 
@@ -70,4 +69,5 @@ delete_item(){
 		Gui,Listview, MODlv
 		LV_Delete()
 	}
+	reload_hashmask_view()
 }

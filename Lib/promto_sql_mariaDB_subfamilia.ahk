@@ -52,8 +52,9 @@ class Subfamilia{
 			Verifica se a mascara a ser inserida ja existe
 		*/
 		;MsgBox, % "ira verificar se a mascara a ser inserida ja existe `n subfam nome: " subfam_nome " `n subfam_mascara: " subfam_mascara " `n sufam_table: " subfam_table 
-		if(this.exists(subfam_nome, subfam_mascara, subfam_table)){
-			MsgBox,16,Erro, % " A mascara a ser inserida ja existe!" 
+		exists_result := this.exists(subfam_nome, subfam_mascara, subfam_table)
+		if(exists_result){
+			MsgBox, 16, Erro, % " Conflito com a mascara do item " exists_result " dois items diferentes nao podem ter a mesma mascara de codigo" 
 			return 0
 		}
 
@@ -285,22 +286,9 @@ class Subfamilia{
 		tipo ja existe na tabela
 	*/
 	exists(subfam_nome, subfam_mascara, table){
-		Global mariaDB
-
-		sql :=
-		(JOIN
-		  " SELECT Subfamilias FROM " table
-			" WHERE Mascara LIKE '" subfam_mascara "'"
-		)
-		MsgBox, % "SQL: " sql
-
-		table := mariaDB.Query(sql)
-
-		if(table.Rows.maxindex()){
-			return True 
-		}else{
-			return False
-		}
+		Global db
+		items := db.find_items_where(" Mascara LIKE '" subfam_mascara "'", table)
+		return (items[1, 1] = "") ? False : items[1, 1]
 	}
 
 }

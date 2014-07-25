@@ -1,6 +1,6 @@
 {
 	"db_type":"MySQL",
-	"db_location":"Server=localhost;Port=3306;Database=test;Uid=root;Pwd=Recovergun;",
+	"db_location":"Server=localhost;Port=3306;Database=bug;Uid=root;Pwd=Recovergun;",
 	"image_folder_path":"//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/",
 	"cert_folder_path":"//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/certificados/",
 	"tab_color":"000000",

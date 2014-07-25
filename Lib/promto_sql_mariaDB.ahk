@@ -427,7 +427,7 @@ class PromtoSQL{
 			if(field[x] = ""){
 				Break
 			}
-			ETF_TVSTRING .= "`n" . nivel . list[A_Index, 1]		
+			ETF_TVSTRING .= "`n" . nivel . list[A_Index, 1] . " > " . list[A_Index, 2]		
 			ETF_hashmask[list[A_Index, 1]] := list[A_Index, 2] 	
 			new_table := this.get_reference(field[x], masc . list[A_Index, 1])
 			if(new_table)
@@ -538,6 +538,15 @@ class PromtoSQL{
 			tabela_ordem := get_tabela_ordem(tipo, info) 
 			db.correct_tabela_ordem(tipo, info)
 		}
+	}
+
+	create_table(table_name, fields){
+		Global mariaDB
+		sql := " CREATE TABLE IF NOT EXISTS " table_name " " fields
+		try{
+			mariaDB.Query(sql)
+		}catch e
+			MsgBox, 16, Erro, % "Um erro ocorreu ao tentar criar a tabela " table_name " `n" ExceptionDetail(e)
 	}
 
 	/*
@@ -656,6 +665,15 @@ class PromtoSQL{
 		}catch e 
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela valores dbex `n" ExceptionDetail(e)
 		
+	}
+
+	insert_record(record, table){
+		Global mariaDB
+		try{
+			mariaDB.Insert(record, table)
+		}catch e{
+			error_msg("Um erro ocorreu ao tentar inserir valores em " table)
+		}
 	}
 
 	/*

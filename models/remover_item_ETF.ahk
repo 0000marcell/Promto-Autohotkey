@@ -17,13 +17,13 @@ remover_item_ETF(){
 			pega a mascara da empresa
 		*/
 		parent_id := TV_GetParent(current_id)
-		TV_GetText(parent_name, parent_id)
+		parent_name := get_item_from_tv(parent_id)
 		empresa_mascara := ETF_hashmask[parent_name]
 
 		/* 
 			pega a mascara da empresa
 		*/
-		TV_GetText(aba_name, current_id)
+		aba_name := get_item_from_tv(current_id)
 		aba_mascara := ETF_hashmask[aba_name]
 
 		/*

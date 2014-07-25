@@ -377,7 +377,7 @@ get_tree(table,x,nivel,masc){
 		if(field[x] = ""){
 			Break
 		}
-		ETF_TVSTRING .= "`n" . nivel . list[A_Index, 1]		
+		ETF_TVSTRING .= "`n" . nivel . list[A_Index, 1] "			" list[A_Index, 2] 		
 		ETF_hashmask[list[A_Index, 1]] := list[A_Index, 2] 	
 		result := db.query("SELECT tabela2 FROM reltable WHERE tipo='" . field[x] . "' AND tabela1='" . masc . list[A_Index,1] . "'")
 		new_table := result["tabela2"]
@@ -500,7 +500,7 @@ get_tv_info(type, ignore_error = 0, window = "M", treeview = "main_tv", starting
 
 	if(type = "Subfamilia"){
 		if(tv_level = 4){
-			TV_GetText(nome, id)
+			nome := get_item_from_tv(id, treeview)
 			return_values.nome := nome
 			return_values.mascara := ETF_hashmask[nome]	
 		}
@@ -510,12 +510,12 @@ get_tv_info(type, ignore_error = 0, window = "M", treeview = "main_tv", starting
 
 		if(tv_level = 4){
 			parent_id := TV_GetParent(id)
-			TV_GetText(nome, parent_id)
+			nome := get_item_from_tv(parent_id, treeview)
 			return_values.nome := nome
 			return_values.mascara := ETF_hashmask[nome]
 		}
 		if(tv_level = 3){
-			TV_GetText(nome, id)
+			nome := get_item_from_tv(id, treeview)
 			return_values.nome := nome
 			return_values.mascara := ETF_hashmask[nome]	
 		}
@@ -526,20 +526,21 @@ get_tv_info(type, ignore_error = 0, window = "M", treeview = "main_tv", starting
 		if(tv_level = 4){
 			super_id := TV_GetParent(id)
 			parent_id := TV_GetParent(super_id)
-			TV_GetText(nome, parent_id)
+			nome := get_item_from_tv(parent_id, treeview)
 			return_values.nome := nome
 			return_values.mascara := ETF_hashmask[nome]
 		}
 
 		if(tv_level = 3){
 			parent_id := TV_GetParent(id)
-			TV_GetText(nome, parent_id)
+			nome := get_item_from_tv(parent_id, treeview)
+			nome := get_item_from_tv(parent_id, treeview)
 			return_values.nome := nome
 			return_values.mascara := ETF_hashmask[nome]
 		}
 
 		if(tv_level = 2){
-			TV_GetText(nome, id)
+			nome := get_item_from_tv(id, treeview)
 			return_values.nome := nome
 			return_values.mascara := ETF_hashmask[nome]	
 		}
@@ -550,7 +551,7 @@ get_tv_info(type, ignore_error = 0, window = "M", treeview = "main_tv", starting
 			ultra_id := TV_GetParent(id)
 			super_id := TV_GetParent(ultra_id)
 			parent_id := TV_GetParent(super_id)
-			TV_GetText(nome, parent_id)
+			nome := get_item_from_tv(parent_id, treeview)
 			return_values.nome := nome
 			return_values.mascara := ETF_hashmask[nome]
 		}
@@ -558,25 +559,37 @@ get_tv_info(type, ignore_error = 0, window = "M", treeview = "main_tv", starting
 		if(tv_level = 3){
 			parent_id := TV_GetParent(id)
 			super_parent_id := TV_GetParent(parent_id)
-			TV_GetText(nome, super_parent_id)
+			nome := get_item_from_tv(super_parent_id, treeview)
 			return_values.nome := nome
 			return_values.mascara := ETF_hashmask[nome]
 		}
 
 		if(tv_level = 2){
 			parent_id := TV_GetParent(id)
-			TV_GetText(nome, parent_id)
+			nome := get_item_from_tv(parent_id, treeview)
 			return_values.nome := nome
 			return_values.mascara := ETF_hashmask[nome]
 		}
 
 		if(tv_level = 1){
-			TV_GetText(nome, id)
+			nome := get_item_from_tv(id, treeview)
 			return_values.nome := nome
 			return_values.mascara := ETF_hashmask[nome]
 		}
 	}
 	return return_values
+}
+
+/*
+	Pega o item da treeview 
+	e da parse no texto para pegar o nome
+*/
+get_item_from_tv(id, treeview = "main_tv", window = "M"){ 
+	Gui, TreeView, %treeview%
+	TV_GetText(nome, id)
+	StringSplit, nome, nome, >, >
+	StringTrimRight, nome, nome1, 1
+	return nome
 }
 
 
@@ -1322,6 +1335,27 @@ remove_t(code){
 		StringReplace,code,code,MODT,MOD, All    ;SUBSTITUI O MODT POR MOD
 	return code
 }
+
+load_cert_status(info){
+	Global db 
+
+	tabela1 := get_prefix_from_info(info) info.modelo[1]
+	rel_value := db.find_items_where(" tipo = 'certificado' AND tabela1 = '" tabela1 "'", "reltable")
+	cert_values := db.find_items_where(" modelo ='" rel_value[1, 3] "'", "certificados")
+	if(cert_values[1, 1] != ""){
+		expiration_date := cert_values[1, 5]
+		StringLeft, expiration_date, expiration_date, 8
+		StringLeft, year, expiration_date, 4
+		StringTrimLeft, sub_exp, expiration_date, 4
+		StringLeft, month, sub_exp, 2
+		StringRight, day, expiration_date, 2
+		Gui, M:default
+		GuiControl, , cert_status, % "Vencimento certificado: " day "/" month "/" year	
+	}else{
+		GuiControl, , cert_status, % ""
+	}
+}
+
 
 export_code_list_to_file(code_list,family_name,model_name){	
 	if(!code_list || !model_name){
@@ -2287,6 +2321,38 @@ getmascara(name,table,field){
 	result:=db.query("SELECT Mascara FROM " . table . " WHERE " . field . "='" . name . "'")
 	returnvalue:=result["Mascara"]
 	return returnvalue	
+}
+
+/*
+	Mensagem de erro 
+*/
+error_msg(msg){
+	MsgBox, 16, Erro, % msg
+	return 0 
+}
+
+check_if_mask_is_unique(item_name, item_mask){
+	Global ETF_hashmask 
+	if(ETF_hashmask[item_name] != "" && ETF_hashmask[item_name] != item_mask){
+		error_msg :=
+		(JOIN
+			"Ja existe uma outra mascara linkada com o nome inserido! `n"
+			"Voce pode usar a mesma mascara: " ETF_hashmask[item_name] "`n"
+			" Ou alterar o nome."  
+		)
+		MsgBox, 4, Item duplicado, % error_msg 
+		IfMsgBox Yes
+		{
+			item_mask := ETF_hashmask[item_name]
+			MsgBox, % "A mascara foi alterada para " item_mask
+			return 1 
+		}else{
+			MsgBox, % "O item nao foi inserido, insira outra vez alterando o nome! "
+			return 0
+		}
+	}else{
+		return 1
+	}
 }
 
 /*

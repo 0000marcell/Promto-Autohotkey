@@ -110,9 +110,9 @@ Return
 
 	loading_main:
 	Gui, Submit, Nohide
-	if(!db.Usuario.log_in_user(user_name, user_password)){
-		return 
-	}
+	;if(!db.Usuario.log_in_user(user_name, user_password)){
+		;return 
+	;}
 	USER_NAME := user_name
 	Gui, initialize:default
 	GuiControl, Disable, loading_main,
@@ -215,9 +215,17 @@ Gui, Add, Listview, x+5 yp w540 h300 vall_mod_lv gall_mod_lv altsubmit %lv_grid%
 _loading := 1
 
 /*
+	Certificacao
+*/
+Gui, Add, Groupbox, x540 y+20 w815 h60, Certificacao:
+Gui, Font, cgreen s20
+Gui, Add, Text, xp+5 yp+15 w400 h30 vcert_status, 
+Gui, Font, cblack s8
+
+/*
 	Ultimas atualizacoes
 */
-Gui, Add, Groupbox, x540 y+20 w815 h220, Ultimas atualizacoes:
+Gui, Add, Groupbox, x540 y+20 w815 h150, Ultimas atualizacoes:
 Gui, Font, cgreen
 Gui, Add, Text, xp+5 yp+15 w365 h80 vmod_info,
 Gui, Font, cblue 
@@ -389,22 +397,16 @@ if A_GuiControl = main_tv
 		a opcao de remover aparecera, a menos que a familia 
 		selecionada tenha uma subfamilia.
 	*/
-
 	tv_level_menu := get_tv_level("M", "main_tv") 
-	
 	Menu, main_tv_menu, Add, Adicionar, adicionar_item
 	Menu, main_tv_menu, Add, Remover, remover_item	
 	Menu, remover_menu, Add, Remover, remover_item
-
-
 	/* 
 		Pega a tabela onde serao inseridos 
 		os valores
 	*/
-	TV_GetText(current_selected_name, A_EventInfo)
-
+	current_selected_name := get_item_from_tv(A_EventInfo)
 	current_id := A_EventInfo
-	
 	/*
 		Caso a selecao esteja no nivel de insercao 
 		de tipos
@@ -461,7 +463,7 @@ return
 	remover_item:
 	Gui, M:default
 	Gui, Treeview, main_tv
-	TV_GetText(selected_name, current_id)
+	selected_name := get_item_from_tv(current_id)
 	MsgBox, 4,,Deseja apagar o item %selected_name% e todos os seus subitems? 
 	IfMsgBox No
 	{
@@ -1355,6 +1357,7 @@ if A_GuiEvent = I
 		load_mod_info(info)
 		load_all_mod(info)
 		load_status_in_main_window(info)
+		load_cert_status(info)
 	}
 }
 return 
@@ -2926,6 +2929,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 /*
 	Views
 */
+#Include, views/reload_hashmask_view.ahk
 #Include, views/insert_cert_from_file_view.ahk
 #Include, views/cert_view.ahk
 #Include, views/rem_massa_view.ahk

@@ -19,7 +19,7 @@ class Familia{
 			Confere se o item a ser inserido 
 			ja contem uma mascara linkada a ele
 		*/
-		if(ETF_hashmask[familia_nome] != ""){
+		if(ETF_hashmask[familia_nome] != "" && ETF_hashmask[familia_nome] != familia_mascara ){
 			error_msg :=
 			(JOIN
 				"Ja existe uma outra mascara linkada com o nome inserido!`n "
@@ -70,10 +70,9 @@ class Familia{
 			Verifica se a mascara a ser inserida 
 			ja existe
 		*/
-		;MsgBox, % "ira verificar se a mascara ja existe `n familia nome : " familia_nome " familia mascara : " familia_mascara " familia table " familia_table
-		
-		if(this.exists(familia_nome, familia_mascara, familia_table)){
-			MsgBox,16,Erro, % " A mascara a ser inserida ja existe!" 
+		exists_result := this.exists(familia_nome, familia_mascara, familia_table)
+		if(exists_result){
+			MsgBox,16,Erro, % " Conflito com a mascara do item " exists_result " duas familias nao podem ter a mesma mascara."  
 			return 0
 		}
 		
@@ -206,11 +205,9 @@ class Familia{
 		*/ 
 
 		prefixo := info.empresa[2] info.tipo[2]
-		
 		familia_table := this.get_parent_reference(info.empresa[2], info.tipo[1])
-		
 		if(!this.exists(familia_nome, familia_mascara, familia_table)){
-			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela de familias : " familia_table
+			MsgBox, 16, Erro, % " O valor a ser deletado nao existia na tabela de familias : " familia_table
 			return 
 		}
 
@@ -309,18 +306,9 @@ class Familia{
 		Familia ja existe na tabela
 	*/
 	exists(familia_nome, familia_mascara, table){
-		Global mariaDB
-
-		table := mariaDB.Query(
-			(JOIN 
-				" SELECT Familias FROM " table
-				" WHERE Mascara LIKE '" familia_mascara "'"
-			))
-		if(table.Rows.maxindex()){
-			return True 
-		}else{
-			return False
-		}
+		Global db
+		items := db.find_items_where(" Mascara LIKE '" familia_mascara "'", table)
+		return (items[1, 1] = "") ? False : items[1, 1]
 	}
 
 	/*

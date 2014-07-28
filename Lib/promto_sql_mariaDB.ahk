@@ -46,18 +46,34 @@ class PromtoSQL{
 	*/
 	find_items_where(where_statement, table){
 		Global mariaDB  
-		
+		items := this.find_items("SELECT * FROM " table " WHERE " where_statement)
+		return items
+	}
+
+	/*
+		Pega todos os items 
+		de determinada tabela
+	*/
+	find_all(table){
+		Global mariaDB  
+		items := this.find_items("SELECT * FROM " table)
+		return items	
+	}
+
+	/*
+		Find items
+	*/
+	find_items(sql){
+		Global mariaDB  
 		try{
-				rs := mariaDB.OpenRecordSet("SELECT * FROM " table " WHERE " where_statement)		
+				rs := mariaDB.OpenRecordSet(sql)		
 			}catch e{
 				MsgBox, % "Ocorreu um erro ao buscar os valores!"
 				return
 		}
-		
 		columns := rs.getColumnNames()
 		columnCount := columns.Count()
 		return_value := []
-		
 		while(!rs.EOF){	
 			r := A_Index
 			Loop, % columnCount{
@@ -75,10 +91,8 @@ class PromtoSQL{
 	*/
 	delete_items_where(where_statement, table){
 		Global mariaDB
-		
 		try{
-			sql := "DELETE FROM " table " WHERE " where_statement
-			mariaDB.Query(sql)
+			mariaDB.Query("DELETE FROM " table " WHERE " where_statement)
 			return 1
 		}catch e {
 			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela " table  ExceptionDetail(e)
@@ -384,6 +398,74 @@ class PromtoSQL{
 	}
 
 	/*
+		Remove os subitems de 
+		determinado item
+	*/
+	remove_subitems(nivel, mask, info, subfamily = 0){
+		Global db
+		AHK.append_debug("remove subitems nivel " nivel " mask " mask)
+		nt := this.get_next_table(nivel, mask, subfamily)
+		AHK.append_debug("next_table " nt.next_table " next_nivel " nt.next_nivel)
+		items := this.find_all(nt.next_table)
+		for, each, item in items{ 
+			;se o proximo nivel for modelo
+			if(nt.next_nivel = "modelo"){
+				AHK.append_debug("gonna delete model " items[A_Index, 1] " mask " items[A_Index, 2])
+				db.Modelo.excluir(items[A_Index, 1], items[A_Index, 2], info, 0)
+				Continue
+			}
+			this.remove_subitems(nt.next_nivel, mask items[A_Index, 2], info, items[A_Index, 3])
+			AHK.append_debug("gonna delete nivel " nt.next_nivel " nome " items[A_Index, 1] " mascara " items[A_Index, 2])
+			this.remove_item(nt.next_nivel, items[A_Index, 1], items[A_Index, 2], info)
+		}
+	}
+
+	remove_item(nivel, nome, mascara, info){
+		Global db
+		if(nivel = "empresa"){
+			db.Empresa.excluir(nome, mascara, 0)
+		}else if(nivel = "tipo"){
+			db.Tipo.excluir(nome, mascara, info, 0)
+		}else if(nivel = "familia"){
+			db.Familia.excluir(nome, mascara, info, 0)
+		}else if(nivel = "subfamilia"){
+			db.Subfamilia.excluir(nome, mascara, info, 0)
+		}
+	}
+
+	/*
+		Essa funcao nao considera LINK
+		Pega a proxima tabela e a 
+		do determinado item
+	*/
+	get_next_table(nivel, prefix, subfamily){
+		Global mariaDB
+		AHK.append_debug("get next table nivel " nivel " prefix " prefix)
+		if(nivel = "empresas"){
+			nt := {next_table: prefix "aba", next_nivel: "aba"} 
+		}else if(nivel = "aba"){
+			nt := {next_table: prefix "familia", next_nivel: "familia"}
+		}else if(nivel = "familia"){
+			nt := this.check_if_have_subfamily(prefix, subfamily)
+		}else if(nivel = "subfamilia"){
+			nt := {next_table: prefix "modelo", next_nivel: "modelo"}
+		}
+		return nt
+	}
+
+	/*
+		Verifica se o determinado 
+		item tem subfamilia ou nao
+	*/
+	check_if_have_subfamily(){
+		if(subfamily){
+			nt := {next_table: prefix "subfamilia", next_nivel: "subfamilia"}
+		}else{
+			nt := {next_table: prefix "modelo", next_nivel: "modelo"}
+		}
+	}
+
+	/*
 		Retorna determinada 
 		tabela em um array
 	*/
@@ -545,8 +627,11 @@ class PromtoSQL{
 		sql := " CREATE TABLE IF NOT EXISTS " table_name " " fields
 		try{
 			mariaDB.Query(sql)
-		}catch e
+			return 1
+		}catch e{
 			MsgBox, 16, Erro, % "Um erro ocorreu ao tentar criar a tabela " table_name " `n" ExceptionDetail(e)
+			return 0
+		}
 	}
 
 	/*
@@ -664,15 +749,16 @@ class PromtoSQL{
 				))
 		}catch e 
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela valores dbex `n" ExceptionDetail(e)
-		
 	}
 
 	insert_record(record, table){
 		Global mariaDB
 		try{
 			mariaDB.Insert(record, table)
+			return 1
 		}catch e{
 			error_msg("Um erro ocorreu ao tentar inserir valores em " table)
+			return 0
 		}
 	}
 
@@ -708,19 +794,9 @@ class PromtoSQL{
 		tem subfamilia
 	*/
 	have_subfamilia(tabela1){
-		Global mariaDB
-		
-		
-		rs := mariaDB.OpenRecordSet(
-			(JOIN 
-				" SELECT tabela2 FROM reltable "
-				" WHERE tipo like 'Subfamilia' "
-				" AND tabela1 like '" tabela1 "'"
-			))
-		
-		reference_table := rs.tabela2
-		rs.close()
-		if(reference_table != ""){
+		Global db
+		items := db.find_items_where(" tipo like 'Subfamilia' AND tabela1 like '" tabela1 "'")
+		if(items[1, 1] != ""){
 			return 1
 		}else{
 			return 0

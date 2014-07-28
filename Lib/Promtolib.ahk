@@ -832,6 +832,7 @@ getreferencetable(tipo,table){
 	determinado nome com uma mascara
 */
 check_if_ETF_exist(nome, mascara_antiga){
+	Global ETF_hashmask
 	mascara := ETF_hashmask[nome]
 	if(mascara != ""){
 		return mascara
@@ -2345,13 +2346,15 @@ check_if_mask_is_unique(item_name, item_mask){
 		{
 			item_mask := ETF_hashmask[item_name]
 			MsgBox, % "A mascara foi alterada para " item_mask
-			return 1 
+			item_hash := {name: item_name, mask: item_mask}
+			return item_hash
 		}else{
 			MsgBox, % "O item nao foi inserido, insira outra vez alterando o nome! "
 			return 0
 		}
 	}else{
-		return 1
+		item_hash := {name: item_name, mask: item_mask}
+		return item_hash
 	}
 }
 

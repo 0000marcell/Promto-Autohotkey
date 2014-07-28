@@ -1,73 +1,50 @@
 delete_item(){
 	Global
-
 	if(tv_level_menu = 1){
-		/*
-			Apaga a empresa selecionada e todos 
-			os seus subitems
-		*/
-		
-		empresa := get_tv_info("Empresa")
-		
-		db.Empresa.excluir(empresa.nome, empresa.mascara)
-		
-		TV_Delete(current_id)
-		
-		/*
-			Limpa a listview da janela principal
-		*/
-		Gui,M:default
-		Gui,Listview, MODlv
-		LV_Delete()
+		delete_company()
 	}else if(tv_level_menu = 2){
-		/*
-			Apaga o tipo selecionada e todos
-			os seus subitems
-		*/
-		info := get_item_info("M", "MODlv")
-
-		;MsgBox, % "info empresa: " info.empresa[1] " mascara " info.empresa[2]
-		db.Tipo.excluir(tipo.nome, tipo.mascara, info)
-		MsgBox,64, Sucesso, % "O tipo e todos os subitems foram apagados." 
-		TV_Delete(current_id)
-		/*
-			Limpa a listview da janela principal
-		*/
-		Gui,M:default
-		Gui,Listview, MODlv
-		LV_Delete()
+		delete_type()
 	}else if(tv_level_menu = 3){
-		/*
-			Apaga a familia selecionada e todos 
-			os seus subitems
-		*/
-		info := get_item_info("M", "MODlv")
-		db.Familia.excluir(info.familia[1], info.familia[2], info)
-		MsgBox, 64, Sucesso, % "A familia e todos os subitems foram apagados." 
-		TV_Delete(current_id)
-		
-		/*
-			Limpa a listview da janela principal
-		*/
-		Gui,M:default
-		Gui,Listview, MODlv
-		LV_Delete()
+		delete_family()
 	}else if(tv_level_menu = 4){
-		
-		/*
-			Apaga a familia selecionada e todos 
-			os seus subitems
-		*/
-		info := get_item_info("M", "MODlv")
-		db.Subfamilia.excluir(info.subfamilia[1], info.subfamilia[2], info)
-		TV_Delete(current_id)
-
-		/*
-			Limpa a listview da janela principal
-		*/
-		Gui,M:default
-		Gui,Listview, MODlv
-		LV_Delete()
+		delete_subfamily()
 	}
 	reload_hashmask_view()
+}
+
+
+delete_company(){
+	Global db
+	info := get_item_info("M", "MODlv")
+	db.Empresa.excluir(info.empresa[1], info.empresa[2])
+	delete_item_tv()
+}
+
+delete_type(){
+	Global db
+	info := get_item_info("M", "MODlv")
+	db.Tipo.excluir(tipo.nome, tipo.mascara, info)
+	MsgBox,64, Sucesso, % "O tipo e todos os subitems foram apagados." 
+	delete_item_tv()
+}
+
+delete_family(){
+	Global db
+	info := get_item_info("M", "MODlv")
+	db.Familia.excluir(info.familia[1], info.familia[2], info)
+	MsgBox, 64, Sucesso, % "A familia e todos os subitems foram apagados." 
+	delete_item_tv()
+}
+
+delete_subfamily(){
+	Global db
+	info := get_item_info("M", "MODlv")
+	db.Subfamilia.excluir(info.subfamilia[1], info.subfamilia[2], info)
+	delete_item_tv()
+}
+
+delete_item_tv(){
+	Gui, M:default
+	Gui, treeview, main_tv
+	TV_Delete(TV_GetSelection())	 
 }

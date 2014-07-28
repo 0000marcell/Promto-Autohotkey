@@ -1,7 +1,9 @@
-gonna try data consistency
- gonna check if company exists 
-gonna check if mask is unique
-gonna check if mask is unique!
-mask was unique!
-gonna try insert company
-gonna check if exists in reltable
+Comecando a excluir o item!
+remove subitems nivel empresas mask T10
+get next table nivel empresas prefix T10
+next_table T10aba next_nivel aba
+gonna delete mascara T10
+linked table T10Aba
+ delete items where WHERE tipo like 'Aba' AND tabela1 like 'TESTE'
+linked tables max index 
+gonna drop table T10Aba

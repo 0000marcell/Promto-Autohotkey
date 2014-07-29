@@ -2332,6 +2332,16 @@ error_msg(msg){
 	return 0 
 }
 
+check_blank_parameters(parameters, number){
+	loop, % number
+	{
+		if(parameters[A_Index] = ""){
+			return 0
+		}
+	}
+	return 1
+}
+
 check_if_mask_is_unique(item_name, item_mask){
 	Global ETF_hashmask 
 	if(ETF_hashmask[item_name] != "" && ETF_hashmask[item_name] != item_mask){
@@ -2365,11 +2375,6 @@ Carrega a string do tv
 load_ETF(db){
 	Global 
 	ETF_hashmask := {}
-	
-	/*
-		Essa funcao ira carregar
-		a string ETF_TVSTRING
-	*/
 	db.get_treeview("empresas",0,"","")
 }
 

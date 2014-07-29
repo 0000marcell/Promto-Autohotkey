@@ -18,7 +18,7 @@ reload_hashmask_view(){
 	undetermine_progress_window := "reload_hashmask_view"
   SetTimer, undetermine_progress_action, 45
   ETF_hashmask := ""
-  db.get_treeview("empresas",0,"","")
+  load_ETF(db)
   SetTimer, undetermine_progress_action, OFF
   Gui, reload_hashmask_view:destroy
   return

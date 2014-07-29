@@ -403,19 +403,15 @@ class PromtoSQL{
 	*/
 	remove_subitems(nivel, mask, info, subfamily = 0){
 		Global db
-		AHK.append_debug("remove subitems nivel " nivel " mask " mask)
 		nt := this.get_next_table(nivel, mask, subfamily)
-		AHK.append_debug("next_table " nt.next_table " next_nivel " nt.next_nivel)
 		items := this.find_all(nt.next_table)
 		for, each, item in items{ 
 			;se o proximo nivel for modelo
 			if(nt.next_nivel = "modelo"){
-				AHK.append_debug("gonna delete model " items[A_Index, 1] " mask " items[A_Index, 2])
 				db.Modelo.excluir(items[A_Index, 1], items[A_Index, 2], info, 0)
 				Continue
 			}
 			this.remove_subitems(nt.next_nivel, mask items[A_Index, 2], info, items[A_Index, 3])
-			AHK.append_debug("gonna delete nivel " nt.next_nivel " nome " items[A_Index, 1] " mascara " items[A_Index, 2])
 			this.remove_item(nt.next_nivel, items[A_Index, 1], items[A_Index, 2], info)
 		}
 	}
@@ -440,7 +436,6 @@ class PromtoSQL{
 	*/
 	get_next_table(nivel, prefix, subfamily){
 		Global mariaDB
-		AHK.append_debug("get next table nivel " nivel " prefix " prefix)
 		if(nivel = "empresas"){
 			nt := {next_table: prefix "aba", next_nivel: "aba"} 
 		}else if(nivel = "aba"){
@@ -451,6 +446,22 @@ class PromtoSQL{
 			nt := {next_table: prefix "modelo", next_nivel: "modelo"}
 		}
 		return nt
+	}
+
+	/*
+		Verifica se determinado item existe ou nao 
+		e retorna true ou false
+	*/
+	exists(sql, table){
+		Global db
+
+		items := db.find_items_where(sql, table)
+		if(items[1, 1] != ""){
+			error_msg("O item a ser inserido ja existe! ")	
+			return 0
+		}else{
+			return 1
+		}
 	}
 
 	/*
@@ -502,7 +513,7 @@ class PromtoSQL{
 		treeview da janela principal
 	*/
 	get_treeview(table, x, nivel, masc){
-		Global mariaDB,ETF_TVSTRING, field, ETF_hashmask  
+		Global mariaDB, ETF_TVSTRING, field, ETF_hashmask  
 
 		x += 1, nivel .= "`t"
 		For each, value in list := this.get_values("*", table){
@@ -632,6 +643,7 @@ class PromtoSQL{
 			MsgBox, 16, Erro, % "Um erro ocorreu ao tentar criar a tabela " table_name " `n" ExceptionDetail(e)
 			return 0
 		}
+		return 1
 	}
 
 	/*
@@ -753,6 +765,7 @@ class PromtoSQL{
 
 	insert_record(record, table){
 		Global mariaDB
+
 		try{
 			mariaDB.Insert(record, table)
 			return 1

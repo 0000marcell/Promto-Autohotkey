@@ -1,9 +1,9 @@
-Comecando a excluir o item!
-remove subitems nivel empresas mask T10
-get next table nivel empresas prefix T10
-next_table T10aba next_nivel aba
-gonna delete mascara T10
-linked table T10Aba
- delete items where WHERE tipo like 'Aba' AND tabela1 like 'TESTE'
-linked tables max index 
-gonna drop table T10Aba
+gonna insert family familia_nome TESTE10 familia_mascara T10
+gonna get the family table T3TESTE4
+gonna insert without model TESTE10 mask T10 prefix T3T4
+insert the family record name TESTE10 mask T10 subfamily 0 family table T3T4Familia
+gonna create table T3T4T10Modelo
+gonna create the table T3T4T10Modelo
+ sql  CREATE TABLE IF NOT EXISTS T3T4T10Modelo (Modelos VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))
+after create the table!
+finish!

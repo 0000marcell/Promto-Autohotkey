@@ -2,91 +2,87 @@ class Familia{
 	/*
 		Incluir familia
 	*/
-	incluir(familia_nome = "", familia_mascara = "", prefixo = "", tipo_nome = ""){
-		Global mariaDB, ETF_hashmask
-
-		;MsgBox, % "familia_nome: " familia_nome " `n familia_mascara: " familia_mascara " `n prefixo: " prefixo " `n tipo_nome: " tipo_nome 
-		/*	
-			Verifica se o prefixo a inserir o item 
-			esta em branco
-		*/
-		if(prefixo = ""){
-			MsgBox, % "O prefixo nao pode estar em branco nas familias!"
+	incluir(familia_nome = "", familia_mascara = "", prefixo = "", info = ""){
+		Global db, mariaDB, ETF_hashmask
+		family_table := db.get_reference("Familia", info.empresa[2] info.tipo[1])
+		item_hash := this.check_data_consistency(familia_nome, familia_mascara, family_table, prefixo, info.tipo[1])
+		if(item_hash.name = "")
 			return 0
-		}
-
-		/*
-			Confere se o item a ser inserido 
-			ja contem uma mascara linkada a ele
-		*/
-		if(ETF_hashmask[familia_nome] != "" && ETF_hashmask[familia_nome] != familia_mascara ){
-			error_msg :=
-			(JOIN
-				"Ja existe uma outra mascara linkada com o nome inserido!`n "
-				"Voce pode usar a mesma mascara: " ETF_hashmask[familia_nome] "`n"
-				" Ou alterar o nome."  
-			)
-			MsgBox, 4, Item duplicado, % error_msg 
-			IfMsgBox Yes
-			{
-				familia_mascara := ETF_hashmask[familia_nome]
-				MsgBox, % "A mascara foi alterada para " familia_mascara 
-			}else{
-				MsgBox, % "O item nao foi inserido, insira outra vez alterando o nome! "
-				return
-			}
-		}
-
-		/*
-			Verifica se o nome ou a mascara da empresa esta em branco
-		*/
-		if(familia_nome = "" || familia_mascara = ""){
-			MsgBox, % "o nome e a mascara da familia nao podem estar em brancos!"
-			return 0			
-		}
-
-		/*
-			Verifica se o nome da empresa esta em branco 
-		*/
-		if(tipo_nome = ""){
-			MsgBox, % "O nome do tipo nao pode estar em branco!"
+		if(!this.insert_family(item_hash.name, item_hash.mask, family_table, prefixo))
 			return 0
-		}
+		MsgBox, 64,Sucesso!, % "A familia foi inserida!"
+		Return 1
+	}
 
-		/*
-			Pega a mascara da empresa
-		*/
-		StringLeft, empresa_mascara, prefixo, 1
-
-
-		/*
-			Pega a referencia da tabela de items 
-			linkados
-		*/
-		familia_table := this.get_parent_reference(empresa_mascara, tipo_nome)
-		;MsgBox, % "familia_table: " familia_table
-		
-		/*
-			Verifica se a mascara a ser inserida 
-			ja existe
-		*/
-		exists_result := this.exists(familia_nome, familia_mascara, familia_table)
-		if(exists_result){
-			MsgBox,16,Erro, % " Conflito com a mascara do item " exists_result " duas familias nao podem ter a mesma mascara."  
-			return 0
-		}
-		
-		/*
-			Cria a tabela de subfamilias e insere 1 no campo subfamilia
-		*/
+	insert_family(family_name, family_mask, family_table, prefix){
+		Global db, ETF_hashmask
 		MsgBox, 4,,Esta familia tera subfamilias? 
 		IfMsgBox Yes
 		{
-			this.inserir_com_subfamilias(familia_nome, familia_mascara, prefixo, familia_table)
+			if(!this.insert_with_subfamily(family_name, family_mask, prefix, family_table))
+				return 0
 		}else{
-			this.inserir_com_modelo(familia_nome, familia_mascara, prefixo, familia_table)
+			if(!this.insert_with_model(family_name, family_mask, prefix, family_table))
+				return 0
 		}
 		return 1
+	}
+
+	insert_with_subfamily(family_name, family_mask, prefix, family_table){
+		Global db
+		if(this.insert_family_record(family_name, family_mask, 1, family_table)){
+			ETF_hashmask[family_name] := family_mask
+			if(!this.create_model_or_subfam_table(prefix family_mask "Subfamilia", "(Subfamilias VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))"))
+				return 0
+			if(!db.insert_record({tipo: "Subfamilia", tabela1: prefix family_name, tabela2: prefix family_mask "Subfamilia"}, "reltable"))
+				return 0	
+		}else{
+			return 0 
+		}
+		return 1
+	}
+
+	insert_with_model(family_name, family_mask, prefix, family_table){
+		Global db
+		if(this.insert_family_record(family_name, family_mask, 0, family_table)){
+			ETF_hashmask[family_name] := family_mask
+			if(!this.create_model_or_subfam_table(prefix family_mask "Modelo", "(Modelos VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))"))
+				return 0
+			if(!db.insert_record({tipo: "Modelo", tabela1: prefix family_name, tabela2: prefix family_mask "Modelo"}, "reltable"))
+				return 0
+		}else{
+			return 0 
+		}
+		return 1
+	}
+
+	create_model_or_subfam_table(table, sql){
+		Global db
+		if(!db.create_table(table, sql))
+			return 0
+		return 1
+	}
+
+	insert_family_record(family_name, family_mask, subfamily, family_table){
+		Global db
+		record := {}
+		record.Familias := family_name
+		record.Mascara := family_mask
+		record.Subfamilia := subfamily
+		if(!db.insert_record(record, family_table))
+			return 0
+		return 1
+	}
+
+
+	check_data_consistency(family_name, family_mask, family_table, prefix){
+		parameters := [family_name, family_mask, family_table, prefix]
+		if(!check_blank_parameters(parameters, 4))
+			return 0
+		if(!this.exists(family_name, family_mask, family_table))
+			return 0
+		item_hash := check_if_mask_is_unique(family_name, family_mask)
+		return item_hash
 	}
 
 	/*
@@ -306,9 +302,13 @@ class Familia{
 		Familia ja existe na tabela
 	*/
 	exists(familia_nome, familia_mascara, table){
-		Global db
-		items := db.find_items_where(" Mascara LIKE '" familia_mascara "'", table)
-		return (items[1, 1] = "") ? False : items[1, 1]
+		Global db 
+		sql := 
+		(JOIN
+			" Mascara like '" familia_mascara 
+			"' OR Familias like '" familia_nome "'"	 
+		)
+		return db.exists(sql, table)
 	}
 
 	/*

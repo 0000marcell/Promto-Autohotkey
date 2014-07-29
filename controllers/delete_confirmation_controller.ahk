@@ -23,7 +23,7 @@ delete_company(){
 delete_type(){
 	Global db
 	info := get_item_info("M", "MODlv")
-	db.Tipo.excluir(tipo.nome, tipo.mascara, info)
+	db.Tipo.excluir(info.tipo[1], info.tipo[2], info)
 	MsgBox,64, Sucesso, % "O tipo e todos os subitems foram apagados." 
 	delete_item_tv()
 }

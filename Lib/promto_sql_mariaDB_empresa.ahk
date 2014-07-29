@@ -42,12 +42,10 @@ class Empresa{
 
 	excluir(empresa_nome, empresa_mascara, recursiva = 1){
 		Global db, mariaDB
-		AHK.reset_debug()
-		AHK.append_debug("Comecando a excluir o item!")
 		; Funcao recursiva que exclui todod os subitems
 		if(recursiva = 1){
 			info := get_item_info("M", "MODlv") 
-			db.remove_subitems("empresas", empresa_mascara, info)
+			db.remove_subitems("empresa", empresa_mascara, info)
 		}
 		if(!this.delete_company(empresa_nome, empresa_mascara))
 			return 0
@@ -56,17 +54,13 @@ class Empresa{
 
 	delete_company(empresa_nome, empresa_mascara){
 		Global db 
-		AHK.append_debug("gonna delete mascara " empresa_mascara)
 		if(!db.delete_items_where(" Mascara like '" empresa_mascara "'", "empresas"))
 			return 0		
 		linked_table := db.get_reference("Aba", empresa_nome)
-		AHK.append_debug("linked table " linked_table)
-		AHK.append_debug(" delete items where WHERE tipo like 'Aba' AND tabela1 like '" empresa_nome "'")
 		if(!db.delete_items_where(" tipo like 'Aba' AND tabela1 like '" empresa_nome "'", "reltable"))
 			return 0
 		; Se a tabela de tipo nao estiver linkada deleta
 		linked_tables := db.find_items_where(" tipo LIKE 'Aba' AND tabela2 LIKE '" linked_table "'", "reltable")
-		AHK.append_debug("linked tables max index " linked_tables.maxindex())
 		if(!linked_tables.maxindex())
 			this.drop_table_if_not_related(linked_table)
 		MsgBox, % " A empresa foi deletada!"
@@ -74,7 +68,6 @@ class Empresa{
 
 	drop_table_if_not_related(linked){
 		Global mariaDB
-		AHK.append_debug("gonna drop table " linked)
 		if(linked = ""){
 			try{
 				mariaDB.Query("DROP TABLE " linked)	
@@ -108,18 +101,12 @@ class Empresa{
 	*/
 	exists(empresa_nome, empresa_mascara){
 		Global  db
-		items := db.find_items_where(
-			(JOIN
-				" Mascara like '" empresa_mascara 
-				"' OR Empresas like '" empresa_nome "'", 
-				"empresas"
-			))
-		if(items[1, 1] != ""){
-			error_msg("Ja existe essa mascara de codigo! ")	
-			return 0
-		}else{
-			return 1
-		}
+		sql :=
+		(JOIN
+			" Mascara like '" empresa_mascara 
+			"' OR Empresas like '" empresa_nome "'" 
+		)  
+		return db.exists(sql, "empresas")
 	}
 
 	exists_in_reltable(empresa_nome){

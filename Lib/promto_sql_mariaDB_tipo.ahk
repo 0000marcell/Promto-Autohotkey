@@ -1,242 +1,82 @@
 class Tipo{
-		/*
+	/*
 		Incluir um novo tipo
 	*/
 	incluir(tipo_nome = "", tipo_mascara = "", prefixo = "", empresa_nome = ""){
-		Global mariaDB, ETF_hashmask
-
-		/*
-			Se o nome estiver em branco
-		*/
-		if(tipo_nome = ""){
-			MsgBox, % "O nome do tipo nao pode estar em branco"
+		Global db, mariaDB, ETF_hashmask		
+		tipo_table := db.get_reference("Aba", empresa_nome)
+		item_hash := this.check_data_consistency(tipo_nome, tipo_mascara, tipo_table, prefixo, empresa_nome)
+		if(item_hash.name = "")
 			return 0
-		}
-
-		/*
-			Confere se o item a ser inserido 
-			ja contem uma mascara linkada a ele
-		*/
-		if(ETF_hashmask[tipo_nome] != ""){
-			error_msg :=
-			(JOIN
-				"Ja existe uma outra mascara linkada com o nome inserido!`n "
-				"Voce pode usar a mesma mascara: " ETF_hashmask[tipo_nome] "`n"
-				" Ou alterar o nome."  
-			)
-			MsgBox, 4, Item duplicado, % error_msg 
-			IfMsgBox Yes
-			{
-				tipo_mascara := ETF_hashmask[tipo_nome]
-				MsgBox, % "A mascara foi alterada para " tipo_mascara 
-			}else{
-				MsgBox, % "O item nao foi inserido, insira outra vez alterando o nome! "
-				return
-			}
-		}
-
-		/*
-			Verifica se a tabela a inserir o item 
-			esta em branco
-		*/
-		if(prefixo = ""){
-			MsgBox, % "Os prefixos que determinam o parente deste item nao podem estar em branco!"
+		if(!this.insert_type(item_hash.name, item_hash.mask, tipo_table))
 			return 0
-		}
-
-		/*
-			Verifica se o nome da empresa esta em branco
-		*/
-		if(empresa_nome = ""){
-			MsgBox, % "O nome da empresa nao pode estar em branco!"
+		if(!db.create_table(prefixo item_hash.mask "Familia ", "(Familias VARCHAR(250), Mascara VARCHAR(250), Subfamilia VARCHAR(250), PRIMARY KEY (Mascara))"))
 			return 0
-		}
-
-		/*
-			Verifica se o tipo_mascara esta em branco
-			caso esteja mostra uma msg de aviso
-		*/
-		if(tipo_mascara = ""){
-			MsgBox, 4,, % "Nao e recomendavel deixar a mascara em branco! `n deixar assim mesmo?"
-			IfMsgBox No
-			{
-				return 0
-			}
-		}
-
-		/*
-			Pega a referencia da tabela de items 
-			linkados
-		*/
-		tipo_table := this.get_parent_reference(empresa_nome)
-
-		/*
-			Verifica se a mascara a ser inserida 
-			ja existe
-		*/
-		exists_result := this.exists(tipo_nome, tipo_mascara, tipo_table) 
-		if(exists_result){
-			MsgBox, 16, Erro, % " Conflito com a mascara do item " exists_result " dois items diferentes nao podem ter a mesma mascara!" 
+		if(!db.insert_record({tipo: "Familia", tabela1: prefixo item_hash.name, tabela2: prefixo item_hash.mask "Familia"}, "reltable"))
 			return 0
-		}
-
-		/*
-			Insere o valor na tabela
-		*/
-		record := {}
-		record.Abas := tipo_nome
-		record.Mascara := tipo_mascara
-		mariaDB.Insert(record, tipo_table)
-
-		/*
-			Cria a tabela de Familias e insere a
-			referencia na reltable
-		*/
-		
-		/*
-		 Pega a mascara da empresa
-		*/
-
-		try{
-			mariaDB.Query(
-				(JOIN 
-					"	CREATE TABLE IF NOT EXISTS " prefixo tipo_mascara "Familia "
-					" (Familias VARCHAR(250), "
-					" Mascara VARCHAR(250), Subfamilia VARCHAR(250), "
-					" PRIMARY KEY (Mascara)) "
-				))
-		}catch e
-			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Familias `n" ExceptionDetail(e)
-
-		record := {}
-		record.tipo := "Familia"
-		record.tabela1 := prefixo tipo_nome
-		record.tabela2 := prefixo tipo_mascara "Familia"
-		mariaDB.Insert(record, "reltable")
 		MsgBox, 64,Sucesso!, % "O tipo foi inserido!"
 		Return 1
+	}
+
+	insert_type(type_name, type_mask, type_table){
+		Global db, ETF_hashmask
+		record := {}
+		record.Abas := type_name
+		record.Mascara := type_mask
+		if(db.insert_record(record, type_table)){
+			ETF_hashmask[type_name] := type_mask
+			return 1
+		}else{
+			return 0 
+		}
+	}
+
+	check_data_consistency(type_name, type_mask, type_table, prefix, company_name){
+		parameters := [type_name, type_mask, type_table, prefix, company_name]
+		if(!check_blank_parameters(parameters, 5))
+			return 0
+		if(!this.exists(type_name, type_mask, type_table))
+			return 0
+		item_hash := check_if_mask_is_unique(type_name, type_mask)
+		return item_hash
 	}
 
 	/*
 		Excluir tipo
 	*/
 	excluir(tipo_nome, tipo_mascara, info, recursiva = 1){
-		Global mariaDB
-
-		/*
-		 Excluir a entrada do tipo 
-		 na tabela de tipos 
-		*/
-		prefixo := info.empresa[2]
-
-		;MsgBox, % "ira a apagar o tipo: " tipo_nome "`n tipo_mascara: " tipo_mascara " `n prefixo: " prefixo
-
-		tipo_table := this.get_parent_reference(info.empresa[1])
-		if(!this.exists(tipo_nome, tipo_mascara, tipo_table)){
-			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela de tipos " tipo_table
-			return 
+		Global db, mariaDB
+		; Funcao recursiva que exclui todos os subitems
+		if(recursiva = 1){ 
+			db.remove_subitems("aba", info.empresa[2] tipo_mascara, info)
 		}
-		
-		;MsgBox, % "voltou da verificacao de existencia!"
-		/*
-			Funcao recursiva que exclui todas os
-			tipos familias e modelos dessa 
-			empresa
-		*/
-		if(recursiva = 1){
-			this.remove_subitems(tipo_nome, tipo_mascara, info)
-			return
-		}
-		;MsgBox, % "voltou da recursividade!"
-		try{
-			mariaDB.Query(
-			(JOIN 
-				" DELETE FROM " prefixo "Aba"
-				" WHERE Mascara like '" tipo_mascara "'"
-			))	
-		}catch e 
-			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de Tipos `n " ExceptionDetail(e)
-		
-		/*
-			Exclui a tabela de familias 
-			relacionada com esse tipo 
-			caso ela nao esteja mais relacionada com nada
-		*/
-		linked_table := this.get_reference(prefixo tipo_nome, "Familia") 
-
-		/*
-		 Deleta a entrada do tipo na 
-		 tabela de relacionamento.  
-		*/
-		try{
-			mariaDB.Query(
-			(JOIN 
-				" DELETE FROM reltable "
-				" WHERE tipo like 'Familia'"
-				" AND tabela1 like '" prefixo tipo_nome "'"
-			))	
-		}catch e 
-			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de referencia " ExceptionDetail(e)
-		
-		/*
-		 Verifica se a tabela de tipos 
-		 nao estava linkada com mais nenhuma outra tabela
-		 antes de deleta-la
-		*/
-
-		table := mariaDB.Query(
-			(JOIN 
-				" SELECT tipo,tabela1,tabela2 FROM reltable "
-				" WHERE tipo LIKE 'Familia' "
-				" AND tabela2 LIKE '" linked_table "'"
-			))
-		
-		linked .= ""
-		
-		columnCount := table.Columns.Count()
-		
-		for each, row in table.Rows{
-			Loop, % columnCount
-				linked .= row[A_index] "`n"
-		} 
-		
-		/*
-			Se nao existir mais nenhuma tabela linkada.
-		*/
-		if(linked = ""){
-			try{
-				mariaDB.Query("DROP TABLE " linked_table)	
-			}catch e 
-				MsgBox,16,Erro,% " Erro ao tentar deletar a tabela de tipos " linked_table "`n" ExceptionDetail(e)
-		}
+		type_table := db.get_reference("Aba", info.empresa[1])
+		if(!this.delete_type(tipo_nome, tipo_mascara, type_table, info))
+			return 0
+		return 1
 	}
 
-	/*
-		Verifica se determinado 
-		tipo ja existe na tabela
-	*/
+	delete_type(type_name, type_mask, type_table, info){
+		Global db 
+		if(!db.delete_items_where(" Mascara like '" type_mask "'", type_table))
+			return 0		
+		family_table := db.get_reference("Familia", info.empresa[2] type_name)
+		if(!db.delete_items_where(" tipo like 'Familia' AND tabela1 like '" info.empresa[2] type_name "'", "reltable"))
+			return 0
+		linked_tables := db.find_items_where(" tipo LIKE 'Familia' AND tabela2 LIKE '" family_table "'", "reltable")
+		if(!linked_tables.maxindex())
+			this.drop_table_if_not_related(family_table)
+		MsgBox, % " O tipo foi deletado!"
+	}
+
 	exists(tipo_nome, tipo_mascara, table){
 		Global db 
-		items := db.find_items_where(" Mascara LIKE '" tipo_mascara "'", table)
-		return (items[1, 1] = "") ? False : items[1, 1]
-	}
-
-	/*
-		Pega a tabela de referencia do pai 
-		ao qual o item atual sera inserido
-	*/
-	get_parent_reference(empresa_nome){
-		global mariaDB
-
-		rs := mariaDB.OpenRecordSet(
-			(JOIN 
-				" SELECT tabela2 FROM reltable "
-				" WHERE tipo like 'Aba' "
-				" AND tabela1 like '" empresa_nome "'"
-			))
-		reference_table := rs.tabela2
-		rs.close()
-		return reference_table
+		sql := 
+		(JOIN
+			" Mascara like '" tipo_mascara 
+			"' OR Abas like '" tipo_nome "'"	 
+		)
+		return db.exists(sql, table)
 	}
 
 	/*

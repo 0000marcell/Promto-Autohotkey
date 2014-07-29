@@ -1,8 +1,3 @@
-x := "dfdf"
-(x != "") ? error()
-
-MsgBox, % "nao retornou "
-error(){
-	MsgBox, % "erro!"
-	return 0
-}
+y := 2
+x := (y = 1) ? "z" : "w"
+MsgBox, % x

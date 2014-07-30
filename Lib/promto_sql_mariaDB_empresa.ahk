@@ -41,15 +41,12 @@ class Empresa{
 	}
 
 	excluir(empresa_nome, empresa_mascara, recursiva = 1){
-		Global db, mariaDB
-		AHK.reset_debug()	
+		Global db, mariaDB	
 		if(recursiva = 1){
 			info := get_item_info("M", "MODlv")
-			AHK.append_debug("gonna start recursiv " empresa_mascara) 
+			db.init_unique_info()
 			db.remove_subitems("empresa", empresa_mascara, info)
 		}
-		;AHK.append_debug("returned from recursiv ")
-		;AHK.append_debug("gonna delete company ")
 		if(!this.delete_company(empresa_nome, empresa_mascara))
 			return 0
 		return 1
@@ -57,15 +54,12 @@ class Empresa{
 
 	delete_company(empresa_nome, empresa_mascara){
 		Global db 
-		;AHK.append_debug("gonna delete the company ")
 		if(!db.delete_items_where(" Mascara like '" empresa_mascara "'", "empresas"))
 			return 0		
-		;AHK.append_debug("gonna get the linked table")
 		linked_table := db.get_reference("Aba", empresa_nome)
 		if(!db.delete_items_where(" tipo like 'Aba' AND tabela1 like '" empresa_nome "'", "reltable"))
 			return 0
 		; Se a tabela de tipo nao estiver linkada deleta
-		;AHK.append_debug("gonna drop the linked table")
 		if(!db.check_if_exists(" tipo LIKE 'Aba' AND tabela2 LIKE '" linked_table "'", "reltable")){
 			db.drop_table(linked_table)
 		}

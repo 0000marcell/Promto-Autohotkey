@@ -41,13 +41,11 @@ class Tipo{
 		return item_hash
 	}
 
-	/*
-		Excluir tipo
-	*/
 	excluir(tipo_nome, tipo_mascara, info, recursiva = 1){
 		Global db, mariaDB
 		; Funcao recursiva que exclui todos os subitems
-		if(recursiva = 1){ 
+		if(recursiva = 1){
+			db.init_unique_info() 
 			db.remove_subitems("aba", info.empresa[2] tipo_mascara, info)
 		}
 		type_table := db.get_reference("Aba", info.empresa[1])

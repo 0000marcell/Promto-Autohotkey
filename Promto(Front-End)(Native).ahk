@@ -514,7 +514,6 @@ return
   		info := get_item_info("M", "MODlv")
 			model_table := db.get_reference("Modelo", info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[1])
   	}
-
 		/*
 			Metodo que carrega a lista de modelos
 			em determinada listview

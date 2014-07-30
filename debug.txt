@@ -1,9 +1,10 @@
-gonna start recursiv T2
-nivel empresa mask T2 subfamily 0
-returned table T2aba nivel aba
-remove subitems nivel aba mask T2T4 subfamily 
-nivel aba mask T2T4 subfamily 
-returned table T2T4familia nivel familia
-remove subitems nivel familia mask T2T4T5 subfamily 1
-nivel familia mask T2T4T5 subfamily 1
-returned table T2modelo nivel modelo
+excluir tipo!
+gonna delete the family mask T3 family table 
+get the type table empresa mascara TESTE1
+returned type table T1Aba
+gonna delete items type mask: T2 type table T1Aba
+gonna get reference tabela1: T1TESTE2
+returned family table: T1T2Familia
+gonna delete items reltable tabela1 like T1TESTE2
+gonna check if theres another related
+gonna drop the table T1T2Familia

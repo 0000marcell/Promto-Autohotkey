@@ -93,6 +93,7 @@ class Familia{
 
 		; Funcao recursiva que exclui todos os subitems
 		if(recursiva = 1){
+			db.init_unique_info()
 			db.remove_subitems("familia", info.empresa[2] info.tipo[2] familia_mascara, info)
 		}
 		family_table := db.get_reference("Familia", info.empresa[2] info.tipo[1])
@@ -106,6 +107,7 @@ class Familia{
 
 		if(!db.delete_items_where(" Mascara like '" family_mask "'", family_table))
 			return 0		  
+		
 		if(db.have_subfamilia(info.empresa[2] info.tipo[2] family_name)){
 			sub_table := db.get_reference("Subfamilia", info.empresa[2] info.tipo[2] family_name)	
 			this.delete_subtitems_if_subfamily(info, family_name, sub_table)

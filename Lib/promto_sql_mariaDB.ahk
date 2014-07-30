@@ -396,31 +396,30 @@ class PromtoSQL{
 		Remove os subitems de 
 		determinado item
 	*/
-	remove_subitems(nivel, mask, info, subfamily = 0){
+	remove_subitems(nivel, mask, info, subfamily = 0, prev_mask = ""){
 		Global db
 
-		AHK.append_debug("nivel " nivel " mask " mask " subfamily " subfamily)
-		nt := this.get_next_table(nivel, mask, subfamily, info)
-		AHK.append_debug("returned table " nt.next_table " nivel " nt.next_nivel)
+		nt := this.get_next_table(nivel, mask, subfamily, prev_mask)
 		items := this.find_all(nt.next_table)
 		for, each, item in items{ 
 			;se o proximo nivel for modelo
 			if(nt.next_nivel = "modelo"){
-				AHK.append_debug("remove model " items[A_Index, 1] " mask " items[A_Index, 2])
 				db.Modelo.excluir(items[A_Index, 1], items[A_Index, 2], info, 0)
 				Continue
 			}
-			AHK.append_debug("remove subitems nivel " nt.next_nivel " mask " mask items[A_Index, 2] " subfamily " items[A_Index, 3])
-			this.remove_subitems(nt.next_nivel, mask items[A_Index, 2], info, items[A_Index, 3])
-			this.remove_item(nt.next_nivel, items[A_Index, 1], items[A_Index, 2], info)
+			hash := {name: items[A_Index, 1], mask: items[A_Index, 2]}
+			this.remove_subitems(nt.next_nivel, mask items[A_Index, 2], info, items[A_Index, 3], hash)
+			this.remove_item(nt.next_nivel, items[A_Index, 1], items[A_Index, 2])
 		}
 	}
 
-	remove_item(nivel, nome, mascara, info){
+	remove_item(nivel, nome, mascara){
 		Global db
+
+		info := this.get_unique_info()
 		if(nivel = "empresa"){
 			db.Empresa.excluir(nome, mascara, 0)
-		}else if(nivel = "tipo"){
+		}else if(nivel = "aba"){
 			db.Tipo.excluir(nome, mascara, info, 0)
 		}else if(nivel = "familia"){
 			db.Familia.excluir(nome, mascara, info, 0)
@@ -434,18 +433,44 @@ class PromtoSQL{
 		Pega a proxima tabela e a 
 		do determinado item
 	*/
-	get_next_table(nivel, prefix, subfamily, info){
+	get_next_table(nivel, prefix, subfamily, prev_mask = ""){
 		Global mariaDB
 		if(nivel = "empresa"){
 			nt := {next_table: prefix "aba", next_nivel: "aba"} 
-		}else if(nivel = "aba"){
+		}else if(nivel = "aba"){ 
 			nt := {next_table: prefix "familia", next_nivel: "familia"}
 		}else if(nivel = "familia"){
-			nt := this.check_if_have_subfamily(info)
+			nt := this.check_if_have_subfamily(subfamily, prefix)
 		}else if(nivel = "subfamilia"){
 			nt := {next_table: prefix "modelo", next_nivel: "modelo"}
 		}
+		this.update_unique_info(nivel, prev_mask)
 		return nt
+	}
+
+	
+	init_unique_info(){
+		Global 
+		unique_info := get_item_info("M", "MODlv")
+	}
+	/*
+		Usada para atualizar o info 
+		quando precisa deletar items que estao em nivel inferior a selecao
+	*/
+	update_unique_info(type, hash){
+		Global 
+		if(type = "aba"){
+			unique_info.tipo[1] := hash.name, unique_info.tipo[2] := hash.mask
+		}else if(type = "familia"){
+			unique_info.familia[1] := hash.name, unique_info.familia[2] := hash.mask
+		}else if(type = "subfamilia"){
+			unique_info.subfamilia[1] := hash.name, unique_info.subfamilia[2] := hash.mask
+		}
+	}
+
+	get_unique_info(){
+		Global 
+		return unique_info
 	}
 
 	/*
@@ -479,10 +504,9 @@ class PromtoSQL{
 		Verifica se o determinado 
 		item tem subfamilia ou nao
 	*/
-	check_if_have_subfamily(info){
-		prefix := info.empresa[2] info.tipo[2] info.familia[2]
-		if(this.have_subfamilia(info.empresa[2] info.tipo[2] info.familia[1])){
-			nt := {next_table: prefix "subfamilia", next_nivel: "modelo"}
+	check_if_have_subfamily(subfamily, prefix){
+		if(subfamily){
+			nt := {next_table: prefix "subfamilia", next_nivel: "subfamilia"}
 		}else{
 			nt := {next_table: prefix "modelo", next_nivel: "modelo"}
 		}

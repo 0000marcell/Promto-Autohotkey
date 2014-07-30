@@ -86,26 +86,14 @@ insert_family(edit_name_ETF, edit_mask_ETF){
 
 insert_subfamily(edit_name_ETF, edit_mask_ETF){
 	Global db, ETF_hashmask
-	Gui, %s_window%:Default
-	Gui, Treeview, %s_treeview%
-	familia_nome := get_item_from_tv(s_current_id)
-	tipo_id := TV_GetParent(s_current_id)
-	tipo_nome := get_item_from_tv(tipo_id)
-	empresa_id := TV_GetParent(tipo_id)
-	empresa_nome := get_item_from_tv(empresa_id)
-	subfam_prefix := ETF_hashmask[empresa_nome] ETF_hashmask[tipo_nome] ETF_hashmask[familia_nome]
-	old_edit_mask := edit_mask_ETF
-	edit_mask_ETF := check_if_ETF_exist(edit_name_ETF, edit_mask_ETF) 
-	if(old_edit_mask != edit_mask_ETF)
-		MsgBox, % "Ja existia uma mascara para o nome inserido `n por isso a mascara inserida foi trocada de " old_edit_mask " para " edit_mask_ETF 
-	
-	if(db.Subfamilia.incluir(edit_name_ETF, edit_mask_ETF, subfam_prefix, familia_nome)){
+	info := get_item_info("M", "MODlv")
+	if(db.Subfamilia.incluir(edit_name_ETF, edit_mask_ETF, info)){
 		ETF_hashmask[edit_name_ETF] := edit_mask_ETF
 		update_main_tv(edit_name_ETF, edit_mask_ETF)
 	}else{
-		MsgBox,16,Erro, % " Algo deu errado ao tentar inserir a Subfamilia!" 
+		MsgBox,16,Erro, % " Algo deu errado ao tentar inserir a Familia!" 
 		return
-	}	
+	}
 }
 
 update_main_tv(edit_name_ETF, edit_mask_ETF, parent = 1){

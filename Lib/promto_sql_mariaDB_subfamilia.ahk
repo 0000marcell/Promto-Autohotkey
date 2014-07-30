@@ -3,8 +3,20 @@ class Subfamilia{
 	/*
 		Incluir uma nova subfamilia
 	*/
-	incluir(subfam_nome = "", subfam_mascara = "", prefixo = "", familia_nome = ""){
-		Global mariaDB, info, ETF_hashmask
+	incluir(subfam_nome = "", subfam_mascara = "", info = ""){
+		Global db, mariaDB, ETF_hashmask		
+		subfam_table := db.get_reference("Subfamilia", info.empresa[2] info.tipo[2] subfam_nome)
+		item_hash := this.check_data_consistency(subfam_nome, subfam_mascara, subfam_table, info)
+		if(item_hash.name = "")
+			return 0
+		if(!this.insert_type(item_hash.name, item_hash.mask, tipo_table))
+			return 0
+		if(!db.create_table(prefixo item_hash.mask "Familia ", "(Familias VARCHAR(250), Mascara VARCHAR(250), Subfamilia VARCHAR(250), PRIMARY KEY (Mascara))"))
+			return 0
+		if(!db.insert_record({tipo: "Familia", tabela1: prefixo item_hash.name, tabela2: prefixo item_hash.mask "Familia"}, "reltable"))
+			return 0
+		MsgBox, 64,Sucesso!, % "O tipo foi inserido!"
+		Return 1
 
 		if(subfam_nome = "" || subfam_mascara = "" || prefixo = ""){
 			MsgBox, 16, % "Um dos items necessarios para incluir a subfamilia estava em branco!" 

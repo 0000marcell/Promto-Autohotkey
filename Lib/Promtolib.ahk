@@ -1861,8 +1861,8 @@ transform_array(array){
 createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", textsize = 30, textcolor = "ff000000", imagepath = "image.png"){
 	Global db, global_image_path
 
-	code_rect_size := 125 ; tamanho do retangulo onde vai o codigo
-	code_rect_spacing := 130 ; tamanho do espacamento entre os retangulos 
+	code_rect_size := 130 ; tamanho do retangulo onde vai o codigo
+	code_rect_spacing := 135 ; tamanho do espacamento entre os retangulos 
 
 	if(codigos_array[1, 1] = ""){
 		table := db.load_table_in_array(codelist)
@@ -1925,11 +1925,8 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 			table_camp_esp := db.load_table_in_array(camp_esp_table)
 
 			for, each, value in table_camp_esp{
-
 				codepiece := table_camp_esp[A_Index,1]
-
 				StringLen, length, codepiece
-
 				if(length != ""){
 					StringLeft, codepiece, codigo, length
 					StringTrimLeft, codigo, codigo, length
@@ -1959,7 +1956,6 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 	}
 	Gui,progress:destroy
 	MsgBox, 64, Sucesso, % "O arquivo foi salvo!!"
-	
 	formated_model := format_file_name(selectmodel)
 	savetofile("temp\tag.png")
 	MsgBox, % "ira rodar o arquivo temp\tag.png" 

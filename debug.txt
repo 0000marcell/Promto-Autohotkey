@@ -1,9 +1,9 @@
-gonna insert family familia_nome TESTE10 familia_mascara T10
-gonna get the family table T3TESTE4
-gonna insert without model TESTE10 mask T10 prefix T3T4
-insert the family record name TESTE10 mask T10 subfamily 0 family table T3T4Familia
-gonna create table T3T4T10Modelo
-gonna create the table T3T4T10Modelo
- sql  CREATE TABLE IF NOT EXISTS T3T4T10Modelo (Modelos VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))
-after create the table!
-finish!
+gonna start recursiv T2
+nivel empresa mask T2 subfamily 0
+returned table T2aba nivel aba
+remove subitems nivel aba mask T2T4 subfamily 
+nivel aba mask T2T4 subfamily 
+returned table T2T4familia nivel familia
+remove subitems nivel familia mask T2T4T5 subfamily 1
+nivel familia mask T2T4T5 subfamily 1
+returned table T2modelo nivel modelo

@@ -42,11 +42,14 @@ class Empresa{
 
 	excluir(empresa_nome, empresa_mascara, recursiva = 1){
 		Global db, mariaDB
-		; Funcao recursiva que exclui todod os subitems
+		AHK.reset_debug()	
 		if(recursiva = 1){
-			info := get_item_info("M", "MODlv") 
+			info := get_item_info("M", "MODlv")
+			AHK.append_debug("gonna start recursiv " empresa_mascara) 
 			db.remove_subitems("empresa", empresa_mascara, info)
 		}
+		;AHK.append_debug("returned from recursiv ")
+		;AHK.append_debug("gonna delete company ")
 		if(!this.delete_company(empresa_nome, empresa_mascara))
 			return 0
 		return 1
@@ -54,26 +57,19 @@ class Empresa{
 
 	delete_company(empresa_nome, empresa_mascara){
 		Global db 
+		;AHK.append_debug("gonna delete the company ")
 		if(!db.delete_items_where(" Mascara like '" empresa_mascara "'", "empresas"))
 			return 0		
+		;AHK.append_debug("gonna get the linked table")
 		linked_table := db.get_reference("Aba", empresa_nome)
 		if(!db.delete_items_where(" tipo like 'Aba' AND tabela1 like '" empresa_nome "'", "reltable"))
 			return 0
 		; Se a tabela de tipo nao estiver linkada deleta
-		linked_tables := db.find_items_where(" tipo LIKE 'Aba' AND tabela2 LIKE '" linked_table "'", "reltable")
-		if(!linked_tables.maxindex())
-			this.drop_table_if_not_related(linked_table)
-		MsgBox, % " A empresa foi deletada!"
-	}
-
-	drop_table_if_not_related(linked){
-		Global mariaDB
-		if(linked = ""){
-			try{
-				mariaDB.Query("DROP TABLE " linked)	
-			}catch e 
-				MsgBox,16,Erro,% " Erro ao tentar deletar a tabela de tipos " linked "`n" ExceptionDetail(e)
+		;AHK.append_debug("gonna drop the linked table")
+		if(!db.check_if_exists(" tipo LIKE 'Aba' AND tabela2 LIKE '" linked_table "'", "reltable")){
+			db.drop_table(linked_table)
 		}
+		return 1
 	}
 
 	/*

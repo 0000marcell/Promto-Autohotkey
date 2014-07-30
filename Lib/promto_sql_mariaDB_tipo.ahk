@@ -63,10 +63,9 @@ class Tipo{
 		family_table := db.get_reference("Familia", info.empresa[2] type_name)
 		if(!db.delete_items_where(" tipo like 'Familia' AND tabela1 like '" info.empresa[2] type_name "'", "reltable"))
 			return 0
-		linked_tables := db.find_items_where(" tipo LIKE 'Familia' AND tabela2 LIKE '" family_table "'", "reltable")
-		if(!linked_tables.maxindex())
-			this.drop_table_if_not_related(family_table)
-		MsgBox, % " O tipo foi deletado!"
+		if(!db.check_if_exists(" tipo LIKE 'Familia' AND tabela2 LIKE '" family_table "'", "reltable")){
+			db.drop_table(family_table)
+		}
 	}
 
 	exists(tipo_nome, tipo_mascara, table){

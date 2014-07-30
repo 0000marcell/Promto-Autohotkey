@@ -4,11 +4,9 @@ class PromtoSQL{
 		Conecta no DB
 	*/
 	__New(databaseType,connectionString){
-		
 		/*
 		 Tenta Conectar
 		*/
-		
 		try {
 			Global mariaDB := DBA.DataBaseFactory.OpenDataBase(databaseType, connectionString)
 		} catch e {
@@ -27,12 +25,10 @@ class PromtoSQL{
 	*/
 	inserir_conexao(name, string, type){
 		Global
-
 		if(name = "" || string = "" || type = ""){
 			MsgBox,16, Erro, % "Um dos valores necessarios para inserir `n uma nova conexao estava em branco" 
 			return
 		}
-
 		record := {}
 		record.name := name	
 		record.connection := string 
@@ -85,10 +81,6 @@ class PromtoSQL{
 		return return_value
 	}
 
-	/*
-		Deleta um determinado valor de uma determinada 
-		tabela
-	*/
 	delete_items_where(where_statement, table){
 		Global mariaDB
 		try{
@@ -100,6 +92,14 @@ class PromtoSQL{
 		}
 	}
 
+	drop_table(table){
+		Global mariaDB
+		try{
+			mariaDB.Query("DROP TABLE " table)	
+		}catch e 
+			MsgBox,16,Erro,% " Erro ao tentar deletar a tabela de tipos " table "`n" ExceptionDetail(e)
+	}
+
 	/*
 		Abre um record set e retorna os valores
 		de determinada tabela em um hash com o nome do 
@@ -107,16 +107,13 @@ class PromtoSQL{
 	*/
 	query_table(table, field_value, columns){
 		Global mariaDB 
-
 		try{
 				rs := mariaDB.OpenRecordSet("SELECT * FROM " table " WHERE " field_value[1] " LIKE '" field_value[2] "'")		
 			}catch e{
 				MsgBox, % "Ocorreu um erro ao buscar o valor do campo!"
 				return
 		}
-		
 		return_value := []
-		
 		for, each, value in columns{
 			return_value[value] := rs[value]
 		}
@@ -126,13 +123,11 @@ class PromtoSQL{
 
 	schema(){
 		Global mariaDB, global_image_path
-
 		/*
 			Verifica se as tabelas 
 			empresas, reltable, imagetable, connections
 			existem
 		*/
-
 		/*
 			empresas
 		*/
@@ -403,14 +398,19 @@ class PromtoSQL{
 	*/
 	remove_subitems(nivel, mask, info, subfamily = 0){
 		Global db
-		nt := this.get_next_table(nivel, mask, subfamily)
+
+		AHK.append_debug("nivel " nivel " mask " mask " subfamily " subfamily)
+		nt := this.get_next_table(nivel, mask, subfamily, info)
+		AHK.append_debug("returned table " nt.next_table " nivel " nt.next_nivel)
 		items := this.find_all(nt.next_table)
 		for, each, item in items{ 
 			;se o proximo nivel for modelo
 			if(nt.next_nivel = "modelo"){
+				AHK.append_debug("remove model " items[A_Index, 1] " mask " items[A_Index, 2])
 				db.Modelo.excluir(items[A_Index, 1], items[A_Index, 2], info, 0)
 				Continue
 			}
+			AHK.append_debug("remove subitems nivel " nt.next_nivel " mask " mask items[A_Index, 2] " subfamily " items[A_Index, 3])
 			this.remove_subitems(nt.next_nivel, mask items[A_Index, 2], info, items[A_Index, 3])
 			this.remove_item(nt.next_nivel, items[A_Index, 1], items[A_Index, 2], info)
 		}
@@ -434,14 +434,14 @@ class PromtoSQL{
 		Pega a proxima tabela e a 
 		do determinado item
 	*/
-	get_next_table(nivel, prefix, subfamily){
+	get_next_table(nivel, prefix, subfamily, info){
 		Global mariaDB
-		if(nivel = "empresas"){
+		if(nivel = "empresa"){
 			nt := {next_table: prefix "aba", next_nivel: "aba"} 
 		}else if(nivel = "aba"){
 			nt := {next_table: prefix "familia", next_nivel: "familia"}
 		}else if(nivel = "familia"){
-			nt := this.check_if_have_subfamily(prefix, subfamily)
+			nt := this.check_if_have_subfamily(info)
 		}else if(nivel = "subfamilia"){
 			nt := {next_table: prefix "modelo", next_nivel: "modelo"}
 		}
@@ -464,16 +464,29 @@ class PromtoSQL{
 		}
 	}
 
+	check_if_exists(sql, table){
+		Global db
+
+		items := db.find_items_where(sql, table)
+		if(items[1, 1] != ""){	
+			return 1
+		}else{
+			return 0
+		}	
+	}
+
 	/*
 		Verifica se o determinado 
 		item tem subfamilia ou nao
 	*/
-	check_if_have_subfamily(){
-		if(subfamily){
-			nt := {next_table: prefix "subfamilia", next_nivel: "subfamilia"}
+	check_if_have_subfamily(info){
+		prefix := info.empresa[2] info.tipo[2] info.familia[2]
+		if(this.have_subfamilia(info.empresa[2] info.tipo[2] info.familia[1])){
+			nt := {next_table: prefix "subfamilia", next_nivel: "modelo"}
 		}else{
 			nt := {next_table: prefix "modelo", next_nivel: "modelo"}
 		}
+		return nt
 	}
 
 	/*
@@ -808,7 +821,7 @@ class PromtoSQL{
 	*/
 	have_subfamilia(tabela1){
 		Global db
-		items := db.find_items_where(" tipo like 'Subfamilia' AND tabela1 like '" tabela1 "'")
+		items := db.find_items_where(" tipo like 'Subfamilia' AND tabela1 like '" tabela1 "'", "reltable")
 		if(items[1, 1] != ""){
 			return 1
 		}else{

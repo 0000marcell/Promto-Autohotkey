@@ -512,7 +512,6 @@ return
   	
   	if(tv_level = 4){
   		info := get_item_info("M", "MODlv")
-
 			model_table := db.get_reference("Modelo", info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[1])
   	}
 
@@ -614,7 +613,7 @@ return
 	ModeloMascara:=result["Mascara"]
 	prefixpt2:=""
 	for,each,value in list := db.getvalues("Campos",EmpresaMascara AbaMascara FamiliaMascara ModeloMascara "prefixo"){
-		prefixpt2.=list[A_Index,1]	
+		prefixpt2 .= list[A_Index,1]	
 	} 
 	StringReplace,prefixpt2,prefixpt2,% currentvalue[2],,All
 	_showcode:=1

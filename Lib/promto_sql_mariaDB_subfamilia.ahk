@@ -1,197 +1,102 @@
 class Subfamilia{
 
-	/*
-		Incluir uma nova subfamilia
-	*/
-	incluir(subfam_nome = "", subfam_mascara = "", info = ""){
+	incluir(subfam_name = "", subfam_mask = "", info = ""){
 		Global db, mariaDB, ETF_hashmask		
-		subfam_table := db.get_reference("Subfamilia", info.empresa[2] info.tipo[2] subfam_nome)
-		item_hash := this.check_data_consistency(subfam_nome, subfam_mascara, subfam_table, info)
+		subfam_table := db.get_reference("Subfamilia", info.empresa[2] info.tipo[2] subfam_name)
+		item_hash := this.check_data_consistency(subfam_name, subfam_mask, subfam_table, info)
+		prefix := info.empresa[2] info.tipo[2] info.familia[2]
 		if(item_hash.name = "")
 			return 0
-		if(!this.insert_type(item_hash.name, item_hash.mask, tipo_table))
+		if(!this.insert_subfamily(item_hash.name, item_hash.mask, subfam_table))
 			return 0
-		if(!db.create_table(prefixo item_hash.mask "Familia ", "(Familias VARCHAR(250), Mascara VARCHAR(250), Subfamilia VARCHAR(250), PRIMARY KEY (Mascara))"))
+		if(!db.create_table(prefix item_hash.mask "Modelo ", "(Modelos VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))"))
 			return 0
-		if(!db.insert_record({tipo: "Familia", tabela1: prefixo item_hash.name, tabela2: prefixo item_hash.mask "Familia"}, "reltable"))
+		if(!db.insert_record({tipo: "Modelo", tabela1: prefixo item_hash.name, tabela2: prefixo item_hash.mask "Modelo"}, "reltable"))
 			return 0
-		MsgBox, 64,Sucesso!, % "O tipo foi inserido!"
 		Return 1
+	}
 
-		if(subfam_nome = "" || subfam_mascara = "" || prefixo = ""){
-			MsgBox, 16, % "Um dos items necessarios para incluir a subfamilia estava em branco!" 
-			return
+	insert_subfamily(subfam_name, subfam_mask, subfam_table){
+		Global db, ETF_hashmask
+		record := {}
+		record.Subfamilias := subfam_name
+		record.Mascara := subfam_mask
+		if(db.insert_record(record, subfam_table)){
+			ETF_hashmask[subfam_name] := subfam_mask
+			return 1
+		}else{
+			return 0 
 		}
+	}
 
-		/*
-			Confere se o item a ser inserido 
-			ja contem uma mascara linkada a ele
-		*/
-		if(ETF_hashmask[subfam_nome] != ""){
-			error_msg :=
-			(JOIN
-				"Ja existe uma outra mascara linkada com o nome inserido!`n "
-				"Voce pode usar a mesma mascara: " ETF_hashmask[subfam_nome] "`n"
-				" Ou alterar o nome."  
-			)
-			MsgBox, 4, Item duplicado, % error_msg 
-			IfMsgBox Yes
-			{
-				subfam_mascara := ETF_hashmask[subfam_nome]
-				MsgBox, % "A mascara foi alterada para " subfam_mascara 
-			}else{
-				MsgBox, % "O item nao foi inserido, insira outra vez alterando o nome! "
-				return
-			}
-		}
-
-		/*
-			Pega a mascara da empresa
-		*/
-
-		/*
-			Pega a referencia da tabela de items 
-			linkados
-		*/
-		sub_prefixo := info.empresa[2] info.tipo[2]
-		subfam_table := this.get_parent_reference(sub_prefixo, familia_nome)
-		if(subfam_table = ""){
-			MsgBox, 16, Erro, % "A familia selecionada nao tem subfamilia!"
-			return
-		}
-
-		/*
-			Verifica se a mascara a ser inserida ja existe
-		*/
-		;MsgBox, % "ira verificar se a mascara a ser inserida ja existe `n subfam nome: " subfam_nome " `n subfam_mascara: " subfam_mascara " `n sufam_table: " subfam_table 
-		exists_result := this.exists(subfam_nome, subfam_mascara, subfam_table)
-		if(exists_result){
-			MsgBox, 16, Erro, % " Conflito com a mascara do item " exists_result " dois items diferentes nao podem ter a mesma mascara de codigo" 
+	check_data_consistency(subfam_name, subfam_mask, subfam_table, info){
+		parameters := [subfam_name, subfam_mask, subfam_table]
+		if(!check_blank_parameters(parameters, 4))
 			return 0
+		if(!this.exists(subfam_name, subfam_mask, subfam_table))
+			return 0
+		item_hash := check_if_mask_is_unique(subfam_name, subfam_mask)
+		return item_hash
+	}
+
+	exists(subfam_name, subfam_mask, subfam_table){
+		Global db
+		sql :=
+		(JOIN
+			" Mascara like '" subfam_mask 
+			"' OR Subfamilias like '" subfam_name "'" 
+		)  
+		return db.exists(sql, subfam_table)
+	}
+
+	excluir(subfam_name, subfam_mask, info, recursiva = 1){
+		Global db, mariaDB
+		; Funcao recursiva que exclui todos os subitems
+		if(recursiva = 1){
+			db.init_unique_info() 
+			db.remove_subitems("subfamilia", this.full_prefix(info), info)
 		}
-
-		/*
-			Insere esta subfamilia na tabela de subfamilias
-		*/
-		record := {}
-		record.Subfamilias := subfam_nome
-		record.Mascara := subfam_mascara
-		mariaDB.Insert(record, subfam_table)
-
-		/*
-			Cria a tabela de modelos
-		*/
-		try{
-			mariaDB.Query(
-				(JOIN 
-					"	CREATE TABLE IF NOT EXISTS " prefixo subfam_mascara "Modelo"
-					" (Modelos VARCHAR(250), "
-					" Mascara VARCHAR(250), "
-					" PRIMARY KEY (Mascara)) "
-				))
-		}catch e
-			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Modelos `n" ExceptionDetail(e)
-
-		record := {}
-		record.tipo := "Modelo"
-		record.tabela1 := prefixo subfam_nome
-		record.tabela2 := prefixo subfam_mascara "Modelo"
-		mariaDB.Insert(record, "reltable")
-		MsgBox, % "A Subfamilia foi inserida!"
+		subfam_table := db.get_reference("Subfamilia", this.prefix(info) subfam_name)
+		if(!this.delete_subfam(subfam_name, subfam_mask, subfam_table, info))
+			return 0
 		return 1
 	}
 
-	/*
-		Exclui determinada subfamilia
-	*/
-	excluir(subfam_nome, subfam_mascara, info, recursiva = 1){
-		Global mariaDB, db
+	delete_subfam(subfam_name, subfam_mask, subfam_table, info){
+		Global db 
+		if(!db.delete_items_where(" Mascara like '" subfam_mask "'", subfam_table))
+			return 0
+		this.delete_model_table_if_not_related(subfam_name, subfam_mask, info)		
+	}
 
-		/*
-		 Excluir a entrada da familia
-		 na tabela de familias 
-		*/
-
-		prefixo := info.empresa[2] info.tipo[2]
-		subfam_table := this.get_parent_reference(prefixo, info.familia[1])
-		if(!this.exists(subfam_nome, subfam_mascara, subfam_table)){
-			MsgBox,16,Erro,% " O valor a ser deletado nao existia na tabela de subfamilias: " subfam_table
-			return 
-		}
-		prefixo := info.empresa[2] info.tipo[2] info.familia[2]
-		try{
-			mariaDB.Query(
-			(JOIN 
-				" DELETE FROM " prefixo "Subfamilia"
-				" WHERE Mascara like '" subfam_mascara "'"
-			))	
-		}catch e 
-			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de Familias `n " ExceptionDetail(e)
-		
-		/*
-			Exclui a tabela de modelos
-			relacionada com essa familia
-			caso ela nao esteja mais relacionada com nada
-		*/
-		linked_table := db.get_reference("Modelo", prefixo subfam_nome) 
-
-		/*
-		 Deleta a entrada do tipo na 
-		 tabela de relacionamento.  
-		*/
-		try{
-			mariaDB.Query(
-			(JOIN 
-				" DELETE FROM reltable "
-				" WHERE tipo like 'Modelo'"
-				" AND tabela1 like '" prefixo subfam_nome "'"
-			))	
-		}catch e 
-			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de referencia " ExceptionDetail(e)
-		
-		/*
-		 Verifica se a tabela de modelos 
-		 nao estava linkada com mais nenhuma outra tabela
-		 antes de deleta-la
-		*/
-		table := mariaDB.Query(
-			(JOIN 
-				" SELECT tipo,tabela1,tabela2 FROM reltable "
-				" WHERE tipo LIKE 'Modelo' "
-				" AND tabela2 LIKE '" linked_table "'"
-			))
-		linked := ""
-		columnCount := table.Columns.Count()
-		for each, row in table.Rows{
-			Loop, % columnCount
-				linked .= row[A_index] "`n"
-		} 
-
-		/*
-			Se nao existir mais nenhuma tabela linkada.
-		*/
-		if(linked = ""){
-			try{
-				mariaDB.Query("DROP TABLE " linked_table)	
-			}catch e 
-				MsgBox,16,Erro,% " Erro ao tentar deletar a tabela de tipos " linked_table "`n" ExceptionDetail(e)
+	delete_model_table_if_not_related(subfam_name, subfam_mask, info){
+		Global db
+		model_table := db.get_reference("Modelo", this.prefix(info) subfam_name)
+		if(!db.delete_items_where(" tipo like 'Subfamilia' AND tabela1 like '" this.prefix(info) subfam_name "'", "reltable"))
+			return 0
+		if(!db.check_if_exists(" tipo LIKE 'Modelo' AND tabela2 LIKE '" model_table "'", "reltable")){
+			db.drop_table(model_table)
 		}
 	}
 
-	/*
-		Remove os subitems do determinado item
-	*/
+	prefix(info){
+		return_value := info.empresa[2] info.tipo[2] info.familia[2]
+		return return_value
+	}
+
+	full_prefix(info){
+		return_value := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2]
+		return return_value 
+	}
+
 	remove_subitems(nome, mascara, info = "", nivel_tipo = "", i = 0){
 		Global mariaDB, db
-
 		i++
 		if(nivel_tipo = ""){
 			nivel_tipo := {1: ["Subfamilia", "Modelo"], 2: ["Modelo", "break"]}
 		}
-
 		nivel := nivel_tipo[i,1]
-		tipo := nivel_tipo[i,2]
-		
+		tipo := nivel_tipo[i,2]	
 		/*
 			Pega a tabela de referencia que 
 			contem o subitem do item atual
@@ -292,15 +197,4 @@ class Subfamilia{
 		;MsgBox, % "tabela retornada " reference_table
 		return reference_table
 	}
-
-	/*
-		Verifica se determinado 
-		tipo ja existe na tabela
-	*/
-	exists(subfam_nome, subfam_mascara, table){
-		Global db
-		items := db.find_items_where(" Mascara LIKE '" subfam_mascara "'", table)
-		return (items[1, 1] = "") ? False : items[1, 1]
-	}
-
 }

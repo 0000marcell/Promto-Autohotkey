@@ -3,6 +3,7 @@
 	"db_location":"Server=localhost;Port=3306;Database=bug;Uid=root;Pwd=Recovergun;",
 	"image_folder_path":"//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/",
 	"cert_folder_path":"//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/certificados/",
+	"mariaDB_path":"C:/Program Files/MariaDB 5.5/bin",
 	"tab_color":"000000",
 	"tab_text_size":"10",
 	"lv_grid": "-Grid",

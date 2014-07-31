@@ -66,7 +66,7 @@ insert_type(edit_name_ETF, edit_mask_ETF){
 		ETF_hashmask[edit_name_ETF] := edit_mask_ETF
 		update_main_tv(edit_name_ETF, edit_mask_ETF)
 	}else{
-		MsgBox,16,Erro, % " Algo deu errado ao tentar inserir a aba!" 
+		MsgBox,16,Erro, % " Algo deu errado ao tentar inserir o tipo!" 
 		return
 	}
 }
@@ -79,7 +79,7 @@ insert_family(edit_name_ETF, edit_mask_ETF){
 		ETF_hashmask[edit_name_ETF] := edit_mask_ETF
 		update_main_tv(edit_name_ETF, edit_mask_ETF)
 	}else{
-		MsgBox,16,Erro, % " Algo deu errado ao tentar inserir a Familia!" 
+		MsgBox,16,Erro, % " Algo deu errado ao tentar inserir a familia!" 
 		return
 	}
 }
@@ -91,7 +91,7 @@ insert_subfamily(edit_name_ETF, edit_mask_ETF){
 		ETF_hashmask[edit_name_ETF] := edit_mask_ETF
 		update_main_tv(edit_name_ETF, edit_mask_ETF)
 	}else{
-		MsgBox,16,Erro, % " Algo deu errado ao tentar inserir a Familia!" 
+		MsgBox,16,Erro, % " Algo deu errado ao tentar inserir a subfamilia!" 
 		return
 	}
 }

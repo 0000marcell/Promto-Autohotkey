@@ -3,8 +3,24 @@ class Modelo{
 	/*
 		Incluir um novo modelo
 	*/
-	incluir(modelo_nome = "", modelo_mascara = "", prefixo = "", already_in_table = "", info = ""){
-		Global mariaDB, ETF_hashmask
+	incluir(model_name = "", model_mask = "", prefixo = "", already_in_table = "", info = ""){
+		/*
+			Remover todas as dependencias do info 
+			para insercao de modelo
+		*/
+		Global db, mariaDB, ETF_hashmask		
+		model_table := db.get_reference("Modelo", prefixo model_name)
+		item_hash := this.check_data_consistency(model_name, model_mask, model_table, prefixo)
+		if(item_hash.name = "")
+			return 0
+		if(!this.insert_type(item_hash.name, item_hash.mask, tipo_table))
+			return 0
+		if(!db.create_table(prefixo item_hash.mask "Familia ", "(Familias VARCHAR(250), Mascara VARCHAR(250), Subfamilia VARCHAR(250), PRIMARY KEY (Mascara))"))
+			return 0
+		if(!db.insert_record({tipo: "Familia", tabela1: prefixo item_hash.name, tabela2: prefixo item_hash.mask "Familia"}, "reltable"))
+			return 0
+		MsgBox, 64,Sucesso!, % "O tipo foi inserido!"
+		Return 1
 
 		modelo_nome := Trim(modelo_nome), modelo_mascara := Trim(modelo_mascara)
 		prefixo := Trim(prefixo)
@@ -153,8 +169,27 @@ class Modelo{
 				record.tabela2 := prefixo modelo_mascara tipo
 				mariaDB.Insert(record, "reltable")
 			}
-		}
-		;MsgBox,64,Sucesso, % " O valor foi inserido!" 
+		} 
+	}
+
+	check_data_consistency(model_name, model_mask, model_table, prefix){
+		parameters := [model_name, model_mask, model_table, prefix]
+		if(!check_blank_parameters(parameters, 4))
+			return 0
+		if(!this.exists(model_name, model_mask, model_table))
+			return 0
+		item_hash := check_if_mask_is_unique(model_name, model_mask)
+		return item_hash
+	}
+
+	exists(model_name, model_mask, table = ""){
+		Global db
+		sql := 
+		(JOIN
+			" Mascara like '" model_mask 
+			"' OR Modelos like '" model_name "'"	 
+		)
+		return db.exists(sql, table)
 	}
 
 	/*
@@ -719,16 +754,6 @@ class Modelo{
 		reference_table := rs.tabela2
 		rs.close()
 		return reference_table
-	}
-
-	/*
-		Verifica se determinado 
-		Familia ja existe na tabela
-	*/
-	exists(modelo_nome, modelo_mascara, prefixo, table = ""){
-		Global db
-		items := db.find_items_where(" Mascara LIKE '" modelo_mascara "'", table)
-		return (items[1, 1] = "") ? False : items[1, 1]
 	}
 
 	/*

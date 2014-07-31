@@ -31,6 +31,7 @@ BUTTON_SIZE := settings.button_size
 global_image_path := settings.image_folder_path 
 global_cert_path := settings.cert_folder_path
 lv_grid := settings.lv_grid
+MARIADB_PATH := settings.mariaDB_path
 StringReplace, global_image_path, global_image_path, /,\, All
 StringReplace, global_cert_path, global_cert_path, /,\, All
 if(BUTTON_SIZE = "small")

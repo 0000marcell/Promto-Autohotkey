@@ -13,7 +13,7 @@ class Modelo{
 		item_hash := this.check_data_consistency(model_name, model_mask, model_table, prefixo)
 		if(item_hash.name = "")
 			return 0
-		if(!this.insert_type(item_hash.name, item_hash.mask, tipo_table))
+		if(!this.insert_model(item_hash.name, item_hash.mask, model_table))
 			return 0
 		if(!db.create_table(prefixo item_hash.mask "Familia ", "(Familias VARCHAR(250), Mascara VARCHAR(250), Subfamilia VARCHAR(250), PRIMARY KEY (Mascara))"))
 			return 0
@@ -170,6 +170,19 @@ class Modelo{
 				mariaDB.Insert(record, "reltable")
 			}
 		} 
+	}
+
+	insert_model(model_name, model_mask, model_table){
+		Global db, ETF_hashmask
+		record := {}
+		record.Abas := type_name
+		record.Mascara := type_mask
+		if(db.insert_record(record, type_table)){
+			ETF_hashmask[type_name] := type_mask
+			return 1
+		}else{
+			return 0 
+		}
 	}
 
 	check_data_consistency(model_name, model_mask, model_table, prefix){
@@ -947,36 +960,6 @@ class Modelo{
 			if(name = "" || code = "")
 				Continue
 			this.incluir(name, code, prefixo, 1)
-		} 
-	}
-
-	check_data_consistency(model_table, info){
-		Global mariaDB, db
-
-		prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2]
-		models_table := db.load_table_in_array(model_table)
-		for, each, value in models_table{
-			if(models_table[A_Index, 1] = ""){
-				Continue
-			}
-			table_desc := 
-			(JOIN
-				info.empresa[2]
-				info.tipo[2]
-				info.familia[2]
-				info.subfamilia[2]
-				models_table[A_Index, 2] "Desc"
-			)
-
-			/*
-				Se o modelo nao existir 
-				insere as tabelas necessarias
-			*/
-
-			if(!db.table_exists(table_desc)){
-				MsgBox, 16, Erro, % "O modelo " models_table[A_Index, 1] " estava inconsistente `n suas dependencias serao resolvidas!"
-				this.incluir(models_table[A_Index, 1], models_table[A_Index, 2], prefixo, 1)
-			}
 		} 
 	}
 

@@ -2320,12 +2320,14 @@ getmascara(name,table,field){
 	return returnvalue	
 }
 
-/*
-	Mensagem de erro 
-*/
 error_msg(msg){
 	MsgBox, 16, Erro, % msg
 	return 0 
+}
+
+success_msg(msg){
+	MsgBox, 64, Sucesso, % msg
+	return 1 
 }
 
 check_blank_parameters(parameters, number){

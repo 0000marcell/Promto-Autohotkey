@@ -3,182 +3,91 @@ class Modelo{
 	/*
 		Incluir um novo modelo
 	*/
-	incluir(model_name = "", model_mask = "", prefixo = "", already_in_table = "", info = ""){
-		/*
-			Remover todas as dependencias do info 
-			para insercao de modelo
-		*/
+	incluir(model_name = "", model_mask = "", prefixo = "", tabela1 = ""){
 		Global db, mariaDB, ETF_hashmask		
-		model_table := db.get_reference("Modelo", prefixo model_name)
+		AHK.reset_debug()
+		AHK.append_debug(" gonna get reference tabela1 " tabela1)
+		model_table := db.get_reference("Modelo", tabela1)
+		AHK.append_debug("returned model table " model_table)
+		AHK.append_debug("gonna check consistency")
 		item_hash := this.check_data_consistency(model_name, model_mask, model_table, prefixo)
 		if(item_hash.name = "")
 			return 0
+		AHK.append_debug("gonna insert  model name " item_hash.name " mask " item_hash.mask " model table " model_table)
 		if(!this.insert_model(item_hash.name, item_hash.mask, model_table))
 			return 0
-		if(!db.create_table(prefixo item_hash.mask "Familia ", "(Familias VARCHAR(250), Mascara VARCHAR(250), Subfamilia VARCHAR(250), PRIMARY KEY (Mascara))"))
+		AHK.append_debug("name " item_hash.name " mask " item_hash.mask " prefixo " prefixo)
+		if(!this.insert_model_tables(item_hash.name, item_hash.mask, prefixo))
 			return 0
-		if(!db.insert_record({tipo: "Familia", tabela1: prefixo item_hash.name, tabela2: prefixo item_hash.mask "Familia"}, "reltable"))
-			return 0
-		MsgBox, 64,Sucesso!, % "O tipo foi inserido!"
+		AHK.append_debug("returned from insert model tables ")
 		Return 1
+	}
 
-		modelo_nome := Trim(modelo_nome), modelo_mascara := Trim(modelo_mascara)
-		prefixo := Trim(prefixo)
-
-		/*
-			Confere se o item a ser inserido 
-			ja contem uma mascara linkada a ele
-		*/
-		if(ETF_hashmask[modelo_nome] != ""){
-			error_msg :=
-			(JOIN
-				"Ja existe uma outra mascara linkada com o nome inserido!`n "
-				"Voce pode usar a mesma mascara: " ETF_hashmask[modelo_nome] "`n"
-				" Ou alterar o nome."  
-			)
-			MsgBox, 4, Item duplicado, % error_msg 
-			IfMsgBox Yes
-			{
-				modelo_mascara := ETF_hashmask[modelo_nome]
-				MsgBox, % "A mascara foi alterada para " modelo_mascara 
-			}else{
-				MsgBox, % "O item nao foi inserido, insira outra vez alterando o nome! "
-				return
-			}
-		}
-
-		/*	
-			Verifica se o prefixo a inserir o item 
-			esta em branco
-		*/
-		if(prefixo = ""){
-			MsgBox, % "O prefixo nao pode estar em branco nos modelos!"
-			return
-		}
-
-		if(modelo_nome = "" || modelo_mascara = ""){
-			MsgBox, % "o nome e a mascara do modelo nao podem estar em brancos!"
-			return			
-		}
-
-		/*
-			Verifica se a mascara a ser inserida 
-			ja existe
-		*/
-		tabela1 :=
-		(JOIN
-			info.empresa[2]
-			info.tipo[2]
-			info.familia[2]
-			info.subfamilia[2]
-			info.modelo[2]
-			info.modelo[1] 
-		)
-		model_table := db.get_reference("Modelo", tabela1)
-		if(model_table = ""){
-			model_table := prefixo "Modelo"
-		}
-
-		if(already_in_table != 1){
-			exists_result := this.exists(modelo_nome, modelo_mascara, prefixo, model_table) 	
-			if(exists_result){
-				MsgBox, 16, Erro, % " Conflito com a mascara do item " exists_result " dois items nao podem ter a mesma mascara!" 
-				return 
-			}	
-		}
-		
-		/*
-			Insere o valor na tabela
-			caso o parametro de existencia na tabela nao seja verdadeiro
-		*/
-		if(already_in_table != 1){
-			record := {}
-			record.Modelos := modelo_nome
-			record.Mascara := modelo_mascara
-			mariaDB.Insert(record, model_table)	
-		}
-		
-
-		/*
-			Cria a tabela de campos
-			e insere na tabela de referencias.
-		*/
-
+	insert_model_tables(model_name, model_mask, prefix){
 		tables := ["Campo", "oc", "odr", "odc", "odi", "Codigo", "Desc", "Bloqueio"]
+		if(!this.create_code_table(model_name, model_mask, prefix))
+			return 0
+		if(!this.create_bloq_table(model_name, model_mask, prefix))
+			return 0
+		if(!this.create_descricao_geral(model_name, model_mask, prefix))
+			return 0
+		if(!this.create_field_tables(["Campo", "oc", "odr", "odc", "odi"], model_name, model_mask, prefix))
+			return 0
+		return 1
+	}
 
-		for, each, tipo in tables{
-			if(tipo = "Codigo"){
-				try{
-					mariaDB.Query(
-					(JOIN 
-						"	CREATE TABLE IF NOT EXISTS " prefixo modelo_mascara tipo
-						" (Codigos VARCHAR(250),"
-						" DR VARCHAR(300), "
-						" DC VARCHAR(600), "
-						" DI VARCHAR(300)) "
-					))
-				}catch e
-					MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Codigos `n" ExceptionDetail(e)
-
-			}
-
-			if(tipo = "Bloqueio"){
-				try{
-				mariaDB.Query(
-					(JOIN 
-						"	CREATE TABLE IF NOT EXISTS " prefixo modelo_mascara tipo
-						" (Codigos VARCHAR(250)) "
-					))
-				}catch e
-				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Bloqueios `n" ExceptionDetail(e)
-			}
-
-			if(tipo != "Desc" && tipo != "Codigo" && tipo != "Bloqueio"){
-				try{
-				mariaDB.Query(
-					(JOIN 
-						"	CREATE TABLE IF NOT EXISTS " prefixo modelo_mascara tipo
-						" (id MEDIUMINT NOT NULL AUTO_INCREMENT,"
-						" Campos VARCHAR(250), "
-						" PRIMARY KEY (id)) "
-					))
-				}catch e
-				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Campos `n" ExceptionDetail(e)	
-			}
-			
-			if(tipo = "Desc"){
-				;MsgBox, % "ira criar tabela de descriaco!"
-				try{
-					mariaDB.Query(
-						(JOIN 
-							"	CREATE TABLE IF NOT EXISTS " prefixo modelo_mascara "Desc"
-							" (descricao VARCHAR(250))"
-						))
-				}catch e
-					MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de descricao geral `n" ExceptionDetail(e)	
-			}	
-		
-			/*
-				Verifica se a relacao ja nao existe 
-				na tabela de relacionamento antes de inserir
-			*/
-			if(!this.get_reference(prefixo, modelo_nome, modelo_mascara, tipo)){
-				record := {}
-				record.tipo := tipo
-				record.tabela1 := prefixo modelo_mascara modelo_nome
-				record.tabela2 := prefixo modelo_mascara tipo
-				mariaDB.Insert(record, "reltable")
-			}
+	create_field_tables(tables, model_name, model_mask, prefix){
+		Global db
+		for, each, item in tables{
+			if(!db.create_table(prefix model_mask item, " (id MEDIUMINT NOT NULL AUTO_INCREMENT, Campos VARCHAR(250), PRIMARY KEY (id))"))
+				return 0
+			if(!db.insert_record({tipo: item, tabela1: prefix model_mask model_name, tabela2: prefix model_mask item}, "reltable"))
+				return 0
 		} 
+		return 1
+	}
+
+	create_descricao_geral(model_name, model_mask, prefix){
+		Global db
+		if(!db.create_table(prefix model_mask "Desc", " (descricao VARCHAR(250))"))
+			return 0
+		if(!db.insert_record({tipo: "Desc", tabela1: prefix model_mask model_name, tabela2: prefix model_mask "Desc"}, "reltable"))
+			return 0
+		return 1
+	}
+
+	create_bloq_table(model_name, model_mask, prefix){
+		Global db
+		if(!db.create_table(prefix model_mask "Bloqueio", " (Codigos VARCHAR(250)) "))
+			return 0
+		if(!db.insert_record({tipo: "Bloqueio", tabela1: prefix model_mask model_name, tabela2: prefix model_mask "Bloqueio"}, "reltable"))
+			return 0
+		return 1
+	}
+
+	create_code_table(model_name, model_mask, prefix){
+		Global db
+		fields :=
+		(JOIN
+		  " (Codigos VARCHAR(250),"
+			" DR VARCHAR(300), "
+			" DC VARCHAR(600), "
+			" DI VARCHAR(300)) "
+		)
+		if(!db.create_table(prefix model_mask "Codigo", fields))
+			return 0
+		if(!db.insert_record({tipo: "Codigo", tabela1: prefix model_mask model_name, tabela2: prefix model_mask "Codigo"}, "reltable"))
+				return 0
+		return 1
 	}
 
 	insert_model(model_name, model_mask, model_table){
 		Global db, ETF_hashmask
 		record := {}
-		record.Abas := type_name
-		record.Mascara := type_mask
-		if(db.insert_record(record, type_table)){
-			ETF_hashmask[type_name] := type_mask
+		record.Modelos := model_name
+		record.Mascara := model_mask
+		if(db.insert_record(record, model_table)){
+			ETF_hashmask[model_name] := model_mask
 			return 1
 		}else{
 			return 0 
@@ -205,107 +114,47 @@ class Modelo{
 		return db.exists(sql, table)
 	}
 
-	/*
-		Excluir modelo
-	*/
-	excluir(modelo_nome = "", modelo_mascara = "", info = "", recursiva = 1){
-		Global mariaDB, db
+	excluir(model_name = "", model_mask = "", info = "", recursiva = 1){
+		Global db, mariaDB
 
-		/*
-		 Excluir a entrada do modelo
-		 na tabela de modelos
-		*/
-		prefixo := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] 
-		
-		tabela1 :=
-		(JOIN
-			info.empresa[2]
-			info.tipo[2]
-			info.familia[2]
-			info.subfamilia[2]
-			info.modelo[2]
-			info.modelo[1] 
-		)
-
-		model_table := db.get_reference("Modelo", tabela1)
-		if(model_table = ""){
-			model_table := prefixo "Modelo"
-		}
-		if(!this.exists(modelo_nome, modelo_mascara, prefixo, model_table)){
-			MsgBox, 16, Erro, % " O valor a ser deletado nao existia na tabela de modelos: " model_table
-			return 
-		}
-		try{
-			mariaDB.Query(
-			(JOIN 
-				" DELETE FROM " model_table
-				" WHERE Mascara like '" modelo_mascara "'"
-			))	
-		}catch e 
-			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de Modelos `n " ExceptionDetail(e)
-		
-		/*
-			Exclui a tabela
-			relacionada com esse modelo
-			caso ela nao esteja mais relacionada com mais nada
-			e exclui a referencia
-		*/
-
-		tables := ["Campo", "oc", "odr", "odc", "odi", "Codigo", "Desc"]
-
-		for,each, tipo in tables{  
-   	 	linked_table := this.get_reference(prefixo, modelo_nome, modelo_mascara, tipo)
-			 
-			if(linked_table = ""){ 
-				error_msg :=
-				(JOIN
-					"Nenhuma tabela de " tipo " foi" 
-					"retornada para o modelo: " modelo_nome 
-					"`n verifique a consistencia dos dados."				
-				)
-				MsgBox,16,Erro, % error_msg
-				return 
-			}
-
-			/*
-				Deleta a entrada da 
-				tabela de relacionamento
-			*/
-			try{
-				mariaDB.Query(
-				(JOIN 
-					" DELETE FROM reltable "
-					" WHERE tipo like '" tipo "'"
-					" AND tabela1 like '" prefixo modelo_mascara modelo_nome "'"
-				))	
-			}catch e 
-				MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de referencia " ExceptionDetail(e)
-			
-			/*
-				verifica se ainda existe alguma tabela
-				linkada com essa tabela
-				se nao existir deleta a tabela. 
-			*/
-			this.delete_if_no_related(linked_table, tipo)
-		}
-		
-		/*
-			Apaga a referencia da imagem
-		*/
-		try{
-				mariaDB.Query(
-				(JOIN 
-					" DELETE FROM reltable "
-					" WHERE tipo like 'image'"
-					" AND tabela1 like '" prefixo modelo_mascara modelo_nome "'"
-				))	
-			}catch e 
-				MsgBox, 16, Erro, % " Erro ao tentar apagar a relacao da imagem " ExceptionDetail(e)
+		model_table := db.get_reference("Modelo", this.prefix(info) model_name)
+		if(!this.delete_model(model_name, model_mask, model_table, info))
+			return 0
+		return 1
 	}
 
-	/*
-		Incluir ordem
-	*/
+	delete_model(model_name, model_mask, model_table, info){
+		Global db 
+		if(!db.delete_items_where(" Mascara like '" model_name "'", model_table))
+			return 0		
+		if(!db.delete_items_where(" tipo like 'Modelo' AND tabela1 like '" this.prefix(info) model_name "'", "reltable"))
+			return 0
+		if(!this.delete_relationed_tables(model_name, model_mask, info))
+			return 0
+	}
+
+	delete_relationed_tables(model_name, model_mask, info){
+		Global db
+		tables := ["Campo", "oc", "odr", "odc", "odi", "Codigo", "Desc"]
+		for,each, tipo in tables{ 
+			if(!this.drop_table_if_not_related(this.prefix(info) model_mask tipo, tipo))
+				return 0
+		}
+	}
+
+	drop_table_if_not_related(table, tipo){
+		sql := " tipo LIKE '" tipo "' AND tabela2 LIKE '" table "'"
+		if(!db.check_if_exists(sql, tipo)){
+			if(!db.drop_table(table))
+				return 0	
+		}
+	}
+
+	prefix(info){
+		return_value := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] 
+		return return_value
+	}
+
 	incluir_ordem(items, tabela_ordem, codigos_omitidos = ""){
 		Global mariaDB
 

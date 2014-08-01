@@ -1,3 +1,5 @@
-y := 2
-x := (y = 1) ? "z" : "w"
-MsgBox, % x
+x := ["a", "b", "c"]
+for, each, item in x{
+  MsgBox, % item
+  return 
+} 

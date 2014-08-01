@@ -1,8 +1,9 @@
 class Subfamilia{
 
 	incluir(subfam_name = "", subfam_mask = "", info = ""){
-		Global db, mariaDB, ETF_hashmask		
-		subfam_table := db.get_reference("Subfamilia", info.empresa[2] info.tipo[2] subfam_name)
+		Global db, mariaDB, ETF_hashmask	
+
+		subfam_table := db.get_reference("Subfamilia", info.empresa[2] info.tipo[2] info.familia[1])
 		item_hash := this.check_data_consistency(subfam_name, subfam_mask, subfam_table, info)
 		prefix := info.empresa[2] info.tipo[2] info.familia[2]
 		if(item_hash.name = "")
@@ -11,7 +12,7 @@ class Subfamilia{
 			return 0
 		if(!db.create_table(prefix item_hash.mask "Modelo ", "(Modelos VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))"))
 			return 0
-		if(!db.insert_record({tipo: "Modelo", tabela1: prefixo item_hash.name, tabela2: prefixo item_hash.mask "Modelo"}, "reltable"))
+		if(!db.insert_record({tipo: "Modelo", tabela1: prefix item_hash.name, tabela2: prefix item_hash.mask "Modelo"}, "reltable"))
 			return 0
 		Return 1
 	}
@@ -31,7 +32,7 @@ class Subfamilia{
 
 	check_data_consistency(subfam_name, subfam_mask, subfam_table, info){
 		parameters := [subfam_name, subfam_mask, subfam_table]
-		if(!check_blank_parameters(parameters, 4))
+		if(!check_blank_parameters(parameters, 3))
 			return 0
 		if(!this.exists(subfam_name, subfam_mask, subfam_table))
 			return 0

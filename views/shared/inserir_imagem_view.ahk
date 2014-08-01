@@ -47,7 +47,8 @@ inserir_imagem_view(owner_name, picture_control = "", codigos_array = ""){
 	/* 
 		Incluir a foto 
 	*/
-	db.Imagem.incluir(source, nome_imagem, s_codigos_array)
+	info := get_item_info("M", "MODlv")
+	db.Imagem.incluir(source, nome_imagem, s_codigos_array, info)
 	
 	/*
 		Recarrega o controle da foto com 

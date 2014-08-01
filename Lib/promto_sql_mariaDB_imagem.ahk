@@ -4,11 +4,10 @@ class Imagem{
 		Incluir uma nova imagem no banco e copia o arquivo 
 		para a pasta de imagems do programa
 	*/
-	incluir(source = "", nome_imagem = "", codigos_array = ""){
-		Global mariaDB, info, global_image_path
+	incluir(source = "", nome_imagem = "", codigos_array = "", info = ""){
+		Global mariaDB, global_image_path
 
 		if(info.empresa[2] = "" || info.familia[2] = "" | info.modelo[2] = ""){
-			MsgBox, % "empresa mascara: " empresa.mascara " tipo mascara: " tipo.mascara " familia mascara : " familia.mascara " modelo.mascara " modelo.mascara
 			MsgBox,16,Erro, % "Algum valor referente ao item estava em branco(empresa, tipo, familia ou modelo)"
 			return
 		}
@@ -51,7 +50,6 @@ class Imagem{
 		mariaDB.Insert(record, "imagetable")
 
 		image_id := this.get_image_id(nome_imagem)
-
 		/*
 			Move a imagem para a pasta externa
 		*/ 
@@ -67,7 +65,7 @@ class Imagem{
 			caso exista
 		*/
 
-		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.modelo[2] info.modelo[1]
+		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
 		
 		this.remove_old_relation(tabela1)
 
@@ -263,6 +261,7 @@ class Imagem{
 		Convert image determinada imagem para jpg e coloca a imagem no mesmo lugar
 	*/
 	convert_image(image_path){
+		
 		IfNotExist, % image_path
 		{
 			MsgBox, 16, Erro, % "A imagem a ser convertida nao existia na pasta."

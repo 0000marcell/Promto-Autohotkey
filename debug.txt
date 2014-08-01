@@ -1,10 +1,6 @@
-excluir tipo!
-gonna delete the family mask T3 family table 
-get the type table empresa mascara TESTE1
-returned type table T1Aba
-gonna delete items type mask: T2 type table T1Aba
-gonna get reference tabela1: T1TESTE2
-returned family table: T1T2Familia
-gonna delete items reltable tabela1 like T1TESTE2
-gonna check if theres another related
-gonna drop the table T1T2Familia
+ gonna get reference tabela1 T1T2T3TESTE4
+returned model table T1T2T3T4Modelo
+gonna check consistency
+gonna insert  model name MODELO1 mask M1 model table T1T2T3T4Modelo
+name MODELO1 mask M1 prefixo T1T2T3T4
+returned from insert model tables 

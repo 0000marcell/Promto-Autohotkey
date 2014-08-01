@@ -100,7 +100,7 @@ inserir_modelo_view(model_table){
 		v_info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
 		if(v_info.modelo[1] = "Modelos" || v_info.modelo[1] = "")
 			Return
-		tabela1 := v_info.empresa[2] v_info.tipo[2] v_info.familia[2] v_info.subfamilia[2] v_info.modelo[2] v_info.modelo[1]
+		tabela1 := v_info.empresa[2] v_info.tipo[2] v_info.familia[2] v_info.subfamilia[2] v_info.modelo[2] v_info.modelo[1] 
 		image_name_value := db.Imagem.get_image_full_path(tabela1)
 		if(image_name_value = ""){
 			image_name_value := global_image_path "promto_imagens\promto_0.jpg"  
@@ -163,6 +163,7 @@ inserir_modelo_view(model_table){
 	Gui, insert_dialogo_2:destroy
 	v_info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
 	prefixo := v_info.empresa[2] v_info.tipo[2] v_info.familia[2] v_info.subfamilia[2]
+	tabela1 := v_info.empresa[2] v_info.tipo[2] v_info.familia[2] v_info.subfamilia[1]
 	/*
 		Verifica se algum dos valores necessarios esta em branco
 	*/
@@ -175,9 +176,11 @@ inserir_modelo_view(model_table){
 	/*
 		Insere os valores na tabela 
 	*/
-
-	db.Modelo.incluir(input_name, input_mascara, prefixo, "", v_info)
-
+	if(!db.Modelo.incluir(input_name, input_mascara, prefixo, tabela1)){
+		error_msg("Houve um erro ao incluir o modelo!")
+  }else{
+  	success_msg("O modelo foi incluido!")
+  }
 	/*
 		Insere o novo valor nas listviews
 	*/
@@ -222,6 +225,7 @@ inserir_modelo_view(model_table){
   }
   x := new OTTK(source)
   prefixo_local := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2]
+  tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[1]
   progress(x.maxindex())
   FileDelete, % "temp\debug.csv"
   items_inseridos := {}
@@ -232,7 +236,11 @@ inserir_modelo_view(model_table){
     if(nome = "")
     	continue
     items_inseridos[nome] := codigo
-    db.Modelo.incluir(nome, codigo, prefixo_local)
+    if(!db.Modelo.incluir(nome, codigo, prefixo_local, tabela1)){
+    	error_msg("Houve um erro ao incluir o modelo!")
+    }else{
+    	success_msg("O modelo foi incluido!")
+    }
   }
   db.load_lv("inserir_modelo_view", "inserir_modelo_lv", tabela_de_modelo, 1)
   db.load_lv("M", "MODlv", tabela_de_modelo, 1)

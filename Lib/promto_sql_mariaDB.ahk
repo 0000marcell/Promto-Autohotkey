@@ -186,7 +186,9 @@ class PromtoSQL{
 			mariaDB.Query(
 				(JOIN
 					"	CREATE TABLE IF NOT EXISTS imagetable "
-					" (Name VARCHAR(250))"
+					" (Id MEDIUMINT NOT NULL AUTO_INCREMENT, "
+					" Name VARCHAR(250), "
+					" PRIMARY KEY (Id))"
 				))
 		}catch e
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela imagetable `n" ExceptionDetail(e)

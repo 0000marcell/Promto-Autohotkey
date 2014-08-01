@@ -7,15 +7,10 @@ class Tipo{
 		tipo_table := db.get_reference("Aba", empresa_nome)
 		item_hash := this.check_data_consistency(tipo_nome, tipo_mascara, tipo_table, prefixo, empresa_nome)
 		if(item_hash.name = "")
-			return 0
-		if(!this.insert_type(item_hash.name, item_hash.mask, tipo_table))
-			return 0
-		if(!db.create_table(prefixo item_hash.mask "Familia ", "(Familias VARCHAR(250), Mascara VARCHAR(250), Subfamilia VARCHAR(250), PRIMARY KEY (Mascara))"))
-			return 0
-		if(!db.insert_record({tipo: "Familia", tabela1: prefixo item_hash.name, tabela2: prefixo item_hash.mask "Familia"}, "reltable"))
-			return 0
-		MsgBox, 64,Sucesso!, % "O tipo foi inserido!"
-		Return 1
+			throw { what: "O item_hash.name voltou vazio para tipo " tipo_nome " tipo_mascara " tipo_mascara, file: A_LineFile, line: A_LineNumber }		
+		this.insert_type(item_hash.name, item_hash.mask, tipo_table)
+		db.create_table(prefixo item_hash.mask "Familia ", "(Familias VARCHAR(250), Mascara VARCHAR(250), Subfamilia VARCHAR(250), PRIMARY KEY (Mascara))")
+		db.insert_record({tipo: "Familia", tabela1: prefixo item_hash.name, tabela2: prefixo item_hash.mask "Familia"}, "reltable")
 	}
 
 	insert_type(type_name, type_mask, type_table){
@@ -23,44 +18,33 @@ class Tipo{
 		record := {}
 		record.Abas := type_name
 		record.Mascara := type_mask
-		if(db.insert_record(record, type_table)){
-			ETF_hashmask[type_name] := type_mask
-			return 1
-		}else{
-			return 0 
-		}
+		db.insert_record(record, type_table)
+		ETF_hashmask[type_name] := type_mask
 	}
 
 	check_data_consistency(type_name, type_mask, type_table, prefix, company_name){
 		parameters := [type_name, type_mask, type_table, prefix, company_name]
-		if(!check_blank_parameters(parameters, 5))
-			return 0
-		if(!this.exists(type_name, type_mask, type_table))
-			return 0
+		check_blank_parameters(parameters, 5)
+		this.exists(type_name, type_mask, type_table)
 		item_hash := check_if_mask_is_unique(type_name, type_mask)
 		return item_hash
 	}
 
 	excluir(tipo_nome, tipo_mascara, info, recursiva = 1){
 		Global db, mariaDB
-		; Funcao recursiva que exclui todos os subitems
 		if(recursiva = 1){
 			db.init_unique_info() 
 			db.remove_subitems("aba", info.empresa[2] tipo_mascara, info)
 		}
 		type_table := db.get_reference("Aba", info.empresa[1])
-		if(!this.delete_type(tipo_nome, tipo_mascara, type_table, info))
-			return 0
-		return 1
+		this.delete_type(tipo_nome, tipo_mascara, type_table, info)
 	}
 
 	delete_type(type_name, type_mask, type_table, info){
 		Global db 
-		if(!db.delete_items_where(" Mascara like '" type_mask "'", type_table))
-			return 0		
+		db.delete_items_where(" Mascara like '" type_mask "'", type_table)
 		family_table := db.get_reference("Familia", info.empresa[2] type_name)
-		if(!db.delete_items_where(" tipo like 'Familia' AND tabela1 like '" info.empresa[2] type_name "'", "reltable"))
-			return 0
+		db.delete_items_where(" tipo like 'Familia' AND tabela1 like '" info.empresa[2] type_name "'", "reltable")
 		if(!db.check_if_exists(" tipo LIKE 'Familia' AND tabela2 LIKE '" family_table "'", "reltable")){
 			db.drop_table(family_table)
 		}
@@ -73,7 +57,7 @@ class Tipo{
 			" Mascara like '" tipo_mascara 
 			"' OR Abas like '" tipo_nome "'"	 
 		)
-		return db.exists(sql, table)
+		db.exists(sql, table)
 	}
 
 	/*

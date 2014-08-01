@@ -7,11 +7,8 @@ class Familia{
 		family_table := db.get_reference("Familia", info.empresa[2] info.tipo[1])
 		item_hash := this.check_data_consistency(familia_nome, familia_mascara, family_table, prefixo, info.tipo[1])
 		if(item_hash.name = "")
-			return 0
-		if(!this.insert_family(item_hash.name, item_hash.mask, family_table, prefixo))
-			return 0
-		MsgBox, 64,Sucesso!, % "A familia foi inserida!"
-		Return 1
+			throw { what: "O item_hash voltou em branco do familia ", file: A_LineFile, line: A_LineNumber }		
+		this.insert_family(item_hash.name, item_hash.mask, family_table, prefixo)
 	}
 
 	insert_family(family_name, family_mask, family_table, prefix){
@@ -19,48 +16,31 @@ class Familia{
 		MsgBox, 4,,Esta familia tera subfamilias? 
 		IfMsgBox Yes
 		{
-			if(!this.insert_with_subfamily(family_name, family_mask, prefix, family_table))
-				return 0
+			this.insert_with_subfamily(family_name, family_mask, prefix, family_table)
 		}else{
-			if(!this.insert_with_model(family_name, family_mask, prefix, family_table))
-				return 0
+			this.insert_with_model(family_name, family_mask, prefix, family_table)
 		}
-		return 1
 	}
 
 	insert_with_subfamily(family_name, family_mask, prefix, family_table){
 		Global db
-		if(this.insert_family_record(family_name, family_mask, 1, family_table)){
-			ETF_hashmask[family_name] := family_mask
-			if(!this.create_model_or_subfam_table(prefix family_mask "Subfamilia", "(Subfamilias VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))"))
-				return 0
-			if(!db.insert_record({tipo: "Subfamilia", tabela1: prefix family_name, tabela2: prefix family_mask "Subfamilia"}, "reltable"))
-				return 0	
-		}else{
-			return 0 
-		}
-		return 1
+		this.insert_family_record(family_name, family_mask, 1, family_table)
+		ETF_hashmask[family_name] := family_mask
+		this.create_model_or_subfam_table(prefix family_mask "Subfamilia", "(Subfamilias VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))")
+		db.insert_record({tipo: "Subfamilia", tabela1: prefix family_name, tabela2: prefix family_mask "Subfamilia"}, "reltable")	
 	}
 
 	insert_with_model(family_name, family_mask, prefix, family_table){
 		Global db
-		if(this.insert_family_record(family_name, family_mask, 0, family_table)){
-			ETF_hashmask[family_name] := family_mask
-			if(!this.create_model_or_subfam_table(prefix family_mask "Modelo", "(Modelos VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))"))
-				return 0
-			if(!db.insert_record({tipo: "Modelo", tabela1: prefix family_name, tabela2: prefix family_mask "Modelo"}, "reltable"))
-				return 0
-		}else{
-			return 0 
-		}
-		return 1
+		this.insert_family_record(family_name, family_mask, 0, family_table)
+		ETF_hashmask[family_name] := family_mask
+		this.create_model_or_subfam_table(prefix family_mask "Modelo", "(Modelos VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))")
+		db.insert_record({tipo: "Modelo", tabela1: prefix family_name, tabela2: prefix family_mask "Modelo"}, "reltable")
 	}
 
 	create_model_or_subfam_table(table, sql){
 		Global db
-		if(!db.create_table(table, sql))
-			return 0
-		return 1
+		db.create_table(table, sql)
 	}
 
 	insert_family_record(family_name, family_mask, subfamily, family_table){
@@ -69,45 +49,30 @@ class Familia{
 		record.Familias := family_name
 		record.Mascara := family_mask
 		record.Subfamilia := subfamily
-		if(!db.insert_record(record, family_table))
-			return 0
-		return 1
+		db.insert_record(record, family_table)
 	}
-
 
 	check_data_consistency(family_name, family_mask, family_table, prefix){
 		parameters := [family_name, family_mask, family_table, prefix]
-		if(!check_blank_parameters(parameters, 4))
-			return 0
-		if(!this.exists(family_name, family_mask, family_table))
-			return 0
+		check_blank_parameters(parameters, 4)
+		this.exists(family_name, family_mask, family_table)
 		item_hash := check_if_mask_is_unique(family_name, family_mask)
 		return item_hash
 	}
 
-	/*
-	 Excluir familia
-	*/
 	excluir(familia_nome, familia_mascara, info, recursiva = 1){
 		Global db, mariaDB
-
-		; Funcao recursiva que exclui todos os subitems
 		if(recursiva = 1){
 			db.init_unique_info()
 			db.remove_subitems("familia", info.empresa[2] info.tipo[2] familia_mascara, info)
 		}
 		family_table := db.get_reference("Familia", info.empresa[2] info.tipo[1])
-		if(!this.delete_family(familia_nome, familia_mascara, family_table, info))
-			return 0
-		return 1
+		this.delete_family(familia_nome, familia_mascara, family_table, info)
 	}
 
 	delete_family(family_name, family_mask, family_table, info){
 		Global db
-
-		if(!db.delete_items_where(" Mascara like '" family_mask "'", family_table))
-			return 0		  
-		
+		db.delete_items_where(" Mascara like '" family_mask "'", family_table)		  
 		if(db.have_subfamilia(info.empresa[2] info.tipo[2] family_name)){
 			sub_table := db.get_reference("Subfamilia", info.empresa[2] info.tipo[2] family_name)	
 			this.delete_subtitems_if_subfamily(info, family_name, sub_table)
@@ -120,27 +85,21 @@ class Familia{
 	delete_subitems_if_model(info, family_name, model_table){
 		sql_table1 := " tipo like 'Modelo' AND tabela1 like '" info.empresa[2] info.tipo[2] family_name "'"
 		sql_table2 := " tipo LIKE 'Modelo' AND tabela2 LIKE '" model_table "'"
-		if(!this.delete_subtable(sql_table1, sql_table2, model_table))
-			return 0
-		return 1
+		this.delete_subtable(sql_table1, sql_table2, model_table)
 	}
 
 	delete_subtitems_if_subfamily(info, family_name, subfamily_table){
 		sql_table1 := " tipo like 'Subfamilia' AND tabela1 like '" info.empresa[2] info.tipo[2] family_name "'"
 		sql_table2 := " tipo LIKE 'Subfamilia' AND tabela2 LIKE '" subfamily_table "'"
-		if(!this.delete_subtable(sql_table1, sql_table2, subfamily_table))
-			return 0
-		return 1
+		this.delete_subtable(sql_table1, sql_table2, subfamily_table)
 	}
 
 	delete_subtable(sql_table1, sql_table2, table){
 		Global db
-		if(!db.delete_items_where(sql_table1 , "reltable"))
-			return 0
+		db.delete_items_where(sql_table1 , "reltable")
 		if(!db.check_if_exists(sql_table2, "reltable")){
 			db.drop_table(table)
 		}
-		return 1
 	}
 
 	exists(familia_nome, familia_mascara, table){
@@ -150,7 +109,7 @@ class Familia{
 			" Mascara like '" familia_mascara 
 			"' OR Familias like '" familia_nome "'"	 
 		)
-		return db.exists(sql, table)
+		db.exists(sql, table)
 	}
 
 	/*

@@ -64,7 +64,7 @@ class PromtoSQL{
 		try{
 				rs := mariaDB.OpenRecordSet(sql)		
 			}catch e{
-				MsgBox, % "Ocorreu um erro ao buscar os valores!"
+				throw { what: "Occoreu um erro ao buscar os valores! `n " sql, file: A_LineFile, line: A_LineNumber }		
 				return
 		}
 		columns := rs.getColumnNames()
@@ -85,10 +85,8 @@ class PromtoSQL{
 		Global mariaDB
 		try{
 			mariaDB.Query("DELETE FROM " table " WHERE " where_statement)
-			return 1
 		}catch e {
-			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela " table  ExceptionDetail(e)
-			return 0
+			throw { what: "Erro ao tentar deletar o valor da tabela " table "`n " where_statement "`n " ExceptionDetail(e), file: A_LineFile, line: A_LineNumber }		
 		}
 	}
 
@@ -96,8 +94,9 @@ class PromtoSQL{
 		Global mariaDB
 		try{
 			mariaDB.Query("DROP TABLE " table)	
-		}catch e 
-			MsgBox,16,Erro,% " Erro ao tentar deletar a tabela de tipos " table "`n" ExceptionDetail(e)
+		}catch e{
+			throw { what: " Erro ao tentar deletar a tabela " table "`n" ExceptionDetail(e), file: A_LineFile, line: A_LineNumber }		
+		} 
 	}
 
 	/*
@@ -400,11 +399,9 @@ class PromtoSQL{
 	*/
 	remove_subitems(nivel, mask, info, subfamily = 0, prev_mask = ""){
 		Global db
-
 		nt := this.get_next_table(nivel, mask, subfamily, prev_mask)
 		items := this.find_all(nt.next_table)
 		for, each, item in items{ 
-			;se o proximo nivel for modelo
 			if(nt.next_nivel = "modelo"){
 				db.Modelo.excluir(items[A_Index, 1], items[A_Index, 2], info, 0)
 				Continue
@@ -417,7 +414,6 @@ class PromtoSQL{
 
 	remove_item(nivel, nome, mascara){
 		Global db
-
 		info := this.get_unique_info()
 		if(nivel = "empresa"){
 			db.Empresa.excluir(nome, mascara, 0)
@@ -481,14 +477,11 @@ class PromtoSQL{
 	*/
 	exists(sql, table){
 		Global db
-
 		items := db.find_items_where(sql, table)
 		if(items[1, 1] != ""){
-			error_msg("O item a ser inserido ja existe! ")	
-			return 0
-		}else{
-			return 1
+			throw { what: "O item a ser inserido ja existe na tabela " table , file: A_LineFile, line: A_LineNumber }
 		}
+		return
 	}
 
 	check_if_exists(sql, table){
@@ -677,12 +670,9 @@ class PromtoSQL{
 		sql := " CREATE TABLE IF NOT EXISTS " table_name " " fields
 		try{
 			mariaDB.Query(sql)
-			return 1
 		}catch e{
-			MsgBox, 16, Erro, % "Um erro ocorreu ao tentar criar a tabela " table_name " `n" ExceptionDetail(e)
-			return 0
+			throw { what: "Um erro ocorreu ao tentar criar a tabela ", file: A_LineFile, line: A_LineNumber}	
 		}
-		return 1
 	}
 
 	/*
@@ -804,13 +794,10 @@ class PromtoSQL{
 
 	insert_record(record, table){
 		Global mariaDB
-
 		try{
 			mariaDB.Insert(record, table)
-			return 1
 		}catch e{
-			error_msg("Um erro ocorreu ao tentar inserir valores em " table)
-			return 0
+			throw { what: "Um erro ocorreu ao tentar inserir valores na tabela " table, file: A_LineFile, line: A_LineNumber }		
 		}
 	}
 
@@ -860,13 +847,16 @@ class PromtoSQL{
 	*/
 	get_reference(tipo, tabela1){
 		Global mariaDB
-		;MsgBox, % "get reference tipo " tipo " tabela1 " tabela1
-		rs := mariaDB.OpenRecordSet(
+		try{
+			rs := mariaDB.OpenRecordSet(
 			(JOIN 
 				" SELECT tabela2 FROM reltable "
 				" WHERE tipo like '" tipo "' "
 				" AND tabela1 like '" tabela1 "'"
 			))
+		}catch e{
+			throw { what: "Erro ao pegar a referencia da tabela tipo: " tipo "`n tabela1: " tabela1, file: A_LineFile, line: A_LineNumber }		
+		}
 		reference_table := rs.tabela2
 		rs.close()
 		return reference_table

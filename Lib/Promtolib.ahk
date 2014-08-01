@@ -2334,10 +2334,9 @@ check_blank_parameters(parameters, number){
 	loop, % number
 	{
 		if(parameters[A_Index] = ""){
-			return 0
+			throw { what: "Existia parametros em branco!", file: A_LineFile, line: A_LineNumber }		
 		}
 	}
-	return 1
 }
 
 check_if_mask_is_unique(item_name, item_mask){
@@ -2357,8 +2356,7 @@ check_if_mask_is_unique(item_name, item_mask){
 			item_hash := {name: item_name, mask: item_mask}
 			return item_hash
 		}else{
-			MsgBox, % "O item nao foi inserido, insira outra vez alterando o nome! "
-			return 0
+			throw { what: "O item nao foi inserido por causa da mascara de codigo!", file: A_LineFile, line: A_LineNumber }		
 		}
 	}else{
 		item_hash := {name: item_name, mask: item_mask}

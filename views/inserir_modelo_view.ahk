@@ -163,7 +163,7 @@ inserir_modelo_view(model_table){
 	Gui, insert_dialogo_2:destroy
 	v_info := get_item_info("inserir_modelo_view", "inserir_modelo_lv")
 	prefixo := v_info.empresa[2] v_info.tipo[2] v_info.familia[2] v_info.subfamilia[2]
-	tabela1 := v_info.empresa[2] v_info.tipo[2] v_info.familia[2] v_info.subfamilia[1]
+	tabela1 := db.Modelo.get_model_tabela1(v_info)
 	/*
 		Verifica se algum dos valores necessarios esta em branco
 	*/
@@ -176,11 +176,11 @@ inserir_modelo_view(model_table){
 	/*
 		Insere os valores na tabela 
 	*/
-	if(!db.Modelo.incluir(input_name, input_mascara, prefixo, tabela1)){
-		error_msg("Houve um erro ao incluir o modelo!")
-  }else{
-  	success_msg("O modelo foi incluido!")
-  }
+	try{
+		db.Modelo.incluir(input_name, input_mascara, prefixo, tabela1)
+	}catch e{
+		MsgBox, 16, Erro, % " Erro ao inserir modelo `n " e.what " no arquivo " e.file " na linha " e.line
+	}
 	/*
 		Insere o novo valor nas listviews
 	*/
@@ -201,7 +201,11 @@ inserir_modelo_view(model_table){
 	IfMsgBox Yes
 	{
 		select_number := GetSelected("inserir_modelo_view", "inserir_modelo_lv", "number")
-		db.Modelo.excluir(info_inserir_modelo.modelo[1], info_inserir_modelo.modelo[2], info)	
+		try{
+			db.Modelo.excluir(info_inserir_modelo.modelo[1], info_inserir_modelo.modelo[2], info)	
+		}catch e{
+			MsgBox, 16, Erro, % "Erro ao deletar o modelo `n" e.what "`n arquivo " e.file " linha `n " e.line  
+		}
 		delete_row_from_lv("inserir_modelo_view", "inserir_modelo_lv", info_inserir_modelo.modelo[1])
 		delete_row_from_lv("M", "MODlv", info_inserir_modelo.modelo[1]) 
 	}
@@ -225,7 +229,7 @@ inserir_modelo_view(model_table){
   }
   x := new OTTK(source)
   prefixo_local := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2]
-  tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[1]
+  tabela1 := db.Modelo.get_model_tabela1(info) 
   progress(x.maxindex())
   FileDelete, % "temp\debug.csv"
   items_inseridos := {}
@@ -236,10 +240,10 @@ inserir_modelo_view(model_table){
     if(nome = "")
     	continue
     items_inseridos[nome] := codigo
-    if(!db.Modelo.incluir(nome, codigo, prefixo_local, tabela1)){
-    	error_msg("Houve um erro ao incluir o modelo!")
-    }else{
-    	success_msg("O modelo foi incluido!")
+    try{
+    	db.Modelo.incluir(nome, codigo, prefixo_local, tabela1)
+    }catch e{
+    	MsgBox, 16, Erro, % " Erro ao inserir modelo `n " e.what " no arquivo " e.file " na linha " e.line
     }
   }
   db.load_lv("inserir_modelo_view", "inserir_modelo_lv", tabela_de_modelo, 1)

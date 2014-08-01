@@ -47,53 +47,52 @@ inserir_ETF_view(window, treeview, current_id, columns){
 }
 
 insert_company(edit_name_ETF, edit_mask_ETF){
-	Global db, ETF_hashmask
+	Global db, ETF_hashmask, ERROR_CODE
 
-	item_hash := db.Empresa.incluir(edit_name_ETF, edit_mask_ETF) 
-	if(item_hash){
-		item_hash.mask := ETF_hashmask[item_hash.name] 
-		update_main_tv(item_hash.name, item_hash.mask, 0)
-	}else{
-		MsgBox, 16, Erro, % " Algo deu errado ao tentar inserir a empresa!" 
-		return
+	try{
+		item_hash := db.Empresa.incluir(edit_name_ETF, edit_mask_ETF)
+	}catch e{
+		MsgBox, 16, Erro, % " Inserir empresa " e.what " no arquivo " e.file " na linha " e.line 		
 	}
+	item_hash.mask := ETF_hashmask[item_hash.name] 
+	update_main_tv(item_hash.name, item_hash.mask, 0)
 }
 
 insert_type(edit_name_ETF, edit_mask_ETF){
-	Global db, ETF_hashmask
+	Global db, ETF_hashmask, ERROR_CODE
 	info := get_item_info("M", "MODlv")
-	if(db.Tipo.incluir(edit_name_ETF, edit_mask_ETF, info.empresa[2], info.empresa[1])){
-		ETF_hashmask[edit_name_ETF] := edit_mask_ETF
-		update_main_tv(edit_name_ETF, edit_mask_ETF)
-	}else{
-		MsgBox,16,Erro, % " Algo deu errado ao tentar inserir o tipo!" 
-		return
-	}
+	try{
+		db.Tipo.incluir(edit_name_ETF, edit_mask_ETF, info.empresa[2], info.empresa[1])
+	}catch e{
+		MsgBox, 16, Erro, % " Inserir tipo " e.what " no arquivo " e.file " na linha " e.line 
+	}	
+	ETF_hashmask[edit_name_ETF] := edit_mask_ETF
+	update_main_tv(edit_name_ETF, edit_mask_ETF) 
 }
 
 insert_family(edit_name_ETF, edit_mask_ETF){
-	Global db, ETF_hashmask
+	Global db, ETF_hashmask, ERROR_CODE
 	info := get_item_info("M", "MODlv")
 	prefix := info.empresa[2] info.tipo[2]
-	if(db.Familia.incluir(edit_name_ETF, edit_mask_ETF, prefix, info)){
-		ETF_hashmask[edit_name_ETF] := edit_mask_ETF
-		update_main_tv(edit_name_ETF, edit_mask_ETF)
-	}else{
-		MsgBox,16,Erro, % " Algo deu errado ao tentar inserir a familia!" 
-		return
+	try{
+		db.Familia.incluir(edit_name_ETF, edit_mask_ETF, prefix, info)
+	}catch e{
+		MsgBox, 16, Erro, % " Inserir a familia " e.what " no arquivo " e.file " na linha " e.line	
 	}
+	ETF_hashmask[edit_name_ETF] := edit_mask_ETF
+	update_main_tv(edit_name_ETF, edit_mask_ETF)
 }
 
 insert_subfamily(edit_name_ETF, edit_mask_ETF){
-	Global db, ETF_hashmask
+	Global db, ETF_hashmask, ERROR_CODE
 	info := get_item_info("M", "MODlv")
-	if(db.Subfamilia.incluir(edit_name_ETF, edit_mask_ETF, info)){
-		ETF_hashmask[edit_name_ETF] := edit_mask_ETF
-		update_main_tv(edit_name_ETF, edit_mask_ETF)
-	}else{
-		MsgBox,16,Erro, % " Algo deu errado ao tentar inserir a subfamilia!" 
-		return
+	try{
+		db.Subfamilia.incluir(edit_name_ETF, edit_mask_ETF, info)
+	}catch e{
+		MsgBox, 16, Erro, % " Inserir a subfamilia " e.what " no arquivo " e.file " na linha " e.line	
 	}
+	ETF_hashmask[edit_name_ETF] := edit_mask_ETF
+	update_main_tv(edit_name_ETF, edit_mask_ETF) 
 }
 
 update_main_tv(edit_name_ETF, edit_mask_ETF, parent = 1){

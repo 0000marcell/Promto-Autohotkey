@@ -1,6 +1,9 @@
- gonna get reference tabela1 T1T2T3TESTE4
-returned model table T1T2T3T4Modelo
-gonna check consistency
-gonna insert  model name MODELO1 mask M1 model table T1T2T3T4Modelo
-name MODELO1 mask M1 prefixo T1T2T3T4
-returned from insert model tables 
+starting to delete the model tabela1 T1T2T3TESTE4
+model table returned T1T2T3T4Modelo
+gonna delete model name MODELO1 model mask M1 model table T1T2T3T4Modelo
+gonna delete mascara M1 model table T1T2T3T4Modelo
+delete relation in reltable  tabela1 T1T2T3TESTE4
+gonna delete relationed table name MODELO1 mask M1
+check table sql 
+  tipo LIKE 'Campo' AND tabela2 LIKE 'T1T2T3T4M1Campo'
+gonna drop table tableT1T2T3T4M1Campo

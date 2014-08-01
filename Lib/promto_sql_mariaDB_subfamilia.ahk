@@ -2,19 +2,14 @@ class Subfamilia{
 
 	incluir(subfam_name = "", subfam_mask = "", info = ""){
 		Global db, mariaDB, ETF_hashmask	
-
 		subfam_table := db.get_reference("Subfamilia", info.empresa[2] info.tipo[2] info.familia[1])
 		item_hash := this.check_data_consistency(subfam_name, subfam_mask, subfam_table, info)
 		prefix := info.empresa[2] info.tipo[2] info.familia[2]
 		if(item_hash.name = "")
-			return 0
-		if(!this.insert_subfamily(item_hash.name, item_hash.mask, subfam_table))
-			return 0
-		if(!db.create_table(prefix item_hash.mask "Modelo ", "(Modelos VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))"))
-			return 0
-		if(!db.insert_record({tipo: "Modelo", tabela1: prefix item_hash.name, tabela2: prefix item_hash.mask "Modelo"}, "reltable"))
-			return 0
-		Return 1
+			throw { what: "O item_hash voltou em branco da subfamilia ", file: A_LineFile, line: A_LineNumber }		
+		this.insert_subfamily(item_hash.name, item_hash.mask, subfam_table)
+		db.create_table(prefix item_hash.mask "Modelo ", "(Modelos VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))")
+		db.insert_record({tipo: "Modelo", tabela1: prefix item_hash.name, tabela2: prefix item_hash.mask "Modelo"}, "reltable")
 	}
 
 	insert_subfamily(subfam_name, subfam_mask, subfam_table){
@@ -22,20 +17,14 @@ class Subfamilia{
 		record := {}
 		record.Subfamilias := subfam_name
 		record.Mascara := subfam_mask
-		if(db.insert_record(record, subfam_table)){
-			ETF_hashmask[subfam_name] := subfam_mask
-			return 1
-		}else{
-			return 0 
-		}
+		db.insert_record(record, subfam_table)
+		ETF_hashmask[subfam_name] := subfam_mask
 	}
 
 	check_data_consistency(subfam_name, subfam_mask, subfam_table, info){
 		parameters := [subfam_name, subfam_mask, subfam_table]
-		if(!check_blank_parameters(parameters, 3))
-			return 0
-		if(!this.exists(subfam_name, subfam_mask, subfam_table))
-			return 0
+		check_blank_parameters(parameters, 3)
+		this.exists(subfam_name, subfam_mask, subfam_table)
 		item_hash := check_if_mask_is_unique(subfam_name, subfam_mask)
 		return item_hash
 	}
@@ -47,34 +36,29 @@ class Subfamilia{
 			" Mascara like '" subfam_mask 
 			"' OR Subfamilias like '" subfam_name "'" 
 		)  
-		return db.exists(sql, subfam_table)
+		db.exists(sql, subfam_table)
 	}
 
 	excluir(subfam_name, subfam_mask, info, recursiva = 1){
 		Global db, mariaDB
-		; Funcao recursiva que exclui todos os subitems
 		if(recursiva = 1){
 			db.init_unique_info() 
 			db.remove_subitems("subfamilia", this.full_prefix(info), info)
 		}
 		subfam_table := db.get_reference("Subfamilia", this.prefix(info) subfam_name)
-		if(!this.delete_subfam(subfam_name, subfam_mask, subfam_table, info))
-			return 0
-		return 1
+		this.delete_subfam(subfam_name, subfam_mask, subfam_table, info)
 	}
 
 	delete_subfam(subfam_name, subfam_mask, subfam_table, info){
 		Global db 
-		if(!db.delete_items_where(" Mascara like '" subfam_mask "'", subfam_table))
-			return 0
+		db.delete_items_where(" Mascara like '" subfam_mask "'", subfam_table)
 		this.delete_model_table_if_not_related(subfam_name, subfam_mask, info)		
 	}
 
 	delete_model_table_if_not_related(subfam_name, subfam_mask, info){
 		Global db
 		model_table := db.get_reference("Modelo", this.prefix(info) subfam_name)
-		if(!db.delete_items_where(" tipo like 'Subfamilia' AND tabela1 like '" this.prefix(info) subfam_name "'", "reltable"))
-			return 0
+		db.delete_items_where(" tipo like 'Subfamilia' AND tabela1 like '" this.prefix(info) subfam_name "'", "reltable")
 		if(!db.check_if_exists(" tipo LIKE 'Modelo' AND tabela2 LIKE '" model_table "'", "reltable")){
 			db.drop_table(model_table)
 		}

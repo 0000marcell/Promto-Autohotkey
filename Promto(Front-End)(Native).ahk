@@ -112,9 +112,6 @@ Return
 
 	loading_main:
 	Gui, Submit, Nohide
-	;if(!db.Usuario.log_in_user(user_name, user_password)){
-		;return 
-	;}
 	USER_NAME := user_name
 	Gui, initialize:default
 	GuiControl, Disable, loading_main,
@@ -1723,8 +1720,8 @@ return
 				MsgBox, 4,,Deseja desfazer o link?
 				IfMsgBox Yes
 				{
-					desparan1:=GetSelected("MAC","MACcamp")
-					desparan2:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel
+					desparan1 := GetSelected("MAC","MACcamp")
+					desparan2 := EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel
 					StringReplace,desparan1,desparan1,%A_Space%,,All
 					MsgBox, % "DELETE FROM reltable WHERE tipo='" desparan1 "' AND tabela1='" desparan2 "';" 
 					db.query("DELETE FROM reltable WHERE tipo='" desparan1 "' AND tabela1='" desparan2 "';")
@@ -1736,10 +1733,10 @@ return
 
 				loadcampetable(args){
 					Global 
-					campvalues:={}
-					campnames:=db.query("SELECT Campos FROM " args["camptable"] ";")
+					campvalues := {}
+					campnames := db.query("SELECT Campos FROM " args["camptable"] ";")
 					while(!campnames.EOF){
-					    campname:=campnames["Campos"]
+					    campname := campnames["Campos"]
 					    StringReplace,campname,campname,%A_Space%,,All
 					    if(campname="")
 					        Break
@@ -1747,14 +1744,14 @@ return
 					    db.query("ALTER TABLE " relreference["tabela2"] " ADD COLUMN DI TEXT;")
 					    result:=db.query("SELECT Codigo,DC,DR,DI FROM " relreference["tabela2"] ";")
 					    while(!result.EOF){
-					        if(result["Codigo"]="")
+					        if(result["Codigo"] = "")
 					            continue
-					        referencename1:=campname . "Codigo",referencename2:=campname . "dc",referencename3:=campname . "dr",referencename4:=campname . "di"
+					        referencename1 := campname . "Codigo",referencename2:=campname . "dc",referencename3:=campname . "dr",referencename4:=campname . "di"
 							
-							campvalues[referencename1,A_Index]:=result["Codigo"]
-							campvalues[referencename2,A_Index]:=result["DC"]
-							campvalues[referencename3,A_Index]:=result["DR"]
-							campvalues[referencename4,A_Index]:=result["DI"]
+							campvalues[referencename1, A_Index] := result["Codigo"]
+							campvalues[referencename2, A_Index] := result["DC"]
+							campvalues[referencename3, A_Index] := result["DR"]
+							campvalues[referencename4, A_Index] := result["DI"]
 					        result.movenext()
 					    }
 					    result.close()

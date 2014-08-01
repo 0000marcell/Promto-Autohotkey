@@ -16,30 +16,44 @@ delete_item(){
 delete_company(){
 	Global db
 	info := get_item_info("M", "MODlv")
-	db.Empresa.excluir(info.empresa[1], info.empresa[2])
+	try{
+		db.Empresa.excluir(info.empresa[1], info.empresa[2])
+	}catch e{
+		MsgBox, 16, Erro, % "Erro ao deletar empresa `n " e.what " arquivo " e.file " linha " e.line 
+	}
 	delete_item_tv()
 }
 
 delete_type(){
 	Global db
 	info := get_item_info("M", "MODlv")
-	db.Tipo.excluir(info.tipo[1], info.tipo[2], info)
-	MsgBox,64, Sucesso, % "O tipo e todos os subitems foram apagados." 
+	try{
+		db.Tipo.excluir(info.tipo[1], info.tipo[2], info)
+	}catch e{
+		MsgBox, 16, Erro, % "Erro ao deletar o tipo `n " e.what " arquivo " e.file " linha " e.line  
+	} 
 	delete_item_tv()
 }
 
 delete_family(){
 	Global db
 	info := get_item_info("M", "MODlv")
-	db.Familia.excluir(info.familia[1], info.familia[2], info)
-	MsgBox, 64, Sucesso, % "A familia e todos os subitems foram apagados." 
+	try{
+		db.Familia.excluir(info.familia[1], info.familia[2], info)
+	}catch e{
+		MsgBox, 16, Erro, % "Erro ao deletar a familia `n " e.what " arquivo " e.file " linha " e.line   
+	} 
 	delete_item_tv()
 }
 
 delete_subfamily(){
 	Global db
 	info := get_item_info("M", "MODlv")
-	db.Subfamilia.excluir(info.subfamilia[1], info.subfamilia[2], info)
+	try{
+		db.Subfamilia.excluir(info.subfamilia[1], info.subfamilia[2], info)
+	}catch e{
+		MsgBox, 16, Erro, % "Erro ao deletar a subfamilia `n " e.what " arquivo " e.file " linha " e.line 
+	}
 	delete_item_tv()
 }
 

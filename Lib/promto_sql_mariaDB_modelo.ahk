@@ -5,42 +5,45 @@ class Modelo{
 	*/
 	incluir(model_name = "", model_mask = "", prefixo = "", tabela1 = ""){
 		Global db, mariaDB, ETF_hashmask		
-		model_table := db.get_reference("Modelo", tabela1)
-		item_hash := this.check_data_consistency(model_name, model_mask, model_table, prefixo)
+		this.name := model_name, this.mask := model_mask
+		this.prefix := prefixo, this.tabela1 := tabela1
+		this.model_table := db.get_reference("Modelo", this.tabela1)
+		item_hash := this.check_data_consistency()
 		if(item_hash.name = "")
 			throw { what: "O item_hash voltou em branco do familia ", file: A_LineFile, line: A_LineNumber }
-		this.insert_model(item_hash.name, item_hash.mask, model_table)
+		this.name := item_hash.name, this.mask := item_hash.mask 
+		this.insert_model()
 		this.insert_model_tables(item_hash.name, item_hash.mask, prefixo)
 	}
 
-	insert_model_tables(model_name, model_mask, prefix){
-		this.create_code_table(model_name, model_mask, prefix)
-		this.create_bloq_table(model_name, model_mask, prefix)
-		this.create_descricao_geral(model_name, model_mask, prefix)
-		this.create_field_tables(["Campo", "oc", "odr", "odc", "odi"], model_name, model_mask, prefix)
+	insert_model_tables(){
+		this.create_code_table()
+		this.create_bloq_table()
+		this.create_descricao_geral()
+		this.create_field_tables(["Campo", "oc", "odr", "odc", "odi"])
 	}
 
-	create_field_tables(tables, model_name, model_mask, prefix){
+	create_field_tables(tables){
 		Global db
 		for, each, item in tables{
-			db.create_table(prefix model_mask item, " (id MEDIUMINT NOT NULL AUTO_INCREMENT, Campos VARCHAR(250), PRIMARY KEY (id))")
-			db.insert_record({tipo: item, tabela1: prefix model_mask model_name, tabela2: prefix model_mask item}, "reltable")
+			db.create_table(this.prefix this.mask item, " (id MEDIUMINT NOT NULL AUTO_INCREMENT, Campos VARCHAR(250), PRIMARY KEY (id))")
+			db.insert_record({tipo: item, tabela1: this.prefix this.mask this.name, tabela2: this.prefix this.mask item}, "reltable")
 		} 
 	}
 
-	create_descricao_geral(model_name, model_mask, prefix){
+	create_descricao_geral(){
 		Global db
-		db.create_table(prefix model_mask "Desc", " (descricao VARCHAR(250))")
-		db.insert_record({tipo: "Desc", tabela1: prefix model_mask model_name, tabela2: prefix model_mask "Desc"}, "reltable")
+		db.create_table(this.prefix this.mask "Desc", " (descricao VARCHAR(250))")
+		db.insert_record({tipo: "Desc", tabela1: this.prefix this.mask this.name, tabela2: this.prefix this.mask "Desc"}, "reltable")
 	}
 
-	create_bloq_table(model_name, model_mask, prefix){
+	create_bloq_table(){
 		Global db
-		db.create_table(prefix model_mask "Bloqueio", " (Codigos VARCHAR(250)) ")
-		db.insert_record({tipo: "Bloqueio", tabela1: prefix model_mask model_name, tabela2: prefix model_mask "Bloqueio"}, "reltable")
+		db.create_table(this.prefix this.mask "Bloqueio", " (Codigos VARCHAR(250)) ")
+		db.insert_record({tipo: "Bloqueio", tabela1: this.prefix this.mask this.name, tabela2: this.prefix this.mask "Bloqueio"}, "reltable")
 	}
 
-	create_code_table(model_name, model_mask, prefix){
+	create_code_table(){
 		Global db
 		fields :=
 		(JOIN
@@ -49,35 +52,35 @@ class Modelo{
 			" DC VARCHAR(600), "
 			" DI VARCHAR(300)) "
 		)
-		db.create_table(prefix model_mask "Codigo", fields)
-		db.insert_record({tipo: "Codigo", tabela1: prefix model_mask model_name, tabela2: prefix model_mask "Codigo"}, "reltable")
+		db.create_table(this.prefix this.mask "Codigo", fields)
+		db.insert_record({tipo: "Codigo", tabela1: this.prefix this.mask this.name, tabela2: this.prefix this.mask "Codigo"}, "reltable")
 	}
 
-	insert_model(model_name, model_mask, model_table){
+	insert_model(){
 		Global db, ETF_hashmask
 		record := {}
-		record.Modelos := model_name
-		record.Mascara := model_mask
-		db.insert_record(record, model_table)
-		ETF_hashmask[model_name] := model_mask
+		record.Modelos := this.name
+		record.Mascara := this.mask
+		db.insert_record(record, this.model_table)
+		ETF_hashmask[model_name] := this.mask
 	}
 
-	check_data_consistency(model_name, model_mask, model_table, prefix){
-		parameters := [model_name, model_mask, model_table, prefix]
+	check_data_consistency(){
+		parameters := [this.name, this.mask, this.model_table, this.prefix]
 		check_blank_parameters(parameters, 4)
-		this.exists(model_name, model_mask, model_table)
-		item_hash := check_if_mask_is_unique(model_name, model_mask)
+		this.exists()
+		item_hash := check_if_mask_is_unique(this.name, this.mask)
 		return item_hash
 	}
 
-	exists(model_name, model_mask, table = ""){
+	exists(){
 		Global db
 		sql := 
 		(JOIN
-			" Mascara like '" model_mask 
-			"' OR Modelos like '" model_name "'"	 
+			" Mascara like '" this.mask 
+			"' OR Modelos like '" this.name "'"	 
 		)
-		db.exists(sql, table)
+		db.exists(sql, this.model_table)
 	}
 
 	get_model_tabela1(info){
@@ -91,35 +94,59 @@ class Modelo{
 
 	excluir(model_name = "", model_mask = "", info = "", recursiva = 1){
 		Global db, mariaDB
-		model_table := db.get_reference("Modelo", this.get_model_tabela1(info))
-		this.delete_model(model_name, model_mask, model_table, info)
+		this.name := model_name, this.mask := model_mask
+		this.info := info
+		this.model_table := db.get_reference("Modelo", this.get_model_tabela1(this.info))
+		this.delete_model()
 	}
 
-	delete_model(model_name, model_mask, model_table, info){
+	delete_model(){
 		Global db 
-		db.delete_items_where(" Mascara like '" model_mask "'", model_table)
-		db.delete_items_where(" tipo like 'Modelo' AND tabela1 like '" this.get_model_tabela1(info) "'", "reltable")
-		this.delete_relationed_tables(model_name, model_mask, info)
+		db.delete_items_where(" Mascara like '" this.mask "'", this.model_table)
+		this.delete_relationed_tables()
 	}
 
-	delete_relationed_tables(model_name, model_mask, info){
+	delete_relationed_tables(){
 		Global db
-		tables := ["Campo", "oc", "odr", "odc", "odi", "Codigo", "Desc"]
+		tables := ["oc", "odr", "odc", "odi", "Codigo", "Desc", "Bloqueio"]
 		for, each, item in tables{ 
-			this.drop_table_if_not_related(this.prefix(info) model_mask item, item)
-			db.delete_items_where(" tipo like '" item "' AND tabela1 like '" this.prefix(info) model_mask model_name "'", "reltable")
+      db.delete_items_where(" tipo like '" item "' AND tabela1 like '" this.get_prefix() this.mask this.name "'", "reltable")
+			this.drop_table_if_not_related(this.get_prefix() this.mask item, item)	
+		}
+		this.delete_field_table_and_subfields()
+	}
+
+	delete_field_table_and_subfields(){
+		Global db
+		field_table := db.get_reference("Campo", this.get_prefix() this.mask this.name)
+		items := db.find_all(field_table)
+		for, each, item in items{
+		  subfield_table := db.get_reference(items[A_Index, 2], this.get_prefix() this.mask this.name)
+      db.delete_items_where(" tipo like '" items[A_Index, 2] "' AND tabela1 like '" this.get_prefix() this.mask this.name "'", "reltable") 
+      this.drop_table_if_not_related(subfield_table, items[A_Index, 2])
+      this.drop_own_field_table(this.get_prefix() this.mask items[A_Index, 2], subfield_table, items[A_Index, 2])
+		} 
+    db.delete_items_where(" tipo like 'Campo' AND tabela1 like '" this.get_prefix() this.mask this.name "'", "reltable")
+    this.drop_table_if_not_related(field_table, "Campo")    
+	}
+
+  drop_own_field_table(tabela2, related_table, tipo){
+    Global db 
+    if(tabela2 != related_table){
+      this.drop_table_if_not_related(tabela2, tipo)  
+    }
+  }
+
+	drop_table_if_not_related(tabela2, tipo){
+    Global db
+    sql := " tabela2 like '" tabela2 "' AND tipo like '" tipo "'" 
+		if(!db.check_if_exists(sql, "reltable")){
+			db.drop_table(tabela2)	
 		}
 	}
 
-	drop_table_if_not_related(table, tipo){
-		sql := " tipo LIKE '" tipo "' AND tabela2 LIKE '" table "'"
-		if(!db.check_if_exists(sql, tipo)){
-			db.drop_table(table)	
-		}
-	}
-
-	prefix(info){
-		return_value := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] 
+	get_prefix(){
+		return_value := this.info.empresa[2] this.info.tipo[2] this.info.familia[2] this.info.subfamilia[2] 
 		return return_value
 	}
 

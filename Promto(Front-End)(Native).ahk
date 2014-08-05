@@ -1434,22 +1434,17 @@ loaditem(){
 
 		MAM:
 		info := get_item_info("M", "MODlv")
+		if(db.have_subfamilia(info.empresa[2] info.tipo[2] info.subfamilia[2] info.familia[1])){
+			MsgBox, % "O item selecionado tem subfamilia, insira uma subfamilia antes de continuar!" 
+			return 
+		}
 		if(get_tv_level("M", "main_tv") != 3 && get_tv_level("M", "main_tv") != 4){
 			MsgBox,16,Erro, % " Selecione uma familia antes, para alterar modelos!"
 			return 
 		}
-
-		/*
-  		Pega a tabela de modelos
-  	*/	
 		familia := get_tv_info("Familia")
 		tipo := get_tv_info("Tipo")
 		empresa := get_tv_info("Empresa")
-
-		/*
-			Verifica se a familia e uma subfamilia ou nao
-		*/
-		;MsgBox, % "info subfamilia " info.subfamilia[2]
 		if(info.subfamilia[2] != ""){
 			model_table := db.get_reference("Modelo",info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[1])	
 		}else{

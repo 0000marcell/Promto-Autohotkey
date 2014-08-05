@@ -5,49 +5,62 @@ class Empresa{
 	*/
 	incluir(empresa_nome, empresa_mascara){
 		Global db, mariaDB, ERROR_CODE
-		item_hash := this.check_data_consistency(empresa_nome, empresa_mascara) 
-		this.insert_company(item_hash.name, item_hash.mask)
-		this.exists_in_reltable(item_hash.name)
-		db.create_table(item_hash.mask "Aba ", "(Abas VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))")
-		db.insert_record({tipo: "Aba", tabela1: item_hash.name, tabela2: item_hash.mask "Aba"}, "reltable")
+		this.name := empresa_nome, this.mask := empresa_mascara
+		this.check_data_consistency() 
+		this.insert_company()
+		this.exists_in_reltable()
+		db.create_table(this.mask "Aba ", "(Abas VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))")
+		db.insert_record({tipo: "Aba", tabela1: this.name, tabela2: this.mask "Aba"}, "reltable")
 		MsgBox, 64, Empresa Criada, % " valor inserido"
+		item_hash := {name: this.name, mask: this.mask}
 		return item_hash
 	}
 
-	insert_company(empresa_nome, empresa_mascara){
+	insert_company(){
 		Global db, ETF_hashmask
 		record := {}
-		record.Empresas := empresa_nome
-		record.Mascara := empresa_mascara
+		record.Empresas := this.name
+		record.Mascara := this.mask
 		db.insert_record(record, "empresas")
-		ETF_hashmask[empresa_nome] := empresa_mascara
+		ETF_hashmask[this.name] := this.mask
 	}
 
-	check_data_consistency(empresa_nome, empresa_mascara){
-		this.exists(empresa_nome, empresa_mascara)
-		item_hash := {name: empresa_nome, mask: empresa_mascara}
-		return item_hash
+	check_data_consistency(){
+		this.exists()
+		return
+	}
+
+	exists(){
+		Global  db
+		sql :=
+		(JOIN
+			" Mascara like '" this.mask 
+			"' OR Empresas like '" this.name "'" 
+		)  
+		db.exists(sql, "empresas")
+		return 
 	}
 
 	excluir(empresa_nome, empresa_mascara, recursiva = 1){
 		Global db, mariaDB	
+		this.name := empresa_nome, this.mask := empresa_mascara 
 		if(recursiva = 1){
-			info := get_item_info("M", "MODlv")
+			this.info := get_item_info("M", "MODlv")
 			db.init_unique_info()
-			db.remove_subitems("empresa", empresa_mascara, info)
+			db.remove_subitems("empresa", this.mask, this.info)
 		}
-		this.delete_company(empresa_nome, empresa_mascara)
+		this.delete_company()
 	}	
 
-	delete_company(empresa_nome, empresa_mascara){
+	delete_company(){
 		Global db 
-		db.delete_items_where(" Mascara like '" empresa_mascara "'", "empresas")		
-		linked_table := db.get_reference("Aba", empresa_nome)
-		db.delete_items_where(" tipo like 'Aba' AND tabela1 like '" empresa_nome "'", "reltable")
+		db.delete_items_where(" Mascara like '" this.mask "'", "empresas")		
+		linked_table := db.get_reference("Aba", this.name)
+		db.delete_items_where(" tipo like 'Aba' AND tabela1 like '" this.name "'", "reltable")
 		if(!db.check_if_exists(" tipo LIKE 'Aba' AND tabela2 LIKE '" linked_table "'", "reltable")){
 			db.drop_table(linked_table)
 		}
-		return 1
+		return
 	}
 
 	/*
@@ -68,25 +81,10 @@ class Empresa{
 			db.Modelo.excluir(nome, mascara, info, 0)
 		}
 	}
-
-	/*
-		Verifica se determinado valor
-		ja existe na tabela
-	*/
-	exists(empresa_nome, empresa_mascara){
-		Global  db
-		sql :=
-		(JOIN
-			" Mascara like '" empresa_mascara 
-			"' OR Empresas like '" empresa_nome "'" 
-		)  
-		db.exists(sql, "empresas")
-		return 
-	}
-
-	exists_in_reltable(empresa_nome){
+	
+	exists_in_reltable(){
 		Global db
-		items := db.find_items_where(" WHERE tabela1 like '" empresa_nome "'")
+		items := db.find_items_where(" WHERE tabela1 like '" this.name "'")
 		if(items[1, 1] != ""){
 			throw { what: "A empresa a ser inserida ja existe na tabela de relacionamento!", file: A_LineFile, line: A_LineNumber }		
 		}

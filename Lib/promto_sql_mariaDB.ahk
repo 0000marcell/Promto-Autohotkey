@@ -63,9 +63,9 @@ class PromtoSQL{
 		Global mariaDB  
 		try{
 				rs := mariaDB.OpenRecordSet(sql)		
-			}catch e{
-				throw { what: "Occoreu um erro ao buscar os valores! `n " sql, file: A_LineFile, line: A_LineNumber }		
-				return
+		}catch e{
+			throw { what: "Occoreu um erro ao buscar os valores! `n " sql, file: A_LineFile, line: A_LineNumber }		
+			return
 		}
 		columns := rs.getColumnNames()
 		columnCount := columns.Count()
@@ -141,9 +141,6 @@ class PromtoSQL{
 		}catch e 
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela empresas `n" ExceptionDetail(e)
 		
-		/*
-			estruturas
-		*/
 		try{
 			mariaDB.Query(
 				(JOIN
@@ -155,9 +152,6 @@ class PromtoSQL{
 		}catch e 
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de estruturas `n" ExceptionDetail(e)
 		
-		/*
-			reltable
-		*/
 		try{
 			mariaDB.Query(
 				(JOIN
@@ -168,18 +162,6 @@ class PromtoSQL{
 				))
 		}catch e
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela reltable `n" ExceptionDetail(e)
-
-		/*
-			imagetable
-		*/
-
-		;rs := mariaDB.OpenRecordSet("SELECT * FROM imagetable")
-		;while(!rs.EOF){   
-  ;    id := rs["id"] 
-  ;    Name := rs["Name"] 
-  ;    FileMove, %global_image_path%%Name%.jpg, %global_image_path%promto_imagens\promto_%id%.jpg, 1
-  ;    rs.MoveNext()
-	 ; }
 
 		try{
 			mariaDB.Query(
@@ -399,10 +381,12 @@ class PromtoSQL{
 	*/
 	remove_subitems(nivel, mask, info, subfamily = 0, prev_mask = ""){
 		Global db
+
 		nt := this.get_next_table(nivel, mask, subfamily, prev_mask)
 		items := this.find_all(nt.next_table)
 		for, each, item in items{ 
 			if(nt.next_nivel = "modelo"){
+				info := this.get_unique_info()
 				db.Modelo.excluir(items[A_Index, 1], items[A_Index, 2], info, 0)
 				Continue
 			}
@@ -446,6 +430,15 @@ class PromtoSQL{
 		return nt
 	}
 
+	check_if_have_subfamily(subfamily, prefix){
+		if(subfamily){
+			nt := {next_table: prefix "subfamilia", next_nivel: "subfamilia"}
+		}else{
+			nt := {next_table: prefix "modelo", next_nivel: "modelo"}
+		}
+		return nt
+	}
+
 	
 	init_unique_info(){
 		Global 
@@ -457,6 +450,8 @@ class PromtoSQL{
 	*/
 	update_unique_info(type, hash){
 		Global 
+		if(hash.name = "")
+			return
 		if(type = "aba"){
 			unique_info.tipo[1] := hash.name, unique_info.tipo[2] := hash.mask
 		}else if(type = "familia"){
@@ -495,18 +490,6 @@ class PromtoSQL{
 		}	
 	}
 
-	/*
-		Verifica se o determinado 
-		item tem subfamilia ou nao
-	*/
-	check_if_have_subfamily(subfamily, prefix){
-		if(subfamily){
-			nt := {next_table: prefix "subfamilia", next_nivel: "subfamilia"}
-		}else{
-			nt := {next_table: prefix "modelo", next_nivel: "modelo"}
-		}
-		return nt
-	}
 
 	/*
 		Retorna determinada 
@@ -713,30 +696,9 @@ class PromtoSQL{
 		prefixos := this.load_table_in_array(tabela_prefixo)
 		campos := 	this.load_table_in_array(tabela_campos)
 
-		;MsgBox, % "max index prefixos " prefixos.maxindex()
-		;MsgBox, % "max index campos " campos.maxindex()
-		
-		/*
-			Transforma os arrays de multipla para 
-			uma so dimensao
-		*/
 		prefixos := singledim_array(prefixos, 2)
 		campos := singledim_array(campos, 2)
 
-		;for each, value in prefixos{
-		;	MsgBox, % "Lista de prefixos antes" value
-		;}
-
-		/*
-			-Quando um item da tabela de campos nao existir 
-			na tabela de modelos esse item sera inserido
-		*/ 
-		
-		
-		/*
-			Primeiro faz um loop inserindo tudo o que
-			nao tem em um array no outro
-		*/
 		for each,campo in campos{
 			if(!objHasValue(prefixos, campo)){
 				prefixos.insert(campo)
@@ -762,16 +724,11 @@ class PromtoSQL{
 		}catch e 
 			MsgBox,16,Erro, % "Ocorreu um erro ao apagar todos os items da tabela de ordem `n" ExceptionDetail(e)
 		
-		;MsgBox, % "max index final " prefixos.maxindex()
-		
 		for each,prefixo in prefixos{
-			;MsgBox, % "Lista de prefixos depois " prefixo
 			record := {}
 			record.Campos := prefixo	
 			mariaDB.Insert(record, tabela_prefixo)
 		}
-
-		;MsgBox, % "terminou o correct table!"
 	}	
 
 	/*

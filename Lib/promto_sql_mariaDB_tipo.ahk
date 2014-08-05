@@ -4,60 +4,65 @@ class Tipo{
 	*/
 	incluir(tipo_nome = "", tipo_mascara = "", prefixo = "", empresa_nome = ""){
 		Global db, mariaDB, ETF_hashmask		
-		tipo_table := db.get_reference("Aba", empresa_nome)
-		item_hash := this.check_data_consistency(tipo_nome, tipo_mascara, tipo_table, prefixo, empresa_nome)
+		this.name := tipo_nome, this.mask := tipo_mascara, this.prefix := prefixo
+		this.com_name := empresa_nome 
+		this.type_table := db.get_reference("Aba", this.com_name)
+		item_hash := this.check_data_consistency()
+		this.name := item_hash.name, this.mask := item_hash.mask  
 		if(item_hash.name = "")
 			throw { what: "O item_hash.name voltou vazio para tipo " tipo_nome " tipo_mascara " tipo_mascara, file: A_LineFile, line: A_LineNumber }		
-		this.insert_type(item_hash.name, item_hash.mask, tipo_table)
-		db.create_table(prefixo item_hash.mask "Familia ", "(Familias VARCHAR(250), Mascara VARCHAR(250), Subfamilia VARCHAR(250), PRIMARY KEY (Mascara))")
-		db.insert_record({tipo: "Familia", tabela1: prefixo item_hash.name, tabela2: prefixo item_hash.mask "Familia"}, "reltable")
+		this.insert_type()
+		db.create_table(this.prefix this.mask "Familia ", "(Familias VARCHAR(250), Mascara VARCHAR(250), Subfamilia VARCHAR(250), PRIMARY KEY (Mascara))")
+		db.insert_record({tipo: "Familia", tabela1: this.prefix this.name, tabela2: this.prefix this.mask "Familia"}, "reltable")
 	}
 
-	insert_type(type_name, type_mask, type_table){
+	insert_type(){
 		Global db, ETF_hashmask
 		record := {}
-		record.Abas := type_name
-		record.Mascara := type_mask
-		db.insert_record(record, type_table)
-		ETF_hashmask[type_name] := type_mask
+		record.Abas := this.name
+		record.Mascara := this.mask
+		db.insert_record(record, this.type_table)
+		ETF_hashmask[this.name] := this.mask
 	}
 
-	check_data_consistency(type_name, type_mask, type_table, prefix, company_name){
-		parameters := [type_name, type_mask, type_table, prefix, company_name]
+	check_data_consistency(){
+		parameters := [this.name, this.mask, this.type_table, this.prefix, this.com_name]
 		check_blank_parameters(parameters, 5)
-		this.exists(type_name, type_mask, type_table)
-		item_hash := check_if_mask_is_unique(type_name, type_mask)
+		this.exists()
+		item_hash := check_if_mask_is_unique(this.name, this.mask)
 		return item_hash
 	}
 
 	excluir(tipo_nome, tipo_mascara, info, recursiva = 1){
 		Global db, mariaDB
+		this.name := tipo_nome, this.mask := tipo_mascara 
+		this.info := info
 		if(recursiva = 1){
 			db.init_unique_info() 
-			db.remove_subitems("aba", info.empresa[2] tipo_mascara, info)
+			db.remove_subitems("aba", this.info.empresa[2] this.mask, this.info)
 		}
-		type_table := db.get_reference("Aba", info.empresa[1])
-		this.delete_type(tipo_nome, tipo_mascara, type_table, info)
+		this.type_table := db.get_reference("Aba", this.info.empresa[1])
+		this.delete_type()
 	}
 
-	delete_type(type_name, type_mask, type_table, info){
+	delete_type(){
 		Global db 
-		db.delete_items_where(" Mascara like '" type_mask "'", type_table)
-		family_table := db.get_reference("Familia", info.empresa[2] type_name)
-		db.delete_items_where(" tipo like 'Familia' AND tabela1 like '" info.empresa[2] type_name "'", "reltable")
-		if(!db.check_if_exists(" tipo LIKE 'Familia' AND tabela2 LIKE '" family_table "'", "reltable")){
-			db.drop_table(family_table)
+		db.delete_items_where(" Mascara like '" this.mask "'", this.type_table)
+		this.family_table := db.get_reference("Familia", this.info.empresa[2] this.name)
+		db.delete_items_where(" tipo like 'Familia' AND tabela1 like '" this.info.empresa[2] this.name "'", "reltable")
+		if(!db.check_if_exists(" tipo LIKE 'Familia' AND tabela2 LIKE '" this.family_table "'", "reltable")){
+			db.drop_table(this.family_table)
 		}
 	}
 
-	exists(tipo_nome, tipo_mascara, table){
+	exists(){
 		Global db 
 		sql := 
 		(JOIN
-			" Mascara like '" tipo_mascara 
-			"' OR Abas like '" tipo_nome "'"	 
+			" Mascara like '" this.mask 
+			"' OR Abas like '" this.name "'"	 
 		)
-		db.exists(sql, table)
+		db.exists(sql, this.type_table)
 	}
 
 	/*

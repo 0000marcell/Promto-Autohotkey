@@ -4,38 +4,59 @@ class Familia{
 	*/
 	incluir(familia_nome = "", familia_mascara = "", prefixo = "", info = ""){
 		Global db, mariaDB, ETF_hashmask
-		family_table := db.get_reference("Familia", info.empresa[2] info.tipo[1])
-		item_hash := this.check_data_consistency(familia_nome, familia_mascara, family_table, prefixo, info.tipo[1])
+		this.name := familia_nome, this.mask := familia_mascara
+		this.prefix := prefixo, this.info := info
+		this.family_table := db.get_reference("Familia", this.info.empresa[2] this.info.tipo[1])
+		item_hash := this.check_data_consistency()
+		this.name := item_hash.name, this.mask := item_hash.mask  
 		if(item_hash.name = "")
 			throw { what: "O item_hash voltou em branco do familia ", file: A_LineFile, line: A_LineNumber }		
-		this.insert_family(item_hash.name, item_hash.mask, family_table, prefixo)
+		this.insert_family()
 	}
 
-	insert_family(family_name, family_mask, family_table, prefix){
+	check_data_consistency(){
+		parameters := [this.name, this.mask, this.family_table]
+		check_blank_parameters(parameters, 3)
+		this.exists()
+		item_hash := check_if_mask_is_unique(this.name, this.mask)
+		return item_hash
+	}
+
+	exists(){
+		Global db 
+		sql := 
+		(JOIN
+			" Mascara like '" this.mask 
+			"' OR Familias like '" this.name "'"	 
+		)
+		db.exists(sql, this.family_table)
+	}
+
+	insert_family(){
 		Global db, ETF_hashmask
 		MsgBox, 4,,Esta familia tera subfamilias? 
 		IfMsgBox Yes
 		{
-			this.insert_with_subfamily(family_name, family_mask, prefix, family_table)
+			this.insert_with_subfamily()
 		}else{
-			this.insert_with_model(family_name, family_mask, prefix, family_table)
+			this.insert_with_model()
 		}
 	}
 
-	insert_with_subfamily(family_name, family_mask, prefix, family_table){
+	insert_with_subfamily(){
 		Global db
-		this.insert_family_record(family_name, family_mask, 1, family_table)
-		ETF_hashmask[family_name] := family_mask
-		this.create_model_or_subfam_table(prefix family_mask "Subfamilia", "(Subfamilias VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))")
-		db.insert_record({tipo: "Subfamilia", tabela1: prefix family_name, tabela2: prefix family_mask "Subfamilia"}, "reltable")	
+		this.insert_family_record(1)
+		ETF_hashmask[this.name] := this.mask
+		this.create_model_or_subfam_table(this.prefix this.mask "Subfamilia", "(Subfamilias VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))")
+		db.insert_record({tipo: "Subfamilia", tabela1: this.prefix this.name, tabela2: this.prefix this.mask "Subfamilia"}, "reltable")	
 	}
 
-	insert_with_model(family_name, family_mask, prefix, family_table){
+	insert_with_model(){
 		Global db
-		this.insert_family_record(family_name, family_mask, 0, family_table)
-		ETF_hashmask[family_name] := family_mask
-		this.create_model_or_subfam_table(prefix family_mask "Modelo", "(Modelos VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))")
-		db.insert_record({tipo: "Modelo", tabela1: prefix family_name, tabela2: prefix family_mask "Modelo"}, "reltable")
+		this.insert_family_record(0)
+		ETF_hashmask[this.name] := this.mask
+		this.create_model_or_subfam_table(this.prefix this.mask "Modelo", "(Modelos VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))")
+		db.insert_record({tipo: "Modelo", tabela1: this.prefix this.name, tabela2: this.prefix this.mask "Modelo"}, "reltable")
 	}
 
 	create_model_or_subfam_table(table, sql){
@@ -43,53 +64,60 @@ class Familia{
 		db.create_table(table, sql)
 	}
 
-	insert_family_record(family_name, family_mask, subfamily, family_table){
+	insert_family_record(subfamily){
 		Global db
 		record := {}
-		record.Familias := family_name
-		record.Mascara := family_mask
+		record.Familias := this.name
+		record.Mascara := this.mask
 		record.Subfamilia := subfamily
-		db.insert_record(record, family_table)
-	}
-
-	check_data_consistency(family_name, family_mask, family_table, prefix){
-		parameters := [family_name, family_mask, family_table, prefix]
-		check_blank_parameters(parameters, 4)
-		this.exists(family_name, family_mask, family_table)
-		item_hash := check_if_mask_is_unique(family_name, family_mask)
-		return item_hash
+		db.insert_record(record, this.family_table)
 	}
 
 	excluir(familia_nome, familia_mascara, info, recursiva = 1){
 		Global db, mariaDB
+		this.name := familia_nome, this.mask := familia_mascara
+		this.info := info
 		if(recursiva = 1){
 			db.init_unique_info()
-			db.remove_subitems("familia", info.empresa[2] info.tipo[2] familia_mascara, info)
+			subfam_result := this.check_subfamily()
+			db.remove_subitems("familia", this.info.empresa[2] this.info.tipo[2] this.mask, this.info, subfam_result)
 		}
-		family_table := db.get_reference("Familia", info.empresa[2] info.tipo[1])
-		this.delete_family(familia_nome, familia_mascara, family_table, info)
+		MsgBox, % "back from recursive"
+		this.family_table := db.get_reference("Familia", this.info.empresa[2] this.info.tipo[1])
+		this.delete_family()
 	}
 
-	delete_family(family_name, family_mask, family_table, info){
+	check_subfamily(){
 		Global db
-		db.delete_items_where(" Mascara like '" family_mask "'", family_table)		  
-		if(db.have_subfamilia(info.empresa[2] info.tipo[2] family_name)){
-			sub_table := db.get_reference("Subfamilia", info.empresa[2] info.tipo[2] family_name)	
-			this.delete_subtitems_if_subfamily(info, family_name, sub_table)
+
+		if(db.have_subfamilia(this.info.empresa[2] this.info.tipo[2] this.name)){
+			value := 1
 		}else{
-			sub_table := db.get_reference("Modelo", info.empresa[2] info.tipo[2] family_name)
-			this.delete_subitems_if_model(info, family_name, sub_table)
+			value := 0
+		}
+		return value 
+	}
+
+	delete_family(){
+		Global db
+		db.delete_items_where(" Mascara like '" this.mask "'", this.family_table)		  
+		if(db.have_subfamilia(this.info.empresa[2] this.info.tipo[2] this.name)){
+			sub_table := db.get_reference("Subfamilia", this.info.empresa[2] this.info.tipo[2] this.name)	
+			this.delete_subtitems_if_subfamily(sub_table)
+		}else{
+			sub_table := db.get_reference("Modelo", this.info.empresa[2] this.info.tipo[2] this.name)
+			this.delete_subitems_if_model(sub_table)
 		}
 	}
 
-	delete_subitems_if_model(info, family_name, model_table){
-		sql_table1 := " tipo like 'Modelo' AND tabela1 like '" info.empresa[2] info.tipo[2] family_name "'"
+	delete_subitems_if_model(model_table){
+		sql_table1 := " tipo like 'Modelo' AND tabela1 like '" this.info.empresa[2] this.info.tipo[2] this.name "'"
 		sql_table2 := " tipo LIKE 'Modelo' AND tabela2 LIKE '" model_table "'"
 		this.delete_subtable(sql_table1, sql_table2, model_table)
 	}
 
-	delete_subtitems_if_subfamily(info, family_name, subfamily_table){
-		sql_table1 := " tipo like 'Subfamilia' AND tabela1 like '" info.empresa[2] info.tipo[2] family_name "'"
+	delete_subtitems_if_subfamily(subfamily_table){
+		sql_table1 := " tipo like 'Subfamilia' AND tabela1 like '" this.info.empresa[2] this.info.tipo[2] this.name "'"
 		sql_table2 := " tipo LIKE 'Subfamilia' AND tabela2 LIKE '" subfamily_table "'"
 		this.delete_subtable(sql_table1, sql_table2, subfamily_table)
 	}
@@ -102,20 +130,6 @@ class Familia{
 		}
 	}
 
-	exists(familia_nome, familia_mascara, table){
-		Global db 
-		sql := 
-		(JOIN
-			" Mascara like '" familia_mascara 
-			"' OR Familias like '" familia_nome "'"	 
-		)
-		db.exists(sql, table)
-	}
-
-	/*
-	 Pega a referencia da tabela onde 
-	 as familias estao sendo incluidas
-	*/
 	get_parent_reference(empresa_mascara, tipo_nome){
 		global mariaDB
 

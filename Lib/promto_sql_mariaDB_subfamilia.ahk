@@ -2,75 +2,83 @@ class Subfamilia{
 
 	incluir(subfam_name = "", subfam_mask = "", info = ""){
 		Global db, mariaDB, ETF_hashmask	
-		subfam_table := db.get_reference("Subfamilia", info.empresa[2] info.tipo[2] info.familia[1])
-		item_hash := this.check_data_consistency(subfam_name, subfam_mask, subfam_table, info)
-		prefix := info.empresa[2] info.tipo[2] info.familia[2]
+		this.name := subfam_name, this.mask := subfam_mask 
+		this.info := info
+		this.subfam_table := db.get_reference("Subfamilia", this.info.empresa[2] this.info.tipo[2] this.info.familia[1])
+		item_hash := this.check_data_consistency()
+		this.name := item_hash.name, this.mask := item_hash.mask  
+		this.prefix := this.info.empresa[2] this.info.tipo[2] this.info.familia[2]
 		if(item_hash.name = "")
 			throw { what: "O item_hash voltou em branco da subfamilia ", file: A_LineFile, line: A_LineNumber }		
-		this.insert_subfamily(item_hash.name, item_hash.mask, subfam_table)
-		db.create_table(prefix item_hash.mask "Modelo ", "(Modelos VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))")
-		db.insert_record({tipo: "Modelo", tabela1: prefix item_hash.name, tabela2: prefix item_hash.mask "Modelo"}, "reltable")
+		this.insert_subfamily()
+		db.create_table(this.prefix this.mask "Modelo ", "(Modelos VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))")
+		db.insert_record({tipo: "Modelo", tabela1: this.prefix this.name, tabela2: this.prefix this.mask "Modelo"}, "reltable")
 	}
 
-	insert_subfamily(subfam_name, subfam_mask, subfam_table){
+	insert_subfamily(){
 		Global db, ETF_hashmask
 		record := {}
-		record.Subfamilias := subfam_name
-		record.Mascara := subfam_mask
-		db.insert_record(record, subfam_table)
-		ETF_hashmask[subfam_name] := subfam_mask
+		record.Subfamilias := this.name
+		record.Mascara := this.mask
+		db.insert_record(record, this.subfam_table)
+		ETF_hashmask[this.name] := this.mask
 	}
 
-	check_data_consistency(subfam_name, subfam_mask, subfam_table, info){
-		parameters := [subfam_name, subfam_mask, subfam_table]
+	check_data_consistency(){
+		parameters := [this.name, this.mask, this.subfam_table]
 		check_blank_parameters(parameters, 3)
-		this.exists(subfam_name, subfam_mask, subfam_table)
-		item_hash := check_if_mask_is_unique(subfam_name, subfam_mask)
+		this.exists()
+		item_hash := check_if_mask_is_unique(this.name, this.mask)
 		return item_hash
 	}
 
-	exists(subfam_name, subfam_mask, subfam_table){
+	exists(){
 		Global db
 		sql :=
 		(JOIN
-			" Mascara like '" subfam_mask 
-			"' OR Subfamilias like '" subfam_name "'" 
+			" Mascara like '" this.mask 
+			"' OR Subfamilias like '" this.name "'" 
 		)  
-		db.exists(sql, subfam_table)
+		db.exists(sql, this.subfam_table)
 	}
 
 	excluir(subfam_name, subfam_mask, info, recursiva = 1){
 		Global db, mariaDB
+		this.name := subfam_name, this.mask := subfam_mask
+		this.info := info
+		MsgBox, % "gonna start recursive subfamily!"
 		if(recursiva = 1){
 			db.init_unique_info() 
-			db.remove_subitems("subfamilia", this.full_prefix(info), info)
+			db.remove_subitems("subfamilia", this.full_prefix(), this.info)
 		}
-		subfam_table := db.get_reference("Subfamilia", this.prefix(info) subfam_name)
-		this.delete_subfam(subfam_name, subfam_mask, subfam_table, info)
+		MsgBox, % "returned from recursive subfamily!"
+		this.subfam_table := db.get_reference("Subfamilia", this.info.empresa[2] this.info.tipo[2] this.info.familia[1])
+		this.delete_subfam()
 	}
 
-	delete_subfam(subfam_name, subfam_mask, subfam_table, info){
+	delete_subfam(){
 		Global db 
-		db.delete_items_where(" Mascara like '" subfam_mask "'", subfam_table)
-		this.delete_model_table_if_not_related(subfam_name, subfam_mask, info)		
+		MsgBox, % "gonna delete mask " this.mask " subfam_table " this.subfam_table
+		db.delete_items_where(" Mascara like '" this.mask "'", this.subfam_table)
+		this.delete_model_table_if_not_related()		
 	}
 
-	delete_model_table_if_not_related(subfam_name, subfam_mask, info){
+	delete_model_table_if_not_related(){
 		Global db
-		model_table := db.get_reference("Modelo", this.prefix(info) subfam_name)
-		db.delete_items_where(" tipo like 'Subfamilia' AND tabela1 like '" this.prefix(info) subfam_name "'", "reltable")
+		model_table := db.get_reference("Modelo", this.get_prefix() this.name) 
+		db.delete_items_where(" tipo like 'Modelo' AND tabela1 like '" this.get_prefix() this.name "'", "reltable")
 		if(!db.check_if_exists(" tipo LIKE 'Modelo' AND tabela2 LIKE '" model_table "'", "reltable")){
 			db.drop_table(model_table)
 		}
 	}
 
-	prefix(info){
-		return_value := info.empresa[2] info.tipo[2] info.familia[2]
+	get_prefix(){
+		return_value := this.info.empresa[2] this.info.tipo[2] this.info.familia[2]
 		return return_value
 	}
 
-	full_prefix(info){
-		return_value := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2]
+	full_prefix(){
+		return_value := this.info.empresa[2] this.info.tipo[2] this.info.familia[2] this.info.subfamilia[2]
 		return return_value 
 	}
 

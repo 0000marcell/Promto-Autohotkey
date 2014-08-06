@@ -40,12 +40,6 @@ if(BUTTON_SIZE = "small")
 GLOBAL_COLOR := settings.global_color
 BANNER_COLOR := settings.banner_color
 TextOptions := "x0p y10 s" settings.banner_text_size " Center c" settings.banner_text_color " r4 Bold"
-if(settings.banner_size = "small")
-	banner_h := 20
-if(settings.banner_size = "medium")
-	banner_h := 50
-if(settings.banner_size = "large")
-	banner_h := 100 
 Font := settings.font
 
 /*

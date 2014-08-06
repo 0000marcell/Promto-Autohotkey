@@ -62,10 +62,7 @@ class Empresa{
 		}
 		return
 	}
-
-	/*
-		Funcao que deleta os subitems
-	*/
+	
 	delete_subitem(nome, mascara, info, nivel){
 		Global db
 		if(nivel = "empresa"){

@@ -23,4 +23,46 @@ class Helper{
         )}
     return values	
   }
+
+
+  families_values(value, prev_mask, subfamily){
+    if(subfamily = 1){
+      values := {
+        (JOIN
+          "name": value[A_Index, 1], "mask": value[A_Index, 2], 
+          "prev_mask": prev_mask,
+          "subfamilies": []
+        )}
+    }else{
+      values := {
+        (JOIN
+          "name": value[A_Index, 1], "mask": value[A_Index, 2], 
+          "prev_mask": prev_mask,
+          "models": []
+        )}
+    }  
+    return values 
+  }
+
+
+  subfamilies_values(value, prev_mask){
+    values := {
+        (JOIN
+          "name": value[A_Index, 1], "mask": value[A_Index, 2], 
+          "prev_mask": prev_mask,
+          "models": []
+        )}
+    return values 
+  }
+
+  models_values(value, prev_mask){
+   Global db
+   values := {
+        (JOIN
+          "name": value[A_Index, 1], "mask": value[A_Index, 2], 
+          "prev_mask": prev_mask,
+          "fields": []
+        )}
+    return values
+  }
 }

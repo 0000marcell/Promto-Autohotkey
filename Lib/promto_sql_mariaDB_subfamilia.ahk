@@ -46,19 +46,18 @@ class Subfamilia{
 		Global db, mariaDB
 		this.name := subfam_name, this.mask := subfam_mask
 		this.info := info
-		MsgBox, % "gonna start recursive subfamily!"
+		MsgBox, % "gonna start recursive subfamily"
 		if(recursiva = 1){
 			db.init_unique_info() 
 			db.remove_subitems("subfamilia", this.full_prefix(), this.info)
 		}
-		MsgBox, % "returned from recursive subfamily!"
+		MsgBox, % "back from recursive subfamily "
 		this.subfam_table := db.get_reference("Subfamilia", this.info.empresa[2] this.info.tipo[2] this.info.familia[1])
 		this.delete_subfam()
 	}
 
 	delete_subfam(){
 		Global db 
-		MsgBox, % "gonna delete mask " this.mask " subfam_table " this.subfam_table
 		db.delete_items_where(" Mascara like '" this.mask "'", this.subfam_table)
 		this.delete_model_table_if_not_related()		
 	}
@@ -177,8 +176,6 @@ class Subfamilia{
 	get_parent_reference(prefixo, familia_nome){
 		global mariaDB
 
-		;MsgBox, % "get parent reference empresa mascara " prefixo " tipo nome " tipo_nome
-		;MsgBox, % "tabela1: " prefixo familia_nome
 		rs := mariaDB.OpenRecordSet(
 			(JOIN 
 				" SELECT tabela2 FROM reltable "
@@ -187,7 +184,6 @@ class Subfamilia{
 			))
 		reference_table := rs.tabela2
 		rs.close()
-		;MsgBox, % "tabela retornada " reference_table
 		return reference_table
 	}
 }

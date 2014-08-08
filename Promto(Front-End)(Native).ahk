@@ -253,12 +253,14 @@ Menu, backup_menu,   Add, Fazer Back up, make_back_up
 Menu, users_menu,    Add, Usuarios, manager_users
 Menu, list_menu,     Add, Listas, list_options
 Menu, xml_menu,      Add, XML, xml
+Menu, json_menu,      Add, JSON, json
 Menu, imagem_menu,   Add, Redimensionar, resize_image_folder 
 Menu, backup_menu,   Add, Carregar Back up, load_back_up
 Menu, main_menu_bar, Add, &Atualizar, :update_menu
 Menu, main_menu_bar, Add, &Back up, :backup_menu
 Menu, main_menu_bar, Add, &Usuarios, :users_menu
 Menu, main_menu_bar, Add, &XML, :xml_menu
+Menu, main_menu_bar, Add, &JSON , :json_menu
 Menu, main_menu_bar, Add, &Imagem, :imagem_menu
 Menu, main_menu_bar, Color, White
 Gui, Menu, main_menu_bar
@@ -357,7 +359,12 @@ return
 
 xml:
 generate_xml_view()
-return 
+return
+
+json:
+json := new PromtoJSON()
+json.get_companies()
+return  
 
 HTML:
 generate_html_view()
@@ -2900,6 +2907,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 
 #include, lib\print_funcs.ahk
 #include, lib\promto_xml.ahk
+#include, lib\promto_json.ahk
 #include, lib\gdip_all.ahk
 #include, lib\promto_sql_mariaDB.ahk
 #include, models\remover_item_ETF.ahk

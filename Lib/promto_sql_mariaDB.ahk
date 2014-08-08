@@ -174,9 +174,6 @@ class PromtoSQL{
 		}catch e
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela imagetable `n" ExceptionDetail(e)
 
-		/*
-		connections
-		*/
 		try{
 			mariaDB.Query(
 				(JOIN
@@ -799,9 +796,6 @@ class PromtoSQL{
 		}
 	}
 
-	/*
-		Get reference global
-	*/
 	get_reference(tipo, tabela1){
 		Global mariaDB
 		try{

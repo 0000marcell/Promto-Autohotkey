@@ -1,5 +1,5 @@
 selecionar_campo_externo_view(info){
-	Global db, lista_pesquisa_selecionar_campos, pesquisa_selecionar_campo_externo, selecionar_campo_externo_lv, SMALL_FONT, GLOBAL_COLOR, campos_especificos_cbox
+	Global db, search, lista_pesquisa_selecionar_campos, pesquisa_selecionar_campo_externo, selecionar_campo_externo_lv, SMALL_FONT, GLOBAL_COLOR, campos_especificos_cbox
 	Static s_info
 	s_info := info
 
@@ -51,12 +51,12 @@ selecionar_campo_externo_view(info){
 	StringReplace, campos_especificos_cbox, campos_especificos_cbox, %A_Space%,, All
 	table_values := db.find_items_where("tipo like '" campos_especificos_cbox "'", "reltable")
 	load_lv_from_matrix("3", table_values, "selecionar_campo_externo_view", "selecionar_campo_externo_lv")
-	lista_pesquisa_selecionar_campos := table_values
+	search.LV.set_searcheable_list(table_values)
 	return
 
 	pesquisa_selecionar_campo_externo:
 	Gui, Submit, Nohide
-	any_word_search("selecionar_campo_externo_view", "selecionar_campo_externo_lv", pesquisa_selecionar_campo_externo, lista_pesquisa_selecionar_campos)
+	search.LV.any_word_search("selecionar_campo_externo_view", "selecionar_campo_externo_lv", pesquisa_selecionar_campo_externo)
 	return
 
 	salvar_relacao:

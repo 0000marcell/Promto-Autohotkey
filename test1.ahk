@@ -4,12 +4,16 @@ class Main{
   }
 
   class Submain{
-    metodo(x){
-      MsgBox, % "mensagem " x
+    set_value(y){
+    	this.x := y
+    }
+
+    metodo(){
+      MsgBox, % "mensagem " this.x
     }
   }
 }
 
 db := new Main()
-
-db.metodo()
+db.Submain.set_value("test2")
+db.Submain.metodo()

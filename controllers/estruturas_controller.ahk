@@ -200,6 +200,7 @@ tv_add_mass(){
         Listaddmass[A_Index,2]:=value2
         table.MoveNext()
 	}
+	search.LV.set_searcheable_list(Listaddmass)
 	db.loadlv("addmassa","lvaddmass",mask "Codigo","Codigos, Descricao Completa, Descricao Resumida, Descricao ingles", 1)
 	return 
 }
@@ -234,7 +235,7 @@ tv_strut(window, tv, lv){
 		info := get_item_info(window, "", tv, super_id, window)
 		code_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] S_ETF_hashmask[selected_model] "Codigo"
 		db.load_lv(window, lv, code_table, 1)
-		Listestrut := db.load_table_in_array(code_table)
+		search.LV.set_searcheable_list(db.load_table_in_array(code_table))
 	}
 }
 

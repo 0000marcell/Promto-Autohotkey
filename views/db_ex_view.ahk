@@ -14,7 +14,7 @@ db_ex_view(){
 	Gui, color, %GLOBAL_COLOR%
 	Gui, dbex:+ownerM
 	Gui, add, edit, w900 r1  vpesquisadbex gpesquisadbex uppercase,
-	Gui, add, listview, w900 h400 y+5 checked vlvdbex, Codigo|Descricao Completa|Descricao Resumida|Descricao Ingles
+	Gui, add, listview, w1400 h400 y+5 checked vlvdbex, Codigo|Descricao Completa|Descricao Resumida|Descricao Ingles
 	Gui, add, button, w100 h30 y+5 ginserirdbex,Inserir
 	Gui, add, button, w100 h30 x+5 gmarctodos_dbex,Marc.todos 
 	Gui, add, button, w100 h30 x+5 gdesmarctodos_dbex,Desm.todos
@@ -23,23 +23,23 @@ db_ex_view(){
 	Gui, add, button, w100 h30 x+5 gexport_code_list_to_file, Exportar para arquivo
 	Gui, Font, s15 cGreen
 	Gui, add, Text, xm y+5 w800 h30 vconnection_status, % "Conectado a " current_connection_value
-	Gui, Show,, adicionar db externo!
+	
 	GuiControl, -Redraw, lvdbex
-	Listdbex := []
 	table := db.load_table_in_array(cod_table)
-	Listdbex := table
+	search.LV.set_searcheable_list(table)
 	for, each, value in table{
 		if(table[A_Index, 1] = "")
 			Continue
 		value1 := table[A_Index, 1]
 		%value1% := {}
 	}
-	db.load_lv("dbex", "lvdbex", cod_table)
-	LV_ModifyCol(1, 150), LV_ModifyCol(2, 300)
 	GuiControl, -Redraw, lvdbex
-	for,each,value in ["NCM", "UM", "ORIGIGEM", "CONTA", "TIPO", "GRUPO", "IPI", "LOCPAD"]
+	for, each, value in ["NCM", "UM", "ORIGIGEM", "CONTA", "TIPO", "GRUPO", "IPI", "LOCPAD"]
 		LV_InsertCol(each+4,"",value)
-	GuiControl, +Redraw,lvdbex
+	GuiControl, +Redraw, lvdbex
+	db.load_lv("dbex", "lvdbex", cod_table)
+	LV_ModifyCol(1, 120), LV_ModifyCol(2, 550), LV_ModifyCol(4, 50) 
+	Gui, Show,, adicionar db externo!
 	return 
 
 	check_if_exist_in_external_db:
@@ -64,15 +64,13 @@ db_ex_view(){
 	return 
 
  	pesquisadbex:
- 	Gui,submit,nohide
- 	pesquisalvmod("dbex","lvdbex",pesquisadbex,Listdbex)
+ 	Gui, submit, nohide
+ 	search.LV.any_word_search("dbex","lvdbex", pesquisadbex)
  	return 
 
 	inserirvalores:
 	inserir_valores_view()
 	return 
-
-	
 
 	exportarparabanco:
 	gosub, configdbex

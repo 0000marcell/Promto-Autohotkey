@@ -60,7 +60,7 @@ db := new PromtoSQL(
 		db_type,
 		db_location
 	))
-
+search := new PromtoSearch()
 GLOBAL_TVSTRING := ""
 ETF_TVSTRING := ""
 S_ETF_hashmask := {}
@@ -713,7 +713,7 @@ return
 
 			pesquisaraddmass:
 			Gui,submit,nohide
-			any_word_search("addmassa","lvaddmass",pesquisaraddmass,Listaddmass)
+			search.LV.any_word_search("dbex","lvdbex", pesquisaraddmass)
 			return 
 
 
@@ -2905,6 +2905,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 		return 
 }
 
+#include, lib\promto_search.ahk
 #include, lib\print_funcs.ahk
 #include, lib\promto_xml.ahk
 #include, lib\promto_json.ahk

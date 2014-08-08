@@ -1,5 +1,5 @@
 linkar_modelos_view(info){
-	Global db, pesquisa_linkar_modelos, linkar_modelos_lv, SMALL_FONT, GLOBAL_COLOR, lista_pesquisa_linkar_modelos
+	Global db, search, pesquisa_linkar_modelos, linkar_modelos_lv, SMALL_FONT, GLOBAL_COLOR, lista_pesquisa_linkar_modelos
 	Static s_info
 
 	s_info := info
@@ -36,13 +36,14 @@ linkar_modelos_view(info){
 		Carrega a listview com as relacoes de modelos
 	*/
 	table_values := db.find_items_where("tipo like 'Modelo'", "reltable")
+	search.LV.set_searcheable_list(table_values)
 	load_lv_from_matrix("3", table_values, "linkar_modelos_view", "linkar_modelos_lv")
 	lista_pesquisa_linkar_modelos := table_values
 	return
 
 	pesquisa_linkar_modelos:
 	Gui, Submit, Nohide
-	any_word_search("linkar_modelos_view", "linkar_modelos_lv", pesquisa_linkar_modelos, lista_pesquisa_linkar_modelos)
+	search.LV.any_word_search("linkar_modelos_view", "linkar_modelos_lv", pesquisa_linkar_modelos)
 	return
 
 	salvar_relacao_modelos:

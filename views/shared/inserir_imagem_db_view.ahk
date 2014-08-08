@@ -34,13 +34,13 @@ inserir_imagem_db_view(owner_name, picture_control, codigos_array = ""){
 	Gui, Add, Groupbox, x+45 ym w310 h320, Foto
 	Gui, Add, Picture, xp+5 yp+15 w300 h300 vinserir_imagem_db_picture,
 	Gui, Show,, Inserir Imagem do Banco de dados
-	Lista_de_pesquisa := db.get_values("*", "imagetable")
+	search.LV.set_searcheable_list(db.get_values("*", "imagetable"))
 	db.load_lv("inserir_imagem_db_view", "inserir_imagem_db_lv", "imagetable")
 	return
 
 	pesquisa_inserir_imagem_db_view:
 	Gui,submit,nohide
-	any_word_search("inserir_imagem_db_view", "inserir_imagem_db_lv", pesquisa_inserir_imagem_db_view, Lista_de_pesquisa)
+	search.LV.any_word_search("inserir_imagem_db_view", "inserir_imagem_db_lv", pesquisa_inserir_imagem_db_view)
 	return
 
 	salvar_imagem_db_button:

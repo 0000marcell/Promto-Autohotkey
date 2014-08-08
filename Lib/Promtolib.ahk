@@ -217,6 +217,12 @@ trim_array(array, columns_to_keep, number_of_columns){
 	Return new_array
 }
 
+clear_lv(window, lv){
+	Gui,	%window%:default
+	Gui, listview, %lv%
+	LV_Delete()
+}
+
 /*
 	Limpa as informacoes sobre o 
 	modelo da tabela principal
@@ -2143,8 +2149,9 @@ any_word_search(wname, lvname, string, List){
     resultsearch := [] 
     If (string = ""){ 
       LV_Delete()
+
       for,each,value in List{
-        LV_Add("",List[A_Index,1],List[A_Index,2], List[A_Index, 3], List[A_Index, 4],  List[A_Index, 5], List[A_Index, 6])
+        LV_Add("",List[A_Index, 1], List[A_Index, 2], List[A_Index, 3], List[A_Index, 4],  List[A_Index, 5], List[A_Index, 6])
       }       
     }Else{
       for,each,value in List{

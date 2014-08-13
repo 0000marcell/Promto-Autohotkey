@@ -263,12 +263,16 @@ Menu, main_menu_bar, Add, &Feed, :feed_menu
 Menu, main_menu_bar, Color, White
 Gui, Menu, main_menu_bar
 Gui, Show,, %FamiliaName%
-
 Gui, Listview, MODlv
 LV_ModifyCol(2,300) 
 LV_Modify(2, "+Select")
 _loading := 0
 return	
+
+visualize_feed:
+feed := new GenerateJSONFeed() 
+feed.generate_feed()
+return 
 
 certificados:
 cert_view("", "M")
@@ -2978,3 +2982,9 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, controllers/update_controller.ahk
 #include, controllers/inserir_campos_controller.ahk
 #include, controllers/manager_users_controller.ahk
+
+
+/*
+	Model
+*/
+#include, models/generate_feed_model.ahk

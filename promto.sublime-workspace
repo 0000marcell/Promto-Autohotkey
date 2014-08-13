@@ -1,0 +1,7259 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"lv_modify",
+				"LV_ModifyCol()"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Promto(Front-End)(Native).ahk",
+			"settings":
+			{
+				"buffer_size": 90578,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/cert_view.ahk",
+			"settings":
+			{
+				"buffer_size": 1331,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "estruturas_view(){\n	Global\n\n	/* \n		Gui init\n	*/\n\n	Gui,massaestrut:New\n	Gui, Font,s%SMALL_FONT%, %FONT%\n	Gui,massaestrut:+ownerM\n	Gui, Color, %GLOBAL_COLOR%	\n	Gui, Add, Edit, x415 gpesquisarlv w400 r1 vpesquisarlv uppercase ,Pesquisar!!!\n	Gui, Add, Treeview, xm y+5 w400 h300 vtv1 gtvstrut,\n	Gui, Add, Listview, x+5 w400 h300 vlv1 checked gestrutlv,Codigos| Descricao Completa| Descricao Resumida | Descricao Ingles\n	Gui, Add, Treeview, x+5 w400 h300 vtv2,\n	Gui, Add, Treeview, xm y+5 w400 h300 vtvaddmass gtvaddmass,\n	Gui, Add, Listview, x+5 w400 h300 vlvaddmass checked glvaddmass,Codigos|DR\n	Gui, Add, Listview, x+5 w400 h300 vlvaddmass2,Codigos \n	Gui, Add, Button, xm w100 h30 gimprimirestrut,Imprimir Estruturas!!\n	Gui, Add, Button, x+250  w100 h30 gaddmassa, Add em Massa\n	Gui, Add, Button, x+5  w100 h30 gaddquantidademassa, Add Quantidade em Massa\n	Gui, Add, Button, x+5 w100 h30 gremmassa, Remover em Massa \n	Gui, Add, Button, x+5 w100 h30 gmarctodos, Marc.Todos!\n	Gui, Add, Button, x+5 w100 h30 gdesmarctodos,Des.Marc.Todos!\n	Gui, Add, Button, x+5 w100 h30 gexcluirestrut, Excluir estrutura!\n	Gui, Add, Button, x+5 w100 h30 gexcluiritemestrut,Excluir item!\n	Gui, Add, Button, x+5 w100 h30 gexportarestrut,Exportar estruturas!! \n	TvDefinition =\n	(\n		%ETF_TVSTRING%\n	)\n	Gui, Treeview, tv1\n	CreateTreeView(TvDefinition)\n	Gui, Treeview, tvaddmass\n	CreateTreeView(TvDefinition)\n	Gui, Show,, Estruturas!!\n	return\n\n	imprimirestrut:\n	return\n\n	pesquisarlv:\n	Gui, Submit, Nohide\n	search.LV.any_word_search(\"massaestrut\", \"lv1\", pesquisarlv)\n	return\n\n	tvstrut:\n	tv_strut(\"massaestrut\", \"tv1\", \"lv1\")\n	return\n\n	estrutlv:\n	estrut_lv()\n	return\n\n	excluirestrut:\n	remove_strut()\n	return \n\n	excluiritemestrut:\n	Gui, Submit, Nohide\n	TV_GetText(componente, TV_GetSelection())\n	parent := TV_GetParent(TV_GetSelection())\n	TV_GetText(item, parent)\n	if(remove_componente(item, componente)){\n		TV_Delete(TV_GetSelection())	\n	}\n	Return\n\n	exportarestrut:\n	export_strut()\n	return\n	\n	addmassa:\n	add_componente_marcado()\n	return \n\n	addquantidademassa:\n	add_quantidade_em_massa()\n	return \n\n	remmassa:\n	rem_massa_view()\n	return\n\n	marctodos:\n	check_all(\"massaestrut\", \"lv1\")\n	return \n\n	desmarctodos:\n	uncheck_all(\"massaestrut\", \"lv1\")\n	return \n\n	tvaddmass:\n	tv_strut(\"massaestrut\", \"tvaddmass\", \"lvaddmass\")\n	return\n\n	lvaddmass:\n	return \n}\n\nestruturas_view()",
+			"file": "views/estruturas_view.ahk",
+			"file_size": 2437,
+			"file_write_time": 130464453468084387,
+			"settings":
+			{
+				"buffer_size": 2335,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/linkar_modelos_view.ahk",
+			"settings":
+			{
+				"buffer_size": 1893,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/selecionar_campo_externo_view.ahk",
+			"settings":
+			{
+				"buffer_size": 2480,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/shared/inserir_imagem_db_view.ahk",
+			"settings":
+			{
+				"buffer_size": 3156,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/estruturas_controller.ahk",
+			"settings":
+			{
+				"buffer_size": 8833,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/config_db_ex_view.ahk",
+			"settings":
+			{
+				"buffer_size": 694,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "db_ex_view(){\n	Global\n\n	if(current_connection_value = \"\"){\n		MsgBox, 16, Erro, % \"E preciso selecionar uma conexao externa antes de prosseguir!\" \n		return\n	}\n\n	info := get_item_info(\"M\", \"MODlv\")\n	\n	cod_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] \"Codigo\"\n	Gui,dbex:new\n	Gui,font,s%SMALL_FONT%,%FONT%\n	Gui, color, %GLOBAL_COLOR%\n	Gui, dbex:+ownerM\n	Gui, add, edit, w900 r1  vpesquisadbex gpesquisadbex uppercase,\n	Gui, add, listview, w1400 h400 y+5 checked vlvdbex, Codigo|Descricao Completa|Descricao Resumida|Descricao Ingles\n	Gui, add, button, w100 h30 y+5 ginserirdbex,Inserir\n	Gui, add, button, w100 h30 x+5 gmarctodos_dbex,Marc.todos \n	Gui, add, button, w100 h30 x+5 gdesmarctodos_dbex,Desm.todos\n	Gui, add, button, w100 h30 x+5 ginserirvalores,Inserir Valores\n	Gui, add, button, w100 h30 x+5 gconfigdbex,Configurar.\n	Gui, add, button, w100 h30 x+5 gexport_code_list_to_file, Exportar para arquivo\n	Gui, Font, s15 cGreen\n	Gui, add, Text, xm y+5 w800 h30 vconnection_status, % \"Conectado a \" current_connection_value\n	\n	GuiControl, -Redraw, lvdbex\n	table := db.load_table_in_array(cod_table)\n	search.LV.set_searcheable_list(table)\n	for, each, value in table{\n		if(table[A_Index, 1] = \"\")\n			Continue\n		value1 := table[A_Index, 1]\n		%value1% := {}\n	}\n	GuiControl, -Redraw, lvdbex\n	for, each, value in [\"NCM\", \"UM\", \"ORIGIGEM\", \"CONTA\", \"TIPO\", \"GRUPO\", \"IPI\", \"LOCPAD\"]\n		LV_InsertCol(each+4,\"\",value)\n	GuiControl, +Redraw, lvdbex\n	db.load_lv(\"dbex\", \"lvdbex\", cod_table)\n	LV_ModifyCol(1, 120), LV_ModifyCol(2, 550), LV_ModifyCol(4, 50) \n	Gui, Show,, adicionar db externo!\n	return \n\n	check_if_exist_in_external_db:\n	check_if_exist_in_external_db()\n	return \n\n	export_code_list_to_file:	\n	info := get_item_info(\"M\", \"MODlv\")\n	export_code_list_to_file(getvaluesLV(\"dbex\",\"lvdbex\"), info.familia[2] info.subfamilia[2], selectmodel)\n	return \n\n	inserirtodos:\n	inserir_todos_view()\n	return \n\n	configdbex:\n	config_db_ex_view()\n	return \n\n	inserirdbex:\n	inserir_db_ex_view()\n	return \n\n 	pesquisadbex:\n 	Gui, submit, nohide\n 	search.LV.any_word_search(\"dbex\",\"lvdbex\", pesquisadbex)\n 	return \n\n	inserirvalores:\n	inserir_valores_view()\n	return \n\n	exportarparabanco:\n	gosub, configdbex\n	Gui, exportarparadb:New\n	Gui,font, s%SMALL_FONT%, %FONT%\n	Gui,add,button, w100 gexportarparadb, Exportar para db\n	Gui,Show,, Exportar Para DB\n	return \n\n	marctodos_dbex:\n	check_all(\"dbex\", \"lvdbex\")\n	return\n\n	desmarctodos_dbex:\n	uncheck_all(\"dbex\", \"lvdbex\")\n	return\n}",
+			"file": "views/db_ex_view.ahk",
+			"file_size": 2578,
+			"file_write_time": 130519937606859009,
+			"settings":
+			{
+				"buffer_size": 2489,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/inserir_valores_view.ahk",
+			"settings":
+			{
+				"buffer_size": 1409,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/inserir_valores_controller.ahk",
+			"settings":
+			{
+				"buffer_size": 1841,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "inserir_db_ex_view(){\n	Global\n\n	values := GetCheckedRows(\"dbex\",\"lvdbex\")\n	if(values[1,1] = \"\"){\n		MsgBox, % \"Marque um item antes de continuar.\"\n		return \n	}\n	Gui, bloquear_outros:New\n	Gui, font,s%SMALL_FONT%,%FONT%\n	Gui, Add, Text,,Deseja bloquear os outros items da lista?\n	Gui, Add, Button,xm y+5 w100 h30 gbloquear_outros_items, Sim\n	Gui, Add, Button,x+5 w100 h30 gnao_bloquear_outros_items, Nao\n	Gui, Show,,Bloquear outros items?\n	return\n\n	bloquear_outros_items:\n	bloquear_outros_items := True\n	Gui, bloquear_outros:destroy\n	inserirdbexterno(values)\n	return \n\n	nao_bloquear_outros_items:\n	bloquear_outros_items := False\n	Gui, bloquear_outros:destroy\n	inserirdbexterno(values)\n	Return \n}",
+			"file": "views/inserir_db_ex_view.ahk",
+			"file_size": 718,
+			"file_write_time": 130505278950000840,
+			"settings":
+			{
+				"buffer_size": 692,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/db_ex_controller.ahk",
+			"settings":
+			{
+				"buffer_size": 4678,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "doc/PromtoLib.doc",
+			"settings":
+			{
+				"buffer_size": 3025,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Lib/Promtolib.ahk",
+			"settings":
+			{
+				"buffer_size": 73706,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Lib/promto_search.ahk",
+			"settings":
+			{
+				"buffer_size": 752,
+				"line_ending": "Windows",
+				"name": "class PromtoSearch{"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 59666,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/mcruz/AppData/Roaming/Sublime Text 3/Packages/User/Fetch.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 235,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Lib/promto_sql_mariaDB_subfamilia.ahk",
+			"settings":
+			{
+				"buffer_size": 5539,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Lib/promto_sql_mariaDB.ahk",
+			"settings":
+			{
+				"buffer_size": 23542,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "json-test.ahk",
+			"settings":
+			{
+				"buffer_size": 1264,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Lib/promto_json.ahk",
+			"settings":
+			{
+				"buffer_size": 2460,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "promto.sublime-project",
+			"settings":
+			{
+				"buffer_size": 73,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "promto_JSON.json",
+			"settings":
+			{
+				"buffer_size": 378342,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/mcruz/Downloads/Jit-2.0.1/Jit/Examples/Spacetree/example1.html",
+			"settings":
+			{
+				"buffer_size": 3172,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nLiveReload:\n----------\n\n  Changelog:\n  \n  Please be sure to restart Sublime Text 2 to start using this new version. For more information or how to use this plugin visit https://github.com/dz0ny/LiveReload-sublimetext2/blob/master/README.md \n  \n  New Features\n   - Support v2 of protocol\n  \n  Bugs:\n   - Potential security vulnerability with plugin https://github.com/dz0ny/LiveReload-sublimetext2/issues/7\n  \n\n\nEmmet:\n-----\n\n  Thank you for installing Emmet -- a toolkit that can greatly improve your workflow. Note that this plugin automatically downloads and installs PyV8 binary (see status bar message). \n  \n  ******************************\n  Please restart editor \n  to finish installation process \n  after PyV8 was downloaded.\n  ******************************\n  \n  Tab key handler\n  ==========================\n  \n  By default, Emmet allows you to expand abbreviations with Tab key in HTML, XML, HAML and CSS/SASS/LESS/Stylus documents. As a side effect, you can’t use some of your ST2 snippets.\n  \n  Please read https://github.com/sergeche/emmet-sublime#tab-key-handler about how Tab handler works and how to tweak its behavior to match your needs.\n  \n  Enter key\n  ==========================\n  \n  In HTML and XML documents, Emmet overrides Enter key to insert formatted line breaks between opening and closing tags. In some cases it will break character input (for example, in Japanese language).\n  \n  To disable Enter key handler, simply add the following option in your user's Preferences file:\n  \n  \"disable_formatted_linebreak\": true\n  \n  Actions shortcuts\n  ==========================\n  \n  Emmet has a number of actions with keyboard shortcuts that may override ones you're using commonly (for example, Ctrl-E or Ctrl-Down). Please read the project main page to get list of available actions and keyboard shortcuts and how to disable them:\n  https://github.com/sergeche/emmet-sublime\n  \n  Documentation and examples:\n  http://emmet.io\n  \n  ------------------------------\n  Follow me on Twitter: @emmetio\n  ------------------------------\n  \n",
+			"settings":
+			{
+				"buffer_size": 2103,
+				"line_ending": "Windows",
+				"name": "Package Control Messages",
+				"scratch": true
+			}
+		},
+		{
+			"file": "Lib/promto_json_helper.ahk",
+			"settings":
+			{
+				"buffer_size": 1448,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Lib/general_funcs.ahk",
+			"settings":
+			{
+				"buffer_size": 5431,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/mcruz/Downloads/Jit-2.0.1/Jit/Examples/Spacetree/example1.js",
+			"settings":
+			{
+				"buffer_size": 29511,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 329 files for \"any_word_search\"\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Promto(Front-End)(Native).ahk:\n  714  			pesquisaraddmass:\n  715  			Gui,submit,nohide\n  716: 			any_word_search(\"addmassa\",\"lvaddmass\",pesquisaraddmass,Listaddmass)\n  717  			return \n  718  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\Promtolib.ahk:\n 2135  }\n 2136  \n 2137: any_word_search(wname, lvname, string, List){\n 2138  	Gui,%wname%:default\n 2139    Gui, listview,%lvname%\n ....\n 2181  }\n 2182  \n 2183: any_word_search_backup(wname, lvname, string,List){\n 2184  	Gui,%wname%:default\n 2185      Gui,listview,%lvname%\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\cert_view.ahk:\n   53  	search_cert:\n   54  	Gui, Submit, Nohide\n   55: 	any_word_search(\"cert_view\", \"lv_cert\", search_cert, search_cert_list)\n   56  	return\n   57  }\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\db_ex_view.ahk:\n   66   	pesquisadbex:\n   67   	Gui, submit, nohide\n   68:  	any_word_search(\"dbex\",\"lvdbex\", pesquisadbex, Listdbex)\n   69   	;pesquisalvmod(\"dbex\",\"lvdbex\",pesquisadbex,Listdbex)\n   70   	return \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\estruturas_view.ahk:\n   42  	pesquisarlv:\n   43  	Gui, Submit, Nohide\n   44: 	any_word_search(\"massaestrut\", \"lv1\", pesquisarlv, Listestrut)\n   45  	return\n   46  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\linkar_modelos_view.ahk:\n   43  	pesquisa_linkar_modelos:\n   44  	Gui, Submit, Nohide\n   45: 	any_word_search(\"linkar_modelos_view\", \"linkar_modelos_lv\", pesquisa_linkar_modelos, lista_pesquisa_linkar_modelos)\n   46  	return\n   47  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\selecionar_campo_externo_view.ahk:\n   57  	pesquisa_selecionar_campo_externo:\n   58  	Gui, Submit, Nohide\n   59: 	any_word_search(\"selecionar_campo_externo_view\", \"selecionar_campo_externo_lv\", pesquisa_selecionar_campo_externo, lista_pesquisa_selecionar_campos)\n   60  	return\n   61  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\shared\\inserir_imagem_db_view.ahk:\n   41  	pesquisa_inserir_imagem_db_view:\n   42  	Gui,submit,nohide\n   43: 	any_word_search(\"inserir_imagem_db_view\", \"inserir_imagem_db_lv\", pesquisa_inserir_imagem_db_view, Lista_de_pesquisa)\n   44  	return\n   45  \n\n9 matches across 8 files\n\n\nSearching 331 files for \"reset_debug\"\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\general_funcs.ahk:\n  165  	*/\n  166  \n  167: 	reset_debug(){\n  168  		FileDelete, % \"debug.txt\"\n  169  	}\n\n1 match in 1 file\n\n\nSearching 331 files for \"any word search\"\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\promto_search_lv.ahk:\n    3  	any_word_search(window, lv, keyword, list){\n    4  		Global search\n    5: 		MsgBox, % \"any word search!\"\n    6  		this.window := window, this.lv := lv\n    7  		this.keyword := keyword, this.list := list\n\n1 match in 1 file\n\n\nSearching 331 files for \"loadlvdbex(\"\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\controllers\\db_ex_controller.ahk:\n  153  	carregar lv db ex\n  154  */\n  155: loadlvdbex(){\n  156  	Global \n  157  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\controllers\\inserir_valores_controller.ahk:\n   14  		%codname%[selectedvaluecol] := checkedval\n   15  	}\n   16: 	loadlvdbex()	\n   17  }\n   18  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Scripts\\automaticsendemail.ahk:\n  130   return \n  131  \n  132: loadlvdbex(){\n  133  	Global \n  134  	Gui,dbex:default\n  ...\n  184  			%codname%[colvalue]:=checkedval\n  185  		}\n  186: 		loadlvdbex()\n  187  		return \n  188  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Scripts\\keyboardkeylogger.ahk:\n  314   return \n  315  \n  316: loadlvdbex(){\n  317  	Global \n  318  	Gui,dbex:default\n  ...\n  368  			%codname%[colvalue]:=checkedval\n  369  		}\n  370: 		loadlvdbex()\n  371  		return \n  372  \n\n6 matches across 4 files\n\n\nSearching 331 files for \"any_word_search\"\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Promto(Front-End)(Native).ahk:\n  714  			pesquisaraddmass:\n  715  			Gui,submit,nohide\n  716: 			any_word_search(\"addmassa\",\"lvaddmass\",pesquisaraddmass,Listaddmass)\n  717  			return \n  718  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\promto_search_lv.ahk:\n    4  	}	\n    5  \n    6: 	any_word_search(window, lv, keyword){\n    7  		Global search	\n    8  		this.window := window, this.lv := lv\n    .\n   61  		for, each, item in this.result{\n   62  		  this.list[item, number] := value \n   63: 		  this.any_word_search(this.window, this.lv, this.keyword)\n   64  		} \n   65  	}\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\Promtolib.ahk:\n 2141  }\n 2142  \n 2143: any_word_search(wname, lvname, string, List){\n 2144  	Gui,%wname%:default\n 2145    Gui, listview,%lvname%\n ....\n 2187  }\n 2188  \n 2189: any_word_search_backup(wname, lvname, string,List){\n 2190  	Gui,%wname%:default\n 2191      Gui,listview,%lvname%\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\cert_view.ahk:\n   53  	search_cert:\n   54  	Gui, Submit, Nohide\n   55: 	any_word_search(\"cert_view\", \"lv_cert\", search_cert, search_cert_list)\n   56  	return\n   57  }\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\db_ex_view.ahk:\n   66   	pesquisadbex:\n   67   	Gui, submit, nohide\n   68:  	search.LV.any_word_search(\"dbex\",\"lvdbex\", pesquisadbex)\n   69   	return \n   70  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\estruturas_view.ahk:\n   42  	pesquisarlv:\n   43  	Gui, Submit, Nohide\n   44: 	any_word_search(\"massaestrut\", \"lv1\", pesquisarlv, Listestrut)\n   45  	return\n   46  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\linkar_modelos_view.ahk:\n   43  	pesquisa_linkar_modelos:\n   44  	Gui, Submit, Nohide\n   45: 	any_word_search(\"linkar_modelos_view\", \"linkar_modelos_lv\", pesquisa_linkar_modelos, lista_pesquisa_linkar_modelos)\n   46  	return\n   47  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\selecionar_campo_externo_view.ahk:\n   57  	pesquisa_selecionar_campo_externo:\n   58  	Gui, Submit, Nohide\n   59: 	any_word_search(\"selecionar_campo_externo_view\", \"selecionar_campo_externo_lv\", pesquisa_selecionar_campo_externo, lista_pesquisa_selecionar_campos)\n   60  	return\n   61  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\shared\\inserir_imagem_db_view.ahk:\n   41  	pesquisa_inserir_imagem_db_view:\n   42  	Gui,submit,nohide\n   43: 	any_word_search(\"inserir_imagem_db_view\", \"inserir_imagem_db_lv\", pesquisa_inserir_imagem_db_view, Lista_de_pesquisa)\n   44  	return\n   45  \n\n11 matches across 9 files\n\n\nSearching 331 files for \"pesquisaraddmass\"\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Promto(Front-End)(Native).ahk:\n  712  			\n  713  \n  714: 			pesquisaraddmass:\n  715  			Gui,submit,nohide\n  716: 			any_word_search(\"addmassa\",\"lvaddmass\",pesquisaraddmass,Listaddmass)\n  717  			return \n  718  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\controllers\\estruturas_controller.ahk:\n  111  	Gui,color,%GLOBAL_COLOR%\n  112  	Gui,addmassa:+ownerM\n  113: 	Gui,add,edit,x415 gpesquisaraddmass w400 r1 vpesquisaraddmass uppercase,Pesquisar!!!\n  114  	Gui,add,treeview,xm y+5 w400 h300 vtvaddmass gtvaddmass,\n  115  	Gui,add,listview, x+5 w400 h300 vlvaddmass checked glvaddmass,Codigos|DR\n\n4 matches across 2 files\n\n\nSearching 331 files for \"any_word_search\"\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Promto(Front-End)(Native).ahk:\n  714  			pesquisaraddmass:\n  715  			Gui,submit,nohide\n  716: 			search.LV.any_word_search(\"dbex\",\"lvdbex\", pesquisaraddmass)\n  717  			return \n  718  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\promto_search_lv.ahk:\n    4  	}	\n    5  \n    6: 	any_word_search(window, lv, keyword){\n    7  		Global search	\n    8  		this.window := window, this.lv := lv\n    .\n   61  		for, each, item in this.result{\n   62  		  this.list[item, number] := value \n   63: 		  this.any_word_search(this.window, this.lv, this.keyword)\n   64  		} \n   65  	}\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\Promtolib.ahk:\n 2141  }\n 2142  \n 2143: any_word_search(wname, lvname, string, List){\n 2144  	Gui,%wname%:default\n 2145    Gui, listview,%lvname%\n ....\n 2187  }\n 2188  \n 2189: any_word_search_backup(wname, lvname, string,List){\n 2190  	Gui,%wname%:default\n 2191      Gui,listview,%lvname%\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\cert_view.ahk:\n   53  	search_cert:\n   54  	Gui, Submit, Nohide\n   55: 	any_word_search(\"cert_view\", \"lv_cert\", search_cert, search_cert_list)\n   56  	return\n   57  }\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\db_ex_view.ahk:\n   66   	pesquisadbex:\n   67   	Gui, submit, nohide\n   68:  	search.LV.any_word_search(\"dbex\",\"lvdbex\", pesquisadbex)\n   69   	return \n   70  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\estruturas_view.ahk:\n   42  	pesquisarlv:\n   43  	Gui, Submit, Nohide\n   44: 	any_word_search(\"massaestrut\", \"lv1\", pesquisarlv, Listestrut)\n   45  	return\n   46  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\linkar_modelos_view.ahk:\n   43  	pesquisa_linkar_modelos:\n   44  	Gui, Submit, Nohide\n   45: 	any_word_search(\"linkar_modelos_view\", \"linkar_modelos_lv\", pesquisa_linkar_modelos, lista_pesquisa_linkar_modelos)\n   46  	return\n   47  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\selecionar_campo_externo_view.ahk:\n   57  	pesquisa_selecionar_campo_externo:\n   58  	Gui, Submit, Nohide\n   59: 	any_word_search(\"selecionar_campo_externo_view\", \"selecionar_campo_externo_lv\", pesquisa_selecionar_campo_externo, lista_pesquisa_selecionar_campos)\n   60  	return\n   61  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\shared\\inserir_imagem_db_view.ahk:\n   41  	pesquisa_inserir_imagem_db_view:\n   42  	Gui,submit,nohide\n   43: 	any_word_search(\"inserir_imagem_db_view\", \"inserir_imagem_db_lv\", pesquisa_inserir_imagem_db_view, Lista_de_pesquisa)\n   44  	return\n   45  \n\n11 matches across 9 files\n\n\nSearching 331 files for \"search_cert_list\"\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\cert_view.ahk:\n    1  cert_view(v_info, owner){\n    2: 	Global db, SMALL_FONT, GLOBAL_COLOR, search_cert_list, global_cert_path\n    3  	Static s_info, search_cert, lv_cert\n    4  \n    .\n   35  	}\n   36  	Gui, Show,, Lista de certificados\n   37: 	search_cert_list := db.get_values(\"*\", \"certificados\")\n   38: 	search.LV.set_searcheable_list(search_cert_list)\n   39  	db.load_lv(\"cert_view\", \"lv_cert\", \"certificados\")\n   40  	return\n\n3 matches in 1 file\n\n\nSearching 331 files for \"any_word_search\"\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Promto(Front-End)(Native).ahk:\n  714  			pesquisaraddmass:\n  715  			Gui,submit,nohide\n  716: 			search.LV.any_word_search(\"dbex\",\"lvdbex\", pesquisaraddmass)\n  717  			return \n  718  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\promto_search_lv.ahk:\n    4  	}	\n    5  \n    6: 	any_word_search(window, lv, keyword){\n    7  		Global search	\n    8  		this.window := window, this.lv := lv\n    .\n   61  		for, each, item in this.result{\n   62  		  this.list[item, number] := value \n   63: 		  this.any_word_search(this.window, this.lv, this.keyword)\n   64  		} \n   65  	}\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\Promtolib.ahk:\n 2141  }\n 2142  \n 2143: any_word_search(wname, lvname, string, List){\n 2144  	Gui,%wname%:default\n 2145    Gui, listview,%lvname%\n ....\n 2187  }\n 2188  \n 2189: any_word_search_backup(wname, lvname, string,List){\n 2190  	Gui,%wname%:default\n 2191      Gui,listview,%lvname%\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\cert_view.ahk:\n   53  	search_cert:\n   54  	Gui, Submit, Nohide\n   55:   search.LV.any_word_search(\"cert_view\", \"lv_cert\", search_cert)\n   56  	return \n   57  }\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\db_ex_view.ahk:\n   66   	pesquisadbex:\n   67   	Gui, submit, nohide\n   68:  	search.LV.any_word_search(\"dbex\",\"lvdbex\", pesquisadbex)\n   69   	return \n   70  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\estruturas_view.ahk:\n   42  	pesquisarlv:\n   43  	Gui, Submit, Nohide\n   44: 	any_word_search(\"massaestrut\", \"lv1\", pesquisarlv, Listestrut)\n   45  	return\n   46  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\linkar_modelos_view.ahk:\n   43  	pesquisa_linkar_modelos:\n   44  	Gui, Submit, Nohide\n   45: 	any_word_search(\"linkar_modelos_view\", \"linkar_modelos_lv\", pesquisa_linkar_modelos, lista_pesquisa_linkar_modelos)\n   46  	return\n   47  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\selecionar_campo_externo_view.ahk:\n   57  	pesquisa_selecionar_campo_externo:\n   58  	Gui, Submit, Nohide\n   59: 	any_word_search(\"selecionar_campo_externo_view\", \"selecionar_campo_externo_lv\", pesquisa_selecionar_campo_externo, lista_pesquisa_selecionar_campos)\n   60  	return\n   61  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\shared\\inserir_imagem_db_view.ahk:\n   41  	pesquisa_inserir_imagem_db_view:\n   42  	Gui,submit,nohide\n   43: 	any_word_search(\"inserir_imagem_db_view\", \"inserir_imagem_db_lv\", pesquisa_inserir_imagem_db_view, Lista_de_pesquisa)\n   44  	return\n   45  \n\n11 matches across 9 files\n\n\nSearching 331 files for \"listestrut\"\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\controllers\\estruturas_controller.ahk:\n  236  		code_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] S_ETF_hashmask[selected_model] \"Codigo\"\n  237  		db.load_lv(window, lv, code_table, 1)\n  238: 		Listestrut := db.load_table_in_array(code_table)\n  239  	}\n  240  }\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\estruturas_view.ahk:\n   43  	Gui, Submit, Nohide\n   44  	search.LV.any_word_search(\"massaestrut\", \"lv1\", pesquisarlv)\n   45: 	any_word_search(\"massaestrut\", \"lv1\", pesquisarlv, Listestrut)\n   46  	return\n   47  \n\n2 matches across 2 files\n\n\nSearching 331 files for \"any_word_search\"\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Promto(Front-End)(Native).ahk:\n  714  			pesquisaraddmass:\n  715  			Gui,submit,nohide\n  716: 			search.LV.any_word_search(\"dbex\",\"lvdbex\", pesquisaraddmass)\n  717  			return \n  718  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\promto_search_lv.ahk:\n    4  	}	\n    5  \n    6: 	any_word_search(window, lv, keyword){\n    7  		Global search	\n    8  		this.window := window, this.lv := lv\n    .\n   61  		for, each, item in this.result{\n   62  		  this.list[item, number] := value \n   63: 		  this.any_word_search(this.window, this.lv, this.keyword)\n   64  		} \n   65  	}\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\Promtolib.ahk:\n 2141  }\n 2142  \n 2143: any_word_search(wname, lvname, string, List){\n 2144  	Gui,%wname%:default\n 2145    Gui, listview,%lvname%\n ....\n 2187  }\n 2188  \n 2189: any_word_search_backup(wname, lvname, string,List){\n 2190  	Gui,%wname%:default\n 2191      Gui,listview,%lvname%\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\cert_view.ahk:\n   53  	search_cert:\n   54  	Gui, Submit, Nohide\n   55:   search.LV.any_word_search(\"cert_view\", \"lv_cert\", search_cert)\n   56  	return \n   57  }\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\db_ex_view.ahk:\n   66   	pesquisadbex:\n   67   	Gui, submit, nohide\n   68:  	search.LV.any_word_search(\"dbex\",\"lvdbex\", pesquisadbex)\n   69   	return \n   70  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\estruturas_view.ahk:\n   42  	pesquisarlv:\n   43  	Gui, Submit, Nohide\n   44: 	search.LV.any_word_search(\"massaestrut\", \"lv1\", pesquisarlv)\n   45  	return\n   46  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\linkar_modelos_view.ahk:\n   43  	pesquisa_linkar_modelos:\n   44  	Gui, Submit, Nohide\n   45: 	any_word_search(\"linkar_modelos_view\", \"linkar_modelos_lv\", pesquisa_linkar_modelos, lista_pesquisa_linkar_modelos)\n   46  	return\n   47  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\selecionar_campo_externo_view.ahk:\n   57  	pesquisa_selecionar_campo_externo:\n   58  	Gui, Submit, Nohide\n   59: 	any_word_search(\"selecionar_campo_externo_view\", \"selecionar_campo_externo_lv\", pesquisa_selecionar_campo_externo, lista_pesquisa_selecionar_campos)\n   60  	return\n   61  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\shared\\inserir_imagem_db_view.ahk:\n   41  	pesquisa_inserir_imagem_db_view:\n   42  	Gui,submit,nohide\n   43: 	any_word_search(\"inserir_imagem_db_view\", \"inserir_imagem_db_lv\", pesquisa_inserir_imagem_db_view, Lista_de_pesquisa)\n   44  	return\n   45  \n\n11 matches across 9 files\n\n\nSearching 331 files for \"any_word_search\"\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Promto(Front-End)(Native).ahk:\n  714  			pesquisaraddmass:\n  715  			Gui,submit,nohide\n  716: 			search.LV.any_word_search(\"dbex\",\"lvdbex\", pesquisaraddmass)\n  717  			return \n  718  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\promto_search_lv.ahk:\n    4  	}	\n    5  \n    6: 	any_word_search(window, lv, keyword){\n    7  		Global search	\n    8  		this.window := window, this.lv := lv\n    .\n   61  		for, each, item in this.result{\n   62  		  this.list[item, number] := value \n   63: 		  this.any_word_search(this.window, this.lv, this.keyword)\n   64  		} \n   65  	}\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\Promtolib.ahk:\n 2141  }\n 2142  \n 2143: any_word_search(wname, lvname, string, List){\n 2144  	Gui,%wname%:default\n 2145    Gui, listview,%lvname%\n ....\n 2187  }\n 2188  \n 2189: any_word_search_backup(wname, lvname, string,List){\n 2190  	Gui,%wname%:default\n 2191      Gui,listview,%lvname%\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\cert_view.ahk:\n   53  	search_cert:\n   54  	Gui, Submit, Nohide\n   55:   search.LV.any_word_search(\"cert_view\", \"lv_cert\", search_cert)\n   56  	return \n   57  }\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\db_ex_view.ahk:\n   66   	pesquisadbex:\n   67   	Gui, submit, nohide\n   68:  	search.LV.any_word_search(\"dbex\",\"lvdbex\", pesquisadbex)\n   69   	return \n   70  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\estruturas_view.ahk:\n   42  	pesquisarlv:\n   43  	Gui, Submit, Nohide\n   44: 	search.LV.any_word_search(\"massaestrut\", \"lv1\", pesquisarlv)\n   45  	return\n   46  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\linkar_modelos_view.ahk:\n   44  	pesquisa_linkar_modelos:\n   45  	Gui, Submit, Nohide\n   46: 	search.LV.any_word_search(\"linkar_modelos_view\", \"linkar_modelos_lv\", pesquisa_linkar_modelos)\n   47  	return\n   48  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\selecionar_campo_externo_view.ahk:\n   57  	pesquisa_selecionar_campo_externo:\n   58  	Gui, Submit, Nohide\n   59: 	any_word_search(\"selecionar_campo_externo_view\", \"selecionar_campo_externo_lv\", pesquisa_selecionar_campo_externo, lista_pesquisa_selecionar_campos)\n   60  	return\n   61  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\shared\\inserir_imagem_db_view.ahk:\n   41  	pesquisa_inserir_imagem_db_view:\n   42  	Gui,submit,nohide\n   43: 	any_word_search(\"inserir_imagem_db_view\", \"inserir_imagem_db_lv\", pesquisa_inserir_imagem_db_view, Lista_de_pesquisa)\n   44  	return\n   45  \n\n11 matches across 9 files\n\n\nSearching 331 files for \"any_word_search\"\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Promto(Front-End)(Native).ahk:\n  714  			pesquisaraddmass:\n  715  			Gui,submit,nohide\n  716: 			search.LV.any_word_search(\"dbex\",\"lvdbex\", pesquisaraddmass)\n  717  			return \n  718  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\promto_search_lv.ahk:\n    4  	}	\n    5  \n    6: 	any_word_search(window, lv, keyword){\n    7  		Global search	\n    8  		this.window := window, this.lv := lv\n    .\n   61  		for, each, item in this.result{\n   62  		  this.list[item, number] := value \n   63: 		  this.any_word_search(this.window, this.lv, this.keyword)\n   64  		} \n   65  	}\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\Promtolib.ahk:\n 2141  }\n 2142  \n 2143: any_word_search(wname, lvname, string, List){\n 2144  	Gui,%wname%:default\n 2145    Gui, listview,%lvname%\n ....\n 2187  }\n 2188  \n 2189: any_word_search_backup(wname, lvname, string,List){\n 2190  	Gui,%wname%:default\n 2191      Gui,listview,%lvname%\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\cert_view.ahk:\n   53  	search_cert:\n   54  	Gui, Submit, Nohide\n   55:   search.LV.any_word_search(\"cert_view\", \"lv_cert\", search_cert)\n   56  	return \n   57  }\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\db_ex_view.ahk:\n   66   	pesquisadbex:\n   67   	Gui, submit, nohide\n   68:  	search.LV.any_word_search(\"dbex\",\"lvdbex\", pesquisadbex)\n   69   	return \n   70  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\estruturas_view.ahk:\n   42  	pesquisarlv:\n   43  	Gui, Submit, Nohide\n   44: 	search.LV.any_word_search(\"massaestrut\", \"lv1\", pesquisarlv)\n   45  	return\n   46  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\linkar_modelos_view.ahk:\n   44  	pesquisa_linkar_modelos:\n   45  	Gui, Submit, Nohide\n   46: 	search.LV.any_word_search(\"linkar_modelos_view\", \"linkar_modelos_lv\", pesquisa_linkar_modelos)\n   47  	return\n   48  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\selecionar_campo_externo_view.ahk:\n   57  	pesquisa_selecionar_campo_externo:\n   58  	Gui, Submit, Nohide\n   59: 	search.LV.any_word_search(\"selecionar_campo_externo_view\", \"selecionar_campo_externo_lv\", pesquisa_selecionar_campo_externo\")\n   60  	return\n   61  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\shared\\inserir_imagem_db_view.ahk:\n   41  	pesquisa_inserir_imagem_db_view:\n   42  	Gui,submit,nohide\n   43: 	any_word_search(\"inserir_imagem_db_view\", \"inserir_imagem_db_lv\", pesquisa_inserir_imagem_db_view, Lista_de_pesquisa)\n   44  	return\n   45  \n\n11 matches across 9 files\n\n\nSearching 331 files for \"any_word_search\"\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Promto(Front-End)(Native).ahk:\n  714  			pesquisaraddmass:\n  715  			Gui,submit,nohide\n  716: 			search.LV.any_word_search(\"dbex\",\"lvdbex\", pesquisaraddmass)\n  717  			return \n  718  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\promto_search_lv.ahk:\n    4  	}	\n    5  \n    6: 	any_word_search(window, lv, keyword){\n    7  		Global search	\n    8  		this.window := window, this.lv := lv\n    .\n   61  		for, each, item in this.result{\n   62  		  this.list[item, number] := value \n   63: 		  this.any_word_search(this.window, this.lv, this.keyword)\n   64  		} \n   65  	}\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\Promtolib.ahk:\n 2141  }\n 2142  \n 2143: any_word_search(wname, lvname, string, List){\n 2144  	Gui,%wname%:default\n 2145    Gui, listview,%lvname%\n ....\n 2187  }\n 2188  \n 2189: any_word_search_backup(wname, lvname, string,List){\n 2190  	Gui,%wname%:default\n 2191      Gui,listview,%lvname%\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\cert_view.ahk:\n   53  	search_cert:\n   54  	Gui, Submit, Nohide\n   55:   search.LV.any_word_search(\"cert_view\", \"lv_cert\", search_cert)\n   56  	return \n   57  }\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\db_ex_view.ahk:\n   66   	pesquisadbex:\n   67   	Gui, submit, nohide\n   68:  	search.LV.any_word_search(\"dbex\",\"lvdbex\", pesquisadbex)\n   69   	return \n   70  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\estruturas_view.ahk:\n   42  	pesquisarlv:\n   43  	Gui, Submit, Nohide\n   44: 	search.LV.any_word_search(\"massaestrut\", \"lv1\", pesquisarlv)\n   45  	return\n   46  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\linkar_modelos_view.ahk:\n   44  	pesquisa_linkar_modelos:\n   45  	Gui, Submit, Nohide\n   46: 	search.LV.any_word_search(\"linkar_modelos_view\", \"linkar_modelos_lv\", pesquisa_linkar_modelos)\n   47  	return\n   48  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\selecionar_campo_externo_view.ahk:\n   57  	pesquisa_selecionar_campo_externo:\n   58  	Gui, Submit, Nohide\n   59: 	search.LV.any_word_search(\"selecionar_campo_externo_view\", \"selecionar_campo_externo_lv\", pesquisa_selecionar_campo_externo\")\n   60  	return\n   61  \n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\views\\shared\\inserir_imagem_db_view.ahk:\n   41  	pesquisa_inserir_imagem_db_view:\n   42  	Gui,submit,nohide\n   43: 	search.LV.any_word_search(\"inserir_imagem_db_view\", \"inserir_imagem_db_lv\", pesquisa_inserir_imagem_db_view)\n   44  	return\n   45  \n\n11 matches across 9 files\n",
+			"settings":
+			{
+				"buffer_size": 24179,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "Lib/promto_search_lv.ahk",
+			"settings":
+			{
+				"buffer_size": 1590,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test1.ahk",
+			"settings":
+			{
+				"buffer_size": 251,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "java/ConvertImage.java",
+			"settings":
+			{
+				"buffer_size": 1779,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/mcruz/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 132,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"fetch",
+				"Fetch: File"
+			],
+			[
+				"fet",
+				"Fetch: Manage"
+			],
+			[
+				"package insta",
+				"Package Control: Install Package"
+			],
+			[
+				"package ins",
+				"Package Control: Install Package"
+			],
+			[
+				"package ",
+				"Package Control: Install Package"
+			],
+			[
+				"package contrl",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 160.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_sql_mariaDB_estrutura.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_sql_mariaDB_tipo.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_sql_mariaDB_usuario.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/views/shared/inserir_imagem_view.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_search_lv.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/views/selecionar_campo_externo_view.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/settings.json",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/Base.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/views/linkar_campos_view.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/lista_codigos.txt",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/launcher.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/print/E.html",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/README.md",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/views/linkar_modelos_view.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_sql_mariaDB_log.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/views/reload_hashmask_view.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/views/list_options_view.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/temp/temp_export.csv",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/temp.csv",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/set_button_to_a_function.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/views/inserir_val_view.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/controllers/inserir_valores_controller.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/views/inserir_ETF_view.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/controllers/inserir_bloqueio_controller.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Scripts/IncrementalSearch2",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/FTP/Properties.TXT",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/promto_data.xml",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/Promtolib.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/RecordSetMySQL.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/RecordSetADO.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_sql_mariaDB_certificado.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_sql_mariaDB_empresa.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_sql.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/doc/PromtoLib.doc",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/ADO.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/controllers/db_ex_controller.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/DataBaseAbstract.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/dkfdkfnbkd",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/java/ConvertImage.java",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/java/ConvertImageFolder_old.java",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/CRUD.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/index.html",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/print/.html",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/._.gitignore",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Scripts/gettextfromimage.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/gdiclass.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/json_parser.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/test1.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_json.ahk",
+		"/C/Users/mcruz/Downloads/autohotkey.vim",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_sql_mariaDB.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Manifest.txt",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/pull.bat",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/views/nova_conexao_view.ahk"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"any_word_search",
+			"lista_de_pesquisa",
+			"search.lv",
+			"any_word_search",
+			"search",
+			"lista_pesquisa",
+			"lista_pesquisa_selecionar",
+			"search.",
+			"any_word_search",
+			"listestrut",
+			"any_word_search",
+			"search_cert_list",
+			"search_cert",
+			"any_word_search",
+			"list",
+			"pesquisaraddmass",
+			"listaddmass",
+			"pesquisaraddmass",
+			"pesquisaradd",
+			"pesquisar",
+			"gpesquisaraddmass",
+			"pesquisaraddmass",
+			"any_word_search",
+			"loadlvdbex(",
+			"search",
+			"listdbex",
+			"this.result",
+			"get_selected(",
+			"loadlvdbex(",
+			"loadlvdbex",
+			"any word search",
+			"reset_debug",
+			"clear_lv",
+			"this.clear",
+			"clear_",
+			"this.include_in_lv",
+			"include_in_lv",
+			"clear_lv",
+			"this.clear_lv",
+			"this.redraw",
+			"redraw",
+			"search",
+			"A_Index",
+			"List",
+			"any_word_search",
+			"dbex:",
+			"loadJSON",
+			"msgbox",
+			"get_reference(",
+			"space",
+			"value",
+			"get_values(",
+			"MSGBOX",
+			"MSGBOX,"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 22,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Promto(Front-End)(Native).ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 90578,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19483,
+								19483
+							]
+						],
+						"settings":
+						{
+							"highlight_line": false,
+							"incomplete_sync": null,
+							"sftp_duplicate_views": 0,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"native",
+									[
+										"_enter_normal_mode",
+										{
+											"mode": "mode_insert"
+										}
+									],
+									"mode_insert",
+									null
+								],
+								"sequence": "",
+								"xpos": 7
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 13239.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "views/cert_view.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1331,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								633,
+								633
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "views/estruturas_view.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2335,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1432,
+								1432
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 451.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "views/linkar_modelos_view.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1893,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1254,
+								1254
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 546.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "views/selecionar_campo_externo_view.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2480,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1910,
+								1910
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 73.0,
+						"translation.y": 641.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "views/shared/inserir_imagem_db_view.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3156,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								720,
+								720
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 285.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "controllers/estruturas_controller.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8833,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6638,
+								6638
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3928.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "views/config_db_ex_view.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 694,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"vintage":
+							{
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 0
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 29,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "views/db_ex_view.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2489,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1142,
+								1142
+							]
+						],
+						"settings":
+						{
+							"highlight_line": false,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"native",
+									[
+										"sequence",
+										{
+											"commands":
+											[
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												]
+											]
+										}
+									],
+									"mode_insert",
+									null
+								],
+								"sequence": "",
+								"xpos": 48
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 224.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "views/inserir_valores_view.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1409,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								304,
+								304
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "controllers/inserir_valores_controller.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1841,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								287,
+								287
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "views/inserir_db_ex_view.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 692,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								198,
+								198
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "controllers/db_ex_controller.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4678,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4228,
+								4228
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2637.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "doc/PromtoLib.doc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3025,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"vintage":
+							{
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 0
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 26,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "Lib/Promtolib.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 73706,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								55242,
+								55242
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"sftp_duplicate_views": 0,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"native",
+									[
+										"sequence",
+										{
+											"commands":
+											[
+												[
+													"move",
+													{
+														"by": "word_ends",
+														"extend": true,
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "word_ends",
+														"extend": true,
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "word_ends",
+														"extend": true,
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "\n"
+													}
+												]
+											]
+										}
+									],
+									null,
+									null
+								],
+								"sequence": "",
+								"xpos": 12
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 40419.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "Lib/promto_search.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 752,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								712,
+								712
+							]
+						],
+						"settings":
+						{
+							"auto_name": "class PromtoSearch{",
+							"incomplete_sync": null,
+							"sftp_duplicate_views": 0,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"vi",
+									"d",
+									"mode_normal",
+									[
+										2,
+										2,
+										"mode_visual"
+									]
+								],
+								"sequence": "",
+								"xpos": 2
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 35.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 59666,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								696,
+								696
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"native",
+									[
+										"sequence",
+										{
+											"commands":
+											[
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "\n"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "div"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "."
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "main."
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"insert",
+													{
+														"characters": "#main"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": ">"
+													}
+												],
+												[
+													"expand_abbreviation_by_tab",
+													null
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "word_ends",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "word_ends",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"insert_snippet",
+													{
+														"contents": "($0)"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "div."
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "main#main"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": ">"
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "*5"
+													}
+												],
+												[
+													"expand_abbreviation_by_tab",
+													null
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "word_ends",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "word_ends",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"insert",
+													{
+														"characters": "div.main"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "$"
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"insert",
+													{
+														"characters": "#main>"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "ul>"
+													}
+												],
+												[
+													"insert_snippet",
+													{
+														"contents": "($0)"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "li>"
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "*5"
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "."
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "lista"
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"expand_abbreviation_by_tab",
+													null
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"extend": true,
+														"forward": false
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												]
+											]
+										}
+									],
+									null,
+									null
+								],
+								"sequence": "",
+								"xpos": 25
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 171.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 27,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "/C/Users/mcruz/AppData/Roaming/Sublime Text 3/Packages/User/Fetch.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 235,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								126,
+								126
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 2
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 28,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "Lib/promto_sql_mariaDB_subfamilia.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5539,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1485,
+								1485
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 36
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 571.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 37,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "Lib/promto_sql_mariaDB.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23542,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13360,
+								13360
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 13
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 10488.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 36,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "json-test.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1264,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1163,
+								1163
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 0
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 1026.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 38,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "Lib/promto_json.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								592,
+								592
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"incomplete_sync": null,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"vi",
+									"c",
+									"mode_insert",
+									[
+										0,
+										5,
+										"mode_visual"
+									]
+								],
+								"sequence": "",
+								"xpos": 45
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 342.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "promto.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 73,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13,
+								13
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "promto_JSON.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 378342,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								207,
+								207
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 0
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "/C/Users/mcruz/Downloads/Jit-2.0.1/Jit/Examples/Spacetree/example1.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3172,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								328,
+								328
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"_vintageous_gluing_sequence": false,
+								"_vintageous_non_interactive": false,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 6
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 31,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2103,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								336,
+								336
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"vintage":
+							{
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 0
+							},
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 40,
+					"type": "text"
+				},
+				{
+					"buffer": 26,
+					"file": "Lib/promto_json_helper.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1448,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								309,
+								309
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"vi",
+									"dd",
+									"mode_internal_normal",
+									null
+								],
+								"sequence": "",
+								"xpos": 12
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 32,
+					"type": "text"
+				},
+				{
+					"buffer": 27,
+					"file": "Lib/general_funcs.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5431,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5273,
+								5273
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 2
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 4333.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 35,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 11,
+			"sheets":
+			[
+				{
+					"buffer": 20,
+					"file": "json-test.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1264,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1019,
+								1019
+							]
+						],
+						"settings":
+						{
+							"highlight_line": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"native",
+									[
+										"sequence",
+										{
+											"commands":
+											[
+												[
+													"_vi_big_i",
+													{
+														"count": 1,
+														"mode": "mode_internal_normal"
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "\n\n"
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"reindent",
+													null
+												],
+												[
+													"insert_snippet",
+													{
+														"contents": "\"$0\""
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "FA"
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"insert",
+													{
+														"characters": "t"
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"insert",
+													{
+														"characters": "models"
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " :"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"insert",
+													{
+														"characters": ":"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"insert_snippet",
+													{
+														"contents": "[$0]"
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": ","
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "m,"
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "words",
+														"forward": false
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "	"
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "\n"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "lines",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "\nob."
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"insert",
+													{
+														"characters": "j.companies."
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "types.famili"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "es.insert"
+													}
+												],
+												[
+													"insert_snippet",
+													{
+														"contents": "($0)"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "\n"
+													}
+												],
+												[
+													"run_macro_file",
+													{
+														"file": "res://Packages/Default/Add Line Before.sublime-macro"
+													}
+												],
+												[
+													"insert_snippet",
+													{
+														"contents": "($0)"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "JOIN"
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"insert",
+													{
+														"characters": "\n"
+													}
+												],
+												[
+													"run_macro_file",
+													{
+														"file": "res://Packages/Default/Add Line Before.sublime-macro"
+													}
+												],
+												[
+													"wrap_block",
+													{
+														"begin": "{",
+														"end": "}"
+													}
+												],
+												[
+													"insert_snippet",
+													{
+														"contents": "\"$0\""
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "NAME"
+													}
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"left_delete",
+													null
+												],
+												[
+													"insert",
+													{
+														"characters": "name"
+													}
+												]
+											]
+										}
+									],
+									"mode_insert",
+									null
+								],
+								"sequence": "",
+								"xpos": 10
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 583.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 33,
+					"type": "text"
+				},
+				{
+					"buffer": 28,
+					"file": "/C/Users/mcruz/Downloads/Jit-2.0.1/Jit/Examples/Spacetree/example1.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 29511,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								26756,
+								26756
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"_vintageous_gluing_sequence": false,
+								"_vintageous_non_interactive": false,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 17
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 15392.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 30,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "Lib/Promtolib.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 73706,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5640,
+								5640
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"sftp_duplicate_views": 0,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"native",
+									[
+										"sequence",
+										{
+											"commands":
+											[
+												[
+													"move",
+													{
+														"by": "word_ends",
+														"extend": true,
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "word_ends",
+														"extend": true,
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "word_ends",
+														"extend": true,
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": false
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": " "
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"move",
+													{
+														"by": "characters",
+														"forward": true
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "\n"
+													}
+												]
+											]
+										}
+									],
+									null,
+									null
+								],
+								"sequence": "",
+								"xpos": 12
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 5282.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 29,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 24179,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										190,
+										205
+									],
+									[
+										379,
+										394
+									],
+									[
+										515,
+										530
+									],
+									[
+										757,
+										772
+									],
+									[
+										986,
+										1001
+									],
+									[
+										1258,
+										1273
+									],
+									[
+										1495,
+										1510
+									],
+									[
+										1805,
+										1820
+									],
+									[
+										2144,
+										2159
+									],
+									[
+										2452,
+										2463
+									],
+									[
+										2747,
+										2762
+									],
+									[
+										3050,
+										3061
+									],
+									[
+										3252,
+										3263
+									],
+									[
+										3397,
+										3408
+									],
+									[
+										3520,
+										3531
+									],
+									[
+										3671,
+										3682
+									],
+									[
+										3794,
+										3805
+									],
+									[
+										4050,
+										4065
+									],
+									[
+										4249,
+										4264
+									],
+									[
+										4465,
+										4480
+									],
+									[
+										4633,
+										4648
+									],
+									[
+										4769,
+										4784
+									],
+									[
+										5011,
+										5026
+									],
+									[
+										5250,
+										5265
+									],
+									[
+										5457,
+										5472
+									],
+									[
+										5694,
+										5709
+									],
+									[
+										6004,
+										6019
+									],
+									[
+										6343,
+										6358
+									],
+									[
+										6667,
+										6683
+									],
+									[
+										6762,
+										6778
+									],
+									[
+										6997,
+										7013
+									],
+									[
+										7023,
+										7039
+									],
+									[
+										7437,
+										7452
+									],
+									[
+										7618,
+										7633
+									],
+									[
+										7834,
+										7849
+									],
+									[
+										8002,
+										8017
+									],
+									[
+										8138,
+										8153
+									],
+									[
+										8380,
+										8395
+									],
+									[
+										8619,
+										8634
+									],
+									[
+										8826,
+										8841
+									],
+									[
+										9063,
+										9078
+									],
+									[
+										9373,
+										9388
+									],
+									[
+										9712,
+										9727
+									],
+									[
+										10075,
+										10091
+									],
+									[
+										10228,
+										10244
+									],
+									[
+										10322,
+										10338
+									],
+									[
+										10637,
+										10652
+									],
+									[
+										10818,
+										10833
+									],
+									[
+										11034,
+										11049
+									],
+									[
+										11202,
+										11217
+									],
+									[
+										11338,
+										11353
+									],
+									[
+										11591,
+										11606
+									],
+									[
+										11813,
+										11828
+									],
+									[
+										12020,
+										12035
+									],
+									[
+										12257,
+										12272
+									],
+									[
+										12567,
+										12582
+									],
+									[
+										12906,
+										12921
+									],
+									[
+										13386,
+										13396
+									],
+									[
+										13688,
+										13698
+									],
+									[
+										13951,
+										13966
+									],
+									[
+										14132,
+										14147
+									],
+									[
+										14348,
+										14363
+									],
+									[
+										14516,
+										14531
+									],
+									[
+										14652,
+										14667
+									],
+									[
+										14905,
+										14920
+									],
+									[
+										15127,
+										15142
+									],
+									[
+										15344,
+										15359
+									],
+									[
+										15569,
+										15584
+									],
+									[
+										15879,
+										15894
+									],
+									[
+										16218,
+										16233
+									],
+									[
+										16588,
+										16603
+									],
+									[
+										16769,
+										16784
+									],
+									[
+										16985,
+										17000
+									],
+									[
+										17153,
+										17168
+									],
+									[
+										17289,
+										17304
+									],
+									[
+										17542,
+										17557
+									],
+									[
+										17764,
+										17779
+									],
+									[
+										17981,
+										17996
+									],
+									[
+										18216,
+										18231
+									],
+									[
+										18495,
+										18510
+									],
+									[
+										18834,
+										18849
+									],
+									[
+										19204,
+										19219
+									],
+									[
+										19385,
+										19400
+									],
+									[
+										19601,
+										19616
+									],
+									[
+										19769,
+										19784
+									],
+									[
+										19905,
+										19920
+									],
+									[
+										20158,
+										20173
+									],
+									[
+										20380,
+										20395
+									],
+									[
+										20597,
+										20612
+									],
+									[
+										20832,
+										20847
+									],
+									[
+										21121,
+										21136
+									],
+									[
+										21427,
+										21442
+									],
+									[
+										21797,
+										21812
+									],
+									[
+										21978,
+										21993
+									],
+									[
+										22194,
+										22209
+									],
+									[
+										22362,
+										22377
+									],
+									[
+										22498,
+										22513
+									],
+									[
+										22751,
+										22766
+									],
+									[
+										22973,
+										22988
+									],
+									[
+										23190,
+										23205
+									],
+									[
+										23425,
+										23440
+									],
+									[
+										23714,
+										23729
+									],
+									[
+										24030,
+										24045
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								23623,
+								23623
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"incomplete_sync": null,
+							"line_numbers": false,
+							"output_tag": 14,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"vintage":
+							{
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 30
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 15770.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 0,
+					"file": "Promto(Front-End)(Native).ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 90578,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19488,
+								19488
+							]
+						],
+						"settings":
+						{
+							"highlight_line": false,
+							"incomplete_sync": null,
+							"sftp_duplicate_views": 0,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"native",
+									[
+										"_enter_normal_mode",
+										{
+											"mode": "mode_insert"
+										}
+									],
+									"mode_insert",
+									null
+								],
+								"sequence": "",
+								"xpos": 7
+							}
+						},
+						"translation.x": 87.0,
+						"translation.y": 13239.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "Lib/promto_search.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 752,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								441,
+								441
+							]
+						],
+						"settings":
+						{
+							"auto_name": "class PromtoSearch{",
+							"incomplete_sync": null,
+							"sftp_duplicate_views": 0,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"vi",
+									"d",
+									"mode_normal",
+									[
+										2,
+										2,
+										"mode_visual"
+									]
+								],
+								"sequence": "",
+								"xpos": 2
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 30,
+					"file": "Lib/promto_search_lv.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1590,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1416,
+								1416
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"incomplete_sync": null,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"native",
+									[
+										"sequence",
+										{
+											"commands":
+											[
+												[
+													"_vi_c",
+													{
+														"count": 1,
+														"mode": "mode_internal_normal",
+														"motion":
+														{
+															"motion": "_vi_w",
+															"motion_args":
+															{
+																"count": 1,
+																"mode": "mode_internal_normal"
+															}
+														},
+														"register": "\""
+													}
+												],
+												[
+													"insert",
+													{
+														"characters": "list"
+													}
+												]
+											]
+										}
+									],
+									"mode_insert",
+									null
+								],
+								"sequence": "",
+								"xpos": 42
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 739.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 31,
+					"file": "test1.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 251,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								228,
+								228
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 32,
+					"file": "java/ConvertImage.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1779,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1396,
+								1396
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 469.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 26,
+					"file": "Lib/promto_json_helper.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1448,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1249,
+								1249
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"vi",
+									"dd",
+									"mode_internal_normal",
+									null
+								],
+								"sequence": "",
+								"xpos": 12
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 818.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 39,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "Lib/promto_json.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1779,
+								1779
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"repeat_data":
+								[
+									"vi",
+									"c",
+									"mode_insert",
+									[
+										0,
+										5,
+										"mode_visual"
+									]
+								],
+								"sequence": "",
+								"xpos": 45
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 747.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 34,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "Lib/promto_sql_mariaDB.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23542,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12906,
+								12906
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 39
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 10507.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 33,
+					"file": "/C/Users/mcruz/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 132,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								129,
+								129
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 25,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.489019033675,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.exec":
+	{
+		"height": 130.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"project": "promto.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"sublimeproject",
+				"promto.sublime-project"
+			],
+			[
+				"promto_jso",
+				"Lib\\promto_json.ahk"
+			],
+			[
+				"",
+				"Lib\\promto_sql_mariaDB.ahk"
+			],
+			[
+				"cert_view",
+				"views\\cert_view.ahk"
+			],
+			[
+				"selecionarcampo_externo",
+				"views\\selecionar_campo_externo_view.ahk"
+			],
+			[
+				"inserir_imagem_db_view",
+				"views\\shared\\inserir_imagem_db_view.ahk"
+			],
+			[
+				"selecionar",
+				"views\\selecionar_campo_externo_view.ahk"
+			],
+			[
+				"dbex",
+				"views\\db_ex_view.ahk"
+			],
+			[
+				"linkar_modelos_view",
+				"views\\linkar_modelos_view.ahk"
+			],
+			[
+				"dbexview",
+				"views\\db_ex_view.ahk"
+			],
+			[
+				"estruturascontroller",
+				"controllers\\estruturas_controller.ahk"
+			],
+			[
+				"estruturaview",
+				"views\\estruturas_view.ahk"
+			],
+			[
+				"native",
+				"Promto(Front-End)(Native).ahk"
+			],
+			[
+				"estruturacontroller",
+				"controllers\\estruturas_controller.ahk"
+			],
+			[
+				"mariadb",
+				"Lib\\promto_sql_mariaDB.ahk"
+			],
+			[
+				"db_ex_view",
+				"views\\db_ex_view.ahk"
+			],
+			[
+				"inserirdbexview",
+				"views\\inserir_db_ex_view.ahk"
+			],
+			[
+				"promtosearchlv",
+				"Lib\\promto_search_lv.ahk"
+			],
+			[
+				"promtolib",
+				"Lib\\Promtolib.ahk"
+			],
+			[
+				"db_ex_controller",
+				"controllers\\db_ex_controller.ahk"
+			],
+			[
+				"test1",
+				"test1.ahk"
+			],
+			[
+				"promto_search_lv",
+				"Lib\\promto_search_lv.ahk"
+			],
+			[
+				"promtosearch",
+				"Lib\\promto_search.ahk"
+			],
+			[
+				"inserir_valores_controller",
+				"controllers\\inserir_valores_controller.ahk"
+			],
+			[
+				"inserir_valores_view",
+				"views\\inserir_valores_view.ahk"
+			],
+			[
+				"promtosearclv",
+				"Lib\\promto_search_lv.ahk"
+			],
+			[
+				"promtolib.ahk",
+				"Lib\\Promtolib.ahk"
+			],
+			[
+				"java",
+				"java\\ConvertImage.java"
+			],
+			[
+				"romtolib",
+				"doc\\PromtoLib.doc"
+			],
+			[
+				"marid",
+				"Lib\\promto_sql_mariaDB.ahk"
+			],
+			[
+				"index.ht",
+				"index.html"
+			],
+			[
+				"configdbexview",
+				"views\\config_db_ex_view.ahk"
+			],
+			[
+				".html",
+				"index.html"
+			],
+			[
+				"jsonhelper",
+				"Lib\\promto_json_helper.ahk"
+			],
+			[
+				"jsontest",
+				"json-test.ahk"
+			],
+			[
+				"promtojson",
+				"Lib\\promto_json.ahk"
+			],
+			[
+				"general",
+				"Lib\\general_funcs.ahk"
+			],
+			[
+				"json",
+				"json-test.ahk"
+			],
+			[
+				"promto_json",
+				"Lib\\promto_json.ahk"
+			],
+			[
+				"mariadbsubfamilia",
+				"Lib\\promto_sql_mariaDB_subfamilia.ahk"
+			],
+			[
+				"mariadbusbfamilia",
+				"Lib\\promto_sql_mariaDB_subfamilia.ahk"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\promto.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+		"_vintageous_last_char_search_command": "vi_big_f",
+		"_vintageous_last_character_search": "J",
+		"_vintageous_reset_during_init": true,
+		"vintage":
+		{
+			"_cmdline_cd": "C:\\Users\\mcruz\\Downloads\\Jit-2.0.1\\Jit\\Examples\\Spacetree"
+		}
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": false,
+	"side_bar_visible": false,
+	"side_bar_width": 217.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

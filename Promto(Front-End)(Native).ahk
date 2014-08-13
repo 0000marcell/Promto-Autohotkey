@@ -244,17 +244,14 @@ Gui, Add, Button,   x865 y+15 w80 h20 gverify_tot, Verificar
 Gui, Add, Groupbox, x1020 ym w150 h90, Maccomevap
 Gui, Add, Picture, xp+5 yp+15 vconsistency_picture_mac, % "img\gray_glossy_ball.png"
 Gui, Add, Button, x1025 y+15 w80 h20 gverify_mac, Verificar
-
-/*
-	Menu de backup
-*/
 Menu, update_menu,   Add, Atualizar, make_update
 Menu, backup_menu,   Add, Fazer Back up, make_back_up
 Menu, users_menu,    Add, Usuarios, manager_users
 Menu, list_menu,     Add, Listas, list_options
 Menu, xml_menu,      Add, XML, xml
-Menu, json_menu,      Add, JSON, json
+Menu, json_menu,     Add, JSON, json
 Menu, imagem_menu,   Add, Redimensionar, resize_image_folder 
+Menu, feed_menu,   	 Add, feed, visualize_feed 
 Menu, backup_menu,   Add, Carregar Back up, load_back_up
 Menu, main_menu_bar, Add, &Atualizar, :update_menu
 Menu, main_menu_bar, Add, &Back up, :backup_menu
@@ -262,6 +259,7 @@ Menu, main_menu_bar, Add, &Usuarios, :users_menu
 Menu, main_menu_bar, Add, &XML, :xml_menu
 Menu, main_menu_bar, Add, &JSON , :json_menu
 Menu, main_menu_bar, Add, &Imagem, :imagem_menu
+Menu, main_menu_bar, Add, &Feed, :feed_menu 
 Menu, main_menu_bar, Color, White
 Gui, Menu, main_menu_bar
 Gui, Show,, %FamiliaName%

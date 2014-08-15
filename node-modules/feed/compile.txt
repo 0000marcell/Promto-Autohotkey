@@ -1,0 +1,1 @@
+"C:\Tools\node-webkit\nw.exe" --enable-logging "C:\Users\mcruz\Documents\Github\feed\public"

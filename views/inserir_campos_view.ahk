@@ -195,13 +195,9 @@ inserir_campos_view(info){
 
 	excluir_valores_campo_button:
 	Gui, Submit, Nohide
-	/*
-		Pega o codigo selecionado na listview
-		passa a tabela de campo esp e o codigo para o excluir
-	*/
 	selected_item := GetSelected("inserir_campos_view","valores_de_campo_lv")
 	tabela_campos_especificos := get_tabela_campo_esp(campos_combobox, s_info)
-	db.Modelo.excluir_campo_esp(selected_item, tabela_campos_especificos)
+	db.Modelo.excluir_campo_esp(selected_item, tabela_campos_especificos, s_info)
 	db.load_lv("inserir_campos_view", "valores_de_campo_lv", tabela_campos_especificos)
 	MsgBox, 64, Sucesso, % "O valor foi excluido!" 
 	return

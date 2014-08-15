@@ -12,6 +12,7 @@ class Familia{
 		if(item_hash.name = "")
 			throw { what: "O item_hash voltou em branco do familia ", file: A_LineFile, line: A_LineNumber }		
 		this.insert_family()
+		db.Log.insert_CRUD(info, "Criado", "A familia " this.name " e mascara " this.mask " foi criada!")
 	}
 
 	check_data_consistency(){
@@ -85,6 +86,7 @@ class Familia{
 		MsgBox, % "back from recursive"
 		this.family_table := db.get_reference("Familia", this.info.empresa[2] this.info.tipo[1])
 		this.delete_family()
+		db.Log.insert_CRUD(info, "Removido", "A familia " this.name " e mascara " this.mask " foi removida!")
 	}
 
 	check_subfamily(){

@@ -309,6 +309,27 @@ class PromtoSQL{
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de status `n" ExceptionDetail(e)
 		
 
+		/*
+			CRUD - log
+		*/
+		try{
+			mariaDB.Query(
+				(JOIN
+					"	CREATE TABLE IF NOT EXISTS CRUD "
+					"(Id MEDIUMINT NOT NULL AUTO_INCREMENT,"
+					" Usuario VARCHAR(250), "
+					" Tipo VARCHAR(250), "
+					" Item VARCHAR(250), "
+					" Data VARCHAR(250), "
+					" Hora VARCHAR(250), "
+					" Mensagem VARCHAR(250), "
+					" Prodkey VARCHAR(250), "
+					" PRIMARY KEY (id))"
+				))
+		}catch e 
+			MsgBox, 16, Erro, % "Um erro ocorreu ao tentar criar a tabela de CRUD `n" ExceptionDetail(e)
+		
+
 	}
 
 	/*
@@ -337,7 +358,6 @@ class PromtoSQL{
 
 	load_codigos_combobox(tabela){
 		Global mariaDB
-
 		window := "M"
 		cbcontrol := "combocodes"
 		list := ""

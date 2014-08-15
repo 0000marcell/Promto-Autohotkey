@@ -3,7 +3,7 @@ class Modelo{
 	/*
 		Incluir um novo modelo
 	*/
-	incluir(model_name = "", model_mask = "", prefixo = "", tabela1 = ""){
+	incluir(model_name = "", model_mask = "", prefixo = "", tabela1 = "", info = ""){
 		Global db, mariaDB, ETF_hashmask		
 		this.name := model_name, this.mask := model_mask
 		this.prefix := prefixo, this.tabela1 := tabela1
@@ -14,6 +14,7 @@ class Modelo{
 		this.name := item_hash.name, this.mask := item_hash.mask 
 		this.insert_model()
 		this.insert_model_tables(item_hash.name, item_hash.mask, prefixo)
+		db.Log.insert_CRUD(info, "Criado", "O Modelo " this.name " e mascara " this.mask " foi criado!")
 	}
 
 	insert_model_tables(){
@@ -98,6 +99,7 @@ class Modelo{
 		this.info := info
 		this.model_table := db.get_reference("Modelo", this.get_model_tabela1(this.info))
 		this.delete_model()
+		db.Log.insert_CRUD(info, "Removido", "O modelo " this.name " e mascara " this.mask " foi removido!")	
 	}
 
 	delete_model(){
@@ -150,10 +152,8 @@ class Modelo{
 		return return_value
 	}
 
-	incluir_ordem(items, tabela_ordem, codigos_omitidos = ""){
-		Global mariaDB
-
-		
+	incluir_ordem(items, tabela_ordem, codigos_omitidos = "", info = ""){
+		Global mariaDB, db
 		try{
 			mariaDB.Query(
 				(JOIN
@@ -161,11 +161,6 @@ class Modelo{
 				))
 		}catch e 
 			MsgBox,16,Erro, % "Ocorreu um erro ao apagar todos os items da tabela de ordem `n" ExceptionDetail(e)
-		
-		/* 
-			Incluir o campo de omicao
-		*/
-
 		try{
 			mariaDB.Query(
 				(JOIN
@@ -176,30 +171,24 @@ class Modelo{
 		
 		for each, item in items{
 			record := {}
-
 			record.Campos := item
-
 			if(MatHasValue(codigos_omitidos, item)){
-				
 				record.Omitir := 1	
 			}else{
-				
 				record.Omitir := 0
 			}
-			
 			mariaDB.Insert(record, tabela_ordem)
 		}
+		db.Log.insert_CRUD(info, "Alterado", "A ordem foi alterada!")
 	}
 
 	/*
 		Insere um nome de campo
 	*/
 	incluir_campo(campo_nome, info){
-		Global mariaDB
-
+		Global mariaDB, db
 		; Coloca o campo no formato necessario
 		campo_nome := this.format_field(campo_nome)
-
 		if(campo_nome = ""){
 			MsgBox, 16, Erro, %  "Existe um erro na formatacao do campo e nao sera incluido !"
 			return
@@ -208,19 +197,12 @@ class Modelo{
 			Pega a tabela de campos relacionada 
 			com o modelo
 		*/
-		;MsgBox, % "modelo nome: " info.modelo[1] "`n modelo mascara: " info.modelo[2]
 		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1] 
-		
-
 		tabela_campo := this.get_tabela_campo_referencia(tabela1)
-
-		;MsgBox, % "tabela1 " tabela1 "`n tabela_campo " tabela_campo
-
 		if(this.campo_existe(campo_nome, tabela_campo)){
 			MsgBox,16, Erro, % "O campo a ser inserido ja existia!" 
 			return
 		}
-
 		/*
 			-Insere o nome do novo campo na tabela de 
 			campos
@@ -260,6 +242,7 @@ class Modelo{
 		mariaDB.Insert(record, "reltable")	
 
 		MsgBox,64, Sucesso, % "O campo foi inserido!"
+		db.Log.insert_CRUD(info, "Criado", "O Campo " campo_nome " foi criado!")
 	}
 
 	/*
@@ -312,11 +295,9 @@ class Modelo{
 		}
 
 		if(bloq_table = ""){
-			MsgBox,16, Erro, % "O a table de bloqueios estava em branco!"
+			MsgBox,16, Erro, % "A tabela de bloqueios estava em branco!"
 			return
 		}
-
-		;MsgBox, % "tabela de items bloqueados " bloq_table
 		record := {}
 		record.Codigos := value
 		mariaDB.Insert(record, bloq_table)
@@ -374,7 +355,7 @@ class Modelo{
 		Insere um valor de campo especifico
 	*/
 	incluir_campo_esp(nome_campo, valores, info){
-		Global mariaDB
+		Global mariaDB, db
 		
 		tabela_campos_especificos := get_tabela_campo_esp(nome_campo, info)
 		
@@ -390,10 +371,11 @@ class Modelo{
 		record.DI := Trim(valores.di)
 
 		mariaDB.Insert(record, tabela_campos_especificos)
+		db.Log.insert_CRUD(info, "Criado", "O item " valores.codigo " descricao resumida " valores.dr " foi incluido no campo " nome_campo)
 	}
 
-	excluir_campo_esp(codigo, tabela){
-		Global mariaDB
+	excluir_campo_esp(codigo, tabela, info = ""){
+		Global mariaDB, db
 
 		if(codigo = "" || tabela = ""){
 			MsgBox,16, Erro, % "O codigo selecionado ou a tabela estavam vaziios!" 
@@ -408,10 +390,11 @@ class Modelo{
 				))	
 			}catch e 
 				MsgBox, 16, Erro, % " Erro ao tentar apagar o campo especifico " ExceptionDetail(e)
+		db.Log.insert_CRUD(info, "Removido", "O item " codigo " foi removido da tabela de campos " tabela)	
 	}
 
 	alterar_valores_campo(campo, valores, info, old_cod){
-		Global mariaDB
+		Global mariaDB, db
 
 		tabela := get_tabela_campo_esp(campo, info)
 		sql :=
@@ -425,10 +408,11 @@ class Modelo{
 				mariaDB.Query(sql)
 			}catch e 
 				MsgBox, 16, Erro, % " Erro ao tentar alterar os valores " ExceptionDetail(e)
+		db.Log.insert_CRUD(info, "Alterado", "O item " old_cod " foi alterado para codigo: " valores.codigo " descricao completa: " valores.DC " descricao resumida " valores.DR " descricao ingles " valores.DI)			
 	}
 
 	excluir_campo(campo_nome, info){
-		Global mariaDB
+		Global mariaDB, db
 
 		;MsgBox, % "campo nome " campo_nome " info empresa " info.empresa[1]
 		
@@ -478,6 +462,7 @@ class Modelo{
 			tabela relacionada com ela. 
 		*/
 		this.delete_if_no_related(tabela_campo_esp, tipo)
+		db.Log.insert_CRUD(info, "Removido", "O campo " campo_nome " foi removido!")
 	}
 
 	/*
@@ -518,38 +503,24 @@ class Modelo{
 		Altera a descricao geral de determinado modelo
 	*/
 	descricao_geral(descricao, descricao_ingles, info){
-		Global mariaDB
-
+		Global mariaDB, db
 		descricao := Trim(descricao), descricao_ingles := Trim(descricao_ingles) 
-		
 		if(info.modelo[2] = ""){
 			MsgBox,16,Erro, % "Selecione um modelo antes de continuar!" 
 			return
 		}
-		
-
 		record := {}
 		record.descricao := descricao "|" descricao_ingles
 		table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "Desc"
-		
-		/*
-			Deleta a descricao anterior
-		*/
 		mariaDB.Query(
 		(JOIN 
 			" DELETE FROM " table " LIMIT 1"	
 		))	
-
-		/*
-			Insere a nova descricao
-		*/
 		mariaDB.Insert( record, table)
-		MsgBox,64,Sucesso, % "A descricao geral foi alterada!" 
+		MsgBox, 64, Sucesso, % "A descricao geral foi alterada!" 
+		db.Log.insert_CRUD(info, "Alterado", "A descricao geral foi alterada")
 	}
 
-	/*
-		Insere os valores de prefixo
-	*/
 	inserir_valores_prefixo(tabela_prefixo, info){
 		Global mariaDB
 
@@ -715,8 +686,8 @@ class Modelo{
 	/*
 		Linka uma tabela especifica
 	*/
-	link_specific_field(values, tabela1){
-		Global mariaDB
+	link_specific_field(values, tabela1, info = ""){
+		Global mariaDB, db
    
 		if(this.exist_relation(values.tipo, tabela1)){
 			this.delete_relation(values.tipo, tabela1)
@@ -726,6 +697,7 @@ class Modelo{
 		record.tabela1 := tabela1
 		record.tabela2 := values.tabela2
 		mariaDB.Insert(record, "reltable")
+		db.Log.insert_CRUD(info, "Linkagem", "A tabela " tabela1 " foi linkada a tabela " values.tabela2)
 	}
 
 	link_models_table(values, tabela1, info){
@@ -745,6 +717,7 @@ class Modelo{
 		*/
 		this.create_models(models_array, info) 
 		mariaDB.Insert(record, "reltable")	
+		db.Log.insert_CRUD(info, "Linkagem", "A tabela de modelos " tabela1 " foi linkada a tabela " values.tabela2)
 	}
 
 	/*
@@ -836,7 +809,7 @@ class Modelo{
 		Redefine de uma tabela para o seu valor padrao
 	*/
 	reset_table_relation(info, native_table, field_name){
-		Global mariaDB
+		Global mariaDB, db
 
 		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1]
 		try{
@@ -855,5 +828,6 @@ class Modelo{
 		mariaDB.Insert(record, "reltable")
 
 		MsgBox, 64, Sucesso, % "A linkagem da tabela retornou para o seu valor padrao!"
+		db.Log.insert_CRUD(info, "Removido", "A tabela " tabela1 " foi linkada a tabela " values.tabela2)
 	}
 }

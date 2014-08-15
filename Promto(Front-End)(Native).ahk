@@ -106,6 +106,8 @@ Return
 
 	loading_main:
 	Gui, Submit, Nohide
+	;if(!db.Usuario.log_in_user(user_name, user_password))
+		;return 
 	USER_NAME := user_name
 	Gui, initialize:default
 	GuiControl, Disable, loading_main,
@@ -130,54 +132,23 @@ manager_users_view()
 return
 
 M:
-/*
-	Gui init	
-*/
 Gui, M:New
 Gui, Font, s%SMALL_FONT%, %FONT%
 Gui, Color, %GLOBAL_COLOR%
-
-/*
-	Logo tipo
-*/
 Gui, Add, Picture, xm ym,img\promtologo.png
-
-;/*
-;	Familias
-;*/
-;Gui, Add, Groupbox, xm y+10 w230 h40,Pesquisa
-;Gui, Add, Edit, xp+5 yp+15 w220,
-
-/*
-	Empresas/Tipos/Familias
-*/
 Gui, Add, Groupbox, xp-5 y+10 w290 h450, Empresas/Tipos/Familias
 Gui, Add, TreeView, xp+5 yp+15 w280 h430 vmain_tv gmain_tv
 load_main_tv()
-
-/*
-	Opcoes
-*/
 Gui, Add, Groupbox, xm y+10 w230 h60, Opcoes
 Gui, Add, Button, xp+25 yp+15 w100 h30 ginsert_empresa, Criar Empresa 
 Gui, Add, Button, x+5 w40 h30 hwndhBtn grecarregar_main_tv
-
-;Gui, Add, Button, x+t w40 h30 gHTML, HTML
 ILButton(hBtn, "promtoshell.dll:" 5, 32, 32, 0)
-
-/*
-	Modelos 
-*/
 Gui, Add, Groupbox, xm+300 ym w220 h290, Modelos 
 Gui, Add, Listview, xp+5 yp+15 w200 h270 section  vMODlv gMODlv altsubmit %lv_grid%, Modelo|Mascara
 Gui, Add, Groupbox, xm+300 y+10 w220 h60, Numero de items:
 Gui, Font, s15
 Gui, Add,	Text, xp+75 yp+15 w100 vnumberofitems cblue,
 Gui, Font, s8
-
-/*
-	Opcoes
-*/
 Gui, Add, Groupbox, xm+300 y+20 w220 h300, Opcoes 
 Gui, Add, Button, hwndhMod xp+5 yp+15 w100 h30 gMAM, Modelos
 glabels := ["MAB", "MAC", "ordemprefix", "MAOC", "MAODC", "MAODR", "MAODI"]
@@ -191,56 +162,26 @@ for,each,value in ["Gerar Estruturas", "Linkar", "Add db Externo", "Estrutura", 
 	glabel := glabels[A_Index]
 	Gui, Add, Button, wp hp g%glabel%,% "&" value
 }
-
-/*
-	Status
-*/
 Gui, Add, Groupbox, x540 ym w315 h90, Status
 Gui, Add, Picture, xp+5 yp+15 vstatus_picture, % "img\gray_glossy_ball.png"
 Gui, Add, Text, x+5 w220 h60 vstatus_info,
 Gui, Add, Button, x540 y+15 w80 h20 gchange_status , Alterar status
-
-/*
-	Info
-*/
 Gui, Add, Picture, xp y+15 w268 h156 vptcode gfotoindividual, % "img\promtologo.png"
 Gui, Add, Listview, x+5 yp w540 h300 vall_mod_lv gall_mod_lv altsubmit %lv_grid%,
 _loading := 1
-
-/*
-	Certificacao
-*/
 Gui, Add, Groupbox, x540 y+20 w815 h60, Certificacao:
 Gui, Font, cgreen s20
 Gui, Add, Text, xp+5 yp+15 w400 h30 vcert_status, 
 Gui, Font, cblack s8
-
-/*
-	Ultimas atualizacoes
-*/
 Gui, Add, Groupbox, x540 y+20 w815 h150, Ultimas atualizacoes:
 Gui, Font, cgreen
 Gui, Add, Text, xp+5 yp+15 w365 h80 vmod_info,
 Gui, Font, cblue 
 Gui, Add, Text, x+2 w300 h80 vmsg_info,
 Gui, Font, cblack
-
-;/*
-;	Formacao codigo
-;*/
-;Gui, Add, Groupbox, x480 y+10 w815 h200, Formacao do codigo:
-;Gui, Add, Picture, xp+5 yp+50 w790 h190 vfmcode,
-
-/*
-	Consistencia DBEX Totallight
-*/
 Gui, Add, Groupbox, x860 ym w150 h90, Totallight
 Gui, Add, Picture,  xp+5 yp+15 vconsistency_picture_tot, % "img\gray_glossy_ball.png"
 Gui, Add, Button,   x865 y+15 w80 h20 gverify_tot, Verificar
-
-/*
-	Consistencia DBEX Maccomevap
-*/
 Gui, Add, Groupbox, x1020 ym w150 h90, Maccomevap
 Gui, Add, Picture, xp+5 yp+15 vconsistency_picture_mac, % "img\gray_glossy_ball.png"
 Gui, Add, Button, x1025 y+15 w80 h20 gverify_mac, Verificar

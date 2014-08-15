@@ -11,6 +11,7 @@ class Empresa{
 		this.exists_in_reltable()
 		db.create_table(this.mask "Aba ", "(Abas VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))")
 		db.insert_record({tipo: "Aba", tabela1: this.name, tabela2: this.mask "Aba"}, "reltable")
+		db.Log.insert_CRUD("", "Criado", "A empresa " this.name " e mascara " this.mask " foi criada!")
 		MsgBox, 64, Empresa Criada, % " valor inserido"
 		item_hash := {name: this.name, mask: this.mask}
 		return item_hash
@@ -50,6 +51,7 @@ class Empresa{
 			db.remove_subitems("empresa", this.mask, this.info)
 		}
 		this.delete_company()
+		db.Log.insert_CRUD("", "Removido", "A empresa " this.name " e mascara " this.mask " foi removida!")
 	}	
 
 	delete_company(){

@@ -172,12 +172,11 @@ inserir_modelo_view(model_table){
 		Gui, inserir_modelo_view:destroy
 		return
 	}
-
 	/*
 		Insere os valores na tabela 
 	*/
 	try{
-		db.Modelo.incluir(input_name, input_mascara, prefixo, tabela1)
+		db.Modelo.incluir(input_name, input_mascara, prefixo, tabela1, v_info)
 	}catch e{
 		MsgBox, 16, Erro, % " Erro ao inserir modelo `n " e.what " no arquivo " e.file " na linha " e.line
 	}
@@ -241,7 +240,7 @@ inserir_modelo_view(model_table){
     	continue
     items_inseridos[nome] := codigo
     try{
-    	db.Modelo.incluir(nome, codigo, prefixo_local, tabela1)
+    	db.Modelo.incluir(nome, codigo, prefixo_local, tabela1, info)
     }catch e{
     	MsgBox, 16, Erro, % " Erro ao inserir modelo `n " e.what " no arquivo " e.file " na linha " e.line
     }

@@ -13,6 +13,7 @@ class Subfamilia{
 		this.insert_subfamily()
 		db.create_table(this.prefix this.mask "Modelo ", "(Modelos VARCHAR(250), Mascara VARCHAR(250), PRIMARY KEY (Mascara))")
 		db.insert_record({tipo: "Modelo", tabela1: this.prefix this.name, tabela2: this.prefix this.mask "Modelo"}, "reltable")
+		db.Log.insert_CRUD(info, "Criado", "A subfamilia " this.name " e mascara " this.mask " foi criada!")
 	}
 
 	insert_subfamily(){
@@ -54,6 +55,7 @@ class Subfamilia{
 		MsgBox, % "back from recursive subfamily "
 		this.subfam_table := db.get_reference("Subfamilia", this.info.empresa[2] this.info.tipo[2] this.info.familia[1])
 		this.delete_subfam()
+		db.Log.insert_CRUD(info, "Removido", "A subfamilia " this.name " e mascara " this.mask " foi removida!")
 	}
 
 	delete_subfam(){

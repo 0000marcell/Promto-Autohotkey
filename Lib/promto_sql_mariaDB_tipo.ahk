@@ -14,6 +14,8 @@ class Tipo{
 		this.insert_type()
 		db.create_table(this.prefix this.mask "Familia ", "(Familias VARCHAR(250), Mascara VARCHAR(250), Subfamilia VARCHAR(250), PRIMARY KEY (Mascara))")
 		db.insert_record({tipo: "Familia", tabela1: this.prefix this.name, tabela2: this.prefix this.mask "Familia"}, "reltable")
+		info := {}, info.empresa[1] := empresa_nome
+		db.Log.insert_CRUD(info, "Criado", "O tipo " this.name " e mascara " this.mask " foi criado!")
 	}
 
 	insert_type(){
@@ -43,6 +45,7 @@ class Tipo{
 		}
 		this.type_table := db.get_reference("Aba", this.info.empresa[1])
 		this.delete_type()
+		db.Log.insert_CRUD(info, "Removido", "O tipo " this.name " e mascara " this.mask " foi removido!")
 	}
 
 	delete_type(){

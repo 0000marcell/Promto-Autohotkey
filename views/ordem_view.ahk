@@ -1,13 +1,13 @@
 ordem_view(tipo, info){
 	Global db, SMALL_FONT, GLOBAL_COLOR, updownv, ordem_lv, ordem_view
-	Static tabela_ordem, s_tipo
+	Static tabela_ordem, s_tipo, s_info
 
 	if(info.modelo[2] = "" or info.modelo[2] = "Mascara"){
 		MsgBox, 16, Erro, % "Selecione um modelo antes de continuar!"
 		return
 	}
 	s_tipo := tipo
-
+	s_info := info
 	/*
 		Gui init
 	*/
@@ -51,10 +51,8 @@ ordem_view(tipo, info){
 	 Gui, ordem_view:default
 	 Gui, listview, ordem_lv
 	 nova_ordem := []
-	 
 	 Loop % LV_GetCount(){
   	LV_GetText(RetrievedText, A_Index, 2)
-
   	nova_ordem.insert(RetrievedText)
 	 }
 	 /* ######## PEGAR OS ITEMS QUE ESTAO MARCADOS 
@@ -65,11 +63,9 @@ ordem_view(tipo, info){
 	 	
 	 	codigos_omitidos := GetCheckedRows("ordem_view", "ordem_lv")	
 	 }else{
-	 	
 	 	codigos_omitidos := ""
 	 }
-	 
-	 db.Modelo.incluir_ordem(nova_ordem, tabela_ordem, codigos_omitidos)
+	 db.Modelo.incluir_ordem(nova_ordem, tabela_ordem, codigos_omitidos, s_info)
 	 MsgBox,64, Sucesso, % "Todos os items foram inseridos com sucesso!"
 	 Gui, ordem_view:destroy 
 	 return

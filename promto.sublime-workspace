@@ -12,11 +12,46 @@
 	"buffers":
 	[
 		{
+			"contents": "#SingleInstance,force\n#NoTrayIcon\nSetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.\n;##################################################\n;#												  											#\n;#			PROMTO(FRONT-END)(NATIVE)			  					#\n;#												  											#\n;##################################################\n\n;##################################################\n;#												  											#\n;#				EMPRESAS						  									#	\n;#												  											#\n;##################################################\n\n/*\n	Parametros de configuracao \n*/\n\n$$ := JSON_load(A_WorkingDir \"\\settings.json\")\njsonString := JSON_to($$) \nsettings := JSON_from(jsonString) \ndb_type := settings.db_type  \ndb_location := settings.db_location \nTAB_COLOR := settings.tab_color \nTAB_TEXT_SIZE := settings.tab_text_size \nSMALL_FONT := settings.small_font \nMEDIUM_FONT := settings.medium_font \nLARGE_FONT := settings.large_font \nBUTTON_SIZE := settings.button_size \nglobal_image_path := settings.image_folder_path \nglobal_cert_path := settings.cert_folder_path\nlv_grid := settings.lv_grid\nMARIADB_PATH := settings.mariaDB_path\nHOST := settings.host\nStringReplace, global_image_path, global_image_path, /,\\, All\nStringReplace, global_cert_path, global_cert_path, /,\\, All\nif(BUTTON_SIZE = \"small\")\n	button_h := 15\nGLOBAL_COLOR := settings.global_color\nBANNER_COLOR := settings.banner_color\nTextOptions := \"x0p y10 s\" settings.banner_text_size \" Center c\" settings.banner_text_color \" r4 Bold\"\nFont := settings.font\n\n/*\n	Iniciando GDI\n*/\nIf !pToken := Gdip_Startup()\n{\n  MsgBox, 48, gdiplus error!, Gdiplus failed to start. Please ensure you have gdiplus on your system\n  ExitApp\n}\n\n/*\n	Conectando no banco\n*/\n\ndb := new PromtoSQL(\n	(JOIN \n		db_type,\n		db_location\n	))\nsearch := new PromtoSearch()\nGLOBAL_TVSTRING := \"\"\nETF_TVSTRING := \"\"\nS_ETF_hashmask := {}\nhashmask:={},field:=[\"Aba\", \"Familia\", \"Subfamilia\", \"Modelo\"]\n_reload_gettable := True\n\nE:\n/*\n	Gui init\n*/\nGui, initialize:New\nGui, Font, s%SMALL_FONT%, %FONT%\nGui, Color, %GLOBAL_COLOR%\nGui, Add, Picture, x30 ym, img\\promtologo.png\n\n/*\n	Nome do usuario\n*/\nGui, Add, Groupbox, xp-20 y+10 w300 h110, Usuario\nGui, Add, Text, xp+5 yp+15, Nome:\nGui, Add, Edit, w280 vuser_name, \nGui, Add, Text, , Senha:\nGui, Add, Edit, w280 vuser_password password,\n;Gui, Add, Button, w150 h20 y+10 gmanager_users, Gerenciar usuarios\n\n/*\n	Localizacao\n*/\nGui, Add, Groupbox, xm y+10 w300 h80 , Localizacao DB\nGui, Add, Edit, xp+25 yp+25 w250 vdb_location_to_save , %db_location%\n\n/*\n	Opcoes\n*/\nGui, Add, Groupbox, xm y+25 w300 h60, Opcoes\nGui, Add, Button, xp+45 yp+20 w100 h30 gloading_main vloading_main Default, Iniciar\nGui, Add, Button, x+5 w100 h30 gedit_config_file vedit_config_file, Editar Configuracao\nGui, Show,,	Inicializacao \nReturn\n\n	edit_config_file:\n	Return\n\n	loading_main:\n	Gui, Submit, Nohide\n	;if(!db.Usuario.log_in_user(user_name, user_password))\n		;return \n	USER_NAME := user_name\n	Gui, initialize:default\n	GuiControl, Disable, loading_main,\n	GuiControl, Disable, edit_config_file\n	Gui, Add, Text, xm y+10, Carregando...\n	Gui, Add, Progress, xm y+5 vprogress  -Smooth 0x8 w300 h18\n	Gui, Show, AutoSize, Carregando...\n	undetermine_progress_window := \"initialize\"\n  SetTimer, undetermine_progress_action, 45\n  load_ETF(db)\n  Gui, initialize:destroy\n  Gosub, M\n	Return \n\n		undetermine_progress_action:\n		Gui, %undetermine_progress_window%:default\n		GuiControl,, progress, 1\n		Return\n\nmanager_users:\nmanager_users_view()\nreturn\n\nM:\nGui, M:New\nGui, Font, s%SMALL_FONT%, %FONT%\nGui, Color, %GLOBAL_COLOR%\nGui, Add, Picture, xm ym,img\\promtologo.png\nGui, Add, Groupbox, xp-5 y+10 w290 h450, Empresas/Tipos/Familias\nGui, Add, TreeView, xp+5 yp+15 w280 h430 vmain_tv gmain_tv\nload_main_tv()\nGui, Add, Groupbox, xm y+10 w230 h60, Opcoes\nGui, Add, Button, xp+25 yp+15 w100 h30 ginsert_empresa, Criar Empresa \nGui, Add, Button, x+5 w40 h30 hwndhBtn grecarregar_main_tv\nILButton(hBtn, \"promtoshell.dll:\" 5, 32, 32, 0)\nGui, Add, Groupbox, xm+300 ym w220 h290, Modelos \nGui, Add, Listview, xp+5 yp+15 w200 h270 section  vMODlv gMODlv altsubmit %lv_grid%, Modelo|Mascara\nGui, Add, Groupbox, xm+300 y+10 w220 h60, Numero de items:\nGui, Font, s15\nGui, Add,	Text, xp+75 yp+15 w100 vnumberofitems cblue,\nGui, Font, s8\nGui, Add, Groupbox, xm+300 y+20 w220 h300, Opcoes \nGui, Add, Button, hwndhMod xp+5 yp+15 w100 h30 gMAM, Modelos\nglabels := [\"MAB\", \"MAC\", \"ordemprefix\", \"MAOC\", \"MAODC\", \"MAODR\", \"MAODI\"]\nfor,each,value in [\"Bloqueados\", \"Campos\", \"Ordem Prefixo\", \"Ordem Codigo\", \"Ordem Desc Completa\", \"Ordem Desc Resumida\", \"Ordem Desc Ingles\"]{\n	glabel := glabels[A_Index]\n	Gui, Add, Button, wp hp g%glabel%,% \"&\" value\n}\nGui, Add, Button, x+5 y380 wp hp ggerarcodigos, Gerar Codigos\nglabels := [\"gerarestruturas\",\"linkarm\",\"dbex\", \"massaestrut\", \"codetable\", \"plotcode\", \"certificados\"]\nfor,each,value in [\"Gerar Estruturas\", \"Linkar\", \"Add db Externo\", \"Estrutura\", \"Lista de Codigos\", \"Imprimir\", \"Certificados\"]{\n	glabel := glabels[A_Index]\n	Gui, Add, Button, wp hp g%glabel%,% \"&\" value\n}\nGui, Add, Groupbox, x540 ym w315 h90, Status\nGui, Add, Picture, xp+5 yp+15 vstatus_picture, % \"img\\gray_glossy_ball.png\"\nGui, Add, Text, x+5 w220 h60 vstatus_info,\nGui, Add, Button, x540 y+15 w80 h20 gchange_status , Alterar status\nGui, Add, Picture, xp y+15 w268 h156 vptcode gfotoindividual, % \"img\\promtologo.png\"\nGui, Add, Listview, x+5 yp w540 h300 vall_mod_lv gall_mod_lv altsubmit %lv_grid%,\n_loading := 1\nGui, Add, Groupbox, x540 y+20 w815 h60, Certificacao:\nGui, Font, cgreen s20\nGui, Add, Text, xp+5 yp+15 w400 h30 vcert_status, \nGui, Font, cblack s8\nGui, Add, Groupbox, x540 y+20 w815 h150, Ultimas atualizacoes:\nGui, Font, cgreen\nGui, Add, Text, xp+5 yp+15 w365 h80 vmod_info,\nGui, Font, cblue \nGui, Add, Text, x+2 w300 h80 vmsg_info,\nGui, Font, cblack\nGui, Add, Groupbox, x860 ym w150 h90, Totallight\nGui, Add, Picture,  xp+5 yp+15 vconsistency_picture_tot, % \"img\\gray_glossy_ball.png\"\nGui, Add, Button,   x865 y+15 w80 h20 gverify_tot, Verificar\nGui, Add, Groupbox, x1020 ym w150 h90, Maccomevap\nGui, Add, Picture, xp+5 yp+15 vconsistency_picture_mac, % \"img\\gray_glossy_ball.png\"\nGui, Add, Button, x1025 y+15 w80 h20 gverify_mac, Verificar\nMenu, update_menu,   Add, Atualizar, make_update\nMenu, backup_menu,   Add, Fazer Back up, make_back_up\nMenu, users_menu,    Add, Usuarios, manager_users\nMenu, list_menu,     Add, Listas, list_options\nMenu, xml_menu,      Add, XML, xml\nMenu, json_menu,     Add, JSON, json\nMenu, imagem_menu,   Add, Redimensionar, resize_image_folder \nMenu, feed_menu,   	 Add, feed, visualize_feed \nMenu, backup_menu,   Add, Carregar Back up, load_back_up\nMenu, main_menu_bar, Add, &Atualizar, :update_menu\nMenu, main_menu_bar, Add, &Back up, :backup_menu\nMenu, main_menu_bar, Add, &Usuarios, :users_menu\nMenu, main_menu_bar, Add, &XML, :xml_menu\nMenu, main_menu_bar, Add, &JSON , :json_menu\nMenu, main_menu_bar, Add, &Imagem, :imagem_menu\nMenu, main_menu_bar, Add, &Feed, :feed_menu \nMenu, main_menu_bar, Color, White\nGui, Menu, main_menu_bar\nGui, Show,, %FamiliaName%\nGui, Listview, MODlv\nLV_ModifyCol(2,300) \nLV_Modify(2, \"+Select\")\n_loading := 0\nreturn	\n\nvisualize_feed:\nfeed := new GenerateJSONFeed() \nfeed.generate_feed()\nreturn \n\ncertificados:\ncert_view(\"\", \"M\")\nreturn\n\nresize_image_folder:\nresize_image_folder_view()\nreturn\n\nall_mod_lv:\nif A_GuiEvent = I\n{\n	if(ErrorLevel = \"\")\n		return\n	Gui, Submit, Nohide\n	info := get_item_info(\"M\", \"MODlv\") \n	selected_mod := GetSelectedRow(\"M\", \"all_mod_lv\")\n	if(selected_mod[1] = \"\" || selected_mod[1] = \"Codigos\")\n		return \n	image_path := db.Imagem.get_image_full_path(selected_mod[1])\n	if(image_path != \"\"){\n		change_ptcode := 1\n		Guicontrol,, ptcode, % image_path \n	}else{\n		change_ptcode := 1\n		Guicontrol,, ptcode, % \"img\\sem_foto.jpg\"\n	}	\n}\nreturn\n\n\n\nverify_tot:\ninfo := get_item_info(\"M\", \"MODlv\")\ntot_connection := get_connection(\"TOTALLIGHT\")\nbase_value := get_data_base_value(\"TOTALLIGHT\")\nif(base_value = \"\")\n	return\ncode_table :=\n(JOIN\n	info.empresa[2]\n	info.tipo[2] \n	info.familia[2] \n	info.subfamilia[2] \n	info.modelo[2] \"Codigo\"\n)\ncurrent_code_list := db.load_table_in_array(code_table)\nmissing_codes := DBEC.codes(info, tot_connection, base_value, current_code_list) \nif(missing_codes.maxindex() > 0){\n  DBEC.change_code_status(0, \"consistency_picture_tot\")\n}else{\n	DBEC.change_code_status(1, \"consistency_picture_tot\")\n}\nreturn \n\nverify_mac:\ninfo := get_item_info(\"M\", \"MODlv\")\nmac_connection := get_connection(\"MACCOMEVAP\")\nbase_value := get_data_base_value(\"MACCOMEVAP\")\nif(base_value = \"\")\n	return\ncode_table :=\n(JOIN\n	info.empresa[2]\n	info.tipo[2] \n	info.familia[2] \n	info.subfamilia[2] \n	info.modelo[2] \"Codigo\"\n)\ncurrent_code_list := db.load_table_in_array(code_table)\nmissing_codes := DBEC.codes(info, mac_connection, base_value, current_code_list) \nif(missing_codes.maxindex() > 0){\n  DBEC.change_code_status(0, \"consistency_picture_mac\")\n}else{\n	DBEC.change_code_status(1, \"consistency_picture_mac\")\n}\nreturn\n\nMGuiClose:\nExitApp\nreturn\n\nlist_options:\nlist_options_view()\nreturn\n\nxml:\ngenerate_xml_view()\nreturn\n\njson:\njson := new PromtoJSON()\njson.get_companies()\nreturn  \n\nHTML:\ngenerate_html_view()\nreturn\n\ninsert_empresa:\ninserir_ETF_view(\"M\", \"main_tv\", \"\", \"Empresas\")\nreturn\n\nrecarregar_main_tv:\nGui, M:default\nGui, Treeview, main_tv\nTV_Delete() \nETF_TVSTRING := \"\"\nload_ETF(db)\nload_main_tv()\nreturn\n\nchange_status:\ninfo := get_item_info(\"M\", \"MODlv\")\nchange_status_view(info)\nreturn\n\nMGuiContextMenu:\nif A_GuiControl = main_tv\n{\n	/*\n		verifica em que nivel a selecao esta\n		caso esteja no nivel tres somente\n		a opcao de remover aparecera, a menos que a familia \n		selecionada tenha uma subfamilia.\n	*/\n	tv_level_menu := get_tv_level(\"M\", \"main_tv\") \n	Menu, main_tv_menu, Add, Adicionar, adicionar_item\n	Menu, main_tv_menu, Add, Remover, remover_item	\n	Menu, remover_menu, Add, Remover, remover_item\n	/* \n		Pega a tabela onde serao inseridos \n		os valores\n	*/\n	current_selected_name := get_item_from_tv(A_EventInfo)\n	current_id := A_EventInfo\n	/*\n		Caso a selecao esteja no nivel de insercao \n		de tipos\n	*/\n\n	if(tv_level_menu = 1){\n		current_columns := \"Abas\"\n		info := get_item_info(\"M\", \"MODlv\")\n		tabela1 := info.empresa[1] \n		Menu, main_tv_menu, Show, x%A_GuiX% y%A_GuiY%\n	}\n\n	/*\n		Caso a insercao esteja no nivel \n		de familias\n	*/\n\n	if(tv_level_menu = 2){\n		current_columns := \"Familias\"\n		info := get_item_info(\"M\", \"MODlv\")\n		tabela1 := info.empresa[2] info.tipo[1]\n		Menu, main_tv_menu, Show, x%A_GuiX% y%A_GuiY%\n	}\n\n	if(tv_level_menu = 3){\n		current_columns := \"Subfamilias\"\n	}\n\n	/*\n		Caso esteja no nivel das familias e a familia nao tenha subfamilia nao existe opcao de incluir\n	*/\n	if(tv_level_menu = 3){\n		info := get_item_info(\"M\", \"MODlv\")\n		tabela1 := info.empresa[2] info.tipo[2] info.familia[1]\n		if(db.have_subfamilia(tabela1)){\n			Menu, main_tv_menu, Show, x%A_GuiX% y%A_GuiY%		\n		}else{\n			Menu, remover_menu, Show, x%A_GuiX% y%A_GuiY%\n		}	\n	}\n	\n	if(tv_level_menu = 4){\n		info := get_item_info(\"M\", \"MODlv\")\n		tabela1 := info.empresa[2] info.tipo[2] info.familia[1] info.subfamilia[1]\n		Menu, remover_menu, Show, x%A_GuiX% y%A_GuiY%\n	}\n}\nreturn\n\n	adicionar_item:\n	inserir_ETF_view(\"M\", \"main_tv\", current_id, current_columns)\n	return \n\n	remover_item:\n	Gui, M:default\n	Gui, Treeview, main_tv\n	selected_name := get_item_from_tv(current_id)\n	MsgBox, 4,,Deseja apagar o item %selected_name% e todos os seus subitems? \n	IfMsgBox No\n	{\n		return\n	}\n	delete_confirmation_view(selected_name)\n	return\n\n	main_tv:\n  /*\n  	funcao que busca o nivel \n  	que a selecao esta\n  */\n  tv_level := get_tv_level(\"M\", \"main_tv\")\n\n  /*\n   Limpa todas as informacoes deixadas pela ultima selecao\n  */\n  clear_main_info()\n\n  if(tv_level = 3 || tv_level = 4){\n  	/*\n  		Se estiver no nivel das \n  		familias ira buscar a tabela de modelos\n  		e carrega-la na listview ao lado. \n  	*/\n  		\n  	/*\n  		Verifica se o nivel atual tem um subnivel\n  		se tiver retorna sem carregar tabela de modelo\n  	*/\n  	if(tv_level = 3){\n  		info := get_item_info(\"M\", \"MODlv\")\n  		tabela1 := info.empresa[2] info.tipo[2] info.familia[1]\n			if(db.have_subfamilia(tabela1)){\n				;load_logo_in_main()\n				return\n			}else{\n				/*\n  			Pega a tabela de modelos\n  			*/	 \n  			info := get_item_info(\"M\", \"MODlv\")\n				model_table := db.get_reference(\"Modelo\", info.empresa[2] info.tipo[2] info.familia[1])\n			}\n  	}\n  	\n  	if(tv_level = 4){\n  		info := get_item_info(\"M\", \"MODlv\")\n			model_table := db.get_reference(\"Modelo\", info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[1])\n  	}\n		/*\n			Metodo que carrega a lista de modelos\n			em determinada listview\n		*/\n		;db.Modelo.check_data_consistency(model_table, info) ;verifica se todos os elementos na lista tem as tabela necessarias.\n		db.load_lv(\"M\", \"MODlv\", model_table)\n		LV_ModifyCol(1)\n		;load_logo_in_main()	\n  }else{\n  	/*\n  		Funcao que substui a imagem que foi gerada\n  		no load_image... pelo logo do programa\n  	*/\n  	;load_logo_in_main()\n  }\n	return \n\n	fotoindividual:\n	foto_individual_view()\n	;Gui,submit,nohide\n	;massainsertphoto(codtable) \n	return \n\n	combocodes:\n	Gui,submit,nohide\n	StringReplace,combocodes,combocodes,% \">>\",|, All\n	StringSplit,combocodes,combocodes,|\n	result := db.query(\"SELECT tabela2 FROM reltable WHERE tipo='image' AND tabela1='\" combocodes1 \"'\")\n	comboimagepath := \"\"\n	if(result[\"tabela2\"] != \"\"){\n		db.loadimage(\"\",\"\",result[\"tabela2\"])\n		comboimagepath := \"image.png\"\n	}else{\n		comboimagepath := \"noimage.png\"\n	}\n	result.close()\n	;showimageandcode(comboimagepath, 10, 10, EmpresaMascara AbaMascara FamiliaMascara,ModeloMascara, combocodes1 \"`n\" combocodes2 ,20)\n	;Guicontrol,, ptcode, simpleplot.png\n	return  \n\n	plotcode:\n	info := get_item_info(\"M\", \"MODlv\")\n	Print.product_list(info)\n\n	/*\n	Gui,escolha_plotcode:New\n	Gui,font,s%SMALL_FONT%,%FONT% \n	Gui,add,button,w100 gplotar_esse_item,Imprimir item marcado\n	Gui,add,button,x+5 w100 gplotar_todos_os_items,Imprimir todos os items \n	Gui,add,button,xm y+5 w100 gplotar_todos_os_items_em_lista,Imprimir lista com todos os items \n	Gui,Show,,Imprimir Escolha\n	*/\n	return \n\n	plotar_todos_os_items_em_lista:\n	items_to_plot := getvaluesLV(\"M\",\"MODlv\")\n	plot_pt_code_list()\n	return\n\n\n	plotar_todos_os_items:\n	items_to_plot := getvaluesLV(\"M\",\"MODlv\")\n	progress(items_to_plot.maxindex())\n	FileRemoveDir, % A_WorkingDir \"\\temp\\\" FamiliaName\n	FileCreateDir, %  A_WorkingDir \"\\temp\\\" FamiliaName\n	FileDelete,% A_WorkingDir \"\\temp\\\" FamiliaName \"\\semprefixo.csv\"  \n	_prefixos_em_falta := False\n	for,each,item in items_to_plot{\n		prefixpt2:=\"\"\n		result:=db.query(\"SELECT tabela2 FROM reltable WHERE tipo='image' AND tabela1='\" EmpresaMascara AbaMascara FamiliaMascara items_to_plot[A_Index,2] items_to_plot[A_Index,1] \"'\") \n		db.loadimage(\"\",\"\",result[\"tabela2\"])\n		result.close()\n		for,each,value in list:=db.getvalues(\"Campos\",EmpresaMascara AbaMascara FamiliaMascara items_to_plot[A_Index,2] \"prefixo\"){\n			prefixpt2.=list[A_Index,1]	\n		}\n		if(prefixpt2 = \"\"){\n			_prefixos_em_falta := True\n			FileAppend, % EmpresaMascara AbaMascara FamiliaMascara items_to_plot[A_Index,2] \"`n\", % A_WorkingDir \"\\temp\\\" FamiliaName \"\\semprefixo.csv\"\n			continue\n		}\n		plotptcode(EmpresaMascara AbaMascara FamiliaMascara,prefixpt2,items_to_plot[A_Index,2],,900,6000)\n		updateprogress(\"Imprimindo : \" prefixpt2 modelpt,1)\n	}\n	if(_prefixos_em_falta = True)\n		MsgBox,16,,\"Alguns items nao foram gerados pois o prefixo do codigo ainda nao tinha sido definido !\"\n	Else\n		MsgBox,64,,\"Todos os items foram gerados e estao na pasta \\temp\\ !\"\n	gui,progress:destroy\n	return\n\n	plotar_esse_item:\n	selecteditem:=GetSelected(\"M\", \"MODlv\")\n	currentvalue:=GetSelectedRow(\"M\", \"MODlv\")\n	selectmodel:=selecteditem\n	result:=db.query(\"SELECT Mascara FROM \" . modtable . \" WHERE Modelos='\" . selecteditem . \"'\")\n	ModeloMascara:=result[\"Mascara\"]\n	prefixpt2:=\"\"\n	for,each,value in list := db.getvalues(\"Campos\",EmpresaMascara AbaMascara FamiliaMascara ModeloMascara \"prefixo\"){\n		prefixpt2 .= list[A_Index,1]	\n	} \n	StringReplace,prefixpt2,prefixpt2,% currentvalue[2],,All\n	_showcode:=1\n	MsgBox, % \"currentvalue: \" currentvalue[2] \"  modelpt: \" modelpt \n	plotptcode(EmpresaMascara AbaMascara FamiliaMascara,prefixpt2,currentvalue[2],1,900,6000)\n	return \n\n;MGuiSize:\n;GuiSize:\n;	UpdateScrollBars(A_Gui, A_GuiWidth, A_GuiHeight)\n;return\n\n	codetable:\n	info := get_item_info(\"M\", \"MODlv\")\n	lista_de_codigos(info)\n	return  \n\n	massaestrut:\n	estruturas_view()\n	return\n\n		exportarparaarquivo:\n		checkeditems := GetCheckedRows2(\"massaestrut\",\"estrutlv\")\n		filedelete, dadosestrutura.csv\n		MsgBox, % checkeditems[\"code\"].maxindex()\n		FileAppend,% \"G1_COD;G1_COMP;G1_QUANT;G1_INI;G1_FIM;G1_FIXVAR;G1_REVFIM;G1_NIV;G1_NIVINV`n\", dadosestrutura.csv\n		already_in_structure := \"\"\n		number_of_parents := 0\n		for,each,value in checkeditems[\"code\"]{\n			loadestruturatofile(checkeditems[\"code\",A_Index] \">>\" checkeditems[\"desc\",A_Index])\n		}\n		run,dadosestrutura.csv\n		Gui,progress:destroy\n		MsgBox, % \"As estruturas foram exportadas\"\n		return \n\n		\n\n		exportarparadb:\n		checkeditems:=GetCheckedRows2(\"massaestrut\",\"estrutlv\")\n		rs:=sigaconnection.OpenRecordSet(\"SELECT TOP 1 G1_COD,G1_COMP,R_E_C_N_O_ FROM SG1010 ORDER BY R_E_C_N_O_ DESC\")\n		R_E_C_N_O_TBI := rs[\"R_E_C_N_O_\"]\n		rs.close() \n		progress(checkeditems[\"code\"].maxindex())\n		prefixbloq:=\"\"\n		for,each,value in checkeditems[\"code\"]{\n			updateprogress(\"Incluindo Estruturas banco: \" checkeditems[\"code\",A_Index],1)\n			loadestruturatodb(checkeditems[\"code\",A_Index] \">>\" checkeditems[\"desc\",A_Index])\n		}\n		Gui,progress:destroy\n		MsgBox, % \"As estruturas foram exportadas\"\n		return  \n \n\n			addmassaestrut:\n			checkeditems := GetCheckedRows2(\"massaestrut\",\"estrutlv\")\n			if(!checkeditems[\"code\"].maxindex()){\n				MsgBox,64,, % \"Selecione items onde serao incluidos os codigos antes de continuar!!!\"\n				return \n			}\n			itemstoinsert:=getvaluesLV(\"addmassa\",\"lvaddmassa2\")\n			progress(checkeditems.maxindex())\n			for,each,element in checkeditems[\"code\"]{\n				element:=checkeditems[\"code\",A_Index] \">>\" checkeditems[\"desc\",A_Index]\n 				updateprogress(\"inserindo nas estruturas: \" element,1)\n				for,each,item in itemstoinsert{\n					if(element=itemstoinsert[A_Index,1]){\n						MsgBox, % \"Um item nao pode ser inserido dentro dele mesmo na estrutura!\"\n						continue \n					}\n					if(!db.exist(\"item,componente\",\"item like '\" element \"%' AND componente like '\" itemstoinsert[A_Index,1] \"%'\",\"ESTRUTURAS\"))\n						db.query(\"INSERT INTO ESTRUTURAS (item,componente,QUANTIDADE) VALUES ('\" element \"','\" itemstoinsert[A_Index,1] \"','1');\")\n					else\n						MsgBox, % \"o item \" itemstoinsert[A_Index,1] \"ja existe nas estruturas!!\"\n				} \n			}\n			Gui,progress:destroy\n			MsgBox,64,, % \"os valores foram inseridos!!!\"\n			return \n\n			removelist:\n			selecteditem:=GetSelected(\"addmassa\",\"lvaddmass2\",\"number\")\n			Gui,listview,lvaddmass2\n			LV_Delete(selecteditem)\n			return \n\n			addalista:\n			Gui,submit,nohide\n			result:=GetCheckedRows2(\"addmassa\",\"lvaddmass\")\n			gui,listview,lvaddmass2\n			for,each,value in result[\"code\"]{\n				LV_Add(\"\",result[\"code\",A_Index] \">>\" result[\"desc\",A_Index])\n			}\n			return \n\n\n			\n\n			pesquisaraddmass:\n			Gui,submit,nohide\n			search.LV.any_word_search(\"dbex\",\"lvdbex\", pesquisaraddmass)\n			return \n\n\n			remmassabutton:\n			Gui,submit,nohide 	\n			count:=0\n			for,each,value in checkedremmassa[\"code\"]{\n				count++\n				table := db.iquery(\"SELECT item,componente FROM ESTRUTURAS WHERE item LIKE '\" checkedremmassa[\"code\",A_Index] \"%' AND componente LIKE '\" remedit \"%';\")\n				if(table.Rows.Count()=0){\n					MsgBox, % \"O item a ser deletado nao existia na estrutura: \" checkedremmassa[\"code\",A_Index] \n					count -= 1\n				}\n				db.query(db.query(\"DELETE FROM ESTRUTURAS WHERE item like '\" checkedremmassa[\"code\",A_Index] \"%' AND componente like '\" remedit \"%';\"))\n			}\n\n			if(count = 0){\n				MsgBox, % \"Nenhum item foi removido\"\n			}else{\n				MsgBox,64,, % \"o item \" remedit \" foi removido de \" count \" estruturas!!!\"\n			}\n			return\n\n	ordemprefix:\n	info := get_item_info(\"M\", \"MODlv\")\n	ordem_view(\"prefixo\", info)\n	return \n\n	dbex:\n	config_db_ex_view()\n	return \n	\n\nCODlv:\nif A_GuiEvent = DoubleClick\n{\n	LV_GetText(selected,A_EventInfo)\n	tvstring := \"\"\n	loadestrutura(selected, \"\")\n	tvwindow2(args)\n}\nreturn \n\n\ntvwindow2(args){\n	Global tvstring,db,GLOBAL_COLOR\n	Static tv2,itemtext,parenttext,itemid\n	Gui,tv2:New\n	Gui,font,s%SMALL_FONT%,%FONT%\n	;Gui,tv2:+toolwindow\n	Gui,color,%GLOBAL_COLOR%\n	Gui,add,treeview,w1200 h500 vtv2,\n	Gui,add,button,x100 y+5 w100 h40 gtv2action disabled ,Remover\n	gui,show,,Estrutura \n	TvDefinition=\n	(\n		%tvstring%\n	)\n	CreateTreeView(TvDefinition)\n	return \n\n	tv2GuiContextMenu: \n	TV_GetText(itemtext,A_EventInfo)\n	itemid:=A_EventInfo\n	TV_GetText(parenttext,TV_GetParent(A_EventInfo))\n	if A_GuiControl <> tv2  ; This check is optional. It displays the menu only for clicks inside the TreeView.\n		return\n	Menu, MyMenu, Add,Add Quantidade,addquantidade\n	Menu, MyMenu, Add,Add Preco,addpreco\n	Menu, MyMenu,Show, %A_GuiX%, %A_GuiY%\n	return \n\n		addquantidade:\n		if(parenttext=\"\"){\n			MsgBox,16,, % \"Voce nao pode mudar a quantidade desse item!\"\n			return \n		}\n		addquantidade(itemtext,parenttext,itemid)\n		return \n\n\n\n		addpreco:\n		Gui,add,text,w300,Quantidade\n		Gui,add,edit,y+5 w300 r1 uppercase,\n		Gui,add,button,xm y+5 w100 gsalvarquantidade ,Salvar\n		return \n\n	tv2action:\n	button:=A_GuiControl\n	Gui,treeview,tv2\n	if(button=\"Remover\"){\n		id:=TV_GetSelection()\n		TV_GetText(item,id)\n		parentid:=TV_GetParent(id)\n		TV_GetText(element,parentid)\n		MsgBox, 4,,Deseja apagar o item %item% da estrutura %element%?\n		IfMsgBox Yes\n		{ \n			db.query(\"DELETE FROM ESTRUTURAS WHERE item like '\" element \"%' AND componente like '\" item \"%';\")\n			TV_Delete(id)\n			MsgBox,64,, % \" O valor foi deletado!!\"\n		}else{\n			return \n		}\n		\n	}\n	return \n}\n\naddquantidade(itemtext,parenttext,itemid){\n	Global db,selecteditemtoloadestrut,tvstring\n	Static valorquantidade,itemtext1,parenttext1,itemid1\n	itemid1:=itemid\n	itemtext1:=itemtext,parenttext1:=parenttext\n	Gui,addquantidade:New\n	Gui,font,s%SMALL_FONT%,%FONT%\n	Gui,color,%GLOBAL_COLOR%\n	Gui,add,text,w300,Quantidade\n	Gui,add,edit,y+5 w300 r1 vvalorquantidade uppercase,\n	Gui,add,button,xm y+5 w100 gsalvarquantidade default,Salvar\n	Gui,show,,Adicionar Quantidade\n	return \n\n		salvarquantidade:\n		Gui,submit,nohide\n		loop,parse,parenttext1,|\n		{\n			if(A_Index=1)\n				parenttext11:=A_LoopField\n		}\n		loop,parse,itemtext1,|\n		{\n			if(A_Index=1)\n				itemtext11:=A_LoopField\n		}\n		db.queryS(\"UPDATE ESTRUTURAS SET QUANTIDADE='\" valorquantidade \"' WHERE item like '\" trim(parenttext11) \"%' AND componente like '\" trim(itemtext11) \"%';\")\n		MsgBox,64,, % \" A quantidade foi atualizada!\"\n		Gui,tv2:default\n		Gui,TreeView,tv2\n		TV_Modify(itemid1,\"\",trim(itemtext11) \"|UN:\" valorquantidade)\n		tvstring:=\"\"\n		gui,addquantidade:destroy\n		return \n}\n\nloadestrutura(item,nivel,ownercode=\"\",semUN=1,quantidade=\"\"){\n	Global db,tvstring\n	if item =\n		return\n	nivel.=\"`t\"\n	table:=db.query(\"SELECT item,componente,QUANTIDADE FROM ESTRUTURAS WHERE item='\" . item . \"'\")\n	if (table[\"componente\"]=\"\"){\n		if(ownercode!=\"\"){\n		 	IfNotInString,%ownercode%,%item%\n		 	{\n		 		%ownercode%.=\"`n\" item\n		 		if(semUN=1)\n		 			tvstring.=\"`n\" . nivel . item\n		 		else \n		 			tvstring.=\"`n\" . nivel . item . \"|UN:\" quantidade\n		 	}\n		}else{\n			IfNotInString,maincodes,%item%\n		 	{\n				maincodes.=\"`n\" item\n				if(semUN=1)\n					tvstring .= \"`n\" . nivel . item\n				else \n					tvstring .= \"`n\" . nivel . item . \"|UN:\" quantidade\n		 	}\n		}\n	 }\n	while(!table.EOF){\n		tableitem:=table[\"item\"]	\n		if(ownercode!=\"\"){\n			IfNotInString,%ownercode%,%tableitem%\n			{\n				%ownercode% .= \"`n\" table[\"item\"]\n				if(semUN=1)\n					tvstring .= \"`n\" . nivel . table[\"item\"]\n				else \n				 	tvstring .= \"`n\" . nivel . table[\"item\"] . \"|UN:\" quantidade\n			}\n		}else{\n			IfNotInString,maincodes,%tableitem%\n		 	{\n				maincodes .= \"`n\" tableitem\n				if(semUN=1)\n					tvstring .= \"`n\" . nivel . table[\"item\"]\n				Else\n					tvstring .= \"`n\" . nivel . table[\"item\"] . \"|UN:1\" \n		 	}\n		}\n		StringReplace,parseditem,tableitem,>>,|,All\n		StringSplit,parseditem,parseditem,|\n		StringReplace,parseditem1,parseditem1,%A_Space%,,All\n		loadestrutura(table[\"componente\"],nivel,parseditem1,semUN,table[\"QUANTIDADE\"])\n		table.MoveNext()\n	}\n}\n\nloadestruturatofile(item){\n	Global db,already_in_structure,number_of_parents\n	if item =\n		return\n	table:=db.query(\"SELECT item,componente,QUANTIDADE FROM ESTRUTURAS WHERE item='\" item \"'\")\n	subitems:=object()\n	while(!table.EOF){\n		itemtbi:=table[\"item\"],componentetbi:=table[\"componente\"]\n		StringReplace,itemtbi,itemtbi,% \">>\",|, All\n		StringSplit,itemtbi,itemtbi,|\n		StringReplace,componentetbi,componentetbi,% \">>\",|, All\n		StringSplit,componentetbi,componentetbi,|\n		StringLeft,testprefix,componentetbi1,3\n		if(testprefix=\"mpt\")\n			StringReplace,componentetbi1,componentetbi1,MPT,MP, All    ;SUBSTITUI O MPT POR MP\n		if(testprefix=\"mod\")\n			StringReplace,componentetbi1,componentetbi1,MODT,MOD, All    ;SUBSTITUI O MODT POR MOD\n		StringLeft,testprefix,itemtbi1,3\n		if(testprefix=\"mpt\")\n			StringReplace,itemtbi1,itemtbi1,MPT,MP, All    ;SUBSTITUI O MPT POR MP\n		if(testprefix=\"mod\")\n			StringReplace,itemtbi1,itemtbi1,MODT,MOD, All    ;SUBSTITUI O MODT POR MOD\n		if(testprefix=\"TL0\"){\n			number_of_parents++\n		}\n		IfNotInString,already_in_structure,%itemtbi1%;%componentetbi1%\n		{\n			if(testprefix=\"TL0\"){\n			}\n			FileAppend,% itemtbi1 \";\" componentetbi1 \";\" table[\"QUANTIDADE\"] \";31/12/2006;31/12/2049;V;ZZZZ;01;99\" \"`n\",dadosestrutura.csv\n		}\n		already_in_structure.=itemtbi1 \";\" componentetbi1 \"`n\"\n		subitems.insert(table[\"componente\"])\n		table.MoveNext()\n	}\n	table.close()	\n	for,each,value in subitems{\n		loadestruturatofile(value)\n	}\n}\n\nloadestruturatodb(item){\n	Global db,sigaconnection,R_E_C_N_O_TBI\n	\n	if item =\n		return\n	table:=db.query(\"SELECT item,componente,QUANTIDADE FROM ESTRUTURAS WHERE item='\" item \"'\")\n	subitems:=object()\n	while(!table.EOF){\n		itemtbi:=table[\"item\"],componentetbi:=table[\"componente\"]\n		StringLeft,testprefix,componentetbi,3\n		if(testprefix=\"mpt\")\n			StringReplace,componentetbi,componentetbi,MPT,MP, All    ;SUBSTITUI O MPT POR MP\n		if(testprefix=\"mod\")\n			StringReplace,componentetbi,componentetbi,MODT,MOD, All    ;SUBSTITUI O MODT POR MOD\n		StringLeft,testprefix,itemtbi,3\n		if(testprefix=\"mpt\")\n			StringReplace,itemtbi,itemtbi,MPT,MP, All    ;SUBSTITUI O MPT POR MP\n		if(testprefix=\"mod\")\n			StringReplace,itemtbi,itemtbi,MODT,MOD, All    ;SUBSTITUI O MODT POR MOD\n		StringReplace,itemtbi,itemtbi,% \">>\",|, All\n		StringSplit,itemtbi,itemtbi,|\n		StringReplace,componentetbi,componentetbi,% \">>\",|, All\n		StringSplit,componentetbi,componentetbi,|\n		exist:=existindb(sigaconnection,\"Select G1_COD from SG1010 WHERE G1_COD LIKE '\" itemtbi1 \"%' AND G1_COMP LIKE '\" componentetbi1 \"%'\")\n		if(exist=true){ \n			sql:=\n			(JOIN\n				\"UPDATE SG1010 SET G1_COD='\" itemtbi1 \n				\"',G1_COMP='\" componentetbi1\n				\"',G1_QUANT='\" table[\"QUANTIDADE\"] \n				\"',G1_INI='20060101\" \n				\"',G1_FIM='20491231\"\n				\"',G1_FIXVAR='V\"\n				\"',G1_REVFIM='ZZZ\"\n				\"',G1_NIV='01\"   \n				\"',G1_NIVINV='99\"\n				\"',G1_FILIAL='01\" \n				\"',D_E_L_E_T_='\"\n				\"' WHERE G1_COD='\" itemtbi1 \"' AND G1_COMP='\" componentetbi1 \"'\"\n			)\n			sigaconnection.query(sql)\n		}else{\n			R_E_C_N_O_TBI++\n			sql:=\n			(JOIN\n				\"INSERT INTO SG1010 (G1_COD,G1_COMP,G1_QUANT,G1_INI,G1_FIM,G1_FIXVAR,G1_REVFIM,G1_NIV,R_E_C_N_O_,G1_FILIAL,D_E_L_E_T_,G1_NIVINV)\" \n				\" VALUES ('\" itemtbi1\n				\"','\" componentetbi1\n				\"','\" table[\"QUANTIDADE\"]\n				\"','20060101\" \n				\"','20491231\"\n				\"','V\"\n				\"','ZZZ\"\n				\"','01\"\n				\"','\" R_E_C_N_O_TBI\n				\"','01\"\n				\"','\" \n				\"','99')\"\n			)\n			sigaconnection.query(sql)\n		}\n		exist := existindb(sigaconnection,\"Select B1_COD from SB1010 WHERE B1_COD LIKE '\" itemtbi1 \"%'\")\n		if(exist=false){\n			FileAppend, % itemtbi1 \"`n\",missingitems.csv\n		}\n		exist := existindb(sigaconnection,\"Select B1_COD from SB1010 WHERE B1_COD LIKE '\" componentetbi1 \"%'\")\n		if(exist=false){\n			FileAppend, % componentetbi1 \"`n\",missingitems.csv\n		}\n		subitems.insert(table[\"componente\"])\n		table.MoveNext()\n	}\n	table.close()	\n	for,each,value in subitems{\n		loadestruturatodb(value)\n	}\n}\n\nexist_in_db(connection,sql){  ;connection fora da classe sql \n	tableexist := connection.Query(sql)\n	columnCount := tableexist.Columns.Count()\n	for each,row in tableexist.Rows{\n		Loop, % columnCount{\n			if(row[A_index]!=\"\"){\n				returnvalue:=True\n				Break\n			}else{\n				returnvalue:=False\n				Break\n			}\n		}\n	}\n	tableexist.close()\n	return returnvalue\n}\n\n\n\n\ngerarestruturas:\nif(_reload_gettable = True ){    ; Variavel utilizada para saber se a tabela de formacao de estrutura precisa ser recaregada\n		GLOBAL_TVSTRING := \"\"\n		gettable(\"empresa\",0,\"\",\"\")\n		_reload_gettable := False \n}\ndb.createtable(\"ESTRUTURAS\",\"(item,componente)\") \nargs := {},hashmask := {},subitem := {}\nargs[\"table\"] := \"empresa\", args[\"loadfunc\"] := \"gettable\", args[\"mascaraant\"] := EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara,args[\"savetvfunc\"] := \"savetvfunc1\"\nfield := [\"Aba\",\"Familia\", \"Subfamilia\", \"Modelo\"], args[\"owner\"] := \"M\"\ntvstring := \"\"\ntvwindow(args)\nreturn \n\ntvwindow(args){\n	Global tvstring,selectmodel,hashmask,subitem,GLOBAL_COLOR,GLOBAL_TVSTRING\n	Static args1\n	\n	args1:=args \n	Gui,tvwindow:New\n	Gui,font,s%SMALL_FONT%,%FONT%\n	owner:=args[\"owner\"]\n	if(owner!=\"\")\n		Gui,tvwindow:+owner%owner%\n	;Gui,tvwindow:+toolwindow\n	Gui,color,%GLOBAL_COLOR%\n	Gui, Add, GroupBox, x2 y0 w490 h550 , Gerar Estrutura\n	Gui, Add, GroupBox, x12 y20 w470 h430 , TreeView\n	Gui, Add, GroupBox, x12 y450 w470 h90 , Opcoes\n	Gui, Add, TreeView, x22 y40 w450 h400 gtvest , \n	Gui, Add, Button, x272 y480 w100 h30 gsalvartv , Salvar\n	Gui, Add, Button, x372 y480 w100 h30 gcancelartv, Cancelar\n	;table:=args[\"table\"]\n	;loadfunc:=args.loadfunc,%loadfunc%(table,0,\"\",\"\")\n	TvDefinition=\n	(\n		%GLOBAL_TVSTRING%\n	)\n	CreateTreeView(TvDefinition)\n	Gui, Show, w501 h559,Gerar Estruturas!	\n	return\n\n		salvartv:\n		maska:=[]\n		id:=TV_GetSelection()\n		Loop\n		{\n			TV_GetText(text,id)\n			if(A_Index=1)\n				selected2:=text\n			if hashmask[text]!=\"\"\n				maska.insert(hashmask[text])\n			MsgBox, % \"text do hashmask \" text\n			MsgBox, % \"hashmask \" hashmask[text]\n			id:=TV_GetParent(id)\n			if !id \n				Break\n		}\n		for,each,value in maska{\n			MsgBox, % \"value in maska \" value\n		}\n		newarray := reversearray(maska)\n		mask=\n		for,each,value in newarray{\n			MsgBox, % \"values in the new array \" value\n			mask.=value\n		} \n		scmodel:=args1[\"mascaraant\"] . selectmodel\n		MsgBox, % \"mask \" mask \" selected2 \" selected2\n		dtmodel:=mask . selected2\n		MsgBox, % \"scmodel \" scmodel \" dtmodel \" dtmodel \n		args1[\"selected1\"]:=selectmodel,args1[\"selected2\"]:=selected2\n		savetvfunc:=args1[\"savetvfunc\"],%savetvfunc%(scmodel,dtmodel,args1[\"mascaraant\"],mask,args1)\n		return \n\n		cancelartv:\n\n		return \n\n	GuiClose:\n	ExitApp\n}\n\nsavetvfunc1(scmodel,dtmodel,mask1,mask2,args1){  ;Monta as Estruturas!!\n	Global\n	relationalhash:={} ;hash que faz a referencia entre o codigo e a descricao\n	loadtabledcdt(scmodel,dtmodel)\n	args[\"mascara1\"]:=mask1\n	args[\"mascara2\"]:=mask2\n	args[\"model1\"]:=args1[\"selected1\"]\n	args[\"model2\"]:=args1[\"selected2\"]\n	CHA1:={},CHA2:={},camposrel:=[]\n	for,each,value in args[\"codigo1\"]{\n		%value%:={}\n	}\n	for,each,value in args[\"codigo2\"]{\n		%value%:={}\n	}\n	loadtablesge(args)\n	progress(args[\"codigo1\"])\n	campo:=[]\n	for,each,value in camposrel{\n		campo.insert(value)\n	}\n	for,each,codigo in args[\"codigo1\"]{\n		i:=1,_ended:=0,relacionados:=args[\"codigo2\"]\n		gerarestruturas(codigo,args[\"codigo2\"])\n		for,each,value in finalreturn{\n			db.query(\"DELETE FROM ESTRUTURAS WHERE item='\" \"='\" finalreturn[A_Index,1] \" AND componente='\" finalreturn[A_Index,2] \"';\")\n			updateprogress(\"Gerando Estruturas:`n\" . finalreturn[A_Index,1],1)\n			if(finalreturn[A_Index,1]=finalreturn[A_Index,2]){\n				MsgBox, % \" O codigo do item nao pode ser igual ao do pai!\"\n				continue\n			}\n			db.insert(\"ESTRUTURAS\",\"(item,componente)\",\"('\" finalreturn[A_Index,1] \">>\" relationalhash[finalreturn[A_Index,1]] \"','\" finalreturn[A_Index,2] \">>\" relationalhash[finalreturn[A_Index,2]] \"')\")\n		}\n	}\n	Gui,progress:destroy\n	MsgBox,64,, % \"Estrutura gerada com sucesso.\"\n	loaditem()\n	return\n}\n\nloadtabledcdt(scmodel,dtmodel){     ;carrega as tabelas dos dois modelos que serao comparados.\n	Global db,args,relationalhash\n	args:={}\n	x:=[scmodel,dtmodel],y:=[\"codigo1\",\"codigo2\"],ocs:=[\"oc1\",\"oc2\"],camps:=[\"campo1\",\"campo2\"],i:=0\n		for,each,table in x {\n			i++\n			result:=db.query(\"SELECT tabela2 FROM reltable WHERE tipo='Codigo' AND tabela1='\" . table . \"'\")\n			For each in list:=db.getvalues(\"Codigos,DR\",result[\"tabela2\"]){\n				relationalhash[list[A_Index,1]]:=list[A_Index,2]\n				args[y[i],A_Index]:=list[A_Index,1] \n			}\n			result:=db.query(\"SELECT tabela2 FROM reltable WHERE tipo='oc' AND tabela1='\" . table . \"'\")\n			For each in list:=db.getvalues(\"Campos\",result[\"tabela2\"]){\n				args[ocs[i],A_Index]:=list[A_Index,1]\n			}\n			result:=db.query(\"SELECT tabela2 FROM reltable WHERE tipo='Campo' AND tabela1='\" . table . \"'\")\n			For each in list:=db.getvalues(\"Campos\",result[\"tabela2\"]){\n				args[camps[i],A_Index]:=list[A_Index,1]\n			}\n			For each,campname in args[camps[i]]{\n				StringReplace,campname,campname,%A_Space%,,All\n				result:=db.query(\"SELECT tabela2 FROM reltable WHERE tipo='\" . campname . \"' AND tabela1='\" . table . \"'\")\n				For each in list:=db.getvalues(\"Codigo\",result[\"tabela2\"]){\n					args[campname . i,A_Index]:=list[A_Index,1]\n				}\n			}\n	}\n}\n\nloadtablesge(args){        ;extrai os valores das tabelas no formato necessario para gerar as estruturas.\n	Global\n	tables:=[\"campo1\",\"campo2\"],cha:=[\"CHA1\",\"CHA2\"],i:=0\n	MsgBox,64,, % args[\"campo1\"].maxindex() \n	progress(args[\"campo1\"].maxindex()+args[\"campo2\"].maxindex())\n	for,each,table1 in tables {\n		i++\n		chav:=cha[A_Index]\n		for,each,value in args[table1]{\n			updateprogress(\"Carregando tabelas:`n\" . value,1)\n			if(ObjHasValue(args[\"campo2\"],value)) && (table1!=\"campo2\"){\n				camposrel.insert(value)\n			}\n			StringReplace,campname,value,%A_Space%,,All\n			if(args[campname . i,1]) && (args[campname . i,1]!=\"\"){\n				%chav%[campname] := StrLen(args[campname . i,1])\n			}Else{\n				%chav%[campname] := StrLen(args[campname . i])\n			}\n		}\n	}\n	codtables:=[\"codigo1\",\"codigo2\"],mascaras:=[\"mascara1\",\"mascara2\"],i:=0\n	for,each,codtable in codtables{\n		i+=1\n		if(codtable=\"codigo1\")\n			oc:=\"oc1\"\n		Else\n			oc:=\"oc2\"\n		for,each,codigo1 in args[codtable]{\n			StringTrimleft,codigo,codigo1,StrLen(args[mascaras[i]])\n			for,each2,value2 in camposrel{\n				StringReplace,value2,value2,%A_Space%,,All\n				args[\"trimfield\"]:=value2\n				%codigo1%[value2]:=trimcode(args,codigo,cha[i],oc)   ;me retorna a lista de valores relacionados ao codigo e ao campo\n			}\n		}\n	}\n	gui,progress:destroy\n}\n\ntrimcode(args,codigo,cha,oc){\n	Global CHA1,CHA2,camposrel\n		for,each,campo in args[oc]{\n			StringReplace,campo,campo,%A_Space%,,All\n			if(campo=args[\"trimfield\"]){\n				Stringleft,codigo,codigo,%cha%[campo]\n				Break\n			}Else{\n				StringTrimleft,codigo,codigo,%cha%[campo]\n			}		\n		}\n	returnvalue:=getreferencefield(args[\"trimfield\"],codigo,args[\"model2\"])   ;funcao que pega os valores na tabela de referencia.\n	returnvalue.insert(codigo)\n	;returnvalue:=[codigo]\n	return returnvalue\n}\n\ngetreferencefield(nomecamp,selectcode,selectmodel){\n	Global db \n	referencias:=[]\n	StringReplace,selectmodel,selectmodel,`.,,All\n	for,each,value in list:=db.getvalues(\"Referencia\",nomecamp . selectcode . selectmodel){\n		referencias.insert(list[A_Index,1])\n	}\n	return referencias\n}\n\ngerarestruturas(codigo1,prox){\n	Global relacionados,i,campo,finalreturn,_ended \n\n	if(campo[i])\n		prox:=[]\n	camp00:=campo[i]\n	StringReplace,camp00,camp00,%A_Space%,,All\n	For,each,value in %codigo1%[camp00]{\n		if(value!=\"\"){\n			For,each2,value2 in relacionados{\n				if(ObjHasValue(%value2%[camp00],value)){\n					prox.insert(value2)\n				}\n			}\n		}\n	}\n	i++\n	if(campo[i]!=\"\"){\n		for,each,value in prox{ \n			relacionados:=prox,gerarestruturas(codigo1,prox)\n		}\n	}else{\n		if(!_ended){\n			finalreturn:=[]\n			relacionados:=prox\n			for,each,value in relacionados{\n				finalreturn[A_Index,1]:=codigo1\n				finalreturn[A_Index,2]:=value\n			}\n			_ended:=1\n		}\n	}\n}\n\ntvest:\nTV_GetText(selectedsubitem,A_EventInfo)\nsubitem[selectedsubitem] := A_EventInfo\nreturn \n\ngettable(table,x,nivel,masc){\n	Global db,GLOBAL_TVSTRING,field,hashmask\n	x+=1,nivel.=\"`t\"\n	For each in list := db.getvalues(\"*\",table){\n		GLOBAL_TVSTRING .= \"`n\" . nivel . list[A_Index,1] \n		hashmask[list[A_Index,1]] := list[A_Index,2]\n		;MsgBox, % \"valor do hashmask \" hashmask[list[A_Index,1]] \"`n para o valor \" list[A_Index,1] \n		result:=db.query(\"SELECT tabela2 FROM reltable WHERE tipo='\" . field[x] . \"' AND tabela1='\" . masc . list[A_Index,1] . \"'\")\n		newtable := result[\"tabela2\"]\n		result.close()\n		if(newtable)\n			gettable(newtable,x,nivel,masc . list[A_Index,2])\n	}\n	return \n}\n\nlinkarm:\nif(!selecteditem){\n	MsgBox,64,, % \"Selecione um item para continuar!\"\n	return \n}\n\nargs := {}\nargs[\"selecteditem\"] := selecteditem\nargs[\"window\"] := \"M\",args[\"lv\"] := \"MODlv\",args[\"mascaraant\"] := EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara\nargs[\"tipo\"] := \"Campo\",args[\"selecteditem\"] := selectmodel,args[\"owner\"]:=\"M\"\nargs[\"tipoquery\"] := \"SELECT tipo,tabela1,tabela2 FROM reltable WHERE tipo='Campo'\"\nlinkar2(args)\nreturn \n\nMODlv:\nif A_GuiEvent = I\n{\n	Gui,submit,nohide\n	info := get_item_info(\"M\", \"MODlv\") \n	if(info.modelo[1] != \"Modelo\"){	\n		clear_prev_status()\n		load_model_image_in_main_window(info)\n		load_mod_info(info)\n		load_all_mod(info)\n		load_status_in_main_window(info)\n		load_cert_status(info)\n	}\n}\nreturn \n\nloaditem(){\n	Global\n\n	bloqtable := \"\", codtable := \"\", camptable := \"\", octable := \"\" , odctable := \"\", odrtable := \"\"\n	prefixpt2 := \"\"\n	for,each,value in list:=db.getvalues(\"Campos\",EmpresaMascara AbaMascara FamiliaMascara ModeloMascara \"prefixo\"){\n		prefixpt2 .= list[A_Index,1]	\n	} \n	StringReplace, prefixpt2, prefixpt2,% ModeloMascara,,All\n	result := db.query(\"SELECT tabela2 FROM reltable WHERE tipo='image' AND tabela1='\" EmpresaMascara AbaMascara FamiliaMascara ModeloMascara selectmodel \"'\")\n	IfnotExist,% A_WorkingDir \"\\img\\\" result[\"tabela2\"] \".png\"\n	{\n		db.load_image_to_file(\"\",\"\",result[\"tabela2\"])\n	}\n	;showimageandcode(A_WorkingDir \"\\img\\\" result[\"tabela2\"] \".png\",10,10,EmpresaMascara AbaMascara FamiliaMascara,ModeloMascara)\n	result.close()\n	Gui, M:default\n	;Guicontrol,, ptcode, simpleplot.png\n	result:=db.query(\"SELECT tabela2 FROM reltable WHERE tipo='Bloqueio' AND tabela1='\" . EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel . \"'\")\n	bloqtable:=result[\"tabela2\"]\n	result.close()\n	if(!bloqtable)\n		bloqtable:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . \"Bloqueio\"\n	result:=db.query(\"SELECT tabela2 FROM reltable WHERE tipo='Codigo' AND tabela1='\" . EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel . \"'\")\n	codtable:=result[\"tabela2\"]\n	result.close()\n	if(!codtable)\n		codtable:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . \"Codigo\"\n	result:=db.query(\"SELECT tabela2 FROM reltable WHERE tipo='Campo' AND tabela1='\" . EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel . \"'\")\n	camptable:=result[\"tabela2\"]\n	result.close()\n	if(!camptable)\n		camptable:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . \"Campo\"\n	result:=db.query(\"SELECT tabela2 FROM reltable WHERE tipo='oc' AND tabela1='\" . EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel . \"'\")\n	octable:=result[\"tabela2\"]\n	result.close()\n	if(!octable){\n		if(!db.exist(\"tipo,tabela1\",\"tipo='oc' AND tabela1='\" . EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel . \"'\",\"reltable\"))\n			db.insert(\"reltable\",\"(tipo,tabela1,tabela2)\",\"('oc','\" . EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel . \"','\" . EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . \"oc')\")\n		octable:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . \"oc\"\n	}\n	result:=db.query(\"SELECT tabela2 FROM reltable WHERE tipo='odc' AND tabela1='\" . EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel . \"'\")\n	odctable:=result[\"tabela2\"]\n	result.close()\n	if(!odctable)\n		odctable:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . \"odc\"\n	result:=db.query(\"SELECT tabela2 FROM reltable WHERE tipo='odr' AND tabela1='\" . EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel . \"'\")\n	odrtable:=result[\"tabela2\"]\n	result.close()\n	if(!odrtable)\n		odrtable:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . \"odr\"\n	result:=db.query(\"SELECT tabela2 FROM reltable WHERE tipo='odi' AND tabela1='\" . EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel . \"'\")\n	oditable:=result[\"tabela2\"]\n	result.close()\n	if(!oditable)\n		oditable := EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . \"odi\"\n	Gui,listview,CODlv\n	Gui,M:default\n	RowNumber:=0\n	values:=getvaluesLV(\"M\",\"CODlv\")\n	numberofitems:=0\n	resultlist:=\"\"\n	for,each,value in list:=db.getvalues(\"Codigos,DR\",EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . \"Codigo\"){\n		numberofitems++	\n		if(list[A_Index,1]!=\"\"){\n        	resultlist.=\"|\" list[A_Index,1] \">>\" list[A_Index,2] \n   		 }   \n	} \n	guicontrol,,combocodes,|\n  	guicontrol,,combocodes,%resultlist%\n	Guicontrol,,numberofitems,Items:%numberofitems%\n}\n\n		MAM:\n		info := get_item_info(\"M\", \"MODlv\")\n		if(db.have_subfamilia(info.empresa[2] info.tipo[2] info.subfamilia[2] info.familia[1])){\n			MsgBox, % \"O item selecionado tem subfamilia, insira uma subfamilia antes de continuar!\" \n			return \n		}\n		if(get_tv_level(\"M\", \"main_tv\") != 3 && get_tv_level(\"M\", \"main_tv\") != 4){\n			MsgBox,16,Erro, % \" Selecione uma familia antes, para alterar modelos!\"\n			return \n		}\n		familia := get_tv_info(\"Familia\")\n		tipo := get_tv_info(\"Tipo\")\n		empresa := get_tv_info(\"Empresa\")\n		if(info.subfamilia[2] != \"\"){\n			model_table := db.get_reference(\"Modelo\",info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[1])	\n		}else{\n			;MsgBox, % \"ira buscar a tabela de modelos sem subfamilia \" info.empresa[2] info.tipo[2] info.familia[1]\n			model_table := db.get_reference(\"Modelo\", info.empresa[2] info.tipo[2] info.familia[1])\n		}\n		inserir_modelo_view(model_table)\n		return\n		\n		reloadmodelo(){\n			Global\n			db.loadlv(\"M\",\"MODlv\",modtable,\"Modelos,Mascara\",1)\n		}\n\nrefreshm(){\n	Global _refresh \n	_refresh := true\n	gosub,M\n}		\n		\n		MAB:\n		info := get_item_info(\"M\", \"MODlv\")\n		\n		if(info.modelo[2] = \"\"){\n			MsgBox, 16, Erro, % \"Selecione um modelo antes de continuar!\"\n			return \n		}\n		\n		tabela1 := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] info.modelo[1] \n		bloq_table := db.get_reference(\"Bloqueio\", tabela1)\n		if(bloq_table = \"\")\n			bloq_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] \"Bloqueio\"\n		\n		/*\n			Cria a tabela de bloqueios caso ela nao exista\n		*/ \n		db.Modelo.create_tabela_bloqueio(bloq_table, info)\n		inserir_bloqueio_view()\n		return \n\n\n				exportarbloqueio:\n				result_to_export:=GetCheckedRows(\"MAB\",\"MABlv\")\n				if(result_to_export[1,1] = \"\"){\n					MsgBox,64,,% \"Selecione os modelos a serem exportados antes de continuar\"\n					return \n				}\n				FileDelete,listbloqtemp.csv\n				for,each,value in result_to_export{\n					FileAppend,% result_to_export[A_Index,1] \"`n\",listbloqtemp.csv\n					if ErrorLevel\n						MsgBox, % \"O arquivo estava bloqueado!\"\n				}\n				MsgBox,64,, % \"Os items foram exportados!!!\" \n				run,listbloqtemp.csv\n				return \n\n				importarbloqueio:\n				db.query(\"Create TABLE \" bloqtable \" (Codigos, PRIMARY KEY(Codigos ASC));\")\n				FileSelectFile,source,\"\"\n				MsgBox, % source\n				x:= new OTTK(source)\n				progress(Listbloq.maxindex())\n				for,each,value in x{\n					updateprogress(\"Inserindo bloqueios: \" x[A_Index,1],1)\n				    db.query(\"INSERT INTO \" bloqtable \" (Codigos) VALUES ('\" x[A_Index,1] \"');\")\n				}\n				Gui, progress:destroy\n				MsgBox,64,,% \"valores importados!!!!\"\n				return \n\n				marctodosmab:\n				gui,listview,MABlv\n				Loop, % LV_GetCount()\n					LV_Modify(\"\",\"+check\")\n				return \n\n				destodosmab:\n				gui,listview,MABlv\n				Loop, % LV_GetCount()\n					LV_Modify(\"\",\"-check\")\n				return \n\n				filtrarcod:\n				table:=db.query(\"SELECT Codigos FROM \" codtable \";\")\n				progress(Listbloq.maxindex())\n				while(!table.EOF){ \n					if(MatHasValue(Listbloq,table[\"Codigos\"])){\n						updateprogress(\"filtrando codigos: \" table[\"Codigos\"],1)\n						db.query(\"DELETE FROM \" codtable \" WHERE Codigos='\" table[\"Codigos\"] \"';\")\n					}\n        			table.MoveNext()\n				}\n				Gui,progress:destroy\n				loaditem()\n				MsgBox,64,, % \"os codigos foram filtrados!!!\"\n				return \n\n				retirarbloq:\n				result:=GetCheckedRows(\"MAB\",\"MABlv\")\n				progress(result.maxindex())\n				for,each,value in result{\n					updateprogress(\"Retirando Bloqueios: \" result[A_Index,1],1)\n					Listbloq:=deletefromarray(result[A_Index,1],Listbloq)\n					db.query(\"DELETE FROM \" bloqtable \" WHERE Codigos='\" result[A_Index,1] \"';\")\n				}\n				gui,progress:destroy\n				db.loadlv(\"MAB\",\"MABlv\",bloqtable,\"Codigos\")\n				return \n\n				pesquisabloq:\n				gui,submit,nohide\n				pesquisalv(\"MAB\",\"MABlv\",pesquisamam,Listbloq)\n				return \n			\n			inserirwindow:\n			Gui,iw:New\n			Gui,font,s%SMALL_FONT%,%FONT%\n			Gui,iw:+owner%owner%\n			Gui,color,%GLOBAL_COLOR%\n			Gui,Add, Picture,w500 h50 0xE vbanner \n			banner(BANNER_COLOR,banner,\"Inserir bloqueios\")\n			;Gui,iw:+toolwindow\n			Gui,add,edit,w500 r1 gpesquisaiw vpesquisaiw uppercase,\n			Gui,add,listview,w500 h400 y+5 viwlv  checked,\n			Gui,add,button,w100 h30 y+5 ginserirbloq,Inserir\n			Gui,add,button,w100 h30 x+5 gmarctodosiw,Marc.Todos\n			Gui,add,button,w100 h30 x+5 gdestodosiw,Des.Todos\n			Gui,Show,,Inserir Bloqueios!!\n			Listiw:=[]\n			table:=db.query(\"SELECT Codigos,DC FROM \" codtable \";\")\n			k:=0\n			while(!table.EOF){\n					if(!MatHasValue(Listbloq,table[\"Codigos\"])){\n				        k++\n				        value1:=table[\"Codigos\"],value2:=table[\"DC\"]\n				        Listiw[k,1]:=value1 \n				        Listiw[k,2]:=value2\n					}\n					table.MoveNext()\n			}\n			db.loadlv(\"iw\",\"iwlv\",codtable,\"Codigos,DC\",1)\n			return \n\n				marctodosiw:\n				gui,listview,iwlv\n				Loop, % LV_GetCount()\n					LV_Modify(\"\",\"+check\")\n				return \n\n				destodosiw:\n				gui,listview,iwlv\n				Loop, % LV_GetCount()\n					LV_Modify(\"\",\"-check\")\n				return \n\n				pesquisaiw:\n				Gui,submit,nohide\n				pesquisalv(\"iw\",\"iwlv\",pesquisaiw,Listiw)\n				return \n\n\n				inserirbloq:\n				Gui,submit,nohide\n				db.query(\"Create TABLE \" bloqtable \" (Codigos, PRIMARY KEY(Codigos ASC));\")\n				result:=GetCheckedRows(\"iw\",\"iwlv\")\n				for,index,value in result{\n					for,each,string in Listiw{\n						if (Listiw[A_Index,1]=result[index,1]){\n							Listiw.Remove(each)\n							Gosub,pesquisaiw\n						}\n					}\n					db.query(\"INSERT INTO \" bloqtable \"(Codigos) VALUES ('\" . result[A_Index,1] . \"');\")\n				}\n				db.loadlv(\"MAB\",\"MABlv\",bloqtable,\"Codigos\",1)\n				MsgBox,64,, % \"Bloqueios inseridos\"\n\n				return \n\n\n;##################################################\n;#												  \n;#					Campos						  \n;#										          \n;##################################################\n\n\n; O modelo antigo esta no teste7			\nMAC:\ninfo := get_item_info(\"M\", \"MODlv\")\nif(info.modelo[2] = \"\" || info.modelo[1] = \"Modelo\" ){\n	MsgBox,16,Erro, % \"Selecione um modelo antes de continuar!\" \n	return\n}\n	\ninserir_campos_view(info)\nreturn\n\n				loadcampetables(relreference){\n					Global db\n					;MsgBox, % \" relreference \" relreference\n					db.loadlv(\"MAC\",\"MACcod\",relreference,\"Codigo\") \n					db.loadlv(\"MAC\",\"MACdc\",relreference,\"DC\")\n					db.loadlv(\"MAC\",\"MACdr\",relreference,\"DR\")\n					db.loadlv(\"MAC\",\"MACdi\",relreference,\"DI\")\n					GuiControl,+ReDraw,MACcod\n					GuiControl,+ReDraw,MACdc\n					GuiControl,+ReDraw,MACdr\n					GuiControl,+ReDraw,MACdi\n				}\n\n				desc.geral:\n				Gui,descgaral:New\n				Gui,font,s%SMALL_FONT%,%FONT%\n				Gui,Add, Picture,w310 h50 0xE vbanner\n				banner(BANNER_COLOR,banner,\"Descricao Geral\")\n				table:=db.query(\"SELECT descricao FROM \" EmpresaMascara AbaMascara FamiliaMascara ModeloMascara \"Desc;\")\n				table2:=db.query(\"SELECT descricao FROM \" EmpresaMascara AbaMascara FamiliaMascara ModeloMascara \"DescIngles;\")				\n				Gui,add,text,xm y+5,Descricao Potugues:\n				Gui,add,edit,r2 w310  y+5 xm  veditdg uppercase, % table[\"descricao\"]\n				Gui,add,text,xm y+5,Descricao Ingles:\n				Gui,add,edit,r2 w310 y+5 xm  veditdi uppercase, % table2[\"descricao\"]\n				Gui,add,button,y+5 xm gsalvardescgeral,Salvar\n				Gui,Show,,Descricao Geral\n				table.close()\n				table2.close()\n				return \n\n					salvardescgeral:\n					Gui,Submit,nohide\n					db.query(\"Create TABLE \" EmpresaMascara AbaMascara FamiliaMascara ModeloMascara \"Desc (descricao);\")\n					db.query(\"Create TABLE \" EmpresaMascara AbaMascara FamiliaMascara ModeloMascara \"DescIngles (descricao);\")\n					db.deletevalues(EmpresaMascara AbaMascara FamiliaMascara ModeloMascara \"Desc\",\"descricao\")\n					db.deletevalues(EmpresaMascara AbaMascara FamiliaMascara ModeloMascara \"DescIngles\",\"descricao\")\n					db.insert(EmpresaMascara AbaMascara FamiliaMascara ModeloMascara \"Desc\",\"(descricao)\",\"('\" editdg \"')\")\n					db.insert(EmpresaMascara AbaMascara FamiliaMascara ModeloMascara \"DescIngles\",\"(descricao)\",\"('\" editdi \"')\")\n					MsgBox,64,, % \"A descricao geral foi salva!!!\" \n					return \n\n\n				MACRDI:\n				return \n\n\n\n				deslink:\n				MsgBox, 4,,Deseja desfazer o link?\n				IfMsgBox Yes\n				{\n					SQL:=\"DELETE FROM reltable WHERE tipo='Campo' AND tabela1='\" . EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel . \"';\"\n					db.query(sql)\n					for,each,value in [octable,odctable,odrtable]{\n						db.deletevalues(value,\"Campos\")	\n					}\n					camptable:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . \"Codigo\"\n					db.loadlv(\"MAC\",\"MACcamp\",camptable)\n					MsgBox,64,, % \"O link foi desfeito!\"\n					guicontrol,,link,\n					guicontrol,hide,deslink\n					loaditem()\n				}else{\n					return \n				}\n				return \n\n				deslink2:\n				MsgBox, 4,,Deseja desfazer o link?\n				IfMsgBox Yes\n				{\n					desparan1 := GetSelected(\"MAC\",\"MACcamp\")\n					desparan2 := EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel\n					StringReplace,desparan1,desparan1,%A_Space%,,All\n					MsgBox, % \"DELETE FROM reltable WHERE tipo='\" desparan1 \"' AND tabela1='\" desparan2 \"';\" \n					db.query(\"DELETE FROM reltable WHERE tipo='\" desparan1 \"' AND tabela1='\" desparan2 \"';\")\n					MsgBox,64,, % \"O link do campo \" desparan1 \" foi desfeito!!!\"\n				}else{\n					return \n				}\n				return \n\n				loadcampetable(args){\n					Global \n					campvalues := {}\n					campnames := db.query(\"SELECT Campos FROM \" args[\"camptable\"] \";\")\n					while(!campnames.EOF){\n					    campname := campnames[\"Campos\"]\n					    StringReplace,campname,campname,%A_Space%,,All\n					    if(campname=\"\")\n					        Break\n					    relreference:=db.query(\"SELECT tabela2 FROM reltable WHERE tipo='\" . campname . \"' AND tabela1='\" . args[\"model\"] . \"'\")\n					    db.query(\"ALTER TABLE \" relreference[\"tabela2\"] \" ADD COLUMN DI TEXT;\")\n					    result:=db.query(\"SELECT Codigo,DC,DR,DI FROM \" relreference[\"tabela2\"] \";\")\n					    while(!result.EOF){\n					        if(result[\"Codigo\"] = \"\")\n					            continue\n					        referencename1 := campname . \"Codigo\",referencename2:=campname . \"dc\",referencename3:=campname . \"dr\",referencename4:=campname . \"di\"\n							\n							campvalues[referencename1, A_Index] := result[\"Codigo\"]\n							campvalues[referencename2, A_Index] := result[\"DC\"]\n							campvalues[referencename3, A_Index] := result[\"DR\"]\n							campvalues[referencename4, A_Index] := result[\"DI\"]\n					        result.movenext()\n					    }\n					    result.close()\n					    campnames.movenext()\n					}\n					campnames.close()\n					relreference.close()\n				}\n\n				MACcod:\n				if A_GuiEvent = I \n				{\n					gui,submit,nohide\n					selecteditem9:=GetSelected(\"MAC\",\"MACcod\"),selectcode:=selecteditem9\n				}\n				return \n\n				addreferencia:\n				if(!nomecamp) || (!selectcode) || (!selectmodel)\n					MsgBox,64,, % \"Nenhum dos campos pode estar em branco!!!\"\n				StringReplace,selectmodel,selectmodel,`.,,All\n				inserir3(nomecamp . selectcode . selectmodel,\"Referencia\",\"Referencia ASC\",\"\",\"\")\n				return \n\n				MACREN:\n				args:={}\n				args[\"window\"]:=\"MAC\",args[\"table\"]:=campEtable,args[\"camptable\"]:=camptable\n				args[\"mascaraant\"]:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara\n				button:=A_GuiControl\n				if(button=\"MACRC\"){\n					args[\"lv\"]:=\"MACcamp\"\n					args[\"field1\"]:=\"Campos\"\n					args[\"field2\"]:=\"Campos\"\n					args[\"func\"]:=\"salvarr1\"\n					args[\"loadtable\"]:=camptable\n					args[\"loadfield\"]:=\"Campos\"\n				}\n\n				if(button=\"MACRCO\"){\n					args[\"lv\"]:=\"MACcod\"\n					args[\"field1\"]:=\"Codigo\"\n					args[\"field2\"]:=\"Codigo\"\n					args[\"func\"]:=\"salvarr2\"\n					args[\"loadtable\"]:=campEtable\n					args[\"loadfield\"]:=\"Codigo\"\n				}\n\n				if(button=\"MACRDC\"){\n					args[\"lv\"]:=\"MACdc\"\n					args[\"field1\"]:=\"DC\"\n					args[\"field2\"]:=\"DC\"\n					args[\"func\"]:=\"salvarr2\"\n					args[\"loadtable\"]:=campEtable\n					args[\"loadfield\"]:=\"DC\"\n				}\n					\n				if(button=\"MACRDR\"){\n					args[\"lv\"]:=\"MACdr\"\n					args[\"field1\"]:=\"DR\"\n					args[\"field2\"]:=\"DR\"\n					args[\"func\"]:=\"salvarr2\"\n					args[\"loadtable\"]:=campEtable\n					args[\"loadfield\"]:=\"DR\"\n				}\n\n				if(button=\"MACRDI\"){\n					args[\"lv\"]:=\"MACdi\"\n					args[\"field1\"]:=\"DI\"\n					args[\"field2\"]:=\"DI\"\n					args[\"func\"]:=\"salvarr2\"\n					args[\"loadtable\"]:=campEtable\n					args[\"loadfield\"]:=\"DI\"\n				}\n				renomear2(args)\n				return\n\n			MACL:\n			gui,submit,nohide\n			if(!nomecamp){\n				MsgBox,64,, % \"Selecione um campo ja criado antes de continuar!\"\n				return \n			}\n			args:={}\n			args[\"selecteditem\"]:=selectmodel\n			args[\"tipo\"]:=nomecamp,args[\"mascaraant\"]:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara\n			args[\"tipoquery\"]:=\"SELECT tipo,tabela1,tabela2 FROM reltable WHERE tipo='\" . nomecamp . \"'\"\n			args[\"closefunc\"]:=\"closelinkar2\",args[\"selecteditem\"]:=selectmodel\n			linkar2(args)\n			return\n\n			closelinkar2(args1){\n				Global\n				args:={},args[\"camptable\"]:=camptable,args[\"model\"]:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel\n				loadcampetable(args1)\n			}\n\n			MACEXCLUIRC:\n			selecteditems:=getselecteditems(\"MAC\",\"MACcamp\")\n			MsgBox, 4,,Deseja apagar os campos?\n			IfMsgBox Yes\n			{\n				for,each,value in selecteditems{\n					campEtable:=getreferencetable(value,EmpresaMascara AbaMascara FamiliaMascara ModeloMascara selectmodel)\n					MsgBox, % \" gonna drop table \" campEtable\n					db.query(\"DROP TABLE \" campEtable \";\")\n					db.delete(camptable,value,\"Campos\")\n					db.delete(octable,value,\"Campos\")\n					db.delete(odctable,value,\"Campos\")\n					db.delete(odrtable,value,\"Campos\")\n					db.delete(oditable,value,\"Campos\")\n				}\n				db.loadlv(\"MAC\",\"MACcamp\",camptable)\n			}else{\n				return \n			}\n			return \n\n			MACEEXCLUIRV:\n			selecteditems:=getselecteditems(\"MAC\",\"MACcod\")\n			MsgBox, % \" selecteditems \" selecteditems[1] \" nomecamp \" nomecamp \n			if(selecteditems[1]=\"\" or nomecamp=\"\"){\n				MsgBox,64,, % \"Selecione um campo e um item a ser excluido!\"\n				return \n			}\n			MsgBox, 4,,Deseja apagar os items selecionados?\n			IfMsgBox Yes\n			{\n				for,each,value in selecteditems{\n					db.delete(campEtable,value,\"Codigo\")\n					}	\n				db.loadlv(\"MAC\",\"MACcod\",campEtable,\"codigo\")\n				db.loadlv(\"MAC\",\"MACdc\",campEtable,\"dc\")\n				db.loadlv(\"MAC\",\"MACdr\",campEtable,\"dr\")\n				db.loadlv(\"MAC\",\"MACdi\",campEtable,\"di\")\n			}else{\n				return \n			}\n			return \n\n\n			MACcamp:\n			if A_GuiEvent = I \n			{\n				gui,submit,nohide\n				selecteditem := GetSelected(\"MAC\",\"MACcamp\")\n				StringReplace,nomecamp,selecteditem,%A_Space%,,All\n				campEtable := getreferencetable(selecteditem,EmpresaMascara AbaMascara FamiliaMascara ModeloMascara selectmodel)\n				guicontrol,,link0,% \"@\" campEtable\n				loadcampetables(campEtable)\n			}\n			\n			return \n\n				MACEXCLUIR:\n				selecteditem:=GetSelected(\"MAC\",\"MACcamp\")\n				MsgBox, 4,,Deseja apagar o campo selecionado %selecteditem%?\n				IfMsgBox Yes\n				{\n					db.delete(\"MAC\",\"MACcamp\",EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . \"camp\",selecteditem,\"Campos\")\n					db.loadlv(\"MAC\",\"MACcamp\",EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . \"camp\")\n				}else{\n					return \n				}\n				return \n\n				MACC:\n				return \n\n				MACI:\n				campname:=\"\"\n				camplist:=db.getvalues(\"Campos\",camptable)\n				campvalues:=\"\"\n				for,k,v in camplist{\n			    if(A_Index=1){\n			        if(camplist[A_Index,1]!=\"\")\n			            campvalues.=camplist[A_Index,1] \n			    }else{\n			        if(camplist[A_Index,1]!=\"\")\n			            campvalues.=\"|\" . camplist[A_Index,1]       \n			    }\n				}\n				gui,MABC:New\n				Gui,font,s%SMALL_FONT%,%FONT%\n				Gui,MABC:+ownerM\n				Gui,color,%GLOBAL_COLOR%\n				Gui, Add, Text, xm w100 h20 , Campos\n				Gui, Add,Dropdownlist, xm y+5 w180 gddlaction vddlvalue ,%campvalues%\n				Gui, Add, Button, x+5  w100 h20 gAddCampo, Add Campo\n				Gui, Add, Text, xm y+5 w100 h20 , Codigo\n				Gui, Add, Edit, xm y+5 w120 h20 vcod uppercase,\n				Gui, Add, Text, xm y+5 w100 h20 , Descricao Completa\n				Gui, Add, Edit,  y+5 w700 h60 vdc uppercase,\n				Gui, Add, Text, xm y+5 w100 h20 , Descricao Resumida\n				Gui, Add, Edit,  y+5 w700 h60 vdr uppercase,\n				Gui, Add, Text, xm y+5 w100 h20 , Descricao Ingles\n				Gui, Add, Edit,  y+5 w700 h60 vdi uppercase,\n				Gui, Add, Button, xm y+5 y+5   w100 h30 gMACISALVAR,Salvar\n				Gui, Add, Button,  x+5 w100 h30 gMACIIMPORT,Importar\n				Gui, Add, Button, x+5 w100 h30 gMACICANCELAR, Cancelar\n				Gui, Show,,Modelos-Alterar-Campos-Incluir\n				return  \n\n					MACIIMPORT:\n					Gui,submit,nohide\n				  FileSelectFile,source,\"\"\n				  Stringright,_iscsv,source,3\n				  if(_iscsv!=\"csv\"){\n				  	MsgBox, % \"o arquivo selecionado tem que ser .csv!!!!\"\n				    return \n				  }\n				  if(campEtable=\"\"){\n						MsgBox, % \"Selecione um modelo antes de continuar!!!\"\n						return \n					}\n					MsgBox, % campEtable\n					db.query(\"create table if not exists \" campEtable \"(Codigo,DC,DR,DI, PRIMARY KEY(Codigo ASC))\")\n			    ;db.query(\"CREATE TABLE \" campEtable \" (Codigo,DC);\")\n			    MsgBox, 4,,Deseja apagar a tabela antiga?\n					IfMsgBox Yes\n					{\n						db.query(\"DELETE FROM \" campEtable \";\")\n					}\n				  x:= new OTTK(source)\n				  for,each,value in x{\n				    db.query(\"INSERT INTO \" campEtable \" (Codigo,DC,DR,DI) VALUES ('\" x[A_Index,1] \"','\" x[A_Index,2] \"','\" x[A_Index,3] \"','\" x[A_Index,4] \"');\")\n				  }\n				  MsgBox,64,,% \"valores importados!!!!\"\n					return \n				\n\n					ddlaction:\n					Gui,submit,nohide\n					StringReplace,value,ddlvalue,%A_Space%,,All\n					result:=db.query(\"SELECT tabela2 FROM reltable WHERE tipo='\" . value . \"' AND tabela1='\" . EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel . \"'\")\n					campEtable:=result[\"tabela2\"]\n					result.close()\n					campname1:=value\n					;MsgBox, % \" valor selecionado no camp action \" campname \"`n valor do campEtable \" campEtable\n					model:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel\n					return \n\n					AddCampo:\n					gui,addcampo:New\n					Gui,font,s%SMALL_FONT%,%FONT%\n					Gui,color,%GLOBAL_COLOR%\n					Gui, Add, Text, x7 y55 w70 h20 ,Nome:\n					Gui, Add, Edit, x57 y45 w230 h30 vADDCedit1 uppercase,\n					Gui, Add, GroupBox, x-3 y-5 w300 h180 , Inserir\n					Gui, Add, Button, x72 y130 w100 h30 gADDCAMPOSALVAR,&Salvar\n					Gui, Add, Button, x182 y130 w100 h30 gADDCAMPOCANCELAR,&Cancelar\n					Gui, Show, w309 h200,Empresa-Alterar-Inserir\n					return\n\n						ADDCAMPOSALVAR:\n						gui,submit,nohide\n						if(ADDCedit1=\"\")\n						{\n							MsgBox, % \"O campo nao pode estar em branco!!\"\n							return \n						}\n						db.createtable(camptable,\"(Campos,PRIMARY KEY(Campos ASC))\")\n						db.createtable(octable,\"(Campos,PRIMARY KEY(Campos ASC))\")\n						db.createtable(odctable,\"(Campos,PRIMARY KEY(Campos ASC))\")\n						db.createtable(odrtable,\"(Campos,PRIMARY KEY(Campos ASC))\")\n						istring:=\"('\" . ADDCedit1 . \"')\"\n						model:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel\n						db.insert(camptable,\"(Campos)\",istring)\n						db.insert(octable,\"(Campos)\",istring)\n						db.insert(odctable,\"(Campos)\",istring)\n						db.insert(odrtable,\"(Campos)\",istring)\n						if(!db.exist(\"tipo,tabela1\",\"tipo='Campo' AND tabela1='\" . model . \"'\",\"reltable\"))\n							db.insert(\"reltable\",\"(tipo,tabela1,tabela2)\",\"('Campo','\" . model . \"','\" . camptable . \"')\")\n						if(!db.exist(\"tipo,tabela1\",\"tipo='oc' AND tabela1='\" . model . \"'\",\"reltable\"))\n							db.insert(\"reltable\",\"(tipo,tabela1,tabela2)\",\"('oc','\" . model . \"','\" . octable . \"')\")\n						if(!db.exist(\"tipo,tabela1\",\"tipo='odc' AND tabela1='\" . model . \"'\",\"reltable\"))\n							db.insert(\"reltable\",\"(tipo,tabela1,tabela2)\",\"('odc','\" . model . \"','\" . odctable . \"')\")\n						if(!db.exist(\"tipo,tabela1\",\"tipo='odr' AND tabela1='\" . model . \"'\",\"reltable\"))\n							db.insert(\"reltable\",\"(tipo,tabela1,tabela2)\",\"('odr','\" . model . \"','\" . odrtable . \"')\")\n						Gui,AddCampo:destroy\n						Gosub,MACI\n						args:={},args[\"camptable\"]:=camptable,args[\"model\"]:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel\n						;MsgBox, % \"addcamposalvar\"\n						loadcampetable(args)\n						;MsgBox, % camptable\n						db.loadlv(\"MAC\",\"MACcamp\",camptable)\n						return \n\n						ADDCAMPOCANCELAR:\n						gui,AddCampo:destroy\n						return \n\n\n					MACISALVAR:\n					gui,submit,nohide\n					db.query(\"create table if not exists \" campEtable \"(Codigo,DC,DR,DI, PRIMARY KEY(Codigo ASC))\")\n					if(campname1=\"\"){\n						MsgBox,64,, % \"Selecione um campo ou insira um se nao existir!\"\n						return\n					}\n					MsgBox, % \" model e igual a \" model \" e cod e igual a \" cod\n					if(model = \"\" or dc = \"\" or dr = \"\" or di = \"\" or cod = \"\"){\n						MsgBox,64,, % \"Algum campo obrigatorio esta em branco!\"\n						return \n					}\n					istring:=\"('\" cod \"','\" dc \"','\" dr \"','\" di \"')\"\n					if(campEtable = \"\"){\n						if(!db.exist(\"tipo,tabela1\",\"tipo='\" . campname1 . \"' AND tabela1='\" . model . \"'\",\"reltable\"))\n						{\n							db.insert(\"reltable\",\"(tipo,tabela1,tabela2)\",\"('\" . campname1 . \"','\" . model . \"','\" . EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . campname1 . \"')\")\n						}\n						db.createtable(EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . campname1,\"(Codigo,DC,DR,DI, PRIMARY KEY(Codigo ASC))\")\n						db.query(\"ALTER TABLE \" EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . campname1 \" ADD COLUMN DI TEXT;\")\n						db.insert(EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . campname1,\"(Codigo,DC,DR,DI)\",istring)\n					}else{\n						db.query(\"ALTER TABLE \" campEtable \" ADD COLUMN DI TEXT;\")\n						db.insert(campEtable,\"(Codigo,DC,DR,DI)\",istring)\n					}\n					args:={},args[\"camptable\"]:=camptable,args[\"model\"]:=EmpresaMascara . AbaMascara . FamiliaMascara . ModeloMascara . selectmodel\n					MsgBox, % \"Os valores foram salvos com sucesso!!!\"\n					db.loadlv(\"MAC\",\"MACcamp\",camptable)\n					return \n\n					MACICANCELAR:\n					return \n\n		\n\n\n			MAOC:\n			info := get_item_info(\"M\", \"MODlv\")\n			ordem_view(\"oc\", info)\n			\n			;args:={}\n			;args[\"camptable\"]:=camptable,args[\"table\"]:=octable,args[\"field\"]:=\"Campos\",args[\"comparar\"]:=true,args[\"owner\"]:=\"M\"\n			;MsgBox, % \"octable \" octable\n			;alterarordem(args)\n			return \n			\n			MAODC:\n			info := get_item_info(\"M\", \"MODlv\")\n			ordem_view(\"odc\", info)\n			\n			;args:={}\n			;args[\"camptable\"]:=camptable,args[\"table\"]:=odctable,args[\"field\"]:=\"Campos\",args[\"comparar\"]:=true,args[\"owner\"]:=\"M\"\n			;alterarordem(args)\n			return \n\n			MAODR:\n			info := get_item_info(\"M\", \"MODlv\")\n			ordem_view(\"odr\", info)\n\n			;args:={}\n			;args[\"camptable\"]:=camptable,args[\"table\"]:=odrtable,args[\"field\"]:=\"Campos\",args[\"comparar\"]:=true,args[\"owner\"]:=\"M\" \n			;alterarordem(args)\n			return \n\n			MAODI:\n			info := get_item_info(\"M\", \"MODlv\")\n			ordem_view(\"odi\", info)\n			\n			;args:={}\n			;args[\"camptable\"] := camptable, args[\"table\"] := oditable, args[\"field\"] := \"Campos\", args[\"comparar\"] := true, args[\"owner\"] := \"M\"\n			;alterarordem(args)\n			return\n			\n;inserir1(table,field,primarykey,tipo,mascaraant=\"\",relcondition=true,args)\n\ninserir1(args)\n{\n	Global db,args1,GLOBAL_COLOR,bannerargs,TextOptions,Font,pesquisaifdb,List,BANNER_COLOR\n	Static updown1,lv,foto,banner,banner99\n	args1 := args\n	StringSplit, value, field,`,\n	field3 := value1\n	Gui, inserir1:New\n	Gui,font,s%SMALL_FONT%,%FONT%\n	owner := args[\"owner\"]\n	if(owner != \"\")\n		Gui, inserir1:+owner%owner%\n	Gui, color, %GLOBAL_COLOR%\n	Gui, Add, Picture,w600 h50 0xE vbanner \n	banner(BANNER_COLOR,banner,\"Alterar\")\n	Gui, Add, ListView, xm w320 h290 vlv glv altsubmit  ,\n	Gui, Add, UpDown, x+5  w40 h140 gupdown1 vupdown1, UpDown\n	Gui, Add, Picture, x+5 w230 h250 vfoto gfoto ,%A_ScriptDir%\\SGTK\\Images\\NoImage1.png\n	Gui, Add, Button, xm y+50 w100 h30 ginserir,&Inserir\n	Gui, Add, Button, x+5 wp hp grenomear, &Renomear\n	Gui, Add, Button, x+5 wp hp glinkar, &Linkar\n	Gui, Add, Button, x+5 wp hp gimportar,&Importar\n	Gui, Add, Button, x+5 wp hp gexportar,&Exportar\n	Gui, Add, Button, x+5 wp hp gexcluir, &Excluir\n	Gui, Show,, Empresa-Alterar\n	db.loadlv(\"inserir1\",\"lv\",args[\"table\"],args[\"field\"])\n	return\n\n	importar:\n	Gui, submit, nohide\n    FileSelectFile, source,\"\"\n    Stringright, _iscsv, source, 3\n    MsgBox, % _iscsv\n    if(_iscsv != \"csv\"){\n    	MsgBox, % \"o arquivo selecionado tem que ser .csv!!!!\"\n    	return \n    }\n    if(args1[\"table\"] = \"\"){\n		MsgBox, % \"Selecione um modelo antes de continuar!!!\"\n		return \n	}\n    db.query(\"CREATE TABLE \" args1[\"table\"] \" (\" args1[\"field\"] \");\")\n    MsgBox, 4,,Deseja apagar a tabela antiga?\n	IfMsgBox Yes\n	{\n		db.query(\"DELETE FROM \" args1[\"table\"] \";\")\n	}\n    x:= new OTTK(source)\n    for,each,value in x{\n        db.query(\"INSERT INTO \" args1[\"table\"] \" (\" args1[\"field\"] \") VALUES ('\" x[A_Index,1] \"','\" x[A_Index,2] \"');\")\n    }\n    MsgBox,64,,% \"valores importados!!!!\"\n	return \n\n	exportar:\n	FileDelete,temp.csv \n	for,each,value in list := db.getvalues(args1[\"field\"],args1[\"table\"]){ \n		FileAppend, % list[A_Index,1] \";\" list[A_Index,2] \"`n\",temp.csv\n	}\n	Run, temp.csv		\n	return \n\n	inserir:\n	Gui, submit, nohide\n	inserir2(args1)\n	return\n\n	renomear:\n	renomear(args1)\n	return \n\n	copiar:\n	return \n\n	linkar:\n	linkar(args1)\n	return \n\n	excluir:\n	selecteditem := GetSelected(\"inserir1\",\"lv1\")\n	MsgBox, 4,, Deseja apagar a empresa %selecteditem%?\n	IfMsgBox Yes\n	{\n		db.delete(args1[\"table\"], selecteditem, args1[\"field1\"])\n		SQL:=\"DELETE FROM reltable WHERE tipo='\" . args1[\"tipo\"]  \"' AND tabela1='\" . args1[\"tabela1\"] . \"';\"\n		if (!db.Query(SQL)) {\n					  Msg := \"ErrorLevel: \" . ErrorLevel . \"`n\" . SQLite_LastError() \"`n`n\" sQry\n					  throw Exception(\"Query failed: \" Msg)\n					}\n		db.loadlv(\"inserir1\", \"lv1\", args1[\"table\"], args1[\"field\"])\n		closefunc:=args1[\"closefunc\"]\n		%closefunc%(args)\n	}else{\n		return \n	}\n	return \n\n	updown1:\n	return \n\n	lv:\n	return \n\n	foto:\n	result := GetSelectedRow(\"inserir1\",\"lv1\") \n	if(result[2] = \"mascara\" || result[2] = \"\"){\n		MsgBox, % \"Selecione um item antes de continuar!!\"\n		return \n	}\n	selecteditem := result[1]\n	iprefix := args1[\"mascaraant\"] result[2]\n	inserirfoto(iprefix, selecteditem, \"\", args1[\"owner\"])\n	return \n}\n\nmassainsertphoto(codtable){\n	Global db,TextOptions,Font,picture,BANNER_COLOR,GLOBAL_COLOR\n	Static lv,banner\n\n	Gui,massaphoto:New \n	Gui, Add, Picture,w900 h50 0xE vbanner \n	banner(BANNER_COLOR,banner,\"Inserir Fotos\")\n	Gui, Color,%GLOBAL_COLOR%\n	Gui, Add, Listview,w500 h300 xm section checked vlv altsubmit gmassalv,Codigos\n	Gui, Add, Picture,x+5 w300 h300 vpicture,%A_WorkingDir%\\noimage.png\n	Gui, Add, Button,xm y+5 w100 gmarcartodos,Marcar todos\n	Gui, Add, button,x+5 w100 gdesmarcartodos,Desmarcar todos\n	Gui, Add, button,x+260  w100 ginserirfotoemmassa ,Inserir\n	;Gui,add,button,x+5 w100 gexcluir,Excluir dos marcados\n	Gui, Show \n	db.loadlv(\"massaphoto\",\"lv\",codtable)\n	return \n}\n\ninserirfoto(iprefix1=\"\",selecteditem1=\"\",arrayofitems1=\"\",owner=\"\"){ ;arrayofitems e usado no massainsertphoto\n	Global GLOBAL_COLOR,db,pesquisaifdb,image_table\n	Static iprefix,selecteditem,arrayofitems,owner1\n	arrayofitems := arrayofitems1,owner1 := owner\n	iprefix := iprefix1,selecteditem := selecteditem1\n	Gui,insertimage:New \n	if(owner!=\"\")\n		Gui,insertimage:+owner%owner%\n	Gui,color,%GLOBAL_COLOR%\n	Gui,add,button, w150 h30 ginsertfromdb,Escolher do Banco!\n	Gui,add,button,w150 h30 ginsertfromfile,Escolher Arquivo!\n	Gui,Show,, \n	return \n\n		insertfromdb:\n		Gui,insertimage:destroy\n		Gui,selectfromdb:New\n		if(owner1 != \"\")\n			Gui,selectfromdb:+owner%owner1%\n		Gui,add,text,,Pesquisar:\n		Gui,add,edit,x+5 w150 r1 gpesquisaifdb vpesquisaifdb uppercase, \n		Gui,add,listview,xm y+5 vsblv w200 h300 altsubmit gsblv,Nome\n		Gui,add,picture,x+5 w300 h300 vsbimage,\n		Gui,add,button,xm y+5 gsaveselected w100 h30,Salvar\n		Gui,add,button,x+5 w100 h30 gdeleteimage,Deletar\n		Gui,Show,,\n		image_table := []\n		;Caso a tabela de imagens ainda nao tenha sido carregado\n		table := db.query(\"SELECT Name FROM imagetable;\")\n		while(!table.EOF){  \n      value1 := table[\"Name\"]\n      image_table.insert(value1)\n     	LV_Add(\"\",value1)  \n      table.MoveNext()\n		}\n		table.close()\n		return \n\n			pesquisaifdb:\n			Gui,submit,nohide\n			pesquisa_simple_array(\"selectfromdb\",\"sblv\",pesquisaifdb,image_table) \n			;pesquisalv(\"selectfromdb\",\"sblv\",pesquisaifdb,image_table)\n			return \n\n			deleteimage:\n			selectedimage:=GetSelected(\"selectfromdb\",\"sblv\")\n			if(selectedimage=\"\"){\n				MsgBox, % \"Selecione uma imagem antes de continuar\"\n				return \n			}\n			if(arrayofitems!=\"\"){\n				for,each,value in arrayofitems{\n					db.query(\"DELETE FROM imagetable WHERE Name='\" value \"';\")		\n				}\n			}else{\n				db.query(\"DELETE FROM imagetable WHERE Name='\" selectedimage \"';\")	\n			}\n			db.loadlv(\"selectfromdb\",\"sblv\",\"imagetable\")\n			MsgBox, % \"imagem deletada!!!\"\n			return\n\n			saveselected:\n			selectedimage:=GetSelected(\"selectfromdb\",\"sblv\")\n			if(arrayofitems!=\"\"){               ;se o arrayofitems nao estiver vazio insere todos os items.\n				for,each,value in arrayofitems{\n					db.query(\"DELETE FROM reltable WHERE tipo='image' AND tabela1='\" value \"';\")\n					db.queryS(\"INSERT INTO reltable (tipo,tabela1,tabela2) VALUES ('image','\" value \"','\" selectedimage \"');\")		\n				}\n			}else{\n				if(iprefix=\"\" || selecteditem=\"\"){\n					MsgBox, % \"As imagens nao foram inseridas pois o nome do arquivo e o `n array de items estavam em branco\"\n					return \n				}\n				db.query(\"DELETE FROM reltable WHERE tipo='image' AND tabela1='\" iprefix selecteditem \"';\")\n				db.queryS(\"INSERT INTO reltable (tipo,tabela1,tabela2) VALUES ('image','\" iprefix selecteditem \"','\" selectedimage \"');\")		\n			}			\n			loaditem()\n			Msgbox,64,,\"A imagem foi inserida no item!!!\"\n			return \n\n			sblv:\n			if A_GuiEvent = I\n			{\n				selecteditem2 := GetSelected(\"selectfromdb\",\"sblv\")\n				if(selecteditem2 = \"\" || selecteditem2 = \"Name\")\n					return \n				db.loadimage(\"selectfromdb\",\"sbimage\",selecteditem2)\n			}\n			return \n\n		insertfromfile:\n		Global editimage\n		Gui,insertimage:destroy\n		FileSelectFile,source\n		if(source = \"\"){\n			return\n		}\n		Gui,insertfromfile:New\n		if(owner1!=\"\")\n			Gui,selectfromdb:+owner%owner1%\n		Gui,add,text,w100 h30,Nome imagem:\n		Gui,add,edit,r1 veditimage w150 h30 y+5 uppercase\n		Gui,add,button,gifinsert w100 h30 y+5,inserir\n		Gui,Show,, \n		return \n\n		ifinsert:\n		Gui,submit,nohide\n    if(editimage=\"\" || source=\"\"){\n        MsgBox, % \"Escolha o nome e a imagem antes de continuar editimage!!\"\n        return  \n    }\n    ;insere o valor na tabela de imagem caso a tabela ja tenha sido carregada\n    if(image_table.maxindex())\n    	image_table[1].insert(editimage)\n\n	  if(arrayofitems!=\"\"){               ;se o arrayofitems nao estiver vazio insere todos os items.\n			for,each,value in arrayofitems{\n				db.query(\"DELETE FROM reltable WHERE tipo='image' AND tabela1='\" value \"';\")\n				db.queryS(\"INSERT INTO reltable (tipo,tabela1,tabela2) VALUES ('image','\" value \"','\" editimage \"');\")		\n			}\n		}else{\n			db.query(\"DELETE FROM reltable WHERE tipo='image' AND tabela1='\" iprefix selecteditem \"';\")\n			db.queryS(\"INSERT INTO reltable (tipo,tabela1,tabela2) VALUES ('image','\" iprefix selecteditem \"','\" editimage \"');\")		\n		}\n	    db.insertimage(source,editimage)\n	    loaditem()\n	   MsgBox, % \"a imagem foi inserida no modelo\"\n	  Gui,insertfromfile:destroy\n		return \n}\n\n\n\n;linkar(Tipo)\n\nlinkar(args)\n{\n	Global db, args1,GLOBAL_COLOR, bannerargs, TextOptions, Font\n	Global lb, selecteditem, mascaraant1\n	Static NewMascara, NewName, selecteditem1, tipo1, banner, pesquisarlin, PesqList\n\n	args1 := args\n	selecteditem := GetSelected(\"inserir1\",\"lv\")\n	selecteditem1 := args[\"mascaraant\"] . selecteditem,tipo1 := Tipo\n	gui,lb:New\n	owner:=args[\"owner\"]\n	if(owner != \"\")\n		Gui, lb:+owner%owner%\n	Gui, Color, %GLOBAL_COLOR%\n	Gui,Add,Picture,w450 h50 0xE vbanner \n	banner(BANNER_COLOR,banner,\"Linkar\")\n	Gui, Add, Edit, w440 r1 vpesquisarlin gpesquisarlin uppercase,\n	Gui, Add, ListView, xm y+5 w440 h400 vlb glb,tipo|tabela1|tabela2 \n	Gui, Add, Button, xm y+5 w100 gLinkar1, Linkar\n	Gui, Add, Button, x+5  w100 gCancelarL, Cancelar\n	Gui, Add, Button, x+5 w100 gundo_link, Desfazer Link\n	Gui, Show,, Linkar\n	PesqList := MontarLB(args[\"tipo\"],\"lb\",\"lb\")\n	LV_ModifyCol(1,150), LV_ModifyCol(2,150), LV_ModifyCol(3,150)\n	return\n\n	undo_link:\n	link_to_undo := GetSelectedRow(\"lb\",\"lb\")\n	;MsgBox, % \"DELETE FROM reltable WHERE tipo='\" . link_to_undo[1] . \"' AND tabela1='\" . link_to_undo[2] . \"';\" \n	db.query(\"DELETE FROM reltable WHERE tipo='\" . link_to_undo[1] . \"' AND tabela1='\" . link_to_undo[2] . \"';\")\n	Gui, lb:default \n	Gui, ListView, lb\n	LV_Delete(GetSelectedItems(\"lb\", \"lb\", \"number\"))\n	MsgBox, % \"O link foi desfeito!\"\n	return \n\n	pesquisarlin:\n	Gui, submit, nohide \n	for,each,value in PesqList{\n		Break\n	}\n	pesquisalv3(\"lb\", \"lb\", pesquisarlin, PesqList)\n	return \n\n	lb:\n	return \n\n	Linkar1:\n		result:=GetSelectedRow(\"lb\",\"lb\")\n		if(result=\"\")\n		{\n			MsgBox,64,, % \"selecione um item para continuar!\"\n			return \n		}\n		MsgBox, 4,,Tem certeza que deseja relacionar a tabela, a tabela antiga sera perdida.\n		IfMsgBox Yes\n		{\n			db.queryS(\"DELETE FROM reltable WHERE tipo='\" . args1[\"tipo\"] . \"' AND tabela1='\" . selecteditem1 . \"';\")\n			if(!db.exist(\"tipo,tabela1\",\"tipo='\" . result[1] . \"' AND tabela1='\" . selecteditem1 . \"'\",\"reltable\"))\n				db.insert(\"reltable\",\"(tipo,tabela1,tabela2)\",\"('\" . result[1] . \"','\" . selecteditem1 . \"','\" . result[3] . \"')\")\n		}else{\n			return \n		}\n	return\n\n	CancelarL:\n	Gui,lb:destroy\n	return \n}\n\nlinkar2(args)\n{\n	Global db,camptable,GLOBAL_COLOR,TextOptions,Font,BANNER_COLOR\n	Static selecteditem1,lb,tipo1,args1,pesquisarlin2,PesqList2,banner\n	wName:=args[\"window\"],lvName:=args[\"lv\"],selecteditem1:=args[\"mascaraant\"] . args[\"selecteditem\"],tipo1:=args[\"tipo\"]\n	args1:=args\n	gui,lb:New\n	owner:=args[\"owner\"]\n	if(owner!=\"\")\n		Gui,lb:+owner%owner%\n	;gui,lb:+toolwindow\n	Gui,color,%GLOBAL_COLOR%\n	Gui,Add,Picture,w560 h50 0xE vbanner \n	banner(BANNER_COLOR,banner,\"Linkar\")\n	Gui,add,edit,w440 r1 vpesquisarlin2 uppercase,\n	Gui, add, button, w100 x+5 gpesquisarlin2, Pesquisar\n	Gui, Add, ListView, w540 h320 xm vlb glb2,tipo|tabela1|tabela2 \n	;Gui, Add, GroupBox, x6 y360 w460 h80 , Opcoes\n	Gui, Add, Button,xm y+5 w100 h30 gLinkar2, Linkar\n	Gui, Add, Button,x+5 w100 h30 gCancelar2, Cancelar\n	Gui, Show, w560 h448, Linkar\n	LV_ModifyCol(1,200),LV_ModifyCol(2,200),LV_ModifyCol(3,200)\n	PesqList2 := MontarLB2(args)\n	return\n\n	pesquisarlin2:\n	Gui,submit,nohide \n	pesquisalv3(\"lb\",\"lb\",pesquisarlin2,PesqList2)\n	return \n\n	lb2:\n	return \n\n	Linkar2:\n		result:=object\n		result:=GetSelectedRow(\"lb\",\"lb\")\n		if(result=\"\")\n		{\n			MsgBox,64,, % \"selecione um item para continuar!\"\n			return \n		}\n		MsgBox, 4,,Tem certeza que deseja relacionar a tabela, a tabela antiga sera perdida.\n		IfMsgBox Yes\n		{\n			;MsgBox, % \"delete from  tipo  \" . tipo1 . \"   tabela1 \" . selecteditem1\n			if(result[1]=\"Campo\"){\n				camptable:=result[3]\n				;MsgBox, % \"camptable se tornou \" . camptable\n				loador(result[3])\n			}\n			;MsgBox, % \"DELETE FROM reltable WHERE tipo='\" . result[1] . \"' AND tabela1='\" . selecteditem1 . \"';\"\n			db.queryS(\"DELETE FROM reltable WHERE tipo='\" . result[1] . \"' AND tabela1='\" . selecteditem1 . \"';\")\n			if(!db.exist(\"tipo,tabela1\",\"tipo='\" . result[1] . \"' AND tabela1='\" . selecteditem1 . \"'\",\"reltable\")){\n				;MsgBox, % \"ira inserir tipo=\" result[1] \" tabela1 \" selecteditem1 \" tabela2 \" result[3]\n				db.insert(\"reltable\",\"(tipo,tabela1,tabela2)\",\"('\" . result[1] . \"','\" . selecteditem1 . \"','\" . result[3] . \"')\")\n				\n			}\n			closefunc:=args1[\"closefunc\"],%closefunc%(args1)\n		}else{\n			return \n		}\n		MsgBox,64,, % \"Campos linkados!!\"\n	return\n\n	Cancelar2:\n	Gui,lb:destroy\n	return \n\n\n}\n\nloador(camptable){      ; carrega o valor que foi inserido no linkar dos campos nas tabelas de ordem\n	Global db,octable,odctable,odrtable \n	db.createtable(octable,\"(Campos, PRIMARY KEY(Campos))\")\n	db.createtable(odctable,\"(Campos, PRIMARY KEY(Campos))\")\n	db.createtable(odrtable,\"(Campos, PRIMARY KEY(Campos))\")\n	for,each,value in list:=db.getvalues(\"Campos\",camptable){\n		db.insert(octable,\"(Campos)\",\"('\" . list[A_Index,1] . \"')\")\n		db.insert(odctable,\"(Campos)\",\"('\" . list[A_Index,1] . \"')\")\n		db.insert(odrtable,\"(Campos)\",\"('\" . list[A_Index,1] . \"')\")\n	}\n}\n\nMontarLB2(args)\n{\n	Global db\n	sql:=args[\"tipoquery\"]  ;tipo query sera um select que tera todos os tipo que podem ser escolhidos pelo usuario\n	rs := db.query(sql)\n	Gui,lb:default \n	Gui,listview,lb\n	PesqList:=[]\n	while(!rs.EOF){   \n	  col1 := rs[\"tipo\"] \n	  col2 := rs[\"tabela1\"]  \n	  col3 := rs[\"tabela2\"]\n	  PesqList[A_Index,1]:=col1 \n      PesqList[A_Index,2]:=col2\n      PesqList[A_Index,3]:=col3\n	  LV_Add(\"\",col1,col2,col3)\n	  rs.MoveNext()\n	}\n	rs.Close()\n	return PesqList\n}\n\nMontarLB(tipo,lb,window)\n{\n	Global db \n	sql:=\"SELECT tipo,tabela1,tabela2 FROM reltable WHERE tipo='\" . tipo . \"'\"\n	rs := db.query(sql)\n	Gui,%window%:default \n	Gui,listview,%lb%\n	PesqList:=[]\n	while(!rs.EOF){   \n	  col1 := rs[\"tipo\"] \n	  col2 := rs[\"tabela1\"]  \n	  col3 := rs[\"tabela2\"]\n	  LV_Add(\"\",col1,col2,col3)\n	  PesqList[A_Index,1]:=col1 \n      PesqList[A_Index,2]:=col2\n      PesqList[A_Index,3]:=col3\n	  rs.MoveNext()\n	}\n	rs.Close()\n	return PesqList\n}\n\nchooseyourversion(){\n	Global GLOBAL_COLOR,TAB_COLOR,BANNER_COLOR\n\n	gui,chooseyourversion:New\n	gui,chooseyourversion:+toolwindow -caption\n	Gui,add,picture,w200 h200 gdarkversion,bad.png\n	Gui,add,picture,x+5 w200 h200 glightversion,good.png\n	Gui,Show,,Escolha sua versao!\n	return \n\n	darkversion:\n	TAB_COLOR:=\"FFFFFF\"\n	GLOBAL_COLOR:=\"000000\"\n	BANNER_COLOR:=\"purple\"\n	;Gosub,continuetoloadtheprogram\n	return \n\n	lightversion:\n	TAB_COLOR:=\"000000\"\n	GLOBAL_COLOR:=\"ffffff\"\n	BANNER_COLOR:=\"blue\"\n	;Gosub,continuetoloadtheprogram\n	return \n}\n;renomear(table,field,window,lv,mascaraant)\nrenomear(args)\n{\n	Global db,args1,GLOBAL_COLOR,bannerargs,TextOptions,Font,BANNER_COLOR\n	Static NewMascara,NewName,selecteditem,banner\n	args1 := args\n	selecteditem := GetSelected(\"inserir1\",\"lv\") \n	result:=db.query(\"SELECT \" . args[\"field2\"] . \" FROM \" . args[\"table\"] . \" WHERE \" . args[\"field1\"] . \"='\" . selecteditem . \"'\")\n	if(selecteditem = field1) || (selecteditem = field2){\n		MsgBox,64,, % \"Selecione um item antes de continuar\"\n		return \n	}\n	Gui,renomear:New\n	owner := args[\"owner\"]\n	if(owner != \"\")\n		Gui,renomear:+owner%owner%\n	Gui,color,%GLOBAL_COLOR%\n	Gui,Add,Picture,w250 h50 0xE vbanner \n	banner(BANNER_COLOR,banner,\"Renomear\")\n	Gui, Add, Text, xm y+5 w70 h20 , Nome:\n	Gui, Add, Edit, xm y+5 w230 r1 vNewName uppercase,% selecteditem\n	Gui, Add, Text, xm y+5 w70 h20 , Mascara:\n	Gui, Add, Edit, xm y+5 w230 r1 vNewMascara uppercase,% result[args[\"field2\"]]\n	Gui, Add, Button, xm y+5 w100 h30 gsalvarr,&Salvar\n	Gui, Add, Button, x+5 w100 h30 gcancelarr,&Cancelar\n	Gui, Show,,Renomear\n	result.close()\n	return\n\n		salvarr:\n		Gui,submit,nohide\n		if(!NewName) || (!NewMascara) || (!selecteditem){\n			MsgBox,64,, % \"O nome e a mascara nao podem estar em branco!\"\n			return \n		}\n		db.rename(args1[\"field1\"] . \"= '\" . NewName . \"',\" . args1[\"field2\"] . \"='\" . NewMascara . \"'\",args1[\"field1\"] . \"='\" . selecteditem . \"';\",args1[\"table\"])\n		nName:=args1[\"mascaraant\"] . NewName\n		StringReplace,value,nName,%A_Space%,,All\n		nName2:=args1[\"mascaraant\"] . selecteditem \n		StringReplace,value2,nName2,%A_Space%,,All\n		db.rename(\"tabela1= '\" . value . \"'\",\"tabela1='\" . value2 . \"';\",\"reltable\")\n		db.loadlv(\"inserir1\",\"lv\",args1[\"table\"])\n		Gui,renomear:destroy\n		return \n	\n		cancelarr:\n		Gui,renomear:destroy \n		return \n} \n\nrenomear2(args)\n{\n	Global db \n	Global args1,selecteditem,NewName\n	Static NewMascara\n	args1:=args \n	selecteditem := GetSelected(args1[\"window\"],args1[\"lv\"])\n	args1[\"selecteditem\"] := selecteditem\n	if(selecteditem = field1) || (selecteditem = field2)\n	{\n		MsgBox,64,, % \"Selecione um item antes de continuar\"\n		return \n	}\n	gui,renomear:New\n	Gui,color,%GLOBAL_COLOR%\n	Gui, Add, Text, x7 y55 w70 h20 , Nome:\n	Gui, Add, Edit, x57 y45 w230 h30 vNewName uppercase,% selecteditem\n	Gui, Add, GroupBox, x-3 y-5 w300 h180 , Inserir\n	Gui, Add, Button, x72 y130 w100 h30 gsalvarr2,&Salvar\n	Gui, Add, Button, x182 y130 w100 h30 gcancelarr2,&Cancelar\n	Gui, Show,w309 h183,Renomear\n	return\n	\n		salvarr2:\n		Gui,submit,nohide\n		if(!NewName) || (!selecteditem)\n		{\n			MsgBox,64,, % \"O nome e a mascara nao podem estar em branco!\"\n			return \n		}\n		func := args1[\"func\"]\n		%func%(args1)\n		db.loadlv(args1[\"window\"],args1[\"lv\"],args1[\"loadtable\"],args1[\"loadfield\"])\n		Gui,renomear:destroy\n		return \n	\n		cancelarr2:\n		Gui,renomear:destroy \n		return \n} \n\nsalvarr1(args1){\n	Global db,NewName\n	\n	db.rename(args1[\"field2\"] . \"= '\" . NewName . \"'\",args1[\"field2\"] . \"='\" . args1[\"selecteditem\"] . \"';\",args1[\"camptable\"])\n	;db.rename(args1[\"field2\"] . \"= '\" . NewName . \"'\",args1[\"field2\"] . \"='\" . args1[\"selecteditem\"] . \"';\",args1[\"camptable\"])\n	;db.rename(args1[\"field2\"] . \"= '\" . NewName . \"'\",args1[\"field2\"] . \"='\" . args1[\"selecteditem\"] . \"';\",args1[\"camptable\"])\n	nName:=args1[\"mascaraant\"] . NewName\n	StringReplace,value,nName,%A_Space%,,All   \n	nName2:=args1[\"mascaraant\"] . args1[\"selecteditem\"] \n	StringReplace,value2,nName2,%A_Space%,,All \n	db.rename(\"tabela2= '\" . value . \"'\",\"tabela1='\" . value2 . \"';\",\"reltable\")\n	db.rename(\"tipo= '\" . NewName . \"'\",\"tipo='\" . args1[\"selecteditem\"] . \"';\",\"reltable\")\n}\n\nsalvarr2(args1){\n	Global db,NewName\n\n	db.rename(args1[\"field2\"] . \"= '\" . NewName . \"'\",args1[\"field2\"] . \"='\" . args1[\"selecteditem\"] . \"';\",args1[\"table\"])\n	MsgBox,64,, % \"Modificacao salva com sucesso!!\"\n}\n\n\ncopiar()\n{\n}\n\ninserir2(args)\n{\n	Global db,args1,GLOBAL_COLOR,bannerargs,TextOptions,Font,BANNER_COLOR,tvstring\n	Static updown1,lv,foto,banner\n	\n	args1:=args\n	Static edit1,edit2\n	Gui, inserir2:New\n	owner:=args[\"owner\"]\n	if(owner!=\"\")\n		Gui,inserir2:+owner%owner%\n	;Gui,inserir2:+toolwindow\n	Gui,color,%GLOBAL_COLOR%\n	Gui,Add,Picture,w250 h50 0xE vbanner \n	banner(BANNER_COLOR,banner,\"Inserir\")\n	Gui, Add, Text,xm y+5 w70 h20 , Nome:\n	Gui, Add, Edit,xm y+5 w230 h30 vedit1 r1 uppercase,\n	Gui, Add, Text, xm y+5 w70 h20 , Mascara:\n	Gui, Add, Edit, xm y+5 w230 h30 vedit2 r1 uppercase,Mascara Codigo\n	Gui, Add, Button, xm y+5  w100 h30 gsalvar,&Salvar\n	Gui, Add, Button, x+5  w100 h30 gcancelar,&Cancelar\n	Gui, Show,,Empresa-Alterar-Inserir\n	return\n			\n		salvar:\n		Gui,submit,nohide\n		if(!edit1) || (edit1=\"Nome Empresa\") || (edit2=\"Mascara Codigo\")\n		{\n			MsgBox,64,, % \"Nenhum dos valores podem estar em branco\"\n			return \n		}\n\n		db.createtable(args1[\"table\"],\"(\" . args1[\"field\"] . \", PRIMARY KEY(\" . args1[\"primarykey\"] . \"))\")\n		istring:=\"('\" . edit1 . \"','\" . edit2 . \"')\"\n		db.insert(args1[\"table\"],\"(\" . args1[\"field\"] . \")\",istring)\n		relcondition:=args1[\"relcondition\"]\n		if(relcondition){\n			if(!db.exist(\"tipo,tabela1\",\"tipo='\" . args1[\"tipo\"] . \"' AND tabela1='\" . args1[\"mascaraant\"] . edit1 . \"'\",\"reltable\"))\n				db.insert(\"reltable\",\"(tipo,tabela1,tabela2)\",\"('\" . args1[\"tipo\"] . \"','\" . args1[\"mascaraant\"] . edit1 . \"','\" . args1[\"mascaraant\"] . edit2 . args1[\"tipo\"] . \"')\")\n		}else{\n			;MsgBox,64,, % \"relcondition igual a false\"\n		}\n		db.loadlv(\"inserir1\",\"lv\",args1[\"table\"])\n		MsgBox,64,, % \"valores inseridos com sucesso!!\"\n		closefunc:=args1[\"closefunc\"]\n		%closefunc%(args)\n		return \n		\n		cancelar:\n		Gui,inserir2:destroy\n		return \n}\n\ninserir3(table,field,primarykey,tipo,mascaraant=\"\")\n{\n	Global db,GLOBAL_COLOR\n	Static lv3\n	Global table1,field1,primaryk1,tipo1,field3,mascaraant1\n	table1:=table,field1:=field,primaryk1:=primarykey,tipo1:=tipo,mascaraant1:=mascaraant\n	StringSplit,value,field,`,\n	field3:=value1\n	Gui,inserir3:New\n	Gui,color,%GLOBAL_COLOR%\n	Gui, Add, ListView, x32 y50 w320 h290 vlv3 altsubmit,\n	Gui, Add, GroupBox, x22 y20 w360 h340 ,Valores\n	Gui, Add, GroupBox, x12 y0 w670 h480 , Alterar\n	Gui, Add, GroupBox, x22 y370 w650 h100 , Alterar\n	Gui, Add, Button, x112 y410 w120 h30 ginserir3,&Incluir\n	Gui, Add, Button, x+5 y410 w120 h30 glinkar3, &Linkar\n	Gui, Add, Button, x+5 y410 w120 h30 gexcluir3, &Excluir\n	Gui, Show, w700 h492,Incluir-Bloqueio\n	db.loadlv(\"inserir3\",\"lv3\",table,field)\n	return\n\n	linkar3:\n	linkar(tipo1)\n	RETURN \n\n	inserir3:\n	Gui,submit,nohide\n	inserir4(table1,field1,primaryk1,tipo1,mascaraant1)\n	return \n\n	excluir3:\n\n	selecteditem:=GetSelected(\"inserir3\",\"lv3\")\n\n	MsgBox, 4,,Deseja apagar a empresa %selecteditem%?\n	IfMsgBox Yes\n	{\n		db.delete(table1,selecteditem,field3)\n		db.loadlv(\"inserir3\",\"lv3\",table1,field1)\n	}else{\n		return \n	}\n	return \n}\n\ncompararcamp(camptable,otable)\n{\n	Global db \n \n	sql:=\"SELECT Campos FROM \" . camptable\n	rs := db.query(sql)\n	while(!rs.EOF){   \n	  campvalue := rs[\"Campos\"]\n	  _exist:=FALSE\n	  sql:=\"SELECT Campos FROM \" . otable\n	  rs2 := db.query(sql) \n	  while(!rs2.EOF){\n	  	if(campvalue=rs2[\"Campos\"])\n	  		_exist:=TRUE\n	  	rs2.MoveNext()\n 	  }\n 	  rs2.Close()    \n 	  if(!_exist)\n 	  	db.insert(otable,\"(Campos)\",\"('\" . campvalue . \"')\")\n	  rs.MoveNext()\n	}\n	rs.Close()\n	;se um valor da tabela 2 nao estiver na 1 ,exclui\n	sql:=\"SELECT Campos FROM \" . otable\n	rs := db.query(sql)\n	while(!rs.EOF){   \n	  campvalue := rs[\"Campos\"]\n	  _exist := FALSE\n	  sql:=\"SELECT Campos FROM \" . camptable\n	  rs2 := db.query(sql) \n	  while(!rs2.EOF){\n	  	if(campvalue=rs2[\"Campos\"])\n	  		_exist:=TRUE\n	  	rs2.MoveNext()\n 	  }\n 	  rs2.Close()\n 	  if(!_exist)\n 	  	db.delete(otable,campvalue,\"Campos\")\n	  rs.MoveNext()\n	}\n	rs.Close()\n}\n\ninserir4(table,field,primaryk,tipo,mascaraant=\"\")\n{\n	Global db,selectmodel\n	\n	;MsgBox, % \"table \" . table . \"`nfield \" . field . \"`nprimaryk \" . primaryk . \"`ntipo \" . tipo\n	Static edit1\n	Global table1,field1,primaryk1,tipo1,mascaraant1\n	table1:=table,field1:=field,primaryk1:=primaryk,tipo1:=tipo,mascaraant1:=mascaraant\n	Gui, inserir4:New\n	Gui,color,%GLOBAL_COLOR%\n	Gui, Add, Text, x7 y55 w70 h20 , Nome:\n	Gui, Add, Edit, x57 y45 w230 h30 vedit1 r1 uppercase,\n	Gui, Add, GroupBox, x-3 y-5 w300 h180 , Inserir\n	Gui, Add, Button, x72 y130 w100 h30 gsalvar4,&Salvar\n	Gui, Add, Button, x182 y130 w100 h30 gcancelar4,&Cancelar\n	Gui, Show, w309 h200,Inserir-Bloqueio\n	return\n			\n		salvar4:\n		Gui,submit,nohide\n		if(!edit1)\n		{\n			MsgBox,64,, % \"Nenhum dos valores podem estar em branco\"\n			return \n		}\n		db.createtable(table1,\"(\" . field1 . \", PRIMARY KEY(\" . primaryk1 . \"))\")\n		istring:=\"('\" . edit1 . \"')\"\n		if(!db.exist(\"tipo,tabela1\",\"tipo='\" . tipo1 . \"' AND tabela1='\" . mascaraant1 . selectmodel . \"'\",\"reltable\"))\n		{\n			db.insert(\"reltable\",\"(tipo,tabela1,tabela2)\",\"('\" . tipo1 . \"','\" . mascaraant1 . selectmodel . \"','\" . mascaraant1 . edit2 . tipo1 . \"')\")\n		}\n		db.insert(table1,\"(\" . field1 . \")\",istring)\n		db.loadlv(\"inserir3\",\"lv3\",table1)\n		Gui,inserir4:destroy\n		return \n		\n		cancelar4:\n		Gui,inserir4:destroy\n		return \n}\n\n#include, lib\\promto_search.ahk\n#include, lib\\print_funcs.ahk\n#include, lib\\promto_xml.ahk\n#include, lib\\promto_json.ahk\n#include, lib\\gdip_all.ahk\n#include, lib\\promto_sql_mariaDB.ahk\n#include, models\\remover_item_ETF.ahk\n#include <promtolib>\n#include,lib\\json_parser.ahk\n#include,<SQL_new>\n#include, lib\\gerar_codigos.ahk\n#Include lib\\Crypt.ahk\n#Include lib\\CryptConst.ahk\n#Include lib\\CryptFoos.ahk\n#include, lib\\html-parser.ahk\n\n/*\n	Views\n*/\n#Include, views/reload_hashmask_view.ahk\n#Include, views/insert_cert_from_file_view.ahk\n#Include, views/cert_view.ahk\n#Include, views/rem_massa_view.ahk\n#Include, views/resize_image_folder_view.ahk\n#include, views/generate_xml_view.ahk\n#include, views/inserir_campos_view.ahk\n#include, views/inserir_ETF_view.ahk\n#include, views/inserir_modelo_view.ahk\n#include, views/shared/inserir_dialogo_2_fields.ahk\n#include, views/shared/inserir_imagem_view.ahk\n#include, views/shared/inserir_imagem_db_view.ahk\n#include, views/inserir_campo_esp_view.ahk\n#include, views/alterar_valores_campo_view.ahk\n#include, views/ordem_view.ahk\n#include, views/lista_de_codigos_view.ahk\n#include, views/inserir_bloqueio_view.ahk\n#include, views/db_ex_view.ahk\n#include, views/config_db_ex_view.ahk\n#include, views/inserir_db_ex_view.ahk\n#include, views/inserir_todos_view.ahk\n#include, views/inserir_valores_view.ahk\n#include, views/nova_conexao_view.ahk\n#include, views/inserir_val_view.ahk\n#include, views/estruturas_view.ahk \n#include, views/foto_individual_view.ahk\n#include, views/selecionar_campo_externo_view.ahk\n#include, views/linkar_modelos_view.ahk\n#include, views/delete_confirmation_view.ahk\n#include, views/manager_users_view.ahk\n#include, views/insert_user_view.ahk\n#include, views/edit_user_view.ahk\n#include, views/insert_mod_msg_view.ahk\n#include, views/change_status_view.ahk\n#include, views/list_options_view.ahk\n#include, views/show_status_result_view.ahk\n#include, views/generate_html_view.ahk\n\n\n\n/*\n	Controllers\n*/\n#Include, controllers/db_ex_checker_controller.ahk\n#Include, controllers/status_controller.ahk\n#Include, controllers/rem_massa_controller.ahk\n#include, controllers/db_ex_controller.ahk\n#include, controllers/inserir_valores_controller.ahk\n#include, controllers/inserir_bloqueio_controller.ahk\n#include, controllers/estruturas_controller.ahk\n#include, controllers/foto_individual_controller.ahk\n#include, controllers/delete_confirmation_controller.ahk\n#include, controllers/back_up_controller.ahk\n#include, controllers/update_controller.ahk\n#include, controllers/inserir_campos_controller.ahk\n#include, controllers/manager_users_controller.ahk\n\n\n/*\n	Model\n*/\n#include, models/generate_feed_model.ahk\n",
 			"file": "Promto(Front-End)(Native).ahk",
+			"file_size": 93228,
+			"file_write_time": 130525118267367227,
 			"settings":
 			{
 				"buffer_size": 90297,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/update_controller.ahk",
+			"settings":
+			{
+				"buffer_size": 196,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/back_up_controller.ahk",
+			"settings":
+			{
+				"buffer_size": 460,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 20,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/mcruz/Documents/GitHub/Sublime-Projects/feed.sublime-project",
+			"settings":
+			{
+				"buffer_size": 146,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -493,6 +528,11 @@
 	},
 	"file_history":
 	[
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/node-modules/feed/public/package.json",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/controllers/back_up_controller.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/DataBaseAbstract.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/Base.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/FTP/FTP/oFTP.GetFileInfo.htm",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/general_funcs.ahk",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/index.html",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Scripts/IncrementalSearch3.ahk",
@@ -543,7 +583,6 @@
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_search_lv.ahk",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/views/selecionar_campo_externo_view.ahk",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/settings.json",
-		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/Base.ahk",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/views/linkar_campos_view.ahk",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/lista_codigos.txt",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/launcher.ahk",
@@ -564,7 +603,6 @@
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_sql.ahk",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/doc/PromtoLib.doc",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/controllers/db_ex_controller.ahk",
-		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/DataBaseAbstract.ahk",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/dkfdkfnbkd",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/java/ConvertImageFolder_old.java",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/CRUD.ahk",
@@ -596,6 +634,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"make_update",
+			"back_up",
+			"backup",
+			"backup_menu",
 			"a ordem",
 			"ordem",
 			"excluir",
@@ -693,7 +735,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -709,8 +751,8 @@
 						"selection":
 						[
 							[
-								2882,
-								2882
+								6202,
+								6213
 							]
 						],
 						"settings":
@@ -752,14 +794,138 @@
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 2071.0,
+						"translation.y": 3245.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "controllers/update_controller.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 196,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								85,
+								85
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 2,
+					"file": "controllers/back_up_controller.ahk",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								246,
+								246
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20,
+								20
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/mcruz/Documents/GitHub/Sublime-Projects/feed.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 146,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								146,
+								146
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "views/manager_users_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -789,11 +955,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
+					"stack_index": 30,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 6,
 					"file": "views/insert_user_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -823,11 +989,11 @@
 						"translation.y": 285.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 31,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 7,
 					"file": "models/generate_feed_model.ahk",
 					"semi_transient": false,
 					"settings":
@@ -857,11 +1023,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 32,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 8,
 					"file": "models/generate_feed_model.ahk",
 					"semi_transient": false,
 					"settings":
@@ -890,11 +1056,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 9,
 					"file": "views/cert_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -922,11 +1088,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 32,
+					"stack_index": 36,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 10,
 					"file": "views/estruturas_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -954,11 +1120,11 @@
 						"translation.y": 451.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 36,
+					"stack_index": 40,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 11,
 					"file": "views/linkar_modelos_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -987,11 +1153,11 @@
 						"translation.y": 546.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 35,
+					"stack_index": 39,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 12,
 					"file": "views/selecionar_campo_externo_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -1019,11 +1185,11 @@
 						"translation.y": 715.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 13,
 					"file": "views/shared/inserir_imagem_db_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -1051,11 +1217,11 @@
 						"translation.y": 285.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 33,
+					"stack_index": 37,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 14,
 					"file": "controllers/estruturas_controller.ahk",
 					"semi_transient": false,
 					"settings":
@@ -1083,11 +1249,11 @@
 						"translation.y": 3928.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 37,
+					"stack_index": 41,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 15,
 					"file": "views/config_db_ex_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -1128,11 +1294,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 53,
+					"stack_index": 57,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 16,
 					"file": "views/db_ex_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -1901,11 +2067,11 @@
 						"translation.y": 224.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 34,
+					"stack_index": 38,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 17,
 					"file": "views/inserir_valores_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -1934,11 +2100,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 46,
+					"stack_index": 50,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 18,
 					"file": "controllers/inserir_valores_controller.ahk",
 					"semi_transient": false,
 					"settings":
@@ -1968,11 +2134,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 39,
+					"stack_index": 43,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 19,
 					"file": "views/inserir_db_ex_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -2001,11 +2167,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 41,
+					"stack_index": 45,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 20,
 					"file": "controllers/db_ex_controller.ahk",
 					"semi_transient": false,
 					"settings":
@@ -2033,11 +2199,11 @@
 						"translation.y": 2637.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 43,
+					"stack_index": 47,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 21,
 					"file": "doc/PromtoLib.doc",
 					"semi_transient": false,
 					"settings":
@@ -2077,11 +2243,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 50,
+					"stack_index": 54,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 22,
 					"file": "Lib/Promtolib.ahk",
 					"semi_transient": false,
 					"settings":
@@ -2734,11 +2900,11 @@
 						"translation.y": 16298.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 23,
 					"file": "Lib/promto_search.ahk",
 					"semi_transient": false,
 					"settings":
@@ -2795,11 +2961,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 47,
+					"stack_index": 51,
 					"type": "text"
 				},
 				{
-					"buffer": 20,
+					"buffer": 24,
 					"file": "index.html",
 					"semi_transient": false,
 					"settings":
@@ -3736,11 +3902,11 @@
 						"translation.y": 171.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 51,
+					"stack_index": 55,
 					"type": "text"
 				},
 				{
-					"buffer": 21,
+					"buffer": 25,
 					"file": "/C/Users/mcruz/AppData/Roaming/Sublime Text 3/Packages/User/Fetch.sublime-settings",
 					"semi_transient": false,
 					"settings":
@@ -3782,11 +3948,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 52,
+					"stack_index": 56,
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 26,
 					"file": "Lib/promto_sql_mariaDB_subfamilia.ahk",
 					"semi_transient": false,
 					"settings":
@@ -3830,11 +3996,11 @@
 						"translation.y": 777.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 27,
 					"file": "Lib/promto_sql_mariaDB_modelo.ahk",
 					"semi_transient": false,
 					"settings":
@@ -3863,11 +4029,11 @@
 						"translation.y": 3141.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 28,
 					"file": "views/ordem_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -3895,11 +4061,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 25,
+					"buffer": 29,
 					"file": "views/linkar_campos_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -3927,11 +4093,11 @@
 						"translation.y": 114.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 26,
+					"buffer": 30,
 					"file": "views/inserir_campos_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -3960,11 +4126,11 @@
 						"translation.y": 3160.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
+					"buffer": 31,
 					"file": "Lib/promto_sql_mariaDB.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4009,11 +4175,11 @@
 						"translation.y": 5676.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
-					"buffer": 28,
+					"buffer": 32,
 					"file": "Lib/promto_sql_mariaDB_log.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4035,17 +4201,18 @@
 							"remote_loading": false,
 							"sftp_duplicate_views": 0,
 							"synced": false,
-							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage"
+							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 243.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
-					"buffer": 29,
+					"buffer": 33,
 					"file": "Lib/promto_sql_mariaDB_empresa.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4074,11 +4241,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 30,
+					"buffer": 34,
 					"file": "Lib/promto_sql_mariaDB_tipo.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4107,11 +4274,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
-					"buffer": 31,
+					"buffer": 35,
 					"file": "Lib/promto_sql_mariaDB_familia.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4140,11 +4307,11 @@
 						"translation.y": 1374.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 25,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
+					"buffer": 36,
 					"file": "json-test.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4186,11 +4353,11 @@
 						"translation.y": 527.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 60,
+					"stack_index": 64,
 					"type": "text"
 				},
 				{
-					"buffer": 33,
+					"buffer": 37,
 					"file": "Lib/promto_json.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4246,11 +4413,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 33,
 					"type": "text"
 				},
 				{
-					"buffer": 34,
+					"buffer": 38,
 					"file": "promto_feed_json.json",
 					"semi_transient": false,
 					"settings":
@@ -4280,11 +4447,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 35,
+					"buffer": 39,
 					"file": "promto.sublime-project",
 					"semi_transient": false,
 					"settings":
@@ -4311,11 +4478,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 31,
+					"stack_index": 35,
 					"type": "text"
 				},
 				{
-					"buffer": 36,
+					"buffer": 40,
 					"file": "promto_JSON.json",
 					"semi_transient": false,
 					"settings":
@@ -4357,11 +4524,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 30,
+					"stack_index": 34,
 					"type": "text"
 				},
 				{
-					"buffer": 37,
+					"buffer": 41,
 					"file": "/C/Users/mcruz/Downloads/Jit-2.0.1/Jit/Examples/Spacetree/example1.html",
 					"semi_transient": false,
 					"settings":
@@ -4406,11 +4573,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 55,
+					"stack_index": 59,
 					"type": "text"
 				},
 				{
-					"buffer": 38,
+					"buffer": 42,
 					"semi_transient": false,
 					"settings":
 					{
@@ -4451,11 +4618,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 62,
+					"stack_index": 66,
 					"type": "text"
 				},
 				{
-					"buffer": 39,
+					"buffer": 43,
 					"file": "Lib/promto_json_helper.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4505,11 +4672,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 56,
+					"stack_index": 60,
 					"type": "text"
 				},
 				{
-					"buffer": 40,
+					"buffer": 44,
 					"file": "Lib/general_funcs.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4549,14 +4716,14 @@
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 4309.0,
+						"translation.y": 4289.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 59,
+					"stack_index": 63,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
+					"buffer": 36,
 					"file": "json-test.ahk",
 					"semi_transient": false,
 					"settings":
@@ -6023,11 +6190,11 @@
 						"translation.y": 583.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 57,
+					"stack_index": 61,
 					"type": "text"
 				},
 				{
-					"buffer": 41,
+					"buffer": 45,
 					"file": "/C/Users/mcruz/Downloads/Jit-2.0.1/Jit/Examples/Spacetree/example1.js",
 					"semi_transient": false,
 					"settings":
@@ -6073,11 +6240,11 @@
 						"translation.y": 15392.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 54,
+					"stack_index": 58,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 22,
 					"file": "Lib/Promtolib.ahk",
 					"semi_transient": false,
 					"settings":
@@ -6730,11 +6897,11 @@
 						"translation.y": 5282.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 42,
+					"stack_index": 46,
 					"type": "text"
 				},
 				{
-					"buffer": 42,
+					"buffer": 46,
 					"semi_transient": false,
 					"settings":
 					{
@@ -7208,7 +7375,7 @@
 						"translation.y": 21481.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 28,
 					"type": "text"
 				},
 				{
@@ -7267,11 +7434,11 @@
 						"translation.y": 12023.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 38,
+					"stack_index": 42,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 23,
 					"file": "Lib/promto_search.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7325,11 +7492,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 45,
+					"stack_index": 49,
 					"type": "text"
 				},
 				{
-					"buffer": 43,
+					"buffer": 47,
 					"file": "Lib/promto_search_lv.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7409,11 +7576,11 @@
 						"translation.y": 739.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 40,
+					"stack_index": 44,
 					"type": "text"
 				},
 				{
-					"buffer": 44,
+					"buffer": 48,
 					"file": "test1.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7442,11 +7609,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 44,
+					"stack_index": 48,
 					"type": "text"
 				},
 				{
-					"buffer": 45,
+					"buffer": 49,
 					"file": "java/ConvertImage.java",
 					"semi_transient": false,
 					"settings":
@@ -7475,11 +7642,11 @@
 						"translation.y": 469.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 48,
+					"stack_index": 52,
 					"type": "text"
 				},
 				{
-					"buffer": 39,
+					"buffer": 43,
 					"file": "Lib/promto_json_helper.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7527,11 +7694,11 @@
 						"translation.y": 818.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 61,
+					"stack_index": 65,
 					"type": "text"
 				},
 				{
-					"buffer": 33,
+					"buffer": 37,
 					"file": "Lib/promto_json.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7584,11 +7751,11 @@
 						"translation.y": 747.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 58,
+					"stack_index": 62,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
+					"buffer": 31,
 					"file": "Lib/promto_sql_mariaDB.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7629,11 +7796,11 @@
 						"translation.y": 5630.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 28,
+					"buffer": 32,
 					"file": "Lib/promto_sql_mariaDB_log.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7661,11 +7828,11 @@
 						"translation.y": 341.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
-					"buffer": 46,
+					"buffer": 50,
 					"file": "Lib/promto_sql_mariaDB_usuario.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7694,11 +7861,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 29,
 					"type": "text"
 				},
 				{
-					"buffer": 47,
+					"buffer": 51,
 					"file": "/C/Users/mcruz/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 					"semi_transient": false,
 					"settings":
@@ -7725,7 +7892,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 49,
+					"stack_index": 53,
 					"type": "text"
 				}
 			]
@@ -7735,7 +7902,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 28,
+					"buffer": 32,
 					"file": "Lib/promto_sql_mariaDB_log.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7763,11 +7930,11 @@
 						"translation.y": 798.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 30,
+					"buffer": 34,
 					"file": "Lib/promto_sql_mariaDB_tipo.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7796,11 +7963,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 27,
 					"file": "Lib/promto_sql_mariaDB_modelo.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7829,11 +7996,11 @@
 						"translation.y": 12774.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 26,
+					"buffer": 30,
 					"file": "views/inserir_campos_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7862,11 +8029,11 @@
 						"translation.y": 3502.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 7,
 					"file": "models/generate_feed_model.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7896,11 +8063,11 @@
 						"translation.y": 34.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 48,
+					"buffer": 52,
 					"file": "views/inserir_ETF_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7929,11 +8096,11 @@
 						"translation.y": 1478.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 49,
+					"buffer": 53,
 					"file": "views/inserir_modelo_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7961,7 +8128,7 @@
 						"translation.y": 4300.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 16,
 					"type": "text"
 				}
 			]
@@ -7995,7 +8162,7 @@
 		"cols":
 		[
 			0.0,
-			0.49121522694,
+			0.871888726208,
 			1.0
 		],
 		"rows":
@@ -8029,8 +8196,20 @@
 		"selected_items":
 		[
 			[
+				"update",
+				"controllers\\update_controller.ahk"
+			],
+			[
 				"native",
 				"Promto(Front-End)(Native).ahk"
+			],
+			[
+				"back_upcontroller",
+				"controllers\\back_up_controller.ahk"
+			],
+			[
+				"gitignore",
+				".gitignore"
 			],
 			[
 				"",
@@ -8294,7 +8473,7 @@
 		[
 			[
 				"",
-				"C:\\Users\\mcruz\\Documents\\GitHub\\promtoWeb2.0\\promtoweb2.sublime-project"
+				"C:\\Users\\mcruz\\Documents\\GitHub\\promtoWeb\\promtoweb.sublime-project"
 			]
 		],
 		"width": 380.0

@@ -1,7 +1,7 @@
 class GenerateJSONFeed{
 	generate_feed(){
 		Global db
-		FileDelete, % "promto_feed_JSON"
+		FileDelete, % A_WorkingDir "\node-modules\feed\promto_feed_JSON.json"
 		this.obj := {}
 		this.load_log()		
 	}
@@ -11,8 +11,8 @@ class GenerateJSONFeed{
 	 this.obj.log := []
 	 this.insert_CRUD()
 	 this.obj.max_index := this.obj.log.maxindex()
-	 MsgBox, % "max index " this.obj.log.maxindex()
-	 this.save_file() 
+	 this.save_file()
+	 run, % A_WorkingDir "\node-modules\feed\Promto-Feed.exe" 
 	}
 
 	insert_CRUD(){
@@ -30,6 +30,6 @@ class GenerateJSONFeed{
 	}
 
 	save_file(){
-		JSON_save(this.obj, "promto_feed_JSON.json")
+		JSON_save(this.obj, A_WorkingDir "\node-modules\feed\promto_feed_JSON.json")
 	}
 }

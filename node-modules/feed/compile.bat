@@ -1,1 +1,1 @@
-"C:\Tools\node-webkit\nw.exe" --enable-logging "C:\Users\mcruz\Documents\Github\Promto-Autohotkey\node-modules\feed\public"
+"C:\Tools\node-webkit\nw.exe" --enable-logging "C:\Users\mcruz\Documents\Github\node_modules\feed\public"

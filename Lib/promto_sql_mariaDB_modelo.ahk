@@ -172,7 +172,7 @@ class Modelo{
 		for each, item in items{
 			record := {}
 			record.Campos := item
-			if(MatHasValue(codigos_omitidos, item)){
+			if(MatHasValue(codigos_omitidos, A_Index)){
 				record.Omitir := 1	
 			}else{
 				record.Omitir := 0

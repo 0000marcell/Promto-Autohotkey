@@ -1,11 +1,4 @@
 
-
-/*
-	get_lv_in_array(window_name, lv_name, number_of_columns = 1)
-	pega todos os items de uma determinada listview em
-	um array 
-*/
-
 Class OTTK
 {
 	__New(filePath){
@@ -1988,16 +1981,12 @@ DrawDottedLine(sx,sy,ex,ey){
 }
 
 GetCheckedRows2(wName = "", lvName = ""){
-
 	if(wName != "")
 		Gui, %wName%:default
-
 	if(lvName != "")
 		Gui, listview, %lvName%
-
 	result := {}
 	RowNumber = 0  
-	
 	Loop
 	{ 
     RowNumber := LV_GetNext(RowNumber, "Checked")  ; Resume the search at the row after that found by the previous iteration.
@@ -2013,8 +2002,7 @@ GetCheckedRows2(wName = "", lvName = ""){
 	return result
 }
 
-GetCheckedRows(wName="",lvName=""){
-
+GetCheckedRows(wName = "", lvName = "", type = "text"){
 	Local returnValue
 	if(wName!=""){
 		Gui,%wName%:default
@@ -2022,7 +2010,7 @@ GetCheckedRows(wName="",lvName=""){
 	if(lvName!=""){
 		Gui,listview,%lvName%
 	}
-	result:=object()
+	result := object()
 	k:=0
 	Loop, % LV_GetCount()
 	{
@@ -2034,28 +2022,27 @@ GetCheckedRows(wName="",lvName=""){
 			continue
 		k++
 		Loop,% LV_GetCount("col"){
-			i+=1
-			LV_GetText(value,row,i)
-			result[k,i]:=value
+			i+=1	
+			LV_GetText(value, row, i)
+			if(type = "number"){
+				result[k,i] := row
+			}else{
+				result[k,i] := value
+			}
 		}
 	}
 	return result
 }
 
-;################progress###################
 updateprogress(text,increase){
     Global progress,plabel
     GuiControl,,progress,+%increase%
     GuiControl,,plabel,%text%   
 }
 
-
 progress(maxrange, stop_progress_func_local="", undetermined=0, toolwindow=0){
   Global progress,plabel,stop_progress_func
-  
-  ;declara a funcao a ser rodada quando o botao parar e acionado.
   stop_progress_func := stop_progress_func_local
-
   Gui,progress:New 
   Gui,color,ffffff
   if(toolwindow=1)

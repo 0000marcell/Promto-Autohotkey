@@ -1,9 +1,23 @@
-starting to delete the model tabela1 T1T2T3TESTE4
-model table returned T1T2T3T4Modelo
-gonna delete model name MODELO1 model mask M1 model table T1T2T3T4Modelo
-gonna delete mascara M1 model table T1T2T3T4Modelo
-delete relation in reltable  tabela1 T1T2T3TESTE4
-gonna delete relationed table name MODELO1 mask M1
-check table sql 
-  tipo LIKE 'Campo' AND tabela2 LIKE 'T1T2T3T4M1Campo'
-gonna drop table tableT1T2T3T4M1Campo
+result 
+item 1 number 9value PA
+item 2 number 9value PA
+item 3 number 9value PA
+item 4 number 9value PA
+item 5 number 9value PA
+item 6 number 9value PA
+item 7 number 9value PA
+item 8 number 9value PA
+item 9 number 9value PA
+item 10 number 9value PA
+item 11 number 9value PA
+item 12 number 9value PA
+item 13 number 9value PA
+item 14 number 9value PA
+item 15 number 9value PA
+item 16 number 9value PA
+item 17 number 9value PA
+item 18 number 9value PA
+item 19 number 9value PA
+item 20 number 9value PA
+result 
+result 

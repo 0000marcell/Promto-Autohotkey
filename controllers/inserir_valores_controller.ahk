@@ -1,25 +1,16 @@
 inserir_val_camp(){
 	Global
-
-	gui,submit,nohide
+	Gui, Submit, Nohide
   selected_number := GetSelected("inserirval", "lviv", "number") + 4
 	checkedval := GetSelected("inserirval","lviv2")
   if(checkedval = ""){
     MsgBox, % "Selecione um valor antes de continuar!"
   }
-  search.LV.update_list(selected_number, checkedval)
-  /*	
-	for,each,value in checkedlistdb{
-		codname := checkedlistdb[A_Index,1]
-		%codname%[selectedvaluecol] := checkedval
-	}
-	loadlvdbex()	
-  */
+  search.LV.update_list(selected_number, checkedval, checkedlistdb)
 }
 
 importar_val(){
 	Global
-
 	Gui,submit,nohide
   FileSelectFile,source,""
   Stringright,_iscsv,source,3

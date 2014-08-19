@@ -47,12 +47,10 @@ class Subfamilia{
 		Global db, mariaDB
 		this.name := subfam_name, this.mask := subfam_mask
 		this.info := info
-		MsgBox, % "gonna start recursive subfamily"
 		if(recursiva = 1){
 			db.init_unique_info() 
 			db.remove_subitems("subfamilia", this.full_prefix(), this.info)
 		}
-		MsgBox, % "back from recursive subfamily "
 		this.subfam_table := db.get_reference("Subfamilia", this.info.empresa[2] this.info.tipo[2] this.info.familia[1])
 		this.delete_subfam()
 		db.Log.insert_CRUD(info, "Removido", "A subfamilia " this.name " e mascara " this.mask " foi removida!")

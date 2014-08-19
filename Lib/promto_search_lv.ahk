@@ -1,7 +1,11 @@
 class LV{
 	set_searcheable_list(list){
 		this.list := list
-	}	
+	}
+
+	set_window_handler(window, lv) {
+		this.window := window, this.lv := lv
+	}
 
 	any_word_search(window, lv, keyword){
 		Global search	
@@ -57,10 +61,27 @@ class LV{
     	))
 	}
 
-	update_list(number, value){
+	update_list(number, value, checked_list){
+		AHK.append_debug("result " this.result)	
+		if(this.result = ""){
+			this.update_by_list(number, value)
+		}else{
+			this.update_by_result(number, value)
+		}
+	}
+
+	update_by_list(number, value) {
+		loop, % this.list.maxindex()
+		{
+			this.list[A_Index, number] := value
+		}
+		this.any_word_search(this.window, this.lv, "")
+	}
+
+	update_by_result(number, value) {
 		for, each, item in this.result{
-		  this.list[item, number] := value 
-		  this.any_word_search(this.window, this.lv, this.keyword)
-		} 
+		  this.list[item, number] := value
+		}
+		this.any_word_search(this.window, this.lv, "")
 	}
 }

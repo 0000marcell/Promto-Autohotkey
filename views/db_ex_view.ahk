@@ -27,6 +27,7 @@ db_ex_view(){
 	GuiControl, -Redraw, lvdbex
 	table := db.load_table_in_array(cod_table)
 	search.LV.set_searcheable_list(table)
+	search.LV.set_window_handler("dbex", "lvdbex")
 	for, each, value in table{
 		if(table[A_Index, 1] = "")
 			Continue

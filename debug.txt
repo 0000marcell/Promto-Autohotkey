@@ -1,962 +1,619 @@
 starting the debug 
 code table TL010Codigo tabela1 TL010TL.L.EXE.010 camp table TL010oc
 codigo TL010122156ACE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  127V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 122156ACE
 code piece after 1
 code after 22156ACE
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 122156ACE
 code piece 2
 length 1 code 22156ACE
 code piece after 2
 code after 2156ACE
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 122156ACE
 code piece 2
 length 1 code 2156ACE
 code piece after 2
 code after 156ACE
-camp name POTENCIA camp esp table  code piece 
-code 122156ACE
 code piece 1
 length 1 code 156ACE
 code piece after 1
 code after 56ACE
-camp name TENSAO camp esp table  code piece 
-code 122156ACE
 code piece 56
 length 2 code 56ACE
 code piece after 56
 code after ACE
-camp name FREQUENCIA camp esp table  code piece 
-code 122156ACE
 code piece AC
 length 2 code ACE
 code piece after AC
 code after E
-camp name MATERIAPRIMA camp esp table  code piece 
-code 122156ACE
 code piece E
 length 1 code E
 code piece after E
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 122156ACE
 codigo TL010122156AIE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  127V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 122156AIE
 code piece after 1
 code after 22156AIE
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 122156AIE
 code piece 2
 length 1 code 22156AIE
 code piece after 2
 code after 2156AIE
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 122156AIE
 code piece 2
 length 1 code 2156AIE
 code piece after 2
 code after 156AIE
-camp name POTENCIA camp esp table  code piece 
-code 122156AIE
 code piece 1
 length 1 code 156AIE
 code piece after 1
 code after 56AIE
-camp name TENSAO camp esp table  code piece 
-code 122156AIE
 code piece 56
 length 2 code 56AIE
 code piece after 56
 code after AIE
-camp name FREQUENCIA camp esp table  code piece 
-code 122156AIE
 code piece AC
 length 2 code AIE
 code piece after AI
 code after E
-camp name MATERIAPRIMA camp esp table  code piece 
-code 122156AIE
 code piece E
 length 1 code E
 code piece after E
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 122156AIE
 codigo TL010122256ACE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  220V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 122256ACE
 code piece after 1
 code after 22256ACE
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 122256ACE
 code piece 2
 length 1 code 22256ACE
 code piece after 2
 code after 2256ACE
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 122256ACE
 code piece 2
 length 1 code 2256ACE
 code piece after 2
 code after 256ACE
-camp name POTENCIA camp esp table  code piece 
-code 122256ACE
 code piece 1
 length 1 code 256ACE
 code piece after 2
 code after 56ACE
-camp name TENSAO camp esp table  code piece 
-code 122256ACE
 code piece 56
 length 2 code 56ACE
 code piece after 56
 code after ACE
-camp name FREQUENCIA camp esp table  code piece 
-code 122256ACE
 code piece AC
 length 2 code ACE
 code piece after AC
 code after E
-camp name MATERIAPRIMA camp esp table  code piece 
-code 122256ACE
 code piece E
 length 1 code E
 code piece after E
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 122256ACE
 codigo TL010122256AIE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  220V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 122256AIE
 code piece after 1
 code after 22256AIE
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 122256AIE
 code piece 2
 length 1 code 22256AIE
 code piece after 2
 code after 2256AIE
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 122256AIE
 code piece 2
 length 1 code 2256AIE
 code piece after 2
 code after 256AIE
-camp name POTENCIA camp esp table  code piece 
-code 122256AIE
 code piece 1
 length 1 code 256AIE
 code piece after 2
 code after 56AIE
-camp name TENSAO camp esp table  code piece 
-code 122256AIE
 code piece 56
 length 2 code 56AIE
 code piece after 56
 code after AIE
-camp name FREQUENCIA camp esp table  code piece 
-code 122256AIE
 code piece AC
 length 2 code AIE
 code piece after AI
 code after E
-camp name MATERIAPRIMA camp esp table  code piece 
-code 122256AIE
 code piece E
 length 1 code E
 code piece after E
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 122256AIE
 codigo TL010122956ACE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 122956ACE
 code piece after 1
 code after 22956ACE
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 122956ACE
 code piece 2
 length 1 code 22956ACE
 code piece after 2
 code after 2956ACE
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 122956ACE
 code piece 2
 length 1 code 2956ACE
 code piece after 2
 code after 956ACE
-camp name POTENCIA camp esp table  code piece 
-code 122956ACE
 code piece 1
 length 1 code 956ACE
 code piece after 9
 code after 56ACE
-camp name TENSAO camp esp table  code piece 
-code 122956ACE
 code piece 56
 length 2 code 56ACE
 code piece after 56
 code after ACE
-camp name FREQUENCIA camp esp table  code piece 
-code 122956ACE
 code piece AC
 length 2 code ACE
 code piece after AC
 code after E
-camp name MATERIAPRIMA camp esp table  code piece 
-code 122956ACE
 code piece E
 length 1 code E
 code piece after E
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 122956ACE
 codigo TL010122956ACS desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  SEM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 122956ACS
 code piece after 1
 code after 22956ACS
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 122956ACS
 code piece 2
 length 1 code 22956ACS
 code piece after 2
 code after 2956ACS
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 122956ACS
 code piece 2
 length 1 code 2956ACS
 code piece after 2
 code after 956ACS
-camp name POTENCIA camp esp table  code piece 
-code 122956ACS
 code piece 1
 length 1 code 956ACS
 code piece after 9
 code after 56ACS
-camp name TENSAO camp esp table  code piece 
-code 122956ACS
 code piece 56
 length 2 code 56ACS
 code piece after 56
 code after ACS
-camp name FREQUENCIA camp esp table  code piece 
-code 122956ACS
 code piece AC
 length 2 code ACS
 code piece after AC
 code after S
-camp name MATERIAPRIMA camp esp table  code piece 
-code 122956ACS
 code piece E
 length 1 code S
 code piece after S
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 122956ACS
 codigo TL010122956AIE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 122956AIE
 code piece after 1
 code after 22956AIE
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 122956AIE
 code piece 2
 length 1 code 22956AIE
 code piece after 2
 code after 2956AIE
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 122956AIE
 code piece 2
 length 1 code 2956AIE
 code piece after 2
 code after 956AIE
-camp name POTENCIA camp esp table  code piece 
-code 122956AIE
 code piece 1
 length 1 code 956AIE
 code piece after 9
 code after 56AIE
-camp name TENSAO camp esp table  code piece 
-code 122956AIE
 code piece 56
 length 2 code 56AIE
 code piece after 56
 code after AIE
-camp name FREQUENCIA camp esp table  code piece 
-code 122956AIE
 code piece AC
 length 2 code AIE
 code piece after AI
 code after E
-camp name MATERIAPRIMA camp esp table  code piece 
-code 122956AIE
 code piece E
 length 1 code E
 code piece after E
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 122956AIE
 codigo TL010122956AIS desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  SEM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 122956AIS
 code piece after 1
 code after 22956AIS
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 122956AIS
 code piece 2
 length 1 code 22956AIS
 code piece after 2
 code after 2956AIS
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 122956AIS
 code piece 2
 length 1 code 2956AIS
 code piece after 2
 code after 956AIS
-camp name POTENCIA camp esp table  code piece 
-code 122956AIS
 code piece 1
 length 1 code 956AIS
 code piece after 9
 code after 56AIS
-camp name TENSAO camp esp table  code piece 
-code 122956AIS
 code piece 56
 length 2 code 56AIS
 code piece after 56
 code after AIS
-camp name FREQUENCIA camp esp table  code piece 
-code 122956AIS
 code piece AC
 length 2 code AIS
 code piece after AI
 code after S
-camp name MATERIAPRIMA camp esp table  code piece 
-code 122956AIS
 code piece E
 length 1 code S
 code piece after S
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 122956AIS
 codigo TL010124156ACE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  127V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 124156ACE
 code piece after 1
 code after 24156ACE
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 124156ACE
 code piece 2
 length 1 code 24156ACE
 code piece after 2
 code after 4156ACE
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 124156ACE
 code piece 2
 length 1 code 4156ACE
 code piece after 4
 code after 156ACE
-camp name POTENCIA camp esp table  code piece 
-code 124156ACE
 code piece 1
 length 1 code 156ACE
 code piece after 1
 code after 56ACE
-camp name TENSAO camp esp table  code piece 
-code 124156ACE
 code piece 56
 length 2 code 56ACE
 code piece after 56
 code after ACE
-camp name FREQUENCIA camp esp table  code piece 
-code 124156ACE
 code piece AC
 length 2 code ACE
 code piece after AC
 code after E
-camp name MATERIAPRIMA camp esp table  code piece 
-code 124156ACE
 code piece E
 length 1 code E
 code piece after E
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 124156ACE
 codigo TL010124156AIE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  127V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 124156AIE
 code piece after 1
 code after 24156AIE
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 124156AIE
 code piece 2
 length 1 code 24156AIE
 code piece after 2
 code after 4156AIE
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 124156AIE
 code piece 2
 length 1 code 4156AIE
 code piece after 4
 code after 156AIE
-camp name POTENCIA camp esp table  code piece 
-code 124156AIE
 code piece 1
 length 1 code 156AIE
 code piece after 1
 code after 56AIE
-camp name TENSAO camp esp table  code piece 
-code 124156AIE
 code piece 56
 length 2 code 56AIE
 code piece after 56
 code after AIE
-camp name FREQUENCIA camp esp table  code piece 
-code 124156AIE
 code piece AC
 length 2 code AIE
 code piece after AI
 code after E
-camp name MATERIAPRIMA camp esp table  code piece 
-code 124156AIE
 code piece E
 length 1 code E
 code piece after E
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 124156AIE
 codigo TL010124256ACE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  220V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 124256ACE
 code piece after 1
 code after 24256ACE
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 124256ACE
 code piece 2
 length 1 code 24256ACE
 code piece after 2
 code after 4256ACE
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 124256ACE
 code piece 2
 length 1 code 4256ACE
 code piece after 4
 code after 256ACE
-camp name POTENCIA camp esp table  code piece 
-code 124256ACE
 code piece 1
 length 1 code 256ACE
 code piece after 2
 code after 56ACE
-camp name TENSAO camp esp table  code piece 
-code 124256ACE
 code piece 56
 length 2 code 56ACE
 code piece after 56
 code after ACE
-camp name FREQUENCIA camp esp table  code piece 
-code 124256ACE
 code piece AC
 length 2 code ACE
 code piece after AC
 code after E
-camp name MATERIAPRIMA camp esp table  code piece 
-code 124256ACE
 code piece E
 length 1 code E
 code piece after E
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 124256ACE
 codigo TL010124256AIE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  220V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 124256AIE
 code piece after 1
 code after 24256AIE
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 124256AIE
 code piece 2
 length 1 code 24256AIE
 code piece after 2
 code after 4256AIE
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 124256AIE
 code piece 2
 length 1 code 4256AIE
 code piece after 4
 code after 256AIE
-camp name POTENCIA camp esp table  code piece 
-code 124256AIE
 code piece 1
 length 1 code 256AIE
 code piece after 2
 code after 56AIE
-camp name TENSAO camp esp table  code piece 
-code 124256AIE
 code piece 56
 length 2 code 56AIE
 code piece after 56
 code after AIE
-camp name FREQUENCIA camp esp table  code piece 
-code 124256AIE
 code piece AC
 length 2 code AIE
 code piece after AI
 code after E
-camp name MATERIAPRIMA camp esp table  code piece 
-code 124256AIE
 code piece E
 length 1 code E
 code piece after E
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 124256AIE
 codigo TL010124956ACE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 124956ACE
 code piece after 1
 code after 24956ACE
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 124956ACE
 code piece 2
 length 1 code 24956ACE
 code piece after 2
 code after 4956ACE
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 124956ACE
 code piece 2
 length 1 code 4956ACE
 code piece after 4
 code after 956ACE
-camp name POTENCIA camp esp table  code piece 
-code 124956ACE
 code piece 1
 length 1 code 956ACE
 code piece after 9
 code after 56ACE
-camp name TENSAO camp esp table  code piece 
-code 124956ACE
 code piece 56
 length 2 code 56ACE
 code piece after 56
 code after ACE
-camp name FREQUENCIA camp esp table  code piece 
-code 124956ACE
 code piece AC
 length 2 code ACE
 code piece after AC
 code after E
-camp name MATERIAPRIMA camp esp table  code piece 
-code 124956ACE
 code piece E
 length 1 code E
 code piece after E
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 124956ACE
 codigo TL010124956ACS desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  SEM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 124956ACS
 code piece after 1
 code after 24956ACS
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 124956ACS
 code piece 2
 length 1 code 24956ACS
 code piece after 2
 code after 4956ACS
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 124956ACS
 code piece 2
 length 1 code 4956ACS
 code piece after 4
 code after 956ACS
-camp name POTENCIA camp esp table  code piece 
-code 124956ACS
 code piece 1
 length 1 code 956ACS
 code piece after 9
 code after 56ACS
-camp name TENSAO camp esp table  code piece 
-code 124956ACS
 code piece 56
 length 2 code 56ACS
 code piece after 56
 code after ACS
-camp name FREQUENCIA camp esp table  code piece 
-code 124956ACS
 code piece AC
 length 2 code ACS
 code piece after AC
 code after S
-camp name MATERIAPRIMA camp esp table  code piece 
-code 124956ACS
 code piece E
 length 1 code S
 code piece after S
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 124956ACS
 codigo TL010124956AIE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 124956AIE
 code piece after 1
 code after 24956AIE
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 124956AIE
 code piece 2
 length 1 code 24956AIE
 code piece after 2
 code after 4956AIE
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 124956AIE
 code piece 2
 length 1 code 4956AIE
 code piece after 4
 code after 956AIE
-camp name POTENCIA camp esp table  code piece 
-code 124956AIE
 code piece 1
 length 1 code 956AIE
 code piece after 9
 code after 56AIE
-camp name TENSAO camp esp table  code piece 
-code 124956AIE
 code piece 56
 length 2 code 56AIE
 code piece after 56
 code after AIE
-camp name FREQUENCIA camp esp table  code piece 
-code 124956AIE
 code piece AC
 length 2 code AIE
 code piece after AI
 code after E
-camp name MATERIAPRIMA camp esp table  code piece 
-code 124956AIE
 code piece E
 length 1 code E
 code piece after E
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 124956AIE
 codigo TL010124956AIS desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  SEM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 124956AIS
 code piece after 1
 code after 24956AIS
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 124956AIS
 code piece 2
 length 1 code 24956AIS
 code piece after 2
 code after 4956AIS
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 124956AIS
 code piece 2
 length 1 code 4956AIS
 code piece after 4
 code after 956AIS
-camp name POTENCIA camp esp table  code piece 
-code 124956AIS
 code piece 1
 length 1 code 956AIS
 code piece after 9
 code after 56AIS
-camp name TENSAO camp esp table  code piece 
-code 124956AIS
 code piece 56
 length 2 code 56AIS
 code piece after 56
 code after AIS
-camp name FREQUENCIA camp esp table  code piece 
-code 124956AIS
 code piece AC
 length 2 code AIS
 code piece after AI
 code after S
-camp name MATERIAPRIMA camp esp table  code piece 
-code 124956AIS
 code piece E
 length 1 code S
 code piece after S
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 124956AIS
 codigo TL010222956ACS desc LUMINARIA TL.L.EXE.010 COM 2 REATORES  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  SEM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 222956ACS
 code piece after 2
 code after 22956ACS
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 222956ACS
 code piece 2
 length 1 code 22956ACS
 code piece after 2
 code after 2956ACS
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 222956ACS
 code piece 2
 length 1 code 2956ACS
 code piece after 2
 code after 956ACS
-camp name POTENCIA camp esp table  code piece 
-code 222956ACS
 code piece 1
 length 1 code 956ACS
 code piece after 9
 code after 56ACS
-camp name TENSAO camp esp table  code piece 
-code 222956ACS
 code piece 56
-length 2 code 56ACS
-code piece after 56
-code after ACS
-camp name FREQUENCIA camp esp table  code piece 
-code 222956ACS
 code piece AC
 length 2 code ACS
 code piece after AC
 code after S
-camp name MATERIAPRIMA camp esp table  code piece 
-code 222956ACS
 code piece E
 length 1 code S
 code piece after S
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 222956ACS
 codigo TL010222956AIS desc LUMINARIA TL.L.EXE.010 COM 2 REATORES  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  SEM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 222956AIS
 code piece after 2
 code after 22956AIS
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 222956AIS
 code piece 2
 length 1 code 22956AIS
 code piece after 2
 code after 2956AIS
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 222956AIS
 code piece 2
 length 1 code 2956AIS
 code piece after 2
 code after 956AIS
-camp name POTENCIA camp esp table  code piece 
-code 222956AIS
 code piece 1
 length 1 code 956AIS
 code piece after 9
 code after 56AIS
-camp name TENSAO camp esp table  code piece 
-code 222956AIS
 code piece 56
 length 2 code 56AIS
 code piece after 56
 code after AIS
-camp name FREQUENCIA camp esp table  code piece 
-code 222956AIS
 code piece AC
 length 2 code AIS
 code piece after AI
 code after S
-camp name MATERIAPRIMA camp esp table  code piece 
-code 222956AIS
 code piece E
 length 1 code S
 code piece after S
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 222956AIS
 codigo TL010224956ACS desc LUMINARIA TL.L.EXE.010 COM 2 REATORES  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  SEM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 224956ACS
 code piece after 2
 code after 24956ACS
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 224956ACS
 code piece 2
 length 1 code 24956ACS
 code piece after 2
 code after 4956ACS
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 224956ACS
 code piece 2
 length 1 code 4956ACS
 code piece after 4
 code after 956ACS
-camp name POTENCIA camp esp table  code piece 
-code 224956ACS
 code piece 1
 length 1 code 956ACS
 code piece after 9
 code after 56ACS
-camp name TENSAO camp esp table  code piece 
-code 224956ACS
 code piece 56
 length 2 code 56ACS
 code piece after 56
 code after ACS
-camp name FREQUENCIA camp esp table  code piece 
-code 224956ACS
 code piece AC
 length 2 code ACS
 code piece after AC
 code after S
-camp name MATERIAPRIMA camp esp table  code piece 
-code 224956ACS
 code piece E
 length 1 code S
 code piece after S
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 224956ACS
 codigo TL010224956AIS desc LUMINARIA TL.L.EXE.010 COM 2 REATORES  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  SEM EMERGENCIA
-image full path \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
 gonna get the prefix length
 prefix TL010
-prefix length 5
-gonna get fields camp table TL010oc
 code piece 1
 length 1 code 224956AIS
 code piece after 2
 code after 24956AIS
-camp name QUANTIDADEDEREATORES camp esp table  code piece 
-code 224956AIS
 code piece 2
 length 1 code 24956AIS
 code piece after 2
 code after 4956AIS
-camp name QUANTIDADEDELAMPADAS camp esp table  code piece 
-code 224956AIS
 code piece 2
 length 1 code 4956AIS
 code piece after 4
 code after 956AIS
-camp name POTENCIA camp esp table  code piece 
-code 224956AIS
 code piece 1
 length 1 code 956AIS
 code piece after 9
 code after 56AIS
-camp name TENSAO camp esp table  code piece 
-code 224956AIS
 code piece 56
 length 2 code 56AIS
 code piece after 56
 code after AIS
-camp name FREQUENCIA camp esp table  code piece 
-code 224956AIS
 code piece AC
 length 2 code AIS
 code piece after AI
 code after S
-camp name MATERIAPRIMA camp esp table  code piece 
-code 224956AIS
 code piece E
 length 1 code S
 code piece after S
 code after 
-camp name AUTONOMIA camp esp table  code piece 
-code 224956AIS

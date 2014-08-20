@@ -22,33 +22,40 @@ class PromtoPrinter{
 		Global db
 		code := this.code
 		imagepath := db.Imagem.get_image_full_path(code)
-		AHK.append_debug("image full path " imagepath)
 		StringReplace, imagepath, imagepath, \, /, All
 		prefix_length := this.get_prefix_length(this.info)
-		AHK.append_debug("prefix length " prefix_length)
 		StringTrimleft, code, code, prefix_length
+		prefix_formation := this.get_prefix_formation(this.info)
 		fields := this.get_fields(code)
 		hash := {
 			(JOIN 
 				"code": this.code, 
 				"desc": this.desc, 
 				"image_path": imagepath,
+				"prefix":	prefix_formation,
 				"fields": fields
 			)}
 		this.obj.items.insert(hash)	
+	}
+
+	get_prefix_formation(info) {
+		Global db
+		prefix := db.get_ordened_prefix(this.info)
+		prefix_return := []	
+		for, each, item in prefix{
+			prefix_return.insert("prefixo|" item)
+		} 
+		return prefix_return
 	}
 
 	get_fields(code) {
 		Global db
 		fields := []
 		this.code := code
-		AHK.append_debug("gonna get fields camp table " this.camp_table)
 		for, each, item in list := db.get_values("*", this.camp_table) {
 			camp_name := AHK.rem_space(list[A_Index, 2])
 			camp_esp_table := db.get_reference(camp_name, this.tabela1)
 			code_piece := this.get_code_piece(camp_esp_table, camp_name)
-			AHK.append_debug("camp name " camp_name " camp esp table " camp esp table " code piece ")
-			AHK.append_debug("code " code)
 			fields.insert(list[A_Index, 2] "|" code_piece)
 		}
 		return fields 

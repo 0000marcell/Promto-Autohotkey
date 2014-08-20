@@ -1,30 +1,24 @@
 var fs = require("fs");
-var promtoPrinter = new PromtoPrinter();
+var file = "print_JSON.json";
 
 function PromtoReader(){
 }
 
 PromtoReader.prototype.start = function(){
+	console.log("gonna start !!!");
 	try{
-		var jsonString = this.readJson("package.json");
+		var obj =	this.readJSON();
+		alert("returned obj length "+obj.items.length);
+	  return obj;
 	}catch(err){
 		console.log("Houve um erro "+err);
 	}
 }
 
-PromtoReader.prototype.readJson = function(file){
-	var stringJson = fs.readFileSync(file);
-	var obj = JSON.parse(stringJson);
-	this.prepareForPrinting(obj);
+PromtoReader.prototype.readJSON = function(){
+	var content = fs.readFileSync(file, "utf8");
+	alert("gonna read content "+content);
+	var obj = JSON.parse(content);
+	alert("obj max index "+obj.items[1].desc);
+	return obj;
 }
-
-PromtoReader.prototype.prepareForPrinting = function(json){
-	promtoPrinter.start();
-	for (var i = 0; i < json.products.length; i++) {
-		promtoPrinter.print(json.products[i]);
-	}
-	promtoPrinter.close();
-}
-
-
-

@@ -1,0 +1,1 @@
+nw --enable-login "C:\Users\mcruz\Documents\GitHub\Promto-Autohotkey\node\printer\public"

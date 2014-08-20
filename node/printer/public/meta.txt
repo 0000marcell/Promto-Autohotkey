@@ -1,0 +1,4 @@
+onload ira rodar a funcao que comeca a ler o arquivo 
+
+haverao duas classes, uma class sera responsavel 
+pela leitura Reader e outra por imprimir Printer

@@ -66,7 +66,7 @@ lista_de_codigos(info){
 	return
 
 	carregartabela:
-	FileDelete,temp.csv 
+	FileDelete, temp.csv 
 	for each, value in Listpesqcod{
 		FileAppend, % Listpesqcod[A_Index,1] ";" Listpesqcod[A_Index,2] ";" Listpesqcod[A_Index,3] ";" Listpesqcod[A_Index,4]  "`n",temp.csv	
 	}
@@ -79,7 +79,9 @@ lista_de_codigos(info){
 	model_mask := s_info.modelo[2]
 	ordened_prefix := db.get_ordened_prefix(s_info)
 	model_name := s_info.modelo[1]
-	createtag(prefix, ordened_prefix, model_mask, model_name, prefix model_mask "Codigo", codigos_selecionados)
+	printer := new PromtoPrinter()
+	printer.create_tag(s_info)	
+	;createtag(prefix, ordened_prefix, model_mask, model_name, prefix model_mask "Codigo", codigos_selecionados)
 	return 
 
 	lista_de_codigos_viewContextMenu:

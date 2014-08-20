@@ -1,0 +1,39 @@
+.main-page {
+  text-align: center; }
+
+.desc {
+  margin-left: 210px;
+  margin-top: 10px;
+  width: 600px;
+  height: 150px; }
+
+.item {
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  width: 842px;
+  height: 300px;
+  overflow: hidden; }
+  .item img {
+    margin-left: 10px;
+    margin-top: 10px;
+    float: left;
+    width: 190px;
+    height: 190px; }
+
+.code-formation {
+  margin-top: 50px;
+  margin-left: 10px;
+  width: 820px;
+  height: 130px; }
+
+.code-panel {
+  float: left;
+  width: 80px;
+  height: 80px; }
+
+.panel-text-pos h3 {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: auto; }

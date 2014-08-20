@@ -1,0 +1,34 @@
+{
+	"print-op": "plaquetas",
+  "products": [ 
+  {"code" : "TL010122956ACS",
+   "desc" : "LUMINARIA TL.L.EXE.010 COM 1 REATOR PARA 2 LAMPADAS 20W FABRICACAO EM ACO INOX SEM EMERGENCIA",
+   "image" : "test.jpg",
+   "fields" : [ "T|EMPRESA",
+   		 					"L|FAMILIA",
+   		 					"010|MODELO",
+   		 					"1|QUANTIDADE DE REATORES",
+   		 					"2|QUANTIDADE DE LAMPADAS",
+   		 					"2|POTENCIA",
+   		 					"9|TENSAO",
+   		 					"56|FREQUENCIA",
+   		 					"AC|MATERIA PRIMA",
+   		 					"S|SEM EMERGENCIA" 
+   ]
+  },
+  {"code" : "TL010122956ACS",
+   "desc" : "LUMINARIA TL.L.EXE.010 COM 1 REATOR PARA 2 LAMPADAS 20W FABRICACAO EM ACO INOX SEM EMERGENCIA",
+   "fields" : [ "T|EMPRESA",
+   		 					"L|FAMILIA",
+   		 					"010|MODELO",
+   		 					"1|QUANTIDADE DE REATORES",
+   		 					"2|QUANTIDADE DE LAMPADAS",
+   		 					"2|POTENCIA",
+   		 					"9|TENSAO",
+   		 					"56|FREQUENCIA",
+   		 					"AC|MATERIA PRIMA",
+   		 					"S|SEM EMERGENCIA" 
+   ]
+  }
+  ]
+}

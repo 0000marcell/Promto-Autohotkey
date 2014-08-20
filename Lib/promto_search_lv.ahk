@@ -62,7 +62,6 @@ class LV{
 	}
 
 	update_list(number, value, checked_list){
-		AHK.append_debug("result " this.result)	
 		if(this.result = ""){
 			this.update_by_list(number, value)
 		}else{

@@ -13,8 +13,8 @@ class GenerateJSONFeed{
 	 this.insert_CRUD()
 	 this.obj.max_index := this.obj.log.maxindex()
 	 this.save_file()
-	 feed_path := A_WorkingDir "\node\feed\public"
-	 Run, %comspec% /K nw --enable-logging %feed_path%, , hide
+	 feed_path = "%A_WorkingDir%\node\feed\public"
+	 Run, %comspec% /K nw --enable-logging %feed_path%,, hide
 	}
 
 	insert_CRUD(){

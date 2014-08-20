@@ -44,8 +44,8 @@
 		{
 			"contents": "temp/*\nsettings.json\nno",
 			"file": ".gitignore",
-			"file_size": 21,
-			"file_write_time": 130525944522947398,
+			"file_size": 37,
+			"file_write_time": 130529442607693180,
 			"settings":
 			{
 				"buffer_size": 23,
@@ -83,16 +83,23 @@
 			"file": "models/generate_feed_model.ahk",
 			"settings":
 			{
-				"buffer_size": 840,
+				"buffer_size": 883,
 				"line_ending": "Windows",
 				"name": "dfdfd"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "models/generate_feed_model.ahk",
 			"settings":
 			{
-				"buffer_size": 840,
+				"buffer_size": 883,
 				"line_ending": "Windows"
 			}
 		},
@@ -435,7 +442,7 @@
 			"file": "test1.ahk",
 			"settings":
 			{
-				"buffer_size": 118,
+				"buffer_size": 91,
 				"line_ending": "Windows"
 			}
 		},
@@ -459,7 +466,22 @@
 			"file": "/C/Users/mcruz/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 			"settings":
 			{
-				"buffer_size": 132,
+				"buffer_size": 153,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "node-modules/feed/promto_feed_JSON.json",
+			"settings":
+			{
+				"buffer_size": 21497,
 				"line_ending": "Unix"
 			}
 		},
@@ -637,7 +659,7 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 33.0
 	},
 	"find_in_files":
 	{
@@ -764,7 +786,7 @@
 	"groups":
 	[
 		{
-			"selected": 53,
+			"selected": 8,
 			"sheets":
 			[
 				{
@@ -826,7 +848,7 @@
 						"translation.y": 3720.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -857,7 +879,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
@@ -873,8 +895,8 @@
 						"selection":
 						[
 							[
-								259,
-								259
+								322,
+								322
 							]
 						],
 						"settings":
@@ -919,7 +941,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -950,7 +972,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
@@ -984,7 +1006,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 42,
+					"stack_index": 45,
 					"type": "text"
 				},
 				{
@@ -1018,7 +1040,7 @@
 						"translation.y": 285.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 43,
+					"stack_index": 46,
 					"type": "text"
 				},
 				{
@@ -1027,15 +1049,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 840,
+						"buffer_size": 883,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								211,
-								211
+								441,
+								441
 							]
 						],
 						"settings":
@@ -1052,16 +1074,44 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 8,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
 					"file": "models/generate_feed_model.ahk",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 840,
+						"buffer_size": 883,
 						"regions":
 						{
 						},
@@ -1085,11 +1135,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 25,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "views/cert_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -1117,11 +1167,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 47,
+					"stack_index": 50,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
 					"file": "views/estruturas_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -1149,11 +1199,11 @@
 						"translation.y": 451.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 50,
+					"stack_index": 53,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 12,
 					"file": "views/linkar_modelos_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -1182,11 +1232,11 @@
 						"translation.y": 546.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 49,
+					"stack_index": 52,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 13,
 					"file": "views/selecionar_campo_externo_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -1215,11 +1265,11 @@
 						"translation.y": 715.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 31,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 14,
 					"file": "views/shared/inserir_imagem_db_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -1247,11 +1297,11 @@
 						"translation.y": 285.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 48,
+					"stack_index": 51,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 15,
 					"file": "controllers/estruturas_controller.ahk",
 					"semi_transient": false,
 					"settings":
@@ -1279,11 +1329,11 @@
 						"translation.y": 3928.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 51,
+					"stack_index": 54,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 16,
 					"file": "views/config_db_ex_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -1324,11 +1374,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 62,
+					"stack_index": 65,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 17,
 					"file": "views/db_ex_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -2093,15 +2143,15 @@
 								"xpos": 48
 							}
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 18,
 					"file": "views/inserir_valores_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -2130,11 +2180,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 19,
 					"file": "controllers/inserir_valores_controller.ahk",
 					"semi_transient": false,
 					"settings":
@@ -2164,11 +2214,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 20,
 					"file": "views/inserir_db_ex_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -2197,11 +2247,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 53,
+					"stack_index": 56,
 					"type": "text"
 				},
 				{
-					"buffer": 20,
+					"buffer": 21,
 					"file": "controllers/db_ex_controller.ahk",
 					"semi_transient": false,
 					"settings":
@@ -2230,11 +2280,11 @@
 						"translation.y": 2637.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 55,
+					"stack_index": 58,
 					"type": "text"
 				},
 				{
-					"buffer": 21,
+					"buffer": 22,
 					"file": "doc/PromtoLib.doc",
 					"semi_transient": false,
 					"settings":
@@ -2274,11 +2324,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 59,
+					"stack_index": 62,
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 23,
 					"file": "Lib/Promtolib.ahk",
 					"semi_transient": false,
 					"settings":
@@ -2931,11 +2981,11 @@
 						"translation.y": 16165.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 33,
+					"stack_index": 36,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 24,
 					"file": "Lib/promto_search.ahk",
 					"semi_transient": false,
 					"settings":
@@ -2992,11 +3042,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 56,
+					"stack_index": 59,
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 25,
 					"file": "index.html",
 					"semi_transient": false,
 					"settings":
@@ -3933,11 +3983,11 @@
 						"translation.y": 171.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 60,
+					"stack_index": 63,
 					"type": "text"
 				},
 				{
-					"buffer": 25,
+					"buffer": 26,
 					"file": "/C/Users/mcruz/AppData/Roaming/Sublime Text 3/Packages/User/Fetch.sublime-settings",
 					"semi_transient": false,
 					"settings":
@@ -3979,11 +4029,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 61,
+					"stack_index": 64,
 					"type": "text"
 				},
 				{
-					"buffer": 26,
+					"buffer": 27,
 					"file": "Lib/promto_sql_mariaDB_subfamilia.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4027,11 +4077,11 @@
 						"translation.y": 777.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
+					"buffer": 28,
 					"file": "Lib/promto_sql_mariaDB_modelo.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4060,11 +4110,11 @@
 						"translation.y": 3141.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
-					"buffer": 28,
+					"buffer": 29,
 					"file": "views/ordem_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4092,11 +4142,11 @@
 						"translation.y": 432.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 29,
+					"buffer": 30,
 					"file": "Lib/gerar_codigos.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4124,11 +4174,11 @@
 						"translation.y": 509.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 30,
+					"buffer": 31,
 					"file": "views/linkar_campos_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4156,11 +4206,11 @@
 						"translation.y": 114.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 32,
 					"type": "text"
 				},
 				{
-					"buffer": 31,
+					"buffer": 32,
 					"file": "views/inserir_campos_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4189,11 +4239,11 @@
 						"translation.y": 3160.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 30,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
+					"buffer": 33,
 					"file": "Lib/promto_sql_mariaDB.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4238,11 +4288,11 @@
 						"translation.y": 5676.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 40,
+					"stack_index": 43,
 					"type": "text"
 				},
 				{
-					"buffer": 33,
+					"buffer": 34,
 					"file": "Lib/promto_sql_mariaDB_log.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4271,11 +4321,11 @@
 						"translation.y": 243.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 39,
+					"stack_index": 42,
 					"type": "text"
 				},
 				{
-					"buffer": 34,
+					"buffer": 35,
 					"file": "Lib/promto_sql_mariaDB_empresa.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4304,11 +4354,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 37,
+					"stack_index": 40,
 					"type": "text"
 				},
 				{
-					"buffer": 35,
+					"buffer": 36,
 					"file": "Lib/promto_sql_mariaDB_tipo.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4337,11 +4387,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 36,
+					"stack_index": 39,
 					"type": "text"
 				},
 				{
-					"buffer": 36,
+					"buffer": 37,
 					"file": "Lib/promto_sql_mariaDB_familia.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4370,11 +4420,11 @@
 						"translation.y": 1374.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 38,
+					"stack_index": 41,
 					"type": "text"
 				},
 				{
-					"buffer": 37,
+					"buffer": 38,
 					"file": "json-test.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4416,11 +4466,11 @@
 						"translation.y": 527.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 69,
+					"stack_index": 72,
 					"type": "text"
 				},
 				{
-					"buffer": 38,
+					"buffer": 39,
 					"file": "Lib/promto_json.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4476,11 +4526,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 44,
+					"stack_index": 47,
 					"type": "text"
 				},
 				{
-					"buffer": 39,
+					"buffer": 40,
 					"file": "promto_feed_json.json",
 					"semi_transient": false,
 					"settings":
@@ -4510,11 +4560,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
-					"buffer": 40,
+					"buffer": 41,
 					"file": "promto.sublime-project",
 					"semi_transient": false,
 					"settings":
@@ -4542,11 +4592,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 46,
+					"stack_index": 49,
 					"type": "text"
 				},
 				{
-					"buffer": 41,
+					"buffer": 42,
 					"file": "promto_JSON.json",
 					"semi_transient": false,
 					"settings":
@@ -4588,11 +4638,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 45,
+					"stack_index": 48,
 					"type": "text"
 				},
 				{
-					"buffer": 42,
+					"buffer": 43,
 					"file": "/C/Users/mcruz/Downloads/Jit-2.0.1/Jit/Examples/Spacetree/example1.html",
 					"semi_transient": false,
 					"settings":
@@ -4637,11 +4687,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 64,
+					"stack_index": 67,
 					"type": "text"
 				},
 				{
-					"buffer": 43,
+					"buffer": 44,
 					"semi_transient": false,
 					"settings":
 					{
@@ -4682,11 +4732,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 71,
+					"stack_index": 74,
 					"type": "text"
 				},
 				{
-					"buffer": 44,
+					"buffer": 45,
 					"file": "Lib/promto_json_helper.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4736,11 +4786,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 65,
+					"stack_index": 68,
 					"type": "text"
 				},
 				{
-					"buffer": 45,
+					"buffer": 46,
 					"file": "Lib/general_funcs.ahk",
 					"semi_transient": false,
 					"settings":
@@ -4780,14 +4830,14 @@
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 4289.0,
+						"translation.y": 4288.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 68,
+					"stack_index": 71,
 					"type": "text"
 				},
 				{
-					"buffer": 37,
+					"buffer": 38,
 					"file": "json-test.ahk",
 					"semi_transient": false,
 					"settings":
@@ -6254,11 +6304,11 @@
 						"translation.y": 583.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 66,
+					"stack_index": 69,
 					"type": "text"
 				},
 				{
-					"buffer": 46,
+					"buffer": 47,
 					"file": "/C/Users/mcruz/Downloads/Jit-2.0.1/Jit/Examples/Spacetree/example1.js",
 					"semi_transient": false,
 					"settings":
@@ -6304,11 +6354,11 @@
 						"translation.y": 15392.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 63,
+					"stack_index": 66,
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 23,
 					"file": "Lib/Promtolib.ahk",
 					"semi_transient": false,
 					"settings":
@@ -6961,11 +7011,11 @@
 						"translation.y": 5149.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 54,
+					"stack_index": 57,
 					"type": "text"
 				},
 				{
-					"buffer": 47,
+					"buffer": 48,
 					"semi_transient": false,
 					"settings":
 					{
@@ -7679,7 +7729,7 @@
 						"translation.y": 31578.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
@@ -7738,11 +7788,11 @@
 						"translation.y": 12023.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 52,
+					"stack_index": 55,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 24,
 					"file": "Lib/promto_search.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7796,11 +7846,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 48,
+					"buffer": 49,
 					"file": "Lib/promto_search_lv.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7881,24 +7931,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 49,
+					"buffer": 50,
 					"file": "test1.ahk",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 118,
+						"buffer_size": 91,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								118,
-								118
+								0,
+								0
 							]
 						],
 						"settings":
@@ -7910,15 +7960,15 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 436.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 50,
+					"buffer": 51,
 					"file": "java/ConvertImage.java",
 					"semi_transient": false,
 					"settings":
@@ -7947,11 +7997,11 @@
 						"translation.y": 469.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 57,
+					"stack_index": 60,
 					"type": "text"
 				},
 				{
-					"buffer": 44,
+					"buffer": 45,
 					"file": "Lib/promto_json_helper.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7999,11 +8049,11 @@
 						"translation.y": 818.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 70,
+					"stack_index": 73,
 					"type": "text"
 				},
 				{
-					"buffer": 38,
+					"buffer": 39,
 					"file": "Lib/promto_json.ahk",
 					"semi_transient": false,
 					"settings":
@@ -8056,11 +8106,11 @@
 						"translation.y": 747.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 67,
+					"stack_index": 70,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
+					"buffer": 33,
 					"file": "Lib/promto_sql_mariaDB.ahk",
 					"semi_transient": false,
 					"settings":
@@ -8101,11 +8151,11 @@
 						"translation.y": 5630.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 28,
 					"type": "text"
 				},
 				{
-					"buffer": 33,
+					"buffer": 34,
 					"file": "Lib/promto_sql_mariaDB_log.ahk",
 					"semi_transient": false,
 					"settings":
@@ -8133,11 +8183,11 @@
 						"translation.y": 341.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 35,
+					"stack_index": 38,
 					"type": "text"
 				},
 				{
-					"buffer": 51,
+					"buffer": 52,
 					"file": "Lib/promto_sql_mariaDB_usuario.ahk",
 					"semi_transient": false,
 					"settings":
@@ -8166,24 +8216,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 41,
+					"stack_index": 44,
 					"type": "text"
 				},
 				{
-					"buffer": 52,
+					"buffer": 53,
 					"file": "/C/Users/mcruz/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 132,
+						"buffer_size": 153,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								129,
-								129
+								0,
+								0
 							]
 						],
 						"settings":
@@ -8197,17 +8247,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 58,
+					"stack_index": 61,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 2,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 33,
+					"buffer": 34,
 					"file": "Lib/promto_sql_mariaDB_log.ahk",
 					"semi_transient": false,
 					"settings":
@@ -8235,11 +8279,11 @@
 						"translation.y": 798.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 34,
+					"stack_index": 37,
 					"type": "text"
 				},
 				{
-					"buffer": 35,
+					"buffer": 36,
 					"file": "Lib/promto_sql_mariaDB_tipo.ahk",
 					"semi_transient": false,
 					"settings":
@@ -8268,11 +8312,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 32,
+					"stack_index": 35,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
+					"buffer": 28,
 					"file": "Lib/promto_sql_mariaDB_modelo.ahk",
 					"semi_transient": false,
 					"settings":
@@ -8301,11 +8345,72 @@
 						"translation.y": 2903.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 54,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 55,
+					"file": "node-modules/feed/promto_feed_JSON.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21497,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6722.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
 					"file": "Lib/Promtolib.ahk",
 					"semi_transient": false,
 					"settings":
@@ -8958,11 +9063,11 @@
 						"translation.y": 38011.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 31,
+					"buffer": 32,
 					"file": "views/inserir_campos_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -8991,7 +9096,7 @@
 						"translation.y": 3502.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
+					"stack_index": 29,
 					"type": "text"
 				},
 				{
@@ -9000,15 +9105,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 840,
+						"buffer_size": 883,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								191,
-								191
+								224,
+								224
 							]
 						],
 						"settings":
@@ -9025,11 +9130,11 @@
 						"translation.y": 34.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 24,
 					"file": "Lib/promto_search.ahk",
 					"semi_transient": false,
 					"settings":
@@ -9086,11 +9191,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
-					"buffer": 48,
+					"buffer": 49,
 					"file": "Lib/promto_search_lv.ahk",
 					"semi_transient": false,
 					"settings":
@@ -9171,11 +9276,11 @@
 						"translation.y": 1140.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 53,
+					"buffer": 56,
 					"file": "debug.txt",
 					"semi_transient": false,
 					"settings":
@@ -9202,11 +9307,11 @@
 						"translation.y": 19.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 54,
+					"buffer": 57,
 					"file": "views/inserir_ETF_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -9235,11 +9340,11 @@
 						"translation.y": 1478.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 31,
+					"stack_index": 34,
 					"type": "text"
 				},
 				{
-					"buffer": 55,
+					"buffer": 58,
 					"file": "views/inserir_modelo_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -9267,7 +9372,7 @@
 						"translation.y": 4300.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 30,
+					"stack_index": 33,
 					"type": "text"
 				}
 			]
@@ -9290,18 +9395,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.52196193265,
 			1.0
 		],
 		"rows":
@@ -9336,7 +9434,15 @@
 		[
 			[
 				"",
-				"test1.ahk"
+				"models\\generate_feed_model.ahk"
+			],
+			[
+				"bac",
+				"controllers\\back_up_controller.ahk"
+			],
+			[
+				"generate",
+				"models\\generate_feed_model.ahk"
 			],
 			[
 				"test1.ahk",
@@ -9656,7 +9762,7 @@
 		[
 			[
 				"",
-				"C:\\Users\\mcruz\\Documents\\GitHub\\promtoWeb\\promtoweb.sublime-project"
+				"C:\\Users\\mcruz\\Documents\\GitHub\\Sublime-Projects\\feed.sublime-project"
 			]
 		],
 		"width": 380.0

@@ -1,0 +1,374 @@
+{
+    "log": {
+        "1": {
+            "data":                  "18/08/2014",
+            "hora":                  "10:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PROJETOR|subfamilia|CORPO|modelo|TL.P.EXN.006",
+            "msg":                   "O Campo PARTES foi criado!",
+            "prodkey":               "TIPCO006",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "2": {
+            "data":                  "18/08/2014",
+            "hora":                  "10:27",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PROJETOR|subfamilia|CORPO|modelo|TL.P.EXN.006",
+            "msg":                   "O item TAMPA descricao resumida TAMPA DO CORPO DO PROJETOR 006 foi incluido no campo PARTES",
+            "prodkey":               "TIPCO006",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "3": {
+            "data":                  "18/08/2014",
+            "hora":                  "10:28",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PROJETOR|subfamilia|CORPO|modelo|TL.P.EXN.006",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TIPCO006",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "4": {
+            "data":                  "18/08/2014",
+            "hora":                  "10:41",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PROJETOR|subfamilia||modelo|TL.P.EXN.006",
+            "msg":                   "O Campo LAMPADA foi criado!",
+            "prodkey":               "TP006",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "5": {
+            "data":                  "18/08/2014",
+            "hora":                  "10:42",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PROJETOR|subfamilia||modelo|TL.P.EXN.006",
+            "msg":                   "O item SM250 descricao resumida PARA LAMPADA VAPOR SODIO/METALICO 250W foi incluido no campo LAMPADA",
+            "prodkey":               "TP006",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "6": {
+            "data":                  "18/08/2014",
+            "hora":                  "10:42",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PROJETOR|subfamilia||modelo|TL.P.EXN.006",
+            "msg":                   "O item SM400 descricao resumida PARA LAMPADA VAPOR SODIO/METALICO 400W foi incluido no campo LAMPADA",
+            "prodkey":               "TP006",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "7": {
+            "data":                  "18/08/2014",
+            "hora":                  "10:46",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PROJETOR|subfamilia||modelo|TL.P.EXN.006",
+            "msg":                   "O item VR250 descricao resumida PARA LAMPADA VAPOR DE MERCURIO DE 250W foi incluido no campo LAMPADA",
+            "prodkey":               "TP006",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "8": {
+            "data":                  "18/08/2014",
+            "hora":                  "10:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PROJETOR|subfamilia||modelo|TL.P.EXN.006",
+            "msg":                   "O item VR400 descricao resumida PARA LAMPADA VAPOR DE MERCURIO DE 400W foi incluido no campo LAMPADA",
+            "prodkey":               "TP006",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "9": {
+            "data":                  "18/08/2014",
+            "hora":                  "10:49",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PROJETOR|subfamilia||modelo|TL.P.EXN.006",
+            "msg":                   "O item HA500 descricao resumida PARA LAMPADA HALOGENA DE 500W foi incluido no campo LAMPADA",
+            "prodkey":               "TP006",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "10": {
+            "data":                  "18/08/2014",
+            "hora":                  "10:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PROJETOR|subfamilia||modelo|TL.P.EXN.006",
+            "msg":                   "O item HA01K descricao resumida PARA LAMPADA HALOGENA DE 1000W foi incluido no campo LAMPADA",
+            "prodkey":               "TP006",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "11": {
+            "data":                  "18/08/2014",
+            "hora":                  "12:43",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PROJETOR|subfamilia||modelo|TL.P.EXN.006",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TP006",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "12": {
+            "data":                  "18/08/2014",
+            "hora":                  "12:43",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PROJETOR|subfamilia||modelo|TL.P.EXN.006",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TP006",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "13": {
+            "data":                  "18/08/2014",
+            "hora":                  "12:43",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PROJETOR|subfamilia||modelo|TL.P.EXN.006",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TP006",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "14": {
+            "data":                  "18/08/2014",
+            "hora":                  "12:43",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PROJETOR|subfamilia||modelo|TL.P.EXN.006",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TP006",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "15": {
+            "data":                  "18/08/2014",
+            "hora":                  "12:45",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PROJETOR|subfamilia||modelo|TL.P.EXN.006",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TP006",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "16": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:08",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.002-UNIAO",
+            "msg":                   "O modelo TL.PC.EXD.002-UNIAO e mascara 002U foi removido!",
+            "prodkey":               "TIPCCP002U",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "17": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:08",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.EXE.003 e mascara 003 foi removido!",
+            "prodkey":               "TIPCCPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "18": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:08",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.EXE.004 e mascara 004 foi removido!",
+            "prodkey":               "TIPCCPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "19": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:08",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.EXE.006 e mascara 006 foi removido!",
+            "prodkey":               "TIPCCPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "20": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:08",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.EXE.007 e mascara 007 foi removido!",
+            "prodkey":               "TIPCCPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "21": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:09",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.TGVP.902 e mascara 902U foi removido!",
+            "prodkey":               "TIPCCPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "22": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:12",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICA|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.EXD.002-UNIAO e mascara 002U foi removido!",
+            "prodkey":               "TIPCCJPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "23": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:12",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICA|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.EXE.003 e mascara 003 foi removido!",
+            "prodkey":               "TIPCCJPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "24": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:12",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICA|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.EXE.004 e mascara 004 foi removido!",
+            "prodkey":               "TIPCCJPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "25": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:12",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICA|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.EXE.006 e mascara 006 foi removido!",
+            "prodkey":               "TIPCCJPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "26": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:12",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICA|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.EXE.007 e mascara 007 foi removido!",
+            "prodkey":               "TIPCCJPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "27": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:12",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICA|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.TGVP.902 e mascara 902U foi removido!",
+            "prodkey":               "TIPCCJPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "28": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:12",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICA|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.TGVP.903 e mascara 903 foi removido!",
+            "prodkey":               "TIPCCJPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "29": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICA|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.TGVP.904 e mascara 904 foi removido!",
+            "prodkey":               "TIPCCJPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "30": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICA|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.TGVP.907 e mascara 907 foi removido!",
+            "prodkey":               "TIPCCJPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "31": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICA|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.TGVP.909 e mascara 909 foi removido!",
+            "prodkey":               "TIPCCJPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "32": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICA|modelo|Modelo",
+            "msg":                   "A subfamilia CONJUNTO DE PECAS METALICA e mascara CJP foi removida!",
+            "prodkey":               "TIPCCJPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "33": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.TGVP.903",
+            "msg":                   "O modelo TL.PC.TGVP.903 e mascara 903 foi removido!",
+            "prodkey":               "TIPCCP903",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "34": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.TGVP.904 e mascara 904 foi removido!",
+            "prodkey":               "TIPCCPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "35": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.TGVP.907 e mascara 907 foi removido!",
+            "prodkey":               "TIPCCPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "36": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|Modelo",
+            "msg":                   "O modelo TL.PC.TGVP.909 e mascara 909 foi removido!",
+            "prodkey":               "TIPCCPMascara",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "37": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:28",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA INTERMEDIARIA|modelo|TL.PC.EXDE.160",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TIPCI160",
+            "tipo":                  "Alterado",
+            "usuario":               "Marcell Monteiro"
+        },
+        "38": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:59",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA INTERMEDIARIA|modelo|TL.PC.EXDE.160",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TIPCI160",
+            "tipo":                  "Alterado",
+            "usuario":               "Marcell Monteiro"
+        },
+        "39": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:59",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA INTERMEDIARIA|modelo|TL.PC.EXDE.160",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TIPCI160",
+            "tipo":                  "Alterado",
+            "usuario":               "Marcell Monteiro"
+        },
+        "40": {
+            "data":                  "19/08/2014",
+            "hora":                  "11:59",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA INTERMEDIARIA|modelo|TL.PC.EXDE.160",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TIPCI160",
+            "tipo":                  "Alterado",
+            "usuario":               "Marcell Monteiro"
+        },
+        "41": {
+            "data":                  "20/08/2014",
+            "hora":                  "08:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.010",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TL010",
+            "tipo":                  "Alterado",
+            "usuario":               "Marcell Monteiro"
+        }
+    },
+    "max_index":                     41
+}

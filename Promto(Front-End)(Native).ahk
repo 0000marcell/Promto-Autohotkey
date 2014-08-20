@@ -2929,3 +2929,4 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 	Model
 */
 #include, models/generate_feed_model.ahk
+#include, models/promto_printer_model.ahk

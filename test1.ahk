@@ -1,1 +1,1 @@
-Run, %comspec% /K "C:\Tools\node-webkit\nw.exe" --enable-logging "C:\Users\mcruz\Documents\Github\feed\public", , hide
+Run, %comspec% /K nw --enable-logging "C:\Users\mcruz\Documents\Github\feed\public", , hide

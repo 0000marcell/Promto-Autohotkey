@@ -1,0 +1,14 @@
+{
+  "name": "Promto-Feed",
+  "version": "1",
+  "main": "index.html",
+  "window": {
+    "toolbar": false,
+    "position": "center",
+    "resizable": false,
+    "show": true,
+   	"width": 800,
+    "height": 800, 
+    "icon": "promto.ico"
+  }
+}

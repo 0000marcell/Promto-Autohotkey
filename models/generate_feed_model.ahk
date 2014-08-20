@@ -1,7 +1,7 @@
 class GenerateJSONFeed{
 	generate_feed(){
 		Global db
-		this.file := A_WorkingDir "\node-modules\feed\public\promto_feed_JSON.json"
+		this.file := A_WorkingDir "\node\feed\public\promto_feed_JSON.json"
 		FileDelete, % this.file 
 		this.obj := {}
 		this.load_log()		
@@ -13,7 +13,7 @@ class GenerateJSONFeed{
 	 this.insert_CRUD()
 	 this.obj.max_index := this.obj.log.maxindex()
 	 this.save_file()
-	 feed_path := A_WorkingDir "\node-modules\feed\public"
+	 feed_path := A_WorkingDir "\node\feed\public"
 	 Run, %comspec% /K nw --enable-logging %feed_path%, , hide
 	}
 

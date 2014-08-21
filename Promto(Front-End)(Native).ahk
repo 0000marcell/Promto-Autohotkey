@@ -97,8 +97,8 @@ Return
 
 	loading_main:
 	Gui, Submit, Nohide
-	;if(!db.Usuario.log_in_user(user_name, user_password))
-		;return 
+	if(!db.Usuario.log_in_user(user_name, user_password))
+		return 
 	USER_NAME := user_name
 	Gui, initialize:default
 	GuiControl, Disable, loading_main,
@@ -169,7 +169,7 @@ _loading := 1
 
 Gui, Add, Groupbox, x550 y+5 w740 h60, Certificacao:
 Gui, Font, cgreen s20
-Gui, Add, Text, xp+5 yp+15 w300 h30 vcert_status, 
+Gui, Add, Text, xp+5 yp+15 w530 h30 vcert_status, 
 Gui, Font, cblack s8
 
 Gui, Add, Groupbox, x550 y+15 w740 h120, Ultimas atualizacoes:

@@ -1339,7 +1339,6 @@ remove_t(code){
 
 load_cert_status(info){
 	Global db 
-
 	tabela1 := get_prefix_from_info(info) info.modelo[1]
 	rel_value := db.find_items_where(" tipo = 'certificado' AND tabela1 = '" tabela1 "'", "reltable")
 	cert_values := db.find_items_where(" modelo ='" rel_value[1, 3] "'", "certificados")

@@ -83,7 +83,6 @@ class Familia{
 			subfam_result := this.check_subfamily()
 			db.remove_subitems("familia", this.info.empresa[2] this.info.tipo[2] this.mask, this.info, subfam_result)
 		}
-		MsgBox, % "back from recursive"
 		this.family_table := db.get_reference("Familia", this.info.empresa[2] this.info.tipo[1])
 		this.delete_family()
 		db.Log.insert_CRUD(info, "Removido", "A familia " this.name " e mascara " this.mask " foi removida!")

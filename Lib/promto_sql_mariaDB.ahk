@@ -330,6 +330,20 @@ class PromtoSQL{
 			MsgBox, 16, Erro, % "Um erro ocorreu ao tentar criar a tabela de CRUD `n" ExceptionDetail(e)
 		
 
+		/*
+			reference_table 		
+		*/
+		try{
+			mariaDB.Query(
+				(JOIN
+					"	CREATE TABLE IF NOT EXISTS reference_table "
+					"(codigo1 VARCHAR(250), "
+					" codigo2 VARCHAR(250), "
+					" PRIMARY KEY (codigo1))"
+				))
+		}catch e 
+			MsgBox, 16, Erro, % "Um erro ocorreu ao tentar criar a tabela de referencia `n" ExceptionDetail(e)
+		
 	}
 
 	/*

@@ -184,7 +184,7 @@ load_all_mod(info){
 	code_list_array := db.find_items_where("codigos like '%" info.modelo[2]  "%'", code_table)
 	Gui, M:default
 	GuiControl,, numberofitems, % code_list_array.maxindex() 
-	load_lv_from_array(["codigo", "descricao", "descricao completa", "descricao em ingles"], code_list_array, "M", "all_mod_lv", ["100", "200"])	
+	load_lv_from_array(["codigo", "descricao", "descricao completa", "descricao em ingles"], code_list_array, "M", "all_mod_lv", ["100", "430"])	
 }
 
 /*

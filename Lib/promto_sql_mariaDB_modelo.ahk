@@ -830,4 +830,60 @@ class Modelo{
 		MsgBox, 64, Sucesso, % "A linkagem da tabela retornou para o seu valor padrao!"
 		db.Log.insert_CRUD(info, "Removido", "A tabela " tabela1 " foi linkada a tabela " values.tabela2)
 	}
+
+	insert_reference(codigo1, codigo2){
+		Global db 
+		if(codigo1 = "" || codigo2 = "")
+			throw { what: "Um dos items a serem referenciados estava em branco!", file: A_LineFile, line: A_LineNumber }		
+		sql := 
+			(JOIN
+				" codigo1 LIKE '" codigo1 "' OR codigo2 LIKE '" codigo1 "'"
+				" OR codigo1 LIKE '" codigo2 "' OR codigo2 LIKE '" codigo2 "'"  
+			)
+		if(!db.check_if_exists(sql, "reference_table")){
+			this.insert_new_reference(codigo1, codigo2)	
+		}else{
+			sql := 
+				(JOIN 
+					" codigo1 LIKE '" codigo1 "' OR codigo2 LIKE '" codigo1 "' "
+					" OR codigo1 LIKE '" codigo2 "' OR codigo2 LIKE '" codigo2 "'"
+				)
+			db.delete_items_where(sql, "reference_table")
+			this.insert_new_reference(codigo1, codigo2)
+		}
+	}
+
+	insert_new_reference(codigo1, codigo2){
+		Global db
+		record := {}
+		record.codigo1 := codigo1
+		record.codigo2 := codigo2
+		db.insert_record(record, "reference_table")
+	}
+
+	get_product_reference(codigo) {
+		Global db
+		sql := 
+			(JOIN 
+				" codigo1 LIKE '" codigo "' OR codigo2 LIKE '" codigo "'"
+			)
+		items := db.find_items_where(sql, "reference_table")
+		if(items[1, 1] != codigo) {
+			return_value := items[1, 1]
+		}else if(items[1, 2] != codigo) {
+			return_value := items[1, 2]
+		}
+		return return_value
+	}
+
+	get_model_table_with_reference(model_table) {
+		Global db
+		table := db.load_table_in_array(model_table)	
+		for, each, item in table{
+			if(table[A_Index, 1] = "")
+				Break
+			table[A_Index, 3] := db.Modelo.get_product_reference(table[A_Index, 1]) 
+		} 
+		return table
+	}
 }

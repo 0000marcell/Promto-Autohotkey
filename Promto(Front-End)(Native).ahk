@@ -41,20 +41,11 @@ GLOBAL_COLOR := settings.global_color
 BANNER_COLOR := settings.banner_color
 TextOptions := "x0p y10 s" settings.banner_text_size " Center c" settings.banner_text_color " r4 Bold"
 Font := settings.font
-
-/*
-	Iniciando GDI
-*/
 If !pToken := Gdip_Startup()
 {
   MsgBox, 48, gdiplus error!, Gdiplus failed to start. Please ensure you have gdiplus on your system
   ExitApp
 }
-
-/*
-	Conectando no banco
-*/
-
 db := new PromtoSQL(
 	(JOIN 
 		db_type,
@@ -162,7 +153,11 @@ for,each,value in ["Gerar Estruturas", "Linkar", "Add db Externo", "Estrutura", 
 	glabel := glabels[A_Index]
 	Gui, Add, Button, wp hp g%glabel%,% "&" value
 }
-Gui, Add, Groupbox, x540 ym w315 h90, Status
+Gui, Add, Groupbox, x540 ym w800 h55, Caminho
+Gui, Font, cgreen s15
+Gui, Add, Text, xp+5 yp+15 vproduct_path w780,  
+Gui, Font, cblack s8
+Gui, Add, Groupbox, x540 y+15 w315 h90, Status
 Gui, Add, Picture, xp+5 yp+15 vstatus_picture, % "img\gray_glossy_ball.png"
 Gui, Add, Text, x+5 w220 h60 vstatus_info,
 Gui, Add, Button, x540 y+15 w80 h20 gchange_status , Alterar status
@@ -179,12 +174,12 @@ Gui, Add, Text, xp+5 yp+15 w365 h80 vmod_info,
 Gui, Font, cblue 
 Gui, Add, Text, x+2 w300 h80 vmsg_info,
 Gui, Font, cblack
-Gui, Add, Groupbox, x860 ym w150 h90, Totallight
-Gui, Add, Picture,  xp+5 yp+15 vconsistency_picture_tot, % "img\gray_glossy_ball.png"
-Gui, Add, Button,   x865 y+15 w80 h20 gverify_tot, Verificar
-Gui, Add, Groupbox, x1020 ym w150 h90, Maccomevap
-Gui, Add, Picture, xp+5 yp+15 vconsistency_picture_mac, % "img\gray_glossy_ball.png"
-Gui, Add, Button, x1025 y+15 w80 h20 gverify_mac, Verificar
+
+Gui, Add, Picture,  x860 ym+67 w25 h25 vconsistency_picture_tot, % "img\gray_glossy_ball.png"
+Gui, Add, Text, x890 yp+5 gverify_tot,Totallight
+
+Gui, Add, Picture,  x860 y+15 w25 h25 vconsistency_picture_mac, % "img\gray_glossy_ball.png"
+Gui, Add, Text, x890 yp+5 gverify_mac, Maccomevap 
 Menu, update_menu,   Add, Atualizar, make_update
 Menu, backup_menu,   Add, Fazer Back up, make_back_up
 Menu, users_menu,    Add, Usuarios, manager_users
@@ -1298,6 +1293,7 @@ if A_GuiEvent = I
 		load_mod_info(info)
 		load_all_mod(info)
 		load_status_in_main_window(info)
+		load_path_in_main_window(info)
 		load_cert_status(info)
 	}
 }

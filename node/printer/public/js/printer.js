@@ -16,14 +16,12 @@ PromtoPrinter.prototype.printTag = function() {
 };
 
 PromtoPrinter.prototype.insertItem = function(item) {
+	this.insertTagCodeFormation(item);
 	this.insertTagImage(item);
 	this.insertTagDesc(item);
-	this.insertTagCodeFormation(item);
 };
 
 PromtoPrinter.prototype.insertTagImage = function(item) {
-	this.page = this.insertPageBreak();
-	this.container = $('<div class="item"></div>').appendTo(this.page);
 	var image_path = replaceAll("/", "\\", item.image_path)
 	$("<img src="+image_path+">").appendTo(this.container);
 };
@@ -49,6 +47,8 @@ PromtoPrinter.prototype.insertPageBreak = function() {
 }
 
 PromtoPrinter.prototype.insertTagCodeFormation = function(item) {
+	this.page = this.insertPageBreak();
+	this.container = $('<div class="item"></div>').appendTo(this.page);
 	this.insertTagPrefix(item);	
 	this.insertTagCodePiece(item);
 };

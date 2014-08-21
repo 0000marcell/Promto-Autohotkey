@@ -1,602 +1,112 @@
 starting the debug 
-code table TL010Codigo tabela1 TL010TL.L.EXE.010 camp table TL010oc
+code table TIBCJC240Codigo tabela1 TIBCJC240TL.B.EXE.240 camp table TIBCJC240oc
 gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 122156ACE
-code piece after 1
-code after 22156ACE
-code piece 2
-length 1 code 22156ACE
-code piece after 2
-code after 2156ACE
-code piece 2
-length 1 code 2156ACE
-code piece after 2
-code after 156ACE
-code piece 1
-length 1 code 156ACE
-code piece after 1
-code after 56ACE
-code piece 56
-length 2 code 56ACE
-code piece after 56
-code after ACE
-code piece AC
-length 2 code ACE
-code piece after AC
-code after E
-code piece E
-length 1 code E
-code piece after E
+prefix TIBCJC240
+code piece 0R1Q
+length 4 code 0R1QP0
+code piece after 0R1Q
+code after P0
+code piece G0
+length 2 code P0
+code piece after P0
 code after 
 gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 122156AIE
-code piece after 1
-code after 22156AIE
-code piece 2
-length 1 code 22156AIE
-code piece after 2
-code after 2156AIE
-code piece 2
-length 1 code 2156AIE
-code piece after 2
-code after 156AIE
-code piece 1
-length 1 code 156AIE
-code piece after 1
-code after 56AIE
-code piece 56
-length 2 code 56AIE
-code piece after 56
-code after AIE
-code piece AC
-length 2 code AIE
-code piece after AI
-code after E
-code piece E
-length 1 code E
-code piece after E
+prefix TIBCJC240
+code piece 0R1Q
+length 4 code 1R0QP0
+code piece after 1R0Q
+code after P0
+code piece G0
+length 2 code P0
+code piece after P0
 code after 
 gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 122256ACE
-code piece after 1
-code after 22256ACE
-code piece 2
-length 1 code 22256ACE
-code piece after 2
-code after 2256ACE
-code piece 2
-length 1 code 2256ACE
-code piece after 2
-code after 256ACE
-code piece 1
-length 1 code 256ACE
-code piece after 2
-code after 56ACE
-code piece 56
-length 2 code 56ACE
-code piece after 56
-code after ACE
-code piece AC
-length 2 code ACE
-code piece after AC
-code after E
-code piece E
-length 1 code E
-code piece after E
+prefix TIBCJC240
+code piece 0R1Q
+length 4 code 1R0QPP
+code piece after 1R0Q
+code after PP
+code piece G0
+length 2 code PP
+code piece after PP
 code after 
 gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 122256AIE
-code piece after 1
-code after 22256AIE
-code piece 2
-length 1 code 22256AIE
-code piece after 2
-code after 2256AIE
-code piece 2
-length 1 code 2256AIE
-code piece after 2
-code after 256AIE
-code piece 1
-length 1 code 256AIE
-code piece after 2
-code after 56AIE
-code piece 56
-length 2 code 56AIE
-code piece after 56
-code after AIE
-code piece AC
-length 2 code AIE
-code piece after AI
-code after E
-code piece E
-length 1 code E
-code piece after E
+prefix TIBCJC240
+code piece 0R1Q
+length 4 code 1R1QM0
+code piece after 1R1Q
+code after M0
+code piece G0
+length 2 code M0
+code piece after M0
 code after 
 gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 122956ACE
-code piece after 1
-code after 22956ACE
-code piece 2
-length 1 code 22956ACE
-code piece after 2
-code after 2956ACE
-code piece 2
-length 1 code 2956ACE
-code piece after 2
-code after 956ACE
-code piece 1
-length 1 code 956ACE
-code piece after 9
-code after 56ACE
-code piece 56
-length 2 code 56ACE
-code piece after 56
-code after ACE
-code piece AC
-length 2 code ACE
-code piece after AC
-code after E
-code piece E
-length 1 code E
-code piece after E
+prefix TIBCJC240
+code piece 0R1Q
+length 4 code 1R1QP0
+code piece after 1R1Q
+code after P0
+code piece G0
+length 2 code P0
+code piece after P0
 code after 
 gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 122956ACS
-code piece after 1
-code after 22956ACS
-code piece 2
-length 1 code 22956ACS
-code piece after 2
-code after 2956ACS
-code piece 2
-length 1 code 2956ACS
-code piece after 2
-code after 956ACS
-code piece 1
-length 1 code 956ACS
-code piece after 9
-code after 56ACS
-code piece 56
-length 2 code 56ACS
-code piece after 56
-code after ACS
-code piece AC
-length 2 code ACS
-code piece after AC
-code after S
-code piece E
-length 1 code S
-code piece after S
+prefix TIBCJC240
+code piece 0R1Q
+length 4 code 2R0QM0
+code piece after 2R0Q
+code after M0
+code piece G0
+length 2 code M0
+code piece after M0
 code after 
 gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 122956AIE
-code piece after 1
-code after 22956AIE
-code piece 2
-length 1 code 22956AIE
-code piece after 2
-code after 2956AIE
-code piece 2
-length 1 code 2956AIE
-code piece after 2
-code after 956AIE
-code piece 1
-length 1 code 956AIE
-code piece after 9
-code after 56AIE
-code piece 56
-length 2 code 56AIE
-code piece after 56
-code after AIE
-code piece AC
-length 2 code AIE
-code piece after AI
-code after E
-code piece E
-length 1 code E
-code piece after E
+prefix TIBCJC240
+code piece 0R1Q
+length 4 code 2R0QP0
+code piece after 2R0Q
+code after P0
+code piece G0
+length 2 code P0
+code piece after P0
 code after 
 gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 122956AIS
-code piece after 1
-code after 22956AIS
-code piece 2
-length 1 code 22956AIS
-code piece after 2
-code after 2956AIS
-code piece 2
-length 1 code 2956AIS
-code piece after 2
-code after 956AIS
-code piece 1
-length 1 code 956AIS
-code piece after 9
-code after 56AIS
-code piece 56
-length 2 code 56AIS
-code piece after 56
-code after AIS
-code piece AC
-length 2 code AIS
-code piece after AI
-code after S
-code piece E
-length 1 code S
-code piece after S
+prefix TIBCJC240
+code piece 0R1Q
+length 4 code 2R1QG0
+code piece after 2R1Q
+code after G0
+code piece G0
+length 2 code G0
+code piece after G0
 code after 
 gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 124156ACE
-code piece after 1
-code after 24156ACE
-code piece 2
-length 1 code 24156ACE
-code piece after 2
-code after 4156ACE
-code piece 2
-length 1 code 4156ACE
-code piece after 4
-code after 156ACE
-code piece 1
-length 1 code 156ACE
-code piece after 1
-code after 56ACE
-code piece 56
-length 2 code 56ACE
-code piece after 56
-code after ACE
-code piece AC
-length 2 code ACE
-code piece after AC
-code after E
-code piece E
-length 1 code E
-code piece after E
+prefix TIBCJC240
+code piece 0R1Q
+length 4 code 3R0QG0
+code piece after 3R0Q
+code after G0
+code piece G0
+length 2 code G0
+code piece after G0
 code after 
 gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 124156AIE
-code piece after 1
-code after 24156AIE
-code piece 2
-length 1 code 24156AIE
-code piece after 2
-code after 4156AIE
-code piece 2
-length 1 code 4156AIE
-code piece after 4
-code after 156AIE
-code piece 1
-length 1 code 156AIE
-code piece after 1
-code after 56AIE
-code piece 56
-length 2 code 56AIE
-code piece after 56
-code after AIE
-code piece AC
-length 2 code AIE
-code piece after AI
-code after E
-code piece E
-length 1 code E
-code piece after E
+prefix TIBCJC240
+code piece 0R1Q
+length 4 code 3R0QM0
+code piece after 3R0Q
+code after M0
+code piece G0
+length 2 code M0
+code piece after M0
 code after 
 gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 124256ACE
-code piece after 1
-code after 24256ACE
-code piece 2
-length 1 code 24256ACE
-code piece after 2
-code after 4256ACE
-code piece 2
-length 1 code 4256ACE
-code piece after 4
-code after 256ACE
-code piece 1
-length 1 code 256ACE
-code piece after 2
-code after 56ACE
-code piece 56
-length 2 code 56ACE
-code piece after 56
-code after ACE
-code piece AC
-length 2 code ACE
-code piece after AC
-code after E
-code piece E
-length 1 code E
-code piece after E
-code after 
-gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 124256AIE
-code piece after 1
-code after 24256AIE
-code piece 2
-length 1 code 24256AIE
-code piece after 2
-code after 4256AIE
-code piece 2
-length 1 code 4256AIE
-code piece after 4
-code after 256AIE
-code piece 1
-length 1 code 256AIE
-code piece after 2
-code after 56AIE
-code piece 56
-length 2 code 56AIE
-code piece after 56
-code after AIE
-code piece AC
-length 2 code AIE
-code piece after AI
-code after E
-code piece E
-length 1 code E
-code piece after E
-code after 
-gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 124956ACE
-code piece after 1
-code after 24956ACE
-code piece 2
-length 1 code 24956ACE
-code piece after 2
-code after 4956ACE
-code piece 2
-length 1 code 4956ACE
-code piece after 4
-code after 956ACE
-code piece 1
-length 1 code 956ACE
-code piece after 9
-code after 56ACE
-code piece 56
-length 2 code 56ACE
-code piece after 56
-code after ACE
-code piece AC
-length 2 code ACE
-code piece after AC
-code after E
-code piece E
-length 1 code E
-code piece after E
-code after 
-gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 124956ACS
-code piece after 1
-code after 24956ACS
-code piece 2
-length 1 code 24956ACS
-code piece after 2
-code after 4956ACS
-code piece 2
-length 1 code 4956ACS
-code piece after 4
-code after 956ACS
-code piece 1
-length 1 code 956ACS
-code piece after 9
-code after 56ACS
-code piece 56
-length 2 code 56ACS
-code piece after 56
-code after ACS
-code piece AC
-length 2 code ACS
-code piece after AC
-code after S
-code piece E
-length 1 code S
-code piece after S
-code after 
-gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 124956AIE
-code piece after 1
-code after 24956AIE
-code piece 2
-length 1 code 24956AIE
-code piece after 2
-code after 4956AIE
-code piece 2
-length 1 code 4956AIE
-code piece after 4
-code after 956AIE
-code piece 1
-length 1 code 956AIE
-code piece after 9
-code after 56AIE
-code piece 56
-length 2 code 56AIE
-code piece after 56
-code after AIE
-code piece AC
-length 2 code AIE
-code piece after AI
-code after E
-code piece E
-length 1 code E
-code piece after E
-code after 
-gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 124956AIS
-code piece after 1
-code after 24956AIS
-code piece 2
-length 1 code 24956AIS
-code piece after 2
-code after 4956AIS
-code piece 2
-length 1 code 4956AIS
-code piece after 4
-code after 956AIS
-code piece 1
-length 1 code 956AIS
-code piece after 9
-code after 56AIS
-code piece 56
-length 2 code 56AIS
-code piece after 56
-code after AIS
-code piece AC
-length 2 code AIS
-code piece after AI
-code after S
-code piece E
-length 1 code S
-code piece after S
-code after 
-gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 222956ACS
-code piece after 2
-code after 22956ACS
-code piece 2
-length 1 code 22956ACS
-code piece after 2
-code after 2956ACS
-code piece 2
-length 1 code 2956ACS
-code piece after 2
-code after 956ACS
-code piece 1
-length 1 code 956ACS
-code piece after 9
-code after 56ACS
-code piece 56
-length 2 code 56ACS
-code piece after 56
-code after ACS
-code piece AC
-length 2 code ACS
-code piece after AC
-code after S
-code piece E
-length 1 code S
-code piece after S
-code after 
-gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 222956AIS
-code piece after 2
-code after 22956AIS
-code piece 2
-length 1 code 22956AIS
-code piece after 2
-code after 2956AIS
-code piece 2
-length 1 code 2956AIS
-code piece after 2
-code after 956AIS
-code piece 1
-length 1 code 956AIS
-code piece after 9
-code after 56AIS
-code piece 56
-length 2 code 56AIS
-code piece after 56
-code after AIS
-code piece AC
-length 2 code AIS
-code piece after AI
-code after S
-code piece E
-length 1 code S
-code piece after S
-code after 
-gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 224956ACS
-code piece after 2
-code after 24956ACS
-code piece 2
-length 1 code 24956ACS
-code piece after 2
-code after 4956ACS
-code piece 2
-length 1 code 4956ACS
-code piece after 4
-code after 956ACS
-code piece 1
-length 1 code 956ACS
-code piece after 9
-code after 56ACS
-code piece 56
-length 2 code 56ACS
-code piece after 56
-code after ACS
-code piece AC
-length 2 code ACS
-code piece after AC
-code after S
-code piece E
-length 1 code S
-code piece after S
-code after 
-gonna get the prefix length
-prefix TL010
-code piece 1
-length 1 code 224956AIS
-code piece after 2
-code after 24956AIS
-code piece 2
-length 1 code 24956AIS
-code piece after 2
-code after 4956AIS
-code piece 2
-length 1 code 4956AIS
-code piece after 4
-code after 956AIS
-code piece 1
-length 1 code 956AIS
-code piece after 9
-code after 56AIS
-code piece 56
-length 2 code 56AIS
-code piece after 56
-code after AIS
-code piece AC
-length 2 code AIS
-code piece after AI
-code after S
-code piece E
-length 1 code S
-code piece after S
+prefix TIBCJC240
+code piece 0R1Q
+length 4 code 4R0QG0
+code piece after 4R0Q
+code after G0
+code piece G0
+length 2 code G0
+code piece after G0
 code after 

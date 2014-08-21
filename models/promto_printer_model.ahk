@@ -1,15 +1,15 @@
 class PromtoPrinter{
 	create_tag(info){
 		Global db
-		AHK.reset_debug()
-		AHK.append_debug("starting the debug ")
 		this.info := info
 		this.obj := {}, this.obj.items := []
     code_table := get_prefix_from_info(this.info) "Codigo" 
     this.tabela1 := get_prefix_from_info(this.info) this.info.modelo[1]
     this.camp_table := db.get_reference("oc", this.tabela1)
-    AHK.append_debug("code table " code_table " tabela1 " this.tabela1 " camp table " this.camp_table) 
-    list := db.get_values("*", code_table)
+    list := GetCheckedRows("lista_de_codigos_view", "lvcodetable")
+    if(list[1, 1] = ""){
+			list := db.get_values("*", code_table)
+    }
     progress(list.maxindex())
     for each, value in list {     	
     	updateprogress("Criando Tags: " list[A_Index,1], 1)
@@ -73,16 +73,12 @@ class PromtoPrinter{
 		Global db
 		for, each, value in list := db.get_values("*", camp_esp_table){
 			code_piece := list[A_Index, 1]
-			AHK.append_debug("code piece " code_piece)
 			StringLen, length, code_piece
 			if(length != ""){
-				AHK.append_debug("length " length " code " this.code)
 				code := this.code
 				StringLeft, code_piece, code, length
-				AHK.append_debug("code piece after " code_piece)
 				StringTrimLeft, code, code, length
 				this.code := code
-				AHK.append_debug("code after " this.code)
 				Break
 			}
 		}
@@ -92,9 +88,7 @@ class PromtoPrinter{
 
 	get_prefix_length(info){
 		Global db
-		AHK.append_debug("gonna get the prefix length")
 		prefix := get_prefix_from_info(info)
-		AHK.append_debug("prefix " prefix)
 		StringLen, prefix_length, prefix	
 		return prefix_length
 	}

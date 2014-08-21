@@ -236,6 +236,7 @@ clear_main_info(){
 	LV_Delete()
 	GuiControl,, mod_info,
 	GuiControl,, msg_info,
+	GuiControl,, product_path
 }
 
 /*
@@ -1859,35 +1860,27 @@ transform_array(array){
 ;############### createtag #################################
 createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", textsize = 30, textcolor = "ff000000", imagepath = "image.png"){
 	Global db, global_image_path
-
 	code_rect_size := 130 ; tamanho do retangulo onde vai o codigo
 	code_rect_spacing := 135 ; tamanho do espacamento entre os retangulos 
-
 	if(codigos_array[1, 1] = ""){
 		table := db.load_table_in_array(codelist)
 	}else{
 		table := codigos_array
 	}
-	
 	progress(table.maxindex())
 	totalheight := 500.17 * table.maxindex()
 	newgdi({w:1200, h:totalheight})
 	prefix_in_string := get_prefix_in_string(prefix2)
 	StringLen, prefixlength, prefix_in_string
-	
 	y := 80
-	 
 	panel({x:0, y:0, w:1200, h:totalheight, color: "white", boardcolor: "0x00000000"})
-	
 	for, each, value in table{
 		if(table[A_Index,1] = "")
 			Continue
 		x:=30	
 		updateprogress("Criando Tags: " table[A_Index,1],1)
-		
 		; Pega a imagem
 		imagepath := db.Imagem.get_image_full_path(table[A_Index, 1])
-		
 		/*
 			Insere o prefixo
 		*/
@@ -1900,29 +1893,21 @@ createtag(prefix, prefix2, model, selectmodel, codelist, codigos_array = "", tex
 			x += code_rect_spacing
 		}
 		x -= code_rect_spacing
-
 		codigo := table[A_Index,1]	
-
 		StringTrimleft,codigo,codigo, prefixlength
-		
 		/*
 			Pega a tabela de campos, para pegar o nome dos campos
 		*/
 		camp_table := db.get_reference("oc", prefix model selectmodel)
-		
 		table_camp := db.load_table_in_array(camp_table)
-
 		for, each, value in table_camp{
 			if(table_camp[A_Index, 2] = ""){
 				Continue
 			}
-
 			campname := table_camp[A_Index, 2]
 			StringReplace, campname, campname, %A_Space%,, All
 			camp_esp_table := db.get_reference(campname, prefix model selectmodel)
-			
 			table_camp_esp := db.load_table_in_array(camp_esp_table)
-
 			for, each, value in table_camp_esp{
 				codepiece := table_camp_esp[A_Index,1]
 				StringLen, length, codepiece
@@ -1978,6 +1963,15 @@ DrawDottedLine(sx,sy,ex,ey){
 		if(sx>ex)
 			Break
 	}
+}
+
+load_path_in_main_window(info) {
+	if(info.subfamilia[1] != ""){
+		path :=  info.empresa[1] ">" info.tipo[1] ">" info.familia[1] ">" info.subfamilia[1] ">" info.modelo[1]
+	}else{
+		path :=  info.empresa[1] ">" info.tipo[1] ">" info.familia[1] ">" info.modelo[1]
+	}
+	GuiControl,, product_path, % path
 }
 
 GetCheckedRows2(wName = "", lvName = ""){

@@ -530,7 +530,79 @@
             "prodkey":               "TIPCCV160",
             "tipo":                  "Alterado",
             "usuario":               "luciano claussen"
+        },
+        "60": {
+            "data":                  "21/08/2014",
+            "hora":                  "11:37",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|Modelos",
+            "msg":                   "O Modelo MAC.EXDE.160 e mascara 010 foi criado!",
+            "prodkey":               "TPCMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "61": {
+            "data":                  "21/08/2014",
+            "hora":                  "11:38",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|MAC.EXDE.160",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TPC010",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "62": {
+            "data":                  "21/08/2014",
+            "hora":                  "11:40",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|MAC.EXDE.160",
+            "msg":                   "A tabela TPC010MAC.EXDE.160 foi linkada a tabela TSPC160DIMENSAO",
+            "prodkey":               "TPC010",
+            "tipo":                  "Linkagem",
+            "usuario":               "luciano claussen"
+        },
+        "63": {
+            "data":                  "21/08/2014",
+            "hora":                  "11:40",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|MAC.EXDE.160",
+            "msg":                   "A tabela TPC010MAC.EXDE.160 foi linkada a tabela TSPC160DIMENSAO",
+            "prodkey":               "TPC010",
+            "tipo":                  "Linkagem",
+            "usuario":               "luciano claussen"
+        },
+        "64": {
+            "data":                  "21/08/2014",
+            "hora":                  "11:42",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|MAC.EXDE.160",
+            "msg":                   "A tabela TPC010MAC.EXDE.160 foi linkada a tabela TSPC160MATERIAPRIMA",
+            "prodkey":               "TPC010",
+            "tipo":                  "Linkagem",
+            "usuario":               "luciano claussen"
+        },
+        "65": {
+            "data":                  "21/08/2014",
+            "hora":                  "11:54",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|TOMADA|subfamilia|DIVERSOS|modelo|TL.TO.EXE.041",
+            "msg":                   "O item PF3AI descricao resumida PINO DE FIXACAO DO SUPORTE DO MIOLO 32A EM ACO INOX foi incluido no campo PARTES",
+            "prodkey":               "TITODIV041",
+            "tipo":                  "Criado",
+            "usuario":               "LUCIANO CLAUSSEN"
+        },
+        "66": {
+            "data":                  "21/08/2014",
+            "hora":                  "12:05",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|ANEL|modelo|TL.PC.EXDE.160",
+            "msg":                   "A tabela TIPCA160TL.PC.EXDE.160 foi linkada a tabela TSPC160DIMENSAO",
+            "prodkey":               "TIPCA160",
+            "tipo":                  "Linkagem",
+            "usuario":               "LUCIANO CLAUSSEN"
+        },
+        "67": {
+            "data":                  "21/08/2014",
+            "hora":                  "12:06",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|ANEL|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item L foi removido da tabela de campos TIPCA160MATERIAPRIMA",
+            "prodkey":               "TIPCA160",
+            "tipo":                  "Removido",
+            "usuario":               "LUCIANO CLAUSSEN"
         }
     },
-    "max_index":                     59
+    "max_index":                     67
 }

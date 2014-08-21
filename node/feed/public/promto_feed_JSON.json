@@ -422,7 +422,115 @@
             "prodkey":               "TIBATCJB45A84V",
             "tipo":                  "Alterado",
             "usuario":               "MONIQUE SOARES"
+        },
+        "48": {
+            "data":                  "20/08/2014",
+            "hora":                  "17:43",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXDE.160",
+            "msg":                   "A tabela TIPCCP160TL.PC.EXDE.160 foi linkada a tabela TPC160DIMENSAO",
+            "prodkey":               "TIPCCP160",
+            "tipo":                  "Linkagem",
+            "usuario":               "luciano claussen"
+        },
+        "49": {
+            "data":                  "20/08/2014",
+            "hora":                  "18:09",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE VEDACAO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0016 foi alterado para codigo: N0012 descricao completa: M16 / NPT 1/2 descricao resumida M16 / NPT 1/2 descricao ingles M16 / NPT 1/2",
+            "prodkey":               "TIPCCV160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "50": {
+            "data":                  "20/08/2014",
+            "hora":                  "18:09",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE VEDACAO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0020 foi alterado para codigo: N0034 descricao completa: M20 / NPT 3/4 descricao resumida M20 / NPT 3/4 descricao ingles M20 / NPT 3/4",
+            "prodkey":               "TIPCCV160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "51": {
+            "data":                  "20/08/2014",
+            "hora":                  "18:10",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE VEDACAO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0025 foi alterado para codigo: N0001 descricao completa: M25 / NPT 1 descricao resumida M25 / NPT 1 descricao ingles M25 / NPT 1",
+            "prodkey":               "TIPCCV160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "52": {
+            "data":                  "20/08/2014",
+            "hora":                  "18:10",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE VEDACAO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0032 foi alterado para codigo: N0114 descricao completa: M32 / NPT 1.1/4 descricao resumida M32 / NPT 1.1/4 descricao ingles M32 / NPT 1.1/4",
+            "prodkey":               "TIPCCV160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "53": {
+            "data":                  "20/08/2014",
+            "hora":                  "18:11",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE VEDACAO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0040 foi alterado para codigo: N0112 descricao completa: M40 / NPT 1.1/2 descricao resumida M40 / NPT 1.1/2 descricao ingles M40 / NPT 1.1/2",
+            "prodkey":               "TIPCCV160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "54": {
+            "data":                  "20/08/2014",
+            "hora":                  "18:11",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE VEDACAO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0050 foi alterado para codigo: N0002 descricao completa: M50 / NPT 2 descricao resumida M50 / NPT 2 descricao ingles M50 / NPT 2",
+            "prodkey":               "TIPCCV160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "55": {
+            "data":                  "20/08/2014",
+            "hora":                  "18:12",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE VEDACAO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0063 foi alterado para codigo: N0212 descricao completa: M63 / NPT 2.1/2 descricao resumida M63 / NPT 2.1/2 descricao ingles M63 / NPT 2.1/2",
+            "prodkey":               "TIPCCV160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "56": {
+            "data":                  "20/08/2014",
+            "hora":                  "18:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE VEDACAO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0075 foi alterado para codigo: N0003 descricao completa: M75 / NPT 3 descricao resumida M75 / NPT 3 descricao ingles M75 / NPT 3",
+            "prodkey":               "TIPCCV160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "57": {
+            "data":                  "20/08/2014",
+            "hora":                  "18:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE VEDACAO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0090 foi alterado para codigo: N0312 descricao completa: M90 / NPT 3.1/2 descricao resumida M90 / NPT 3.1/2 descricao ingles M90 / NPT 3.1/2",
+            "prodkey":               "TIPCCV160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "58": {
+            "data":                  "20/08/2014",
+            "hora":                  "18:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE VEDACAO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0100 foi alterado para codigo: N0004 descricao completa: M100 / NPT 4 descricao resumida M100 / NPT 4 descricao ingles M100 / NPT 4",
+            "prodkey":               "TIPCCV160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "59": {
+            "data":                  "20/08/2014",
+            "hora":                  "18:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE VEDACAO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M020P foi alterado para codigo: N034P descricao completa: M20P / NPT 3/4P descricao resumida M20P / NPT 3/4P descricao ingles M20P / NPT 3/4P",
+            "prodkey":               "TIPCCV160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
         }
     },
-    "max_index":                     47
+    "max_index":                     59
 }

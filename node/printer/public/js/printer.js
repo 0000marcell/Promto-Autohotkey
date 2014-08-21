@@ -2,16 +2,17 @@ function PromtoPrinter(){
 }
 
 PromtoPrinter.prototype.start = function(){
-	alert("gonna sta")
 	$("#main-page").empty();
 	this.printTag();
 };
 
 
 PromtoPrinter.prototype.printTag = function() {
-	for (var i = 1; i < obj.items.length; i++){
+	for(var i = 1; i <= obj.max_index; i++) {
+		this.itemNumber = i;
 		this.insertItem(obj.items[i]);
 	}
+	window.print();
 };
 
 PromtoPrinter.prototype.insertItem = function(item) {
@@ -21,11 +22,14 @@ PromtoPrinter.prototype.insertItem = function(item) {
 };
 
 PromtoPrinter.prototype.insertTagImage = function(item) {
-	this.container = $('<div class="item"></div>').appendTo("#main-page");
-	$("<img src="+item.image+">").appendTo(this.container);
+	this.page = this.insertPageBreak();
+	this.container = $('<div class="item"></div>').appendTo(this.page);
+	var image_path = replaceAll("/", "\\", item.image_path)
+	$("<img src="+image_path+">").appendTo(this.container);
 };
 
 PromtoPrinter.prototype.insertTagDesc = function(item) {
+	
 	var html = "<div class='panel panel-primary desc'>"+
 		            "<div class='panel-heading'>"+
 		              "<h3 class='panel-title'>Descricao</h3>"+
@@ -37,6 +41,13 @@ PromtoPrinter.prototype.insertTagDesc = function(item) {
 	$(html).appendTo(this.container);
 };
 
+PromtoPrinter.prototype.insertPageBreak = function() {
+	if(this.itemNumber%2 != 0){
+		this.currentPage = $('<div class="page"></div>').appendTo("#main-page");
+	}
+	return this.currentPage;
+}
+
 PromtoPrinter.prototype.insertTagCodeFormation = function(item) {
 	this.insertTagPrefix(item);	
 	this.insertTagCodePiece(item);
@@ -44,7 +55,7 @@ PromtoPrinter.prototype.insertTagCodeFormation = function(item) {
 
 PromtoPrinter.prototype.insertTagPrefix = function(item) {
 	this.codeContainer = $("<div class='code-formation'></div>").appendTo(this.container);
-	for (var i = 1; i < item.prefix.length; i++) {
+	for (var i = 1; i <= item.prefix_max_index; i++) {
 		var prefix_piece = item.prefix[i];
 		var res = prefix_piece.split("|");
 		var html = this.get_HTML_panel(res[0], res[1]);	
@@ -53,22 +64,47 @@ PromtoPrinter.prototype.insertTagPrefix = function(item) {
 };
 
 PromtoPrinter.prototype.insertTagCodePiece = function(item) {
-	for (var i = 1; i < item.fields.length; i++) {
+	for (var i = 1; i <= item.fields_max_index; i++) {
 		var field = item.fields[i];
 		var res = field.split("|");
+
 		var html = this.get_HTML_panel(res[0], res[1]);	
     $(html).appendTo(this.codeContainer);
 	}
 };
 
 PromtoPrinter.prototype.get_HTML_panel = function(title, item) {
+	var fontSize = this.getTitleFontSize(title.length); 
+	var fontSizeItem = this.getItemFontSize(item.length);
 	var html = "<div class='panel panel-primary code-panel'>"+
-									"<div class='panel-heading'>"+
-			              "<h3 class='panel-title'>"+title+"</h3>"+
+									"<div class='panel-heading pt-heading'>"+
+			              "<h3 style='font-size: "+fontSize+"px;' class='panel-title'>"+title+"</h3>"+
 			            "</div>"+
 			            "<div class='panel-body panel-text-pos'>"+
-			              "<h3>"+item+"</h3>"+
+			              "<h3 style='font-size: "+fontSizeItem+"px;'>"+item+"</h3>"+
 			            "</div>"+
 		            "</div>";
 	return html;
 };
+
+PromtoPrinter.prototype.getTitleFontSize = function(size) {	
+	if(size > 13){
+		var fontSize = 6;
+	}else{
+		var fontSize = 9;
+	}
+	return fontSize;	
+};
+
+PromtoPrinter.prototype.getItemFontSize = function(size) {	
+	if(size > 5){
+		var fontSize = 10;
+	}else{
+		var fontSize = 20;
+	}
+	return fontSize;	
+};
+
+function replaceAll(find, replace, str) {
+  return str.replace(new RegExp(find, 'g'), replace);
+}

@@ -9,13 +9,19 @@ class PromtoPrinter{
     this.tabela1 := get_prefix_from_info(this.info) this.info.modelo[1]
     this.camp_table := db.get_reference("oc", this.tabela1)
     AHK.append_debug("code table " code_table " tabela1 " this.tabela1 " camp table " this.camp_table) 
-    for each, value in list := db.get_values("*", code_table){
+    list := db.get_values("*", code_table)
+    progress(list.maxindex())
+    for each, value in list {     	
+    	updateprogress("Criando Tags: " list[A_Index,1], 1)
     	this.code := list[A_Index, 1]
     	this.desc := list[A_Index, 3]
-    	AHK.append_debug("codigo " this.code " desc " this.desc)
     	this.insert_item()
     }
-    JSON_save(this.obj, "print_JSON.json")
+    Gui, progress:destroy
+    this.obj.max_index := this.obj.items.maxindex()
+    JSON_save(this.obj, "node\printer\public\print_JSON.json")
+    printer_path = "%A_WorkingDir%\node\printer\public"
+    Run, %comspec% /K nw --enable-logging %printer_path%,, hide
 	}
 
 	insert_item(){
@@ -33,7 +39,9 @@ class PromtoPrinter{
 				"desc": this.desc, 
 				"image_path": imagepath,
 				"prefix":	prefix_formation,
-				"fields": fields
+				"prefix_max_index": prefix_formation.maxindex(),
+				"fields": fields,
+				"fields_max_index": fields.maxindex()
 			)}
 		this.obj.items.insert(hash)	
 	}

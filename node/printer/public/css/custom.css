@@ -5,12 +5,13 @@
   margin-left: 210px;
   margin-top: 10px;
   width: 600px;
-  height: 150px; }
+  height: 185px; }
 
 .item {
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  border: 1px solid grey;
   width: 842px;
   height: 300px;
   overflow: hidden; }
@@ -21,11 +22,18 @@
     width: 190px;
     height: 190px; }
 
+.pt-heading {
+  height: 40%; }
+
 .code-formation {
-  margin-top: 50px;
+  margin-top: 5px;
   margin-left: 10px;
   width: 820px;
   height: 130px; }
+
+.page {
+  page-break-after: always;
+  page-break-inside: avoid; }
 
 .code-panel {
   float: left;
@@ -33,7 +41,7 @@
   height: 80px; }
 
 .panel-text-pos h3 {
-  margin-left: auto;
-  margin-top: auto;
+  margin-left: -10px;
+  margin-top: -5px;
   margin-bottom: auto;
   margin-right: auto; }

@@ -1,6 +1,5 @@
 starting the debug 
 code table TL010Codigo tabela1 TL010TL.L.EXE.010 camp table TL010oc
-codigo TL010122156ACE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  127V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -31,7 +30,6 @@ code piece E
 length 1 code E
 code piece after E
 code after 
-codigo TL010122156AIE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  127V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -62,7 +60,6 @@ code piece E
 length 1 code E
 code piece after E
 code after 
-codigo TL010122256ACE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  220V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -93,7 +90,6 @@ code piece E
 length 1 code E
 code piece after E
 code after 
-codigo TL010122256AIE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  220V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -124,7 +120,6 @@ code piece E
 length 1 code E
 code piece after E
 code after 
-codigo TL010122956ACE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -155,7 +150,6 @@ code piece E
 length 1 code E
 code piece after E
 code after 
-codigo TL010122956ACS desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  SEM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -186,7 +180,6 @@ code piece E
 length 1 code S
 code piece after S
 code after 
-codigo TL010122956AIE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -217,7 +210,6 @@ code piece E
 length 1 code E
 code piece after E
 code after 
-codigo TL010122956AIS desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  SEM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -248,7 +240,6 @@ code piece E
 length 1 code S
 code piece after S
 code after 
-codigo TL010124156ACE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  127V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -279,7 +270,6 @@ code piece E
 length 1 code E
 code piece after E
 code after 
-codigo TL010124156AIE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  127V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -310,7 +300,6 @@ code piece E
 length 1 code E
 code piece after E
 code after 
-codigo TL010124256ACE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  220V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -341,7 +330,6 @@ code piece E
 length 1 code E
 code piece after E
 code after 
-codigo TL010124256AIE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  220V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -372,7 +360,6 @@ code piece E
 length 1 code E
 code piece after E
 code after 
-codigo TL010124956ACE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -403,7 +390,6 @@ code piece E
 length 1 code E
 code piece after E
 code after 
-codigo TL010124956ACS desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  SEM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -434,7 +420,6 @@ code piece E
 length 1 code S
 code piece after S
 code after 
-codigo TL010124956AIE desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -465,7 +450,6 @@ code piece E
 length 1 code E
 code piece after E
 code after 
-codigo TL010124956AIS desc LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  SEM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -496,7 +480,6 @@ code piece E
 length 1 code S
 code piece after S
 code after 
-codigo TL010222956ACS desc LUMINARIA TL.L.EXE.010 COM 2 REATORES  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  SEM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -516,6 +499,9 @@ length 1 code 956ACS
 code piece after 9
 code after 56ACS
 code piece 56
+length 2 code 56ACS
+code piece after 56
+code after ACS
 code piece AC
 length 2 code ACS
 code piece after AC
@@ -524,7 +510,6 @@ code piece E
 length 1 code S
 code piece after S
 code after 
-codigo TL010222956AIS desc LUMINARIA TL.L.EXE.010 COM 2 REATORES  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  SEM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -555,7 +540,6 @@ code piece E
 length 1 code S
 code piece after S
 code after 
-codigo TL010224956ACS desc LUMINARIA TL.L.EXE.010 COM 2 REATORES  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  SEM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1
@@ -586,7 +570,6 @@ code piece E
 length 1 code S
 code piece after S
 code after 
-codigo TL010224956AIS desc LUMINARIA TL.L.EXE.010 COM 2 REATORES  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  SEM EMERGENCIA
 gonna get the prefix length
 prefix TL010
 code piece 1

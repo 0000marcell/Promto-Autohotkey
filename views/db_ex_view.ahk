@@ -66,6 +66,7 @@ db_ex_view(){
 
  	pesquisadbex:
  	Gui, submit, nohide
+ 	MsgBox, % "term " pesquisadbex
  	search.LV.any_word_search("dbex","lvdbex", pesquisadbex)
  	return 
 

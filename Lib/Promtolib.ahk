@@ -1343,6 +1343,9 @@ load_login_user_info(){
 		user_info := JSON_load("temp\user_info.json")
 		GuiControl,, user_name, % user_info.name
 		GuiControl,, user_password, % Crypt.Encrypt.StrDecrypt(user_info.password, "007", 5, 1)
+		return True
+	}else{
+		return False
 	}
 }
 

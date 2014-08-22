@@ -59,33 +59,22 @@ hashmask:={},field:=["Aba", "Familia", "Subfamilia", "Modelo"]
 _reload_gettable := True
 
 E:
-/*
-	Gui init
-*/
 Gui, initialize:New
 Gui, Font, s%SMALL_FONT%, %FONT%
 Gui, Color, %GLOBAL_COLOR%
 Gui, Add, Picture, x30 ym, img\promtologo.png
-
-/*
-	Nome do usuario
-*/
-Gui, Add, Groupbox, xp-20 y+10 w300 h110, Usuario
+Gui, Add, Groupbox, xp-20 y+10 w300 h130, Usuario
 Gui, Add, Text, xp+5 yp+15, Nome:
 Gui, Add, Edit, w280 vuser_name, 
 Gui, Add, Text, , Senha:
 Gui, Add, Edit, w280 vuser_password password,
-;Gui, Add, Button, w150 h20 y+10 gmanager_users, Gerenciar usuarios
-
-/*
-	Localizacao
-*/
+if(load_login_user_info()){
+	Gui, Add, Link, gforget_user, <a>Esquecer Usuario</a>
+}else{
+	Gui, Add, Checkbox, y+5 w200 vremenber_user, Lembrar Usuario
+}
 Gui, Add, Groupbox, xm y+10 w300 h80 , Localizacao DB
 Gui, Add, Edit, xp+25 yp+25 w250 vdb_location_to_save , %db_location%
-
-/*
-	Opcoes
-*/
 Gui, Add, Groupbox, xm y+25 w300 h60, Opcoes
 Gui, Add, Button, xp+45 yp+20 w100 h30 gloading_main vloading_main Default, Iniciar
 Gui, Add, Button, x+5 w100 h30 gedit_config_file vedit_config_file, Editar Configuracao
@@ -97,6 +86,8 @@ Return
 
 	loading_main:
 	Gui, Submit, Nohide
+	if(remenber_user = 1)
+		db.Usuario.remenber_user(user_name, user_password)
 	if(!db.Usuario.log_in_user(user_name, user_password))
 		return 
 	USER_NAME := user_name
@@ -121,6 +112,11 @@ Return
 manager_users:
 manager_users_view()
 return
+
+forget_user:
+FileDelete, % "temp\user_info.json"
+MsgBox, 64, Sucesso, % "Usuario nao sera mais lembrado neste computador!"
+return 
 
 M:
 Gui, M:New

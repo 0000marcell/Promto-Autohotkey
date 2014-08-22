@@ -77,4 +77,10 @@ class Usuario{
       return 0
     }
   }
+
+  remenber_user(user_name, user_password) {
+    crypt_value := Crypt.Encrypt.StrEncrypt(user_password, "007", 5, 1)    
+    obj := {name: user_name, password: crypt_value}
+    JSON_save(obj, "temp\user_info.json")
+  }
 }

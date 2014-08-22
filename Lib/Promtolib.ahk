@@ -1337,6 +1337,15 @@ remove_t(code){
 	return code
 }
 
+load_login_user_info(){
+	IfExist, % "temp\user_info.json"
+	{
+		user_info := JSON_load("temp\user_info.json")
+		GuiControl,, user_name, % user_info.name
+		GuiControl,, user_password, % Crypt.Encrypt.StrDecrypt(user_info.password, "007", 5, 1)
+	}
+}
+
 load_cert_status(info){
 	Global db 
 	tabela1 := get_prefix_from_info(info) info.modelo[1]
@@ -2681,13 +2690,13 @@ format_file_name(file_name){
 
 	IfInString, file_name, /
 	{
-		StringReplace, file_name, file_name,/,,All
+		StringReplace, file_name, file_name, /, , All
 		_ilegal_char := 1
 	}
 
 	IfInString, file_name, :
 	{
-		StringReplace, file_name, file_name,:,,All
+		StringReplace, file_name, file_name, : , , All
 		_ilegal_char := 1
 	}
 
@@ -2761,7 +2770,7 @@ load_status_in_main_window(info){
 
 	if(items[1, 1] = ""){
 		Gui, M:default
- 		Gui, Font, s12 cBlack
+ 		Gui, Font, s8 cBlack
  		GuiControl, Font, status_info
 		GuiControl,, status_picture, % "img\gray_glossy_ball.png"
 		GuiControl,, status_info, % "Nao foi feito"
@@ -2794,7 +2803,7 @@ load_status_in_main_window(info){
 
  	msg := current_status " " mensagem " `n Usuario: " usuario
  	Gui, M:default
- 	Gui, Font, s12 c%font_color%
+ 	Gui, Font, s8 c%font_color%
  	GuiControl, Font, status_info 
 	GuiControl,, status_picture, % img_path
 	GuiControl,, status_info, % msg

@@ -602,16 +602,7 @@
             "prodkey":               "TIPCA160",
             "tipo":                  "Removido",
             "usuario":               "LUCIANO CLAUSSEN"
-        },
-        "68": {
-            "data":                  "17:14",
-            "hora":                  "A familia SUPORTES e mascara ITSUP foi removida!",
-            "item":                  "21/08/2014",
-            "msg":                   "TIITSUPMascara",
-            "prodkey":               "",
-            "tipo":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|SUPORTES|subfamilia||modelo|Modelo",
-            "usuario":               "Removido"
         }
     },
-    "max_index":                     68
+    "max_index":                     67
 }

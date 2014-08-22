@@ -886,4 +886,62 @@ class Modelo{
 		} 
 		return table
 	}
+
+	insert_fiscal_value(code, number, value, table){
+		Global db
+		AHK.reset_debug()
+		AHK.append_debug("gonna insert fiscal value code " code " number" number " value " value " table " table)
+		column_name := this.add_fiscal_column(number, table)
+		AHK.append_debug("column name " column_name)
+		this.update_fiscal_info(code, column_name, value, table)	
+	}
+
+	add_fiscal_column(number, table) {
+		Global mariaDB
+		column_name := this.get_column_name(number)
+		AHK.append_debug(" gonna alter the table " table " column name " column_name)
+		try{
+			mariaDB.Query(" ALTER TABLE " table " ADD COLUMN " column_name " TEXT;")
+		}catch e{
+		}
+		return column_name
+	}
+
+	get_column_name(number) {
+		if(number = 5) {
+			column_name := "ncm"
+		}else if(number = 6) {
+			column_name := "um"
+		}else if(number = 7) {
+			column_name := "origem"
+		}else if(number = 8) {
+			column_name := "conta"
+		}else if(number = 9) {
+			column_name := "tipo"
+		}else if(number = 10) {
+			column_name := "grupo"
+		}else if(number = 11) {
+			column_name := "ipi"
+		}else if(number = 12) {
+			column_name := "locpad"
+		}
+		return column_name 
+	}
+
+	update_fiscal_info(code, column, value, table){
+		Global mariaDB
+		sql :=
+		(JOIN 
+			" UPDATE " table 
+			" SET " column "='" value "' "
+			" WHERE Codigos='" code "'"
+		)	
+		AHK.append_debug("update column value sql " sql) 
+		try{
+			mariaDB.Query(sql)
+		}catch e 
+			MsgBox, 16, Erro, % " Erro ao tentar atualizar os valores fiscais " ExceptionDetail(e)
+
+	}
+	
 }

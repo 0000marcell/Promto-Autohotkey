@@ -1,1 +1,4 @@
-search word
+gonna insert fiscal value code TL010224956AIS number12 value 01 table TL010Codigo
+ gonna alter the table TL010Codigo column name locpad
+column name locpad
+update column value sql  UPDATE TL010Codigo SET locpad='01'  WHERE Codigos='TL010224956AIS'

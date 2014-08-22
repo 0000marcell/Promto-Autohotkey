@@ -1,13 +1,10 @@
 db_ex_view(){
 	Global
-
 	if(current_connection_value = ""){
 		MsgBox, 16, Erro, % "E preciso selecionar uma conexao externa antes de prosseguir!" 
 		return
 	}
-
 	info := get_item_info("M", "MODlv")
-	
 	cod_table := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] "Codigo"
 	Gui,dbex:new
 	Gui,font,s%SMALL_FONT%,%FONT%
@@ -23,10 +20,9 @@ db_ex_view(){
 	Gui, add, button, w100 h30 x+5 gexport_code_list_to_file, Exportar para arquivo
 	Gui, Font, s15 cGreen
 	Gui, add, Text, xm y+5 w800 h30 vconnection_status, % "Conectado a " current_connection_value
-	
 	GuiControl, -Redraw, lvdbex
 	table := db.load_table_in_array(cod_table)
-	search.LV.set_searcheable_list(table)
+	search.LV.set_searcheable_list(table, cod_table)
 	search.LV.set_window_handler("dbex", "lvdbex")
 	for, each, value in table{
 		if(table[A_Index, 1] = "")
@@ -66,7 +62,6 @@ db_ex_view(){
 
  	pesquisadbex:
  	Gui, submit, nohide
- 	MsgBox, % "term " pesquisadbex
  	search.LV.any_word_search("dbex","lvdbex", pesquisadbex)
  	return 
 

@@ -1,6 +1,6 @@
 class LV{
-	set_searcheable_list(list){
-		this.list := list
+	set_searcheable_list(list, db_table = ""){
+		this.list := list, this.db_table := db_table
 	}
 
 	set_window_handler(window, lv) {
@@ -70,9 +70,11 @@ class LV{
 	}
 
 	update_by_list(number, value) {
+		Global db
 		loop, % this.list.maxindex()
 		{
 			this.list[A_Index, number] := value
+			db.Modelo.insert_fiscal_value(this.list[A_Index, 1], number, value, this.db_table)		
 		}
 		this.any_word_search(this.window, this.lv, "")
 	}
@@ -80,6 +82,7 @@ class LV{
 	update_by_result(number, value) {
 		for, each, item in this.result{
 		  this.list[item, number] := value
+		  db.Modelo.insert_fiscal_value(this.list[item, 1], number, value, this.db_table)
 		}
 		this.any_word_search(this.window, this.lv, "")
 	}

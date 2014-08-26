@@ -602,7 +602,70 @@
             "prodkey":               "TIPCA160",
             "tipo":                  "Removido",
             "usuario":               "LUCIANO CLAUSSEN"
+        },
+        "68": {
+            "data":                  "22/08/2014",
+            "hora":                  "17:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CARRO|subfamilia|CARCACA|modelo|",
+            "msg":                   "A subfamilia CARCACA e mascara CC foi removida!",
+            "prodkey":               "TICACC",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "69": {
+            "data":                  "22/08/2014",
+            "hora":                  "17:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CARRO|subfamilia||modelo|",
+            "msg":                   "A familia CARRO e mascara CA foi removida!",
+            "prodkey":               "TICA",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
+        },
+        "70": {
+            "data":                  "25/08/2014",
+            "hora":                  "10:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TSPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "71": {
+            "data":                  "25/08/2014",
+            "hora":                  "10:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TSPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "72": {
+            "data":                  "25/08/2014",
+            "hora":                  "10:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXDE.160",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TIPCCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "73": {
+            "data":                  "25/08/2014",
+            "hora":                  "10:16",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item L foi removido da tabela de campos TIPCCP160MATERIAPRIMA",
+            "prodkey":               "TIPCCP160",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "74": {
+            "data":                  "25/08/2014",
+            "hora":                  "10:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE VEDACAO|modelo|TL.PC.EXDE.160",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TIPCCV160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
         }
     },
-    "max_index":                     67
+    "max_index":                     74
 }

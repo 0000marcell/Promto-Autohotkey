@@ -141,6 +141,7 @@ inserir_modelo_view(model_table){
 		db.Modelo.incluir(input_name, input_mascara, prefixo, tabela1, v_info)
 	}catch e{
 		MsgBox, 16, Erro, % " Erro ao inserir modelo `n " e.what " no arquivo " e.file " na linha " e.line
+		return 
 	}
 	Gui, inserir_modelo_view:default
 	Gui, Listview, inserir_modelo_lv

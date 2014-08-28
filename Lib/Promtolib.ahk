@@ -2006,6 +2006,7 @@ GetCheckedRows2(wName = "", lvName = ""){
 
 GetCheckedRows(wName = "", lvName = "", type = "text"){
 	Local returnValue
+	
 	if(wName!=""){
 		Gui,%wName%:default
 	}

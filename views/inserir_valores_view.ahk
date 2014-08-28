@@ -3,7 +3,9 @@ inserir_valores_view(){
 
 	loadvaltables()
 	COLUNAS := ["NCM","UM","ORIGEM","TCONTA","TIPO","GRUPO","IPI","LOCPAD"]
+	db.Modelo.insert_columns_in_table(COLUNAS, cod_table)
 	checkedlistdb := GetCheckedRows("dbex","lvdbex")
+	checkedlistdb_number := GetCheckedRows("dbex","lvdbex", "number")
 	Gui,inserirval:new
 	Gui, font,s%SMALL_FONT%,%FONT%
 	Gui, Add, edit,w300 r1 x165 vpesquisaiv gpesquisaiv uppercase,

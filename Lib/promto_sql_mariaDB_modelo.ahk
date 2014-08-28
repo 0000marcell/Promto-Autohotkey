@@ -245,6 +245,17 @@ class Modelo{
 		db.Log.insert_CRUD(info, "Criado", "O Campo " campo_nome " foi criado!")
 	}
 
+	insert_columns_in_table(columns, table) {
+		Global 
+		AHK.reset_debug()
+		AHK.append_debug("gonna create the table ")
+		for, each, item in columns{
+			column_number := A_Index + 4
+			AHK.append_debug("column number " column_number " table " table)
+			this.add_fiscal_column(column_number, table)
+		} 
+	}
+
 	/*
 		Insere os codigos na tabela de codigos
 	*/
@@ -862,13 +873,14 @@ class Modelo{
 
 	insert_fiscal_value(code, number, value, table){
 		Global db
-		column_name := this.add_fiscal_column(number, table)
+		column_name := this.get_column_name(number)
 		this.update_fiscal_info(code, column_name, value, table)	
 	}
 
 	add_fiscal_column(number, table) {
 		Global mariaDB
 		column_name := this.get_column_name(number)
+		AHK.append_debug("gonna add column " column_name " table " table)
 		try{
 			mariaDB.Query(" ALTER TABLE " table " ADD COLUMN " column_name " TEXT;")
 		}catch e{

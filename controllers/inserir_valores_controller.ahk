@@ -1,12 +1,14 @@
 inserir_val_camp(){
 	Global
+  AHK.reset_debug()
 	Gui, Submit, Nohide
   selected_number := GetSelected("inserirval", "lviv", "number") + 4
 	checkedval := GetSelected("inserirval","lviv2")
   if(checkedval = ""){
     MsgBox, % "Selecione um valor antes de continuar!"
   }
-  search.LV.update_list(selected_number, checkedval, checkedlistdb)
+  AHK.append_debug("gonna update the table checked list db number " checkedlistdb_number[1, 1])
+  search.LV.update_list(selected_number, checkedval, checkedlistdb_number)
 }
 
 importar_val(){

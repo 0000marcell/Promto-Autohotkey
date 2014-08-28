@@ -881,7 +881,124 @@
             "prodkey":               "TMPBOCH27",
             "tipo":                  "Alterado",
             "usuario":               "luciano claussen"
+        },
+        "99": {
+            "data":                  "27/08/2014",
+            "hora":                  "15:37",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|DIVERSOS|modelo|TL.C.EXE.002",
+            "msg":                   "O item DBAI foi alterado para codigo: DDAI descricao completa: DOBRADICA DIREITA DA CAIXA 001/002 descricao resumida DOBRADICA DIREITA DA CAIXA 001/002 descricao ingles DOBRADICA DIREITA DA CAIXA 001/002",
+            "prodkey":               "TICDIV002",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "100": {
+            "data":                  "27/08/2014",
+            "hora":                  "15:37",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|DIVERSOS|modelo|TL.C.EXE.002",
+            "msg":                   "O item DEAI descricao resumida DOBRADICA ESQUERDA DA CAIXA 001/002 foi incluido no campo PARTES",
+            "prodkey":               "TICDIV002",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "101": {
+            "data":                  "27/08/2014",
+            "hora":                  "15:39",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|DIVERSOS|modelo|TL.C.EXE.002",
+            "msg":                   "O item DDAI foi alterado para codigo: DDAI descricao completa: DOBRADICA DIREITA DA CAIXA 001/002  descricao resumida DOBRADICA DIREITA DA CAIXA 001/002 descricao ingles DOBRADICA DIREITA DA CAIXA 001/002",
+            "prodkey":               "TICDIV002",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "102": {
+            "data":                  "27/08/2014",
+            "hora":                  "17:14",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS ACABADOS|familia||subfamilia||modelo|",
+            "msg":                   "A familia CONEXOES e mascara 708 foi criada!",
+            "prodkey":               "M",
+            "tipo":                  "Criado",
+            "usuario":               "monique soares"
+        },
+        "103": {
+            "data":                  "27/08/2014",
+            "hora":                  "17:15",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS ACABADOS|familia|TAMPAO|subfamilia||modelo|Modelos",
+            "msg":                   "O Modelo MAC.TGVP.315 e mascara 315 foi criado!",
+            "prodkey":               "MTPMascara",
+            "tipo":                  "Criado",
+            "usuario":               "monique soares"
+        },
+        "104": {
+            "data":                  "27/08/2014",
+            "hora":                  "17:15",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS ACABADOS|familia|TAMPAO|subfamilia||modelo|MAC.TGVP.315",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "MTP315",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "105": {
+            "data":                  "27/08/2014",
+            "hora":                  "17:16",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS ACABADOS|familia|TAMPAO|subfamilia||modelo|MAC.TGVP.315",
+            "msg":                   "O modelo MAC.TGVP.315 e mascara 315 foi removido!",
+            "prodkey":               "MTP315",
+            "tipo":                  "Removido",
+            "usuario":               "monique soares"
+        },
+        "106": {
+            "data":                  "27/08/2014",
+            "hora":                  "17:16",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS ACABADOS|familia|TAMPAO|subfamilia||modelo|MAC.TGVP.315",
+            "msg":                   "A familia TAMPAO e mascara TP foi removida!",
+            "prodkey":               "MTP315",
+            "tipo":                  "Removido",
+            "usuario":               "monique soares"
+        },
+        "107": {
+            "data":                  "27/08/2014",
+            "hora":                  "17:17",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS ACABADOS|familia||subfamilia||modelo|",
+            "msg":                   "A familia TAMPAO e mascara TP foi criada!",
+            "prodkey":               "M",
+            "tipo":                  "Criado",
+            "usuario":               "monique soares"
+        },
+        "108": {
+            "data":                  "27/08/2014",
+            "hora":                  "17:17",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS ACABADOS|familia|TAMPAO|subfamilia||modelo|Modelos",
+            "msg":                   "O Modelo MAC.TGVP.315 e mascara 315 foi criado!",
+            "prodkey":               "MTAMascara",
+            "tipo":                  "Criado",
+            "usuario":               "monique soares"
+        },
+        "109": {
+            "data":                  "27/08/2014",
+            "hora":                  "17:17",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS ACABADOS|familia|TAMPAO|subfamilia||modelo|MAC.TGVP.315",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "MTA315",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "110": {
+            "data":                  "28/08/2014",
+            "hora":                  "09:17",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TL005",
+            "tipo":                  "Criado",
+            "usuario":               "Marcell Monteiro"
+        },
+        "111": {
+            "data":                  "28/08/2014",
+            "hora":                  "09:18",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXD.004",
+            "msg":                   "O item TE foi removido da tabela de campos TL004POTENCIA",
+            "prodkey":               "TL004",
+            "tipo":                  "Removido",
+            "usuario":               "Marcell Monteiro"
         }
     },
-    "max_index":                     98
+    "max_index":                     111
 }

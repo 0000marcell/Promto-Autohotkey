@@ -63,11 +63,23 @@ class LV{
 	}
 
 	update_list(number, value, checked_list){
-		if(this.result = ""){
-			this.update_by_list(number, value)
-		}else{
+		if(this.result != ""){
+			this.update_by_result(number, value, checked_list)
+		}else if(checked_list[1, 1] != ""){
+			this.update_by_checked_list(number, value, checked_list)
+		}else {
 			this.update_by_result(number, value)
 		}
+	}
+
+	update_by_checked_list(number, value, checked_list) {
+		Global db
+		for, each, item in checked_list{
+			item := checked_list[A_Index, 1]
+			this.list[item, number] := value
+		  db.Modelo.insert_fiscal_value(this.list[item, 1], number, value, this.db_table)
+		}
+		this.any_word_search(this.window, this.lv, "") 
 	}
 
 	update_by_list(number, value) {
@@ -80,9 +92,21 @@ class LV{
 		this.any_word_search(this.window, this.lv, "")
 	}
 
-	update_by_result(number, value) {
+	update_by_result(number, value, checked_list) {
+		Global db
+		AHK.reset_debug()
+		AHK.append_debug("gonna insert by result")
 		for, each, item in this.result{
+			AHK.append_debug("checked list " checked_list[1, 1])
+			if(checked_list[1, 1] != ""){
+				AHK.append_debug("gonna check if mat has value item " A_Index)
+				if(!MatHasValue(checked_list, A_Index)){
+					AHK.append_debug("mat dont have value gonna continue!")
+					Continue
+				}
+			}
 		  this.list[item, number] := value
+		  AHK.append_debug(" gonna insert value code " this.list[item, 1] " number " number " value " value )
 		  db.Modelo.insert_fiscal_value(this.list[item, 1], number, value, this.db_table)
 		}
 		this.any_word_search(this.window, this.lv, "")

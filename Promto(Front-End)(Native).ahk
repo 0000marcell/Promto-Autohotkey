@@ -899,7 +899,7 @@ loadestruturatodb(item){
 		StringSplit,itemtbi,itemtbi,|
 		StringReplace,componentetbi,componentetbi,% ">>",|, All
 		StringSplit,componentetbi,componentetbi,|
-		exist:=existindb(sigaconnection,"Select G1_COD from SG1010 WHERE G1_COD LIKE '" itemtbi1 "%' AND G1_COMP LIKE '" componentetbi1 "%'")
+		exist := existindb(sigaconnection,"Select G1_COD from SG1010 WHERE G1_COD LIKE '" itemtbi1 "%' AND G1_COMP LIKE '" componentetbi1 "%'")
 		if(exist=true){ 
 			sql:=
 			(JOIN

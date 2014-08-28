@@ -665,7 +665,223 @@
             "prodkey":               "TIPCCV160",
             "tipo":                  "Alterado",
             "usuario":               "luciano claussen"
+        },
+        "75": {
+            "data":                  "26/08/2014",
+            "hora":                  "11:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia||modelo|Modelo",
+            "msg":                   "A subfamilia BLANK e mascara BL foi criada!",
+            "prodkey":               "TILMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "76": {
+            "data":                  "26/08/2014",
+            "hora":                  "11:16",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|BLANK|modelo|Modelos",
+            "msg":                   "O Modelo TL.L.EXE.010 e mascara 010 foi criado!",
+            "prodkey":               "TILBLMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "77": {
+            "data":                  "26/08/2014",
+            "hora":                  "11:18",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|BLANK|modelo|TL.L.EXE.010",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TILBL010",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "78": {
+            "data":                  "26/08/2014",
+            "hora":                  "11:18",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|BLANK|modelo|TL.L.EXE.010",
+            "msg":                   "O Campo TAMANHO foi criado!",
+            "prodkey":               "TILBL010",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "79": {
+            "data":                  "26/08/2014",
+            "hora":                  "11:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|BLANK|modelo|TL.L.EXE.010",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TILBL010",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "80": {
+            "data":                  "26/08/2014",
+            "hora":                  "11:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|BLANK|modelo|TL.L.EXE.010",
+            "msg":                   "O item 2 descricao resumida 20 W foi incluido no campo TAMANHO",
+            "prodkey":               "TILBL010",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "81": {
+            "data":                  "26/08/2014",
+            "hora":                  "11:20",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|BLANK|modelo|TL.L.EXE.010",
+            "msg":                   "O item 4 descricao resumida 40 W foi incluido no campo TAMANHO",
+            "prodkey":               "TILBL010",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "82": {
+            "data":                  "26/08/2014",
+            "hora":                  "11:20",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|BLANK|modelo|TL.L.EXE.010",
+            "msg":                   "O item AI descricao resumida ACO INOX foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TILBL010",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "83": {
+            "data":                  "26/08/2014",
+            "hora":                  "11:21",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|BLANK|modelo|TL.L.EXE.010",
+            "msg":                   "O item AC descricao resumida ACO CARBONO foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TILBL010",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "84": {
+            "data":                  "26/08/2014",
+            "hora":                  "11:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|BLANK|modelo|TL.L.EXE.010",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TILBL010",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "85": {
+            "data":                  "26/08/2014",
+            "hora":                  "11:26",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|BLANK|modelo|TL.L.EXE.010",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TILBL010",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "86": {
+            "data":                  "26/08/2014",
+            "hora":                  "12:12",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 1200MM",
+            "msg":                   "O item AC0 descricao resumida FABRICACAO EM ACO CARBONO foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TMPBOCH12",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "87": {
+            "data":                  "26/08/2014",
+            "hora":                  "12:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|Modelos",
+            "msg":                   "O Modelo CHAPA 275 e mascara CH27 foi criado!",
+            "prodkey":               "TMPBOMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "88": {
+            "data":                  "26/08/2014",
+            "hora":                  "12:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|Modelo",
+            "msg":                   "O modelo CHAPA 275 e mascara CH27 foi removido!",
+            "prodkey":               "TMPBOMascara",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "89": {
+            "data":                  "26/08/2014",
+            "hora":                  "12:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|Modelos",
+            "msg":                   "O Modelo CHAPA 275MM e mascara CH27 foi criado!",
+            "prodkey":               "TMPBOMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "90": {
+            "data":                  "26/08/2014",
+            "hora":                  "12:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 1200MM",
+            "msg":                   "O item AC0 foi removido da tabela de campos TMPBOCH12MATERIAPRIMA",
+            "prodkey":               "TMPBOCH12",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "91": {
+            "data":                  "26/08/2014",
+            "hora":                  "12:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 275MM",
+            "msg":                   "O Campo ESPESSURA foi criado!",
+            "prodkey":               "TMPBOCH27",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "92": {
+            "data":                  "26/08/2014",
+            "hora":                  "12:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 275MM",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TMPBOCH27",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "93": {
+            "data":                  "26/08/2014",
+            "hora":                  "12:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 275MM",
+            "msg":                   "O item 08 descricao resumida 0,8 MM DE ESPESSURA foi incluido no campo ESPESSURA",
+            "prodkey":               "TMPBOCH27",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "94": {
+            "data":                  "26/08/2014",
+            "hora":                  "12:17",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 275MM",
+            "msg":                   "O item AC0 descricao resumida ACO CARBONO foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TMPBOCH27",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "95": {
+            "data":                  "26/08/2014",
+            "hora":                  "12:17",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 275MM",
+            "msg":                   "O item AI6 descricao resumida FABRICACAO EM ACO INOX 316 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TMPBOCH27",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "96": {
+            "data":                  "26/08/2014",
+            "hora":                  "12:18",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 275MM",
+            "msg":                   "O item AC0 foi alterado para codigo: AC0 descricao completa: FABRICACAO EM ACO CARBONO descricao resumida FABRICACAO EM ACO CARBONO descricao ingles MANUFACTURED IN CARBON STEEL",
+            "prodkey":               "TMPBOCH27",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "97": {
+            "data":                  "26/08/2014",
+            "hora":                  "12:18",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 275MM",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TMPBOCH27",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "98": {
+            "data":                  "26/08/2014",
+            "hora":                  "12:24",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 275MM",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TMPBOCH27",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
         }
     },
-    "max_index":                     74
+    "max_index":                     98
 }

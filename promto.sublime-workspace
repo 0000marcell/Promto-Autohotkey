@@ -412,8 +412,24 @@
 			"file": "Lib/promto_json.ahk",
 			"settings":
 			{
-				"buffer_size": 2460,
+				"buffer_size": 3020,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/mcruz/Desktop/Dropbox/css/test.html",
+			"settings":
+			{
+				"buffer_size": 1054,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/mcruz/Desktop/Dropbox/css/css/custom.css",
+			"settings":
+			{
+				"buffer_size": 62603,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -437,8 +453,42 @@
 			"file": "promto_JSON.json",
 			"settings":
 			{
-				"buffer_size": 378342,
+				"buffer_size": 278710,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 387 files for \"promto_JSON.json\"\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\promto_json.ahk:\n   17          ))\n   18      }\n   19:     JSON_save(this.obj, \"promto_JSON.json\")\n   20      string := JSON_to(this.obj) \n   21      MsgBox, % string \n\n1 match in 1 file\n\n\nSearching 387 files for \"erro ao ler tabela\"\n\n0 matches across 0 files\n\n\nSearching 387 files for \"erro ao ler a tabela\"\n\nC:\\Users\\mcruz\\Documents\\GitHub\\Promto-Autohotkey\\Lib\\promto_sql_mariaDB.ahk:\n  603  			mariaDB.resultSet := mariaDB.OpenRecordSet(SQL)	\n  604  		} catch e\n  605: 			MsgBox,16, Error, % \"Erro ao ler a tabela \" table \".`n`n\" ExceptionDetail(e) ;state := \"!# \" e.What \" \" e.Message\n  606  		\n  607  		columns := mariaDB.resultSet.getColumnNames()\n\n1 match in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 772,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "node/feed/public/index.html",
+			"settings":
+			{
+				"buffer_size": 2227,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "node/feed/public/js/feed.js",
+			"settings":
+			{
+				"buffer_size": 2582,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "node/feed/public/js/reader.js",
+			"settings":
+			{
+				"buffer_size": 373,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -463,7 +513,7 @@
 			"file": "Lib/promto_json_helper.ahk",
 			"settings":
 			{
-				"buffer_size": 1448,
+				"buffer_size": 1513,
 				"line_ending": "Windows"
 			}
 		},
@@ -547,10 +597,13 @@
 			}
 		},
 		{
+			"contents": "inserir_modelo_view(model_table){\n	Global\n	tabela_de_modelo := model_table \n	Gui, M:+disabled\n	Gui, inserir_modelo_view:New\n	Gui, inserir_modelo_view:+ownerM\n	Gui, Font, s%SMALL_FONT%, %FONT%\n	Gui, Color, %GLOBAL_COLOR%\n	Gui, Add, Groupbox, w300 h400, Lista de modelos\n	Gui, Add, Listview, xp+5 yp+15 w280 h380 vinserir_modelo_lv ginserir_modelo_lv altsubmit,Modelos|Mascara\n	Gui, Add, Groupbox, xm y+20 w300 h60 vopcoes_groupbox,Opcoes\n	Gui, Add, Button, xp+30 yp+15 w100 h30 ginserir_modelo_button,Inserir\n	Gui, Add, Button, x+5 w100 h30 gexcluir_modelo_button,Excluir\n	Gui, Add, Button, x+5 w30 h30 ginserir_modelo_more_options vmore_options_button,+\n	Gui, Add, Button, x40 y+5 w100 h30 vimportar_button gimportar_button,Importar\n	Gui, Add, Button, x+5 w100 h30 vexportar_button gexportar_button, Exportar\n	GuiControl, Hide, importar_button\n	GuiControl, Hide, exportar_button\n	Gui, Add, Groupbox, x+70 ym w200 h200 , Fotos\n	Gui, Add, Picture, xp+5 yp+15 w180 h180  vmodelos_foto_control,\n	Gui, Add, Groupbox, xp-5 y+10 w200 h90 , Fonte da Imagem\n	Gui, Add, Radio, xp+5 yp+15 vfonte_imagem_radio Checked, Arquivo no computador\n	Gui, Add, Radio, y+10, Banco de dados\n	Gui, Add, Button, y+10 w100 h20 ginserir_modelo_imagem_button,Inserir/Alterar\n	Gui, Add, Groupbox, xp-5 y+10 w200 h90 , Certificado\n	Gui, Add, Radio, xp+5 yp+15 vfonte_cert Checked, Arquivo no computador\n	Gui, Add, Radio, y+10, Banco de dados\n	Gui, Add, Button, y+10 w100 h20 ginsert_cert ,Inserir/Alterar\n	Gui, Add, Groupbox, xp-5 y+10 w200 h180, Descricao\n	Gui, Add, Text, xp+10 yp+15 w100, Portugues\n	Gui, Add, Edit, y+5 w180 h40 vdescricao_geral_edit uppercase,\n	Gui, Add, Text, y+5 w100 ,Ingles\n	Gui, Add, Edit, y+5 w180 h40 vdescricao_geral_ingles_edit uppercase,\n	Gui, Add, Button, y+5 w100 h20 gsalvar_descricao_geral_button, Salvar \n	Gui, Add, Groupbox, x520 ym w160 h80, Referencia\n	Gui, Add, Edit, xp+5 yp+15 w150 vproduct_reference uppercase, \n	Gui, Add, Button, xp y+5 w150 h20 gsave_reference, Salvar\n	db.load_lv(\"inserir_modelo_view\", \"inserir_modelo_lv\", model_table)\n	LV_ModifyCol(1), LV_ModifyCol(2,200)\n	Gui, Show, Autosize, Inserir Modelo\n	return \n\n	save_reference:\n	Gui, Submit, Nohide\n	model := GetSelectedRow(\"inserir_modelo_view\", \"inserir_modelo_lv\")\n	try{\n		db.Modelo.insert_reference(model[1], product_reference)\n	}catch e{\n		MsgBox, 16, Erro, % \"Erro `n \" e.what \" no arquivo \" e.file \" na linha \" e.line\n	}	\n	return \n\n	insert_cert:\n	Gui, Submit, Nohide\n	v_info := get_item_info(\"inserir_modelo_view\", \"inserir_modelo_lv\")\n	if(v_info.modelo[1] = \"Modelos\" || v_info.modelo[1] = \"\"){\n		MsgBox, 16, Erro, % \"Selecione um modelo antes de continuar!\" \n		Return\n	}\n	if(fonte_cert = 1){\n		insert_cert_from_file_view(v_info)\n	}else if(fonte_cert = 2){\n		cert_view(v_info, \"inserir_modelo_view\")\n	}\n	return\n\n	salvar_descricao_geral_button:\n	Gui, Submit, Nohide\n	v_info := get_item_info(\"inserir_modelo_view\", \"inserir_modelo_lv\")\n	db.Modelo.descricao_geral(descricao_geral_edit, descricao_geral_ingles_edit, v_info)\n	return\n\n	inserir_modelo_viewguiclose:\n	Gui, M:-disabled\n	Gui, inserir_modelo_view:destroy\n	return \n\n	inserir_modelo_lv:\n	if A_GuiEvent = I\n	{\n		v_info := get_item_info(\"inserir_modelo_view\", \"inserir_modelo_lv\")\n		if(v_info.modelo[1] = \"Modelos\" || v_info.modelo[1] = \"\")\n			Return\n\n		tabela1 := v_info.empresa[2] v_info.tipo[2] v_info.familia[2] v_info.subfamilia[2] v_info.modelo[2] v_info.modelo[1] \n		image_name_value := db.Imagem.get_image_full_path(tabela1)\n		if(image_name_value = \"\"){\n			image_name_value := global_image_path \"promto_imagens\\promto_0.jpg\"  \n		}\n		Gui, inserir_modelo_view:default \n		GuiControl,, modelos_foto_control,%image_name_value%\n		s_info := change_info(v_info)\n		desc_ := db.Modelo.get_desc(s_info) \n		StringSplit, desc_, desc_ ,|,\n		descgeral := desc_1\n		descgeralingles := desc_2\n		GuiControl, , descricao_geral_edit,%descgeral%\n		GuiControl, , descricao_geral_ingles_edit,%descgeralingles% \n		GuiControl, , product_reference, % db.Modelo.get_product_reference(v_info.modelo[1])  	\n	}\n	return \n\n	inserir_modelo_button:\n	inserir_dialogo_2_view(\"salvar_modelo_button\", \"inserir_modelo_view\")\n	return\n\n	inserir_modelo_imagem_button:\n	Gui, Submit, Nohide\n	if(fonte_imagem_radio = 1){\n		model := GetSelectedRow(\"inserir_modelo_view\", \"inserir_modelo_lv\")\n		modelo := []\n		modelo.nome := model[1]\n		modelo.mascara := model[2]\n		if(modelo.nome = \"\" || modelo.mascara = \"\"){\n			MsgBox,16,Erro, % \"Selecione um modelo antes de continuar!\"\n			return\n		}\n		inserir_imagem_view(\"inserir_modelo_view\", \"modelos_foto_control\")\n	}else if (fonte_imagem_radio = 2){\n		info := get_item_info(\"inserir_modelo_view\", \"inserir_modelo_lv\")\n		if(info.modelo[1] = \"Modelos\" || info.modelo[1] = \"\"){\n			MsgBox,16,Erro, % \"Selecione um modelo antes de continuar!\"\n			Return\n		}\n		inserir_imagem_db_view(\"inserir_modelo_view\", \"modelos_foto_control\")\n	}\n	return\n\n	salvar_modelo_button:\n	Gui, Submit, Nohide\n	Gui, insert_dialogo_2:destroy\n	v_info := get_item_info(\"inserir_modelo_view\", \"inserir_modelo_lv\")\n	prefixo := v_info.empresa[2] v_info.tipo[2] v_info.familia[2] v_info.subfamilia[2]\n	tabela1 := db.Modelo.get_model_tabela1(v_info)\n	if(input_name = \"\" || input_mascara = \"\" || prefixo = \"\"){\n		MsgBox,16,Erro, % \"Nehum dos valores para inserir o modelo pode estar em branco!\"\n		Gui, inserir_modelo_view:destroy\n		return\n	}\n	try{\n		db.Modelo.incluir(input_name, input_mascara, prefixo, tabela1, v_info)\n	}catch e{\n		MsgBox, 16, Erro, % \" Erro ao inserir modelo `n \" e.what \" no arquivo \" e.file \" na linha \" e.line\n		return \n	}\n	Gui, inserir_modelo_view:default\n	Gui, Listview, inserir_modelo_lv\n	LV_Add(\"\", input_name, input_mascara)\n	LV_ModifyCol(), LV_ModifyCol(2, 100) \n	Gui, M:default\n	Gui, Listview, MODlv\n	LV_Add(\"\", input_name, input_mascara)\n	LV_ModifyCol(), LV_ModifyCol(2, 100)\n	return\n\n	excluir_modelo_button:\n	info_inserir_modelo := get_item_info(\"inserir_modelo_view\", \"inserir_modelo_lv\")\n	info := get_item_info(\"M\", \"MODlv\")\n	MsgBox, 4,, % \"Deseja apagar o modelo \" info_inserir_modelo.modelo[1] \" e todas as suas dependencias?\"\n	IfMsgBox Yes\n	{\n		select_number := GetSelected(\"inserir_modelo_view\", \"inserir_modelo_lv\", \"number\")\n		try{\n			db.Modelo.excluir(info_inserir_modelo.modelo[1], info_inserir_modelo.modelo[2], info)	\n		}catch e{\n			MsgBox, 16, Erro, % \"Erro ao deletar o modelo `n\" e.what \"`n arquivo \" e.file \" linha `n \" e.line  \n		}\n		delete_row_from_lv(\"inserir_modelo_view\", \"inserir_modelo_lv\", info_inserir_modelo.modelo[1])\n		delete_row_from_lv(\"M\", \"MODlv\", info_inserir_modelo.modelo[1]) \n	}\n	return\n\n	importar_button: \n	info_inserir_modelo := get_item_info(\"inserir_modelo_view\", \"inserir_modelo_lv\")\n  info := get_item_info(\"M\", \"MODlv\")\n	tabela1 := info.empresa[2] info.tipo[2] info.familia[1]\n	table_model := db.get_reference(\"Modelo\", tabela1)\n	FileSelectFile,source,\"\"\n	Stringright,_iscsv,source,3\n  if(_iscsv!=\"csv\"){\n  	MsgBox, % \"o arquivo selecionado tem que ser .csv!!!!\"\n  	return \n  }\n  MsgBox, 4,, Deseja apagar os items atuais?\n  IfMsgBox Yes\n  {\n  	db.clean_table(table_model)\n  }\n  x := new OTTK(source)\n  prefixo_local := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2]\n  tabela1 := db.Modelo.get_model_tabela1(info) \n  progress(x.maxindex())\n  FileDelete, % \"temp\\debug.csv\"\n  items_inseridos := {}\n  for,each,value in x{\n  	updateprogress(\"Inserindo Items da Lista: \" x[A_Index, 1] \" codigo \" x[A_Index, 2] \" prefixo_local: \" prefixo_local,1)\n    nome := x[A_Index, 1]\n    codigo := x[A_Index, 2]\n    if(nome = \"\")\n    	continue\n    items_inseridos[nome] := codigo\n    try{\n    	db.Modelo.incluir(nome, codigo, prefixo_local, tabela1, info)\n    }catch e{\n    	MsgBox, 16, Erro, % \" Erro ao inserir modelo `n \" e.what \" no arquivo \" e.file \" na linha \" e.line\n    }\n  }\n  db.load_lv(\"inserir_modelo_view\", \"inserir_modelo_lv\", tabela_de_modelo, 1)\n  db.load_lv(\"M\", \"MODlv\", tabela_de_modelo, 1)\n  Gui,progress:destroy\n  MsgBox,64,,% \"valores importados!\"\n	return\n\n	exportar_button:\n	export_value := get_lv_in_array(\"inserir_modelo_view\", \"inserir_modelo_lv\", 2)\n	if(export_value.max_index() != 0 || export_value.max_index() != \"\")\n		FileDelete, % \"temp\\export_model.csv\"\n	for, each, value in export_value{\n		if(export_value[A_Index, 1] = \"\")\n			Continue\n		FileAppend, % export_value[A_Index, 1] \";\" export_value[A_Index, 2] \"`n\", % \"temp\\export_model.csv\"\n	}\n	MsgBox, 64, Sucesso, % \"Os valores foram exportados com sucesso!\" \n	run, % \"temp\\export_model.csv\" \n	return \n\n	inserir_modelo_more_options:\n	if(_plus = 1 || _plus = \"\"){\n		GuiControl,Move, opcoes_groupbox, h100 w350\n		GuiControl, Show,	importar_button\n		GuiControl, Show, exportar_button\n		;GuiControl, Show, linkar_modelos_button\n		GuiControl,, more_options_button,- \n		Gui, Show, Autosize,\n		_plus := 0	\n	}else if(_plus = 0){\n		GuiControl,Move, opcoes_groupbox, h60\n		GuiControl, Hide,	importar_button\n		GuiControl, Hide, exportar_button\n		GuiControl,, more_options_button, +\n		Gui, Show, Autosize,\n		_plus := 1\n	}\n	return\n}\n\n\n",
 			"file": "views/inserir_modelo_view.ahk",
+			"file_size": 9227,
+			"file_write_time": 130535271404165986,
 			"settings":
 			{
-				"buffer_size": 8970,
+				"buffer_size": 8980,
 				"line_ending": "Windows"
 			}
 		},
@@ -571,30 +624,6 @@
 			{
 				"buffer_size": 2786,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "node/feed/public/js/feed.js",
-			"settings":
-			{
-				"buffer_size": 2582,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "node/feed/public/js/reader.js",
-			"settings":
-			{
-				"buffer_size": 373,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "node/feed/public/index.html",
-			"settings":
-			{
-				"buffer_size": 2227,
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -654,6 +683,12 @@
 	},
 	"file_history":
 	[
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/print_funcs.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/controllers/rem_massa_controller.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/FTP/FTP_docs_output/HTML Help/help.chm",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/FTP/Hash.ahk",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/node/printer/public/js/printer.js",
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/node/feed/public/index.html",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/README.md",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/models/remover_item_ETF.ahk",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/node/feed/public/css/feed.css",
@@ -676,7 +711,6 @@
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/FTP/FTP_docs_output/WebHelp/scr/Methods/oFTP.RemoveDirectory.htm",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/FTP/FTP_docs_output/WebHelp/scr/Methods/oFTP.CreateDirectory.htm",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/node/feed/compile.bat",
-		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/node/feed/public/index.html",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/node/feed/public/meta.txt",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/node/feed/public/package.json",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/node/feed/public/test.html",
@@ -711,9 +745,6 @@
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_search.ahk",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/controllers/inserir_valores_controller.ahk",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/views/inserir_valores_view.ahk",
-		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/FTP/FTP_docs_output/HTML Help/help.chm",
-		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/FTP/Hash.ahk",
-		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/print_funcs.ahk",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/views/db_ex_view.ahk",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/controllers/inserir_bloqueio_controller.ahk",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Manifest.txt",
@@ -730,7 +761,6 @@
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/FTP/FTP_docs/print.css",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/FTP/FTP/print.css",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/print/TIPCORPO.html",
-		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/node/printer/public/js/printer.js",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_json.ahk",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/promto_JSON.json",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/views/list_options_view.ahk",
@@ -780,8 +810,7 @@
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/FTP/FTP/oFile.htm",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_sql_mariaDB_modelo.ahk",
 		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/views/linkar_modelos_view.ahk",
-		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_sql_mariaDB_usuario.ahk",
-		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/node/node_modules/grunt-node-webkit-builder/node_modules/unzip/node_modules/binary/test/bu.js"
+		"/C/Users/mcruz/Documents/GitHub/Promto-Autohotkey/Lib/promto_sql_mariaDB_usuario.ahk"
 	],
 	"find":
 	{
@@ -800,6 +829,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"TABLE",
+			"erro ao ler a tabela",
+			"erro ao ler tabela",
+			"file_path",
+			"mask",
+			"promto_JSON.json",
 			"alter table",
 			"append_debug",
 			"reset_debug",
@@ -921,13 +956,7 @@
 			"search",
 			"listdbex",
 			"this.result",
-			"get_selected(",
-			"loadlvdbex(",
-			"loadlvdbex",
-			"any word search",
-			"reset_debug",
-			"clear_lv",
-			"this.clear"
+			"get_selected("
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -945,7 +974,7 @@
 	"groups":
 	[
 		{
-			"selected": 48,
+			"selected": 46,
 			"sheets":
 			[
 				{
@@ -961,8 +990,8 @@
 						"selection":
 						[
 							[
-								50959,
-								50959
+								50799,
+								50799
 							]
 						],
 						"settings":
@@ -1003,11 +1032,11 @@
 								"xpos": 7
 							}
 						},
-						"translation.x": 100.0,
+						"translation.x": 0.0,
 						"translation.y": 29641.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
@@ -1039,7 +1068,7 @@
 						"translation.y": 468.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
@@ -1070,7 +1099,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
@@ -1105,7 +1134,7 @@
 						"translation.y": 735.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
@@ -1139,7 +1168,7 @@
 						"translation.y": 108.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
@@ -1171,7 +1200,7 @@
 						"translation.y": 625.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
@@ -1202,7 +1231,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
@@ -1233,7 +1262,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 25,
 					"type": "text"
 				},
 				{
@@ -1264,7 +1293,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
@@ -1295,7 +1324,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
@@ -1329,7 +1358,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 28,
 					"type": "text"
 				},
 				{
@@ -1363,7 +1392,7 @@
 						"translation.y": 270.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 29,
 					"type": "text"
 				},
 				{
@@ -1395,10 +1424,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 217.0,
+						"translation.y": 1.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
@@ -1429,7 +1458,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -1459,7 +1488,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 30,
 					"type": "text"
 				},
 				{
@@ -1492,7 +1521,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 31,
 					"type": "text"
 				},
 				{
@@ -1524,7 +1553,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 32,
 					"type": "text"
 				},
 				{
@@ -1556,7 +1585,7 @@
 						"translation.y": 428.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 33,
 					"type": "text"
 				},
 				{
@@ -1589,7 +1618,7 @@
 						"translation.y": 518.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 34,
 					"type": "text"
 				},
 				{
@@ -1622,7 +1651,7 @@
 						"translation.y": 678.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
+					"stack_index": 35,
 					"type": "text"
 				},
 				{
@@ -1654,7 +1683,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 36,
 					"type": "text"
 				},
 				{
@@ -1686,7 +1715,7 @@
 						"translation.y": 3722.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 37,
 					"type": "text"
 				},
 				{
@@ -1731,7 +1760,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 38,
 					"type": "text"
 				},
 				{
@@ -2505,7 +2534,7 @@
 						"translation.y": 319.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 30,
+					"stack_index": 39,
 					"type": "text"
 				},
 				{
@@ -2538,7 +2567,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 31,
+					"stack_index": 40,
 					"type": "text"
 				},
 				{
@@ -2572,7 +2601,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 32,
+					"stack_index": 41,
 					"type": "text"
 				},
 				{
@@ -2605,7 +2634,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 33,
+					"stack_index": 42,
 					"type": "text"
 				},
 				{
@@ -2638,7 +2667,7 @@
 						"translation.y": 2389.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 34,
+					"stack_index": 43,
 					"type": "text"
 				},
 				{
@@ -2683,7 +2712,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 35,
+					"stack_index": 44,
 					"type": "text"
 				},
 				{
@@ -3340,7 +3369,7 @@
 						"translation.y": 15333.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 36,
+					"stack_index": 45,
 					"type": "text"
 				},
 				{
@@ -3402,7 +3431,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 37,
+					"stack_index": 46,
 					"type": "text"
 				},
 				{
@@ -4343,7 +4372,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 38,
+					"stack_index": 47,
 					"type": "text"
 				},
 				{
@@ -4389,7 +4418,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 39,
+					"stack_index": 48,
 					"type": "text"
 				},
 				{
@@ -4437,7 +4466,7 @@
 						"translation.y": 737.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 40,
+					"stack_index": 49,
 					"type": "text"
 				},
 				{
@@ -4470,7 +4499,7 @@
 						"translation.y": 2976.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 41,
+					"stack_index": 50,
 					"type": "text"
 				},
 				{
@@ -4502,7 +4531,7 @@
 						"translation.y": 410.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 42,
+					"stack_index": 51,
 					"type": "text"
 				},
 				{
@@ -4534,7 +4563,7 @@
 						"translation.y": 483.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 43,
+					"stack_index": 52,
 					"type": "text"
 				},
 				{
@@ -4567,7 +4596,7 @@
 						"translation.y": 108.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 44,
+					"stack_index": 53,
 					"type": "text"
 				},
 				{
@@ -4600,7 +4629,7 @@
 						"translation.y": 2994.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 45,
+					"stack_index": 54,
 					"type": "text"
 				},
 				{
@@ -4649,7 +4678,7 @@
 						"translation.y": 5378.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 46,
+					"stack_index": 55,
 					"type": "text"
 				},
 				{
@@ -4682,7 +4711,7 @@
 						"translation.y": 231.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 47,
+					"stack_index": 56,
 					"type": "text"
 				},
 				{
@@ -4715,7 +4744,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 48,
+					"stack_index": 57,
 					"type": "text"
 				},
 				{
@@ -4749,7 +4778,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 49,
+					"stack_index": 58,
 					"type": "text"
 				},
 				{
@@ -4782,7 +4811,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 50,
+					"stack_index": 59,
 					"type": "text"
 				},
 				{
@@ -4828,7 +4857,7 @@
 						"translation.y": 500.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 51,
+					"stack_index": 60,
 					"type": "text"
 				},
 				{
@@ -4837,15 +4866,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2460,
+						"buffer_size": 3020,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1274,
-								1274
+								2902,
+								2902
 							]
 						],
 						"settings":
@@ -4853,6 +4882,7 @@
 							"history_list_is_closing": true,
 							"incomplete_sync": null,
 							"remote_loading": false,
+							"sftp_duplicate_views": 0,
 							"synced": false,
 							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
 							"tab_size": 2,
@@ -4885,14 +4915,79 @@
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 486.0,
+						"translation.y": 1345.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 46,
+					"file": "/C/Users/mcruz/Desktop/Dropbox/css/test.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1054,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								757,
+								757
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 473.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 47,
+					"file": "/C/Users/mcruz/Desktop/Dropbox/css/css/custom.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 62603,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1886,
+								1886
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1134.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 48,
 					"file": "promto_feed_json.json",
 					"semi_transient": false,
 					"settings":
@@ -4923,11 +5018,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 47,
+					"buffer": 49,
 					"file": "promto.sublime-project",
 					"semi_transient": false,
 					"settings":
@@ -4955,24 +5050,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 52,
+					"stack_index": 61,
 					"type": "text"
 				},
 				{
-					"buffer": 48,
+					"buffer": 50,
 					"file": "promto_JSON.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 378342,
+						"buffer_size": 278710,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								19,
-								19
+								9087,
+								9087
 							]
 						],
 						"settings":
@@ -4999,14 +5094,163 @@
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3271.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 49,
+					"buffer": 51,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 772,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										178,
+										194
+									],
+									[
+										595,
+										615
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								771,
+								771
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"incomplete_sync": null,
+							"line_numbers": false,
+							"output_tag": 3,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 288.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 52,
+					"file": "node/feed/public/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2227,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 53,
+					"file": "node/feed/public/js/feed.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2582,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								139,
+								142
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 54,
+					"file": "node/feed/public/js/reader.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 373,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								195,
+								195
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 55,
 					"file": "/C/Users/mcruz/Downloads/Jit-2.0.1/Jit/Examples/Spacetree/example1.html",
 					"semi_transient": false,
 					"settings":
@@ -5051,11 +5295,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 53,
+					"stack_index": 62,
 					"type": "text"
 				},
 				{
-					"buffer": 50,
+					"buffer": 56,
 					"semi_transient": false,
 					"settings":
 					{
@@ -5096,30 +5340,31 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 54,
+					"stack_index": 63,
 					"type": "text"
 				},
 				{
-					"buffer": 51,
+					"buffer": 57,
 					"file": "Lib/promto_json_helper.ahk",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1448,
+						"buffer_size": 1513,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								309,
-								309
+								354,
+								354
 							]
 						],
 						"settings":
 						{
 							"incomplete_sync": null,
 							"remote_loading": false,
+							"sftp_duplicate_views": 0,
 							"synced": false,
 							"syntax": "Packages/User/AutoHotKey/AutoHotKey.tmLanguage",
 							"tab_size": 2,
@@ -5151,11 +5396,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 55,
+					"stack_index": 64,
 					"type": "text"
 				},
 				{
-					"buffer": 52,
+					"buffer": 58,
 					"file": "Lib/general_funcs.ahk",
 					"semi_transient": false,
 					"settings":
@@ -5199,7 +5444,7 @@
 						"translation.y": 4027.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 56,
+					"stack_index": 65,
 					"type": "text"
 				},
 				{
@@ -6670,11 +6915,11 @@
 						"translation.y": 553.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 57,
+					"stack_index": 66,
 					"type": "text"
 				},
 				{
-					"buffer": 53,
+					"buffer": 59,
 					"file": "/C/Users/mcruz/Downloads/Jit-2.0.1/Jit/Examples/Spacetree/example1.js",
 					"semi_transient": false,
 					"settings":
@@ -6720,7 +6965,7 @@
 						"translation.y": 14582.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 58,
+					"stack_index": 67,
 					"type": "text"
 				},
 				{
@@ -7377,7 +7622,7 @@
 						"translation.y": 4896.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 59,
+					"stack_index": 68,
 					"type": "text"
 				},
 				{
@@ -7447,7 +7692,7 @@
 						"translation.y": 1350.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 60,
+					"stack_index": 69,
 					"type": "text"
 				},
 				{
@@ -7505,11 +7750,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 61,
+					"stack_index": 70,
 					"type": "text"
 				},
 				{
-					"buffer": 54,
+					"buffer": 60,
 					"file": "Lib/promto_search_lv.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7590,11 +7835,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 62,
+					"stack_index": 71,
 					"type": "text"
 				},
 				{
-					"buffer": 55,
+					"buffer": 61,
 					"file": "test1.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7623,11 +7868,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 63,
+					"stack_index": 72,
 					"type": "text"
 				},
 				{
-					"buffer": 56,
+					"buffer": 62,
 					"file": "java/ConvertImage.java",
 					"semi_transient": false,
 					"settings":
@@ -7656,24 +7901,24 @@
 						"translation.y": 445.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 64,
+					"stack_index": 73,
 					"type": "text"
 				},
 				{
-					"buffer": 51,
+					"buffer": 57,
 					"file": "Lib/promto_json_helper.ahk",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1448,
+						"buffer_size": 1513,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1249,
-								1249
+								1310,
+								1310
 							]
 						],
 						"settings":
@@ -7705,10 +7950,10 @@
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 775.0,
+						"translation.y": 811.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 65,
+					"stack_index": 74,
 					"type": "text"
 				},
 				{
@@ -7717,15 +7962,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2460,
+						"buffer_size": 3020,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1779,
-								1779
+								2088,
+								2088
 							]
 						],
 						"settings":
@@ -7762,10 +8007,10 @@
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 708.0,
+						"translation.y": 762.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 66,
+					"stack_index": 75,
 					"type": "text"
 				},
 				{
@@ -7810,7 +8055,7 @@
 						"translation.y": 5773.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 67,
+					"stack_index": 76,
 					"type": "text"
 				},
 				{
@@ -7842,11 +8087,11 @@
 						"translation.y": 324.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 68,
+					"stack_index": 77,
 					"type": "text"
 				},
 				{
-					"buffer": 57,
+					"buffer": 63,
 					"file": "Lib/promto_sql_mariaDB_usuario.ahk",
 					"semi_transient": false,
 					"settings":
@@ -7876,11 +8121,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 69,
+					"stack_index": 78,
 					"type": "text"
 				},
 				{
-					"buffer": 58,
+					"buffer": 64,
 					"file": "/C/Users/mcruz/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 					"semi_transient": false,
 					"settings":
@@ -7907,7 +8152,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 70,
+					"stack_index": 79,
 					"type": "text"
 				},
 				{
@@ -7939,7 +8184,7 @@
 						"translation.y": 756.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 71,
+					"stack_index": 80,
 					"type": "text"
 				},
 				{
@@ -7972,7 +8217,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 72,
+					"stack_index": 81,
 					"type": "text"
 				},
 				{
@@ -8018,11 +8263,11 @@
 						"translation.y": 14994.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 59,
+					"buffer": 65,
 					"semi_transient": false,
 					"settings":
 					{
@@ -8048,7 +8293,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 73,
+					"stack_index": 82,
 					"type": "text"
 				},
 				{
@@ -8705,7 +8950,7 @@
 						"translation.y": 2623.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 74,
+					"stack_index": 83,
 					"type": "text"
 				},
 				{
@@ -8738,7 +8983,7 @@
 						"translation.y": 3318.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 75,
+					"stack_index": 84,
 					"type": "text"
 				},
 				{
@@ -8772,7 +9017,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 76,
+					"stack_index": 85,
 					"type": "text"
 				},
 				{
@@ -8833,11 +9078,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 77,
+					"stack_index": 86,
 					"type": "text"
 				},
 				{
-					"buffer": 54,
+					"buffer": 60,
 					"file": "Lib/promto_search_lv.ahk",
 					"semi_transient": false,
 					"settings":
@@ -8918,11 +9163,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 78,
+					"stack_index": 87,
 					"type": "text"
 				},
 				{
-					"buffer": 60,
+					"buffer": 66,
 					"file": "debug.txt",
 					"semi_transient": false,
 					"settings":
@@ -8949,11 +9194,11 @@
 						"translation.y": 19.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 79,
+					"stack_index": 88,
 					"type": "text"
 				},
 				{
-					"buffer": 61,
+					"buffer": 67,
 					"file": "views/inserir_ETF_view.ahk",
 					"semi_transient": false,
 					"settings":
@@ -8982,16 +9227,16 @@
 						"translation.y": 1363.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 80,
+					"stack_index": 89,
 					"type": "text"
 				},
 				{
-					"buffer": 62,
+					"buffer": 68,
 					"file": "views/inserir_modelo_view.ahk",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8970,
+						"buffer_size": 8980,
 						"regions":
 						{
 							"bookmarks":
@@ -9011,8 +9256,8 @@
 						"selection":
 						[
 							[
-								1294,
-								1295
+								5150,
+								5150
 							]
 						],
 						"settings":
@@ -9024,19 +9269,19 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 121.0,
+						"translation.y": 2241.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 81,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 48,
+					"buffer": 50,
 					"file": "promto_JSON.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 378342,
+						"buffer_size": 278710,
 						"regions":
 						{
 						},
@@ -9073,7 +9318,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 82,
+					"stack_index": 90,
 					"type": "text"
 				},
 				{
@@ -9082,15 +9327,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2460,
+						"buffer_size": 3020,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								71,
-								71
+								33,
+								33
 							]
 						],
 						"settings":
@@ -9133,11 +9378,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 83,
+					"stack_index": 91,
 					"type": "text"
 				},
 				{
-					"buffer": 63,
+					"buffer": 69,
 					"file": "node-modules/feed/public/js/printer.js",
 					"semi_transient": false,
 					"settings":
@@ -9164,7 +9409,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 84,
+					"stack_index": 92,
 					"type": "text"
 				},
 				{
@@ -9196,11 +9441,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 85,
+					"stack_index": 93,
 					"type": "text"
 				},
 				{
-					"buffer": 64,
+					"buffer": 70,
 					"file": "Lib/print_funcs.ahk",
 					"semi_transient": false,
 					"settings":
@@ -9229,7 +9474,7 @@
 						"translation.y": 337.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 86,
+					"stack_index": 94,
 					"type": "text"
 				},
 				{
@@ -9886,7 +10131,7 @@
 						"translation.y": 48325.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 87,
+					"stack_index": 95,
 					"type": "text"
 				},
 				{
@@ -9919,13 +10164,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 88,
+					"stack_index": 96,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 11,
+			"selected": 15,
 			"sheets":
 			[
 				{
@@ -10595,7 +10840,7 @@
 						"translation.y": 23958.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 89,
+					"stack_index": 97,
 					"type": "text"
 				},
 				{
@@ -11369,7 +11614,7 @@
 						"translation.y": 715.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 90,
+					"stack_index": 98,
 					"type": "text"
 				},
 				{
@@ -11402,7 +11647,7 @@
 						"translation.y": 594.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 91,
+					"stack_index": 99,
 					"type": "text"
 				},
 				{
@@ -11436,11 +11681,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 92,
+					"stack_index": 100,
 					"type": "text"
 				},
 				{
-					"buffer": 54,
+					"buffer": 60,
 					"file": "Lib/promto_search_lv.ahk",
 					"semi_transient": false,
 					"settings":
@@ -11521,11 +11766,11 @@
 						"translation.y": 931.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 93,
+					"stack_index": 101,
 					"type": "text"
 				},
 				{
-					"buffer": 57,
+					"buffer": 63,
 					"file": "Lib/promto_sql_mariaDB_usuario.ahk",
 					"semi_transient": false,
 					"settings":
@@ -11555,7 +11800,7 @@
 						"translation.y": 738.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 94,
+					"stack_index": 102,
 					"type": "text"
 				},
 				{
@@ -11588,7 +11833,7 @@
 						"translation.y": 14898.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 95,
+					"stack_index": 103,
 					"type": "text"
 				},
 				{
@@ -11650,7 +11895,7 @@
 						"translation.y": 25105.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 96,
+					"stack_index": 104,
 					"type": "text"
 				},
 				{
@@ -11682,7 +11927,7 @@
 						"translation.y": 162.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 97,
+					"stack_index": 105,
 					"type": "text"
 				},
 				{
@@ -11698,8 +11943,8 @@
 						"selection":
 						[
 							[
-								438,
-								438
+								81,
+								81
 							]
 						],
 						"settings":
@@ -11728,14 +11973,14 @@
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 270.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 65,
+					"buffer": 53,
 					"file": "node/feed/public/js/feed.js",
 					"semi_transient": false,
 					"settings":
@@ -11764,11 +12009,11 @@
 						"translation.y": 13.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 66,
+					"buffer": 54,
 					"file": "node/feed/public/js/reader.js",
 					"semi_transient": false,
 					"settings":
@@ -11780,8 +12025,8 @@
 						"selection":
 						[
 							[
-								373,
-								373
+								237,
+								237
 							]
 						],
 						"settings":
@@ -11795,11 +12040,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 67,
+					"buffer": 52,
 					"file": "node/feed/public/index.html",
 					"semi_transient": false,
 					"settings":
@@ -11829,11 +12074,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 98,
+					"stack_index": 106,
 					"type": "text"
 				},
 				{
-					"buffer": 46,
+					"buffer": 48,
 					"file": "promto_feed_json.json",
 					"semi_transient": false,
 					"settings":
@@ -11864,24 +12109,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 99,
+					"stack_index": 107,
 					"type": "text"
 				},
 				{
-					"buffer": 51,
+					"buffer": 57,
 					"file": "Lib/promto_json_helper.ahk",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1448,
+						"buffer_size": 1513,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								312,
-								312
+								229,
+								229
 							]
 						],
 						"settings":
@@ -11919,11 +12164,58 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 100,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 60,
+					"buffer": 50,
+					"file": "promto_JSON.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 278710,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								44242,
+								44250
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"action": null,
+								"action_count": "",
+								"capture_register": false,
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 0
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 16645.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 66,
 					"file": "debug.txt",
 					"semi_transient": false,
 					"settings":
@@ -11950,7 +12242,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 101,
+					"stack_index": 108,
 					"type": "text"
 				},
 				{
@@ -11982,7 +12274,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 102,
+					"stack_index": 109,
 					"type": "text"
 				},
 				{
@@ -12016,7 +12308,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 103,
+					"stack_index": 110,
 					"type": "text"
 				},
 				{
@@ -12051,7 +12343,7 @@
 						"translation.y": 1.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 104,
+					"stack_index": 111,
 					"type": "text"
 				}
 			]
@@ -12085,7 +12377,7 @@
 		"cols":
 		[
 			0.0,
-			0.486090775988,
+			0.484626647144,
 			1.0
 		],
 		"rows":
@@ -12119,20 +12411,56 @@
 		"selected_items":
 		[
 			[
+				"",
+				"C:\\Users\\mcruz\\Desktop\\Dropbox\\css\\test.html"
+			],
+			[
 				"promtojson",
 				"promto_JSON.json"
+			],
+			[
+				"promtohelper",
+				"Lib\\promto_json_helper.ahk"
+			],
+			[
+				"mariadb",
+				"Lib\\promto_sql_mariaDB.ahk"
+			],
+			[
+				"promtojon.ahk",
+				"Lib\\promto_json.ahk"
+			],
+			[
+				"helper",
+				"Lib\\promto_json_helper.ahk"
+			],
+			[
+				"promto_json.ahk",
+				"Lib\\promto_json.ahk"
 			],
 			[
 				"reader.js",
 				"node\\feed\\public\\js\\reader.js"
 			],
 			[
-				"",
-				"node\\feed\\public\\js\\feed.js"
+				"printer",
+				"node\\feed\\public\\js\\printer.js"
 			],
 			[
 				"feed.js",
 				"node\\feed\\public\\js\\feed.js"
+			],
+			[
+				"index",
+				"node\\feed\\public\\index.html"
+			],
+			[
+				"inserirmodelo",
+				"views\\inserir_modelo_view.ahk"
+			],
+			[
+				"native",
+				"Promto(Front-End)(Native).ahk"
 			],
 			[
 				"promtojsonah",
@@ -12155,16 +12483,8 @@
 				"debug.txt"
 			],
 			[
-				"mariadb",
-				"Lib\\promto_sql_mariaDB.ahk"
-			],
-			[
 				"dbex",
 				"views\\db_ex_view.ahk"
-			],
-			[
-				"native",
-				"Promto(Front-End)(Native).ahk"
 			],
 			[
 				"mariadbmodelo",
@@ -12231,10 +12551,6 @@
 				"Lib\\promto_sql_mariaDB_familia.ahk"
 			],
 			[
-				"inserirmodelo",
-				"views\\inserir_modelo_view.ahk"
-			],
-			[
 				"matiadb",
 				"Lib\\promto_sql_mariaDB.ahk"
 			],
@@ -12271,10 +12587,6 @@
 				"controllers\\back_up_controller.ahk"
 			],
 			[
-				"printer",
-				"models\\promto_printer_model.ahk"
-			],
-			[
 				"promtoprin",
 				"models\\promto_printer_model.ahk"
 			],
@@ -12305,10 +12617,6 @@
 			[
 				"promtoprintermodel",
 				"models\\promto_printer_model.ahk"
-			],
-			[
-				"index",
-				"node-modules\\feed\\public\\index.html"
 			],
 			[
 				"mariadbempresa",
@@ -12566,6 +12874,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"promtoweb",
+				"C:\\Users\\mcruz\\Documents\\GitHub\\promtoWeb2.0\\promtoweb2.sublime-project"
+			],
 			[
 				"",
 				"C:\\Users\\mcruz\\Documents\\GitHub\\Sublime-Projects\\Data-Visualizer.sublime-project"

@@ -149,12 +149,10 @@ for,each,value in ["Gerar Estruturas", "Linkar", "Add db Externo", "Estrutura", 
 	glabel := glabels[A_Index]
 	Gui, Add, Button, wp hp g%glabel%,% "&" value
 }
-
 Gui, Add, Groupbox, x590 ym w700 h55, Caminho
 Gui, Font, cgreen s15
 Gui, Add, Text, xp+5 yp+15 vproduct_path w680,  
 Gui, Font, cblack s8
-
 Gui, Add, Groupbox, x590 y+15 w215 h90, Status
 Gui, Add, Picture, xp+5 yp+15 vstatus_picture, % "img\gray_glossy_ball.png"
 Gui, Add, Text, x+5 w120 h60 vstatus_info,
@@ -162,12 +160,10 @@ Gui, Add, Button, x590 y+15 w80 h20 gchange_status , Alterar status
 Gui, Add, Picture, xp y+15 w168 h156 vptcode gfotoindividual, % "img\promtologo.png"
 Gui, Add, Listview, x+5 yp w530 h300 vall_mod_lv gall_mod_lv altsubmit %lv_grid%,
 _loading := 1
-
 Gui, Add, Groupbox, x550 y+5 w740 h60, Certificacao:
 Gui, Font, cgreen s20
 Gui, Add, Text, xp+5 yp+15 w530 h30 vcert_status, 
 Gui, Font, cblack s8
-
 Gui, Add, Groupbox, x550 y+15 w740 h120, Ultimas atualizacoes:
 Gui, Font, cgreen
 Gui, Add, Text, xp+5 yp+15 w265 h80 vmod_info,
@@ -298,8 +294,7 @@ generate_xml_view()
 return
 
 json:
-json := new PromtoJSON()
-json.get_companies()
+generate_JSON_view()
 return  
 
 HTML:
@@ -2850,6 +2845,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 	Views
 */
 #Include, views/reload_hashmask_view.ahk
+#Include, views/generate_JSON_view.ahk
 #Include, views/insert_cert_from_file_view.ahk
 #Include, views/cert_view.ahk
 #Include, views/rem_massa_view.ahk

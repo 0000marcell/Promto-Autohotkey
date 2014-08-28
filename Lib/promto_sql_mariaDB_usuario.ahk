@@ -1,8 +1,5 @@
 class Usuario{
-  /*
-    Cria um novo usuario verificando se ele existe
-  */
-
+  
   new_user(user_name, user_password, priv_combo){
     Global mariaDB
 
@@ -21,9 +18,23 @@ class Usuario{
     return 1
   }
 
-  /*
-    Deleta determinado usuario
-  */
+  edit_user(new_user_name, new_user_password){
+    Global db, USER_NAME
+    if(new_user_name = "" || new_user_password = "")
+      throw { what: "o nome do usuario ou a senha nao podem estar em branco ", file: A_LineFile, line: A_LineNumber }    
+    crypt_value := Crypt.Encrypt.StrEncrypt(new_user_password, "007", 5, 1)    
+    try{
+      db.update_items_set_where(
+      (JOIN 
+        " Nome = '" new_user_name "', Senha = '"  crypt_value "'",
+        " Nome = '" USER_NAME "'", "usuarios"
+      ))
+      MsgBox, 64, Sucesso, % " O usuario foi alterado!"
+    }catch e {
+      throw { what: "Houve um erro ao atualizar as informacoes do usuario!", file: A_LineFile, line: A_LineNumber }    
+    } 
+  }
+
   delete(nome){
     Global db
 
@@ -38,9 +49,6 @@ class Usuario{
     }
   }
 
-  /*
-    Loga o determinado usuario
-  */
   log_in_user(user_name, user_password){
     Global db, USER_PRIV
 
@@ -65,9 +73,6 @@ class Usuario{
     }
   }
 
-  /*
-    Verifica se determinado usuario ja existe
-  */
   user_exists(user_name){
     Global db
     user := db.find_items_where("nome like '" user_name "'", "usuarios")
@@ -82,5 +87,27 @@ class Usuario{
     crypt_value := Crypt.Encrypt.StrEncrypt(user_password, "007", 5, 1)    
     obj := {name: user_name, password: crypt_value}
     JSON_save(obj, "temp\user_info.json")
+  }
+
+  check_user_permision(user_name) {
+    if(user_name = "Marcell Monteiro") {
+      return true 
+    }else if(user_name = "Monique Soares") {
+      return true
+    }else if(user_name = "Luciano Claussen") {
+      return true
+    }else {
+      return false
+    }
+  }
+
+  get_user_password(user_name) {
+    Global db 
+    user := db.find_items_where("nome like '" user_name "'", "usuarios")
+    if(user[1, 2] = "") {
+      MsgBox, 16, Erro, % "O usuario inserido nao existia no banco!"
+    } 
+    stored_password := Crypt.Encrypt.StrDecrypt(user[1, 2], "007", 5, 1)
+    return stored_password  
   }
 }

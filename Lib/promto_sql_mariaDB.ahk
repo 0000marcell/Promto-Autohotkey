@@ -81,6 +81,16 @@ class PromtoSQL{
 		return return_value
 	}
 
+	update_items_set_where(set, where, table) {
+		Global mariaDB
+		try{
+			sql := "UPDATE " table " SET " set " WHERE " where
+			mariaDB.Query(sql)
+		}catch e {
+			throw { what: "Erro ao tentar alterar os valores da tabela: " table "`n " set " `n" where "`n " ExceptionDetail(e), file: A_LineFile, line: A_LineNumber }		
+		}
+	}
+
 	delete_items_where(where_statement, table){
 		Global mariaDB
 		try{

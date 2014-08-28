@@ -688,7 +688,6 @@ class Modelo{
 	*/
 	link_specific_field(values, tabela1, info = ""){
 		Global mariaDB, db
-   
 		if(this.exist_relation(values.tipo, tabela1)){
 			this.delete_relation(values.tipo, tabela1)
 		}
@@ -702,7 +701,6 @@ class Modelo{
 
 	link_models_table(values, tabela1, info){
 		Global mariaDB, db
-   
 		if(this.exist_relation(values.tipo, tabela1)){
 			this.delete_relation(values.tipo, tabela1)
 		}
@@ -711,21 +709,13 @@ class Modelo{
 		record.tabela1 := tabela1
 		record.tabela2 := values.tabela2
 		models_array := db.load_table_in_array(values.tabela2)
-		/*
-			Cria os modelos na familia
-			correspondente
-		*/
 		this.create_models(models_array, info) 
 		mariaDB.Insert(record, "reltable")	
 		db.Log.insert_CRUD(info, "Linkagem", "A tabela de modelos " tabela1 " foi linkada a tabela " values.tabela2)
 	}
 
-	/*
-		Verifica se existe alguma tabela linkada
-	*/
 	exist_relation(tipo, tabela1){
 		Global mariaDB
-
 		table := mariaDB.Query(
 			(JOIN 
 				" SELECT tipo,tabela1,tabela2 FROM reltable "
@@ -746,9 +736,6 @@ class Modelo{
 		}
 	}
 
-	/*
-		Deleta uma relacao de tabelas existente
-	*/
 	delete_relation(tipo, tabela1){
 		Global mariaDB
 		try{
@@ -760,13 +747,8 @@ class Modelo{
 			))	
 		}catch e 
 			MsgBox,16,Erro,% " Erro ao tentar deletar o valor da tabela de referencia " ExceptionDetail(e)
-			
 	}
 
-	/*
-		Insere todos os modelos de 
-		um determinado array de valores
-	*/
 	create_models(models, info){
 		Global mariaDB, db
 
@@ -780,12 +762,6 @@ class Modelo{
 		} 
 	}
 
-	/*
-		Verifica se a tabela de 
-		descricao do modelo existe 
-		caso nao exista cria todas as tabelas
-		necessarias pra o modelo
-	*/
 	model_exists(table_desc){
 		Global mariaDB
 		MsgBox, % "a tabela de descricao existe ? " table_desc 
@@ -805,9 +781,6 @@ class Modelo{
 		}
 	}
 
-	/*
-		Redefine de uma tabela para o seu valor padrao
-	*/
 	reset_table_relation(info, native_table, field_name){
 		Global mariaDB, db
 
@@ -889,17 +862,13 @@ class Modelo{
 
 	insert_fiscal_value(code, number, value, table){
 		Global db
-		AHK.reset_debug()
-		AHK.append_debug("gonna insert fiscal value code " code " number" number " value " value " table " table)
 		column_name := this.add_fiscal_column(number, table)
-		AHK.append_debug("column name " column_name)
 		this.update_fiscal_info(code, column_name, value, table)	
 	}
 
 	add_fiscal_column(number, table) {
 		Global mariaDB
 		column_name := this.get_column_name(number)
-		AHK.append_debug(" gonna alter the table " table " column name " column_name)
 		try{
 			mariaDB.Query(" ALTER TABLE " table " ADD COLUMN " column_name " TEXT;")
 		}catch e{
@@ -936,12 +905,9 @@ class Modelo{
 			" SET " column "='" value "' "
 			" WHERE Codigos='" code "'"
 		)	
-		AHK.append_debug("update column value sql " sql) 
 		try{
 			mariaDB.Query(sql)
 		}catch e 
 			MsgBox, 16, Erro, % " Erro ao tentar atualizar os valores fiscais " ExceptionDetail(e)
-
 	}
-	
 }

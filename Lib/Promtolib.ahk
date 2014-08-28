@@ -622,7 +622,6 @@ inserirdbexterno(values){
 	*/
 	prefixbloq := ""
 	prefixbloq := get_prefixbloq(info) 
-
 	/*
 		testa a conecao
 	*/
@@ -697,11 +696,9 @@ inserirdbexterno(values){
 				Faz a relacao entre o campo e o valor do campo 
 				em um hash. 
 			*/
-
 			/*
 				B1_USERLGI
 			*/
-
 			field_values := {
 			(JOIN
 				B1_XDESC: values[A_Index,2], B1_DESC: values[A_Index,3], B1_XDESCIN: values[A_Index,4],
@@ -710,7 +707,7 @@ inserirdbexterno(values){
 				B1_TIPO: values[A_Index,9], B1_GRUPO: values[A_Index,10], 
 				B1_IPI: values[A_Index,11], B1_LOCPAD: values[A_Index,12], B1_XGRUPO: values[A_Index, 10], 
 				B1_GARANT: GARANT, B1_XCALCPR: XCALCPR, B1_MSBLQL: "2", B1_USERLGI: A_UserName,
-				B1_LOCALIZ: "N", B1_CODBAR: itemvalue
+				B1_LOCALIZ: "N", B1_CODBAR: itemvalue, B1_BITMAP: db.Imagem.get_image_path(itemvalue)
 			)}
 		
 			/*
@@ -736,9 +733,7 @@ inserirdbexterno(values){
 			/*
 				Caso nao exista cria um insert
 			*/
-			
 			R_E_C_N_O_TBI++
-
 			sql:=
 			(JOIN
 				"INSERT INTO " base_value " ("
@@ -760,6 +755,7 @@ inserirdbexterno(values){
 					"B1_LOCALIZ,"
 					"B1_USERLGI,"
 					"B1_CODBAR,"
+					"B1_BITMAP,"
 					"R_E_C_N_O_) VALUES ('"
 					itemvalue "','"
 					values[A_Index,2] "','"
@@ -779,6 +775,7 @@ inserirdbexterno(values){
 					"N','" 
 					A_UserName "','"
 					itemvalue "','"
+					db.Imagem.get_image_path(itemvalue) "','"
 					R_E_C_N_O_TBI "')"
 			)
 		}

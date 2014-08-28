@@ -1,13 +1,18 @@
 class PromtoJSON{
+
 	__New(){
-		this.file_path := "promto_data.json"
     this.obj := {}
     this.obj.companies := []
 	}
 
   get_companies(){
     Global db
+    AHK.reset_debug()
+
     For each, value in list := db.get_values("*", "empresas"){
+      if(list.maxindex() = A_Index){
+        this.obj.companies.max_index := A_Index  
+      }
       this.obj.companies.insert(this.Helper.companies_values(list))
       this.get_types(
         (JOIN 
@@ -23,7 +28,12 @@ class PromtoJSON{
 
   get_types(types, table, prev_mask){
     Global db
+    if(table = "")
+      return  
     For each, value in list := db.get_values("*", table){
+      if(list.maxindex() = A_Index){
+        types.max_index := A_Index  
+      }
       types.insert(this.Helper.types_values(list, prev_mask))
       this.get_families(
         (JOIN 
@@ -36,9 +46,14 @@ class PromtoJSON{
 
   get_families(families, table, prev_mask){
     Global db
+    if(table = "")
+      return 
     For each, value in list := db.get_values("*", table){
-      if(values[A_Index, 3] = 1){
-        families.insert(this.Helper.families_values(list, prev_mask, values[A_Index, 3]))
+      if(list.maxindex() = A_Index){
+        families.max_index := A_Index  
+      }
+      if(list[A_Index, 3] = 1){
+        families.insert(this.Helper.families_values(list, prev_mask, list[A_Index, 3]))
         this.get_subfamilies(
         (JOIN 
           families[families.maxindex()].subfamilies,
@@ -46,7 +61,7 @@ class PromtoJSON{
           prev_mask list[A_Index, 2]
         )) 
       }else{
-        families.insert(this.Helper.families_values(list, prev_mask, values[A_Index, 3]))
+        families.insert(this.Helper.families_values(list, prev_mask, list[A_Index, 3]))
         this.get_models(
         (JOIN 
           families[families.maxindex()].models,
@@ -59,8 +74,12 @@ class PromtoJSON{
 
   get_subfamilies(subfamilies, table, prev_mask){
     Global db
-
+    if(table = "")
+      return
     For each, value in list := db.get_values("*", table){
+      if(list.maxindex() = A_Index){
+        subfamilies.max_index := A_Index  
+      }
      subfamilies.insert(this.Helper.subfamilies_values(list, prev_mask))   
      this.get_models(
         (JOIN 
@@ -73,9 +92,15 @@ class PromtoJSON{
 
   get_models(models, table, prev_mask){
     Global db
-
+    if(table = "")
+      return
     For each, value in list := db.get_values("*", table){
-     models.insert(this.Helper.models_values(list, prev_mask))   
+      if(list.maxindex() = A_Index){
+        models.max_index := A_Index  
+      }
+     models.insert(this.Helper.models_values(list, prev_mask))
+     AHK.append_debug("model max index passes " models.maxindex())
+     this.Helper.insert_model_fields(list, prev_mask, models[models.maxindex()])  
     }
   }
   #include lib\promto_json_helper.ahk

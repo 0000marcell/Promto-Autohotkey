@@ -1,6 +1,7 @@
 class LV{
 	set_searcheable_list(list, db_table = ""){
 		this.list := list, this.db_table := db_table
+		this.result := ""
 	}
 
 	set_window_handler(window, lv) {

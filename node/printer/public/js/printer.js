@@ -6,7 +6,6 @@ PromtoPrinter.prototype.start = function(){
 	this.printTag();
 };
 
-
 PromtoPrinter.prototype.printTag = function() {
 	for(var i = 1; i <= obj.max_index; i++) {
 		this.itemNumber = i;
@@ -75,22 +74,29 @@ PromtoPrinter.prototype.insertTagCodePiece = function(item) {
 PromtoPrinter.prototype.get_HTML_panel = function(title, item) {
 	var fontSize = this.getTitleFontSize(title.length); 
 	var fontSizeItem = this.getItemFontSize(item.length);
+	var title = this.removeSpace(title);
+	var item = this.removeSpace(item);
 	var html = "<div class='panel panel-primary code-panel'>"+
 									"<div class='panel-heading pt-heading'>"+
-			              "<h3 style='font-size: "+fontSize+"px;' class='panel-title'>"+title+"</h3>"+
+			              "<h3 style='font-size: "+fontSize+"px;' class='panel-title'>"+title.toUpperCase()+"</h3>"+
 			            "</div>"+
 			            "<div class='panel-body panel-text-pos'>"+
-			              "<h3 style='font-size: "+fontSizeItem+"px;'>"+item+"</h3>"+
+			              "<h3 style='font-size: "+fontSizeItem+"px;'>"+item.toUpperCase()+"</h3>"+
 			            "</div>"+
 		            "</div>";
 	return html;
 };
 
+PromtoPrinter.prototype.removeSpace = function(string) {
+	var string = string.replace(/\s/g, '');
+  return string;
+}
+
 PromtoPrinter.prototype.getTitleFontSize = function(size) {	
-	if(size > 13){
-		var fontSize = 6;
+	if(size >= 10){
+		var fontSize = 10;
 	}else{
-		var fontSize = 9;
+		var fontSize = 10;
 	}
 	return fontSize;	
 };

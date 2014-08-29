@@ -81,7 +81,6 @@ lista_de_codigos(info){
 	model_name := s_info.modelo[1]
 	printer := new PromtoPrinter()
 	printer.create_tag(s_info)	
-	;createtag(prefix, ordened_prefix, model_mask, model_name, prefix model_mask "Codigo", codigos_selecionados)
 	return 
 
 	lista_de_codigos_viewContextMenu:

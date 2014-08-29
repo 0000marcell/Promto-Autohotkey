@@ -67,7 +67,6 @@ PromtoPrinter.prototype.insertTagCodePiece = function(item) {
 	for (var i = 1; i <= item.fields_max_index; i++) {
 		var field = item.fields[i];
 		var res = field.split("|");
-
 		var html = this.get_HTML_panel(res[0], res[1]);	
     $(html).appendTo(this.codeContainer);
 	}

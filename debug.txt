@@ -1,19 +1,54 @@
-gonna insert by result
-checked list 3
-gonna check if mat has value item 1
-mat dont have value gonna continue!
-checked list 3
-gonna check if mat has value item 2
-mat dont have value gonna continue!
-checked list 3
-gonna check if mat has value item 3
- gonna insert value code TLAMHA3001G number 9 value PA
-checked list 3
-gonna check if mat has value item 4
- gonna insert value code TLAMHA3002B number 9 value PA
-checked list 3
-gonna check if mat has value item 5
-mat dont have value gonna continue!
-checked list 3
-gonna check if mat has value item 6
-mat dont have value gonna continue!
+gonna query TL010122956ACS
+returned value 3 STL010122956ACS 4     5 1.000000
+
+ 
+ 
+ code STL010122956ACS
+gonna try to save the obj 
+ 
+ {
+    "children": {},
+    "id":                                           "STL010122956ACS",
+    "name":                                         ""
+}
+the father was STL010122956ACS
+
+ 
+ 
+ code ITL010CJC2AC   
+gonna try to save the obj 
+ 
+ {
+    "children": {},
+    "id":                                           "ITL010CJC2AC   ",
+    "name":                                         ""
+}
+the father was ITL010CJC2AC   
+
+ 
+ 
+ code ITL010CJFHAI   
+gonna try to save the obj 
+ 
+ {
+    "children": {},
+    "id":                                           "ITL010CJFHAI   ",
+    "name":                                         ""
+}
+the father was ITL010CJFHAI   
+
+ 
+ 
+ code ITL010FHSP     
+gonna try to save the obj 
+ 
+ {
+    "children": {},
+    "id":                                           "ITL010FHSP     ",
+    "name":                                         ""
+}
+the father was ITL010CJFHAI   
+
+ 
+ 
+ code ITL010FHAR     

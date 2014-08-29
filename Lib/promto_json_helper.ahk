@@ -1,4 +1,5 @@
 class Helper{
+  
 	companies_values(value){
     MsgBox, % "company A_Index " A_Index
     values := {

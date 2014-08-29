@@ -1,0 +1,13 @@
+{
+  "name": "Promto-Web",
+  "version": "1",
+  "main": "index.html",
+  "window": {
+    "toolbar": false,
+    "position": "center",
+    "resizable": false,
+    "show": true,
+    "height": 800,
+    "width": 850
+  }
+}

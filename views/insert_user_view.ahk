@@ -1,4 +1,4 @@
-﻿insert_user_view(){
+insert_user_view(){
   Global db, GLOBAL_COLOR, SMALL_FONT
   Static user_name, user_password, priv_combo
 
@@ -26,8 +26,10 @@
 
   save_new_user:
   Gui, Submit, Nohide
-  if(user_name = "" || user_password = "" || priv_combo = "")
+  if(user_name = "" || user_password = "" || priv_combo = ""){
     MsgBox, 64, Sucesso, % "Nenhum dos valores do formulario podem estar em branco! " 
+    return 
+  }
   
   if(db.Usuario.new_user(user_name, user_password, priv_combo)){
     Gui, manager_users_view:default

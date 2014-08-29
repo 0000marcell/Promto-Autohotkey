@@ -1,4 +1,5 @@
 class GenerateJSONFeed{
+	
 	generate_feed(){
 		Global db
 		this.file := A_WorkingDir "\node\feed\public\promto_feed_JSON.json"

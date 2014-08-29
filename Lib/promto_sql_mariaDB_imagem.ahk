@@ -235,7 +235,6 @@ class Imagem{
 		image_id := this.get_image_id(reference_table)
 		if(image_id = "")
 			image_id := 0
-
 		image_path := "promto_" image_id
 		return image_path
 	}

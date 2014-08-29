@@ -41,7 +41,7 @@ estruturas_view(){
 
 	pesquisarlv:
 	Gui, Submit, Nohide
-	any_word_search("massaestrut", "lv1", pesquisarlv, Listestrut)
+	search.LV.any_word_search("massaestrut", "lv1", pesquisarlv)
 	return
 
 	tvstrut:

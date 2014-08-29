@@ -15,11 +15,11 @@ inserir_valores_view(){
 	Gui, Add, button, w100 h30 x+5 ginserirval,Inserir Valor
 	Gui, Add, button, w100 h30 x+5 gimportarval,Importar Valor
 	Gui, Add, button, w100 h30 x+5 gexcluirval,Excluir
-	Gui,Show,,
+	Gui,Show, ,
 	Gui, listview, lviv
-	for,each,value in COLUNAS
+	for, each, value in COLUNAS
 		LV_Add("",value)
-	Gui,listview,lviv2
+	Gui, listview, lviv2
 	Listiv := []
 	for,each,value in NCM{
 		Listiv[A_Index,1] := each

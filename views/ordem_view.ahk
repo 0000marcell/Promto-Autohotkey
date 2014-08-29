@@ -37,7 +37,7 @@ ordem_view(tipo, info){
   	nova_ordem.insert(RetrievedText)
 	 }
 	 if(s_tipo = "prefixo"){
-	 	codigos_omitidos := GetCheckedRows("ordem_view", "ordem_lv")	
+	 	codigos_omitidos := GetCheckedRows("ordem_view", "ordem_lv", "number")	
 	 }else{
 	 	codigos_omitidos := ""
 	 }

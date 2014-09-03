@@ -2790,14 +2790,11 @@ compararcamp(camptable,otable)
 	rs.Close()
 }
 
-inserir4(table,field,primaryk,tipo,mascaraant="")
-{
+inserir4(table,field,primaryk,tipo,mascaraant=""){
 	Global db,selectmodel
-	
-	;MsgBox, % "table " . table . "`nfield " . field . "`nprimaryk " . primaryk . "`ntipo " . tipo
 	Static edit1
 	Global table1,field1,primaryk1,tipo1,mascaraant1
-	table1:=table,field1:=field,primaryk1:=primaryk,tipo1:=tipo,mascaraant1:=mascaraant
+	table1 := table,field1:=field,primaryk1:=primaryk,tipo1:=tipo,mascaraant1:=mascaraant
 	Gui, inserir4:New
 	Gui,color,%GLOBAL_COLOR%
 	Gui, Add, Text, x7 y55 w70 h20 , Nome:
@@ -2831,6 +2828,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 		return 
 }
 
+#include, lib\promto_ftp.ahk
 #include, lib\promto_sqlserver.ahk
 #include, lib\promto_JSON_structure.ahk
 #include, lib\promto_search.ahk
@@ -2840,14 +2838,15 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 #include, lib\gdip_all.ahk
 #include, lib\promto_sql_mariaDB.ahk
 #include, models\remover_item_ETF.ahk
-#include <promtolib>
-#include,lib\json_parser.ahk
-#include,<SQL_new>
+#include, <promtolib>
+#include, lib\json_parser.ahk
+#include, <SQL_new>
 #include, lib\gerar_codigos.ahk
-#Include lib\Crypt.ahk
-#Include lib\CryptConst.ahk
-#Include lib\CryptFoos.ahk
+#Include, lib\Crypt.ahk
+#Include, lib\CryptConst.ahk
+#Include, lib\CryptFoos.ahk
 #include, lib\html-parser.ahk
+#include, FTP\FTP.ahk
 
 /*
 	Views

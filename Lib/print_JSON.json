@@ -1,0 +1,384 @@
+{
+    "items": {
+        "1": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  127V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|1",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|2",
+                "4":                 "TENSAO|1",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AC",
+                "7":                 "AUTONOMIA|E"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "2": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  127V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|1",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|2",
+                "4":                 "TENSAO|1",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AI",
+                "7":                 "AUTONOMIA|E"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "3": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  220V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|1",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|2",
+                "4":                 "TENSAO|2",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AC",
+                "7":                 "AUTONOMIA|E"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "4": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  220V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|1",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|2",
+                "4":                 "TENSAO|2",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AI",
+                "7":                 "AUTONOMIA|E"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "5": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|1",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|2",
+                "4":                 "TENSAO|9",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AC",
+                "7":                 "AUTONOMIA|E"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "6": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  SEM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|1",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|2",
+                "4":                 "TENSAO|9",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AC",
+                "7":                 "AUTONOMIA|S"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "7": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|1",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|2",
+                "4":                 "TENSAO|9",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AI",
+                "7":                 "AUTONOMIA|E"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "8": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  SEM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|1",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|2",
+                "4":                 "TENSAO|9",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AI",
+                "7":                 "AUTONOMIA|S"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "9": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  127V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|1",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|4",
+                "4":                 "TENSAO|1",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AC",
+                "7":                 "AUTONOMIA|E"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "10": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  127V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|1",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|4",
+                "4":                 "TENSAO|1",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AI",
+                "7":                 "AUTONOMIA|E"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "11": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  220V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|1",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|4",
+                "4":                 "TENSAO|2",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AC",
+                "7":                 "AUTONOMIA|E"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "12": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  220V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|1",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|4",
+                "4":                 "TENSAO|2",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AI",
+                "7":                 "AUTONOMIA|E"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "13": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  COM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|1",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|4",
+                "4":                 "TENSAO|9",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AC",
+                "7":                 "AUTONOMIA|E"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "14": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  SEM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|1",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|4",
+                "4":                 "TENSAO|9",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AC",
+                "7":                 "AUTONOMIA|S"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "15": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  COM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|1",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|4",
+                "4":                 "TENSAO|9",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AI",
+                "7":                 "AUTONOMIA|E"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "16": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 1 REATOR  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  SEM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|1",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|4",
+                "4":                 "TENSAO|9",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AI",
+                "7":                 "AUTONOMIA|S"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "17": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 2 REATORES  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  SEM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|2",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|2",
+                "4":                 "TENSAO|9",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AC",
+                "7":                 "AUTONOMIA|S"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "18": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 2 REATORES  PARA 2 LAMPADAS  20W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  SEM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|2",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|2",
+                "4":                 "TENSAO|9",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AI",
+                "7":                 "AUTONOMIA|S"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "19": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 2 REATORES  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO CARBONO  SEM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|2",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|4",
+                "4":                 "TENSAO|9",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AC",
+                "7":                 "AUTONOMIA|S"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        },
+        "20": {
+            "code":                  "",
+            "desc":                  "LUMINARIA TL.L.EXE.010 COM 2 REATORES  PARA 2 LAMPADAS  40W  90 A 240V  50HZ A 60HZ  FABRICACAO EM ACO INOX  SEM EMERGENCIA",
+            "fields": {
+                "1":                 "QUANTIDADE DE REATORES|2",
+                "2":                 "QUANTIDADE DE LAMPADAS|2",
+                "3":                 "POTENCIA|4",
+                "4":                 "TENSAO|9",
+                "5":                 "FREQUENCIA|56",
+                "6":                 "MATERIA PRIMA|AI",
+                "7":                 "AUTONOMIA|S"
+            },
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_12.jpg",
+            "prefix": {
+                "1":                 "prefixo|T",
+                "2":                 "prefixo|L",
+                "3":                 "prefixo|010"
+            }
+        }
+    }
+}

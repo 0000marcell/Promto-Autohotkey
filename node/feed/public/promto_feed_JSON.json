@@ -998,7 +998,1249 @@
             "prodkey":               "TL004",
             "tipo":                  "Removido",
             "usuario":               "Marcell Monteiro"
+        },
+        "112": {
+            "data":                  "28/08/2014",
+            "hora":                  "14:33",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS ACABADOS|familia|TAMPAO|subfamilia||modelo|Modelos",
+            "msg":                   "O Modelo MAC.EXD.315 e mascara 315 foi criado!",
+            "prodkey":               "MTPMascara",
+            "tipo":                  "Criado",
+            "usuario":               "Marcell Monteiro"
+        },
+        "113": {
+            "data":                  "28/08/2014",
+            "hora":                  "14:34",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS ACABADOS|familia|TAMPAO|subfamilia||modelo|MAC.EXD.315",
+            "msg":                   "O Campo DIMENSAO foi criado!",
+            "prodkey":               "MTP315",
+            "tipo":                  "Criado",
+            "usuario":               "Marcell Monteiro"
+        },
+        "114": {
+            "data":                  "28/08/2014",
+            "hora":                  "14:34",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS ACABADOS|familia|TAMPAO|subfamilia||modelo|MAC.EXD.315",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "MTP315",
+            "tipo":                  "Criado",
+            "usuario":               "Marcell Monteiro"
+        },
+        "115": {
+            "data":                  "28/08/2014",
+            "hora":                  "16:41",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item BSPE foi alterado para codigo: BSPE descricao completa: BASE ROSCADA DO PLUGUE EM POLIESTER descricao resumida BASE ROSCADA DO PLUGUE EM POLIESTER descricao ingles THREADED BASE IN POLYESTER",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "116": {
+            "data":                  "28/08/2014",
+            "hora":                  "16:41",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item CM2T foi alterado para codigo: CM2T descricao completa: CORPO DO MIOLO 2P+T DO PLUGUE descricao resumida CORPO DO MIOLO 2P+T CORPO DO MIOLO 2P+T DO PLUGUE descricao ingles BODY OF THE CORE 2P+T",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "117": {
+            "data":                  "28/08/2014",
+            "hora":                  "16:41",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item CM2T foi alterado para codigo: CM2T descricao completa: CORPO DO MIOLO 2P+T DO PLUGUE descricao resumida CORPO DO MIOLO 2P+T DO PLUGUE descricao ingles BODY OF THE CORE 2P+T",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "118": {
+            "data":                  "28/08/2014",
+            "hora":                  "16:41",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item INPE foi alterado para codigo: INPE descricao completa: INTERMEDIARIO DO MIOLO DO PLUGUE 63A descricao resumida INTERMEDIARIO DO MIOLO DO PLUGUE 63A descricao ingles INTERMEDIARY CORE 63A",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "119": {
+            "data":                  "28/08/2014",
+            "hora":                  "16:41",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item CM3N foi alterado para codigo: CM3N descricao completa: CORPO DO MIOLO 3P+T+N DO PLUGUE descricao resumida CORPO DO MIOLO 3P+T+N DO PLUGUE descricao ingles BODY OF THE CORE 3P+T+N",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "120": {
+            "data":                  "28/08/2014",
+            "hora":                  "16:41",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item CM3P foi alterado para codigo: CM3P descricao completa: CORPO DO MIOLO 3P+T DO PLUGUE descricao resumida CORPO DO MIOLO 3P+T DO PLUGUE descricao ingles BODY OF THE CORE 3P+T",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "121": {
+            "data":                  "29/08/2014",
+            "hora":                  "08:33",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PARAFUSO|subfamilia||modelo|SEXTAVADO",
+            "msg":                   "O item M10 descricao resumida M10 foi incluido no campo DIAMETRO",
+            "prodkey":               "TIPFSE",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "122": {
+            "data":                  "29/08/2014",
+            "hora":                  "08:34",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PARAFUSO|subfamilia||modelo|SEXTAVADO",
+            "msg":                   "O item LT foi removido da tabela de campos TPFSEMATERIAPRIMA",
+            "prodkey":               "TIPFSE",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "123": {
+            "data":                  "29/08/2014",
+            "hora":                  "09:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CONTRA PORCA|subfamilia||modelo|Modelos",
+            "msg":                   "O Modelo SEXTAVADA e mascara SE foi criado!",
+            "prodkey":               "TICPMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "124": {
+            "data":                  "29/08/2014",
+            "hora":                  "09:27",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CONTRA PORCA|subfamilia||modelo|SEXTAVADA",
+            "msg":                   "O Campo DIMENSAO foi criado!",
+            "prodkey":               "TICPSE",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "125": {
+            "data":                  "29/08/2014",
+            "hora":                  "09:28",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CONTRA PORCA|subfamilia||modelo|SEXTAVADA",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TICPSE",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "126": {
+            "data":                  "29/08/2014",
+            "hora":                  "09:28",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CONTRA PORCA|subfamilia||modelo|SEXTAVADA",
+            "msg":                   "O item M3 descricao resumida M3 foi incluido no campo DIMENSAO",
+            "prodkey":               "TICPSE",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "127": {
+            "data":                  "29/08/2014",
+            "hora":                  "09:28",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CONTRA PORCA|subfamilia||modelo|SEXTAVADA",
+            "msg":                   "O item M4 descricao resumida M4 foi incluido no campo DIMENSAO",
+            "prodkey":               "TICPSE",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "128": {
+            "data":                  "29/08/2014",
+            "hora":                  "09:28",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CONTRA PORCA|subfamilia||modelo|SEXTAVADA",
+            "msg":                   "O item M3 foi alterado para codigo: M03 descricao completa: M3 descricao resumida M3 descricao ingles M3",
+            "prodkey":               "TICPSE",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "129": {
+            "data":                  "29/08/2014",
+            "hora":                  "09:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CONTRA PORCA|subfamilia||modelo|SEXTAVADA",
+            "msg":                   "O item M3 foi alterado para codigo: M03 descricao completa: M3 descricao resumida M3 descricao ingles M3",
+            "prodkey":               "TICPSE",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "130": {
+            "data":                  "29/08/2014",
+            "hora":                  "09:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CONTRA PORCA|subfamilia||modelo|SEXTAVADA",
+            "msg":                   "O item M4 foi alterado para codigo: M04 descricao completa: M4 descricao resumida M4 descricao ingles M4",
+            "prodkey":               "TICPSE",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "131": {
+            "data":                  "29/08/2014",
+            "hora":                  "09:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CONTRA PORCA|subfamilia||modelo|SEXTAVADA",
+            "msg":                   "O item M05 descricao resumida M5 foi incluido no campo DIMENSAO",
+            "prodkey":               "TICPSE",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "132": {
+            "data":                  "29/08/2014",
+            "hora":                  "09:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CONTRA PORCA|subfamilia||modelo|SEXTAVADA",
+            "msg":                   "O item M06 descricao resumida M6 foi incluido no campo DIMENSAO",
+            "prodkey":               "TICPSE",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "133": {
+            "data":                  "29/08/2014",
+            "hora":                  "09:31",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CONTRA PORCA|subfamilia||modelo|SEXTAVADA",
+            "msg":                   "O item M08 descricao resumida M8 foi incluido no campo DIMENSAO",
+            "prodkey":               "TICPSE",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "134": {
+            "data":                  "29/08/2014",
+            "hora":                  "09:31",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CONTRA PORCA|subfamilia||modelo|SEXTAVADA",
+            "msg":                   "O item M10 descricao resumida M10 foi incluido no campo DIMENSAO",
+            "prodkey":               "TICPSE",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "135": {
+            "data":                  "29/08/2014",
+            "hora":                  "09:32",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CONTRA PORCA|subfamilia||modelo|SEXTAVADA",
+            "msg":                   "O item AI descricao resumida ACO INOX foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TICPSE",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "136": {
+            "data":                  "29/08/2014",
+            "hora":                  "09:52",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO|modelo|TL.C.EXE.003",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TICCO003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "137": {
+            "data":                  "29/08/2014",
+            "hora":                  "10:07",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|DIVERSOS|modelo|TL.C.EXE.001",
+            "msg":                   "O Campo PARTES foi criado!",
+            "prodkey":               "TICDIV001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "138": {
+            "data":                  "29/08/2014",
+            "hora":                  "10:08",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|DIVERSOS|modelo|TL.C.EXE.001",
+            "msg":                   "O item INFLT descricao resumida INFERIOR USADO NA BASE DA CAIXA POLIESTER EM LATAO foi incluido no campo PARTES",
+            "prodkey":               "TICDIV001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "139": {
+            "data":                  "29/08/2014",
+            "hora":                  "10:09",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|DIVERSOS|modelo|TL.C.EXE.001",
+            "msg":                   "O item SUPLT descricao resumida INSERTO SUPERIOR NA ABA DA CAIXA DE POLIESTER EM LATAO foi incluido no campo PARTES",
+            "prodkey":               "TICDIV001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "140": {
+            "data":                  "29/08/2014",
+            "hora":                  "10:11",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|DIVERSOS|modelo|TL.C.EXE.001",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICDIV001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "141": {
+            "data":                  "29/08/2014",
+            "hora":                  "10:35",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item TP2P foi alterado para codigo: TP2P descricao completa: TAMPA DO MIOLO 2P+T DO PLUGUE descricao resumida TAMPA DO MIOLO 2P+T DO PLUGUE descricao ingles COVER OF THE CORE 2P+T",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "142": {
+            "data":                  "29/08/2014",
+            "hora":                  "10:35",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item M2P4 foi alterado para codigo: M2P4 descricao completa: CORPO DO PLUGUE AMARELO 2P+T 4H descricao resumida CORPO DO PLUGUE AMARELO 2P+T 4H descricao ingles BODY OF THE PLUG YELLOW 2P+T 4H",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "143": {
+            "data":                  "29/08/2014",
+            "hora":                  "10:36",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item M3P4 foi alterado para codigo: M3P4 descricao completa: CORPO DO PLUGUE AMARELO 3P+T 4H descricao resumida CORPO DO PLUGUE AMARELO 3P+T 4H descricao ingles BODY OF THE PLUG YELLOW 3P+T 4H",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "144": {
+            "data":                  "29/08/2014",
+            "hora":                  "10:36",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item TP3N foi alterado para codigo: TP3N descricao completa: TAMPA DO MIOLO 3P+T+N DO PLUGUE descricao resumida TAMPA DO MIOLO 3P+T+N DO PLUGUE descricao ingles COVER OF THE CORE 3P+T+N",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "145": {
+            "data":                  "29/08/2014",
+            "hora":                  "10:36",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item TP3P foi alterado para codigo: TP3P descricao completa: TAMPA DO MIOLO 3P+T DO PLUGUE descricao resumida TAMPA DO MIOLO 3P+T DO PLUGUE descricao ingles COVER OF THE CORE 3P+T",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "146": {
+            "data":                  "29/08/2014",
+            "hora":                  "10:36",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item TRPE foi alterado para codigo: TRPE descricao completa: 32A TRAVA DA BASE ROSCADA DO PLUGUE EM POLIESTER descricao resumida 32A TRAVA DA BASE ROSCADA DO PLUGUE EM POLIESTER descricao ingles LOCK OF THE THREADED BASE IN POLYESTER",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "147": {
+            "data":                  "29/08/2014",
+            "hora":                  "10:37",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item TRTR foi alterado para codigo: TRTR descricao completa: TRAVA DA TAMPA ROSCADA 63A DO PLUGUE descricao resumida TRAVA DA TAMPA ROSCADA 63A DO PLUGUE descricao ingles LOCK OF THE THREADED COVER 63A",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "148": {
+            "data":                  "29/08/2014",
+            "hora":                  "10:37",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item TRPE foi alterado para codigo: TRPE descricao completa: 32A TRAVA DA BASE ROSCADA DO PLUGUE descricao resumida 32A TRAVA DA BASE ROSCADA DO PLUGUE descricao ingles LOCK OF THE THREADED BASE IN POLYESTER",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "149": {
+            "data":                  "29/08/2014",
+            "hora":                  "10:39",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item TRPE foi alterado para codigo: TRPE descricao completa: 32A TRAVA DA BASE ROSCADA DO PLUGUE descricao resumida 32A TRAVA DA BASE ROSCADA DO PLUGUE descricao ingles LOCK OF THE THREADED BASE IN POLYESTER",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "150": {
+            "data":                  "29/08/2014",
+            "hora":                  "10:39",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item TRPE foi alterado para codigo: TRPE descricao completa: TRAVA DA BASE ROSCADA 32A DO PLUGUE descricao resumida TRAVA DA BASE ROSCADA 32A DO PLUGUE descricao ingles LOCK OF THE THREADED BASE IN POLYESTER",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "151": {
+            "data":                  "29/08/2014",
+            "hora":                  "10:41",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|CORPO|modelo|TL.PL.EXE.041",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TIPLCO041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "152": {
+            "data":                  "29/08/2014",
+            "hora":                  "10:46",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CHASSI|modelo|TL.C.EXE.003",
+            "msg":                   "O item 10 descricao resumida 1,0 MM DE ESPESSURA foi incluido no campo ESPESSURA",
+            "prodkey":               "TICCS003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "153": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:06",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|DIVERSOS|modelo|TL.PL.EXE.041",
+            "msg":                   "O item CPAC foi alterado para codigo: CPAC descricao completa: COMPLEMENTO DA PECA DE APERTO DO CABO DO PLUGUE descricao resumida COMPLEMENTO DA PECA DE APERTO DO CABO DO PLUGUE descricao ingles ADJUNCT OF THE CLAMPING PIECE OF THE CABLE",
+            "prodkey":               "TIPLDIV041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "154": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:06",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|DIVERSOS|modelo|TL.PL.EXE.041",
+            "msg":                   "O item PACA foi alterado para codigo: PACA descricao completa: PECA DE APERTO DO CABO DO PLUGUE descricao resumida PECA DE APERTO DO CABO DO PLUGUE descricao ingles CLAMPING PIECE OF THE CABLE",
+            "prodkey":               "TIPLDIV041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "155": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:06",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|DIVERSOS|modelo|TL.PL.EXE.041",
+            "msg":                   "O item PIMF foi alterado para codigo: PIMF descricao completa: PINO MACHO FASE DO PLUGUE descricao resumida PINO MACHO FASE DO PLUGUE descricao ingles MALE PHASE PIN",
+            "prodkey":               "TIPLDIV041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "156": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:06",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|DIVERSOS|modelo|TL.PL.EXE.041",
+            "msg":                   "O item PIMP foi alterado para codigo: PIMP descricao completa: PINO MACHO PILOTO DO PLUGUE descricao resumida PINO MACHO PILOTO DO PLUGUE descricao ingles MALE PILOT PIN",
+            "prodkey":               "TIPLDIV041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "157": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:06",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|DIVERSOS|modelo|TL.PL.EXE.041",
+            "msg":                   "O item PIMT foi alterado para codigo: PIMT descricao completa: PINO MACHO TERRA DO PLUGUE descricao resumida PINO MACHO TERRA DO PLUGUE descricao ingles MALE EARTH PIN",
+            "prodkey":               "TIPLDIV041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "158": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:07",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|DIVERSOS|modelo|TL.PL.EXE.041",
+            "msg":                   "O item PLMI foi alterado para codigo: PLMI descricao completa: PLACA DE CONTATO DO CORPO DO MIOLO DO PLUGUE descricao resumida PLACA DE CONTATO DO CORPO DO MIOLO DO PLUGUE descricao ingles CONTACT PLATE OF THE CORE",
+            "prodkey":               "TIPLDIV041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "159": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:07",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|DIVERSOS|modelo|TL.PL.EXE.041",
+            "msg":                   "O item TRAL foi alterado para codigo: TRAL descricao completa: TIRA DE ALUMINIO DA PECA DE APERTO DO PLUGUE descricao resumida TIRA DE ALUMINIO DA PECA DE APERTO DO PLUGUE descricao ingles ALUMINIUM STRIP OF THE CLAMPING PIECE",
+            "prodkey":               "TIPLDIV041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "160": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:29",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia||subfamilia||modelo|Modelo",
+            "msg":                   "A familia TARUGO e mascara TG foi criada!",
+            "prodkey":               "TMPMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "161": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:32",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|TARUGO|subfamilia||modelo|Modelos",
+            "msg":                   "O Modelo 4O MM e mascara 40 foi criado!",
+            "prodkey":               "TMPTGMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "162": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:35",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|TARUGO|subfamilia||modelo|4O MM",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TMPTG40",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "163": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:36",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|TARUGO|subfamilia||modelo|4O MM",
+            "msg":                   "O item NY descricao resumida FABRICADO EM NYLON foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TMPTG40",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "164": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:36",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|TARUGO|subfamilia||modelo|4O MM",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TMPTG40",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "165": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:37",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|TARUGO|subfamilia||modelo|4O MM",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TMPTG40",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "166": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:44",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|VEDACAO|modelo|TL.PL.EXE.041",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TIPLVD041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "167": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:44",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|VEDACAO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item ANNY foi alterado para codigo: ANNY descricao completa: ANEL DE VEDACAO NYLON DO PLUGUE descricao resumida ANEL DE VEDACAO NYLON DO PLUGUE descricao ingles SEALING RING IN NYLON",
+            "prodkey":               "TIPLVD041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "168": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:44",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|VEDACAO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item BVBO foi alterado para codigo: BVBO descricao completa: BUCHA DE VEDACAO DE BORRACHA DO PLUGUE descricao resumida BUCHA DE VEDACAO DE BORRACHA DO PLUGUE descricao ingles SEALING BUSH IN RUBBER",
+            "prodkey":               "TIPLVD041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "169": {
+            "data":                  "29/08/2014",
+            "hora":                  "11:44",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PLUGUE|subfamilia|VEDACAO|modelo|TL.PL.EXE.041",
+            "msg":                   "O item OVPM foi alterado para codigo: OVPM descricao completa: O-RING VEDACAO DO PINO MACHO DO PLUGUE descricao resumida O-RING VEDACAO DO PINO MACHO DO PLUGUE descricao ingles O-RING SEALING OF THE MALE PIN",
+            "prodkey":               "TIPLVD041",
+            "tipo":                  "Alterado",
+            "usuario":               "monique soares"
+        },
+        "170": {
+            "data":                  "29/08/2014",
+            "hora":                  "15:08",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|ANEL EXTERNO|subfamilia||modelo|Modelos",
+            "msg":                   "O Modelo O RING e mascara OR foi criado!",
+            "prodkey":               "TIANMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "171": {
+            "data":                  "29/08/2014",
+            "hora":                  "15:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|ANEL EXTERNO|subfamilia||modelo|O RING",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TIANOR",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "172": {
+            "data":                  "29/08/2014",
+            "hora":                  "15:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|ANEL EXTERNO|subfamilia||modelo|O RING",
+            "msg":                   "O Campo DIMENSAO foi criado!",
+            "prodkey":               "TIANOR",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "173": {
+            "data":                  "29/08/2014",
+            "hora":                  "15:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|ANEL EXTERNO|subfamilia||modelo|O RING",
+            "msg":                   "O Campo ESPESSURA foi criado!",
+            "prodkey":               "TIANOR",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "174": {
+            "data":                  "29/08/2014",
+            "hora":                  "15:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|ANEL EXTERNO|subfamilia||modelo|O RING",
+            "msg":                   "O item 05 descricao resumida 5MM DE DIAMETRO INTERNO foi incluido no campo DIMENSAO",
+            "prodkey":               "TIANOR",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "175": {
+            "data":                  "29/08/2014",
+            "hora":                  "15:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|ANEL EXTERNO|subfamilia||modelo|O RING",
+            "msg":                   "O item 02 descricao resumida 2MM DE ESPESSURA foi incluido no campo ESPESSURA",
+            "prodkey":               "TIANOR",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "176": {
+            "data":                  "29/08/2014",
+            "hora":                  "15:16",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|ANEL EXTERNO|subfamilia||modelo|O RING",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TIANOR",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "177": {
+            "data":                  "01/09/2014",
+            "hora":                  "14:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 275MM",
+            "msg":                   "O item AI4 descricao resumida FABRICACAO EM ACO INOX 304 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TMPBOCH27",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "178": {
+            "data":                  "01/09/2014",
+            "hora":                  "14:18",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|Modelos",
+            "msg":                   "O Modelo CHAPA 270MM e mascara CH27 foi criado!",
+            "prodkey":               "TMPBOMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "179": {
+            "data":                  "01/09/2014",
+            "hora":                  "14:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 270MM",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TMPBOCH27",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "180": {
+            "data":                  "01/09/2014",
+            "hora":                  "14:22",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 270MM",
+            "msg":                   "O campo ESPESSURA foi removido!",
+            "prodkey":               "TMPBOCH27",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "181": {
+            "data":                  "01/09/2014",
+            "hora":                  "14:23",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 270MM",
+            "msg":                   "O campo MATERIA PRIMA foi removido!",
+            "prodkey":               "TMPBOCH27",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "182": {
+            "data":                  "01/09/2014",
+            "hora":                  "14:23",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 270MM",
+            "msg":                   "O Campo ESPESSURA foi criado!",
+            "prodkey":               "TMPBOCH27",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "183": {
+            "data":                  "01/09/2014",
+            "hora":                  "14:24",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 270MM",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TMPBOCH27",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "184": {
+            "data":                  "01/09/2014",
+            "hora":                  "14:24",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 270MM",
+            "msg":                   "O item 08 descricao resumida 08 MM DE ESPESSURA foi incluido no campo ESPESSURA",
+            "prodkey":               "TMPBOCH27",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "185": {
+            "data":                  "01/09/2014",
+            "hora":                  "14:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BOBINA|subfamilia||modelo|CHAPA 270MM",
+            "msg":                   "O item 08 foi alterado para codigo: 08 descricao completa: 0,8 MM DE ESPESSURA descricao resumida 0,8 MM DE ESPESSURA descricao ingles 0,8 MM OF THICKNESS",
+            "prodkey":               "TMPBOCH27",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "186": {
+            "data":                  "01/09/2014",
+            "hora":                  "16:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|REDONDA A METRO",
+            "msg":                   "O Modelo SEXTAVADA COM FURO e mascara SEF foi criado!",
+            "prodkey":               "TMPBAREM",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "187": {
+            "data":                  "01/09/2014",
+            "hora":                  "16:27",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "188": {
+            "data":                  "01/09/2014",
+            "hora":                  "16:46",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O Campo DIMENSAO foi criado!",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "189": {
+            "data":                  "01/09/2014",
+            "hora":                  "16:46",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O Campo FURO foi criado!",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "190": {
+            "data":                  "01/09/2014",
+            "hora":                  "16:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "191": {
+            "data":                  "01/09/2014",
+            "hora":                  "16:49",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 078 descricao resumida 7/8  foi incluido no campo DIMENSAO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "192": {
+            "data":                  "01/09/2014",
+            "hora":                  "16:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 06 descricao resumida FURO DE 6.5MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "193": {
+            "data":                  "01/09/2014",
+            "hora":                  "16:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 09 descricao resumida FURO DE 9,5MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "194": {
+            "data":                  "01/09/2014",
+            "hora":                  "16:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 11 descricao resumida FURO DE 11,5MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "195": {
+            "data":                  "01/09/2014",
+            "hora":                  "16:52",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 14 descricao resumida FURO DE 14MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "196": {
+            "data":                  "01/09/2014",
+            "hora":                  "16:52",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 18 descricao resumida FURO DE 18MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "197": {
+            "data":                  "01/09/2014",
+            "hora":                  "16:52",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 25 descricao resumida FURO DE 25MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "198": {
+            "data":                  "01/09/2014",
+            "hora":                  "16:53",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 118 descricao resumida 1.1/8 foi incluido no campo DIMENSAO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "199": {
+            "data":                  "01/09/2014",
+            "hora":                  "16:54",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 112 descricao resumida 1.1/2 foi incluido no campo DIMENSAO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "200": {
+            "data":                  "01/09/2014",
+            "hora":                  "16:57",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item AL descricao resumida FABRICADO EM ALUMINIO foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "201": {
+            "data":                  "01/09/2014",
+            "hora":                  "17:00",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "202": {
+            "data":                  "01/09/2014",
+            "hora":                  "17:02",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "203": {
+            "data":                  "01/09/2014",
+            "hora":                  "17:02",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "204": {
+            "data":                  "01/09/2014",
+            "hora":                  "17:04",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 06 foi alterado para codigo: 06 descricao completa: COM FURO DE 6.5MM descricao resumida COM FURO DE 6.5MM descricao ingles COM FURO DE 6.5MM",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "205": {
+            "data":                  "01/09/2014",
+            "hora":                  "17:04",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 09 foi alterado para codigo: 09 descricao completa: COM FURO DE 9,5MM descricao resumida COM FURO DE 9,5MM descricao ingles COM FURO DE 9,5MM",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "206": {
+            "data":                  "01/09/2014",
+            "hora":                  "17:05",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 11 foi alterado para codigo: 11 descricao completa: COM FURO DE 11,5MM descricao resumida COM FURO DE 11,5MM descricao ingles COM FURO DE 11,5MM",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "207": {
+            "data":                  "01/09/2014",
+            "hora":                  "17:05",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 14 foi alterado para codigo: 14 descricao completa: COM FURO DE 14MM descricao resumida COM FURO DE 14MM descricao ingles COM FURO DE 14MM",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "208": {
+            "data":                  "01/09/2014",
+            "hora":                  "17:05",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 18 foi alterado para codigo: 18 descricao completa: COM FURO DE 18MM descricao resumida COM FURO DE 18MM descricao ingles COM FURO DE 18MM",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "209": {
+            "data":                  "01/09/2014",
+            "hora":                  "17:06",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 25 foi alterado para codigo: 25 descricao completa: COM FURO DE 25MM descricao resumida COM FURO DE 25MM descricao ingles COM FURO DE 25MM",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "210": {
+            "data":                  "01/09/2014",
+            "hora":                  "17:07",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 078 foi alterado para codigo: 078 descricao completa: DE 7/8 descricao resumida DE 7/8 descricao ingles DE 7/8",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "211": {
+            "data":                  "01/09/2014",
+            "hora":                  "17:07",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 112 foi alterado para codigo: 112 descricao completa: DE 1.1/2 descricao resumida DE 1.1/2 descricao ingles DE 1.1/2",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "212": {
+            "data":                  "01/09/2014",
+            "hora":                  "17:07",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 118 foi alterado para codigo: 118 descricao completa: DE 1.1/8 descricao resumida DE 1.1/8 descricao ingles DE 1.1/8",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "213": {
+            "data":                  "02/09/2014",
+            "hora":                  "11:09",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item AL foi alterado para codigo: A descricao completa: FABRICADO EM ALUMINIO descricao resumida FABRICADO EM ALUMINIO descricao ingles MANUFACTURED IN ALUMINIUM",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "214": {
+            "data":                  "02/09/2014",
+            "hora":                  "11:10",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item A foi alterado para codigo: A descricao completa: FABRICADO EM ALUMINIO descricao resumida FABRICADO EM ALUMINIO descricao ingles MANUFACTURED IN ALUMINUM",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "215": {
+            "data":                  "02/09/2014",
+            "hora":                  "11:10",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 06 foi alterado para codigo: 06 descricao completa: COM FURO DE 6.5MM descricao resumida COM FURO DE 6.5MM descricao ingles WITH 6.5MM HOLE",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "216": {
+            "data":                  "02/09/2014",
+            "hora":                  "11:11",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 09 foi alterado para codigo: 09 descricao completa: COM FURO DE 9,5MM descricao resumida COM FURO DE 9,5MM descricao ingles WITH 9,5MM HOLE",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "217": {
+            "data":                  "02/09/2014",
+            "hora":                  "11:11",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 11 foi alterado para codigo: 11 descricao completa: COM FURO DE 11,5MM descricao resumida COM FURO DE 11,5MM descricao ingles WITH 11,5MM HOLE",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "218": {
+            "data":                  "02/09/2014",
+            "hora":                  "11:11",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 14 foi alterado para codigo: 14 descricao completa: COM FURO DE 14MM descricao resumida COM FURO DE 14MM descricao ingles WITH 14MM HOLE",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "219": {
+            "data":                  "02/09/2014",
+            "hora":                  "11:12",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 18 foi alterado para codigo: 18 descricao completa: COM FURO DE 18MM descricao resumida COM FURO DE 18MM descricao ingles WITH 18MM HOLE",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "220": {
+            "data":                  "02/09/2014",
+            "hora":                  "11:12",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 25 foi alterado para codigo: 25 descricao completa: COM FURO DE 25MM descricao resumida COM FURO DE 25MM descricao ingles WITH 25MM HOLE",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "221": {
+            "data":                  "02/09/2014",
+            "hora":                  "11:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "222": {
+            "data":                  "02/09/2014",
+            "hora":                  "11:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 078 foi alterado para codigo: 078 descricao completa: DE 7/8 descricao resumida DE 7/8 descricao ingles 7/8",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "223": {
+            "data":                  "02/09/2014",
+            "hora":                  "11:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 112 foi alterado para codigo: 112 descricao completa: DE 1.1/2 descricao resumida DE 1.1/2 descricao ingles 1.1/2",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "224": {
+            "data":                  "02/09/2014",
+            "hora":                  "11:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 118 foi alterado para codigo: 118 descricao completa: DE 1.1/8 descricao resumida DE 1.1/8 descricao ingles 1.1/8",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "225": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "226": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "227": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:26",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "228": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:28",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 19 descricao resumida COM FURO DE 19 MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "229": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:29",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 24 descricao resumida COM FURO DE 24 MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "230": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:29",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 31 descricao resumida COM FURO DE 31,5 MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "231": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 30 descricao resumida COM FURO DE 30 MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "232": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 35 descricao resumida COM FURO DE 35 MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "233": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:31",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 38 descricao resumida COM FURO DE 38 MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "234": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:32",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 42 descricao resumida COM FURO DE 42 MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "235": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:32",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 51 descricao resumida COM FURO DE 51 MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "236": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:33",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 48 descricao resumida COM FURO DE 48 MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "237": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:34",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 54 descricao resumida COM FURO DE 54 MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "238": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:34",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 58 descricao resumida COM FURO DE 58 MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "239": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:35",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 60 descricao resumida COM FURO DE 60 MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "240": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:35",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 66 descricao resumida COM FURO DE 66 MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "241": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:36",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 70 descricao resumida COM FURO DE 70 MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "242": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:36",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 76 descricao resumida COM FURO DE 76 MM foi incluido no campo FURO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "243": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:39",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 178 descricao resumida DE 1.7/8 foi incluido no campo DIMENSAO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "244": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:39",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 002 descricao resumida DE 2 foi incluido no campo DIMENSAO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "245": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:40",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 2.1/2 descricao resumida DE 2.1/2 foi incluido no campo DIMENSAO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "246": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:41",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 003 descricao resumida DE 3 foi incluido no campo DIMENSAO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "247": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:41",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 358 descricao resumida DE 3.5/8 foi incluido no campo DIMENSAO",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "248": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:41",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item 2.1/2 foi alterado para codigo: 212 descricao completa: DE 2.1/2 descricao resumida DE 2.1/2 descricao ingles 2.1/2",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "249": {
+            "data":                  "02/09/2014",
+            "hora":                  "16:58",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|SEXTAVADA COM FURO",
+            "msg":                   "O item L descricao resumida FABRICADO EM LATAO foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TMPBASEF",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
         }
     },
-    "max_index":                     111
+    "max_index":                     249
 }

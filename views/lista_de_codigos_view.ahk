@@ -36,7 +36,14 @@ lista_de_codigos(info){
 	Listpesqcod := db.load_table_in_array(code_table)
 	db.load_lv("lista_de_codigos_view", "lvcodetable", code_table)
 	LV_ModifyCol(1, 100), LV_ModifyCol(2, 300), LV_ModifyCol(3, 300), LV_ModifyCol(4, 300) 
+	Menu, printer_menu,  Add, configuracao da impressao, printer_config 
+	Menu, code_list_menu_bar, Add, &Plaqueta, :printer_menu
+	Gui, Menu, code_list_menu_bar
 	Gui, Show,, Lista de Codigos
+	return
+
+	printer_config:
+	printer_config_view()
 	return
 
 	extract_images:

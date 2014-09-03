@@ -182,7 +182,6 @@ Menu, xml_menu,      Add, XML, xml
 Menu, json_menu,     Add, JSON, json
 Menu, imagem_menu,   Add, Redimensionar, resize_image_folder 
 Menu, feed_menu,   	 Add, feed, visualize_feed 
-Menu, printer_menu,  Add, Impressao, printer_config 
 Menu, tree_visualizer_menu, Add, Estrutrua, visualize_structure_tree 
 Menu, backup_menu,   Add, Carregar Back up, load_back_up
 Menu, main_menu_bar, Add, &Atualizar, :update_menu
@@ -192,7 +191,6 @@ Menu, main_menu_bar, Add, &XML, :xml_menu
 Menu, main_menu_bar, Add, &JSON , :json_menu
 Menu, main_menu_bar, Add, &Imagem, :imagem_menu
 Menu, main_menu_bar, Add, &Feed, :feed_menu 
-Menu, main_menu_bar, Add, &Plaqueta, :printer_menu
 Menu, main_menu_bar, Add, &Estrutura, :tree_visualizer_menu
 Menu, main_menu_bar, Color, White
 Gui, Menu, main_menu_bar
@@ -202,10 +200,6 @@ LV_ModifyCol(2,300)
 LV_Modify(2, "+Select")
 _loading := 0
 return	
-
-printer_config:
-printer_config_view()
-return
 
 visualize_feed:
 feed := new GenerateJSONFeed() 
@@ -2858,6 +2852,7 @@ inserir4(table,field,primaryk,tipo,mascaraant="")
 /*
 	Views
 */
+#Include, views/printer_config_view.ahk
 #Include, views/visualize_structure_tree_view.ahk
 #Include, views/reload_hashmask_view.ahk
 #Include, views/generate_JSON_view.ahk

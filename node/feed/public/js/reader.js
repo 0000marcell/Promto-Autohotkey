@@ -1,5 +1,6 @@
 var fs = require("fs");
 var file = "promto_feed_json.json";
+var config = "promto_tag_config.json"
 
 function PromtoReader(){
 }

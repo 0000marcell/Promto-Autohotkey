@@ -26,13 +26,13 @@ PromtoPrinter.prototype.insertTagImage = function(item) {
 };
 
 PromtoPrinter.prototype.insertTagDesc = function(item) {
-	
+	var desc_font_size = prop_tag_values.desc_font;	
 	var html = "<div class='panel panel-primary desc'>"+
 		            "<div class='panel-heading'>"+
 		              "<h3 class='panel-title'>Descricao</h3>"+
 		            "</div>"+
 		            "<div class='panel-body panel-text-pos'>"+
-		              "<h3>"+item.desc+"</h3>"+
+		              "<h3 style='font-size: "+desc_font_size+"px;'>"+item.desc+"</h3>"+
 		            "</div>"+
         			"</div>";
 	$(html).appendTo(this.container);
@@ -76,7 +76,8 @@ PromtoPrinter.prototype.get_HTML_panel = function(title, item) {
 	var fontSizeItem = this.getItemFontSize(item.length);
 	var title = this.removeSpace(title);
 	var item = this.removeSpace(item);
-	var html = "<div class='panel panel-primary code-panel'>"+
+	var code_piece_size = " width:"+prop_tag_values.code_panel_width+"; height:"+prop_tag_values.code_panel_height+" ;"
+	var html = "<div class='panel panel-primary code-panel' style='"+code_piece_size+"'>"+
 									"<div class='panel-heading pt-heading'>"+
 			              "<h3 style='font-size: "+fontSize+"px;' class='panel-title'>"+title.toUpperCase()+"</h3>"+
 			            "</div>"+
@@ -93,6 +94,9 @@ PromtoPrinter.prototype.removeSpace = function(string) {
 }
 
 PromtoPrinter.prototype.getTitleFontSize = function(size) {	
+	if(prop_tag_values.title_code_font != 10)
+		return prop_tag_values.title_code_font; 	
+
 	if(size >= 10){
 		var fontSize = 10;
 	}else{
@@ -102,6 +106,9 @@ PromtoPrinter.prototype.getTitleFontSize = function(size) {
 };
 
 PromtoPrinter.prototype.getItemFontSize = function(size) {	
+	if(prop_tag_values.code_font != 10)
+		return prop_tag_values.code_font;
+
 	if(size > 5){
 		var fontSize = 10;
 	}else{

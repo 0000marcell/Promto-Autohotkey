@@ -2828,6 +2828,7 @@ inserir4(table,field,primaryk,tipo,mascaraant=""){
 		return 
 }
 
+#include, lib\promto_web_ftp.ahk
 #include, lib\promto_ftp.ahk
 #include, lib\promto_sqlserver.ahk
 #include, lib\promto_JSON_structure.ahk

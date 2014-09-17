@@ -2240,7 +2240,1789 @@
             "prodkey":               "TMPBASEF",
             "tipo":                  "Criado",
             "usuario":               "luciano claussen"
+        },
+        "250": {
+            "data":                  "03/09/2014",
+            "hora":                  "15:00",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXD.002-NORMAL",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TPC002",
+            "tipo":                  "Alterado",
+            "usuario":               "Marcell Monteiro"
+        },
+        "251": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:46",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O Campo DIMENSAO foi criado!",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "252": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:46",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "253": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B0001 descricao resumida , BSP 1 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "254": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B0012 descricao resumida , BSP 1/2 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "255": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B002G descricao resumida , BSP 2 G foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "256": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B002P descricao resumida , BSP 2 P foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "257": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B003G descricao resumida , BSP 3 G foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "258": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B003P descricao resumida , BSP 3 P foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "259": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B0112 descricao resumida , BSP 1.1/2 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "260": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B0114 descricao resumida , BSP 1.1/4 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "261": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B034E descricao resumida , BSP 3/4 ES foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "262": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B034G descricao resumida , BSP 3/4 G foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "263": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B034P descricao resumida , BSP 3/4 P foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "264": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B212G descricao resumida , BSP 2.1/2 G foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "265": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B212P descricao resumida , BSP 2.1/2 P foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "266": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M0016 descricao resumida , M16 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "267": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M0025 descricao resumida , M25 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "268": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M0032 descricao resumida , M32 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "269": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M0040 descricao resumida , M40 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "270": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M020E descricao resumida , M20 ES foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "271": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M020G descricao resumida , M20 G foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "272": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M020P descricao resumida , M20 P foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "273": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M050G descricao resumida , M50 G foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "274": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M050P descricao resumida , M50 P foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "275": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M063G descricao resumida , M63 G foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "276": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M063P descricao resumida , M63 P foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "277": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M075G descricao resumida , M75G foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "278": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M075P descricao resumida , M75 P foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "279": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N0001 descricao resumida , NPT 1 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "280": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N0012 descricao resumida , NPT 1/2 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "281": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N002G descricao resumida , NPT 2 G foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "282": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N002P descricao resumida , NPT 2 P foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "283": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N003G descricao resumida , NPT  3 G foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "284": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N003P descricao resumida , NPT 3 P foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "285": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N0112 descricao resumida , NPT 1.1/2 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "286": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N0114 descricao resumida , NPT 1.1/4 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "287": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N034E descricao resumida , NPT 3/4 ES foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "288": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N034G descricao resumida , NPT 3/4 G foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "289": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N034P descricao resumida , NPT 3/4 P foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "290": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N212G descricao resumida , NPT 2.1/2 G foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "291": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N212P descricao resumida , NPT 2.1/2 P foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "292": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B0001 descricao resumida , BSP 1 foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "293": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B0012 descricao resumida , BSP 1/2 foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "294": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B002G descricao resumida , BSP 2 G foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "295": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B002P descricao resumida , BSP 2 P foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "296": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B003G descricao resumida , BSP 3 G foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "297": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B003P descricao resumida , BSP 3 P foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "298": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B0112 descricao resumida , BSP 1.1/2 foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "299": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B0114 descricao resumida , BSP 1.1/4 foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "300": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B034E descricao resumida , BSP 3/4 ES foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "301": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B034G descricao resumida , BSP 3/4 G foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "302": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B034P descricao resumida , BSP 3/4 P foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "303": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B212G descricao resumida , BSP 2.1/2 G foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "304": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B212P descricao resumida , BSP 2.1/2 P foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "305": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M0016 descricao resumida , M16 foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "306": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M0025 descricao resumida , M25 foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "307": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M0032 descricao resumida , M32 foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "308": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M0040 descricao resumida , M40 foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "309": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M020E descricao resumida , M20 ES foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "310": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M020G descricao resumida , M20 G foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "311": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M020P descricao resumida , M20 P foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "312": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M050G descricao resumida , M50 G foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "313": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M050P descricao resumida , M50 P foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "314": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M063G descricao resumida , M63 G foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "315": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M063P descricao resumida , M63 P foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "316": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M075G descricao resumida , M75G foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "317": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M075P descricao resumida , M75 P foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "318": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N0001 descricao resumida , NPT 1 foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "319": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N0012 descricao resumida , NPT 1/2 foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "320": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N002G descricao resumida , NPT 2 G foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "321": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N002P descricao resumida , NPT 2 P foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "322": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N003G descricao resumida , NPT  3 G foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "323": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N003P descricao resumida , NPT 3 P foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "324": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N0112 descricao resumida , NPT 1.1/2 foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "325": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N0114 descricao resumida , NPT 1.1/4 foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "326": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N034E descricao resumida , NPT 3/4 ES foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "327": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N034G descricao resumida , NPT 3/4 G foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "328": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N034P descricao resumida , NPT 3/4 P foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "329": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N212G descricao resumida , NPT 2.1/2 G foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "330": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N212P descricao resumida , NPT 2.1/2 P foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "331": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:49",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item 4 descricao resumida FAB EM ACO INOX 304 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "332": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:49",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item 6 descricao resumida FAB EM ACO INOX 316 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "333": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:49",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item A descricao resumida FAB EM ALUMINIO foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "334": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:49",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item L descricao resumida FAB EM LATAO foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "335": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:49",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N descricao resumida FAB EM LATAO NIQUELADO foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "336": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:49",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B0001 foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "337": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:49",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B0012 foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "338": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:49",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B002G foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "339": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B002P foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "340": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B003G foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "341": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B003P foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "342": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B0112 foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "343": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B0114 foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "344": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B034E foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "345": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B034G foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "346": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B034P foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "347": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B212G foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "348": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item B212P foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "349": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M0016 foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "350": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item 4 foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "351": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item L foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "352": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M0025 foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "353": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M0032 foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "354": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M0040 foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "355": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M020E foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "356": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M020G foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "357": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M020P foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "358": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M050G foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "359": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M050P foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "360": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M063G foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "361": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M063P foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "362": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M075G foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "363": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item M075P foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "364": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N0001 foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "365": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N0012 foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "366": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N002G foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "367": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N002P foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "368": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N003P foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "369": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N003G foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "370": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N0112 foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "371": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N0114 foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "372": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N034E foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "373": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N034G foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "374": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N034P foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "375": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:52",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N212G foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "376": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:52",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item N212P foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "377": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:52",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "378": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:54",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "379": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:55",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "380": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:55",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "381": {
+            "data":                  "05/09/2014",
+            "hora":                  "13:55",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|CONJUNTO DE PECAS METALICAS|modelo|TL.PC.EXD.001",
+            "msg":                   "O item A foi removido da tabela de campos TIPCCP001MATERIAPRIMA",
+            "prodkey":               "TIPCCP001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "382": {
+            "data":                  "10/09/2014",
+            "hora":                  "16:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|TAMPAO|subfamilia||modelo|",
+            "msg":                   "A familia TAMPAO e mascara TP foi removida!",
+            "prodkey":               "TITP",
+            "tipo":                  "Removido",
+            "usuario":               "monique soares"
+        },
+        "383": {
+            "data":                  "10/09/2014",
+            "hora":                  "16:16",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia||subfamilia||modelo|Modelo",
+            "msg":                   "A familia TAMPAO e mascara TP foi criada!",
+            "prodkey":               "TIMascara",
+            "tipo":                  "Criado",
+            "usuario":               "monique soares"
+        },
+        "384": {
+            "data":                  "16/09/2014",
+            "hora":                  "12:23",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BORRACHA|subfamilia||modelo|Modelos",
+            "msg":                   "O Modelo FLANGE e mascara FL foi criado!",
+            "prodkey":               "TMPBRMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "385": {
+            "data":                  "16/09/2014",
+            "hora":                  "12:23",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BORRACHA|subfamilia||modelo|FLANGE",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TMPBRFL",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "386": {
+            "data":                  "16/09/2014",
+            "hora":                  "12:24",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BORRACHA|subfamilia||modelo|FLANGE",
+            "msg":                   "O Campo PARTES foi criado!",
+            "prodkey":               "TMPBRFL",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "387": {
+            "data":                  "16/09/2014",
+            "hora":                  "12:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BORRACHA|subfamilia||modelo|FLANGE",
+            "msg":                   "O item 360 descricao resumida PERFIL 152X360X5MM  foi incluido no campo PARTES",
+            "prodkey":               "TMPBRFL",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "388": {
+            "data":                  "16/09/2014",
+            "hora":                  "12:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BORRACHA|subfamilia||modelo|FLANGE",
+            "msg":                   "O item 152 descricao resumida PERFIL 152X152X5MM  foi incluido no campo PARTES",
+            "prodkey":               "TMPBRFL",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "389": {
+            "data":                  "16/09/2014",
+            "hora":                  "12:26",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BORRACHA|subfamilia||modelo|FLANGE",
+            "msg":                   "O item 460 descricao resumida PERFIL 152X460X5MM  foi incluido no campo PARTES",
+            "prodkey":               "TMPBRFL",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "390": {
+            "data":                  "16/09/2014",
+            "hora":                  "12:26",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BORRACHA|subfamilia||modelo|FLANGE",
+            "msg":                   "O item 408 descricao resumida PERFIL 152X408X5MM  foi incluido no campo PARTES",
+            "prodkey":               "TMPBRFL",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "391": {
+            "data":                  "16/09/2014",
+            "hora":                  "12:27",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BORRACHA|subfamilia||modelo|FLANGE",
+            "msg":                   "O item 526 descricao resumida PERFIL 152X526X5MM  foi incluido no campo PARTES",
+            "prodkey":               "TMPBRFL",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "392": {
+            "data":                  "16/09/2014",
+            "hora":                  "12:27",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BORRACHA|subfamilia||modelo|FLANGE",
+            "msg":                   "O item 560 descricao resumida PERFIL 152X560X5MM  foi incluido no campo PARTES",
+            "prodkey":               "TMPBRFL",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "393": {
+            "data":                  "16/09/2014",
+            "hora":                  "12:27",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BORRACHA|subfamilia||modelo|FLANGE",
+            "msg":                   "O item 660 descricao resumida PERFIL 152X660X5MM  foi incluido no campo PARTES",
+            "prodkey":               "TMPBRFL",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "394": {
+            "data":                  "16/09/2014",
+            "hora":                  "12:28",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BORRACHA|subfamilia||modelo|FLANGE",
+            "msg":                   "O Campo COMPOSTO foi criado!",
+            "prodkey":               "TMPBRFL",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "395": {
+            "data":                  "16/09/2014",
+            "hora":                  "12:28",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BORRACHA|subfamilia||modelo|FLANGE",
+            "msg":                   "O campo COMPOSTO foi removido!",
+            "prodkey":               "TMPBRFL",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "396": {
+            "data":                  "16/09/2014",
+            "hora":                  "12:28",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BORRACHA|subfamilia||modelo|FLANGE",
+            "msg":                   "O Campo TIPO foi criado!",
+            "prodkey":               "TMPBRFL",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "397": {
+            "data":                  "16/09/2014",
+            "hora":                  "12:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BORRACHA|subfamilia||modelo|FLANGE",
+            "msg":                   "O item 01 descricao resumida SBR PRETO DUREZA  25 (+-5) A foi incluido no campo TIPO",
+            "prodkey":               "TMPBRFL",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "398": {
+            "data":                  "16/09/2014",
+            "hora":                  "12:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BORRACHA|subfamilia||modelo|FLANGE",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TMPBRFL",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "399": {
+            "data":                  "16/09/2014",
+            "hora":                  "15:12",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|AUXILIO A NAVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "O item AI descricao resumida ACO INOX foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TNL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "400": {
+            "data":                  "16/09/2014",
+            "hora":                  "15:16",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|AUXILIO A NEVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "O Campo TIPO DE LAMPADA foi criado!",
+            "prodkey":               "TSNL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "401": {
+            "data":                  "16/09/2014",
+            "hora":                  "15:17",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|AUXILIO A NEVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "O Campo POTENCIA foi criado!",
+            "prodkey":               "TSNL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "402": {
+            "data":                  "16/09/2014",
+            "hora":                  "15:17",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|AUXILIO A NEVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "O Campo TENSAO foi criado!",
+            "prodkey":               "TSNL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "403": {
+            "data":                  "16/09/2014",
+            "hora":                  "15:17",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|AUXILIO A NEVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "O Campo COR foi criado!",
+            "prodkey":               "TSNL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "404": {
+            "data":                  "16/09/2014",
+            "hora":                  "15:17",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|AUXILIO A NEVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TSNL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "405": {
+            "data":                  "16/09/2014",
+            "hora":                  "15:17",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|AUXILIO A NEVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "O item LD descricao resumida LED foi incluido no campo TIPO DE LAMPADA",
+            "prodkey":               "TSNL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "406": {
+            "data":                  "16/09/2014",
+            "hora":                  "15:18",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|AUXILIO A NEVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "O item 11 descricao resumida 11 W foi incluido no campo POTENCIA",
+            "prodkey":               "TSNL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "407": {
+            "data":                  "16/09/2014",
+            "hora":                  "15:18",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|AUXILIO A NEVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "O item 9 descricao resumida 110/254 VCA foi incluido no campo TENSAO",
+            "prodkey":               "TSNL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "408": {
+            "data":                  "16/09/2014",
+            "hora":                  "15:20",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|AUXILIO A NEVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "O item VD descricao resumida VERDE 30 CANDELA foi incluido no campo COR",
+            "prodkey":               "TSNL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "409": {
+            "data":                  "16/09/2014",
+            "hora":                  "15:20",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|AUXILIO A NEVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "O item VM descricao resumida VERMELHA 32 CANDELA foi incluido no campo COR",
+            "prodkey":               "TSNL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "410": {
+            "data":                  "16/09/2014",
+            "hora":                  "15:21",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|AUXILIO A NEVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "O item LT descricao resumida LATAO foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TSNL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "411": {
+            "data":                  "16/09/2014",
+            "hora":                  "15:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|AUXILIO A NEVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "O item AI descricao resumida ACO INOX foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TSNL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "412": {
+            "data":                  "16/09/2014",
+            "hora":                  "15:31",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|AUXILIO A NEVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TSNL75",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "413": {
+            "data":                  "16/09/2014",
+            "hora":                  "15:38",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|AUXILIO A NEVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TSNL75",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "414": {
+            "data":                  "16/09/2014",
+            "hora":                  "15:39",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|AUXILIO A NEVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TSNL75",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "415": {
+            "data":                  "16/09/2014",
+            "hora":                  "16:03",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS SEMI-ACABADOS|familia|AUXILIO A NEVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TSNL75",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "416": {
+            "data":                  "16/09/2014",
+            "hora":                  "16:06",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|AUXILIO A NAVEGACAO|subfamilia||modelo|TL.N.EXE.L75",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TNL75",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "417": {
+            "data":                  "17/09/2014",
+            "hora":                  "08:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia||subfamilia||modelo|Modelo",
+            "msg":                   "A familia AUXILIO A NAVEGACAO e mascara N foi criada!",
+            "prodkey":               "TIMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "418": {
+            "data":                  "17/09/2014",
+            "hora":                  "08:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia||modelo|Modelo",
+            "msg":                   "A subfamilia CORPO e mascara CO foi criada!",
+            "prodkey":               "TINMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "419": {
+            "data":                  "17/09/2014",
+            "hora":                  "08:24",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS REVENDA|familia|LUMINARIA|subfamilia||modelo|Modelo",
+            "msg":                   "A subfamilia VILUX e mascara VLX foi criada!",
+            "prodkey":               "MRLMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "420": {
+            "data":                  "17/09/2014",
+            "hora":                  "08:24",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS REVENDA|familia|LUMINARIA|subfamilia|VILUX|modelo|",
+            "msg":                   "A subfamilia VILUX e mascara VLX foi removida!",
+            "prodkey":               "MRLVLX",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "421": {
+            "data":                  "17/09/2014",
+            "hora":                  "08:25",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS REVENDA|familia|LUMINARIA|subfamilia||modelo|Modelo",
+            "msg":                   "A subfamilia VILUX e mascara VX foi criada!",
+            "prodkey":               "MRLMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "422": {
+            "data":                  "17/09/2014",
+            "hora":                  "08:27",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS REVENDA|familia|LUMINARIA|subfamilia|VILUX|modelo|Modelos",
+            "msg":                   "O Modelo IP66 e mascara 6 foi criado!",
+            "prodkey":               "MRLVXMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "423": {
+            "data":                  "17/09/2014",
+            "hora":                  "08:28",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS REVENDA|familia|LUMINARIA|subfamilia|VILUX|modelo|IP66",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "MRLVX6",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "424": {
+            "data":                  "17/09/2014",
+            "hora":                  "08:28",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS REVENDA|familia|LUMINARIA|subfamilia|VILUX|modelo|IP66",
+            "msg":                   "O Campo PARTES foi criado!",
+            "prodkey":               "MRLVX6",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "425": {
+            "data":                  "17/09/2014",
+            "hora":                  "08:35",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS REVENDA|familia|LUMINARIA|subfamilia|VILUX|modelo|IP66",
+            "msg":                   "O item 75LD descricao resumida COM 75 LEDS, 7,5 W DE POTENCIA, 100 A 240 VCA, DIM 271X132X78MM, AUT. 8 HORAS, CHAVE LIGA/DESLIGA, CORPO EM MAT. ABS ANTICHAMA V0 foi incluido no campo PARTES",
+            "prodkey":               "MRLVX6",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "426": {
+            "data":                  "17/09/2014",
+            "hora":                  "08:36",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS REVENDA|familia|LUMINARIA|subfamilia|VILUX|modelo|IP66",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "MRLVX6",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "427": {
+            "data":                  "17/09/2014",
+            "hora":                  "08:40",
+            "item":                  "|empresa|MACCOMEVAP|tipo|PRODUTOS REVENDA|familia|LUMINARIA|subfamilia|VILUX|modelo|IP66",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "MRLVX6",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "428": {
+            "data":                  "17/09/2014",
+            "hora":                  "09:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|CORPO|modelo|Modelos",
+            "msg":                   "O Modelo MAC,EX,L75 e mascara L75 foi criado!",
+            "prodkey":               "TINCOMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "429": {
+            "data":                  "17/09/2014",
+            "hora":                  "09:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|CORPO|modelo|",
+            "msg":                   "O modelo MAC,EX,L75 e mascara L75 foi removido!",
+            "prodkey":               "TINCO",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "430": {
+            "data":                  "17/09/2014",
+            "hora":                  "09:31",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|CORPO|modelo|Modelos",
+            "msg":                   "O Modelo MAC.EX.L75 e mascara L75 foi criado!",
+            "prodkey":               "TINCOMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "431": {
+            "data":                  "17/09/2014",
+            "hora":                  "09:32",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|CORPO|modelo|MAC.EX.L75",
+            "msg":                   "O Campo PARTES foi criado!",
+            "prodkey":               "TINCOL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "432": {
+            "data":                  "17/09/2014",
+            "hora":                  "09:34",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|CORPO|modelo|MAC.EX.L75",
+            "msg":                   "O item BS descricao resumida BASE DO CORPO DA LUMINARIA DE AUXILIO A NAVEGACAO MAC.EX.L75 foi incluido no campo PARTES",
+            "prodkey":               "TINCOL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "433": {
+            "data":                  "17/09/2014",
+            "hora":                  "09:35",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|CORPO|modelo|MAC.EX.L75",
+            "msg":                   "O item TP descricao resumida TAMPA DO CORPO DA LUMINARIA DE AUXILIO A NAVEGACAO MAC.EX.L75 foi incluido no campo PARTES",
+            "prodkey":               "TINCOL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "434": {
+            "data":                  "17/09/2014",
+            "hora":                  "09:35",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|CORPO|modelo|MAC.EX.L75",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TINCOL75",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "435": {
+            "data":                  "17/09/2014",
+            "hora":                  "09:36",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|CORPO|modelo|MAC.EX.L75",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TINCOL75",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "436": {
+            "data":                  "17/09/2014",
+            "hora":                  "09:36",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|CORPO|modelo|MAC.EX.L75",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TINCOL75",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "437": {
+            "data":                  "17/09/2014",
+            "hora":                  "09:38",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|DIVERSOS|modelo|TL.N.TGVP.075",
+            "msg":                   "O modelo TL.N.TGVP.075 e mascara 075 foi removido!",
+            "prodkey":               "TINDIV075",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "438": {
+            "data":                  "17/09/2014",
+            "hora":                  "09:38",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|DIVERSOS|modelo|TL.N.EXE.L75",
+            "msg":                   "O Campo PARTES foi criado!",
+            "prodkey":               "TINDIVL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "439": {
+            "data":                  "17/09/2014",
+            "hora":                  "09:40",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|DIFUSOR|modelo|TL.N.EXE.L75",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TINDIFL75",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "440": {
+            "data":                  "17/09/2014",
+            "hora":                  "09:43",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|DIFUSOR|modelo|TL.N.EXE.L75",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TINDIFL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "441": {
+            "data":                  "17/09/2014",
+            "hora":                  "09:44",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|DIFUSOR|modelo|TL.N.EXE.L75",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TINDIFL75",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "442": {
+            "data":                  "17/09/2014",
+            "hora":                  "09:52",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|DIFUSOR|modelo|TL.N.EXE.L75",
+            "msg":                   "O item PO descricao resumida EM POLICARBONATO foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TINDIFL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "443": {
+            "data":                  "17/09/2014",
+            "hora":                  "09:55",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|DIFUSOR|modelo|TL.N.EXE.L75",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TINDIFL75",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "444": {
+            "data":                  "17/09/2014",
+            "hora":                  "10:02",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|DIVERSOS|modelo|TL.N.EXE.L75",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TINDIVL75",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "445": {
+            "data":                  "17/09/2014",
+            "hora":                  "10:03",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|DIVERSOS|modelo|TL.N.EXE.L75",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TINDIVL75",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "446": {
+            "data":                  "17/09/2014",
+            "hora":                  "10:05",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|DIVERSOS|modelo|TL.N.EXE.L75",
+            "msg":                   "O item BRVD descricao resumida BORRACHA DE VEDACAO DO DIFUSOR DA LUMINARIA L75 foi incluido no campo PARTES",
+            "prodkey":               "TINDIVL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "447": {
+            "data":                  "17/09/2014",
+            "hora":                  "10:07",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|DIVERSOS|modelo|TL.N.EXE.L75",
+            "msg":                   "O item TPFX descricao resumida TAMPA DE FIXACAO DO DIFUSOR DA LUMINARIA L75 foi incluido no campo PARTES",
+            "prodkey":               "TINDIVL75",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
         }
     },
-    "max_index":                     249
+    "max_index":                     447
 }

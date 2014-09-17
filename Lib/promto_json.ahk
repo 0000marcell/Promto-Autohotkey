@@ -7,8 +7,6 @@ class PromtoJSON{
 
   get_companies(){
     Global db
-    AHK.reset_debug()
-
     For each, value in list := db.get_values("*", "empresas"){
       if(list.maxindex() = A_Index){
         this.obj.companies.max_index := A_Index  

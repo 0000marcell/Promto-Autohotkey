@@ -3,8 +3,6 @@ class PromtoJSONStructure{
 	}
 
 	generate_JSON(code) {
-		;TL010122956ACS
-    ;AHK.reset_debug()
 		this.obj := {}
 		this.db := new PromtoSQLServer("TOTALLIGHT")	
 		this.code := code

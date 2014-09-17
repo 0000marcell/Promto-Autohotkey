@@ -1,6 +1,5 @@
 generate_xml_view(){
 	Global
-
 	Gui, generate_xml_view:New
 	Gui, Add, Text, xm , % "Gera o arquivo xml utilizado na visualizacao pela internet."
 	Gui, Add, Button, xm y+15 w100 h30 ggenerate_xml, % "Gerar"
@@ -10,16 +9,12 @@ generate_xml_view(){
 
 	generate_xml:
 	promtoXML := new PromtoXML()
-	promtoFTP := new PromtoFTP(
-		(JOIN 
-			"ftp.promto-maccomevap.url.ph",
-			"u832722944", "Recovergun"
-		))
 	undetermine_progress_window := "generate_xml_view"
 	SetTimer, undetermine_progress_action, 45
 	promtoXML.generate(ETF_TVSTRING, ETF_hashmask)
-	promtoFTP.upload_file("promto_data.xml")
-	promtoFTP.update_folder(global_image_path "promto_imagens\", "promto_imagens")
+	promto_web := new PromtoWebFTP()
+	promto_web.upload_xml()
+	promto_web.upload_images()
 	Gui, generate_xml_view:destroy
 	return 
 }

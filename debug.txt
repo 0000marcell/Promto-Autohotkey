@@ -1,54 +1,1609 @@
-gonna query TL010122956ACS
-returned value 3 STL010122956ACS 4     5 1.000000
-
- 
- 
- code STL010122956ACS
-gonna try to save the obj 
- 
- {
-    "children": {},
-    "id":                                           "STL010122956ACS",
-    "name":                                         ""
-}
-the father was STL010122956ACS
-
- 
- 
- code ITL010CJC2AC   
-gonna try to save the obj 
- 
- {
-    "children": {},
-    "id":                                           "ITL010CJC2AC   ",
-    "name":                                         ""
-}
-the father was ITL010CJC2AC   
-
- 
- 
- code ITL010CJFHAI   
-gonna try to save the obj 
- 
- {
-    "children": {},
-    "id":                                           "ITL010CJFHAI   ",
-    "name":                                         ""
-}
-the father was ITL010CJFHAI   
-
- 
- 
- code ITL010FHSP     
-gonna try to save the obj 
- 
- {
-    "children": {},
-    "id":                                           "ITL010FHSP     ",
-    "name":                                         ""
-}
-the father was ITL010CJFHAI   
-
- 
- 
- code ITL010FHAR     
+image max index 0
+gonna set dir!
+current index 0
+current index 1
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1.jpg
+current index 10
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_10.jpg
+current index 100
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_100.jpg
+current index 1000
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1000.jpg
+current index 1001
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1001.jpg
+current index 1002
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1002.jpg
+current index 1003
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1003.jpg
+current index 1004
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1004.jpg
+current index 1005
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1005.jpg
+current index 1006
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1006.jpg
+current index 1007
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1007.jpg
+current index 1008
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1008.jpg
+current index 1009
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1009.jpg
+current index 101
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_101.jpg
+current index 1010
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1010.jpg
+current index 1011
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1011.jpg
+current index 1012
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1012.jpg
+current index 102
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_102.jpg
+current index 1021
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1021.jpg
+current index 1022
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1022.jpg
+current index 1023
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1023.jpg
+current index 1024
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1024.jpg
+current index 1025
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1025.jpg
+current index 1026
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1026.jpg
+current index 1027
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1027.jpg
+current index 1028
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1028.jpg
+current index 1029
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1029.jpg
+current index 103
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_103.jpg
+current index 1031
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1031.jpg
+current index 1032
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1032.jpg
+current index 1033
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1033.jpg
+current index 1034
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1034.jpg
+current index 1035
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1035.jpg
+current index 1036
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1036.jpg
+current index 1037
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1037.jpg
+current index 1038
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1038.jpg
+current index 1039
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1039.jpg
+current index 104
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_104.jpg
+current index 1040
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1040.jpg
+current index 1041
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1041.jpg
+current index 1042
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1042.jpg
+current index 1043
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1043.jpg
+current index 1044
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1044.jpg
+current index 1045
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1045.jpg
+current index 1046
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1046.jpg
+current index 1047
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1047.jpg
+current index 1048
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1048.jpg
+current index 1049
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1049.jpg
+current index 105
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_105.jpg
+current index 1050
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1050.jpg
+current index 1051
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1051.jpg
+current index 1052
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1052.jpg
+current index 1053
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1053.jpg
+current index 1054
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1054.jpg
+current index 1055
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1055.jpg
+current index 1056
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_1056.jpg
+current index 106
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_106.jpg
+current index 107
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_107.jpg
+current index 108
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_108.jpg
+current index 109
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_109.jpg
+current index 11
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_11.jpg
+current index 110
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_110.jpg
+current index 111
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_111.jpg
+current index 112
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_112.jpg
+current index 113
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_113.jpg
+current index 114
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_114.jpg
+current index 115
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_115.jpg
+current index 116
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_116.jpg
+current index 117
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_117.jpg
+current index 118
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_118.jpg
+current index 119
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_119.jpg
+current index 12
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_12.jpg
+current index 120
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_120.jpg
+current index 121
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_121.jpg
+current index 122
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_122.jpg
+current index 123
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_123.jpg
+current index 124
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_124.jpg
+current index 125
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_125.jpg
+current index 126
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_126.jpg
+current index 127
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_127.jpg
+current index 128
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_128.jpg
+current index 129
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_129.jpg
+current index 13
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_13.jpg
+current index 130
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_130.jpg
+current index 131
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_131.jpg
+current index 132
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_132.jpg
+current index 133
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_133.jpg
+current index 134
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_134.jpg
+current index 135
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_135.jpg
+current index 136
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_136.jpg
+current index 137
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_137.jpg
+current index 138
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_138.jpg
+current index 139
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_139.jpg
+current index 14
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_14.jpg
+current index 140
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_140.jpg
+current index 141
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_141.jpg
+current index 142
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_142.jpg
+current index 143
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_143.jpg
+current index 144
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_144.jpg
+current index 145
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_145.jpg
+current index 146
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_146.jpg
+current index 147
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_147.jpg
+current index 148
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_148.jpg
+current index 149
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_149.jpg
+current index 15
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_15.jpg
+current index 150
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_150.jpg
+current index 151
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_151.jpg
+current index 152
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_152.jpg
+current index 153
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_153.jpg
+current index 154
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_154.jpg
+current index 155
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_155.jpg
+current index 156
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_156.jpg
+current index 157
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_157.jpg
+current index 158
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_158.jpg
+current index 159
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_159.jpg
+current index 16
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_16.jpg
+current index 160
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_160.jpg
+current index 161
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_161.jpg
+current index 162
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_162.jpg
+current index 163
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_163.jpg
+current index 164
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_164.jpg
+current index 165
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_165.jpg
+current index 166
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_166.jpg
+current index 167
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_167.jpg
+current index 168
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_168.jpg
+current index 169
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_169.jpg
+current index 17
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_17.jpg
+current index 170
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_170.jpg
+current index 171
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_171.jpg
+current index 172
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_172.jpg
+current index 173
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_173.jpg
+current index 174
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_174.jpg
+current index 175
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_175.jpg
+current index 176
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_176.jpg
+current index 177
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_177.jpg
+current index 178
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_178.jpg
+current index 179
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_179.jpg
+current index 18
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_18.jpg
+current index 180
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_180.jpg
+current index 181
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_181.jpg
+current index 182
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_182.jpg
+current index 183
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_183.jpg
+current index 184
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_184.jpg
+current index 185
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_185.jpg
+current index 186
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_186.jpg
+current index 187
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_187.jpg
+current index 188
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_188.jpg
+current index 189
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_189.jpg
+current index 19
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_19.jpg
+current index 190
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_190.jpg
+current index 191
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_191.jpg
+current index 192
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_192.jpg
+current index 193
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_193.jpg
+current index 194
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_194.jpg
+current index 195
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_195.jpg
+current index 196
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_196.jpg
+current index 197
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_197.jpg
+current index 198
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_198.jpg
+current index 199
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_199.jpg
+current index 2
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_2.jpg
+current index 20
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_20.jpg
+current index 200
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_200.jpg
+current index 201
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_201.jpg
+current index 202
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_202.jpg
+current index 203
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_203.jpg
+current index 205
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_205.jpg
+current index 206
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_206.jpg
+current index 207
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_207.jpg
+current index 209
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_209.jpg
+current index 21
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_21.jpg
+current index 210
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_210.jpg
+current index 212
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_212.jpg
+current index 213
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_213.jpg
+current index 214
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_214.jpg
+current index 215
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_215.jpg
+current index 216
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_216.jpg
+current index 217
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_217.jpg
+current index 218
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_218.jpg
+current index 219
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_219.jpg
+current index 22
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_22.jpg
+current index 220
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_220.jpg
+current index 221
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_221.jpg
+current index 222
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_222.jpg
+current index 223
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_223.jpg
+current index 224
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_224.jpg
+current index 225
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_225.jpg
+current index 226
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_226.jpg
+current index 227
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_227.jpg
+current index 228
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_228.jpg
+current index 229
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_229.jpg
+current index 23
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_23.jpg
+current index 230
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_230.jpg
+current index 231
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_231.jpg
+current index 232
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_232.jpg
+current index 233
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_233.jpg
+current index 234
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_234.jpg
+current index 235
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_235.jpg
+current index 236
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_236.jpg
+current index 237
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_237.jpg
+current index 238
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_238.jpg
+current index 239
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_239.jpg
+current index 24
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_24.jpg
+current index 240
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_240.jpg
+current index 241
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_241.jpg
+current index 242
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_242.jpg
+current index 243
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_243.jpg
+current index 244
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_244.jpg
+current index 245
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_245.jpg
+current index 246
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_246.jpg
+current index 248
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_248.jpg
+current index 249
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_249.jpg
+current index 25
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_25.jpg
+current index 250
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_250.jpg
+current index 251
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_251.jpg
+current index 252
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_252.jpg
+current index 253
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_253.jpg
+current index 254
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_254.jpg
+current index 255
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_255.jpg
+current index 256
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_256.jpg
+current index 257
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_257.jpg
+current index 258
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_258.jpg
+current index 259
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_259.jpg
+current index 26
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_26.jpg
+current index 260
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_260.jpg
+current index 261
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_261.jpg
+current index 262
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_262.jpg
+current index 263
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_263.jpg
+current index 264
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_264.jpg
+current index 265
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_265.jpg
+current index 266
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_266.jpg
+current index 267
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_267.jpg
+current index 268
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_268.jpg
+current index 269
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_269.jpg
+current index 27
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_27.jpg
+current index 270
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_270.jpg
+current index 271
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_271.jpg
+current index 272
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_272.jpg
+current index 273
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_273.jpg
+current index 274
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_274.jpg
+current index 275
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_275.jpg
+current index 276
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_276.jpg
+current index 277
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_277.jpg
+current index 278
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_278.jpg
+current index 279
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_279.jpg
+current index 28
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_28.jpg
+current index 280
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_280.jpg
+current index 281
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_281.jpg
+current index 282
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_282.jpg
+current index 283
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_283.jpg
+current index 284
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_284.jpg
+current index 285
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_285.jpg
+current index 286
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_286.jpg
+current index 287
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_287.jpg
+current index 288
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_288.jpg
+current index 289
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_289.jpg
+current index 29
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_29.jpg
+current index 290
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_290.jpg
+current index 291
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_291.jpg
+current index 292
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_292.jpg
+current index 293
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_293.jpg
+current index 294
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_294.jpg
+current index 295
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_295.jpg
+current index 296
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_296.jpg
+current index 297
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_297.jpg
+current index 298
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_298.jpg
+current index 299
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_299.jpg
+current index 3
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_3.jpg
+current index 30
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_30.jpg
+current index 300
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_300.jpg
+current index 301
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_301.jpg
+current index 302
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_302.jpg
+current index 303
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_303.jpg
+current index 304
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_304.jpg
+current index 305
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_305.jpg
+current index 306
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_306.jpg
+current index 307
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_307.jpg
+current index 308
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_308.jpg
+current index 309
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_309.jpg
+current index 31
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_31.jpg
+current index 310
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_310.jpg
+current index 311
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_311.jpg
+current index 312
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_312.jpg
+current index 313
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_313.jpg
+current index 314
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_314.jpg
+current index 315
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_315.jpg
+current index 316
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_316.jpg
+current index 317
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_317.jpg
+current index 318
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_318.jpg
+current index 319
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_319.jpg
+current index 32
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_32.jpg
+current index 320
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_320.jpg
+current index 321
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_321.jpg
+current index 322
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_322.jpg
+current index 323
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_323.jpg
+current index 324
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_324.jpg
+current index 325
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_325.jpg
+current index 326
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_326.jpg
+current index 327
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_327.jpg
+current index 328
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_328.jpg
+current index 329
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_329.jpg
+current index 33
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_33.jpg
+current index 330
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_330.jpg
+current index 332
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_332.jpg
+current index 333
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_333.jpg
+current index 334
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_334.jpg
+current index 335
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_335.jpg
+current index 336
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_336.jpg
+current index 337
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_337.jpg
+current index 338
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_338.jpg
+current index 339
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_339.jpg
+current index 34
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_34.jpg
+current index 340
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_340.jpg
+current index 341
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_341.jpg
+current index 342
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_342.jpg
+current index 343
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_343.jpg
+current index 344
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_344.jpg
+current index 345
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_345.jpg
+current index 346
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_346.jpg
+current index 347
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_347.jpg
+current index 348
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_348.jpg
+current index 349
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_349.jpg
+current index 35
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_35.jpg
+current index 350
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_350.jpg
+current index 351
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_351.jpg
+current index 352
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_352.jpg
+current index 353
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_353.jpg
+current index 354
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_354.jpg
+current index 355
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_355.jpg
+current index 356
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_356.jpg
+current index 357
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_357.jpg
+current index 358
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_358.jpg
+current index 359
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_359.jpg
+current index 36
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_36.jpg
+current index 360
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_360.jpg
+current index 361
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_361.jpg
+current index 362
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_362.jpg
+current index 363
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_363.jpg
+current index 364
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_364.jpg
+current index 365
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_365.jpg
+current index 366
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_366.jpg
+current index 367
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_367.jpg
+current index 368
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_368.jpg
+current index 369
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_369.jpg
+current index 37
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_37.jpg
+current index 370
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_370.jpg
+current index 371
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_371.jpg
+current index 372
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_372.jpg
+current index 373
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_373.jpg
+current index 374
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_374.jpg
+current index 375
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_375.jpg
+current index 376
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_376.jpg
+current index 377
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_377.jpg
+current index 378
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_378.jpg
+current index 379
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_379.jpg
+current index 38
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_38.jpg
+current index 380
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_380.jpg
+current index 381
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_381.jpg
+current index 382
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_382.jpg
+current index 383
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_383.jpg
+current index 384
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_384.jpg
+current index 385
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_385.jpg
+current index 386
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_386.jpg
+current index 387
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_387.jpg
+current index 388
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_388.jpg
+current index 389
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_389.jpg
+current index 39
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_39.jpg
+current index 390
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_390.jpg
+current index 391
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_391.jpg
+current index 392
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_392.jpg
+current index 393
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_393.jpg
+current index 394
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_394.jpg
+current index 395
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_395.jpg
+current index 396
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_396.jpg
+current index 397
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_397.jpg
+current index 398
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_398.jpg
+current index 399
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_399.jpg
+current index 4
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_4.jpg
+current index 40
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_40.jpg
+current index 400
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_400.jpg
+current index 401
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_401.jpg
+current index 402
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_402.jpg
+current index 403
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_403.jpg
+current index 404
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_404.jpg
+current index 405
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_405.jpg
+current index 406
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_406.jpg
+current index 407
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_407.jpg
+current index 408
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_408.jpg
+current index 409
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_409.jpg
+current index 41
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_41.jpg
+current index 410
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_410.jpg
+current index 411
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_411.jpg
+current index 412
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_412.jpg
+current index 413
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_413.jpg
+current index 414
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_414.jpg
+current index 415
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_415.jpg
+current index 416
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_416.jpg
+current index 417
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_417.jpg
+current index 418
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_418.jpg
+current index 419
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_419.jpg
+current index 42
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_42.jpg
+current index 420
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_420.jpg
+current index 421
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_421.jpg
+current index 422
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_422.jpg
+current index 423
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_423.jpg
+current index 425
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_425.jpg
+current index 426
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_426.jpg
+current index 427
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_427.jpg
+current index 428
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_428.jpg
+current index 429
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_429.jpg
+current index 43
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_43.jpg
+current index 430
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_430.jpg
+current index 431
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_431.jpg
+current index 432
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_432.jpg
+current index 433
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_433.jpg
+current index 434
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_434.jpg
+current index 436
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_436.jpg
+current index 437
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_437.jpg
+current index 438
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_438.jpg
+current index 439
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_439.jpg
+current index 44
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_44.jpg
+current index 440
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_440.jpg
+current index 441
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_441.jpg
+current index 442
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_442.jpg
+current index 443
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_443.jpg
+current index 444
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_444.jpg
+current index 445
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_445.jpg
+current index 446
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_446.jpg
+current index 447
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_447.jpg
+current index 448
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_448.jpg
+current index 449
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_449.jpg
+current index 45
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_45.jpg
+current index 450
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_450.jpg
+current index 451
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_451.jpg
+current index 452
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_452.jpg
+current index 453
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_453.jpg
+current index 454
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_454.jpg
+current index 455
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_455.jpg
+current index 456
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_456.jpg
+current index 457
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_457.jpg
+current index 458
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_458.jpg
+current index 459
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_459.jpg
+current index 46
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_46.jpg
+current index 460
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_460.jpg
+current index 461
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_461.jpg
+current index 462
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_462.jpg
+current index 463
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_463.jpg
+current index 464
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_464.jpg
+current index 466
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_466.jpg
+current index 467
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_467.jpg
+current index 468
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_468.jpg
+current index 469
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_469.jpg
+current index 47
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_47.jpg
+current index 470
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_470.jpg
+current index 471
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_471.jpg
+current index 472
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_472.jpg
+current index 473
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_473.jpg
+current index 474
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_474.jpg
+current index 475
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_475.jpg
+current index 476
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_476.jpg
+current index 477
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_477.jpg
+current index 478
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_478.jpg
+current index 479
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_479.jpg
+current index 48
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_48.jpg
+current index 480
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_480.jpg
+current index 481
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_481.jpg
+current index 482
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_482.jpg
+current index 483
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_483.jpg
+current index 484
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_484.jpg
+current index 485
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_485.jpg
+current index 486
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_486.jpg
+current index 487
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_487.jpg
+current index 488
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_488.jpg
+current index 489
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_489.jpg
+current index 49
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_49.jpg
+current index 490
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_490.jpg
+current index 491
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_491.jpg
+current index 492
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_492.jpg
+current index 493
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_493.jpg
+current index 494
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_494.jpg
+current index 495
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_495.jpg
+current index 496
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_496.jpg
+current index 497
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_497.jpg
+current index 498
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_498.jpg
+current index 499
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_499.jpg
+current index 5
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_5.jpg
+current index 50
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_50.jpg
+current index 500
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_500.jpg
+current index 501
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_501.jpg
+current index 502
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_502.jpg
+current index 503
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_503.jpg
+current index 504
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_504.jpg
+current index 505
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_505.jpg
+current index 506
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_506.jpg
+current index 507
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_507.jpg
+current index 508
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_508.jpg
+current index 509
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_509.jpg
+current index 51
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_51.jpg
+current index 510
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_510.jpg
+current index 511
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_511.jpg
+current index 512
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_512.jpg
+current index 513
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_513.jpg
+current index 514
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_514.jpg
+current index 516
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_516.jpg
+current index 517
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_517.jpg
+current index 518
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_518.jpg
+current index 519
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_519.jpg
+current index 52
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_52.jpg
+current index 520
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_520.jpg
+current index 521
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_521.jpg
+current index 522
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_522.jpg
+current index 523
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_523.jpg
+current index 524
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_524.jpg
+current index 525
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_525.jpg
+current index 526
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_526.jpg
+current index 527
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_527.jpg
+current index 528
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_528.jpg
+current index 529
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_529.jpg
+current index 53
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_53.jpg
+current index 530
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_530.jpg
+current index 531
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_531.jpg
+current index 532
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_532.jpg
+current index 533
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_533.jpg
+current index 534
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_534.jpg
+current index 535
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_535.jpg
+current index 536
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_536.jpg
+current index 537
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_537.jpg
+current index 538
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_538.jpg
+current index 539
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_539.jpg
+current index 54
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_54.jpg
+current index 540
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_540.jpg
+current index 541
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_541.jpg
+current index 542
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_542.jpg
+current index 543
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_543.jpg
+current index 544
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_544.jpg
+current index 545
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_545.jpg
+current index 546
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_546.jpg
+current index 547
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_547.jpg
+current index 548
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_548.jpg
+current index 549
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_549.jpg
+current index 55
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_55.jpg
+current index 550
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_550.jpg
+current index 551
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_551.jpg
+current index 552
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_552.jpg
+current index 553
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_553.jpg
+current index 554
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_554.jpg
+current index 555
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_555.jpg
+current index 556
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_556.jpg
+current index 557
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_557.jpg
+current index 558
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_558.jpg
+current index 559
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_559.jpg
+current index 56
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_56.jpg
+current index 560
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_560.jpg
+current index 561
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_561.jpg
+current index 562
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_562.jpg
+current index 563
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_563.jpg
+current index 564
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_564.jpg
+current index 565
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_565.jpg
+current index 566
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_566.jpg
+current index 567
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_567.jpg
+current index 568
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_568.jpg
+current index 569
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_569.jpg
+current index 57
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_57.jpg
+current index 570
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_570.jpg
+current index 571
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_571.jpg
+current index 572
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_572.jpg
+current index 573
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_573.jpg
+current index 574
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_574.jpg
+current index 575
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_575.jpg
+current index 576
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_576.jpg
+current index 577
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_577.jpg
+current index 578
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_578.jpg
+current index 579
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_579.jpg
+current index 58
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_58.jpg
+current index 580
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_580.jpg
+current index 581
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_581.jpg
+current index 582
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_582.jpg
+current index 583
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_583.jpg
+current index 584
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_584.jpg
+current index 585
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_585.jpg
+current index 586
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_586.jpg
+current index 587
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_587.jpg
+current index 588
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_588.jpg
+current index 589
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_589.jpg
+current index 59
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_59.jpg
+current index 590
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_590.jpg
+current index 591
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_591.jpg
+current index 592
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_592.jpg
+current index 593
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_593.jpg
+current index 594
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_594.jpg
+current index 595
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_595.jpg
+current index 596
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_596.jpg
+current index 597
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_597.jpg
+current index 598
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_598.jpg
+current index 599
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_599.jpg
+current index 6
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_6.jpg
+current index 60
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_60.jpg
+current index 600
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_600.jpg
+current index 601
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_601.jpg
+current index 602
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_602.jpg
+current index 603
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_603.jpg
+current index 604
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_604.jpg
+current index 605
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_605.jpg
+current index 606
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_606.jpg
+current index 607
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_607.jpg
+current index 608
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_608.jpg
+current index 609
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_609.jpg
+current index 61
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_61.jpg
+current index 610
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_610.jpg
+current index 611
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_611.jpg
+current index 612
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_612.jpg
+current index 613
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_613.jpg
+current index 614
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_614.jpg
+current index 615
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_615.jpg
+current index 616
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_616.jpg
+current index 617
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_617.jpg
+current index 618
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_618.jpg
+current index 619
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_619.jpg
+current index 62
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_62.jpg
+current index 620
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_620.jpg
+current index 621
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_621.jpg
+current index 622
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_622.jpg
+current index 623
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_623.jpg
+current index 624
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_624.jpg
+current index 625
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_625.jpg
+current index 626
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_626.jpg
+current index 627
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_627.jpg
+current index 628
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_628.jpg
+current index 629
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_629.jpg
+current index 63
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_63.jpg
+current index 630
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_630.jpg
+current index 631
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_631.jpg
+current index 632
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_632.jpg
+current index 633
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_633.jpg
+current index 634
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_634.jpg
+current index 635
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_635.jpg
+current index 636
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_636.jpg
+current index 637
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_637.jpg
+current index 638
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_638.jpg
+current index 639
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_639.jpg
+current index 64
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_64.jpg
+current index 640
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_640.jpg
+current index 641
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_641.jpg
+current index 642
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_642.jpg
+current index 643
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_643.jpg
+current index 644
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_644.jpg
+current index 645
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_645.jpg
+current index 646
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_646.jpg
+current index 647
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_647.jpg
+current index 648
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_648.jpg
+current index 649
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_649.jpg
+current index 65
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_65.jpg
+current index 650
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_650.jpg
+current index 651
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_651.jpg
+current index 652
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_652.jpg
+current index 653
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_653.jpg
+current index 654
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_654.jpg
+current index 655
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_655.jpg
+current index 656
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_656.jpg
+current index 657
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_657.jpg
+current index 658
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_658.jpg
+current index 659
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_659.jpg
+current index 66
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_66.jpg
+current index 660
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_660.jpg
+current index 661
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_661.jpg
+current index 662
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_662.jpg
+current index 663
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_663.jpg
+current index 664
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_664.jpg
+current index 665
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_665.jpg
+current index 666
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_666.jpg
+current index 667
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_667.jpg
+current index 668
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_668.jpg
+current index 669
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_669.jpg
+current index 67
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_67.jpg
+current index 670
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_670.jpg
+current index 671
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_671.jpg
+current index 672
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_672.jpg
+current index 673
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_673.jpg
+current index 674
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_674.jpg
+current index 675
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_675.jpg
+current index 676
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_676.jpg
+current index 677
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_677.jpg
+current index 678
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_678.jpg
+current index 679
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_679.jpg
+current index 68
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_68.jpg
+current index 680
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_680.jpg
+current index 681
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_681.jpg
+current index 682
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_682.jpg
+current index 683
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_683.jpg
+current index 684
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_684.jpg
+current index 685
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_685.jpg
+current index 686
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_686.jpg
+current index 687
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_687.jpg
+current index 688
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_688.jpg
+current index 689
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_689.jpg
+current index 69
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_69.jpg
+current index 690
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_690.jpg
+current index 7
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_7.jpg
+current index 70
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_70.jpg
+current index 707
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_707.jpg
+current index 708
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_708.jpg
+current index 709
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_709.jpg
+current index 71
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_71.jpg
+current index 710
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_710.jpg
+current index 711
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_711.jpg
+current index 712
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_712.jpg
+current index 713
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_713.jpg
+current index 714
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_714.jpg
+current index 715
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_715.jpg
+current index 716
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_716.jpg
+current index 72
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_72.jpg
+current index 723
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_723.jpg
+current index 724
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_724.jpg
+current index 725
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_725.jpg
+current index 726
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_726.jpg
+current index 727
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_727.jpg
+current index 728
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_728.jpg
+current index 729
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_729.jpg
+current index 73
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_73.jpg
+current index 730
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_730.jpg
+current index 731
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_731.jpg
+current index 732
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_732.jpg
+current index 733
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_733.jpg
+current index 734
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_734.jpg
+current index 735
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_735.jpg
+current index 736
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_736.jpg
+current index 737
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_737.jpg
+current index 738
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_738.jpg
+current index 739
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_739.jpg
+current index 74
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_74.jpg
+current index 740
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_740.jpg
+current index 741
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_741.jpg
+current index 742
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_742.jpg
+current index 744
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_744.jpg
+current index 745
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_745.jpg
+current index 746
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_746.jpg
+current index 747
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_747.jpg
+current index 748
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_748.jpg
+current index 749
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_749.jpg
+current index 75
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_75.jpg
+current index 750
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_750.jpg
+current index 751
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_751.jpg
+current index 752
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_752.jpg
+current index 753
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_753.jpg
+current index 754
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_754.jpg
+current index 755
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_755.jpg
+current index 756
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_756.jpg
+current index 757
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_757.jpg
+current index 758
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_758.jpg
+current index 759
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_759.jpg
+current index 76
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_76.jpg
+current index 760
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_760.jpg
+current index 761
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_761.jpg
+current index 762
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_762.jpg
+current index 763
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_763.jpg
+current index 764
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_764.jpg
+current index 765
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_765.jpg
+current index 766
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_766.jpg
+current index 767
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_767.jpg
+current index 768
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_768.jpg
+current index 769
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_769.jpg
+current index 77
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_77.jpg
+current index 770
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_770.jpg
+current index 771
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_771.jpg
+current index 772
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_772.jpg
+current index 773
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_773.jpg
+current index 774
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_774.jpg
+current index 775
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_775.jpg
+current index 776
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_776.jpg
+current index 777
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_777.jpg
+current index 778
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_778.jpg
+current index 779
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_779.jpg
+current index 78
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_78.jpg
+current index 780
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_780.jpg
+current index 781
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_781.jpg
+current index 782
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_782.jpg
+current index 783
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_783.jpg
+current index 784
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_784.jpg
+current index 785
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_785.jpg
+current index 786
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_786.jpg
+current index 787
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_787.jpg
+current index 788
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_788.jpg
+current index 789
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_789.jpg
+current index 79
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_79.jpg
+current index 790
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_790.jpg
+current index 791
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_791.jpg
+current index 792
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_792.jpg
+current index 793
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_793.jpg
+current index 794
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_794.jpg
+current index 795
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_795.jpg
+current index 796
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_796.jpg
+current index 797
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_797.jpg
+current index 798
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_798.jpg
+current index 799
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_799.jpg
+current index 8
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_8.jpg
+current index 80
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_80.jpg
+current index 800
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_800.jpg
+current index 801
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_801.jpg
+current index 802
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_802.jpg
+current index 803
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_803.jpg
+current index 804
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_804.jpg
+current index 805
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_805.jpg
+current index 806
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_806.jpg
+current index 807
+gonna upload file \\192.168.10.1\h\Protheus11\Protheus_Data\bmp_produtos\promto_imagens\promto_807.jpg

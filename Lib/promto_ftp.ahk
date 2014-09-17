@@ -1,4 +1,4 @@
-#include, ..\FTP\FTP.ahk
+;#include, ..\FTP\FTP.ahk
 
 class PromtoFTP{
 	__New(ftp_server, user, password){

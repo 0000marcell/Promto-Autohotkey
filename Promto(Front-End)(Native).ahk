@@ -770,15 +770,15 @@ addquantidade(itemtext,parenttext,itemid){
 			if(A_Index=1)
 				parenttext11:=A_LoopField
 		}
-		loop,parse,itemtext1,|
+		loop, parse, itemtext1,|
 		{
 			if(A_Index=1)
 				itemtext11:=A_LoopField
 		}
 		db.queryS("UPDATE ESTRUTURAS SET QUANTIDADE='" valorquantidade "' WHERE item like '" trim(parenttext11) "%' AND componente like '" trim(itemtext11) "%';")
 		MsgBox,64,, % " A quantidade foi atualizada!"
-		Gui,tv2:default
-		Gui,TreeView,tv2
+		Gui, tv2:default
+		Gui, TreeView,tv2
 		TV_Modify(itemid1,"",trim(itemtext11) "|UN:" valorquantidade)
 		tvstring:=""
 		gui,addquantidade:destroy

@@ -1,8 +1,8 @@
 class PromtoXML{
 	__New(){
+		AHK.reset_debug()
 		this.file_path := "promto_data.xml"
 		FileDelete, % this.file_path
-
 		try
 			; create an XMLDOMDocument object
 			; set its top-level node
@@ -25,13 +25,14 @@ class PromtoXML{
 
 	generate(string, hash_mask){
 		this.hash_mask := hash_mask
+		AHK.append_debug("string " string "`n hash mask " hash_mask["MACCOMEVAP"])
 		StringSplit, items, string, `n,
 		prev_item_tab_count := 0
-
 		Loop, % items0
 		{
 			if(items%A_Index% = "")
 				Continue
+			AHK.append_debug("item : " items%A_Index%)
 			StringSplit, tab_count, items%A_Index%, `t,
 			this_item_tab_count := tab_count0 -1
 			StringReplace, items%A_Index%, items%A_Index%, `t,, All
@@ -69,7 +70,6 @@ class PromtoXML{
 				this.models := []
 				this.get_item_prop(this_item_tab_count, items%A_Index%, item%next_item%)
 			}
-
 			prev_item_tab_count := this_item_tab_count
 		}
 		this.XML.transformXML()
@@ -82,6 +82,8 @@ class PromtoXML{
 	*/
 	get_item_prop(count, current_value, next_value){
 		item := {}
+		current_value := this.strip_mask(current_value)
+		AHK.append_debug("current value after strip " current_value " numero de carac " StrLen(current_value))
 		/*
 			Company
 		*/
@@ -149,15 +151,22 @@ class PromtoXML{
 		}
 	}
 
+	strip_mask(name){
+		StringSplit, name, name, >
+		StringTrimRight, name, name1, 1
+		return name
+	}
+
 	add_item(item){
 		Global db 
-
 		if(item.max_index = 0 || item.max_index = ""){
 			this.XML.addElement(item.father, item.path)
 		}
+		AHK.append_debug("gonna insert prev prefix " this.hash_mask[item.name])
+		AHK.append_debug("item name in prev prefix "	this.hash_mask[item.name])
 		this.prev_prefix.insert(this.hash_mask[item.name])
+		AHK.append_debug("item path " item.path " item father " item.father)
 		xpath := item.path "/" item.father
-		
 		if(item.child = "model"){
 			prefix := this.stringify(this.prev_prefix)
 			img := db.Imagem.get_image_path(prefix item.name) 
@@ -167,15 +176,12 @@ class PromtoXML{
 		}else{
 			prop_hash :=  {mask: this.hash_mask[item.name], prefix: this.stringify(this.prev_prefix)} 
 		}
-
 		this.XML.addElement(item.child, xpath, prop_hash, item.name)
 	}
 
 	get_log(prefix){
 		Global db
-
 		items := db.Log.get_mod_info("", prefix)
-
 		for, each, item in Items{
 		  usuario := items[A_Index, 2]
 		  hash := hashify(items[A_Index, 3])
@@ -184,15 +190,12 @@ class PromtoXML{
 		  msg := items[A_Index, 6]
 			string .= usuario " alterou o item " hash.modelo " em " data " as " hora " " msg "`n"
 		}
-
 		return string 
 	}
 
 	get_status(prefix){
 		Global db 
-
 		items := db.Status.get_status("", prefix)
-
 		if(items[1, 1] = ""){
 			return " nao foi feito "
 		}
@@ -210,9 +213,7 @@ class PromtoXML{
 		}else if(status = 4){
 			current_status := " Nao foi feito"
 		}
-
 		status_msg := current_status " " mensagem " `n Usuario: " usuario
-
 		return status_msg
 	}
 
@@ -267,7 +268,6 @@ class PromtoXML{
 		Global db
 		this.fields := []
 		xpath := item.path "/" item.father "/model[" this.models.MaxIndex() "]"
-		
 		/*
 			Insert the code list
 		*/
@@ -288,7 +288,6 @@ class PromtoXML{
 	add_prefix(item){
 		xpath := item.path "/" item.father "/model[" this.models.MaxIndex() "]"
 		this.XML.addElement("prefix_list", xpath)
-		
 		prefix_in_order := this.get_prefix_list_in_order()
 		for, each, value in prefix_in_order{
 			if(value = "")

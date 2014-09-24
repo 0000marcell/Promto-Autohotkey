@@ -4022,7 +4022,187 @@
             "prodkey":               "TINDIVL75",
             "tipo":                  "Criado",
             "usuario":               "luciano claussen"
+        },
+        "448": {
+            "data":                  "17/09/2014",
+            "hora":                  "10:07",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|DIVERSOS|modelo|TL.N.EXE.L75",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TINDIVL75",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "449": {
+            "data":                  "18/09/2014",
+            "hora":                  "08:21",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|DIVERSOS|modelo|TL.N.EXE.817",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TINDIV817",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "450": {
+            "data":                  "18/09/2014",
+            "hora":                  "10:59",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PORTA LAMPADA|subfamilia||modelo|Modelos",
+            "msg":                   "O Modelo G4 e mascara G4 foi criado!",
+            "prodkey":               "TIPOMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "451": {
+            "data":                  "18/09/2014",
+            "hora":                  "11:01",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PORTA LAMPADA|subfamilia||modelo|G4",
+            "msg":                   "O Campo PARTES foi criado!",
+            "prodkey":               "TIPOG4",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "452": {
+            "data":                  "18/09/2014",
+            "hora":                  "11:02",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PORTA LAMPADA|subfamilia||modelo|G4",
+            "msg":                   "O item HABP descricao resumida PARA LAMPADA HALOGENA BIPINO foi incluido no campo PARTES",
+            "prodkey":               "TIPOG4",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "453": {
+            "data":                  "18/09/2014",
+            "hora":                  "11:02",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PORTA LAMPADA|subfamilia||modelo|G4",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TIPOG4",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "454": {
+            "data":                  "18/09/2014",
+            "hora":                  "11:03",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PORTA LAMPADA|subfamilia||modelo|G4",
+            "msg":                   "O item HABP foi alterado para codigo: HABP descricao completa: PARA LAMPADA HALOGENA BIPINO EM CERAMICA descricao resumida PARA LAMPADA HALOGENA BIPINO EM CERAMICA descricao ingles PARA LAMPADA HALOGENA BIPINO EM CERAMICA",
+            "prodkey":               "TIPOG4",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "455": {
+            "data":                  "18/09/2014",
+            "hora":                  "11:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PORTA LAMPADA|subfamilia||modelo|G4",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TIPOG4",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "456": {
+            "data":                  "18/09/2014",
+            "hora":                  "11:29",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LAMPADA|subfamilia||modelo|Modelos",
+            "msg":                   "O Modelo HALOGENA BIPINO e mascara HB foi criado!",
+            "prodkey":               "TILAMMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "457": {
+            "data":                  "18/09/2014",
+            "hora":                  "11:29",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LAMPADA|subfamilia||modelo|HALOGENA BIPINO",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TILAMHB",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "458": {
+            "data":                  "18/09/2014",
+            "hora":                  "11:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LAMPADA|subfamilia||modelo|HALOGENA BIPINO",
+            "msg":                   "O Campo POTENCIA foi criado!",
+            "prodkey":               "TILAMHB",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "459": {
+            "data":                  "18/09/2014",
+            "hora":                  "11:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LAMPADA|subfamilia||modelo|HALOGENA BIPINO",
+            "msg":                   "O Campo TENSAO foi criado!",
+            "prodkey":               "TILAMHB",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "460": {
+            "data":                  "18/09/2014",
+            "hora":                  "11:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LAMPADA|subfamilia||modelo|HALOGENA BIPINO",
+            "msg":                   "O Campo SOQUETE foi criado!",
+            "prodkey":               "TILAMHB",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "461": {
+            "data":                  "18/09/2014",
+            "hora":                  "11:31",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LAMPADA|subfamilia||modelo|HALOGENA BIPINO",
+            "msg":                   "O item 250 descricao resumida DE 250 W foi incluido no campo POTENCIA",
+            "prodkey":               "TILAMHB",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "462": {
+            "data":                  "18/09/2014",
+            "hora":                  "11:31",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LAMPADA|subfamilia||modelo|HALOGENA BIPINO",
+            "msg":                   "O item 24 descricao resumida TENSAO DE 24V foi incluido no campo TENSAO",
+            "prodkey":               "TILAMHB",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "463": {
+            "data":                  "18/09/2014",
+            "hora":                  "11:32",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LAMPADA|subfamilia||modelo|HALOGENA BIPINO",
+            "msg":                   "O item G4 descricao resumida SOQUETE G4 foi incluido no campo SOQUETE",
+            "prodkey":               "TILAMHB",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "464": {
+            "data":                  "18/09/2014",
+            "hora":                  "11:32",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LAMPADA|subfamilia||modelo|HALOGENA BIPINO",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TILAMHB",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "465": {
+            "data":                  "18/09/2014",
+            "hora":                  "11:38",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LAMPADA|subfamilia||modelo|HALOGENA BIPINO",
+            "msg":                   "O item G4 foi alterado para codigo: G4 descricao completa: SOQUETE G4 USADA NA LUMINARIA DE AR COMPRIMIDO descricao resumida SOQUETE G4 USADA NA LUMINARIA DE AR COMPRIMIDO descricao ingles SOQUETE G4 USADA NA LUMINARIA DE AR COMPRIMIDO",
+            "prodkey":               "TILAMHB",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "466": {
+            "data":                  "24/09/2014",
+            "hora":                  "10:28",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|CONJUNTO DO CORPO|modelo|TL.L.EXE.AVF",
+            "msg":                   "O item PL foi alterado para codigo: PL descricao completa: FABRICACAO EM PLASTICO descricao resumida FABRICACAO EM PLASTICO descricao ingles MANUFACTURED IN PLASTIC",
+            "prodkey":               "TILCJCAVF",
+            "tipo":                  "Alterado",
+            "usuario":               "Marcell Monteiro"
+        },
+        "467": {
+            "data":                  "24/09/2014",
+            "hora":                  "10:28",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|CONJUNTO DO CORPO|modelo|TL.L.EXE.AVF",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TILCJCAVF",
+            "tipo":                  "Alterado",
+            "usuario":               "Marcell Monteiro"
         }
     },
-    "max_index":                     447
+    "max_index":                     467
 }

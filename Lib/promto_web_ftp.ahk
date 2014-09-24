@@ -1,6 +1,5 @@
 class PromtoWebFTP{
 	__New(){
-		AHK.reset_debug()
 		this.promtoFTP := new PromtoFTP(
 		(JOIN 
 			"ftp.promto-maccomevap.url.ph",

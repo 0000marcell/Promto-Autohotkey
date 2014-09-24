@@ -4,7 +4,6 @@ class PromtoFTP{
 	__New(ftp_server, user, password){
 		Global
 		this.ftp := FTP_Init()
-		MsgBox, % "Gonna conect to server!"
 		if(!this.ftp.Open(ftp_server, user, password)){
 	  	MsgBox % "Houve um erro a conexao com o servidor FTP! " this.ftp.LastError
 	  	return 

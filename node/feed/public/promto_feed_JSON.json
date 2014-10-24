@@ -4202,7 +4202,2248 @@
             "prodkey":               "TILCJCAVF",
             "tipo":                  "Alterado",
             "usuario":               "Marcell Monteiro"
+        },
+        "468": {
+            "data":                  "25/09/2014",
+            "hora":                  "12:32",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CONTRA PORCA|subfamilia||modelo|SEXTAVADA",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICPSE",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "469": {
+            "data":                  "29/09/2014",
+            "hora":                  "09:17",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia||subfamilia||modelo|Modelo",
+            "msg":                   "A familia INVERSOR e mascara IE foi criada!",
+            "prodkey":               "TMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "470": {
+            "data":                  "29/09/2014",
+            "hora":                  "09:34",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|INVERSOR|subfamilia||modelo|Modelos",
+            "msg":                   "O Modelo TL.IN.EXE.002 e mascara 002 foi criado!",
+            "prodkey":               "TIEMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "471": {
+            "data":                  "29/09/2014",
+            "hora":                  "09:35",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|INVERSOR|subfamilia||modelo|TL.IN.EXE.002",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TIE002",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "472": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:00",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O campo TIPO foi removido!",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "473": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:01",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M020P foi alterado para codigo: M020P descricao completa: M20P - NPT/BSP 1/2 P descricao resumida M20P - NPT/BSP 1/2 P descricao ingles M20P - NPT/BSP 1/2 P",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "474": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:02",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0020 foi alterado para codigo: M0020 descricao completa: M20 - NPT/BSP 1/2 E 3/4 P descricao resumida M20 - NPT/BSP 1/2 E 3/4 P descricao ingles M20 - NPT/BSP 1/2 E 3/4 P",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "475": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:03",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0025 foi alterado para codigo: M0025 descricao completa: M25 - NPT/BSP 3/4 E 1 P descricao resumida M25 - NPT/BSP 3/4 E 1 P descricao ingles M25 - NPT/BSP 3/4 E 1 P",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "476": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:04",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0032 foi alterado para codigo: M0032 descricao completa: M32 - NPT/BSP 1 E 1.1/4 P descricao resumida M32 - NPT/BSP 1 E 1.1/4 P descricao ingles M32 - NPT/BSP 1 E 1.1/4 P",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "477": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:05",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0040 foi alterado para codigo: M0040 descricao completa: M40 - NPT/BSP 1.1/4 E 1.1/2 P  descricao resumida M40 - NPT/BSP 1.1/4 E 1.1/2 P  descricao ingles M40 - NPT/BSP 1.1/4 E 1.1/2 P ",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "478": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:06",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0050 foi alterado para codigo: M0050 descricao completa: M50 - NPT/BSP 2 P descricao resumida M50 descricao ingles M50",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "479": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:09",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O Campo TIPO foi criado!",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "480": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item 01 descricao resumida PECA DE APERTO foi incluido no campo TIPO",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "481": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0050 foi alterado para codigo: M0050 descricao completa: M50 - NPT/BSP 2 P descricao resumida M50 - NPT/BSP 2 P descricao ingles M50 - NPT/BSP 2 P",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "482": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:16",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0063 foi alterado para codigo: M0063 descricao completa: M63 - NPT/BSP 2.1/2 P descricao resumida M63 - NPT/BSP 2.1/2 P descricao ingles M63 - NPT/BSP 2.1/2 P",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "483": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:17",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0075 foi alterado para codigo: M0075 descricao completa: M75 - NPT/BSP 3 descricao resumida M75 - NPT/BSP 3 descricao ingles M75 - NPT/BSP 3",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "484": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:17",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0090 foi alterado para codigo: M0090 descricao completa: M90 NPT/BSP 3.1/2 descricao resumida M90 NPT/BSP 3.1/2 descricao ingles M90 NPT/BSP 3.1/2",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "485": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:17",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0100 foi alterado para codigo: M0100 descricao completa: M100 - NPT/BSP 4 descricao resumida M100 - NPT/BSP 4 descricao ingles M100 - NPT/BSP 4",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "486": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:18",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item N0112 descricao resumida NPT/BSP 1.1/2 foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "487": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item N0002 descricao resumida NPT/BSP 2 foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "488": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:20",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item N0212 descricao resumida NPT/BSP 2.1/2 foi incluido no campo DIMENSAO",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "489": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:20",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "490": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:22",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "491": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:22",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "O item 01 foi alterado para codigo: 01 descricao completa: PECA DE APERTO TL.PC.EXDE.160 descricao resumida PECA DE APERTO TL.PC.EXDE.160 descricao ingles CLAMPING PIECE TL.PC.EXDE.160",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "492": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:22",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "493": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:22",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "494": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:23",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "495": {
+            "data":                  "29/09/2014",
+            "hora":                  "12:24",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|PRENSA CABO|subfamilia|PECA DE APERTO|modelo|TL.PC.EXDE.160",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TIPCP160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "496": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:09",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia||modelo|",
+            "msg":                   "A subfamilia PLACA DE ATERRAMENTO e mascara AT foi criada!",
+            "prodkey":               "TIC",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "497": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:11",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|Modelos",
+            "msg":                   "O Modelo TL.C.EXE.001 e mascara 001 foi criado!",
+            "prodkey":               "TICATMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "498": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:12",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "499": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "500": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O Campo MODELO foi criado!",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "501": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "502": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O campo MODELO foi removido!",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "503": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O Campo DIMENSAO foi criado!",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "504": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "A tabela TICAT001TL.C.EXE.001 foi linkada a tabela TC001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Linkagem",
+            "usuario":               "luciano claussen"
+        },
+        "505": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "A tabela TICAT001TL.C.EXE.001 foi linkada a tabela ",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "506": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0125 descricao resumida MOD 125 DIM 160X160X90MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "507": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0126 descricao resumida MOD 126 DIM 251X256X120MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "508": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0127 descricao resumida MOD 127 DIM 160X260X90MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "509": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0128 descricao resumida MOD 128 DIM 250X400X120MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "510": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0129 descricao resumida MOD 129 DIM  406X401X122MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "511": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0130 descricao resumida MOD *130* DIM 105X85X77MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "512": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0131 descricao resumida MOD *131* DIM 156X85X77MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "513": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0132 descricao resumida MOD *132* DIM 160X160X93MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "514": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0133 descricao resumida MOD *133* DIM 175X85X77MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "515": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0134 descricao resumida MOD *134* DIM 210X130X106MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "516": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0135 descricao resumida MOD *135* DIM 212X85X77MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "517": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0136 descricao resumida MOD *136* DIM 225X150X120MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "518": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0137 descricao resumida MOD *137* DIM 260X180X120MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "519": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0138 descricao resumida MOD *138* DIM 300X210X110MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "520": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0139 descricao resumida MOD *139* DIM 330X225X110MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "521": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0140 descricao resumida MOD *140* DIM 360X220X160MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "522": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0141 descricao resumida MOD *141* DIM 360X360X160MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "523": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0142 descricao resumida MOD *142* DIM 420X300X185MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "524": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0143 descricao resumida MOD *143* DIM 720X360X160MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "525": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0144 descricao resumida MOD *144* DIM 720X360X220MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "526": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 124G descricao resumida MOD *124G* DIM 122X120X100MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "527": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 136G descricao resumida MOD *136G* DIM 255X150X150MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "528": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 138G descricao resumida MOD *138G* DIM 300X210X133MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "529": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 139G descricao resumida MOD *139G* DIM 330X225X150MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "530": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0130 foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "531": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0131 foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "532": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0132 foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "533": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0133 foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "534": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0134 foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "535": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0135 foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "536": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0136 foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "537": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0137 foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "538": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0138 foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "539": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0139 foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "540": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0140 foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "541": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0141 foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "542": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0142 foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "543": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0143 foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "544": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 0144 foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "545": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 136G foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "546": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:48",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 138G foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "547": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:49",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 139G foi removido da tabela de campos TICAT001DIMENSAO",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "548": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:49",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item 124G foi alterado para codigo: 124G descricao completa: MODELO 124G DIMENSAO 122X120X100MM descricao resumida MOD 124G DIM 122X120X100MM descricao ingles MODEL 124G DIMENSION 122X120X100MM",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "549": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:53",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item AC descricao resumida FABRICACAO EM ACO CARBONO foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "550": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:55",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item AI descricao resumida FABRICACAO EM ACO INOX foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "551": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:55",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item LT descricao resumida FABRICACAO EM LATAO foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "552": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:56",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "553": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:56",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "554": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:56",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "555": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:56",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "556": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:56",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "557": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:58",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "558": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:59",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item AC foi alterado para codigo: AC descricao completa: FABRICACAO EM ACO CARBONO / VERIFICAR DESENHO descricao resumida FABRICACAO EM ACO CARBONO / VERIFICAR DESENHO descricao ingles MANUFACTURED IN CARBON STEEL",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "559": {
+            "data":                  "01/10/2014",
+            "hora":                  "11:59",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item AI foi alterado para codigo: AI descricao completa: FABRICACAO EM ACO INOX / VERIFICAR DESENHO descricao resumida FABRICACAO EM ACO INOX / VERIFICAR DESENHO descricao ingles MANUFACTURED IN STAINLESS STEEL",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "560": {
+            "data":                  "01/10/2014",
+            "hora":                  "12:06",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "O item LT foi alterado para codigo: LT descricao completa: FABRICACAO EM LATAO / VERIFICAR DESENHO descricao resumida FABRICACAO EM LATAO / VERIFICAR DESENHO descricao ingles MANUFACTURED IN BRASS",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "561": {
+            "data":                  "01/10/2014",
+            "hora":                  "12:07",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|PLACA DE ATERRAMENTO|modelo|TL.C.EXE.001",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TICAT001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "562": {
+            "data":                  "01/10/2014",
+            "hora":                  "15:20",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PORTA LAMPADA|subfamilia||modelo|ANTI-VIBRATORIO",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TPOAV",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "563": {
+            "data":                  "01/10/2014",
+            "hora":                  "15:20",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PORTA LAMPADA|subfamilia||modelo|ANTI-VIBRATORIO",
+            "msg":                   "O item PL descricao resumida EM PLASTICO foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TPOAV",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "564": {
+            "data":                  "02/10/2014",
+            "hora":                  "09:08",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CHASSI|modelo|TL.C.EXE.001",
+            "msg":                   "O item AC foi alterado para codigo: C descricao completa: FABRICACAO EM ACO CARBONO descricao resumida FABRICACAO EM ACO CARBONO descricao ingles FABRICACAO EM ACO CARBONO",
+            "prodkey":               "TICCS001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "565": {
+            "data":                  "02/10/2014",
+            "hora":                  "09:08",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CHASSI|modelo|TL.C.EXE.001",
+            "msg":                   "O item AI foi alterado para codigo: 6 descricao completa: FABRICACAO EM ACO INOX 316 descricao resumida FABRICACAO EM ACO INOX 316 descricao ingles FABRICACAO EM ACO INOX 316",
+            "prodkey":               "TICCS001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "566": {
+            "data":                  "02/10/2014",
+            "hora":                  "09:09",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CHASSI|modelo|TL.C.EXE.001",
+            "msg":                   "O Campo ESPESSURA foi criado!",
+            "prodkey":               "TICCS001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "567": {
+            "data":                  "02/10/2014",
+            "hora":                  "09:09",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CHASSI|modelo|TL.C.EXE.001",
+            "msg":                   "O item 10 descricao resumida 1,0 MM DE ESPESSURA foi incluido no campo ESPESSURA",
+            "prodkey":               "TICCS001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "568": {
+            "data":                  "02/10/2014",
+            "hora":                  "09:10",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CHASSI|modelo|TL.C.EXE.001",
+            "msg":                   "O item 15 descricao resumida 1,5 MM DE ESPESSURA foi incluido no campo ESPESSURA",
+            "prodkey":               "TICCS001",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "569": {
+            "data":                  "02/10/2014",
+            "hora":                  "09:10",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CHASSI|modelo|TL.C.EXE.001",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICCS001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "570": {
+            "data":                  "02/10/2014",
+            "hora":                  "09:10",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CHASSI|modelo|TL.C.EXE.001",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICCS001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "571": {
+            "data":                  "02/10/2014",
+            "hora":                  "09:10",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CHASSI|modelo|TL.C.EXE.001",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICCS001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "572": {
+            "data":                  "02/10/2014",
+            "hora":                  "09:10",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CHASSI|modelo|TL.C.EXE.001",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICCS001",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "573": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:20",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0020 foi alterado para codigo: M0020 descricao completa: M20  ( 6,5-14,0 / 12,5-21,0 MM) descricao resumida M20  ( 6,5-14,0 / 12,5-21,0 MM) descricao ingles M20  ( 6,5-14,0 / 12,5-21,0 MM)",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "574": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:21",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0025 foi alterado para codigo: M0025 descricao completa: M25 ( 10,5-19,5 / 16,5-21,0 MM) descricao resumida M25 ( 10,5-19,5 / 16,5-21,0 MM) descricao ingles M25 ( 10,5-19,5 / 16,5-21,0 MM)",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "575": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:21",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0032 foi alterado para codigo: M0032 descricao completa: M32 ( 17,0-26,0 / 22,0-34,0 MM) descricao resumida M32 ( 17,0-26,0 / 22,0-34,0 MM) descricao ingles M32 ( 17,0-26,0 / 22,0-34,0 MM)",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "576": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:22",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0040 foi alterado para codigo: M0040 descricao completa: M40 (22,5-34,0 / 26,0-34,0 MM)  descricao resumida M40 (22,5-34,0 / 26,0-34,0 MM)  descricao ingles M40 (22,5-34,0 / 26,0-34,0 MM) ",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "577": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:22",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M020P foi alterado para codigo: M020P descricao completa: M20P ( 6,0-12,0 / 9,5-16,0) descricao resumida M20P ( 6,0-12,0 / 9,5-16,0) descricao ingles M20P ( 6,0-12,0 / 9,5-16,0)",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "578": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:23",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0020 foi alterado para codigo: M0020 descricao completa: M20  ( 8-14,0 / 12,5-21,0 MM) descricao resumida M20  ( 8-14,0 / 12,5-21,0 MM) descricao ingles M20  ( 8-14,0 / 12,5-21,0 MM)",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "579": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:24",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0025 foi alterado para codigo: M0025 descricao completa: M25 ( 10,5-19,5 / 16,5-25,0 MM) descricao resumida M25 ( 10,5-19,5 / 16,5-25,0 MM) descricao ingles M25 ( 10,5-19,5 / 16,5-25,0 MM)",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "580": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:24",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0032 foi alterado para codigo: M0032 descricao completa: M32 ( 17,0-27,0 / 22,0-33,5 MM) descricao resumida M32 ( 17,0-27,0 / 22,0-33,5 MM) descricao ingles M32 ( 17,0-27,0 / 22,0-33,5 MM)",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "581": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0040 foi alterado para codigo: M0040 descricao completa: M40 (22,5-32,5 / 28,0-41,5 MM) descricao resumida M40 (22,5-32,5 / 28,0-41,5 MM) descricao ingles M40 (22,5-32,5 / 28,0-41,5 MM)",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "582": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:26",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M0050 foi alterado para codigo: M0050 descricao completa: M50 (28,0-44,5 / 36,0-52,5 MM) descricao resumida M50 (28,0-44,5 / 36,0-52,5 MM) descricao ingles M50 (28,0-44,5 / 36,0-52,5 MM)",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "583": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:27",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item N0012 foi alterado para codigo: N0012 descricao completa: NPT 1/2 ( 6,0-12,0 / 9,5-16,0) descricao resumida NPT 1/2 ( 6,0-12,0 / 9,5-16,0) descricao ingles NPT 1/2 ( 6,0-12,0 / 9,5-16,0)",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "584": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:53",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item N0034 foi alterado para codigo: N0034 descricao completa: NPT 3/4 ( 10,5-19,5 / 16,5-25,0) descricao resumida NPT 3/4 ( 10,5-19,5 / 16,5-25,0) descricao ingles NPT 3/4 ( 10,5-19,5 / 16,5-25,0)",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "585": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:53",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item N0112 foi alterado para codigo: N0112 descricao completa: NPT 1.1/2  ( 10,5-19,5 / 16,5-25,0) descricao resumida NPT 1.1/2  ( 10,5-19,5 / 16,5-25,0) descricao ingles NPT 1.1/2  ( 10,5-19,5 / 16,5-25,0)",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "586": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:55",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item N0114 foi alterado para codigo: N0114 descricao completa: NPT 1.1/4 (22,5-32,5 / 28,0-41,5 MM) descricao resumida NPT 1.1/4 (22,5-32,5 / 28,0-41,5 MM) descricao ingles NPT 1.1/4 (22,5-32,5 / 28,0-41,5 MM)",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "587": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:55",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item N0001 foi alterado para codigo: N0001 descricao completa: NPT 1 ( 17,0-27,0 / 22,0-33,5 MM) descricao resumida NPT 1 ( 17,0-27,0 / 22,0-33,5 MM) descricao ingles NPT 1 ( 17,0-27,0 / 22,0-33,5 MM)",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "588": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:58",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item N0012 foi alterado para codigo: N0012 descricao completa: NPT 1/2 ( 8,0-14,0 / 12,5-21,0) descricao resumida NPT 1/2 ( 8,0-14,0 / 12,5-21,0) descricao ingles NPT 1/2 ( 8,0-14,0 / 12,5-21,0)",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "589": {
+            "data":                  "06/10/2014",
+            "hora":                  "14:59",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|PRENSA CABO|subfamilia||modelo|TL.PC.EXDE.160",
+            "msg":                   "O item M020P foi alterado para codigo: M020P descricao completa: M20P ( 6,0-12,0 / 9,5-16,0 MM) descricao resumida M20P ( 6,0-12,0 / 9,5-16,0 MM) descricao ingles M20P ( 6,0-12,0 / 9,5-16,0 MM)",
+            "prodkey":               "TPC160",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "590": {
+            "data":                  "06/10/2014",
+            "hora":                  "16:39",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|CHATA A METRO",
+            "msg":                   "O item 63 descricao resumida 63,5MM DE LARGURA (2.1/2) foi incluido no campo DIMENSAO",
+            "prodkey":               "TMPBACHM",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "591": {
+            "data":                  "06/10/2014",
+            "hora":                  "16:42",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|CHATA A METRO",
+            "msg":                   "O item 47 descricao resumida 4,7MM DE ESPESSURA foi incluido no campo ESPESSURA",
+            "prodkey":               "TMPBACHM",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "592": {
+            "data":                  "06/10/2014",
+            "hora":                  "16:45",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|CHATA A METRO",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TMPBACHM",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "593": {
+            "data":                  "06/10/2014",
+            "hora":                  "16:55",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|CHATA A METRO",
+            "msg":                   "O item 47 foi alterado para codigo: 47 descricao completa: 4,7MM DE ESPESSURA (3/16) descricao resumida 4,7MM DE ESPESSURA (3/16) descricao ingles 4,7MM DE ESPESSURA (3/16)",
+            "prodkey":               "TMPBACHM",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "594": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia||modelo|Modelo",
+            "msg":                   "A subfamilia CORPO C/ FLANGE e mascara CF foi criada!",
+            "prodkey":               "TICMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "595": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO C/ FLANGE|modelo|Modelos",
+            "msg":                   "O Modelo TL,C,EXE,003 e mascara 003 foi criado!",
+            "prodkey":               "TICCFMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "596": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO C/ FLANGE|modelo|",
+            "msg":                   "O modelo TL,C,EXE,003 e mascara 003 foi removido!",
+            "prodkey":               "TICCF",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "597": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO C/ FLANGE|modelo|Modelos",
+            "msg":                   "O Modelo TL.C.EXE.003 e mascara 003 foi criado!",
+            "prodkey":               "TICCFMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "598": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:28",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO C/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "599": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:29",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO C/ FLANGE|modelo|",
+            "msg":                   "O modelo TL.C.EXE.003 e mascara 003 foi removido!",
+            "prodkey":               "TICCF",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "600": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:29",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO C/ FLANGE|modelo|",
+            "msg":                   "A subfamilia CORPO C/ FLANGE e mascara CF foi removida!",
+            "prodkey":               "TICCF",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "601": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia||modelo|",
+            "msg":                   "A subfamilia CORPO VASADO P/ FLANGE e mascara CF foi criada!",
+            "prodkey":               "TIC",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "602": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:31",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|Modelos",
+            "msg":                   "O Modelo TL.C.EXE.003 e mascara 003 foi criado!",
+            "prodkey":               "TICCFMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "603": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:31",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "604": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:36",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O Campo DIMENSAO foi criado!",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "605": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:36",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "606": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:37",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "607": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:46",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0172 descricao resumida MODELO 172 DIMENSAO 400X400X200MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "608": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:46",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O Campo ESPESSURA foi criado!",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "609": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 6 descricao resumida ACO INOX 316 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "610": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:47",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 15 descricao resumida 1,5 MM DE ESPESSURA foi incluido no campo ESPESSURA",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "611": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:50",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 215G descricao resumida MOD 215G 600X400X200MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "612": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0183 descricao resumida MOD 183 800X400X200MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "613": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0172 foi alterado para codigo: 0172 descricao completa: MOD 172 DIMENSAO 400X400X200MM descricao resumida MOD 172 DIMENSAO 400X400X200MM descricao ingles MOD 172 DIMENSAO 400X400X200MM",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "614": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:51",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0183 foi alterado para codigo: 0183 descricao completa: MOD 183 DIM 800X400X200MM descricao resumida MOD 183 DIM 800X400X200MM descricao ingles MOD 183 DIM 800X400X200MM",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "615": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:52",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 215G foi alterado para codigo: 215G descricao completa: MOD 215G DIM 600X400X200MM descricao resumida MOD 215G DIM 600X400X200MM descricao ingles MOD 215G DIM 600X400X200MM",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "616": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:52",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0172 foi alterado para codigo: 0172 descricao completa: MOD 172 DIM 400X400X200MM descricao resumida MOD 172 DIM 400X400X200MM descricao ingles MOD 172 DIM 400X400X200MM",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "617": {
+            "data":                  "06/10/2014",
+            "hora":                  "17:53",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0200 descricao resumida MOD 200 DIM 1500X400X200MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "618": {
+            "data":                  "07/10/2014",
+            "hora":                  "08:26",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia||modelo|Modelo",
+            "msg":                   "A subfamilia CJ CAIXA VASADO P/ FLANGE e mascara CV foi criada!",
+            "prodkey":               "TICMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "619": {
+            "data":                  "07/10/2014",
+            "hora":                  "08:28",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CJ CAIXA VASADO P/ FLANGE|modelo|Modelos",
+            "msg":                   "O Modelo TL.C.EXE.003 e mascara 003 foi criado!",
+            "prodkey":               "TICCVMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "620": {
+            "data":                  "07/10/2014",
+            "hora":                  "08:29",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CJ CAIXA VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TICCV003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "621": {
+            "data":                  "07/10/2014",
+            "hora":                  "08:39",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|Modelos",
+            "msg":                   "O Modelo CHATA TREFILADA e mascara CHT foi criado!",
+            "prodkey":               "TMPBAMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "622": {
+            "data":                  "07/10/2014",
+            "hora":                  "08:41",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|CHATA TREFILADA",
+            "msg":                   "O Campo DIMENSAO foi criado!",
+            "prodkey":               "TMPBACHT",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "623": {
+            "data":                  "07/10/2014",
+            "hora":                  "08:42",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|CHATA TREFILADA",
+            "msg":                   "O item 31620 descricao resumida 3/16 X 2  foi incluido no campo DIMENSAO",
+            "prodkey":               "TMPBACHT",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "624": {
+            "data":                  "07/10/2014",
+            "hora":                  "08:42",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|CHATA TREFILADA",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TMPBACHT",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "625": {
+            "data":                  "07/10/2014",
+            "hora":                  "08:42",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|CHATA TREFILADA",
+            "msg":                   "O item 4 descricao resumida ACO INOX 304 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TMPBACHT",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "626": {
+            "data":                  "07/10/2014",
+            "hora":                  "08:43",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|BARRA|subfamilia||modelo|CHATA TREFILADA",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TMPBACHT",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "627": {
+            "data":                  "07/10/2014",
+            "hora":                  "09:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia||modelo|Modelo",
+            "msg":                   "A subfamilia CONJUNTO DO DIFUSOR e mascara CJD foi criada!",
+            "prodkey":               "TILMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "628": {
+            "data":                  "07/10/2014",
+            "hora":                  "09:31",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|CONJUNTO DO DIFUSOR|modelo|Modelos",
+            "msg":                   "O Modelo TL.L.EXE.010 e mascara 010 foi criado!",
+            "prodkey":               "TILCJDMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "629": {
+            "data":                  "07/10/2014",
+            "hora":                  "09:32",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|CONJUNTO DO DIFUSOR|modelo|TL.L.EXE.010",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TILCJD010",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "630": {
+            "data":                  "07/10/2014",
+            "hora":                  "09:40",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|CONJUNTO DO DIFUSOR|modelo|TL.L.EXE.010",
+            "msg":                   "O Campo TAMANHO foi criado!",
+            "prodkey":               "TILCJD010",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "631": {
+            "data":                  "07/10/2014",
+            "hora":                  "09:41",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|CONJUNTO DO DIFUSOR|modelo|TL.L.EXE.010",
+            "msg":                   "O item 2 descricao resumida DE 20W foi incluido no campo TAMANHO",
+            "prodkey":               "TILCJD010",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "632": {
+            "data":                  "07/10/2014",
+            "hora":                  "09:41",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|CONJUNTO DO DIFUSOR|modelo|TL.L.EXE.010",
+            "msg":                   "O item 4 descricao resumida DE 40W foi incluido no campo TAMANHO",
+            "prodkey":               "TILCJD010",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "633": {
+            "data":                  "07/10/2014",
+            "hora":                  "09:41",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|CONJUNTO DO DIFUSOR|modelo|TL.L.EXE.010",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TILCJD010",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "634": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:00",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CJ CAIXA VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O Campo DIMENSAO foi criado!",
+            "prodkey":               "TICCV003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "635": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:01",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CJ CAIXA VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0172 descricao resumida MOD 172 DIM 400X400X200MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICCV003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "636": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:01",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CJ CAIXA VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0183 descricao resumida MOD 183 DIM 800X400X200MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICCV003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "637": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:01",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CJ CAIXA VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0200 descricao resumida MOD 200 DIM 1500X400X200MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICCV003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "638": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:01",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CJ CAIXA VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 215G descricao resumida MOD 215G DIM 600X400X200MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICCV003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "639": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:01",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CJ CAIXA VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O Campo ESPESSURA foi criado!",
+            "prodkey":               "TICCV003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "640": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:02",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CJ CAIXA VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TICCV003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "641": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:02",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CJ CAIXA VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 15 descricao resumida 1,5 MM DE ESPESSURA foi incluido no campo ESPESSURA",
+            "prodkey":               "TICCV003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "642": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:02",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CJ CAIXA VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 6 descricao resumida ACO INOX 316 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TICCV003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "643": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:03",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CJ CAIXA VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICCV003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "644": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:18",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "645": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:18",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "646": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "647": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|CORPO VASADO P/ FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICCF003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "648": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:44",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia||modelo|Modelo",
+            "msg":                   "A subfamilia FLANGE e mascara FL foi criada!",
+            "prodkey":               "TICMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "649": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:45",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|Modelos",
+            "msg":                   "O Modelo TL.C.EXE.003 e mascara 003 foi criado!",
+            "prodkey":               "TICFLMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "650": {
+            "data":                  "07/10/2014",
+            "hora":                  "11:45",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "651": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:04",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "652": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:05",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O Campo DIMENSAO foi criado!",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "653": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:05",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "654": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:05",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O campo DIMENSAO foi removido!",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "655": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:06",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O Campo DIMENSAO foi criado!",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "656": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:07",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0150 descricao resumida DIM 150X150 MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "657": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:08",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0360 descricao resumida DIM 150X360 MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "658": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:08",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0410 descricao resumida DIM 150X410 MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "659": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:08",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0460 descricao resumida DIM 150X460 MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "660": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:09",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0530 descricao resumida DIM 150X530 MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "661": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:09",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0560 descricao resumida DIM 150X560 MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "662": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:10",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0660 descricao resumida DIM 150X660 MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "663": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:10",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O Campo ESPESSURA foi criado!",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "664": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:10",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "665": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:10",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 15 descricao resumida 1,5 MM DE ESPESSURA foi incluido no campo ESPESSURA",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "666": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:11",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "O item 6 descricao resumida ACO INOX 316 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "667": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:11",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|FLANGE|modelo|TL.C.EXE.003",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TICFL003",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "668": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|TAMPA|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0172 descricao resumida MOD 172 DIM 400X400X200MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICTP003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "669": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|TAMPA|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0183 descricao resumida MOD 183 DIM 800X400X200MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICTP003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "670": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|TAMPA|modelo|TL.C.EXE.003",
+            "msg":                   "O item 0200 descricao resumida MOD 200 DIM 1500X400X200MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICTP003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "671": {
+            "data":                  "07/10/2014",
+            "hora":                  "12:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|CAIXA|subfamilia|TAMPA|modelo|TL.C.EXE.003",
+            "msg":                   "O item 215G descricao resumida MOD 215G DIM 600X400X200MM foi incluido no campo DIMENSAO",
+            "prodkey":               "TICTP003",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "672": {
+            "data":                  "13/10/2014",
+            "hora":                  "14:18",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|CHAPA|subfamilia||modelo|Modelos",
+            "msg":                   "O Modelo 3000X1500 e mascara 30150 foi criado!",
+            "prodkey":               "TMPCHMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "673": {
+            "data":                  "13/10/2014",
+            "hora":                  "14:25",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|CHAPA|subfamilia||modelo|3000X1500",
+            "msg":                   "O Campo ESPESSURA foi criado!",
+            "prodkey":               "TMPCH30150",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "674": {
+            "data":                  "13/10/2014",
+            "hora":                  "14:26",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|CHAPA|subfamilia||modelo|3000X1500",
+            "msg":                   "O Campo MATERIA PRIMA foi criado!",
+            "prodkey":               "TMPCH30150",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "675": {
+            "data":                  "13/10/2014",
+            "hora":                  "14:27",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|CHAPA|subfamilia||modelo|3000X1500",
+            "msg":                   "O item 15 descricao resumida 1,5 MM DE ESPESSURA foi incluido no campo ESPESSURA",
+            "prodkey":               "TMPCH30150",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "676": {
+            "data":                  "13/10/2014",
+            "hora":                  "14:28",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|CHAPA|subfamilia||modelo|3000X1500",
+            "msg":                   "O item AI6 descricao resumida ACO INOX 316 foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TMPCH30150",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "677": {
+            "data":                  "13/10/2014",
+            "hora":                  "14:29",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|CHAPA|subfamilia||modelo|3000X1500",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TMPCH30150",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "678": {
+            "data":                  "13/10/2014",
+            "hora":                  "14:29",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|CHAPA|subfamilia||modelo|3000X1500",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TMPCH30150",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "679": {
+            "data":                  "13/10/2014",
+            "hora":                  "14:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|CHAPA|subfamilia||modelo|3000X1500",
+            "msg":                   "O item 15 foi alterado para codigo: 15 descricao completa: X 1,5 MM DE ESPESSURA descricao resumida X 1,5 MM DE ESPESSURA descricao ingles X 1,5 MM DE ESPESSURA",
+            "prodkey":               "TMPCH30150",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "680": {
+            "data":                  "13/10/2014",
+            "hora":                  "14:30",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|CHAPA|subfamilia||modelo|3000X1500",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TMPCH30150",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "681": {
+            "data":                  "13/10/2014",
+            "hora":                  "14:31",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|MATERIA PRIMA|familia|CHAPA|subfamilia||modelo|3000X1500",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TMPCH30150",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "682": {
+            "data":                  "16/10/2014",
+            "hora":                  "09:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|VEDACAO|modelo|TL.L.EXE.AVF",
+            "msg":                   "O Campo POTENCIA foi criado!",
+            "prodkey":               "TILVDAVF",
+            "tipo":                  "Criado",
+            "usuario":               "Marcell Monteiro"
+        },
+        "683": {
+            "data":                  "16/10/2014",
+            "hora":                  "09:20",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|VEDACAO|modelo|TL.L.EXE.AVF",
+            "msg":                   "O item 2DIF descricao resumida PARA 14W E 20W foi incluido no campo POTENCIA",
+            "prodkey":               "TILVDAVF",
+            "tipo":                  "Criado",
+            "usuario":               "Marcell Monteiro"
+        },
+        "684": {
+            "data":                  "16/10/2014",
+            "hora":                  "09:20",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|VEDACAO|modelo|TL.L.EXE.AVF",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TILVDAVF",
+            "tipo":                  "Alterado",
+            "usuario":               "Marcell Monteiro"
+        },
+        "685": {
+            "data":                  "16/10/2014",
+            "hora":                  "09:21",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|VEDACAO|modelo|TL.L.EXE.AVF",
+            "msg":                   "O item 4DIF descricao resumida DO DIFUSOR DA LUMINARIA TL.L.EXE.AVF PARA 28W E 40W foi incluido no campo POTENCIA",
+            "prodkey":               "TILVDAVF",
+            "tipo":                  "Criado",
+            "usuario":               "Marcell Monteiro"
+        },
+        "686": {
+            "data":                  "16/10/2014",
+            "hora":                  "09:22",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|LUMINARIA|subfamilia|VEDACAO|modelo|TL.L.EXE.AVF",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TILVDAVF",
+            "tipo":                  "Alterado",
+            "usuario":               "Marcell Monteiro"
+        },
+        "687": {
+            "data":                  "17/10/2014",
+            "hora":                  "11:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia||modelo|Modelo",
+            "msg":                   "A subfamilia CONJUNTO DO CORPO e mascara CJC foi criada!",
+            "prodkey":               "TINMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "688": {
+            "data":                  "17/10/2014",
+            "hora":                  "11:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|CONJUNTO DO CORPO|modelo|Modelos",
+            "msg":                   "O Modelo TL.LN.EXN.817 e mascara 817 foi criado!",
+            "prodkey":               "TINCJCMascara",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "689": {
+            "data":                  "17/10/2014",
+            "hora":                  "11:17",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|CONJUNTO DO CORPO|modelo|TL.LN.EXN.817",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TINCJC817",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "690": {
+            "data":                  "17/10/2014",
+            "hora":                  "11:18",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|CONJUNTO DO CORPO|modelo|TL.LN.EXN.817",
+            "msg":                   "O Campo PARTES foi criado!",
+            "prodkey":               "TINCJC817",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "691": {
+            "data":                  "17/10/2014",
+            "hora":                  "11:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|CONJUNTO DO CORPO|modelo|TL.LN.EXN.817",
+            "msg":                   "O item MAPE descricao resumida MASTRO E PEDESTAL EM ACO INOX foi incluido no campo PARTES",
+            "prodkey":               "TINCJC817",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "692": {
+            "data":                  "17/10/2014",
+            "hora":                  "11:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|CONJUNTO DO CORPO|modelo|TL.LN.EXN.817",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TINCJC817",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "693": {
+            "data":                  "17/10/2014",
+            "hora":                  "11:21",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|AUXILIO A NAVEGACAO|subfamilia|CONJUNTO DO CORPO|modelo|TL.LN.EXN.817",
+            "msg":                   "A descricao geral foi alterada",
+            "prodkey":               "TINCJC817",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "694": {
+            "data":                  "17/10/2014",
+            "hora":                  "16:35",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|TOMADAS PARA ACOMODACOES|subfamilia||modelo|CAIXA",
+            "msg":                   "O item C3 descricao resumida CAIXA TRIPLA DE SOBREPOR TOMADAS foi incluido no campo TIPO",
+            "prodkey":               "TITACCX",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "695": {
+            "data":                  "17/10/2014",
+            "hora":                  "16:36",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|TOMADAS PARA ACOMODACOES|subfamilia||modelo|CAIXA",
+            "msg":                   "O item C3 foi alterado para codigo: C3 descricao completa: TRIPLA DE SOBREPOR TOMADAS descricao resumida TRIPLA DE SOBREPOR TOMADAS descricao ingles TRIPLA DE SOBREPOR TOMADAS",
+            "prodkey":               "TITACCX",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "696": {
+            "data":                  "17/10/2014",
+            "hora":                  "16:37",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS INTERMEDIARIOS|familia|TOMADAS PARA ACOMODACOES|subfamilia||modelo|CAIXA",
+            "msg":                   "O item C3 foi alterado para codigo: C3 descricao completa: TRIPLA DE SOBREPOR TOMADAS PARA ACOMODACAO descricao resumida TRIPLA DE SOBREPOR TOMADAS PARA ACOMODACAO descricao ingles TRIPLA DE SOBREPOR TOMADAS PARA ACOMODACAO",
+            "prodkey":               "TITACCX",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "697": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "O Campo TIPO foi criado!",
+            "prodkey":               "TL005",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "698": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:13",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "O Campo TENSAO foi criado!",
+            "prodkey":               "TL005",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "699": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "O item LD descricao resumida LED foi incluido no campo TIPO",
+            "prodkey":               "TL005",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "700": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "O item 070 descricao resumida 70 W foi incluido no campo TENSAO",
+            "prodkey":               "TL005",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "701": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:14",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "O item 100 descricao resumida 100 W foi incluido no campo TENSAO",
+            "prodkey":               "TL005",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "702": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "O item 120 descricao resumida 120 W foi incluido no campo TENSAO",
+            "prodkey":               "TL005",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "703": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:15",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "O item AL descricao resumida FABRICACAO EM ALUMINIO foi incluido no campo MATERIA PRIMA",
+            "prodkey":               "TL005",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "704": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:16",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TL005",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "705": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:16",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TL005",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "706": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:16",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TL005",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "707": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:16",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TL005",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "708": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:17",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "O campo TENSAO foi removido!",
+            "prodkey":               "TL005",
+            "tipo":                  "Removido",
+            "usuario":               "luciano claussen"
+        },
+        "709": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:17",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "O Campo POTENCIA foi criado!",
+            "prodkey":               "TL005",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "710": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:18",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "O item 070 descricao resumida DE 70 W foi incluido no campo POTENCIA",
+            "prodkey":               "TL005",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "711": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:18",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "O item 100 descricao resumida DE 100 W foi incluido no campo POTENCIA",
+            "prodkey":               "TL005",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "712": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:18",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "O item 120 descricao resumida DE 120 W foi incluido no campo POTENCIA",
+            "prodkey":               "TL005",
+            "tipo":                  "Criado",
+            "usuario":               "luciano claussen"
+        },
+        "713": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TL005",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "714": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TL005",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "715": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TL005",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
+        },
+        "716": {
+            "data":                  "23/10/2014",
+            "hora":                  "10:19",
+            "item":                  "|empresa|TOTALLLIGHT|tipo|PRODUTOS ACABADOS|familia|LUMINARIA|subfamilia||modelo|TL.L.EXE.005",
+            "msg":                   "A ordem foi alterada!",
+            "prodkey":               "TL005",
+            "tipo":                  "Alterado",
+            "usuario":               "luciano claussen"
         }
     },
-    "max_index":                     467
+    "max_index":                     716
 }

@@ -1,7 +1,6 @@
 inserir_dialogo_2_view(action, owner_name, numero_de_campos = 2, campos = ""){
 	Global db, input_name, input_mascara, SMALL_FONT, GLOBAL_COLOR
 
-
 	/*
 		Gui init
 	*/

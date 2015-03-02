@@ -59,7 +59,7 @@ inserir_campos_view(info){
 	Gui, Font, s12 cGreen,
 	Gui, Add, Text, xm y+15 w700 vlinked_table glinked_table, 
 	Gui, Font, s8 cBlack
-	Gui, Show, Autosize, Inserir campos e valores
+	Gui, Show, Autosize, Inserir campos e valores!!!
 	
 	/*
 		Carrega o combobox

@@ -2,40 +2,996 @@
     "items": {
         "1": {
             "code":                  "",
-            "desc":                  "CONJUNTO DO CORPO LUMINARIA TL.L.EXE.AVF 20W  FABRICACAO EM PLASTICO",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1 POR 1/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
             "fields": {
-                "1":                 "POTENCIA|2",
-                "2":                 "MATERIA PRIMA|PL"
+                "1":                 "DIMENSOES|01018A",
+                "2":                 "MATERIA PRIMA|C"
             },
             "fields_max_index":      2,
-            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_40.jpg",
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
             "prefix": {
-                "1":                 "prefixo|I",
-                "2":                 "prefixo|T",
-                "3":                 "prefixo|L",
-                "4":                 "prefixo|AVF",
-                "5":                 "prefixo|CJC"
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
             },
-            "prefix_max_index":      5
+            "prefix_max_index":      3
         },
         "2": {
             "code":                  "",
-            "desc":                  "CONJUNTO DO CORPO LUMINARIA TL.L.EXE.AVF 40W  FABRICACAO EM PLASTICO",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1 POR 3/16 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
             "fields": {
-                "1":                 "POTENCIA|4",
-                "2":                 "MATERIA PRIMA|PL"
+                "1":                 "DIMENSOES|01316A",
+                "2":                 "MATERIA PRIMA|C"
             },
             "fields_max_index":      2,
-            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_40.jpg",
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
             "prefix": {
-                "1":                 "prefixo|I",
-                "2":                 "prefixo|T",
-                "3":                 "prefixo|L",
-                "4":                 "prefixo|AVF",
-                "5":                 "prefixo|CJC"
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
             },
-            "prefix_max_index":      5
+            "prefix_max_index":      3
+        },
+        "3": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2 POR 1/4 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|02014A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "4": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2 POR 1/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|02018A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "5": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2 POR 3/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|02038A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "6": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2 POR 3/16 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|02316A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "7": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2 POR 516 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|02516A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "8": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 3 POR 1 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|03001A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "9": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 3 POR 1 /2 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|03012A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "10": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 3 POR 1/4 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|03014A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "11": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 3 POR 3/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|03038A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "12": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 4 POR 1 /2 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|04012A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "13": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 4 POR 3/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|04038A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "14": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 4 POR 5/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|04058A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "15": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 5 POR 1 /2 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|05012A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "16": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 5 POR 3 /4 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|05034A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "17": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 5 POR 3/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|05038A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "18": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 5 POR 5/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|05058A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "19": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 6 POR 1 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|06001A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "20": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 6 POR 1 /2 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|06012A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "21": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 6 POR 3 /4 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|06034A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "22": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 6 POR 3/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|06038A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "23": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 6 POR 7/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|06078A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "24": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 8 POR 1 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|08001A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "25": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 8 POR 1 /2 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|08012A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "26": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 8 POR 3 /4 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|08034A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "27": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 8 POR 7/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|08078A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "28": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1/2 POR 1/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|12018A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "29": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 3/4 POR 1/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|34018A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "30": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 5/8 POR 1/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|58018A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "31": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 7/8 POR 1/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|78018A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "32": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1.1/2 POR 1/4 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|12014A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "33": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1.1/2 POR 1/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|12018A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "34": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1.1/2 POR 3/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|12038A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "35": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1.1/2 POR 3/16 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|12316A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "36": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1.1/2 POR 516 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|12516A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "37": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1.1/4 POR 1/4 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|14014A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "38": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1.1/4 POR 1/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|14018A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "39": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1.1/4 POR 3/16 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|14316A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "40": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1.1/8 POR 3 1/6 DE ESPESURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|18316A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "41": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1.3/4 POR 1/4 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|34014A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "42": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1.3/4 POR 1/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|34018A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "43": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1.3/4 POR 3/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|34038A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "44": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1.3/4 POR 3/16 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|34316A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "45": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 1.3/4 POR 5/16 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|34516A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "46": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2.1/2 POR 1/2 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|12012A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "47": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2.1/2 POR 1/4 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|12014A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "48": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2.1/2 POR 3/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|12038A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "49": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2.1/2 POR 3/16 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|12316A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "50": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2.1/2 POR 5/16 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|12516A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "51": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2.1/4 POR 1 /2 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|14012A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "52": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2.1/4 POR 3/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|14038A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "53": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2.1/4 POR 3/16 DE ESPESURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|14316A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "54": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2.1/4 POR 5/16 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|14516A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "55": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2.3/4 POR 1/4 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|31014A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "56": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2.3/4 POR 1 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|34001A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "57": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2.3/4 POR 1 /2 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|34012A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "58": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2.3/4 POR 3/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|34038A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "59": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 2.1/4 POR 3/16 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|34316A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "60": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 3.1/2 POR 1 /2 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|12012A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "61": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 3.1/2 POR 3/8 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|12038A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
+        },
+        "62": {
+            "code":                  "",
+            "desc":                  "CANTONEIRA  ABAS IGUAIS 4.1/2 POR 1 /2 DE ESPESSURA  FABRICACAO EM ACO CARBONO ACO SAE 1020",
+            "fields": {
+                "1":                 "DIMENSOES|12012A",
+                "2":                 "MATERIA PRIMA|C"
+            },
+            "fields_max_index":      2,
+            "image_path":            "//192.168.10.1/h/Protheus11/Protheus_Data/bmp_produtos/promto_imagens/promto_0.jpg",
+            "prefix": {
+                "1":                 "prefixo|MP",
+                "2":                 "prefixo|CA",
+                "3":                 "prefixo|IG"
+            },
+            "prefix_max_index":      3
         }
     },
-    "max_index":                     2
+    "max_index":                     62
 }

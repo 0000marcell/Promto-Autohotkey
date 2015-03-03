@@ -221,19 +221,23 @@ class Modelo{
 		}catch e
 			MsgBox,16,Erro, % "Um erro ocorreu ao tentar o valor de campo na tabela `n" ExceptionDetail(e)
 
-		StringReplace,campo_nome_sem_espaco,campo_nome,%A_Space%,,All
+		StringReplace, campo_nome_sem_espaco, campo_nome, %A_Space%,,All
 
 		tabela_campo_especifica := info.empresa[2] info.tipo[2] info.familia[2] info.subfamilia[2] info.modelo[2] campo_nome_sem_espaco
-			
+
+		 ;Altera o tamanho da descricao completa e em ingles 
+		this.alterar_tamanho_DC_DI(tabela_campo_especifica)
+				;	MsgBox, 16,Erro, % "Houve um erro ao tentar alterar o tamanho da tabela de descricao em ingles `n" ExceptionDetail(e)
+		
 		try{
 				mariaDB.Query(
-					(JOIN 
+					(JOIN
 						"	CREATE TABLE IF NOT EXISTS " tabela_campo_especifica 
-						" (Codigo VARCHAR(250), DC VARCHAR(250), DR VARCHAR(250), DI VARCHAR(250), "
+						" (Codigo VARCHAR(250), DC VARCHAR(65536), DR VARCHAR(250), DI VARCHAR(65536), "
 						" PRIMARY KEY (Codigo)) "
 					))
 			}catch e
-				MsgBox,16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Campos especificos `n" ExceptionDetail(e)
+				MsgBox, 16,Erro, % "Um erro ocorreu ao tentar criar a tabela de Campos especificos `n" ExceptionDetail(e)
 		
 		record := {}
 		record.tipo := campo_nome_sem_espaco me mt mf mm nm
@@ -245,6 +249,26 @@ class Modelo{
 		db.Log.insert_CRUD(info, "Criado", "O Campo " campo_nome " foi criado!")
 	}
 
+	alterar_tamanho_DC_DI(tabela_campo_especifica){
+		Global mariaDB, db
+		
+		MsgBox, % " alterando tamanho da tabela! 3000" tabela_campo_especifica 
+		try{
+			;"ALTER TABLE " tabela_campo_especifica " CHANGE COLUMN DC DC" <colname> <colname> VARCHAR(65536);
+			mariaDB.Query("ALTER TABLE "	tabela_campo_especifica " MODIFY DC VARCHAR(3000);")
+		}catch e{
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar o valor de campo na tabela `n" ExceptionDetail(e)
+		}
+		;	MsgBox, 16,Erro, % "Houve um erro ao tentar alterar o tamanho da tabela de descricao completa `n" ExceptionDetail(e)
+
+		;MsgBox, % " ira tentar alterar o tamanho da tabela descricao ingles!"
+		try{
+			mariaDB.Query("ALTER TABLE "	tabela_campo_especifica " MODIFY DI VARCHAR(3000);")
+		}catch e{
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar o valor de campo na tabela `n" ExceptionDetail(e)
+		}
+	}
+		
 	insert_columns_in_table(columns, table) {
 		Global 
 		for, each, item in columns{
@@ -371,7 +395,6 @@ class Modelo{
 			MsgBox,16, Erro, % "O codigo a ser inserido ja existe na lista!"
 			return
 		}
-
 		record := {}
 		record.Codigo := Trim(valores.codigo)
 		record.DR := Trim(valores.dr)
@@ -405,6 +428,7 @@ class Modelo{
 		Global mariaDB, db
 
 		tabela := get_tabela_campo_esp(campo, info)
+		this.alterar_tamanho_DC_DI(tabela)
 		sql :=
 		(JOIN 
 			" UPDATE " tabela 

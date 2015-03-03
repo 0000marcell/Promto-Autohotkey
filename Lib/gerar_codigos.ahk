@@ -95,22 +95,21 @@ for,each,value in finalcod["oc"]{
 				Break
 			}	
 		}
-		
-		if(StrLen(descgeral " " finalresult.dc)>255){
-			MsgBox,16,,% "A descricao completa do codigo " finalresult.oc " tem mais de 255 caracteres a insercao de codigo ira parar "
-			_error:=1
-			Break 
-		}
-		if(StrLen(descgeral " " finalresult.dr)>255){
+		;if(StrLen(descgeral " " finalresult.dc)>255){
+		;	MsgBox,16,,% "A descricao completa do codigo " finalresult.oc " tem mais de 255 caracteres a insercao de codigo ira parar "
+		;	_error:=1
+		;	Break 
+		;}
+		if(StrLen(descgeral " " finalresult.dr)>250){
 			MsgBox,16,,% "A descricao resumida do codigo " finalresult.oc " tem mais de 155 caracteres a insercao de codigo ira parar "
 			_error := 1
 			Break 
 		}
-		if(StrLen(descgeralingles " " finalresult.di)>255){
-			MsgBox,16,,% "A descricao em ingles do codigo " finalresult.oc " tem mais de 155 caracteres a insercao de codigo ira parar "
-			_error:=1
-			Break 
-		}
+		;if(StrLen(descgeralingles " " finalresult.di)>255){
+		;	MsgBox,16,,% "A descricao em ingles do codigo " finalresult.oc " tem mais de 155 caracteres a insercao de codigo ira parar "
+		;	_error:=1
+		;	Break 
+		;}
 		
 		descricao_completa := descgeral " " finalresult.dc
 		descricao_resumida := descgeral " " finalresult.dr 

@@ -65,6 +65,7 @@ for, each, value in tables {
 }
 MsgBox,64,, % " Aguarde.... (numero total de codigos:" finalcod["oc"].maxindex() ")"
 
+db.change_columns_to_text(codtable)
 db.clean_table(codtable)
 
 codes := {}

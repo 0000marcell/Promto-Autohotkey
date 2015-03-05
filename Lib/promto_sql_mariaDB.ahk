@@ -417,6 +417,33 @@ class PromtoSQL{
 	}
 
 	/*
+		Altera a tabela de codigos
+	*/
+	change_columns_to_text(tabela){
+		Global mariaDB
+
+		try{
+			mariaDB.Query("ALTER TABLE "	tabela " MODIFY DR TEXT;")
+		}catch e{
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar alterar o valor do campo na tabela DR`n" ExceptionDetail(e)
+		}
+
+
+		try{
+			mariaDB.Query("ALTER TABLE "	tabela " MODIFY DC TEXT;")
+		}catch e{
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar alterar o valor do campo na tabela DC`n" ExceptionDetail(e)
+		}
+
+
+		try{
+			mariaDB.Query("ALTER TABLE "	tabela " MODIFY DI TEXT;")
+		}catch e{
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar alterar o valor do campo na tabela DI`n" ExceptionDetail(e)
+		}
+	}
+
+	/*
 		Remove os subitems de 
 		determinado item
 	*/

@@ -25,14 +25,14 @@ class PromtoXML{
 
 	generate(string, hash_mask){
 		this.hash_mask := hash_mask
-		AHK.append_debug("string " string "`n hash mask " hash_mask["MACCOMEVAP"])
+		;AHK.append_debug("string " string "`n hash mask " hash_mask["MACCOMEVAP"])
 		StringSplit, items, string, `n,
 		prev_item_tab_count := 0
 		Loop, % items0
 		{
 			if(items%A_Index% = "")
 				Continue
-			AHK.append_debug("item : " items%A_Index%)
+			;AHK.append_debug("item : " items%A_Index%)
 			StringSplit, tab_count, items%A_Index%, `t,
 			this_item_tab_count := tab_count0 -1
 			StringReplace, items%A_Index%, items%A_Index%, `t,, All
@@ -83,7 +83,7 @@ class PromtoXML{
 	get_item_prop(count, current_value, next_value){
 		item := {}
 		current_value := this.strip_mask(current_value)
-		AHK.append_debug("current value after strip " current_value " numero de carac " StrLen(current_value))
+		;AHK.append_debug("current value after strip " current_value " numero de carac " StrLen(current_value))
 		/*
 			Company
 		*/
@@ -162,10 +162,10 @@ class PromtoXML{
 		if(item.max_index = 0 || item.max_index = ""){
 			this.XML.addElement(item.father, item.path)
 		}
-		AHK.append_debug("gonna insert prev prefix " this.hash_mask[item.name])
-		AHK.append_debug("item name in prev prefix "	this.hash_mask[item.name])
+		;AHK.append_debug("gonna insert prev prefix " this.hash_mask[item.name])
+		;AHK.append_debug("item name in prev prefix "	this.hash_mask[item.name])
 		this.prev_prefix.insert(this.hash_mask[item.name])
-		AHK.append_debug("item path " item.path " item father " item.father)
+		;AHK.append_debug("item path " item.path " item father " item.father)
 		xpath := item.path "/" item.father
 		if(item.child = "model"){
 			prefix := this.stringify(this.prev_prefix)

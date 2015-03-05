@@ -252,20 +252,22 @@ class Modelo{
 	alterar_tamanho_DC_DI(tabela_campo_especifica){
 		Global mariaDB, db
 		
-		MsgBox, % " alterando tamanho da tabela! 3000" tabela_campo_especifica 
 		try{
-			;"ALTER TABLE " tabela_campo_especifica " CHANGE COLUMN DC DC" <colname> <colname> VARCHAR(65536);
-			mariaDB.Query("ALTER TABLE "	tabela_campo_especifica " MODIFY DC VARCHAR(3000);")
+			mariaDB.Query("ALTER TABLE "	tabela_campo_especifica " MODIFY DC TEXT;")
 		}catch e{
-			MsgBox,16,Erro, % "Um erro ocorreu ao tentar o valor de campo na tabela `n" ExceptionDetail(e)
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar alterar o valor do campo na tabela DC`n" ExceptionDetail(e)
 		}
-		;	MsgBox, 16,Erro, % "Houve um erro ao tentar alterar o tamanho da tabela de descricao completa `n" ExceptionDetail(e)
 
-		;MsgBox, % " ira tentar alterar o tamanho da tabela descricao ingles!"
 		try{
-			mariaDB.Query("ALTER TABLE "	tabela_campo_especifica " MODIFY DI VARCHAR(3000);")
+			mariaDB.Query("ALTER TABLE "	tabela_campo_especifica " MODIFY DR TEXT;")
 		}catch e{
-			MsgBox,16,Erro, % "Um erro ocorreu ao tentar o valor de campo na tabela `n" ExceptionDetail(e)
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar o valor de campo na tabela DR`n" ExceptionDetail(e)
+		}
+
+		try{
+			mariaDB.Query("ALTER TABLE "	tabela_campo_especifica " MODIFY DI TEXT;")
+		}catch e{
+			MsgBox,16,Erro, % "Um erro ocorreu ao tentar o valor de campo na tabela DI `n" ExceptionDetail(e)
 		}
 	}
 		
@@ -282,7 +284,6 @@ class Modelo{
 	*/
 	inserir_codigo(tabela, valores){
 		Global mariaDB
-
 		if(tabela = "" || valores[1] = ""){
 			MsgBox,16, Erro, % "A tabela de codigos ou os valores estavam em branco `n tabela de codigos: " tabela "`n valores " valores[1] 
 			return
@@ -390,29 +391,32 @@ class Modelo{
 		Global mariaDB, db
 		
 		tabela_campos_especificos := get_tabela_campo_esp(nome_campo, info)
-		
+			
 		if(this.valor_campo_existe(tabela_campos_especificos, valores.codigo)){
 			MsgBox,16, Erro, % "O codigo a ser inserido ja existe na lista!"
 			return
 		}
+		AHK.append_debug("gonna include values codigo: " Trim(valores.codigo))
+		AHK.append_debug("DR " Trim(valores.dr))
+		AHK.append_debug("DC " Trim(valores.dc))
+		AHK.append_debug("DI " Trim(valores.di))
 		record := {}
 		record.Codigo := Trim(valores.codigo)
 		record.DR := Trim(valores.dr)
 		record.DC := Trim(valores.dc)
 		record.DI := Trim(valores.di)
-
+		AHK.append_debug("gonna insert value in the table " tabela_campos_especificos)
 		mariaDB.Insert(record, tabela_campos_especificos)
 		db.Log.insert_CRUD(info, "Criado", "O item " valores.codigo " descricao resumida " valores.dr " foi incluido no campo " nome_campo)
 	}
 
 	excluir_campo_esp(codigo, tabela, info = ""){
 		Global mariaDB, db
-
 		if(codigo = "" || tabela = ""){
 			MsgBox,16, Erro, % "O codigo selecionado ou a tabela estavam vaziios!" 
 			return
 		}
-		
+		AHK.append_debug("gonna exclude camp esp tabela: " tabela " codigo: " codigo)
 		try{
 				mariaDB.Query(
 				(JOIN 
@@ -427,20 +431,23 @@ class Modelo{
 	alterar_valores_campo(campo, valores, info, old_cod){
 		Global mariaDB, db
 
+		AHK.reset_debug()
 		tabela := get_tabela_campo_esp(campo, info)
 		this.alterar_tamanho_DC_DI(tabela)
-		sql :=
-		(JOIN 
-			" UPDATE " tabela 
-			" SET Codigo='" Trim(valores.codigo) "', DC='" Trim(valores.DC) "', DR='" Trim(valores.DR) "', DI='" Trim(valores.DI) "'"
-			" WHERE Codigo='" old_cod "'"
-		)	 
-		
-		try{
-				mariaDB.Query(sql)
-			}catch e 
-				MsgBox, 16, Erro, % " Erro ao tentar alterar os valores " ExceptionDetail(e)
-		db.Log.insert_CRUD(info, "Alterado", "O item " old_cod " foi alterado para codigo: " valores.codigo " descricao completa: " valores.DC " descricao resumida " valores.DR " descricao ingles " valores.DI)			
+		AHK.append_debug("gona exclude the field old_cod")
+		this.excluir_campo_esp(old_cod, tabela, info)
+		AHK.append_debug("gonna include campo esp again!")
+		this.incluir_campo_esp(campo, valores, info)
+		;sql := "UPDATE " tabela "	SET Codigo='" Trim(valores.codigo) "', DC='" Trim(valores.DC) "', DR='" Trim(valores.DR) "', DI='" Trim(valores.DI) "' WHERE Codigo='" old_cod "';"	 
+		;AHK.append_debug("sql alterando : " sql)
+		;AHK.append_debug(" quantidade de codigo: " StrLen(valores.codigo) " DC: " StrLen(valores.DC) " DR: " StrLen(valores.DR) " DI: " StrLen(valores.DI))
+
+		;try{
+		;	mariaDB.Query(sql)
+		;}catch e{
+		;	MsgBox, 16, Erro, % " Erro ao tentar alterar os valores " ExceptionDetail(e)
+		;}
+		;db.Log.insert_CRUD(info, "Alterado", "O item " old_cod " foi alterado para codigo: " valores.codigo " descricao completa: " valores.DC " descricao resumida " valores.DR " descricao ingles " valores.DI)			
 	}
 
 	excluir_campo(campo_nome, info){
@@ -478,6 +485,7 @@ class Modelo{
 		/*
 			Deleta a entrada na tabela de relacao
 		*/
+
 		StringReplace, campo_nome_sem_espaco, campo_nome,%A_Space%,,All
 		try{
 				mariaDB.Query(

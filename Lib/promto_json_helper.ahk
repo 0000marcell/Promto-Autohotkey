@@ -76,11 +76,11 @@ class Helper{
       return
     For each, value in list := db.get_values("*", field_table){ 
       tipo := AHK.rem_space(list[A_Index, 2])
-      AHK.append_debug("tipo " tipo)
+      ;AHK.append_debug("tipo " tipo)
       esp_field_table := db.get_reference(tipo, tabela1)
-      AHK.append_debug("esp table " esp_field_table)
+      ;AHK.append_debug("esp table " esp_field_table)
       fields_values := this.get_fields(esp_field_table)
-      AHK.append_debug("gonna insert values max index " fields_values.maxindex() " tipo " tipo)
+      ;AHK.append_debug("gonna insert values max index " fields_values.maxindex() " tipo " tipo)
       this.insert_fields(fields_values, tipo)
     }
   }
@@ -93,7 +93,7 @@ class Helper{
         )}
     this.models.fields := []
     this.models.fields.insert(hash)
-    AHK.append_debug("model fields max index this " this.models.fields.maxindex())
+    ;AHK.append_debug("model fields max index this " this.models.fields.maxindex())
     this.models.fields[this.models.fields.maxindex()].values.insert(values)
   }
 

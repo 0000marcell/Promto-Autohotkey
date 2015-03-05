@@ -97,7 +97,7 @@ class PromtoJSON{
         models.max_index := A_Index  
       }
      models.insert(this.Helper.models_values(list, prev_mask))
-     AHK.append_debug("model max index passes " models.maxindex())
+     ;AHK.append_debug("model max index passes " models.maxindex())
      this.Helper.insert_model_fields(list, prev_mask, models[models.maxindex()])  
     }
   }

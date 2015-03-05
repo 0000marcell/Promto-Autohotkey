@@ -20,19 +20,19 @@ alterar_valores_campo_view(currentvalue, campo, info){
 	Gui, Add, Groupbox, w300 h230, Campos
 	Gui, Add, Text, xp+10 yp+15, Codigo
 	Gui, Add, Edit, y+5 w250 valt_codigo_field_esp UPPERCASE, % currentvalue[1]
+	Gui, Add, Text, y+15, Descricao Resumida
+	Gui, Add, Edit, y+5 w250 r1 valt_dr_field_esp UPPERCASE, % currentvalue[3]
 	Gui, Add, Text, y+15, Descricao Completa
-	Gui, Add, Edit, y+5 w250 valt_dc_field_esp UPPERCASE, % currentvalue[2]
-	Gui, Add, Text, y+15, Descricao Resumida 
-	Gui, Add, Edit, y+5 w250 valt_dr_field_esp UPPERCASE, % currentvalue[3]
+	Gui, Add, Edit, y+5 w250 r1 valt_dc_field_esp UPPERCASE, % currentvalue[2]
 	Gui, Add, Text, y+15, Descricao Ingles
-	Gui, Add, Edit, y+5 w250 valt_di_field_esp UPPERCASE,  % currentvalue[4]
+	Gui, Add, Edit, y+5 w250 r1 valt_di_field_esp UPPERCASE,  % currentvalue[4]
 
 	/*
 		Opcoes
 	*/
 	Gui, Add, Groupbox, xm w300 h60, Opcoes
 	Gui, Add, Button, xp+10 yp+15 w100 h30 galterar_campo_esp Default, Salvar
-	Gui, Show,, Incluir Campo.
+	Gui, Show,, Alterar Campos.
 	Return
 
 	alterar_campo_esp:

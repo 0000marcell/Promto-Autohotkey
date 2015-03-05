@@ -43,6 +43,12 @@ class Log{
     record.Hora := A_Hour ":" A_Min
     record.Mensagem := msg
     record.Prodkey := this.get_prodkey(info)
+    ;AHK.append_debug("gonna alter crud")
+		;try{
+		;	mariaDB.Query("ALTER TABLE CRUD MODIFY Mensagem TEXT;")
+		;}catch e{
+		;	MsgBox,16,Erro, % "Um erro ocorreu ao tentar modificar a tabela de crud `n" ExceptionDetail(e)
+		;}
     mariaDB.Insert(record, "CRUD") 
 	}
 

@@ -140,6 +140,10 @@ inserir_campos_view(info){
 	alterar_valores_campo_button:
 	Gui, Submit, Nohide
 	currentvalue := GetSelectedRow("inserir_campos_view", "valores_de_campo_lv")
+	if(campos_combobox = "" || s_info.modelo[2] = "" || currentvalue[1] = "Codigo"){
+		MsgBox,16, Erro, % "Selecione um campo antes de continuar!"
+		return
+	}
 	alterar_valores_campo_view(currentvalue, campos_combobox, s_info)
 	return 
 
